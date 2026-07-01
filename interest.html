@@ -10,7 +10,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bluehour China Journeys">
   <meta property="og:url" content="https://bluehourchina.com/interest.html">
-  <meta property="og:image" content="https://bluehourchina.com/assets/china-depth-hero.png">
+  <meta property="og:image" content="https://bluehourchina.com/assets/ai/bluehour-china-hero-luxury-lake-v2.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/svg+xml" href="/assets/ruoqing-avatar.svg">
   <style>
@@ -32,7 +32,7 @@
       background:
         linear-gradient(90deg, rgba(7, 17, 15, .96), rgba(7, 17, 15, .72), rgba(7, 17, 15, .28)),
         linear-gradient(180deg, rgba(7, 17, 15, .08), rgba(7, 17, 15, .86)),
-        url("/assets/china-depth-hero.png") center / cover no-repeat;
+        url("/assets/ai/bluehour-china-hero-luxury-lake-v2.jpg") center / cover no-repeat;
       font-family: "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
       text-rendering: optimizeLegibility;
       overflow-x: hidden;
@@ -259,23 +259,30 @@
         <h2>A few details are enough.</h2>
         <p>The first reply is not a hard sell. It is a calm direction: what fits, what feels rushed, and what kind of local care may be needed.</p>
 
-        <form class="lead-form" name="bluehour-china-journey-review" method="POST" action="https://formsubmit.co/bluehourchina@gmail.com">
+        <form class="lead-form" name="bluehour-china-journey-review" method="POST" action="https://formsubmit.co/bluehourchina@gmail.com" data-sheet-endpoint="">
           <input type="hidden" name="_next" value="https://bluehourchina.com/thanks.html">
           <input type="hidden" name="_subject" value="Bluehour China Journeys inquiry">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="form-name" value="bluehour-china-journey-review">
           <input type="hidden" name="bot-field">
+          <input type="hidden" name="submitted_at" value="">
+          <input type="hidden" name="status" value="New">
+          <input type="hidden" name="priority" value="Medium">
+          <input type="hidden" name="language" value="English">
           <input type="hidden" name="funnel_stage" value="journey-review">
           <input type="hidden" name="product" value="Bluehour China journey review">
           <input type="hidden" name="source_content" value="calm-first-review">
+          <input type="hidden" name="crm_sheet_id" value="1htwsc38_sAoUXvuqwR06MgPjM3uxkHiv3me1l85ux_Y">
           <input type="hidden" name="page_url" value="">
           <input type="hidden" name="referrer" value="">
           <input type="hidden" name="utm_source" value="">
           <input type="hidden" name="utm_medium" value="">
           <input type="hidden" name="utm_campaign" value="">
           <input type="text" name="name" placeholder="Name" aria-label="Name" required>
-          <input type="text" name="contact" placeholder="WhatsApp / Email / WeChat / LINE" aria-label="Contact" required>
+          <input type="email" name="email" placeholder="Email" aria-label="Email">
+          <input type="text" name="contact" placeholder="WhatsApp / WeChat / LINE / preferred contact" aria-label="Preferred contact" required>
+          <input type="text" name="country" placeholder="Country / region" aria-label="Country or region" required>
           <select name="destination" aria-label="Landscape" required>
             <option value="" disabled selected>Landscape you are considering</option>
             <option value="yunnan">Yunnan</option>
@@ -285,7 +292,7 @@
             <option value="northeast">Northeast China winter</option>
             <option value="not-sure">Not sure yet</option>
           </select>
-          <select name="month" aria-label="Travel timing" required>
+          <select name="travel_window" aria-label="Travel timing" required>
             <option value="" disabled selected>When are you hoping to travel?</option>
             <option>Within 1-3 months</option>
             <option>Within 3-6 months</option>
@@ -301,10 +308,12 @@
             <option>Family with parents or children</option>
             <option>Not sure yet</option>
           </select>
-          <select name="language_needs" aria-label="Language needs" required>
+          <select name="language_needs" aria-label="Language support" required>
             <option value="" disabled selected>Language needs</option>
             <option>English support preferred</option>
             <option>Chinese-English support preferred</option>
+            <option>Japanese support preferred</option>
+            <option>Korean or Thai support preferred</option>
             <option>Chinese is okay</option>
             <option>Other language needs</option>
           </select>
@@ -314,6 +323,22 @@
             <option>High-end hotels preferred</option>
             <option>Family-friendly comfort matters most</option>
             <option>Still deciding</option>
+          </select>
+          <select name="budget" aria-label="Estimated budget">
+            <option value="" disabled selected>Estimated budget per traveller</option>
+            <option>Under US$1,500</option>
+            <option>US$1,500-2,500</option>
+            <option>US$2,500-4,000</option>
+            <option>US$4,000+</option>
+            <option>Not sure yet</option>
+          </select>
+          <select name="visited_china_before" aria-label="China travel experience">
+            <option value="" disabled selected>Have you visited China before?</option>
+            <option>Yes, Beijing or Shanghai</option>
+            <option>Yes, more than once</option>
+            <option>Only Hong Kong / Macau / Taiwan</option>
+            <option>No, this would be my first mainland China trip</option>
+            <option>Not sure how to describe it</option>
           </select>
           <textarea name="message" placeholder="What kind of China do you want to feel? You can mention places, travel style, concerns, hotel expectations or whether you have visited China before."></textarea>
           <button type="submit">Request a calm first review</button>
@@ -340,6 +365,7 @@
         if (option) select.value = destination;
       }
       const fields = {
+        submitted_at: new Date().toISOString(),
         page_url: window.location.href,
         referrer: document.referrer || "",
         utm_source: params.get("utm_source") || "site",
@@ -350,6 +376,27 @@
         const input = leadForm.querySelector(`[name="${name}"]`);
         if (input) input.value = value;
       });
+      const endpoint = leadForm.dataset.sheetEndpoint;
+      if (endpoint) {
+        leadForm.addEventListener("submit", async (event) => {
+          event.preventDefault();
+          const submitButton = leadForm.querySelector('button[type="submit"]');
+          if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = "Sending...";
+          }
+          try {
+            await fetch(endpoint, {
+              method: "POST",
+              mode: "no-cors",
+              body: new FormData(leadForm)
+            });
+            window.location.href = "/thanks.html";
+          } catch (error) {
+            leadForm.submit();
+          }
+        });
+      }
     }
   </script>
 </body>

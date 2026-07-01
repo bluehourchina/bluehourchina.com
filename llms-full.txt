@@ -177,6 +177,8 @@ A calm first review, usually within 24 hours.
 
 - /：Homepage, China Beyond the First City
 - /en.html：English overview mirror of homepage
+- /zh.html：Traditional Chinese homepage for 若青中國旅策
+- /ja.html：Japanese homepage for travellers considering China after Beijing and Shanghai
 - /stories.html：visual story index for all destinations
 - /yunnan.html：Yunnan destination page
 - /xinjiang.html：Xinjiang destination page

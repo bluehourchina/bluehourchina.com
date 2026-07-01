@@ -17,6 +17,8 @@
 ## Destination Pages
 
 - [Homepage](/): China Beyond the First City; high-end visual entry for Yunnan, Xinjiang, Dunhuang, Sanya and Northeast China
+- [Traditional Chinese homepage](/zh.html): 若青中國旅策中文入口
+- [Japanese homepage](/ja.html): 日本語入口 for travellers considering China after Beijing and Shanghai
 - [Yunnan](/yunnan.html): Dali, Shaxi, Lijiang or Baisha; lake light, old towns and snow mountains
 - [Xinjiang](/xinjiang.html): lakes, grasslands, long roads and Northwest China horizons
 - [Dunhuang](/dunhuang.html): Mogao Caves, desert light, oasis evenings and Silk Road atmosphere

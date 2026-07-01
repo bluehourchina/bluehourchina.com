@@ -8,6 +8,10 @@
   <meta name="keywords" content="Bluehour China Journeys, China beyond Beijing Shanghai, second trip to China, Yunnan private travel, Xinjiang travel, Dunhuang travel, Sanya luxury travel, Northeast China winter travel, China private travel advisory">
   <meta name="application-name" content="Bluehour China Journeys">
   <link rel="canonical" href="https://bluehourchina.com/en.html">
+  <link rel="alternate" hreflang="en" href="https://bluehourchina.com/en.html">
+  <link rel="alternate" hreflang="zh-Hant" href="https://bluehourchina.com/zh.html">
+  <link rel="alternate" hreflang="ja" href="https://bluehourchina.com/ja.html">
+  <link rel="alternate" hreflang="x-default" href="https://bluehourchina.com/">
   <link rel="alternate" type="text/plain" href="https://bluehourchina.com/llms.txt">
   <link rel="icon" type="image/svg+xml" href="/assets/ruoqing-avatar.svg">
   <meta property="og:title" content="Bluehour China Journeys｜China Beyond the First City">
@@ -100,6 +104,24 @@
       font-size: 13px;
       font-weight: 700;
     }
+    .language-switch {
+      display: inline-flex;
+      gap: 10px;
+      color: rgba(255,250,241,.7);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .language-switch a {
+      padding-bottom: 3px;
+      border-bottom: 1px solid transparent;
+    }
+    .language-switch a[aria-current="page"] {
+      color: var(--ivory);
+      border-bottom-color: rgba(255,250,241,.55);
+    }
+    .mobile-lang {
+      display: none;
+    }
     .nav-cta {
       min-height: 40px;
       display: inline-flex;
@@ -117,6 +139,32 @@
       color: var(--ivory);
       background: var(--deep);
     }
+    .hero-media,
+    .hero-scene {
+      position: absolute;
+      inset: 0;
+    }
+    .hero-scene {
+      background-position: 54% center;
+      background-size: cover;
+      opacity: 0;
+      transform: scale(1.04);
+      filter: saturate(1.04) contrast(1.02) brightness(1.04);
+      animation: heroScene 24s infinite ease-in-out;
+      will-change: opacity, transform;
+    }
+    .hero-scene.lake {
+      background-image: url("/assets/ai/bluehour-china-hero-luxury-lake-v2.jpg");
+      animation-delay: 0s;
+    }
+    .hero-scene.yunnan {
+      background-image: url("/assets/ai/bluehour-yunnan-luxury-dali-terrace.jpg");
+      animation-delay: 8s;
+    }
+    .hero-scene.sanya {
+      background-image: url("/assets/ai/bluehour-sanya-luxury-coast-v1.jpg");
+      animation-delay: 16s;
+    }
     .hero::before {
       content: "";
       position: absolute;
@@ -126,11 +174,11 @@
         linear-gradient(180deg, rgba(7,17,15,.02), rgba(7,17,15,.44));
       z-index: 1;
     }
-    .hero img {
-      position: absolute;
-      inset: 0;
-      object-position: 54% center;
-      filter: saturate(1.04) contrast(1.02) brightness(1.04);
+    @keyframes heroScene {
+      0% { opacity: 1; transform: scale(1.04) translate3d(0,0,0); }
+      25% { opacity: 1; transform: scale(1.09) translate3d(-1.1%, -.7%, 0); }
+      36% { opacity: 0; transform: scale(1.12) translate3d(-1.8%, -1%, 0); }
+      100% { opacity: 0; transform: scale(1.12) translate3d(-1.8%, -1%, 0); }
     }
     .wrap {
       width: min(1180px, calc(100% - 48px));
@@ -378,6 +426,23 @@
     @media (max-width: 900px) {
       .nav { position: absolute; padding: 16px 18px; }
       .nav-links { display: none; }
+      .mobile-lang {
+        position: absolute;
+        top: 20px;
+        right: 18px;
+        z-index: 21;
+        display: inline-flex;
+        gap: 10px;
+        color: rgba(255,250,241,.72);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+      }
+      .mobile-lang a[aria-current="page"] {
+        color: var(--ivory);
+        border-bottom: 1px solid rgba(255,250,241,.55);
+      }
       .brand strong { font-size: 19px; }
       .brand span { font-size: 10px; }
       .wrap { width: min(100% - 36px, 1180px); }
@@ -395,6 +460,10 @@
       .place, .place:first-child { min-height: 470px; grid-row: auto; }
       .promise { min-height: 190px; }
     }
+    @media (prefers-reduced-motion: reduce) {
+      .hero-scene { animation: none; opacity: 0; transform: none; }
+      .hero-scene.lake { opacity: 1; }
+    }
   </style>
 </head>
 <body>
@@ -411,13 +480,27 @@
       <a href="#care">Care</a>
       <a href="#notes">Notes</a>
       <a href="/stories.html">Journal</a>
+      <span class="language-switch" aria-label="Language switcher">
+        <a href="/en.html" aria-current="page">EN</a>
+        <a href="/zh.html">中</a>
+        <a href="/ja.html">JP</a>
+      </span>
       <a class="nav-cta" href="/interest.html">Start quietly</a>
     </div>
   </nav>
+  <div class="mobile-lang" aria-label="Mobile language switcher">
+    <a href="/en.html" aria-current="page">EN</a>
+    <a href="/zh.html">中</a>
+    <a href="/ja.html">JP</a>
+  </div>
 
   <main>
     <section class="hero">
-      <img src="/assets/ai/bluehour-china-hero-luxury-lake-v2.jpg" alt="Luxury lakeside terrace facing mountains in China">
+      <div class="hero-media" aria-hidden="true">
+        <div class="hero-scene lake"></div>
+        <div class="hero-scene yunnan"></div>
+        <div class="hero-scene sanya"></div>
+      </div>
       <div class="wrap hero-inner">
         <p class="eyebrow">China beyond the first city</p>
         <h1>The next China is quieter.</h1>
