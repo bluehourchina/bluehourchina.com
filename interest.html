@@ -1,38 +1,40 @@
 <!doctype html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>24 小時雲南私旅可行性判斷｜若青中國旅策</title>
-  <meta name="description" content="若青中國旅策先幫你判斷雲南私旅是否值得推進：大理、沙溪、麗江一週慢走，24 小時內回覆路線風險、預算入口與是否適合私旅。送出不會直接扣款。">
-  <meta property="og:title" content="24 小時雲南私旅可行性判斷｜若青中國旅策">
-  <meta property="og:description" content="先判斷再報價。若青中國旅策幫你看大理、沙溪、麗江一週慢走是否適合推進。">
+  <title>Start a China Journey Review｜Bluehour China Journeys</title>
+  <meta name="description" content="Tell Bluehour China Journeys the landscape, season, travellers, language needs and comfort level you want. Receive a calm first direction for a private China journey beyond Beijing and Shanghai.">
+  <meta property="og:title" content="Start a China Journey Review｜Bluehour China Journeys">
+  <meta property="og:description" content="A calm first step for Yunnan, Xinjiang, Dunhuang, Sanya or Northeast China.">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="若青中國旅策">
-  <meta property="og:locale" content="zh_TW">
-  <meta property="og:url" content="/interest.html">
-  <meta property="og:image" content="/assets/og/yunnan-og.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Bluehour China Journeys">
+  <meta property="og:url" content="https://bluehourchina.com/interest.html">
+  <meta property="og:image" content="https://bluehourchina.com/assets/china-depth-hero.png">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/svg+xml" href="/assets/ruoqing-avatar.svg">
   <style>
     :root {
-      --deep: #081511;
-      --forest: #102d26;
-      --paper: #f6efe3;
-      --white: #fffaf0;
-      --ink: #1f2924;
-      --muted: #687069;
+      --deep: #07110f;
+      --forest: #18362d;
+      --paper: #f5efe4;
+      --ivory: #fffaf1;
+      --ink: #17201c;
+      --muted: #657069;
       --gold: #c99a52;
-      --line: rgba(31,41,36,.15);
+      --line: rgba(255, 250, 241, .18);
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      min-height: 100svh;
+      color: var(--ivory);
+      background:
+        linear-gradient(90deg, rgba(7, 17, 15, .96), rgba(7, 17, 15, .72), rgba(7, 17, 15, .28)),
+        linear-gradient(180deg, rgba(7, 17, 15, .08), rgba(7, 17, 15, .86)),
+        url("/assets/china-depth-hero.png") center / cover no-repeat;
+      font-family: "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+      text-rendering: optimizeLegibility;
       overflow-x: hidden;
     }
     a { color: inherit; text-decoration: none; }
@@ -40,11 +42,6 @@
       min-height: 100svh;
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(420px, 520px);
-      background:
-        linear-gradient(90deg, rgba(8,21,17,.96), rgba(8,21,17,.7), rgba(8,21,17,.2)),
-        linear-gradient(180deg, rgba(8,21,17,.08), rgba(8,21,17,.88)),
-        url("/assets/ai/bluehour-yunnan-luxury-shaxi-courtyard.jpg") center / cover no-repeat;
-      color: var(--white);
     }
     .story {
       min-height: 100svh;
@@ -52,25 +49,29 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      border-right: 1px solid rgba(255,250,240,.16);
+      border-right: 1px solid var(--line);
+      min-width: 0;
     }
     .brand {
       display: grid;
       grid-template-columns: 50px auto;
       gap: 13px;
       align-items: center;
+      width: max-content;
+      max-width: 100%;
     }
     .brand img { width: 50px; height: 50px; display: block; }
     .brand strong {
       display: block;
-      font-family: "Noto Serif TC", "Songti TC", serif;
-      font-size: 27px;
-      letter-spacing: .08em;
+      font-family: Georgia, "Times New Roman", "Noto Serif TC", serif;
+      font-size: 25px;
+      font-weight: 500;
+      letter-spacing: .02em;
     }
-    .brand span {
+    .brand span span {
       display: block;
       margin-top: 2px;
-      color: rgba(255,250,240,.68);
+      color: rgba(255, 250, 241, .68);
       font-size: 12px;
       letter-spacing: .14em;
       text-transform: uppercase;
@@ -78,62 +79,61 @@
     .copy {
       max-width: 760px;
       padding: 11vh 0 6vh;
+      min-width: 0;
     }
     .eyebrow {
-      margin: 0 0 20px;
+      margin: 0 0 18px;
       color: var(--gold);
-      font-size: 14px;
+      font-size: 12px;
       letter-spacing: .18em;
-      font-weight: 950;
+      font-weight: 850;
       text-transform: uppercase;
     }
     h1, h2, h3 {
-      font-family: "Noto Serif TC", "Songti TC", serif;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", "Noto Serif TC", serif;
+      font-weight: 500;
       letter-spacing: 0;
-      overflow-wrap: anywhere;
     }
     h1 {
-      margin: 0;
       max-width: 760px;
-      font-size: clamp(42px, 5vw, 72px);
-      line-height: 1.12;
+      font-size: clamp(46px, 6.4vw, 86px);
+      line-height: .98;
+      text-wrap: balance;
     }
     .lead {
-      max-width: 690px;
-      margin: 26px 0 0;
-      color: rgba(255,250,240,.82);
-      font-size: clamp(17px, 1.45vw, 22px);
-      line-height: 1.74;
-      font-weight: 660;
-      overflow-wrap: anywhere;
-      word-break: break-all;
+      max-width: 620px;
+      margin: 24px 0 0;
+      color: rgba(255, 250, 241, .82);
+      font-size: clamp(17px, 1.45vw, 21px);
+      line-height: 1.7;
     }
     .points {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1px;
       width: min(900px, 100%);
-      background: rgba(255,250,240,.18);
-      border: 1px solid rgba(255,250,240,.18);
+      background: var(--line);
+      border: 1px solid var(--line);
     }
     .points div {
       min-height: 96px;
       padding: 18px;
-      background: rgba(8,21,17,.66);
+      background: rgba(7, 17, 15, .62);
     }
     .points span {
       display: block;
       margin-bottom: 8px;
-      color: rgba(255,250,240,.55);
+      color: rgba(255, 250, 241, .55);
       font-size: 12px;
       letter-spacing: .12em;
       text-transform: uppercase;
-      font-weight: 900;
+      font-weight: 850;
     }
     .points b {
       display: block;
-      color: var(--white);
-      font-size: 19px;
+      color: var(--ivory);
+      font-size: 18px;
       line-height: 1.35;
     }
     .form-side {
@@ -141,26 +141,25 @@
       display: flex;
       align-items: center;
       padding: 34px;
-      background: rgba(8,21,17,.82);
+      background: rgba(7, 17, 15, .84);
       backdrop-filter: blur(18px);
+      min-width: 0;
     }
     .form-card {
       width: 100%;
       padding: 30px;
-      border: 1px solid rgba(255,250,240,.18);
-      background: rgba(255,250,240,.08);
+      border: 1px solid var(--line);
+      background: rgba(255, 250, 241, .08);
     }
     .form-card h2 {
-      margin: 0;
-      color: var(--white);
       font-size: 32px;
-      line-height: 1.22;
+      line-height: 1.18;
     }
     .form-card p {
       margin: 12px 0 22px;
-      color: rgba(255,250,240,.72);
-      line-height: 1.68;
-      font-weight: 650;
+      color: rgba(255, 250, 241, .72);
+      line-height: 1.62;
+      font-size: 15px;
     }
     form {
       display: grid;
@@ -173,158 +172,158 @@
     }
     input, select, textarea {
       min-height: 48px;
-      border: 1px solid rgba(255,250,240,.18);
-      background: rgba(8,21,17,.58);
-      color: var(--white);
+      border: 1px solid var(--line);
+      background: rgba(7, 17, 15, .58);
+      color: var(--ivory);
       padding: 12px 14px;
       outline: none;
     }
-    textarea { min-height: 92px; resize: vertical; }
-    input::placeholder, textarea::placeholder { color: rgba(255,250,240,.46); }
-    select:invalid { color: rgba(255,250,240,.46); }
+    textarea { min-height: 104px; resize: vertical; }
+    input::placeholder, textarea::placeholder { color: rgba(255, 250, 241, .48); }
+    select:invalid { color: rgba(255, 250, 241, .48); }
     button {
       min-height: 54px;
       border: 0;
       margin-top: 4px;
       background: var(--gold);
       color: #11251f;
-      font-weight: 950;
+      font-weight: 850;
       cursor: pointer;
     }
     .note {
       margin: 6px 0 0;
-      color: rgba(255,250,240,.56);
+      color: rgba(255, 250, 241, .58);
       font-size: 13px;
-      line-height: 1.65;
+      line-height: 1.6;
     }
     .links {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
       margin-top: 22px;
-      color: rgba(255,250,240,.72);
+      color: rgba(255, 250, 241, .72);
       font-size: 14px;
-      font-weight: 850;
+      font-weight: 800;
     }
     .links a {
-      border-bottom: 1px solid rgba(255,250,240,.32);
+      border-bottom: 1px solid rgba(255, 250, 241, .32);
       padding-bottom: 3px;
     }
     @media (max-width: 920px) {
       .page { grid-template-columns: 1fr; }
       .story { min-height: auto; border-right: 0; }
-      .form-side { min-height: auto; padding: 0 22px 28px; }
+      .form-side { min-height: auto; padding: 0 18px 28px; }
+      .form-card { padding: 24px; }
+      .form-card h2 {
+        font-size: 28px;
+        line-height: 1.18;
+        overflow-wrap: anywhere;
+      }
       .points { grid-template-columns: 1fr; }
-      h1 { font-size: clamp(38px, 11vw, 58px); }
+      h1 {
+        font-size: clamp(34px, 9.4vw, 40px);
+        line-height: 1.05;
+        text-wrap: wrap;
+      }
+      .lead { font-size: 16px; line-height: 1.65; }
     }
   </style>
 </head>
 <body>
   <main class="page">
     <section class="story">
-      <a class="brand" href="yunnan.html">
+      <a class="brand" href="/">
         <img src="/assets/ruoqing-avatar.svg" alt="" aria-hidden="true">
         <span>
-          <strong>若青中國旅策</strong>
-          <span>Bluehour China Journeys</span>
+          <strong>Bluehour China</strong>
+          <span>若青中國旅策</span>
         </span>
       </a>
 
       <div class="copy">
-        <p class="eyebrow">YUNNAN FIT CHECK</p>
-        <h1>先做<br>24 小時<br>可行性判斷</h1>
-        <p class="lead">不是立刻付款，也不是制式團報名。<br>若青會先看月份、人數、預算與想看的雲南。<br>適合才進入報價、服務商媒合與付訂方式。</p>
+        <p class="eyebrow">A calm first review</p>
+        <h1>Tell us the China<br>you want to feel.</h1>
+        <p class="lead">Yunnan, Xinjiang, Dunhuang, Sanya or winter in the north. Share the season, people and comfort you need.</p>
       </div>
 
-      <div class="points" aria-label="雲南條件快篩重點">
-        <div><span>Route</span><b>大理・沙溪・麗江</b></div>
-        <div><span>Entry</span><b>NT$39,800/人起</b></div>
-        <div><span>First Reply</span><b>24 小時內判斷</b></div>
+      <div class="points" aria-label="Review promises">
+        <div><span>Language</span><b>English-friendly planning</b></div>
+        <div><span>Comfort</span><b>Hotels, pace and transfers</b></div>
+        <div><span>First Reply</span><b>Within 24 hours</b></div>
       </div>
     </section>
 
     <section class="form-side" id="apply">
       <div class="form-card">
-        <p class="eyebrow">START HERE</p>
-        <h2>留下條件<br>先看值不值得推進</h2>
-        <p>送出後不會直接扣款。<br>若青會先判斷你適合大團、自由行，還是有風雲南私旅。<br>不適合也會直接說，不硬推。</p>
+        <p class="eyebrow">Start here</p>
+        <h2>A few details are enough.</h2>
+        <p>The first reply is not a hard sell. It is a calm direction: what fits, what feels rushed, and what kind of local care may be needed.</p>
 
-        <form class="lead-form" name="yunnan-private-tour-zh" method="POST" action="https://formsubmit.co/bluehourchina@gmail.com">
+        <form class="lead-form" name="bluehour-china-journey-review" method="POST" action="https://formsubmit.co/bluehourchina@gmail.com">
           <input type="hidden" name="_next" value="https://bluehourchina.com/thanks.html">
-          <input type="hidden" name="_subject" value="Bluehour China Journeys booking intent">
+          <input type="hidden" name="_subject" value="Bluehour China Journeys inquiry">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="form-name" value="yunnan-private-tour-zh">
+          <input type="hidden" name="form-name" value="bluehour-china-journey-review">
           <input type="hidden" name="bot-field">
-          <input type="hidden" name="funnel_stage" value="booking-intent">
-          <input type="hidden" name="product" value="Yunnan feasibility check｜有風雲南旗艦">
-          <input type="hidden" name="source_content" value="yunnan-feasibility-check">
+          <input type="hidden" name="funnel_stage" value="journey-review">
+          <input type="hidden" name="product" value="Bluehour China journey review">
+          <input type="hidden" name="source_content" value="calm-first-review">
           <input type="hidden" name="page_url" value="">
           <input type="hidden" name="referrer" value="">
           <input type="hidden" name="utm_source" value="">
           <input type="hidden" name="utm_medium" value="">
           <input type="hidden" name="utm_campaign" value="">
-          <input type="text" name="name" placeholder="姓名" aria-label="姓名" required>
-          <input type="tel" name="contact" placeholder="WhatsApp / LINE / 微信 / Email" aria-label="聯絡方式" required>
-          <select name="order_intent" aria-label="這次想做什麼" required>
-            <option value="" disabled selected>這次想做什麼</option>
-            <option>我想先做 24 小時可行性判斷</option>
-            <option>我想拿初步報價</option>
-            <option>我正在比較，想請若青判斷</option>
-            <option>先問問題，還不急</option>
+          <input type="text" name="name" placeholder="Name" aria-label="Name" required>
+          <input type="text" name="contact" placeholder="WhatsApp / Email / WeChat / LINE" aria-label="Contact" required>
+          <select name="destination" aria-label="Landscape" required>
+            <option value="" disabled selected>Landscape you are considering</option>
+            <option value="yunnan">Yunnan</option>
+            <option value="xinjiang">Xinjiang</option>
+            <option value="dunhuang">Dunhuang</option>
+            <option value="sanya">Sanya</option>
+            <option value="northeast">Northeast China winter</option>
+            <option value="not-sure">Not sure yet</option>
           </select>
-          <select name="group_size" aria-label="同行人數" required>
-            <option value="" disabled selected>同行人數</option>
-            <option>2 人</option>
-            <option>3-4 人</option>
-            <option>5-6 人</option>
-            <option>還不確定</option>
+          <select name="month" aria-label="Travel timing" required>
+            <option value="" disabled selected>When are you hoping to travel?</option>
+            <option>Within 1-3 months</option>
+            <option>Within 3-6 months</option>
+            <option>Next spring or summer</option>
+            <option>Next autumn or winter</option>
+            <option>Still exploring</option>
           </select>
-          <select name="month" aria-label="預計出發月份" required>
-            <option value="" disabled selected>預計出發月份</option>
-            <option>1-3 個月內</option>
-            <option>3-6 個月內</option>
-            <option>明年春夏</option>
-            <option>還在觀望</option>
+          <select name="group_size" aria-label="Travellers" required>
+            <option value="" disabled selected>Travellers</option>
+            <option>2 travellers</option>
+            <option>3-4 travellers</option>
+            <option>5-6 travellers</option>
+            <option>Family with parents or children</option>
+            <option>Not sure yet</option>
           </select>
-          <select name="route_days" aria-label="偏好天數" required>
-            <option value="" disabled selected>偏好天數</option>
-            <option>一週</option>
-            <option>一週多一點</option>
-            <option>9 日慢走</option>
-            <option>還不確定，想先判斷</option>
+          <select name="language_needs" aria-label="Language needs" required>
+            <option value="" disabled selected>Language needs</option>
+            <option>English support preferred</option>
+            <option>Chinese-English support preferred</option>
+            <option>Chinese is okay</option>
+            <option>Other language needs</option>
           </select>
-          <select name="budget" aria-label="預算感" required>
-            <option value="" disabled selected>預算感</option>
-            <option>想找 NT$40,000-50,000 大團</option>
-            <option>接近 NT$39,800/人可以討論</option>
-            <option>可接受 NT$45,800-52,800/人</option>
-            <option>更重視住宿與舒適度</option>
+          <select name="comfort_level" aria-label="Comfort level" required>
+            <option value="" disabled selected>Comfort level</option>
+            <option>Boutique and comfortable</option>
+            <option>High-end hotels preferred</option>
+            <option>Family-friendly comfort matters most</option>
+            <option>Still deciding</option>
           </select>
-          <select name="readiness" aria-label="出發意願" required>
-            <option value="" disabled selected>出發意願</option>
-            <option>方案合適，7 天內可付訂</option>
-            <option>方案合適，1 個月內可付訂</option>
-            <option>正在比較旅行社與私旅</option>
-            <option>想先替同行者看方案</option>
-            <option>目前只是初步了解</option>
-          </select>
-          <select name="style" aria-label="偏好旅行方式" required>
-            <option value="" disabled selected>偏好旅行方式</option>
-            <option>價格優先，大團可接受</option>
-            <option>想要私旅，但不想太貴</option>
-            <option>住宿與節奏比低價重要</option>
-            <option>希望若青中國旅策協助判斷</option>
-          </select>
-          <textarea name="message" placeholder="可補充：是否來過中國、想看的目的地、同行者狀態、正在看的旅行社行程、最擔心的問題"></textarea>
-          <button type="submit">送出，請若青做可行性判斷</button>
-          <p class="note">送出不會直接扣款。若青中國旅策會先用這些條件判斷是否值得進一步討論。實際落地接待由當地服務商提供。</p>
+          <textarea name="message" placeholder="What kind of China do you want to feel? You can mention places, travel style, concerns, hotel expectations or whether you have visited China before."></textarea>
+          <button type="submit">Request a calm first review</button>
+          <p class="note">Bluehour China Journeys provides destination advisory, route shaping and local-provider matching. Actual reception and travel services are handled by suitable local providers.</p>
         </form>
 
         <div class="links">
-          <a href="yunnan.html">看完整方案</a>
-          <a href="yunnan-itinerary-check.html">已有行程先檢查</a>
-          <a href="faq.html">常見問題</a>
+          <a href="/">Explore landscapes</a>
+          <a href="/stories.html">Read stories</a>
+          <a href="/faq.html">Questions</a>
         </div>
       </div>
     </section>
@@ -334,12 +333,18 @@
     const leadForm = document.querySelector(".lead-form");
     if (leadForm) {
       const params = new URLSearchParams(window.location.search);
+      const destination = params.get("destination");
+      const select = leadForm.querySelector('[name="destination"]');
+      if (select && destination) {
+        const option = Array.from(select.options).find((item) => item.value === destination);
+        if (option) select.value = destination;
+      }
       const fields = {
         page_url: window.location.href,
         referrer: document.referrer || "",
-        utm_source: params.get("utm_source") || "interest",
-        utm_medium: params.get("utm_medium") || "campaign",
-        utm_campaign: params.get("utm_campaign") || "yunnan_interest"
+        utm_source: params.get("utm_source") || "site",
+        utm_medium: params.get("utm_medium") || "destination",
+        utm_campaign: params.get("utm_campaign") || "bluehour_china_review"
       };
       Object.entries(fields).forEach(([name, value]) => {
         const input = leadForm.querySelector(`[name="${name}"]`);

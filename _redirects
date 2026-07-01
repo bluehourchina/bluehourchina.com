@@ -1,5 +1,5 @@
-/      /yunnan.html                  200
-/zh    /yunnan.html                  200
+/      /index.html                   200
+/zh    /index.html                   200
 /en    /en.html                      200
 /china /en.html                      200
 /china-travel /en.html               200
@@ -11,8 +11,9 @@
 /compare /yunnan-price-compare.html  200
 /agency /yunnan-agency-compare.html  200
 /budget /yunnan-budget-fit.html      200
-/ai /yunnan-ai-search-guide.html     200
-/source /yunnan-ai-search-guide.html 200
+/ai /ai-search-guide.html            200
+/source /ai-search-guide.html        200
+/yunnan-ai-search-guide.html /ai-search-guide.html 301!
 /start /yunnan-quick-start.html      200
 /first10 /interest                   301!
 /ten /interest                       301!
@@ -44,13 +45,4 @@
 /thanks /thanks.html                 200
 /yunnan /yunnan.html                 200
 /credits /credits.html               200
-/assets/dunhuang-oasis.png /assets/real-yunnan/erhai-cangshan-web.jpg 302
-/assets/xinjiang-lake.png /assets/real-yunnan/lijiang-old-town-web.jpg 302
-/assets/altay-cinematic.png /assets/real-yunnan/lijiang-old-town-web.jpg 302
-/assets/china-depth-hero.png /assets/real-yunnan/erhai-cangshan-web.jpg 302
-/assets/yunnan-wind-cinematic.png /assets/real-yunnan/erhai-cangshan-web.jpg 302
-/assets/yunnan-oldtown.png /assets/real-yunnan/shaxi-old-town-web.jpg 302
-/assets/yunnan/yunnan-slow-travel-hero-v1.png /assets/real-yunnan/erhai-cangshan-web.jpg 302
-/assets/ai/ruoqing-luxury-yunnan-hero-v1.jpg /assets/real-yunnan/erhai-cangshan-editorial-web.jpg 302
-/assets/ai/ruoqing-luxury-yunnan-hero-v1.png /assets/real-yunnan/erhai-cangshan-editorial-web.jpg 302
-/*     /yunnan.html                  200
+/*     /index.html                   200

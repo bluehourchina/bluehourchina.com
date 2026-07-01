@@ -1,396 +1,139 @@
 <!doctype html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>已收到雲南私旅可行性判斷申請｜若青中國旅策</title>
+  <title>We Received Your Journey Review｜Bluehour China Journeys</title>
   <meta name="robots" content="noindex, follow">
-  <meta name="description" content="若青中國旅策已收到你的雲南私旅可行性判斷申請。你可以先補充是否來過中國、目的地、月份、人數、天數、預算與付訂意願，讓若青更快判斷是否適合推進。">
+  <meta name="description" content="Bluehour China Journeys has received your private China journey review request.">
+  <link rel="icon" type="image/svg+xml" href="/assets/ruoqing-avatar.svg">
   <style>
     :root {
-      --forest: #102d26;
-      --forest-2: #173c33;
-      --paper: #f6efe3;
-      --white: #fffaf0;
-      --ink: #1f2924;
-      --muted: #667069;
+      --deep: #07110f;
+      --forest: #18362d;
+      --paper: #f5efe4;
+      --ivory: #fffaf1;
+      --ink: #17201c;
+      --muted: #657069;
       --gold: #c99a52;
-      --line: rgba(31,41,36,.16);
+      --line: rgba(255, 250, 241, .2);
     }
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
-      overflow-x: hidden;
+      color: var(--ivory);
+      background:
+        linear-gradient(90deg, rgba(7,17,15,.9), rgba(7,17,15,.46)),
+        url("/assets/ai/bluehour-yunnan-luxury-shaxi-courtyard.jpg") center / cover no-repeat;
+      font-family: "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
     }
     a { color: inherit; text-decoration: none; }
     .hero {
       min-height: 100svh;
-      display: grid;
-      align-items: end;
-      color: var(--white);
-      background:
-        linear-gradient(90deg, rgba(8,18,15,.96), rgba(8,18,15,.6), rgba(8,18,15,.12)),
-        linear-gradient(180deg, rgba(8,18,15,.08), rgba(8,18,15,.88)),
-        url("/assets/ai/bluehour-yunnan-luxury-dali-terrace.jpg") center / cover no-repeat;
-      padding: 42px 0;
-    }
-    .wrap {
-      width: min(1120px, calc(100% - 48px));
-      margin: 0 auto;
+      display: flex;
+      align-items: flex-end;
+      padding: clamp(28px, 5vw, 72px);
     }
     .panel {
-      border: 1px solid rgba(255,250,240,.24);
-      background: rgba(16,45,38,.76);
-      backdrop-filter: blur(10px);
-      padding: clamp(34px, 6vw, 58px);
+      width: min(860px, 100%);
+      border: 1px solid var(--line);
+      background: rgba(7,17,15,.66);
+      backdrop-filter: blur(12px);
+      padding: clamp(34px, 6vw, 62px);
     }
     .eyebrow {
-      margin: 0 0 18px;
+      margin: 0 0 16px;
       color: var(--gold);
-      font-size: 14px;
+      font-size: 12px;
       letter-spacing: .18em;
       text-transform: uppercase;
-      font-weight: 900;
-    }
-    h1, h2, h3 {
-      font-family: "Noto Serif TC", "Songti TC", serif;
-      letter-spacing: 0;
-      overflow-wrap: anywhere;
+      font-weight: 850;
     }
     h1 {
-      max-width: 940px;
       margin: 0;
-      font-size: clamp(36px, 4.8vw, 64px);
-      line-height: 1.08;
+      font-family: Georgia, "Times New Roman", "Noto Serif TC", serif;
+      font-weight: 500;
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 1.02;
+      letter-spacing: 0;
     }
-    .lead {
-      max-width: 860px;
-      margin: 26px 0 0;
-      color: rgba(255,250,240,.82);
-      font-size: clamp(20px, 2.2vw, 28px);
-      line-height: 1.66;
-      font-weight: 680;
-      overflow-wrap: anywhere;
-      word-break: break-all;
+    p {
+      max-width: 620px;
+      margin: 22px 0 0;
+      color: rgba(255,250,241,.8);
+      font-size: 18px;
+      line-height: 1.7;
     }
-    .next-grid {
+    .grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1px;
       margin-top: 34px;
-      background: rgba(255,250,240,.18);
-      border: 1px solid rgba(255,250,240,.18);
+      border: 1px solid var(--line);
+      background: var(--line);
     }
-    .next-grid div {
-      background: rgba(10,28,23,.74);
-      padding: 22px;
+    .grid div {
+      min-height: 120px;
+      padding: 18px;
+      background: rgba(7,17,15,.52);
     }
-    .next-grid b {
+    .grid b {
       display: block;
-      color: var(--white);
-      margin-bottom: 8px;
-      font-size: 19px;
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
     }
-    .next-grid span {
+    .grid span {
       display: block;
-      color: rgba(255,250,240,.72);
-      line-height: 1.55;
-      font-weight: 650;
-      overflow-wrap: anywhere;
-      word-break: break-all;
+      margin-top: 12px;
+      color: rgba(255,250,241,.88);
+      font-size: 18px;
+      line-height: 1.35;
     }
     .actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 34px;
+      gap: 12px;
+      margin-top: 32px;
     }
     .btn {
+      min-height: 50px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 54px;
-      padding: 14px 22px;
-      border: 1px solid rgba(255,250,240,.38);
-      color: var(--white);
-      font-weight: 900;
+      padding: 0 21px;
+      border: 1px solid rgba(255,250,241,.36);
+      color: var(--ivory);
+      font-weight: 800;
     }
     .btn.primary {
-      background: var(--gold);
       border-color: var(--gold);
-      color: #14251f;
+      background: var(--gold);
+      color: #14221d;
     }
-    .section {
-      padding: 84px 0;
-    }
-    .section-head {
-      display: grid;
-      grid-template-columns: .85fr 1.15fr;
-      gap: 48px;
-      align-items: end;
-      margin-bottom: 34px;
-    }
-    .section-head h2 {
-      margin: 0;
-      color: var(--forest);
-      font-size: clamp(36px, 5vw, 62px);
-      line-height: 1.1;
-    }
-    .section-head p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 21px;
-      line-height: 1.72;
-      font-weight: 650;
-    }
-    .copy-card {
-      display: grid;
-      grid-template-columns: 1fr 260px;
-      gap: 18px;
-      background: var(--white);
-      border: 1px solid var(--line);
-      padding: 28px;
-    }
-    textarea {
-      width: 100%;
-      min-height: 220px;
-      border: 1px solid var(--line);
-      background: #fffdf7;
-      color: var(--ink);
-      padding: 18px;
-      font: inherit;
-      line-height: 1.7;
-      font-weight: 650;
-      resize: vertical;
-    }
-    .copy-side {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      justify-content: space-between;
-    }
-    .copy-side p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.7;
-      font-weight: 650;
-    }
-    button {
-      border: 0;
-      background: var(--forest);
-      color: var(--white);
-      min-height: 54px;
-      padding: 14px 18px;
-      font: inherit;
-      font-weight: 950;
-      cursor: pointer;
-    }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-    }
-    .card {
-      min-height: 250px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      background: var(--white);
-      border: 1px solid var(--line);
-      padding: 24px;
-    }
-    .card b {
-      color: var(--gold);
-      font-size: 13px;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-    }
-    .card h3 {
-      margin: 30px 0 12px;
-      color: var(--forest);
-      font-size: 27px;
-      line-height: 1.2;
-    }
-    .card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.6;
-      font-weight: 650;
-    }
-    .card a {
-      margin-top: 22px;
-      color: var(--forest);
-      font-weight: 950;
-    }
-    .footer {
-      background: #0b1714;
-      color: rgba(255,250,240,.7);
-      padding: 34px 0;
-    }
-    .footer .wrap {
-      display: flex;
-      justify-content: space-between;
-      gap: 24px;
-      align-items: center;
-    }
-    .brand {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      font-family: "Noto Serif TC", "Songti TC", serif;
-      letter-spacing: .08em;
-      color: var(--white);
-    }
-    .brand strong { font-size: 23px; }
-    .brand span { color: rgba(255,250,240,.62); font-size: 12px; }
-    .toast {
-      position: fixed;
-      right: 22px;
-      bottom: 22px;
-      z-index: 30;
-      padding: 12px 16px;
-      background: var(--forest);
-      color: var(--white);
-      opacity: 0;
-      transform: translateY(10px);
-      transition: .18s ease;
-      pointer-events: none;
-      font-weight: 900;
-    }
-    .toast.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    @media (max-width: 900px) {
-      .hero { align-items: start; padding-top: 22px; }
-      .next-grid, .section-head, .copy-card, .cards, .footer .wrap {
-        grid-template-columns: 1fr;
-      }
-      .section { padding: 68px 0; }
-      .card { min-height: auto; }
+    @media (max-width: 760px) {
+      .grid { grid-template-columns: 1fr; }
+      .btn { width: 100%; }
     }
   </style>
 </head>
 <body>
-  <main>
-    <section class="hero">
-      <div class="wrap">
-        <div class="panel">
-          <p class="eyebrow">BLUEHOUR CHINA JOURNEYS｜RECEIVED</p>
-          <h1>已收到你的<br>雲南私旅<br>可行性判斷</h1>
-          <p class="lead">接下來不是立刻收款。<br>若青會先看你是否來過中國、想去的目的地、月份、人數與預算。<br>24 小時內先判斷是否值得推進。</p>
-          <div class="next-grid">
-            <div><b>1. 需求進入追蹤</b><span>若青會先看目的地、月份、人數與預算。</span></div>
-            <div><b>2. 24 小時內判斷</b><span>回覆你適合私旅、大團、自由行，或暫時不適合推進。</span></div>
-            <div><b>3. 適合才報價付訂</b><span>條件合適者，再整理報價、服務商媒合與付訂方式。</span></div>
-          </div>
-          <div class="actions">
-            <a class="btn primary" href="#copy">先補五個資訊</a>
-            <a class="btn" href="faq.html">看常見問題</a>
-            <a class="btn" href="yunnan-trust-video.html">看 15 秒短影音</a>
-          </div>
-        </div>
+  <main class="hero">
+    <section class="panel">
+      <p class="eyebrow">Received</p>
+      <h1>Your journey review has arrived.</h1>
+      <p>We will read your destination, season, travellers, language needs and comfort expectations, then return a calm first direction.</p>
+      <div class="grid" aria-label="What happens next">
+        <div><b>First</b><span>We understand the feeling you want.</span></div>
+        <div><b>Then</b><span>We check pace, season and comfort.</span></div>
+        <div><b>Next</b><span>We reply with a clear direction.</span></div>
       </div>
-    </section>
-
-    <section class="section" id="copy">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">NEXT STEP</p>
-            <h2>如果你想讓回覆更快，先補這五個資訊</h2>
-          </div>
-          <p>很多需求卡住不是因為不適合，而是資訊不完整。你可以把下方文字複製後，用你剛剛留下的 LINE、微信或手機訊息補給若青中國旅策。</p>
-        </div>
-        <div class="copy-card">
-          <textarea id="followupText">我剛剛送出了雲南私旅可行性判斷申請，補充五個資訊：
-
-1. 是否來過中國、去過哪些城市：
-2. 這次想看的目的地或風景：
-3. 預計出發月份、同行人數：
-4. 可接受天數與預算感：
-5. 決策狀態：方案合適 7 天內可付訂 / 1 個月內可付訂 / 還在比較
-
-我最在意的是：
-我正在比較的旅行社或行程是：</textarea>
-          <div class="copy-side">
-            <p>補完這五個資訊後，若青中國旅策會更容易判斷你是適合有風雲南私旅、制式團、自由行，還是暫時不適合推進。</p>
-            <button id="copyButton">複製補充訊息</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">KEEP READING</p>
-            <h2>等待回覆前，可以先看這幾頁</h2>
-          </div>
-          <p>如果你正在比較旅行社、自由行或私密慢旅，這幾頁能先幫你把價格、天數與服務邊界想清楚。</p>
-        </div>
-        <div class="cards">
-          <article class="card">
-            <b>FAQ</b>
-            <div>
-              <h3>常見問題</h3>
-              <p>價格、機票、人數、若青中國旅策角色與送出表單後流程。</p>
-            </div>
-            <a href="faq.html">看 FAQ</a>
-          </article>
-          <article class="card">
-            <b>PRICE</b>
-            <div>
-              <h3>價格怎麼比</h3>
-              <p>不是只比最低價，而是看住宿、車程、私旅與需求整理。</p>
-            </div>
-            <a href="yunnan-price-compare.html">看價格比較</a>
-          </article>
-          <article class="card">
-            <b>ROUTE</b>
-            <div>
-              <h3>天數怎麼選</h3>
-              <p>第一次雲南先判斷天數，不急著把每個地名塞進去。</p>
-            </div>
-            <a href="yunnan-route-compare.html">看路線差異</a>
-          </article>
-          <article class="card">
-            <b>VIDEO</b>
-            <div>
-              <h3>15 秒有風雲南</h3>
-              <p>先看若青中國旅策的第一條 Deep China 旗艦慢線。</p>
-            </div>
-            <a href="yunnan-trust-video.html">看短影音</a>
-          </article>
-        </div>
+      <div class="actions">
+        <a class="btn primary" href="/">Return to Bluehour China</a>
+        <a class="btn" href="/stories.html">Read the stories</a>
       </div>
     </section>
   </main>
-
-  <footer class="footer">
-    <div class="wrap">
-      <a class="brand" href="yunnan.html">
-        <strong>若青中國旅策</strong>
-        <span>24 小時可行性判斷</span>
-      </a>
-      <span>先判斷是否適合，再整理報價與付訂下一步。</span>
-    </div>
-  </footer>
-  <div class="toast" id="toast">已複製</div>
-  <script>
-    const copyButton = document.querySelector("#copyButton");
-    const followupText = document.querySelector("#followupText");
-    const toast = document.querySelector("#toast");
-    copyButton.addEventListener("click", async () => {
-      await navigator.clipboard.writeText(followupText.value);
-      toast.classList.add("show");
-      setTimeout(() => toast.classList.remove("show"), 1100);
-    });
-  </script>
 </body>
 </html>
