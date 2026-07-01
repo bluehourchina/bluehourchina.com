@@ -797,7 +797,7 @@
         <a href="#routes">Journeys</a>
         <a href="#service">Service</a>
         <a class="language-link" href="index.html">繁中</a>
-        <a class="nav-cta" href="#consult">Enquire</a>
+        <a class="nav-cta" href="#consult">Request Slot</a>
       </div>
     </nav>
 
@@ -815,7 +815,7 @@
             For international travellers drawn to Yunnan in China: Dali, Shaxi and Lijiang. Bluehour China Journeys clarifies the route, pace, lodging logic and local provider match before China becomes a checklist.
           </p>
           <div class="hero-actions">
-            <a class="primary" href="#consult">Begin an Enquiry</a>
+            <a class="primary" href="#consult">Request a Planning Slot</a>
             <a class="secondary" href="#routes">Explore Routes</a>
           </div>
           <div class="journey-finder" aria-label="Journey finder">
@@ -1005,26 +1005,35 @@
         <div class="wrap">
           <div class="section-head">
             <div>
-              <p class="kicker">China travel enquiry</p>
-              <h2>Begin with the outline of your China journey</h2>
+              <p class="kicker">China travel planning slot</p>
+              <h2>Request a planning slot for your China journey</h2>
             </div>
-            <p>Share the preferred month, number of days, travellers and the China places you are drawn to. We will help narrow the direction before introducing suitable local providers.</p>
+            <p>Share the preferred month, number of days, travellers and decision timing. We will first decide whether the brief is suitable, then move into pricing and local-provider matching.</p>
           </div>
           <div class="enquiry-panel">
             <div class="enquiry-note">
-              <h3>What helps us advise well</h3>
-              <p>A few details are enough to begin: where you are drawn, how much time you have, the pace you prefer and whether there are any comfort or mobility considerations.</p>
-              <p>We will not send a generic route first. The first response is meant to clarify the travel brief and identify what kind of local provider may be suitable.</p>
+              <h3>What helps us reply well</h3>
+              <p>A few details are enough to begin: where you are drawn, how much time you have, the pace you prefer and whether you are ready to move forward if the plan fits.</p>
+              <p>We will not send a generic route first. The first response clarifies the travel brief, then identifies whether pricing and a suitable local provider should be discussed.</p>
             </div>
             <form class="lead-form" name="consultation-en" method="POST" action="https://formsubmit.co/bluehourchina@gmail.com">
           <input type="hidden" name="_next" value="https://bluehourchina.com/thanks.html">
-          <input type="hidden" name="_subject" value="Bluehour China Journeys website inquiry">
+          <input type="hidden" name="_subject" value="Bluehour China Journeys planning slot request">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="false">
               <input type="hidden" name="form-name" value="consultation-en" />
+              <input type="hidden" name="funnel_stage" value="booking-intent" />
+              <input type="hidden" name="product" value="China private travel planning" />
               <input type="text" name="name" placeholder="Name" aria-label="Name" />
               <input type="email" name="email" placeholder="Email" aria-label="Email" />
               <input type="text" name="contact" placeholder="WhatsApp / WeChat / preferred contact" aria-label="Preferred contact" />
+              <select name="booking_intent" aria-label="Booking intent">
+                <option>What would you like to do?</option>
+                <option>Request a planning slot</option>
+                <option>Ask for an initial price range</option>
+                <option>Compare this with a group tour</option>
+                <option>Ask a question first</option>
+              </select>
               <select name="destination" aria-label="Destination">
                 <option>Destination of interest</option>
                 <option>Yunnan China / Dali / Shaxi / Lijiang</option>
@@ -1043,10 +1052,17 @@
               </select>
               <select name="duration" aria-label="Duration">
                 <option>Approximate duration</option>
-                <option>7-8 days</option>
+                <option>Around one week</option>
                 <option>9-12 days</option>
                 <option>13+ days</option>
                 <option>Not sure yet</option>
+              </select>
+              <select name="decision_timing" aria-label="Decision timing">
+                <option>Decision timing</option>
+                <option>If the plan fits, we can place a deposit within 7 days</option>
+                <option>If the plan fits, we can place a deposit within 1 month</option>
+                <option>Still comparing providers</option>
+                <option>Early research only</option>
               </select>
               <input type="hidden" name="source_content" value="english-china-scenery" />
               <input type="hidden" name="page_url" value="" />
@@ -1055,8 +1071,8 @@
               <input type="hidden" name="utm_medium" value="" />
               <input type="hidden" name="utm_campaign" value="" />
               <textarea name="message" placeholder="Tell us which China scenery or route you are drawn to"></textarea>
-              <p class="lead-note">This form is an advisory enquiry only. No payment is taken on this page. On-ground travel, transport, lodging and guiding services are provided by local service providers.</p>
-              <button type="submit">Send Enquiry</button>
+              <p class="lead-note">No payment is taken on this page. We first review whether the brief is suitable, then discuss pricing, deposit steps and suitable local service providers. On-ground travel, transport, lodging and guiding services are provided by local service providers.</p>
+              <button type="submit">Request Planning Slot</button>
             </form>
           </div>
         </div>

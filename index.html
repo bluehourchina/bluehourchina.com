@@ -631,6 +631,31 @@
       border-bottom: 1px solid rgba(16,40,33,.3);
       font-weight: 900;
     }
+    .order-steps {
+      display: grid;
+      gap: 1px;
+      margin: 24px 0;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .order-step {
+      padding: 18px;
+      background: rgba(255,250,240,.62);
+    }
+    .order-step b {
+      display: block;
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .order-step span {
+      display: block;
+      margin-top: 8px;
+      color: var(--pine);
+      line-height: 1.55;
+      font-weight: 850;
+    }
     .lead-form {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -740,7 +765,7 @@
       <a href="#route">路線</a>
       <a href="#video">影片</a>
       <a href="about.html">關於</a>
-      <a class="nav-cta" href="#consult">詢問方案</a>
+      <a class="nav-cta" href="#consult">保留名額</a>
     </div>
   </nav>
 
@@ -755,7 +780,7 @@
           <h1>風起大理<br>路慢下來</h1>
           <p class="hero-lead">洱海帆船、沙溪夜宿、白沙雪山。一週慢走。</p>
           <div class="hero-actions">
-            <a class="btn primary" href="#consult">留下出發條件</a>
+            <a class="btn primary" href="#consult">先保留規劃名額</a>
             <a class="btn" href="#video">看 15 秒風景短片</a>
           </div>
         </div>
@@ -910,26 +935,40 @@
     <section class="section" id="consult">
       <div class="wrap form-wrap">
         <div class="form-intro">
-          <p class="eyebrow">Inquiry</p>
-          <h2>留下條件<br>若青判斷</h2>
-          <p>這不是直接報名。先留下月份、人數、天數與預算，我們會判斷是否適合走「有風雲南」。</p>
+          <p class="eyebrow">Reserve</p>
+          <h2>保留規劃名額<br>若青判斷可否成行</h2>
+          <p>這不是立刻付款，也不是制式團報名。先留下月份、人數、預算與決策狀態；條件合適者，若青中國旅策會進一步整理報價與付訂方式。</p>
+          <div class="order-steps" aria-label="有風雲南下訂流程">
+            <div class="order-step"><b>Step 1</b><span>留下月份、人數與聯絡方式</span></div>
+            <div class="order-step"><b>Step 2</b><span>若青 24 小時內判斷是否適合推進</span></div>
+            <div class="order-step"><b>Step 3</b><span>適合才進入正式報價與付訂</span></div>
+          </div>
           <p><a href="faq.html">先看常見問題</a> · <a href="yunnan-price-compare.html">看價格比較</a></p>
         </div>
         <form class="lead-form" name="yunnan-private-tour-zh" method="POST" action="https://formsubmit.co/bluehourchina@gmail.com">
           <input type="hidden" name="_next" value="https://bluehourchina.com/thanks.html">
-          <input type="hidden" name="_subject" value="Bluehour China Journeys website inquiry">
+          <input type="hidden" name="_subject" value="Bluehour China Journeys booking intent">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="false">
           <input type="hidden" name="form-name" value="yunnan-private-tour-zh">
           <input type="hidden" name="bot-field">
+          <input type="hidden" name="funnel_stage" value="booking-intent">
+          <input type="hidden" name="product" value="有風雲南">
           <input type="hidden" name="page_url" value="">
           <input type="hidden" name="referrer" value="">
-          <input type="hidden" name="source_content" value="yunnan-main-cinematic">
+          <input type="hidden" name="source_content" value="yunnan-order-intent">
           <input type="hidden" name="utm_source" value="">
           <input type="hidden" name="utm_medium" value="">
           <input type="hidden" name="utm_campaign" value="">
           <input type="text" name="name" placeholder="姓名" aria-label="姓名" required>
           <input type="tel" name="contact" placeholder="手機 / LINE / 微信" aria-label="聯絡方式" required>
+          <select name="order_intent" aria-label="這次想做什麼" required>
+            <option value="" disabled selected>這次想做什麼</option>
+            <option>我想先保留規劃名額</option>
+            <option>我想拿初步報價</option>
+            <option>我正在比較，想請若青判斷</option>
+            <option>先問問題，還不急</option>
+          </select>
           <select name="group_size" aria-label="同行人數" required>
             <option value="" disabled selected>同行人數</option>
             <option>2 人</option>
@@ -946,10 +985,10 @@
           </select>
           <select name="route_days" aria-label="偏好天數" required>
             <option value="" disabled selected>偏好天數</option>
-            <option>6 日</option>
-            <option>7 日</option>
-            <option>9 日</option>
-            <option>想先判斷</option>
+            <option>一週</option>
+            <option>一週多一點</option>
+            <option>9 日慢走</option>
+            <option>還不確定，想先判斷</option>
           </select>
           <select name="budget" aria-label="預算感" required>
             <option value="" disabled selected>預算感</option>
@@ -960,6 +999,7 @@
           </select>
           <select name="readiness" aria-label="出發意願" required>
             <option value="" disabled selected>出發意願</option>
+            <option>方案合適，7 天內可付訂</option>
             <option>方案合適，1 個月內可付訂</option>
             <option>正在比較旅行社與私旅</option>
             <option>想先替同行者看方案</option>
@@ -973,8 +1013,8 @@
             <option>價格與品質平衡</option>
           </select>
           <textarea name="message" placeholder="可以補充：你想看的雲南、同行者狀態、正在比較的行程、最擔心的問題"></textarea>
-          <p class="form-note">若青中國旅策協助整理需求、確認路線節奏與在地接待安排；實際旅遊接待、用車、住宿與導覽由當地服務商提供。</p>
-          <button type="submit">送出，讓若青中國旅策先判斷</button>
+          <p class="form-note">送出不會直接扣款。若青中國旅策會先判斷需求是否適合推進，再提供下一步報價與付訂方式；實際旅遊接待、用車、住宿與導覽由當地服務商提供。</p>
+          <button type="submit">保留規劃名額，請若青回覆</button>
         </form>
       </div>
     </section>
