@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>若青中國旅策｜有風雲南 15 秒短影音</title>
+  <style>
+    :root {
+      --deep: #081511;
+      --forest: #102d26;
+      --gold: #c99a52;
+      --paper: #fffaf0;
+      --muted: rgba(255,250,240,.76);
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      background: #081511;
+    }
+    [data-composition-id="yunnan-promo"] {
+      position: relative;
+      width: 1080px;
+      height: 1920px;
+      overflow: hidden;
+      background: #081511;
+      color: #fffaf0;
+      font-family: "PingFang TC", "Microsoft JhengHei", sans-serif;
+    }
+    .scene {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      opacity: 0;
+      background: #081511;
+      will-change: opacity, filter;
+    }
+    .s1 { opacity: 1; }
+    .bg {
+      position: absolute;
+      inset: -52px;
+      background-position: center;
+      background-size: cover;
+      transform: scale(1.06);
+      will-change: transform;
+    }
+    .s1 .bg { background-image: url("../assets/real-yunnan/erhai-cangshan-web.jpg"); }
+    .s2 .bg { background-image: url("../assets/real-yunnan/shaxi-old-town-web.jpg"); }
+    .s3 .bg { background-image: url("../assets/real-yunnan/lijiang-old-town-web.jpg"); }
+    .s4 .bg { background-image: url("../assets/real-yunnan/erhai-cangshan-web.jpg"); }
+    .s5 .bg { background-image: url("../assets/real-yunnan/shaxi-old-town-web.jpg"); }
+    .scene::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        radial-gradient(circle at 68% 16%, rgba(201,154,82,.24), rgba(201,154,82,0) 30%),
+        linear-gradient(180deg, rgba(8,21,17,.08), rgba(8,21,17,.9)),
+        linear-gradient(90deg, rgba(8,21,17,.88), rgba(8,21,17,.2));
+    }
+    .scene::after {
+      content: "";
+      position: absolute;
+      inset: 44px;
+      z-index: 4;
+      border: 1px solid rgba(255,250,240,.22);
+      pointer-events: none;
+    }
+    .content {
+      position: relative;
+      z-index: 3;
+      width: 100%;
+      height: 100%;
+      padding: 110px 84px 96px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 52px;
+    }
+    .kicker,
+    .brandline,
+    .route {
+      color: #c99a52;
+      font-size: 25px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+    .brandline {
+      color: rgba(255,250,240,.74);
+      font-size: 24px;
+    }
+    .center {
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+      max-width: 900px;
+    }
+    h1 {
+      margin: 0;
+      font-family: "Songti TC", "Noto Serif TC", serif;
+      font-size: 90px;
+      line-height: 1.08;
+      letter-spacing: 0;
+      font-weight: 800;
+    }
+    p {
+      margin: 0;
+      max-width: 790px;
+      color: rgba(255,250,240,.8);
+      font-size: 34px;
+      line-height: 1.5;
+      font-weight: 650;
+    }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .chip {
+      padding: 14px 18px;
+      border: 1px solid rgba(255,250,240,.3);
+      background: rgba(8,21,17,.42);
+      color: #fffaf0;
+      font-size: 28px;
+      line-height: 1.2;
+      font-weight: 850;
+    }
+    .footer {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 32px;
+      border-top: 1px solid rgba(255,250,240,.22);
+      padding-top: 30px;
+    }
+    .footer strong {
+      display: block;
+      font-family: "Songti TC", "Noto Serif TC", serif;
+      font-size: 42px;
+      line-height: 1.15;
+      letter-spacing: .08em;
+      font-weight: 800;
+    }
+    .footer span {
+      display: block;
+      margin-top: 8px;
+      color: rgba(255,250,240,.68);
+      font-size: 24px;
+      line-height: 1.35;
+      font-weight: 650;
+    }
+    .price {
+      flex: 0 0 auto;
+      padding: 16px 20px;
+      background: #c99a52;
+      color: #14251f;
+      font-size: 28px;
+      line-height: 1.15;
+      font-weight: 950;
+    }
+    .veil {
+      position: absolute;
+      inset: 0;
+      z-index: 8;
+      pointer-events: none;
+      background: rgba(255,250,240,.88);
+      opacity: 0;
+      backdrop-filter: blur(14px);
+    }
+  </style>
+</head>
+<body>
+  <div data-composition-id="yunnan-promo" data-width="1080" data-height="1920" data-duration="15" data-start="0" data-track-index="0">
+    <section class="scene s1">
+      <div class="bg"></div>
+      <div class="content">
+        <div class="kicker">BLUEHOUR CHINA JOURNEYS</div>
+        <div class="center">
+          <h1>有風雲南</h1>
+          <p>大理・沙溪・麗江，一週慢走。</p>
+        </div>
+        <div class="footer">
+          <div><strong>若青中國旅策</strong><span>Bluehour China Journeys</span></div>
+          <div class="route">Dali / Shaxi / Lijiang</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene s2">
+      <div class="bg"></div>
+      <div class="content">
+        <div class="kicker">DALI</div>
+        <div class="center">
+          <h1>洱海帆船</h1>
+          <p>喜洲田野，雙廊午後，把風景留給時間。</p>
+        </div>
+        <div class="chips">
+          <span class="chip">洱海</span>
+          <span class="chip">喜洲</span>
+          <span class="chip">雙廊</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene s3">
+      <div class="bg"></div>
+      <div class="content">
+        <div class="kicker">SHAXI</div>
+        <div class="center">
+          <h1>沙溪夜宿</h1>
+          <p>等人潮退去，古鎮才真正安靜下來。</p>
+        </div>
+        <div class="chips">
+          <span class="chip">寺登街</span>
+          <span class="chip">玉津橋</span>
+          <span class="chip">古戲台</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene s4">
+      <div class="bg"></div>
+      <div class="content">
+        <div class="kicker">LIJIANG</div>
+        <div class="center">
+          <h1>白沙雪山</h1>
+          <p>玉湖村、自然光旅拍，遠遠看見雪線。</p>
+        </div>
+        <div class="chips">
+          <span class="chip">白沙</span>
+          <span class="chip">玉湖</span>
+          <span class="chip">雪山遠景</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene s5">
+      <div class="bg"></div>
+      <div class="content">
+        <div class="brandline">PRIVATE YUNNAN</div>
+        <div class="center">
+          <h1>親友私密同行</h1>
+          <p>留下月份、人數與預算，若青中國旅策先判斷路線。</p>
+        </div>
+        <div class="footer">
+          <div><strong>若青中國旅策</strong><span>有風雲南｜申請出發方案</span></div>
+          <div class="price">NT$39,800 起<br>機票另計</div>
+        </div>
+      </div>
+    </section>
+    <div class="veil" aria-hidden="true"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <script>
+    window.__timelines = window.__timelines || {};
+    const tl = gsap.timeline({ paused: true });
+    const scenes = [".s1", ".s2", ".s3", ".s4", ".s5"];
+    const sceneDuration = 3;
+
+    scenes.forEach((scene, index) => {
+      const start = index * sceneDuration;
+      tl.set(scene, { opacity: 1, zIndex: index + 1 }, start);
+      tl.from(`${scene} .bg`, { scale: 1.14, duration: sceneDuration, ease: "none" }, start);
+      tl.from(`${scene} .kicker, ${scene} .brandline`, { y: 34, opacity: 0, duration: 0.55, ease: "power3.out" }, start + 0.18);
+      tl.from(`${scene} h1`, { y: 62, opacity: 0, duration: 0.66, ease: "expo.out" }, start + 0.38);
+      tl.from(`${scene} p`, { y: 38, opacity: 0, duration: 0.58, ease: "sine.out" }, start + 0.68);
+      tl.from(`${scene} .chips .chip`, { y: 36, opacity: 0, scale: 0.96, duration: 0.46, stagger: 0.08, ease: "power2.out" }, start + 0.92);
+      tl.from(`${scene} .footer, ${scene} .route`, { y: 32, opacity: 0, duration: 0.52, ease: "back.out(1.35)" }, start + 1.08);
+      if (index < scenes.length - 1) {
+        tl.fromTo(".veil", { opacity: 0 }, { opacity: 1, duration: 0.36, ease: "sine.inOut" }, start + 2.42);
+        tl.set(scene, { opacity: 0 }, start + 2.74);
+        tl.to(".veil", { opacity: 0, duration: 0.32, ease: "sine.inOut" }, start + 2.74);
+      }
+    });
+
+    tl.to(".s5 .content", { opacity: 0, y: -24, duration: 0.55, ease: "power2.in" }, 14.35);
+    window.__timelines["yunnan-promo"] = tl;
+    if (new URLSearchParams(location.search).get("preview") === "1") {
+      tl.time(0.75);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>有風雲南條件快篩｜若青中國旅策</title>
+  <meta name="description" content="若青中國旅策有風雲南條件快篩：大理、沙溪、麗江一週慢走，親友私密同行。留下月份、人數、天數與預算，若青中國旅策先判斷是否適合。">
+  <meta property="og:title" content="有風雲南條件快篩｜若青中國旅策">
+  <meta property="og:description" content="留下出發條件，先判斷是否適合有風雲南。大理、沙溪、麗江一週慢走，適合才往下談。">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="若青中國旅策">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:url" content="/interest.html">
+  <meta property="og:image" content="/assets/og/yunnan-og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/assets/ruoqing-avatar.svg">
+  <style>
+    :root {
+      --deep: #081511;
+      --forest: #102d26;
+      --paper: #f6efe3;
+      --white: #fffaf0;
+      --ink: #1f2924;
+      --muted: #687069;
+      --gold: #c99a52;
+      --line: rgba(31,41,36,.15);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    .page {
+      min-height: 100svh;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(420px, 520px);
+      background:
+        linear-gradient(90deg, rgba(8,21,17,.96), rgba(8,21,17,.7), rgba(8,21,17,.2)),
+        linear-gradient(180deg, rgba(8,21,17,.08), rgba(8,21,17,.88)),
+        url("assets/real-yunnan/shaxi-old-town-web.jpg") center / cover no-repeat;
+      color: var(--white);
+    }
+    .story {
+      min-height: 100svh;
+      padding: clamp(28px, 5vw, 72px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-right: 1px solid rgba(255,250,240,.16);
+    }
+    .brand {
+      display: grid;
+      grid-template-columns: 50px auto;
+      gap: 13px;
+      align-items: center;
+    }
+    .brand img { width: 50px; height: 50px; display: block; }
+    .brand strong {
+      display: block;
+      font-family: "Noto Serif TC", "Songti TC", serif;
+      font-size: 27px;
+      letter-spacing: .08em;
+    }
+    .brand span {
+      display: block;
+      margin-top: 2px;
+      color: rgba(255,250,240,.68);
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .copy {
+      max-width: 760px;
+      padding: 11vh 0 6vh;
+    }
+    .eyebrow {
+      margin: 0 0 20px;
+      color: var(--gold);
+      font-size: 14px;
+      letter-spacing: .18em;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 {
+      font-family: "Noto Serif TC", "Songti TC", serif;
+      letter-spacing: 0;
+    }
+    h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(42px, 5vw, 72px);
+      line-height: 1.12;
+    }
+    .lead {
+      max-width: 690px;
+      margin: 26px 0 0;
+      color: rgba(255,250,240,.82);
+      font-size: clamp(17px, 1.45vw, 22px);
+      line-height: 1.74;
+      font-weight: 660;
+    }
+    .points {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      width: min(900px, 100%);
+      background: rgba(255,250,240,.18);
+      border: 1px solid rgba(255,250,240,.18);
+    }
+    .points div {
+      min-height: 96px;
+      padding: 18px;
+      background: rgba(8,21,17,.66);
+    }
+    .points span {
+      display: block;
+      margin-bottom: 8px;
+      color: rgba(255,250,240,.55);
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+    .points b {
+      display: block;
+      color: var(--white);
+      font-size: 19px;
+      line-height: 1.35;
+    }
+    .form-side {
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      padding: 34px;
+      background: rgba(8,21,17,.82);
+      backdrop-filter: blur(18px);
+    }
+    .form-card {
+      width: 100%;
+      padding: 30px;
+      border: 1px solid rgba(255,250,240,.18);
+      background: rgba(255,250,240,.08);
+    }
+    .form-card h2 {
+      margin: 0;
+      color: var(--white);
+      font-size: 32px;
+      line-height: 1.22;
+    }
+    .form-card p {
+      margin: 12px 0 22px;
+      color: rgba(255,250,240,.72);
+      line-height: 1.68;
+      font-weight: 650;
+    }
+    form {
+      display: grid;
+      gap: 12px;
+    }
+    input, select, textarea, button {
+      width: 100%;
+      border-radius: 0;
+      font: inherit;
+    }
+    input, select, textarea {
+      min-height: 48px;
+      border: 1px solid rgba(255,250,240,.18);
+      background: rgba(8,21,17,.58);
+      color: var(--white);
+      padding: 12px 14px;
+      outline: none;
+    }
+    textarea { min-height: 92px; resize: vertical; }
+    input::placeholder, textarea::placeholder { color: rgba(255,250,240,.46); }
+    select:invalid { color: rgba(255,250,240,.46); }
+    button {
+      min-height: 54px;
+      border: 0;
+      margin-top: 4px;
+      background: var(--gold);
+      color: #11251f;
+      font-weight: 950;
+      cursor: pointer;
+    }
+    .note {
+      margin: 6px 0 0;
+      color: rgba(255,250,240,.56);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+      color: rgba(255,250,240,.72);
+      font-size: 14px;
+      font-weight: 850;
+    }
+    .links a {
+      border-bottom: 1px solid rgba(255,250,240,.32);
+      padding-bottom: 3px;
+    }
+    @media (max-width: 920px) {
+      .page { grid-template-columns: 1fr; }
+      .story { min-height: auto; border-right: 0; }
+      .form-side { min-height: auto; padding: 0 22px 28px; }
+      .points { grid-template-columns: 1fr; }
+      h1 { font-size: clamp(38px, 11vw, 58px); }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="story">
+      <a class="brand" href="yunnan.html">
+        <img src="assets/ruoqing-avatar.svg" alt="" aria-hidden="true">
+        <span>
+          <strong>若青中國旅策</strong>
+          <span>Bluehour China Journeys</span>
+        </span>
+      </a>
+
+      <div class="copy">
+        <p class="eyebrow">YUNNAN FIT CHECK</p>
+        <h1>留下條件，先判斷是否適合有風雲南</h1>
+        <p class="lead">不是限時促銷，也不是先搶先贏。若青中國旅策會先確認月份、人數、天數、預算與旅行節奏，再判斷是否值得往下一步談。</p>
+      </div>
+
+      <div class="points" aria-label="雲南條件快篩重點">
+        <div><span>Route</span><b>大理・沙溪・麗江</b></div>
+        <div><span>Group</span><b>親友私密同行</b></div>
+        <div><span>Price Entry</span><b>NT$39,800 起</b></div>
+      </div>
+    </section>
+
+    <section class="form-side" id="apply">
+      <div class="form-card">
+        <p class="eyebrow">QUICK APPLY</p>
+        <h2>留下 4 個條件，若青中國旅策先判斷</h2>
+        <p>適合才往下談；不適合會直接說明方向。這份表單不是報名，也不是要求你立刻付訂。</p>
+
+        <form class="lead-form" name="yunnan-private-tour-zh" method="POST" action="https://formsubmit.co/bluehourchina@gmail.com">
+          <input type="hidden" name="_next" value="https://bluehourchina.com/thanks.html">
+          <input type="hidden" name="_subject" value="Bluehour China Journeys website inquiry">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="form-name" value="yunnan-private-tour-zh">
+          <input type="hidden" name="bot-field">
+          <input type="hidden" name="source_content" value="yunnan-interest">
+          <input type="hidden" name="page_url" value="">
+          <input type="hidden" name="referrer" value="">
+          <input type="hidden" name="utm_source" value="">
+          <input type="hidden" name="utm_medium" value="">
+          <input type="hidden" name="utm_campaign" value="">
+          <input type="text" name="name" placeholder="姓名" aria-label="姓名" required>
+          <input type="tel" name="contact" placeholder="手機 / LINE / 微信" aria-label="聯絡方式" required>
+          <select name="group_size" aria-label="同行人數" required>
+            <option value="" disabled selected>同行人數</option>
+            <option>2 人</option>
+            <option>3-4 人</option>
+            <option>5-6 人</option>
+            <option>還不確定</option>
+          </select>
+          <select name="month" aria-label="預計出發月份" required>
+            <option value="" disabled selected>預計出發月份</option>
+            <option>1-3 個月內</option>
+            <option>3-6 個月內</option>
+            <option>明年春夏</option>
+            <option>還在觀望</option>
+          </select>
+          <select name="route_days" aria-label="偏好天數" required>
+            <option value="" disabled selected>偏好天數</option>
+            <option>6 日</option>
+            <option>7 日</option>
+            <option>9 日</option>
+            <option>還不確定，想先判斷</option>
+          </select>
+          <select name="budget" aria-label="預算感" required>
+            <option value="" disabled selected>預算感</option>
+            <option>想找 NT$40,000-50,000 大團</option>
+            <option>接近 NT$39,800/人可以討論</option>
+            <option>可接受 NT$45,800-52,800/人</option>
+            <option>更重視住宿與舒適度</option>
+          </select>
+          <select name="readiness" aria-label="出發意願" required>
+            <option value="" disabled selected>出發意願</option>
+            <option>如果方案合適，1 個月內可付訂</option>
+            <option>正在比較旅行社與私旅</option>
+            <option>想先替同行者看方案</option>
+            <option>目前只是初步了解</option>
+          </select>
+          <select name="style" aria-label="偏好旅行方式" required>
+            <option value="" disabled selected>偏好旅行方式</option>
+            <option>價格優先，大團可接受</option>
+            <option>想要私旅，但不想太貴</option>
+            <option>住宿與節奏比低價重要</option>
+            <option>希望若青中國旅策協助判斷</option>
+          </select>
+          <textarea name="message" placeholder="可補充：同行者狀態、正在看的旅行社行程、最擔心的問題"></textarea>
+          <button type="submit">送出，讓若青中國旅策先判斷</button>
+          <p class="note">送出後，若青中國旅策會先用這些條件判斷是否值得進一步討論。實際落地接待由當地服務商提供。</p>
+        </form>
+
+        <div class="links">
+          <a href="yunnan.html">看完整方案</a>
+          <a href="yunnan-itinerary-check.html">已有行程先檢查</a>
+          <a href="faq.html">常見問題</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const leadForm = document.querySelector(".lead-form");
+    if (leadForm) {
+      const params = new URLSearchParams(window.location.search);
+      const fields = {
+        page_url: window.location.href,
+        referrer: document.referrer || "",
+        utm_source: params.get("utm_source") || "interest",
+        utm_medium: params.get("utm_medium") || "campaign",
+        utm_campaign: params.get("utm_campaign") || "yunnan_interest"
+      };
+      Object.entries(fields).forEach(([name, value]) => {
+        const input = leadForm.querySelector(`[name="${name}"]`);
+        if (input) input.value = value;
+      });
+    }
+  </script>
+</body>
+</html>

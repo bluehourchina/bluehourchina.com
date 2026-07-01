@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>有風雲南一頁式方案｜若青中國旅策</title>
+  <meta name="description" content="有風雲南一頁式方案：大理、沙溪、麗江一週慢走，親友私密同行，適合想要私旅節奏、住宿位置與溝通細節的人。">
+  <meta property="og:title" content="有風雲南一頁式方案｜若青中國旅策">
+  <meta property="og:description" content="用接近旅行社的價格，走出更像私人訂製的一趟雲南。">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="若青中國旅策">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:url" content="/yunnan-onepage.html">
+  <meta property="og:image" content="/assets/og/yunnan-og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="有風雲南一頁式方案｜若青中國旅策">
+  <meta name="twitter:description" content="大理、沙溪、麗江一週慢走，親友私密同行。">
+  <meta name="twitter:image" content="/assets/og/yunnan-og.png">
+  <style>
+    :root {
+      --forest: #102d26;
+      --paper: #f5eddf;
+      --cream: #fffaf0;
+      --gold: #c99a52;
+      --ink: #1f2924;
+      --muted: #6d7169;
+      --line: rgba(31, 41, 36, .16);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #d9d1c3;
+      color: var(--ink);
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+    }
+
+    .sheet {
+      width: min(1080px, 100%);
+      min-height: 1600px;
+      margin: 0 auto;
+      background: var(--paper);
+      overflow: hidden;
+    }
+
+    .hero {
+      min-height: 560px;
+      color: var(--cream);
+      padding: 54px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background:
+        linear-gradient(90deg, rgba(10,24,20,.92), rgba(10,24,20,.48), rgba(10,24,20,.08)),
+        linear-gradient(180deg, rgba(10,24,20,.1), rgba(10,24,20,.72)),
+        url("assets/real-yunnan/erhai-cangshan-web.jpg") center / cover no-repeat;
+    }
+
+    .brand {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: flex-start;
+      font-weight: 800;
+    }
+
+    .brand strong {
+      font-family: "Noto Serif TC", "Songti TC", serif;
+      font-size: 34px;
+      letter-spacing: .08em;
+    }
+
+    .brand span {
+      color: rgba(255,250,240,.72);
+      letter-spacing: .18em;
+      font-size: 15px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      max-width: 780px;
+      font-family: "Noto Serif TC", "Songti TC", serif;
+      font-size: 86px;
+      line-height: .98;
+      letter-spacing: 0;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 26px 0 0;
+      color: rgba(255,250,240,.84);
+      font-size: 28px;
+      line-height: 1.55;
+      font-weight: 700;
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid rgba(255,250,240,.28);
+      border-left: 1px solid rgba(255,250,240,.28);
+    }
+
+    .facts div {
+      padding: 20px 18px;
+      background: rgba(9, 25, 20, .62);
+      border-right: 1px solid rgba(255,250,240,.28);
+    }
+
+    .facts span {
+      display: block;
+      color: rgba(255,250,240,.58);
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .facts b {
+      font-size: 24px;
+      color: var(--cream);
+    }
+
+    .content {
+      padding: 48px 54px 58px;
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 34px;
+      align-items: stretch;
+      margin-bottom: 34px;
+    }
+
+    .panel {
+      background: var(--cream);
+      border: 1px solid var(--line);
+      padding: 32px;
+    }
+
+    .panel.dark {
+      background: var(--forest);
+      color: var(--cream);
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--gold);
+      letter-spacing: .18em;
+      font-weight: 900;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0 0 18px;
+      color: var(--forest);
+      font-family: "Noto Serif TC", "Songti TC", serif;
+      font-size: 44px;
+      line-height: 1.16;
+      letter-spacing: 0;
+    }
+
+    .dark h2 { color: var(--cream); }
+
+    p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 21px;
+      line-height: 1.75;
+      font-weight: 650;
+    }
+
+    .dark p { color: rgba(255,250,240,.78); }
+
+    .route {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 26px 0 34px;
+    }
+
+    .stop {
+      min-height: 176px;
+      padding: 22px;
+      background: var(--cream);
+      border: 1px solid var(--line);
+    }
+
+    .stop b {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--forest);
+      font-family: "Noto Serif TC", "Songti TC", serif;
+      font-size: 30px;
+    }
+
+    .stop span {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.6;
+      font-weight: 650;
+    }
+
+    .compare {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+
+    .compare article {
+      border: 1px solid var(--line);
+      padding: 24px;
+      background: var(--cream);
+    }
+
+    .compare h3 {
+      margin: 0 0 12px;
+      color: var(--forest);
+      font-size: 24px;
+    }
+
+    .compare p {
+      font-size: 17px;
+      line-height: 1.62;
+    }
+
+    .cta {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .price {
+      background: var(--forest);
+      color: var(--cream);
+      padding: 30px;
+    }
+
+    .price span {
+      color: var(--gold);
+      font-weight: 900;
+      letter-spacing: .1em;
+    }
+
+    .price strong {
+      display: block;
+      margin: 12px 0;
+      font-family: "Noto Serif TC", "Songti TC", serif;
+      font-size: 62px;
+      line-height: 1;
+    }
+
+    .price p {
+      color: rgba(255,250,240,.76);
+      font-size: 18px;
+      line-height: 1.62;
+    }
+
+    .next {
+      background: var(--cream);
+      border: 1px solid var(--line);
+      padding: 30px;
+    }
+
+    .next ol {
+      margin: 0;
+      padding-left: 24px;
+      color: var(--muted);
+      font-size: 20px;
+      line-height: 1.75;
+      font-weight: 700;
+    }
+
+    .download {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      margin-top: 22px;
+      padding: 12px 16px;
+      background: var(--forest);
+      color: var(--cream);
+      text-decoration: none;
+      font-weight: 900;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: center;
+      margin-top: 32px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .footer b {
+      color: var(--forest);
+      font-family: "Noto Serif TC", "Songti TC", serif;
+      font-size: 24px;
+      letter-spacing: .06em;
+    }
+
+    @media (max-width: 720px) {
+      .sheet { min-height: auto; }
+      .hero { padding: 34px 28px; min-height: 620px; }
+      .brand { flex-direction: column; }
+      .hero h1 { font-size: 56px; }
+      .hero p { font-size: 22px; }
+      .facts, .intro, .route, .compare, .cta { grid-template-columns: 1fr; }
+      .content { padding: 34px 28px 42px; }
+      h2 { font-size: 36px; }
+      .price strong { font-size: 48px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="sheet">
+    <section class="hero">
+      <div class="brand">
+        <strong>若青中國旅策</strong>
+        <span>BLUEHOUR CHINA JOURNEYS</span>
+      </div>
+      <div>
+        <h1>有風雲南<br>大理・沙溪・麗江</h1>
+        <p>用接近旅行社的價格，走出更像私人訂製的一趟雲南。適合想要私旅節奏、住宿位置與溝通細節的人。</p>
+      </div>
+      <div class="facts">
+        <div><span>天數</span><b>一週</b></div>
+        <div><span>人數</span><b>2-6 人</b></div>
+        <div><span>主力</span><b>4-6 人</b></div>
+        <div><span>價格</span><b>39,800 起</b></div>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="intro">
+        <article class="panel">
+          <p class="eyebrow">WHY THIS ROUTE</p>
+          <h2>不是把雲南排滿，而是把每天排得值得</h2>
+          <p>第一次去雲南，不一定要把版納、香格里拉、麗江、大理全部塞進同一趟。若青中國旅策先聚焦大理、沙溪、麗江，把車程、住宿、停留時間與接待細節排順。</p>
+        </article>
+        <article class="panel dark">
+          <p class="eyebrow">FOR WHOM</p>
+          <h2>適合不想大團趕點，也不想自由行失控的人</h2>
+          <p>你可以把它理解成：比制式團多一點彈性，比自由行少一點不確定。實際落地接待由當地服務商提供，若青中國旅策負責前期策劃、需求確認與品質把關。</p>
+        </article>
+      </div>
+
+      <div class="route">
+        <div class="stop"><b>大理</b><span>洱海、古城、喜洲與慢下來的生活感。重點不是路過，而是住對位置。</span></div>
+        <div class="stop"><b>沙溪</b><span>這條線的情緒核心。適合留一晚，看古鎮從白天走到傍晚。</span></div>
+        <div class="stop"><b>麗江</b><span>避開最擁擠的節奏，安排白沙、玉湖或雪山遠景，讓旅程收得漂亮。</span></div>
+      </div>
+
+      <div class="compare">
+        <article>
+          <h3>旅行社</h3>
+          <p>流程成熟、價格明確，但較難為一組人的住宿位置、車程與停留時間調整。</p>
+        </article>
+        <article>
+          <h3>自由行</h3>
+          <p>彈性高，但要自己判斷路線、住宿、交通、接待品質與臨場變動。</p>
+        </article>
+        <article>
+          <h3>若青中國旅策私旅</h3>
+          <p>先整理需求，再媒合當地服務商，讓私旅有更清楚的節奏與出發方案。</p>
+        </article>
+      </div>
+
+      <div class="cta">
+        <div class="price">
+          <span>FIRST DEPARTURES</span>
+          <strong>NT$39,800</strong>
+          <p>每人起，機票另計，可協助提供航班建議。前 3 組樣板客可依心得與照片授權討論早鳥方案。</p>
+        </div>
+        <div class="next">
+          <p class="eyebrow">NEXT STEP</p>
+          <h2>先回覆 4 個資訊</h2>
+          <ol>
+            <li>預計幾月出發</li>
+            <li>幾個人同行</li>
+            <li>想走 6、7 還是 9 天</li>
+            <li>預算是否接近 NT$39,800/人</li>
+          </ol>
+          <a class="download" href="downloads/yunnan-onepage-ruoqing.pdf">下載 PDF 版</a>
+        </div>
+      </div>
+
+      <div class="footer">
+        <b>若青中國旅策</b>
+        <span>有風雲南｜大理・沙溪・麗江一週慢走</span>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

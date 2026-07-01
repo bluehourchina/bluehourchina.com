@@ -1,0 +1,283 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/"
+  to = "/yunnan.html"
+  status = 200
+
+[[redirects]]
+  from = "/zh"
+  to = "/yunnan.html"
+  status = 200
+
+[[redirects]]
+  from = "/en"
+  to = "/en.html"
+  status = 200
+
+[[redirects]]
+  from = "/china"
+  to = "/en.html"
+  status = 200
+
+[[redirects]]
+  from = "/china-travel"
+  to = "/en.html"
+  status = 200
+
+[[redirects]]
+  from = "/best-scenery-in-china"
+  to = "/en.html"
+  status = 200
+
+[[redirects]]
+  from = "/route"
+  to = "/yunnan-route-compare.html"
+  status = 200
+
+[[redirects]]
+  from = "/quiz"
+  to = "/yunnan-route-diagnosis.html"
+  status = 200
+
+[[redirects]]
+  from = "/guide"
+  to = "/yunnan-first-trip-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/pilot"
+  to = "/yunnan-pilot.html"
+  status = 200
+
+[[redirects]]
+  from = "/compare"
+  to = "/yunnan-price-compare.html"
+  status = 200
+
+[[redirects]]
+  from = "/agency"
+  to = "/yunnan-agency-compare.html"
+  status = 200
+
+[[redirects]]
+  from = "/budget"
+  to = "/yunnan-budget-fit.html"
+  status = 200
+
+[[redirects]]
+  from = "/ai"
+  to = "/yunnan-ai-search-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/source"
+  to = "/yunnan-ai-search-guide.html"
+  status = 200
+
+[[redirects]]
+  from = "/start"
+  to = "/yunnan-quick-start.html"
+  status = 200
+
+[[redirects]]
+  from = "/first10"
+  to = "/interest"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ten"
+  to = "/interest"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/interest"
+  to = "/interest.html"
+  status = 200
+
+[[redirects]]
+  from = "/fb"
+  to = "/social.html"
+  status = 200
+
+[[redirects]]
+  from = "/ig"
+  to = "/social.html"
+  status = 200
+
+[[redirects]]
+  from = "/youtube"
+  to = "/social.html"
+  status = 200
+
+[[redirects]]
+  from = "/line"
+  to = "/social.html"
+  status = 200
+
+[[redirects]]
+  from = "/social-kit"
+  to = "/social-kit.html"
+  status = 200
+
+[[redirects]]
+  from = "/quick"
+  to = "/yunnan-quick-start.html"
+  status = 200
+
+[[redirects]]
+  from = "/invite"
+  to = "/yunnan-referral-invite.html"
+  status = 200
+
+[[redirects]]
+  from = "/friend"
+  to = "/yunnan-referral-invite.html"
+  status = 200
+
+[[redirects]]
+  from = "/check"
+  to = "/yunnan-itinerary-check.html"
+  status = 200
+
+[[redirects]]
+  from = "/itinerary"
+  to = "/yunnan-itinerary-check.html"
+  status = 200
+
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 200
+
+[[redirects]]
+  from = "/faq"
+  to = "/faq.html"
+  status = 200
+
+[[redirects]]
+  from = "/video"
+  to = "/yunnan-trust-video.html"
+  status = 200
+
+[[redirects]]
+  from = "/market"
+  to = "/yunnan.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/yunnan-market-brief.html"
+  to = "/yunnan.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/onepage"
+  to = "/yunnan-onepage.html"
+  status = 200
+
+[[redirects]]
+  from = "/notes"
+  to = "/stories.html"
+  status = 200
+
+[[redirects]]
+  from = "/journal"
+  to = "/journal-yunnan.html"
+  status = 200
+
+[[redirects]]
+  from = "/wind-place"
+  to = "/yunnan-wind-place.html"
+  status = 200
+
+[[redirects]]
+  from = "/meet-yourself"
+  to = "/yunnan-wind-place.html"
+  status = 200
+
+[[redirects]]
+  from = "/thanks"
+  to = "/thanks.html"
+  status = 200
+
+[[redirects]]
+  from = "/yunnan"
+  to = "/yunnan.html"
+  status = 200
+
+[[redirects]]
+  from = "/credits"
+  to = "/credits.html"
+  status = 200
+
+[[redirects]]
+  from = "/assets/dunhuang-oasis.png"
+  to = "/assets/real-yunnan/erhai-cangshan-web.jpg"
+  status = 302
+
+[[redirects]]
+  from = "/assets/xinjiang-lake.png"
+  to = "/assets/real-yunnan/lijiang-old-town-web.jpg"
+  status = 302
+
+[[redirects]]
+  from = "/assets/altay-cinematic.png"
+  to = "/assets/real-yunnan/lijiang-old-town-web.jpg"
+  status = 302
+
+[[redirects]]
+  from = "/assets/china-depth-hero.png"
+  to = "/assets/real-yunnan/erhai-cangshan-web.jpg"
+  status = 302
+
+[[redirects]]
+  from = "/assets/yunnan-wind-cinematic.png"
+  to = "/assets/real-yunnan/erhai-cangshan-web.jpg"
+  status = 302
+
+[[redirects]]
+  from = "/assets/yunnan-oldtown.png"
+  to = "/assets/real-yunnan/shaxi-old-town-web.jpg"
+  status = 302
+
+[[redirects]]
+  from = "/assets/yunnan/yunnan-slow-travel-hero-v1.png"
+  to = "/assets/real-yunnan/erhai-cangshan-web.jpg"
+  status = 302
+
+[[redirects]]
+  from = "/assets/ai/ruoqing-luxury-yunnan-hero-v1.jpg"
+  to = "/assets/real-yunnan/erhai-cangshan-editorial-web.jpg"
+  status = 302
+
+[[redirects]]
+  from = "/assets/ai/ruoqing-luxury-yunnan-hero-v1.png"
+  to = "/assets/real-yunnan/erhai-cangshan-editorial-web.jpg"
+  status = 302
+
+[[redirects]]
+  from = "/*"
+  to = "/yunnan.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/downloads/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"

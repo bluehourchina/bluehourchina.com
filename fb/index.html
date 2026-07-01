@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, follow">
+  <title>若青中國旅策｜有風雲南社群諮詢入口</title>
+  <meta name="description" content="從 Facebook、Instagram、YouTube 或 LINE 進入若青中國旅策。有風雲南：大理、沙溪、麗江一週慢走，親友私密同行，先留下條件讓若青中國旅策判斷是否適合。">
+  <meta property="og:title" content="若青中國旅策｜有風雲南社群諮詢入口">
+  <meta property="og:description" content="大理、沙溪、麗江一週慢走。不是把景點塞滿，而是先把住宿、車程與同行者節奏排順。">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="若青中國旅策">
+  <meta property="og:image" content="/assets/og/yunnan-og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/assets/ruoqing-avatar.svg">
+  <style>
+    :root {
+      --deep: #081511;
+      --forest: #102d26;
+      --paper: #f6efe3;
+      --white: #fffaf0;
+      --gold: #c99a52;
+      --line: rgba(255,250,240,.18);
+      --muted: rgba(255,250,240,.72);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100svh;
+      background: var(--deep);
+      color: var(--white);
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    .page {
+      min-height: 100svh;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(420px, 520px);
+      background:
+        linear-gradient(90deg, rgba(8,21,17,.95), rgba(8,21,17,.72), rgba(8,21,17,.2)),
+        linear-gradient(180deg, rgba(8,21,17,.12), rgba(8,21,17,.88)),
+        url("assets/real-yunnan/erhai-cangshan-web.jpg") center / cover no-repeat;
+    }
+    .story {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(28px, 5vw, 72px);
+      border-right: 1px solid var(--line);
+    }
+    .brand {
+      display: grid;
+      grid-template-columns: 48px auto;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand img { width: 48px; height: 48px; display: block; }
+    .brand strong {
+      display: block;
+      font-family: "Noto Serif TC", "Songti TC", serif;
+      font-size: 25px;
+      letter-spacing: .08em;
+    }
+    .brand span {
+      display: block;
+      margin-top: 2px;
+      color: rgba(255,250,240,.7);
+      font-size: 12px;
+    }
+    .copy {
+      max-width: 720px;
+      padding: 12vh 0 7vh;
+    }
+    .eyebrow {
+      margin: 0 0 20px;
+      color: var(--gold);
+      font-weight: 900;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+    h1 {
+      margin: 0;
+      font-family: "Noto Serif TC", "Songti TC", serif;
+      font-size: clamp(40px, 5vw, 72px);
+      line-height: 1.14;
+      letter-spacing: 0;
+    }
+    .lead {
+      max-width: 640px;
+      margin: 26px 0 0;
+      color: rgba(255,250,240,.82);
+      font-size: clamp(17px, 1.5vw, 22px);
+      line-height: 1.72;
+      font-weight: 650;
+    }
+    .proof {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      width: min(860px, 100%);
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .proof div {
+      min-height: 92px;
+      padding: 18px;
+      background: rgba(8,21,17,.62);
+    }
+    .proof span {
+      display: block;
+      color: rgba(255,250,240,.56);
+      font-size: 12px;
+      margin-bottom: 8px;
+    }
+    .proof b {
+      display: block;
+      font-size: 18px;
+      line-height: 1.35;
+    }
+    .form-side {
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      padding: 34px;
+      background: rgba(8,21,17,.78);
+      backdrop-filter: blur(18px);
+    }
+    .form-card {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: rgba(255,250,240,.08);
+      padding: 30px;
+    }
+    .form-card h2 {
+      margin: 0;
+      font-family: "Noto Serif TC", "Songti TC", serif;
+      font-size: 32px;
+      line-height: 1.22;
+    }
+    .form-card p {
+      margin: 12px 0 22px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-weight: 650;
+    }
+    form {
+      display: grid;
+      gap: 12px;
+    }
+    input, select, textarea, button {
+      width: 100%;
+      border-radius: 0;
+      font: inherit;
+    }
+    input, select, textarea {
+      min-height: 48px;
+      border: 1px solid rgba(255,250,240,.18);
+      background: rgba(8,21,17,.58);
+      color: var(--white);
+      padding: 12px 14px;
+      outline: none;
+    }
+    textarea { min-height: 92px; resize: vertical; }
+    input::placeholder, textarea::placeholder { color: rgba(255,250,240,.46); }
+    select:invalid { color: rgba(255,250,240,.46); }
+    button {
+      min-height: 54px;
+      border: 0;
+      margin-top: 4px;
+      background: var(--gold);
+      color: #11251f;
+      font-weight: 950;
+      cursor: pointer;
+    }
+    .note {
+      margin: 6px 0 0;
+      color: rgba(255,250,240,.56);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+      color: rgba(255,250,240,.72);
+      font-size: 14px;
+      font-weight: 800;
+    }
+    .quick-links a {
+      border-bottom: 1px solid rgba(255,250,240,.34);
+      padding-bottom: 3px;
+    }
+    @media (max-width: 920px) {
+      .page { grid-template-columns: 1fr; }
+      .story { min-height: auto; border-right: 0; }
+      .form-side { min-height: auto; padding: 0 22px 28px; }
+      .proof { grid-template-columns: 1fr; }
+      h1 { font-size: clamp(38px, 11vw, 58px); }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="story">
+      <a class="brand" href="yunnan.html">
+        <img src="assets/ruoqing-avatar.svg" alt="" aria-hidden="true">
+        <span>
+          <strong>若青中國旅策</strong>
+          <span>有風雲南私旅</span>
+        </span>
+      </a>
+
+      <div class="copy">
+        <p class="eyebrow" id="sourceEyebrow">BLUEHOUR CHINA JOURNEYS</p>
+        <h1 id="sourceTitle">看完內容後，先留下雲南條件</h1>
+        <p class="lead" id="sourceLead">大理、沙溪、麗江一週慢走。若青中國旅策先判斷你的月份、人數、天數與預算是否適合私密慢旅，再決定要不要往下談。</p>
+      </div>
+
+      <div class="proof" aria-label="有風雲南重點">
+        <div><span>Route</span><b>大理・沙溪・麗江</b></div>
+        <div><span>Group</span><b>親友私密同行</b></div>
+        <div><span>Start From</span><b>NT$39,800 起<br>機票另計</b></div>
+      </div>
+    </section>
+
+    <section class="form-side" id="form">
+      <div class="form-card">
+        <p class="eyebrow">QUICK CHECK</p>
+        <h2>4 題先判斷，不急著報名</h2>
+        <p>資料越清楚，越能判斷你適合旅行社大團、自由行，還是若青中國旅策有風雲南私旅。</p>
+
+        <form class="lead-form" name="yunnan-private-tour-zh" method="POST" action="https://formsubmit.co/bluehourchina@gmail.com">
+          <input type="hidden" name="_next" value="https://bluehourchina.com/thanks.html">
+          <input type="hidden" name="_subject" value="Bluehour China Journeys website inquiry">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="form-name" value="yunnan-private-tour-zh">
+          <input type="hidden" name="bot-field">
+          <input type="hidden" name="source_content" value="social-entry">
+          <input type="hidden" name="page_url" value="">
+          <input type="hidden" name="referrer" value="">
+          <input type="hidden" name="utm_source" value="">
+          <input type="hidden" name="utm_medium" value="">
+          <input type="hidden" name="utm_campaign" value="">
+          <input type="text" name="name" placeholder="姓名" aria-label="姓名" required>
+          <input type="tel" name="contact" placeholder="手機 / LINE / 微信" aria-label="聯絡方式" required>
+          <select name="group_size" aria-label="同行人數" required>
+            <option value="" disabled selected>同行人數</option>
+            <option>2 人</option>
+            <option>3-4 人</option>
+            <option>5-6 人</option>
+            <option>還不確定</option>
+          </select>
+          <select name="month" aria-label="預計出發月份" required>
+            <option value="" disabled selected>預計出發月份</option>
+            <option>1-3 個月內</option>
+            <option>3-6 個月內</option>
+            <option>明年春夏</option>
+            <option>還在觀望</option>
+          </select>
+          <select name="route_days" aria-label="偏好天數" required>
+            <option value="" disabled selected>偏好天數</option>
+            <option>6 日</option>
+            <option>7 日</option>
+            <option>9 日</option>
+            <option>還不確定，想先判斷</option>
+          </select>
+          <select name="budget" aria-label="預算感" required>
+            <option value="" disabled selected>預算感</option>
+            <option>想找 NT$40,000-50,000 大團</option>
+            <option>接近 NT$39,800/人可以討論</option>
+            <option>可接受 NT$45,800-52,800/人</option>
+            <option>更重視住宿與舒適度</option>
+          </select>
+          <select name="readiness" aria-label="出發意願" required>
+            <option value="" disabled selected>出發意願</option>
+            <option>如果方案合適，1 個月內可付訂</option>
+            <option>正在比較旅行社與私旅</option>
+            <option>想先替同行者看方案</option>
+            <option>目前只是初步了解</option>
+          </select>
+          <select name="style" aria-label="偏好旅行方式" required>
+            <option value="" disabled selected>偏好旅行方式</option>
+            <option>價格優先，大團可接受</option>
+            <option>想要私旅，但不想太貴</option>
+            <option>住宿與節奏比低價重要</option>
+            <option>希望若青中國旅策協助判斷</option>
+          </select>
+          <textarea name="message" placeholder="可補充：同行者狀態、正在看的旅行社行程、最擔心的問題"></textarea>
+          <button type="submit">送出，讓若青中國旅策先判斷</button>
+          <p class="note">送出不是報名。若條件不適合，我們會直接說明比較適合的方向。</p>
+        </form>
+
+        <div class="quick-links">
+          <a href="yunnan.html">看完整方案</a>
+          <a href="yunnan-itinerary-check.html">檢查旅行社行程</a>
+          <a href="faq.html">常見問題</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const sourceMap = {
+      "/fb": {
+        source: "facebook-launch",
+        utm: "facebook",
+        medium: "social",
+        campaign: "yunnan_launch",
+        eyebrow: "FACEBOOK READER",
+        title: "看完貼文後，先留下雲南條件",
+        lead: "不用先決定報名。留下月份、人數、天數與預算，若青中國旅策先判斷你適合大團、自由行，還是有風雲南私旅。"
+      },
+      "/ig": {
+        source: "instagram-launch",
+        utm: "instagram",
+        medium: "social",
+        campaign: "yunnan_launch",
+        eyebrow: "INSTAGRAM ENTRY",
+        title: "從一張照片，整理成一趟雲南",
+        lead: "大理、沙溪、麗江可以很漂亮，也很容易排得太滿。先留下條件，我們看這趟能不能走得舒服。"
+      },
+      "/line": {
+        source: "line-chat-entry",
+        utm: "line",
+        medium: "chat",
+        campaign: "yunnan_launch",
+        eyebrow: "LINE CONSULT",
+        title: "先把條件留下，方便後續回覆",
+        lead: "如果你是從 LINE 進來，先填這份快篩。若青中國旅策會依月份、人數、天數與預算回覆比較有效的方向。"
+      },
+      "/youtube": {
+        source: "youtube-launch",
+        utm: "youtube",
+        medium: "video",
+        campaign: "yunnan_launch",
+        eyebrow: "YOUTUBE VIEWER",
+        title: "看完影片後，留下雲南條件",
+        lead: "如果你是從 YouTube 進來，先填這份快篩。若青中國旅策會依月份、人數、天數與預算判斷是否適合有風雲南。"
+      }
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const entryParam = params.get("entry");
+    const path = entryParam ? `/${entryParam.replace(/^\//, "")}` : (window.location.pathname.replace(/\/$/, "") || "/fb");
+    const config = sourceMap[path] || sourceMap["/fb"];
+    document.getElementById("sourceEyebrow").textContent = config.eyebrow;
+    document.getElementById("sourceTitle").textContent = config.title;
+    document.getElementById("sourceLead").textContent = config.lead;
+
+    const form = document.querySelector(".lead-form");
+    if (form) {
+      const fields = {
+        source_content: config.source,
+        page_url: window.location.href,
+        referrer: document.referrer || "",
+        utm_source: params.get("utm_source") || config.utm,
+        utm_medium: params.get("utm_medium") || config.medium,
+        utm_campaign: params.get("utm_campaign") || config.campaign
+      };
+      Object.entries(fields).forEach(([name, value]) => {
+        const input = form.querySelector(`[name="${name}"]`);
+        if (input) input.value = value;
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>關於若青中國旅策｜只把一趟雲南先做好</title>
+  <meta name="description" content="若青中國旅策先聚焦有風雲南：大理、沙溪、麗江一週慢走。用清楚的需求整理、路線判斷、住宿車程把關與當地服務商媒合，讓私密慢旅走得更穩。">
+  <meta property="og:title" content="關於若青中國旅策">
+  <meta property="og:description" content="不做大而全的旅遊平台，只先把大理、沙溪、麗江這一趟雲南走穩。">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="若青中國旅策">
+  <meta property="og:locale" content="zh_TW">
+  <meta property="og:url" content="/about.html">
+  <meta property="og:image" content="/assets/og/yunnan-og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/assets/ruoqing-avatar.svg">
+  <style>
+    :root {
+      --forest: #102d26;
+      --forest-2: #173c33;
+      --paper: #f6efe3;
+      --white: #fffaf0;
+      --ink: #1f2924;
+      --muted: #667069;
+      --gold: #c99a52;
+      --line: rgba(31,41,36,.16);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    .nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 20;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 38px;
+      color: var(--white);
+      background: linear-gradient(180deg, rgba(10,24,20,.88), rgba(10,24,20,.18));
+      backdrop-filter: blur(10px);
+    }
+    .brand {
+      display: grid;
+      grid-template-columns: 42px auto;
+      gap: 10px;
+      align-items: center;
+      font-family: "Noto Serif TC", "Songti TC", serif;
+      letter-spacing: .08em;
+    }
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: block;
+    }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .brand strong { font-size: 23px; }
+    .brand span { color: rgba(255,250,240,.7); font-size: 12px; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: rgba(255,250,240,.84);
+      font-weight: 850;
+    }
+    .nav-cta {
+      background: var(--gold);
+      color: #14251f;
+      padding: 10px 18px;
+    }
+    .hero {
+      min-height: 88svh;
+      color: var(--white);
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(8,18,15,.94), rgba(8,18,15,.54), rgba(8,18,15,.12)),
+        linear-gradient(180deg, rgba(8,18,15,.05), rgba(8,18,15,.88)),
+        url("assets/real-yunnan/shaxi-old-town-web.jpg") center / cover no-repeat;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 34px;
+      border: 1px solid rgba(255,250,240,.18);
+      pointer-events: none;
+    }
+    .wrap { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }
+    .hero .wrap {
+      position: relative;
+      z-index: 1;
+      padding: 136px 0 68px;
+    }
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--gold);
+      font-size: 14px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+    h1, h2, h3 {
+      font-family: "Noto Serif TC", "Songti TC", serif;
+      letter-spacing: 0;
+    }
+    h1 {
+      margin: 0;
+      max-width: 520px;
+      font-size: clamp(38px, 3.6vw, 56px);
+      line-height: 1.16;
+    }
+    .hero-lead {
+      max-width: 690px;
+      margin: 24px 0 0;
+      color: rgba(255,250,240,.82);
+      font-size: clamp(16px, 1.28vw, 20px);
+      line-height: 1.72;
+      font-weight: 680;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 14px 22px;
+      border: 1px solid rgba(255,250,240,.38);
+      font-weight: 900;
+    }
+    .btn.primary { background: var(--gold); border-color: var(--gold); color: #14251f; }
+    .hero-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      max-width: 980px;
+      margin-top: 40px;
+      background: rgba(255,250,240,.18);
+      border: 1px solid rgba(255,250,240,.18);
+    }
+    .hero-bar div {
+      background: rgba(10,28,23,.76);
+      padding: 18px;
+    }
+    .hero-bar span {
+      display: block;
+      margin-bottom: 6px;
+      color: rgba(255,250,240,.62);
+      font-size: 13px;
+    }
+    .hero-bar strong {
+      color: var(--white);
+      font-size: 18px;
+    }
+    .section {
+      padding: 92px 0;
+      scroll-margin-top: 88px;
+    }
+    .section-head {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 54px;
+      align-items: end;
+      margin-bottom: 42px;
+    }
+    .section-head h2 {
+      margin: 0;
+      color: var(--forest);
+      font-size: clamp(38px, 5vw, 68px);
+      line-height: 1.08;
+    }
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 21px;
+      line-height: 1.76;
+      font-weight: 650;
+    }
+    .manifesto {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      gap: 0;
+      background: var(--white);
+      border: 1px solid var(--line);
+      overflow: hidden;
+    }
+    .manifesto-copy {
+      padding: 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 24px;
+    }
+    .manifesto-copy h2 {
+      margin: 0;
+      color: var(--forest);
+      font-size: clamp(38px, 4.8vw, 66px);
+      line-height: 1.08;
+    }
+    .manifesto-copy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 21px;
+      line-height: 1.75;
+      font-weight: 650;
+    }
+    .manifesto-image {
+      min-height: 620px;
+      background:
+        linear-gradient(180deg, rgba(16,45,38,.05), rgba(16,45,38,.64)),
+        url("assets/real-yunnan/erhai-cangshan-web.jpg") center / cover no-repeat;
+    }
+    .dark {
+      background: var(--forest);
+      color: var(--white);
+    }
+    .dark .section-head h2 { color: var(--white); }
+    .dark .section-head p { color: rgba(255,250,240,.72); }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 30px;
+      min-height: 285px;
+    }
+    .dark .card {
+      background: rgba(255,250,240,.08);
+      border-color: rgba(255,250,240,.16);
+    }
+    .card b {
+      display: block;
+      color: var(--gold);
+      margin-bottom: 18px;
+      letter-spacing: .12em;
+      font-size: 14px;
+    }
+    .card h3 {
+      margin: 0 0 14px;
+      color: var(--forest);
+      font-size: 30px;
+      line-height: 1.24;
+    }
+    .dark .card h3 { color: var(--white); }
+    .card p, .card li {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.68;
+      font-weight: 620;
+    }
+    .dark .card p, .dark .card li { color: rgba(255,250,240,.72); }
+    .card ul { margin: 0; padding-left: 21px; }
+    .process {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px;
+      background: rgba(255,250,240,.18);
+      border: 1px solid rgba(255,250,240,.18);
+    }
+    .process div {
+      min-height: 240px;
+      padding: 26px;
+      background: rgba(255,250,240,.08);
+    }
+    .process b {
+      display: block;
+      margin-bottom: 18px;
+      color: var(--gold);
+    }
+    .process strong {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--white);
+      font-size: 23px;
+      line-height: 1.35;
+    }
+    .process span {
+      color: rgba(255,250,240,.72);
+      font-size: 16px;
+      line-height: 1.62;
+      font-weight: 620;
+    }
+    .matrix {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+    .matrix div {
+      background: var(--white);
+      padding: 30px;
+      min-height: 200px;
+    }
+    .matrix b {
+      display: block;
+      color: var(--gold);
+      margin-bottom: 12px;
+      letter-spacing: .08em;
+    }
+    .matrix strong {
+      display: block;
+      color: var(--forest);
+      margin-bottom: 12px;
+      font-size: 24px;
+      line-height: 1.35;
+    }
+    .matrix span {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.65;
+      font-weight: 620;
+    }
+    .quote-band {
+      background: var(--forest);
+      color: var(--white);
+      padding: 88px 0;
+    }
+    .quote-band blockquote {
+      margin: 0;
+      max-width: 960px;
+      color: var(--white);
+      font-family: "Noto Serif TC", "Songti TC", serif;
+      font-size: clamp(34px, 4.8vw, 66px);
+      line-height: 1.2;
+    }
+    .quote-band p {
+      max-width: 760px;
+      color: rgba(255,250,240,.72);
+      font-size: 21px;
+      line-height: 1.75;
+      font-weight: 650;
+    }
+    .form-shell {
+      display: grid;
+      grid-template-columns: .86fr 1.14fr;
+      gap: 24px;
+      align-items: start;
+    }
+    .form-note {
+      background: var(--forest);
+      color: var(--white);
+      padding: 38px;
+      min-height: 100%;
+    }
+    .form-note h2 {
+      margin: 0;
+      font-size: clamp(36px, 5vw, 62px);
+      line-height: 1.1;
+    }
+    .form-note p, .form-note li {
+      color: rgba(255,250,240,.74);
+      font-size: 19px;
+      line-height: 1.7;
+      font-weight: 620;
+    }
+    .lead-form {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 30px;
+    }
+    input, select, textarea {
+      width: 100%;
+      min-height: 54px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      padding: 15px;
+      font: inherit;
+      font-size: 16px;
+    }
+    textarea {
+      grid-column: 1 / -1;
+      min-height: 150px;
+      resize: vertical;
+    }
+    .submit-note {
+      grid-column: 1 / -1;
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+      font-weight: 600;
+    }
+    button {
+      grid-column: 1 / -1;
+      min-height: 58px;
+      border: 0;
+      background: var(--gold);
+      color: #14251f;
+      font: inherit;
+      font-weight: 900;
+      cursor: pointer;
+    }
+    .footer {
+      background: #0b1714;
+      color: rgba(255,250,240,.7);
+      padding: 36px 0;
+    }
+    @media (max-width: 1000px) {
+      .process { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 900px) {
+      .nav { position: absolute; padding: 16px 20px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .hero .wrap { padding-top: 126px; }
+      .hero-bar, .section-head, .manifesto, .grid, .matrix, .form-shell, .lead-form {
+        grid-template-columns: 1fr;
+      }
+      .section { padding: 70px 0; }
+      .manifesto-copy { padding: 34px; }
+      .manifesto-image { min-height: 360px; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="主要導覽">
+    <a class="brand" href="yunnan.html">
+      <img class="brand-mark" src="assets/ruoqing-avatar.svg" alt="" aria-hidden="true">
+      <span class="brand-text">
+        <strong>若青中國旅策</strong>
+        <span>有風雲南私旅</span>
+      </span>
+    </a>
+    <div class="nav-links">
+      <a href="yunnan.html">商品頁</a>
+      <a href="yunnan-price-compare.html">價格怎麼看</a>
+      <a href="yunnan-first-trip-guide.html">指南</a>
+      <a href="#method">把關方法</a>
+      <a href="#boundary">服務邊界</a>
+      <a class="nav-cta" href="#apply">留下需求</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">ABOUT BLUEHOUR</p>
+        <h1>若青中國旅策</h1>
+        <p class="hero-lead">先把大理、沙溪、麗江這一趟雲南走穩。路線、住宿、車程與同行者節奏，在出發前整理清楚。</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#apply">留下我的雲南需求</a>
+          <a class="btn" href="yunnan.html">看有風雲南方案</a>
+        </div>
+        <div class="hero-bar">
+          <div><span>第一條產品</span><strong>有風雲南</strong></div>
+          <div><span>核心地點</span><strong>大理・沙溪・麗江</strong></div>
+          <div><span>旅行規模</span><strong>親友私密同行</strong></div>
+          <div><span>若青中國旅策角色</span><strong>策劃與把關</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="manifesto">
+          <div class="manifesto-copy">
+            <p class="eyebrow">WHY WE EXIST</p>
+            <h2>想去雲南<br>不只列景點</h2>
+            <p>大理、沙溪、麗江、香格里拉、西雙版納，每個名字都漂亮。但第一次規劃雲南，最容易出錯的不是少放一個景點，而是把距離、住宿、車程、同行者節奏與落地接待想得太簡單。</p>
+            <p>若青中國旅策想做的，是把那種「看起來都很值得去」的雲南，整理成一條真的能舒服出發的路線。先不急著做很多目的地，先把大理、沙溪、麗江這條線跑穩。</p>
+          </div>
+          <div class="manifesto-image" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="method">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">HOW WE WORK</p>
+            <h2>信任不是口號<br>細節要先問清楚</h2>
+          </div>
+          <p>若青中國旅策不會只把你導去一個既定商品。我們會先判斷這趟旅行是否適合你，再看是否進入方案討論。真正不適合的需求，會直接說明原因。</p>
+        </div>
+        <div class="process">
+          <div><b>01</b><strong>需求整理</strong><span>先確認月份、人數、預算、同行者狀態與旅行偏好。</span></div>
+          <div><b>02</b><strong>路線判斷</strong><span>判斷 6、7 或 9 日是否合理，不把版納、香格里拉硬塞進短假期。</span></div>
+          <div><b>03</b><strong>住宿車程</strong><span>確認住哪個區域、每天移動比例與是否值得停留。</span></div>
+          <div><b>04</b><strong>服務商媒合</strong><span>實際落地接待由當地服務商提供，若青中國旅策先把承接條件問清楚。</span></div>
+          <div><b>05</b><strong>旅後回饋</strong><span>用客戶回饋持續修正路線、照片素材、FAQ 與服務商評分。</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="boundary">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">BOUNDARY</p>
+            <h2>邊界先講清楚<br>出發才安心</h2>
+          </div>
+          <p>雲南私旅要做得穩，不能只靠漂亮文案。若青中國旅策會把自己負責什麼、當地服務商負責什麼、客人需要先確認什麼，都放在出發前講清楚。</p>
+        </div>
+        <div class="matrix">
+          <div><b>若青中國旅策負責</b><strong>產品策劃與需求判斷</strong><span>整理人數、月份、預算、路線節奏、住宿偏好與出發前溝通，判斷是否適合有風雲南。</span></div>
+          <div><b>當地服務商負責</b><strong>落地接待與實際履約</strong><span>用車、住宿、接送、導覽或在地接待依最終合作方案確認，由可承接的當地服務商提供。</span></div>
+          <div><b>出發前會確認</b><strong>價格不是一句話</strong><span>正式價格會依出發月份、住宿、人數、天數與當地承接條件調整；若青中國旅策不承諾固定不變的口頭價。</span></div>
+          <div><b>不適合也會說</b><strong>不硬推錯的旅程</strong><span>如果你只想找最低價大團，或假期不適合你想塞的路線，若青中國旅策會建議你換方式，而不是硬成交。</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-band">
+      <div class="wrap">
+        <blockquote>若青中國旅策不是把雲南說得更夢幻，而是把夢幻拆成每天能走得舒服的安排。</blockquote>
+        <p>我們相信高端不是昂貴堆料，而是讓你知道每一筆預算花在哪裡、每一天為什麼這樣排、每個取捨背後有被想過。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">FIT</p>
+            <h2>若青適合誰，也不適合誰</h2>
+          </div>
+          <p>這個品牌不是要服務所有旅人，而是服務那些已經知道自己不想被制式節奏帶著走，也不想獨自承擔所有規劃風險的人。</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <b>適合 01</b>
+            <h3>重視私旅節奏</h3>
+            <p>2-6 人同行，希望行程先考慮大家的狀態，而不是只看景點數。</p>
+          </article>
+          <article class="card">
+            <b>適合 02</b>
+            <h3>預算換確定性</h3>
+            <p>可接受接近高規格團的價格，但希望住宿位置、車程與落地細節更清楚。</p>
+          </article>
+          <article class="card">
+            <b>適合 03</b>
+            <h3>不想賭資訊差</h3>
+            <p>不想在陌生平台裡自己找司機、民宿與路線，也不想完全跟制式團走。</p>
+          </article>
+          <article class="card">
+            <b>不適合 01</b>
+            <h3>只想找最低價</h3>
+            <p>如果唯一標準是最低團費，大型旅行社團通常更有優勢。</p>
+          </article>
+          <article class="card">
+            <b>不適合 02</b>
+            <h3>想把所有地方塞滿</h3>
+            <p>一週內同時硬塞版納、香格里拉、麗江與大理，通常會犧牲體驗。</p>
+          </article>
+          <article class="card">
+            <b>不適合 03</b>
+            <h3>不願提供基本需求</h3>
+            <p>沒有月份、人數、預算與偏好，若青中國旅策無法做出負責任的初步判斷。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="apply">
+      <div class="wrap">
+        <div class="form-shell">
+          <aside class="form-note">
+            <p class="eyebrow">START WITH CLARITY</p>
+            <h2>留下需求<br>若青中國旅策先判斷</h2>
+            <p>你不用先查完所有細節。留下月份、人數、預算與最在意的問題，若青中國旅策會先判斷你是否適合走有風雲南。</p>
+            <ul>
+              <li>主線：大理、沙溪、麗江一週慢走</li>
+              <li>規模：親友私密同行，4-6 人最推薦</li>
+              <li>定位：策劃、需求整理、品質把關與服務商媒合</li>
+            </ul>
+          </aside>
+          <form class="lead-form" name="yunnan-private-tour-zh" method="POST" action="https://formsubmit.co/bluehourchina@gmail.com">
+          <input type="hidden" name="_next" value="https://bluehourchina.com/thanks.html">
+          <input type="hidden" name="_subject" value="Bluehour China Journeys website inquiry">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="form-name" value="yunnan-private-tour-zh">
+            <input type="hidden" name="bot-field">
+            <input type="hidden" name="source_content" value="about-ruoqing">
+            <input type="hidden" name="page_url" value="">
+            <input type="hidden" name="referrer" value="">
+            <input type="hidden" name="utm_source" value="">
+            <input type="hidden" name="utm_medium" value="">
+            <input type="hidden" name="utm_campaign" value="">
+            <input type="text" name="name" placeholder="姓名" aria-label="姓名" required>
+            <input type="tel" name="contact" placeholder="手機 / LINE / 微信" aria-label="聯絡方式" required>
+            <select name="group_size" aria-label="同行人數" required>
+              <option value="" disabled selected>同行人數</option>
+              <option>2 人</option>
+              <option>3-4 人</option>
+              <option>5-6 人</option>
+              <option>還不確定</option>
+            </select>
+            <select name="month" aria-label="預計出發月份" required>
+              <option value="" disabled selected>預計出發月份</option>
+              <option>1-3 個月內</option>
+              <option>3-6 個月內</option>
+              <option>明年春夏</option>
+              <option>還在觀望</option>
+            </select>
+            <select name="route_days" aria-label="偏好天數" required>
+              <option value="" disabled selected>偏好天數</option>
+              <option>6 日</option>
+              <option>7 日</option>
+              <option>9 日</option>
+              <option>還不確定，想先判斷</option>
+            </select>
+            <select name="budget" aria-label="預算感" required>
+              <option value="" disabled selected>預算感</option>
+              <option>接近 NT$39,800/人可以討論</option>
+              <option>可接受 NT$45,800-52,800/人</option>
+              <option>想先比較大團與私旅</option>
+              <option>預算未定，想先判斷</option>
+            </select>
+            <select name="readiness" aria-label="出發意願" required>
+              <option value="" disabled selected>出發意願</option>
+              <option>如果方案合適，1 個月內可付訂</option>
+              <option>正在比較旅行社與私旅</option>
+              <option>想先替同行者看方案</option>
+              <option>目前只是初步了解</option>
+            </select>
+            <select name="style" aria-label="最在意的事" required>
+              <option value="" disabled selected>最在意的事</option>
+              <option>品牌可信度與服務邊界</option>
+              <option>住宿位置與舒適度</option>
+              <option>車程不要太累</option>
+              <option>價格與品質平衡</option>
+            </select>
+            <textarea name="message" placeholder="你想看的雲南、同行者狀態、正在比較的方案，或你最想先確認的信任問題"></textarea>
+            <p class="submit-note">送出後，若青中國旅策會先判斷是否適合走「有風雲南」產品線；實際旅遊接待、用車、住宿與導覽由當地服務商提供。</p>
+            <button type="submit">送出，讓若青中國旅策先判斷</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">若青中國旅策｜把想去雲南的嚮往，整理成走得穩的一趟旅行。</div>
+  </footer>
+
+  <script>
+    const leadForm = document.querySelector(".lead-form");
+    if (leadForm) {
+      const params = new URLSearchParams(window.location.search);
+      const fields = {
+        page_url: window.location.href,
+        referrer: document.referrer || "",
+        utm_source: params.get("utm_source") || "",
+        utm_medium: params.get("utm_medium") || "",
+        utm_campaign: params.get("utm_campaign") || ""
+      };
+      Object.entries(fields).forEach(([name, value]) => {
+        const input = leadForm.querySelector(`[name="${name}"]`);
+        if (input) input.value = value;
+      });
+    }
+  </script>
+</body>
+</html>

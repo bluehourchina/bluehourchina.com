@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, follow">
+  <title>去有風的地方吧！｜雙人旅遊帳號開設素材包</title>
+  <meta name="description" content="去有風的地方吧！FB、IG、YouTube、Gmail 開帳資料、Bio 文案、首週內容與社群素材。">
+  <link rel="icon" type="image/png" href="/assets/social/gowind-avatar.png">
+  <style>
+    :root {
+      --pine: #102821;
+      --night: #07120f;
+      --mist: #f4ecdf;
+      --ivory: #fffaf0;
+      --ink: #1d2722;
+      --muted: #65716a;
+      --gold: #d7a85f;
+      --line: rgba(29,39,34,.16);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--mist);
+      color: var(--ink);
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    .hero {
+      min-height: 72svh;
+      color: var(--ivory);
+      background:
+        linear-gradient(90deg, rgba(7,18,15,.9), rgba(7,18,15,.55), rgba(7,18,15,.1)),
+        linear-gradient(180deg, rgba(7,18,15,.08), rgba(7,18,15,.9)),
+        url("assets/real-yunnan/erhai-cangshan-web.jpg") center / cover no-repeat;
+      display: flex;
+      align-items: flex-end;
+      padding: clamp(28px, 6vw, 78px);
+    }
+    .hero-inner { width: min(1080px, 100%); }
+    .brand {
+      display: grid;
+      grid-template-columns: 56px auto;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 76px;
+    }
+    .brand img { width: 56px; height: 56px; border: 1px solid rgba(255,250,240,.24); }
+    .brand strong {
+      display: block;
+      font-family: "Noto Serif TC", "Songti TC", serif;
+      font-size: 29px;
+      letter-spacing: .04em;
+    }
+    .brand span {
+      display: block;
+      color: rgba(255,250,240,.68);
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-size: 12px;
+      margin-top: 2px;
+    }
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 {
+      font-family: "Noto Serif TC", "Songti TC", serif;
+      letter-spacing: 0;
+      line-height: 1.15;
+    }
+    h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(44px, 8vw, 84px);
+    }
+    .lead {
+      max-width: 690px;
+      margin: 22px 0 0;
+      color: rgba(255,250,240,.78);
+      font-size: 20px;
+      font-weight: 650;
+    }
+    .wrap {
+      width: min(1080px, calc(100% - 42px));
+      margin: 0 auto;
+      padding: 60px 0;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      background: rgba(255,250,240,.68);
+      padding: 24px;
+    }
+    .card h3 { margin: 0 0 12px; font-size: 27px; color: var(--pine); }
+    .card p { margin: 0; color: var(--muted); font-weight: 650; }
+    .section-title {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      gap: 32px;
+      align-items: end;
+      margin-bottom: 24px;
+      border-top: 1px solid var(--line);
+      padding-top: 34px;
+    }
+    .section-title h2 { margin: 0; color: var(--pine); font-size: clamp(34px, 4vw, 56px); }
+    .section-title p { margin: 0; color: var(--muted); font-weight: 650; }
+    pre {
+      white-space: pre-wrap;
+      margin: 0;
+      padding: 20px;
+      border: 1px solid var(--line);
+      background: #fffaf0;
+      color: var(--ink);
+      font: 650 15px/1.7 "Noto Sans TC", "PingFang TC", sans-serif;
+    }
+    .copy-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .asset-list {
+      display: grid;
+      gap: 12px;
+    }
+    .asset {
+      display: grid;
+      grid-template-columns: 170px minmax(0, 1fr);
+      gap: 18px;
+      align-items: center;
+      border: 1px solid var(--line);
+      background: #fffaf0;
+      padding: 14px;
+    }
+    .asset img {
+      width: 170px;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: var(--pine);
+      display: block;
+    }
+    .asset.square img { aspect-ratio: 1; }
+    .asset.vertical img { aspect-ratio: 9 / 16; }
+    .asset b { color: var(--pine); }
+    .asset code {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      word-break: break-all;
+      font-size: 13px;
+    }
+    .note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-weight: 650;
+    }
+    @media (max-width: 820px) {
+      .grid, .copy-grid, .section-title { grid-template-columns: 1fr; }
+      .brand { margin-bottom: 52px; }
+      .asset { grid-template-columns: 1fr; }
+      .asset img { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <a class="brand" href="gowind.html">
+        <img src="assets/social/gowind-avatar.png" alt="">
+        <span><strong>去有風的地方吧！</strong><span>Go With Wind</span></span>
+      </a>
+      <p class="eyebrow">Creator Account Kit</p>
+      <h1>開帳號時，直接照這份填</h1>
+      <p class="lead">這是雙人旅遊影像帳號，不是若青中國旅策官方號。社群第一眼要像兩個人慢慢旅行、拍美景轉場，網站只做隱性路線承接。</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap">
+      <div class="grid">
+        <article class="card"><h3>帳號名稱</h3><p>去有風的地方吧！</p></article>
+        <article class="card"><h3>帳號性質</h3><p>雙人旅遊影像帳號</p></article>
+        <article class="card"><h3>導流關係</h3><p>若青網站隱性承接路線筆記</p></article>
+      </div>
+      <p class="note">不要使用若青 Logo 作頭像或封面主識別，也不要暗示與影劇、節目或官方 IP 有合作授權。</p>
+    </section>
+
+    <section class="wrap">
+      <div class="section-title">
+        <div><p class="eyebrow">Gmail</p><h2>新 Gmail</h2></div>
+        <p>生日、性別、密碼、手機驗證由帳戶持有人自行輸入，不要放在聊天或文件。完成後立刻啟用兩步驟驗證。</p>
+      </div>
+      <div class="copy-grid">
+        <pre>Gmail 優先順序
+gowindtravel@gmail.com
+gowithwindtw@gmail.com
+windplace.tw@gmail.com
+youfengtravel.tw@gmail.com
+gowindjourney@gmail.com</pre>
+        <pre>安全設定
+1. 建立完成後啟用 2FA
+2. 備援碼放密碼管理器
+3. 不把密碼貼到聊天
+4. Meta / YouTube 都用這個 Gmail 綁定</pre>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="section-title">
+        <div><p class="eyebrow">Account Fields</p><h2>平台欄位</h2></div>
+        <p>各平台先搶同一組 ID。YouTube 已用 `gowithwindtw`，FB/IG/TikTok 也優先跟上。</p>
+      </div>
+      <div class="copy-grid">
+        <pre>Facebook 粉絲專頁
+粉專名稱：去有風的地方吧！
+使用者名稱：gowithwindtw
+類別：Video Creator / Travel & Transportation / Personal Blog
+網站：https://bluehourchina.com/gowind</pre>
+        <pre>Instagram
+顯示名稱：去有風的地方吧！
+帳號：gowithwindtw
+類別：Digital Creator / Video Creator
+連結：https://bluehourchina.com/gowind-ig</pre>
+        <pre>YouTube
+頻道名稱：Go With Wind 旅記
+Handle：@gowithwindtw
+網站：https://bluehourchina.com/gowind-youtube</pre>
+        <pre>TikTok
+顯示名稱：去有風的地方吧！
+帳號：gowithwindtw
+用途：短影音轉場測試與佔位
+連結：https://bluehourchina.com/gowind</pre>
+        <pre>Threads
+名稱：去有風的地方吧！
+帳號：跟 Instagram 一致
+用途：短觀點、路線取捨、互動留言</pre>
+        <pre>小紅書 / RedNote
+名稱：去有風的地方吧
+帳號：gowithwindtw
+用途：旅遊圖文筆記、拍攝點、路線收藏</pre>
+        <pre>備選 ID
+gowindtravel
+windplace.tw
+youfengtravel.tw
+gowindjourney</pre>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="section-title">
+        <div><p class="eyebrow">Profile Copy</p><h2>簡介文案</h2></div>
+        <p>Bio 不寫「若青官方」。用雙人旅行、美景轉場、中國目的地與慢節奏路線來建立第一印象。</p>
+      </div>
+      <div class="copy-grid">
+        <pre>Facebook About
+兩個人慢慢走，把中國旅行拍成轉場裡的風景。
+
+我們喜歡山、古鎮、車窗、風、光，還有那些不急著趕完的路。
+先從雲南開始：大理、沙溪、麗江。
+不做景點清單，只記錄一趟旅行裡值得停下來的片刻。</pre>
+        <pre>Instagram Bio
+去有風的地方吧！
+兩個人的中國旅行轉場
+雲南｜古鎮｜山水｜慢旅行
+背影、牽手、車窗與風景
+雲南路線筆記 ↓</pre>
+        <pre>YouTube 描述
+去有風的地方吧！是一個雙人旅遊影像帳號。
+
+我們想把中國旅行拍得慢一點：大理的風、沙溪的黃昏、麗江與白沙的山景、車窗外的路，以及兩個人走進風景裡的轉場。</pre>
+        <pre>首篇貼文 CTA
+如果你也想看中國旅行可以怎麼慢慢走，之後我們會把路線、畫面和小筆記慢慢放上來。</pre>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="section-title">
+        <div><p class="eyebrow">Upload Assets</p><h2>上傳素材</h2></div>
+        <p>這些圖不使用若青 Logo，與網站官方視覺拉開距離。</p>
+      </div>
+      <div class="asset-list">
+        <div class="asset square"><img src="assets/social/gowind-avatar.png" alt="去有風的地方吧社群頭像"><div><b>社群頭像</b><code>outputs/wechat-share/去有風的地方吧_社群頭像.png</code></div></div>
+        <div class="asset"><img src="assets/social/gowind-fb-cover.png" alt="去有風的地方吧 FB 封面"><div><b>FB 封面</b><code>outputs/wechat-share/去有風的地方吧_FB封面.png</code></div></div>
+        <div class="asset"><img src="assets/social/gowind-youtube-banner.png" alt="去有風的地方吧 YouTube 頻道橫幅"><div><b>YouTube 頻道橫幅</b><code>outputs/wechat-share/去有風的地方吧_YouTube頻道橫幅.png</code></div></div>
+        <div class="asset square"><img src="assets/social/gowind-day01.png" alt="去有風的地方吧首篇貼文圖"><div><b>首篇貼文圖</b><code>outputs/wechat-share/去有風的地方吧_Day01_帳號開張.png</code></div></div>
+        <div class="asset vertical"><img src="assets/social/gowind-reel01.png" alt="去有風的地方吧 Reels 封面"><div><b>Reels / Shorts 封面</b><code>outputs/wechat-share/去有風的地方吧_Reels封面_01_雲南慢一點.png</code></div></div>
+        <div class="asset square"><img src="assets/social/gowind-route-card.png" alt="去有風的地方吧路線收藏貼"><div><b>路線收藏貼</b><code>outputs/wechat-share/去有風的地方吧_路線收藏貼.png</code></div></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
