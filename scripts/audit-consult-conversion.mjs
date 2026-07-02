@@ -148,6 +148,17 @@ await checkFile("llms-full.txt", [
   ["missing AI search conversion note", (text) => text.includes("First 10 Calm Journey Reviews") && text.includes(campaign)],
 ]);
 
+await checkFile("scripts/create-tally-intake-form.mjs", [
+  ["missing Tally API endpoint", (text) => text.includes("https://api.tally.so") && text.includes("/forms")],
+  ["missing hidden lead attribution fields", (text) => text.includes("HIDDEN_FIELDS") && text.includes("utm_source") && text.includes("originPage")],
+  ["missing Bluehour notification email", (text) => text.includes("bluehourchina@gmail.com")],
+]);
+
+await checkFile("scripts/apply-tally-backend.mjs", [
+  ["missing Tally embed integration", (text) => text.includes("data-tally-src") && text.includes("https://tally.so/widgets/embed.js")],
+  ["missing Formsubmit fallback wrapper", (text) => text.includes("email-backup-form") && text.includes("site_embed_fallback")],
+]);
+
 if (failures.length) {
   console.error(`Consult conversion audit failed: ${failures.length} issue(s)`);
   for (const failure of failures) console.error(`- ${failure}`);
