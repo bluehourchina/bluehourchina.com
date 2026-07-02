@@ -44,6 +44,15 @@
   <main class="interest-page">
     <section class="interest-story"><div><p class="eyebrow">A calm first review</p><h1>Tell us the China you want to feel.</h1><p class="lead">Yunnan, Xinjiang, Dunhuang, Sanya or winter in the north. Share the season, people and comfort you need.</p></div><div class="points"><div><span>Language</span><b>China made easier.</b></div><div><span>Comfort</span><b>Less friction.</b></div><div><span>Reply</span><b>First direction within 24 hours</b></div></div></section>
     <section class="form-side" id="apply"><div class="form-card"><p class="eyebrow">Start here</p><h2>A few details are enough.</h2><p>The first reply is not a hard sell. It is a calm direction: what fits, what feels rushed, and what kind of local care may be needed.</p>
+
+      <!-- form-proof-start -->
+      <div class="form-proof">
+        <p class="eyebrow">First 10 journey reviews</p>
+        <h3>A more personal first review.</h3>
+        <p>Ten early reviews help us learn the exact kind of high-comfort China journey international travellers want now.</p>
+        <div><span>Manual reply</span><span>Usually within 24 hours</span><span>No forced package</span><span>Suitable local matching</span></div>
+      </div>
+      <!-- form-proof-end -->
       <form class="lead-form" name="bluehour-china-journey-review-en" method="POST" action="https://formsubmit.co/bluehourchina@gmail.com" data-sheet-endpoint="">
         <input type="hidden" name="_next" value="https://bluehourchina.com/thanks.html">
         <input type="hidden" name="_subject" value="Bluehour China Journeys inquiry (en)">
@@ -54,6 +63,7 @@
         <input type="hidden" name="submitted_at" value="">
         <input type="hidden" name="status" value="New">
         <input type="hidden" name="priority" value="Medium">
+        <input type="hidden" name="campaign" value="ten_calm_reviews">
         <input type="hidden" name="language" value="English">
         <input type="hidden" name="crm_sheet_id" value="1htwsc38_sAoUXvuqwR06MgPjM3uxkHiv3me1l85ux_Y">
         <input type="hidden" name="page_url" value="">
@@ -115,7 +125,7 @@
         referrer: document.referrer || "",
         utm_source: params.get("utm_source") || "site",
         utm_medium: params.get("utm_medium") || "multilingual",
-        utm_campaign: params.get("utm_campaign") || "bluehour_china_review"
+        utm_campaign: params.get("utm_campaign") || "ten_calm_reviews"
       };
       Object.entries(fields).forEach(([name, value]) => {
         const input = leadForm.querySelector(`[name="${name}"]`);

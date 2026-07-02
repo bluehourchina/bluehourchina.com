@@ -44,6 +44,15 @@
   <main class="interest-page">
     <section class="interest-story"><div><p class="eyebrow">คำแนะนำแรกอย่างสงบ</p><h1>บอกเราว่าคุณอยากรู้สึกถึงจีนแบบไหน</h1><p class="lead">ยูนนาน ซินเจียง ตุนหวง ซานย่า หรือฤดูหนาวทางเหนือ บอกฤดูกาล จำนวนคน และความสบายที่ต้องการ</p></div><div class="points"><div><span>ภาษา</span><b>ทำให้จีนเข้าใจง่ายขึ้น</b></div><div><span>ความสบาย</span><b>ลดความเหนื่อยของทริป</b></div><div><span>ตอบกลับ</span><b>ตอบทิศทางแรกภายใน 24 ชั่วโมง</b></div></div></section>
     <section class="form-side" id="apply"><div class="form-card"><p class="eyebrow">เริ่มตรงนี้</p><h2>รายละเอียดไม่กี่ข้อก็พอ</h2><p>คำตอบแรกไม่ใช่การขายแรง ๆ แต่เป็นทิศทางที่ชัดว่าอะไรเหมาะ อะไรแน่นเกินไป และต้องการการดูแลแบบไหน</p>
+
+      <!-- form-proof-start -->
+      <div class="form-proof">
+        <p class="eyebrow">10 รีวิวแรก</p>
+        <h3>คำแนะนำแรกที่เป็นส่วนตัวกว่า</h3>
+        <p>10 รีวิวแรกจะช่วยให้เราเข้าใจทริปจีนแบบสบาย มีคุณภาพ และคุ้มค่าที่นักเดินทางต่างชาติต้องการจริง ๆ</p>
+        <div><span>คนจริงตอบ</span><span>มักตอบใน 24 ชม.</span><span>ไม่บังคับซื้อแพ็กเกจ</span><span>เหมาะจึงแนะนำในพื้นที่</span></div>
+      </div>
+      <!-- form-proof-end -->
       <form class="lead-form" name="bluehour-china-journey-review-th" method="POST" action="https://formsubmit.co/bluehourchina@gmail.com" data-sheet-endpoint="">
         <input type="hidden" name="_next" value="https://bluehourchina.com/thanks.html">
         <input type="hidden" name="_subject" value="Bluehour China Journeys inquiry (th)">
@@ -54,6 +63,7 @@
         <input type="hidden" name="submitted_at" value="">
         <input type="hidden" name="status" value="New">
         <input type="hidden" name="priority" value="Medium">
+        <input type="hidden" name="campaign" value="ten_calm_reviews">
         <input type="hidden" name="language" value="ไทย">
         <input type="hidden" name="crm_sheet_id" value="1htwsc38_sAoUXvuqwR06MgPjM3uxkHiv3me1l85ux_Y">
         <input type="hidden" name="page_url" value="">
@@ -115,7 +125,7 @@
         referrer: document.referrer || "",
         utm_source: params.get("utm_source") || "site",
         utm_medium: params.get("utm_medium") || "multilingual",
-        utm_campaign: params.get("utm_campaign") || "bluehour_china_review"
+        utm_campaign: params.get("utm_campaign") || "ten_calm_reviews"
       };
       Object.entries(fields).forEach(([name, value]) => {
         const input = leadForm.querySelector(`[name="${name}"]`);

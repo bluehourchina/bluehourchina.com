@@ -19,3 +19,8 @@ Bluehour China Journeys is a multilingual private China travel advisory for inte
 
 ## Destination Pages
 - Yunnan, Xinjiang, Dunhuang, Sanya and Northeast China each have localized pages under /zh/, /ja/, /ko/ and /th/.
+
+
+## Lead Capture Campaign
+- [First 10 calm journey reviews](/consult/)
+- The consultation path is designed to collect the first 10 serious journey review requests and route them to localized inquiry pages with UTM tracking.

@@ -53,4 +53,8 @@
 /dunhuang /dunhuang.html             200
 /sanya /sanya.html                   200
 /northeast /northeast.html           200
+/consult /consult/                  200
+/apply /consult/                    200
+/review /consult/                   200
+/journey-review /consult/           200
 /*     /index.html                   200

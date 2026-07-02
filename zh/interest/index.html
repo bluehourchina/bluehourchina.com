@@ -44,6 +44,15 @@
   <main class="interest-page">
     <section class="interest-story"><div><p class="eyebrow">安靜的第一步</p><h1>告訴我們，你想感受哪一種中國。</h1><p class="lead">雲南、新疆、敦煌、三亞，或北方的雪。先留下季節、人數與舒適需求。</p></div><div class="points"><div><span>語言</span><b>讓中國更容易靠近。</b></div><div><span>舒適</span><b>少一點折騰。</b></div><div><span>回覆</span><b>24 小時內先回方向</b></div></div></section>
     <section class="form-side" id="apply"><div class="form-card"><p class="eyebrow">從這裡開始</p><h2>幾個細節就夠了。</h2><p>第一封回覆不是硬推銷，而是一個安靜的方向：哪裡適合、哪裡太趕、需要什麼在地照應。</p>
+
+      <!-- form-proof-start -->
+      <div class="form-proof">
+        <p class="eyebrow">先收 10 份旅程評估</p>
+        <h3>更像私人顧問的第一步。</h3>
+        <p>這 10 份早期評估，會幫我們更精準理解外國旅人真正想要的高舒適中國深度旅行。</p>
+        <div><span>人工回覆</span><span>通常 24 小時內</span><span>不強迫套裝</span><span>合適才媒合在地</span></div>
+      </div>
+      <!-- form-proof-end -->
       <form class="lead-form" name="bluehour-china-journey-review-zh" method="POST" action="https://formsubmit.co/bluehourchina@gmail.com" data-sheet-endpoint="">
         <input type="hidden" name="_next" value="https://bluehourchina.com/thanks.html">
         <input type="hidden" name="_subject" value="Bluehour China Journeys inquiry (zh)">
@@ -54,6 +63,7 @@
         <input type="hidden" name="submitted_at" value="">
         <input type="hidden" name="status" value="New">
         <input type="hidden" name="priority" value="Medium">
+        <input type="hidden" name="campaign" value="ten_calm_reviews">
         <input type="hidden" name="language" value="繁中">
         <input type="hidden" name="crm_sheet_id" value="1htwsc38_sAoUXvuqwR06MgPjM3uxkHiv3me1l85ux_Y">
         <input type="hidden" name="page_url" value="">
@@ -115,7 +125,7 @@
         referrer: document.referrer || "",
         utm_source: params.get("utm_source") || "site",
         utm_medium: params.get("utm_medium") || "multilingual",
-        utm_campaign: params.get("utm_campaign") || "bluehour_china_review"
+        utm_campaign: params.get("utm_campaign") || "ten_calm_reviews"
       };
       Object.entries(fields).forEach(([name, value]) => {
         const input = leadForm.querySelector(`[name="${name}"]`);
