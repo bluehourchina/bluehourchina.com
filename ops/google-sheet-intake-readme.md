@@ -1,0 +1,27 @@
+# Bluehour China Lead Intake
+
+Google Sheet:
+https://docs.google.com/spreadsheets/d/1Nl6MXdnEQyKf68rTnO8KVQw0CtDAA3A9JCwwvUXCEps/edit
+
+Apps Script file:
+`ops/bluehour-leads-webhook.gs`
+
+Deployment:
+1. Open the Google Sheet.
+2. Extensions -> Apps Script.
+3. Paste `ops/bluehour-leads-webhook.gs`.
+4. Deploy -> New deployment -> Web app.
+5. Execute as: me.
+6. Who has access: anyone.
+7. Copy the Web App URL.
+8. Run:
+
+```bash
+LEADS_WEBHOOK_URL="https://script.google.com/macros/s/WEB_APP_ID/exec" node scripts/apply-google-sheet-webhook.mjs
+```
+
+How it works:
+- The website keeps Formsubmit email as a backup.
+- When the Web App URL is applied, every lead form sends a quiet background copy to Google Sheet.
+- Visitors still see the normal thank-you flow.
+- The sheet receives source, UTM, page URL, destination, budget, travel window, comfort level and contact details.
