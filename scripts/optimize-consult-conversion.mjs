@@ -21,6 +21,7 @@ const languages = {
     lead: "For serious travellers, we will personally read your season, route, comfort needs and concerns, then return an honest first direction. No package pressure, just a clear next step.",
     formTitle: "A more personal first review.",
     formLead: "Ten early reviews help us learn the exact kind of high-comfort China journey international travellers want now.",
+    fallback: "If the form does not send, write directly to",
     cta: "Join the first 10 reviews",
     sticky: "Start a journey review",
     secondary: "First 10 reviews",
@@ -47,6 +48,7 @@ const languages = {
     lead: "這不是廉價促銷，也不是制式行程。你留下季節、人數、舒適需求與擔心的地方，我們人工判斷路線是否適合、哪裡太趕、需要什麼在地照應。",
     formTitle: "更像私人顧問的第一步。",
     formLead: "這 10 份早期評估，會幫我們更精準理解外國旅人真正想要的高舒適中國深度旅行。",
+    fallback: "如果表單無法送出，也可以直接寄到",
     cta: "加入這 10 份評估",
     sticky: "開始旅程評估",
     secondary: "10 份人工評估",
@@ -73,6 +75,7 @@ const languages = {
     lead: "強い営業ではありません。季節、人数、快適さ、不安を読み、合う場所、急ぎすぎる場所、必要な現地サポートを静かに整理します。",
     formTitle: "より私的な最初の相談。",
     formLead: "最初の10件は、海外旅行者がいま求める心地よい中国深度旅行を理解するために丁寧に読みます。",
+    fallback: "フォームが送信できない場合は、こちらへ直接ご連絡ください",
     cta: "10件のレビューに入る",
     sticky: "旅レビューを始める",
     secondary: "10件のレビュー",
@@ -99,6 +102,7 @@ const languages = {
     lead: "강한 판매가 아닙니다. 계절, 인원, 편안함, 걱정거리를 읽고 어디가 맞는지, 어디가 빠듯한지, 어떤 현지 케어가 필요한지 정리합니다.",
     formTitle: "더 개인적인 첫 상담.",
     formLead: "첫 10건은 해외 여행자가 원하는 편안한 중국 심층 여행을 더 정확히 이해하기 위해 직접 읽습니다.",
+    fallback: "양식 전송이 어렵다면 여기로 직접 보내주세요",
     cta: "첫 10건 리뷰에 참여",
     sticky: "여정 리뷰 시작",
     secondary: "첫 10건 리뷰",
@@ -125,6 +129,7 @@ const languages = {
     lead: "นี่ไม่ใช่การขายแพ็กเกจแรง ๆ แต่เป็นการดูฤดูกาล จำนวนคน ความสบาย และความกังวลของคุณ แล้วตอบทิศทางแรกอย่างตรงไปตรงมา",
     formTitle: "คำแนะนำแรกที่เป็นส่วนตัวกว่า",
     formLead: "10 รีวิวแรกจะช่วยให้เราเข้าใจทริปจีนแบบสบาย มีคุณภาพ และคุ้มค่าที่นักเดินทางต่างชาติต้องการจริง ๆ",
+    fallback: "หากส่งแบบฟอร์มไม่ได้ สามารถส่งอีเมลมาได้ที่",
     cta: "เข้าร่วม 10 รีวิวแรก",
     sticky: "เริ่มรีวิวทริป",
     secondary: "10 รีวิวแรก",
@@ -164,7 +169,8 @@ function cleanManaged(html) {
   return html
     .replace(/\n?\s*<!-- conversion-start -->[\s\S]*?<!-- conversion-end -->/g, "")
     .replace(/\n?\s*<!-- sticky-review-start -->[\s\S]*?<!-- sticky-review-end -->/g, "")
-    .replace(/\n?\s*<!-- form-proof-start -->[\s\S]*?<!-- form-proof-end -->/g, "");
+    .replace(/\n?\s*<!-- form-proof-start -->[\s\S]*?<!-- form-proof-end -->/g, "")
+    .replace(/\n?\s*<!-- form-fallback-start -->[\s\S]*?<!-- form-fallback-end -->/g, "");
 }
 
 function reviewUrl(lang, source, destination = "") {
@@ -239,6 +245,22 @@ function formProof(lang) {
       <!-- form-proof-end -->`;
 }
 
+function formFallback(lang) {
+  const config = languages[lang];
+  const subject = encodeURIComponent("Bluehour China journey review");
+  return `
+        <!-- form-fallback-start -->
+        <p class="form-fallback">${escapeHtml(config.fallback)} <a href="mailto:bluehourchina@gmail.com?subject=${subject}">bluehourchina@gmail.com</a></p>
+        <!-- form-fallback-end -->`;
+}
+
+function removeGoogleSheetBackend(html) {
+  return html
+    .replace(/\sdata-sheet-endpoint="[^"]*"/g, "")
+    .replace(/\n\s*<input type="hidden" name="crm_sheet_id" value="[^"]*">/g, "")
+    .replace(/\n\s*const endpoint = leadForm\.dataset\.sheetEndpoint;[\s\S]*?\n\s*}\n\s*}\n\s*<\/script>/, "\n    }\n  </script>");
+}
+
 function replaceUrl(html, from, to) {
   return html.split(`href="${from}"`).join(`href="${to}"`);
 }
@@ -275,10 +297,16 @@ function enhanceStories(html, lang) {
 }
 
 function enhanceInterest(html, lang) {
-  html = cleanManaged(html);
+  html = removeGoogleSheetBackend(cleanManaged(html));
   html = html.replace('<form class="lead-form"', `${formProof(lang)}\n      <form class="lead-form"`);
   if (!html.includes('name="campaign"')) {
     html = html.replace('<input type="hidden" name="priority" value="Medium">', '<input type="hidden" name="priority" value="Medium">\n        <input type="hidden" name="campaign" value="ten_calm_reviews">');
+  }
+  if (!html.includes('name="intake_provider"')) {
+    html = html.replace('<input type="hidden" name="campaign" value="ten_calm_reviews">', '<input type="hidden" name="campaign" value="ten_calm_reviews">\n        <input type="hidden" name="intake_provider" value="formsubmit_email">');
+  }
+  if (!html.includes("<!-- form-fallback-start -->")) {
+    html = html.replace("</form>", `${formFallback(lang)}\n      </form>`);
   }
   html = html.replace('utm_campaign: params.get("utm_campaign") || "bluehour_china_review"', 'utm_campaign: params.get("utm_campaign") || "ten_calm_reviews"');
   return html;
@@ -310,10 +338,11 @@ function appendCss(css) {
 .conversion-wrap{display:grid;grid-template-columns:minmax(0,.85fr) minmax(320px,.9fr);gap:clamp(26px,5vw,72px);align-items:start}
 .conversion-copy h2{max-width:760px;font-size:clamp(36px,5vw,66px);line-height:1.07}.conversion-copy p{max-width:660px;margin-top:20px;color:var(--muted);font-size:17px;line-height:1.82}
 .conversion-steps{display:grid;gap:12px}.conversion-steps article{padding:26px;border:1px solid var(--line);background:rgba(255,250,241,.7)}.conversion-steps b{display:block;color:var(--gold);font-size:12px;letter-spacing:.14em;text-transform:uppercase}.conversion-steps h3{margin-top:12px;font-size:30px;line-height:1.12}.conversion-steps p{margin-top:12px;color:var(--muted);line-height:1.72}
-.dark-gold{box-shadow:0 16px 36px rgba(93,63,31,.16)}.form-proof{margin:20px 0 22px;padding:18px;border:1px solid rgba(255,250,241,.2);background:rgba(255,250,241,.08)}.form-proof h3{margin-top:8px;font-size:24px;line-height:1.16}.form-proof p{margin:10px 0 14px}.form-proof div{display:flex;flex-wrap:wrap;gap:8px}.form-proof span{display:inline-flex;align-items:center;min-height:30px;padding:0 10px;border:1px solid rgba(255,250,241,.2);color:rgba(255,250,241,.76);font-size:12px}
+.dark-gold{box-shadow:0 16px 36px rgba(93,63,31,.16)}.form-proof{margin:20px 0 22px;padding:18px;border:1px solid rgba(255,250,241,.2);background:rgba(255,250,241,.08)}.form-proof h3{margin-top:8px;font-size:24px;line-height:1.16}.form-proof p{margin:10px 0 14px}.form-proof div{display:flex;flex-wrap:wrap;gap:8px}.form-proof span{display:inline-flex;align-items:center;min-height:30px;padding:0 10px;border:1px solid rgba(255,250,241,.2);color:rgba(255,250,241,.76);font-size:12px}.form-fallback{margin:8px 0 0;color:rgba(255,250,241,.62);font-size:12px;line-height:1.5}.form-fallback a{color:rgba(255,250,241,.9);border-bottom:1px solid rgba(255,250,241,.32)}
+.interest-story h1{max-width:min(100%,780px);overflow-wrap:break-word}.interest-story .lead{max-width:min(100%,650px)}
 .sticky-review{position:fixed;left:50%;bottom:18px;z-index:40;transform:translateX(-50%);display:none;align-items:center;justify-content:center;min-height:48px;width:min(360px,calc(100% - 36px));padding:0 18px;background:var(--gold);color:#10231d;font-weight:850;box-shadow:0 16px 36px rgba(0,0,0,.28)}
 @media(max-width:900px){.conversion-wrap{grid-template-columns:1fr}.conversion-steps h3{font-size:26px}.sticky-review{display:flex}.footer{padding-bottom:92px}.interest-body .sticky-review{display:none}}
-@media(max-width:760px){.hero-inner{padding-bottom:118px}.home-hero .hero-actions a[href*="utm_source=home_cta"]{display:none}.sticky-review{bottom:14px}}
+@media(max-width:760px){.hero-inner{padding-bottom:118px}.home-hero .hero-actions a[href*="utm_source=home_cta"]{display:none}.interest-page{display:block;width:100vw;max-width:100vw;overflow:hidden}.interest-story{width:100vw;max-width:100vw;overflow:hidden}.interest-story h1{width:calc(100vw - 44px);max-width:calc(100vw - 44px);font-size:clamp(32px,8.5vw,40px);line-height:1.12;text-wrap:wrap;overflow-wrap:anywhere;line-break:anywhere}.interest-story .lead{width:calc(100vw - 44px);max-width:calc(100vw - 44px);overflow-wrap:anywhere}.sticky-review{bottom:14px}}
 /* conversion-optimization-end */
 `;
 }

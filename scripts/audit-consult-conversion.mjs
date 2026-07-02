@@ -73,6 +73,15 @@ const routedPageChecks = [
   ["missing UTM medium", (html) => html.includes("utm_medium=site")],
   ["has bare inquiry link without tracking", (html) => !bareInterestLink.test(html)],
 ];
+const googleFreeFormChecks = [
+  ["missing Formsubmit action", (html) => html.includes("https://formsubmit.co/bluehourchina@gmail.com")],
+  ["missing campaign hidden field", (html) => html.includes(`name="campaign" value="${campaign}"`)],
+  ["missing non-Google intake provider", (html) => html.includes('name="intake_provider" value="formsubmit_email"')],
+  ["missing email fallback", (html) => html.includes("form-fallback") && html.includes("mailto:bluehourchina@gmail.com")],
+  ["still has Google Sheet id", (html) => !html.includes("crm_sheet_id")],
+  ["still has sheet endpoint", (html) => !html.includes("data-sheet-endpoint")],
+  ["still has frontend sheet fetch", (html) => !html.includes("fetch(endpoint)") && !html.includes("dataset.sheetEndpoint")],
+];
 
 for (const config of Object.values(languages)) {
   for (const file of config.homes) {
@@ -92,8 +101,7 @@ for (const config of Object.values(languages)) {
 
   for (const file of config.interests) {
     await checkFile(file, [
-      ["missing Formsubmit action", (html) => html.includes("https://formsubmit.co/bluehourchina@gmail.com")],
-      ["missing campaign hidden field", (html) => html.includes(`name="campaign" value="${campaign}"`)],
+      ...googleFreeFormChecks,
       ["missing UTM capture script", (html) => html.includes(`utm_campaign: params.get("utm_campaign") || "${campaign}"`)],
       ["missing trust proof", (html) => html.includes("form-proof")],
     ]);
@@ -103,8 +111,7 @@ for (const config of Object.values(languages)) {
     await checkFile(file, [
       ["missing canonical", (html) => html.includes('rel="canonical"')],
       ["missing hreflang alternates", (html) => html.includes('hreflang="x-default"')],
-      ["missing consultation form", (html) => html.includes("https://formsubmit.co/bluehourchina@gmail.com")],
-      ["missing campaign hidden field", (html) => html.includes(`name="campaign" value="${campaign}"`)],
+      ...googleFreeFormChecks,
       ["missing tracked nav CTA", (html) => html.includes("utm_source=consult_nav") && html.includes(campaign)],
       ["language label should use JP", (html) => !html.includes(">JA<") && html.includes(">JP<")],
     ]);

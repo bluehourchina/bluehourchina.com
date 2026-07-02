@@ -53,7 +53,7 @@
         <div><span>人工回覆</span><span>通常 24 小時內</span><span>不強迫套裝</span><span>合適才媒合在地</span></div>
       </div>
       <!-- form-proof-end -->
-      <form class="lead-form" name="bluehour-china-journey-review-zh" method="POST" action="https://formsubmit.co/bluehourchina@gmail.com" data-sheet-endpoint="">
+      <form class="lead-form" name="bluehour-china-journey-review-zh" method="POST" action="https://formsubmit.co/bluehourchina@gmail.com">
         <input type="hidden" name="_next" value="https://bluehourchina.com/thanks.html">
         <input type="hidden" name="_subject" value="Bluehour China Journeys inquiry (zh)">
         <input type="hidden" name="_template" value="table">
@@ -64,8 +64,8 @@
         <input type="hidden" name="status" value="New">
         <input type="hidden" name="priority" value="Medium">
         <input type="hidden" name="campaign" value="ten_calm_reviews">
+        <input type="hidden" name="intake_provider" value="formsubmit_email">
         <input type="hidden" name="language" value="繁中">
-        <input type="hidden" name="crm_sheet_id" value="1htwsc38_sAoUXvuqwR06MgPjM3uxkHiv3me1l85ux_Y">
         <input type="hidden" name="page_url" value="">
         <input type="hidden" name="referrer" value="">
         <input type="hidden" name="utm_source" value="">
@@ -106,6 +106,10 @@
         <textarea name="message" placeholder="你想感受哪一種中國？可以寫目的地、旅行節奏、擔心的地方、住宿期待，或你是否去過中國。"></textarea>
         <button type="submit">送出安靜評估</button>
         <p class="note">若青中國旅策提供目的地顧問、路線節奏判斷與當地服務商媒合；實際接待與旅遊服務由合適的當地服務商提供。</p>
+
+        <!-- form-fallback-start -->
+        <p class="form-fallback">如果表單無法送出，也可以直接寄到 <a href="mailto:bluehourchina@gmail.com?subject=Bluehour%20China%20journey%20review">bluehourchina@gmail.com</a></p>
+        <!-- form-fallback-end -->
       </form>
     </div></section>
   </main>
@@ -131,20 +135,6 @@
         const input = leadForm.querySelector(`[name="${name}"]`);
         if (input) input.value = value;
       });
-      const endpoint = leadForm.dataset.sheetEndpoint;
-      if (endpoint) {
-        leadForm.addEventListener("submit", async (event) => {
-          event.preventDefault();
-          const submitButton = leadForm.querySelector('button[type="submit"]');
-          if (submitButton) { submitButton.disabled = true; submitButton.textContent = "Sending..."; }
-          try {
-            await fetch(endpoint, { method: "POST", mode: "no-cors", body: new FormData(leadForm) });
-            window.location.href = "/thanks.html";
-          } catch (error) {
-            leadForm.submit();
-          }
-        });
-      }
     }
   </script>
 </body></html>
