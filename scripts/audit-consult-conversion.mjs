@@ -139,9 +139,7 @@ for (const file of ["apply/index.html", "review/index.html", "journey-review/ind
 await checkFile("sitemap.xml", [
   ["missing /consult/", (xml) => xml.includes("https://bluehourchina.com/consult/")],
   ["missing /zh/consult/", (xml) => xml.includes("https://bluehourchina.com/zh/consult/")],
-  ["missing /apply/", (xml) => xml.includes("https://bluehourchina.com/apply/")],
-  ["missing /review/", (xml) => xml.includes("https://bluehourchina.com/review/")],
-  ["missing /journey-review/", (xml) => xml.includes("https://bluehourchina.com/journey-review/")],
+  ["canonical sitemap should not submit consult aliases", (xml) => !xml.includes("https://bluehourchina.com/apply/") && !xml.includes("https://bluehourchina.com/review/") && !xml.includes("https://bluehourchina.com/journey-review/")],
 ]);
 
 await checkFile("llms-full.txt", [
@@ -157,6 +155,22 @@ await checkFile("scripts/create-tally-intake-form.mjs", [
 await checkFile("scripts/apply-tally-backend.mjs", [
   ["missing Tally embed integration", (text) => text.includes("data-tally-src") && text.includes("https://tally.so/widgets/embed.js")],
   ["missing Formsubmit fallback wrapper", (text) => text.includes("email-backup-form") && text.includes("site_embed_fallback")],
+]);
+
+await checkFile("index.html", [
+  ["homepage should be English canonical", (html) => html.includes('<html lang="en">') && html.includes("<title>Bluehour China Journeys")],
+  ["homepage missing English language meta", (html) => html.includes('http-equiv="content-language" content="en"') && html.includes('name="language" content="English"')],
+  ["homepage missing international traveller signal", (html) => html.includes('name="audience" content="international travellers"')],
+]);
+
+await checkFile("sitemap.xml", [
+  ["sitemap should keep English homepage first", (xml) => xml.includes("<loc>https://bluehourchina.com/</loc>")],
+  ["sitemap should include English destinations", (xml) => xml.includes("https://bluehourchina.com/northeast.html") && xml.includes("https://bluehourchina.com/yunnan.html")],
+  ["sitemap should not submit old Chinese campaign pages", (xml) => !xml.includes("yunnan-onepage.html") && !xml.includes("journal-yunnan.html") && !xml.includes("social.html")],
+]);
+
+await checkFile("yunnan-onepage.html", [
+  ["legacy Chinese campaign page should be noindex", (html) => html.includes('name="robots" content="noindex,follow"')],
 ]);
 
 if (failures.length) {

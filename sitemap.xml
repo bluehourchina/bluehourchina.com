@@ -6,16 +6,6 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://bluehourchina.com/zh.html</loc>
-    <lastmod>2026-07-02</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bluehourchina.com/ja.html</loc>
-    <lastmod>2026-07-02</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://bluehourchina.com/yunnan.html</loc>
     <lastmod>2026-07-02</lastmod>
     <priority>0.8</priority>
@@ -41,67 +31,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bluehourchina.com/yunnan-route-diagnosis.html</loc>
-    <lastmod>2026-07-02</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bluehourchina.com/yunnan-route-compare.html</loc>
-    <lastmod>2026-07-02</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bluehourchina.com/yunnan-onepage.html</loc>
-    <lastmod>2026-07-02</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://bluehourchina.com/stories.html</loc>
-    <lastmod>2026-07-02</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bluehourchina.com/journal-yunnan.html</loc>
-    <lastmod>2026-07-02</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bluehourchina.com/yunnan-wind-place.html</loc>
-    <lastmod>2026-07-02</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bluehourchina.com/yunnan-first-trip-guide.html</loc>
-    <lastmod>2026-07-02</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bluehourchina.com/yunnan-pilot.html</loc>
-    <lastmod>2026-07-02</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bluehourchina.com/yunnan-price-compare.html</loc>
-    <lastmod>2026-07-02</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bluehourchina.com/yunnan-agency-compare.html</loc>
-    <lastmod>2026-07-02</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bluehourchina.com/yunnan-budget-fit.html</loc>
-    <lastmod>2026-07-02</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bluehourchina.com/ai-search-guide.html</loc>
-    <lastmod>2026-07-02</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bluehourchina.com/yunnan-quick-start.html</loc>
     <lastmod>2026-07-02</lastmod>
     <priority>0.8</priority>
   </url>
@@ -111,54 +41,14 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://bluehourchina.com/yunnan-referral-invite.html</loc>
-    <lastmod>2026-07-02</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bluehourchina.com/yunnan-itinerary-check.html</loc>
-    <lastmod>2026-07-02</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bluehourchina.com/about.html</loc>
-    <lastmod>2026-07-02</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bluehourchina.com/faq.html</loc>
-    <lastmod>2026-07-02</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bluehourchina.com/yunnan-trust-video.html</loc>
-    <lastmod>2026-07-02</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bluehourchina.com/thanks.html</loc>
-    <lastmod>2026-07-02</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bluehourchina.com/en.html</loc>
-    <lastmod>2026-07-02</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bluehourchina.com/credits.html</loc>
-    <lastmod>2026-07-02</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bluehourchina.com/zh/stories/</loc>
-    <lastmod>2026-07-02</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bluehourchina.com/zh/interest/</loc>
+    <loc>https://bluehourchina.com/consult/</loc>
     <lastmod>2026-07-02</lastmod>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://bluehourchina.com/zh.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://bluehourchina.com/zh/yunnan/</loc>
@@ -186,14 +76,24 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bluehourchina.com/ja/stories/</loc>
+    <loc>https://bluehourchina.com/zh/stories/</loc>
     <lastmod>2026-07-02</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bluehourchina.com/ja/interest/</loc>
+    <loc>https://bluehourchina.com/zh/interest/</loc>
     <lastmod>2026-07-02</lastmod>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://bluehourchina.com/zh/consult/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://bluehourchina.com/ja.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://bluehourchina.com/ja/yunnan/</loc>
@@ -221,19 +121,24 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://bluehourchina.com/ja/stories/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bluehourchina.com/ja/interest/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://bluehourchina.com/ja/consult/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://bluehourchina.com/ko.html</loc>
     <lastmod>2026-07-02</lastmod>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bluehourchina.com/ko/stories/</loc>
-    <lastmod>2026-07-02</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bluehourchina.com/ko/interest/</loc>
-    <lastmod>2026-07-02</lastmod>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://bluehourchina.com/ko/yunnan/</loc>
@@ -261,19 +166,24 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://bluehourchina.com/ko/stories/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bluehourchina.com/ko/interest/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://bluehourchina.com/ko/consult/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://bluehourchina.com/th.html</loc>
     <lastmod>2026-07-02</lastmod>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bluehourchina.com/th/stories/</loc>
-    <lastmod>2026-07-02</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bluehourchina.com/th/interest/</loc>
-    <lastmod>2026-07-02</lastmod>
-    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://bluehourchina.com/th/yunnan/</loc>
@@ -301,22 +211,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bluehourchina.com/consult/</loc>
+    <loc>https://bluehourchina.com/th/stories/</loc>
     <lastmod>2026-07-02</lastmod>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bluehourchina.com/zh/consult/</loc>
-    <lastmod>2026-07-02</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://bluehourchina.com/ja/consult/</loc>
-    <lastmod>2026-07-02</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://bluehourchina.com/ko/consult/</loc>
+    <loc>https://bluehourchina.com/th/interest/</loc>
     <lastmod>2026-07-02</lastmod>
     <priority>0.9</priority>
   </url>
@@ -326,18 +226,8 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://bluehourchina.com/apply/</loc>
+    <loc>https://bluehourchina.com/ai/</loc>
     <lastmod>2026-07-02</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://bluehourchina.com/review/</loc>
-    <lastmod>2026-07-02</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://bluehourchina.com/journey-review/</loc>
-    <lastmod>2026-07-02</lastmod>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
 </urlset>

@@ -353,13 +353,34 @@ async function updateSitemap() {
   const xml = await read(sitemapFile);
   const paths = new Set([...xml.matchAll(/<loc>https:\/\/bluehourchina\.com([^<]*)<\/loc>/g)].map((match) => match[1] || "/"));
   for (const config of Object.values(languages)) paths.add(config.consultUrl);
-  paths.add("/apply/");
-  paths.add("/review/");
-  paths.add("/journey-review/");
+  paths.delete("/apply/");
+  paths.delete("/review/");
+  paths.delete("/journey-review/");
+  const lowPriorityLegacy = new Set([
+    "/yunnan-onepage.html",
+    "/journal-yunnan.html",
+    "/yunnan-route-compare.html",
+    "/yunnan-price-compare.html",
+    "/yunnan-agency-compare.html",
+    "/yunnan-budget-fit.html",
+    "/yunnan-pilot.html",
+    "/yunnan-first-trip-guide.html",
+    "/yunnan-quick-start.html",
+    "/yunnan-referral-invite.html",
+    "/yunnan-itinerary-check.html",
+    "/yunnan-trust-video.html",
+    "/social.html",
+  ]);
+  for (const item of lowPriorityLegacy) paths.delete(item);
+  const priorityFor = (u) => {
+    if (u === "/") return "1.0";
+    if (u.includes("consult") || u.includes("apply") || u.includes("review") || u.includes("interest")) return "0.9";
+    return "0.8";
+  };
   const body = [...paths].map((u) => `  <url>
     <loc>https://bluehourchina.com${u}</loc>
     <lastmod>${today}</lastmod>
-    <priority>${u.includes("consult") || u.includes("apply") || u.includes("review") ? "0.9" : u === "/" ? "1.0" : u.includes("interest") ? "0.9" : "0.8"}</priority>
+    <priority>${priorityFor(u)}</priority>
   </url>`).join("\n");
   await write(sitemapFile, `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}\n</urlset>\n`);
 }
