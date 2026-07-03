@@ -1,6 +1,6 @@
 import fs from "node:fs/promises";
 
-const key = "bluehourchina-20260703-f7559af";
+const key = "indexnow-bluehourchina-20260703-2a388ab";
 const host = "bluehourchina.com";
 const sitemap = await fs.readFile("sitemap.xml", "utf8");
 const urls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);

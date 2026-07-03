@@ -26,3 +26,4 @@ Sitemap: https://bluehourchina.com/sitemap.xml
 LLMs: https://bluehourchina.com/llms.txt
 LLMs-Full: https://bluehourchina.com/llms-full.txt
 AI-Search-Reference: https://bluehourchina.com/ai/
+IndexNow-Key: https://bluehourchina.com/indexnow-bluehourchina-20260703-2a388ab.txt
