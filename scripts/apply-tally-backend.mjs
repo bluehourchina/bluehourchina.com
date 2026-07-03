@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
-const campaign = "ten_calm_reviews";
+const campaign = "private_route_consultation";
 const tallyFormId = process.env.TALLY_FORM_ID || extractId(process.env.TALLY_FORM_URL || "");
 
 const pages = [
@@ -69,7 +69,7 @@ function managedEmbed(page) {
           frameborder="0"
           marginheight="0"
           marginwidth="0"
-          title="Bluehour China journey review"></iframe>
+          title="Bluehour China route consultation"></iframe>
         <p class="form-fallback"><a href="${publicUrl(page)}">${page.label}</a></p>
       </div>
       <details class="email-backup-form">

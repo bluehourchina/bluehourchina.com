@@ -3,6 +3,7 @@ import path from "node:path";
 
 const root = process.cwd();
 const today = "2026-07-02";
+const campaign = "private_route_consultation";
 
 const languages = {
   en: {
@@ -14,17 +15,17 @@ const languages = {
     consultFiles: ["consult/index.html", "en/consult/index.html", "apply/index.html", "review/index.html", "journey-review/index.html"],
     consultUrl: "/consult/",
     langTag: "en",
-    title: "First 10 calm journey reviews",
-    description: "A careful first review for travellers planning a deeper China journey beyond Beijing and Shanghai.",
-    eyebrow: "First 10 journey reviews",
-    h2: "We are opening ten careful reviews for travellers planning a deeper China journey.",
-    lead: "For serious travellers, we will personally read your season, route, comfort needs and concerns, then return an honest first direction. No package pressure, just a clear next step.",
-    formTitle: "A more personal first review.",
-    formLead: "Ten early reviews help us learn the exact kind of high-comfort China journey international travellers want now.",
+    title: "Private China route consultation",
+    description: "A calm first consultation for travellers planning a deeper China journey beyond Beijing and Shanghai.",
+    eyebrow: "Private route consultation",
+    h2: "Tell us the China landscape you want to move toward.",
+    lead: "For serious travellers, we read your season, route, comfort needs and concerns, then return an honest first direction. No package pressure, just a calm next step.",
+    formTitle: "A quieter first conversation.",
+    formLead: "We read your season, pace and comfort needs, then reply with a direction that feels suitable to begin.",
     fallback: "If the form does not send, write directly to",
-    cta: "Join the first 10 reviews",
-    sticky: "Start a journey review",
-    secondary: "First 10 reviews",
+    cta: "Begin a private consultation",
+    sticky: "Begin a private consultation",
+    secondary: "How consultation works",
     steps: [
       ["01", "Share the landscape", "Yunnan, Xinjiang, Dunhuang, Sanya, Northeast China, or simply the mood you want."],
       ["02", "We check the fit", "Season, distance, comfort level, language needs and whether the route is becoming too rushed."],
@@ -41,17 +42,17 @@ const languages = {
     consultFiles: ["zh/consult/index.html"],
     consultUrl: "/zh/consult/",
     langTag: "zh-Hant",
-    title: "先收 10 份深度旅程評估",
-    description: "若青中國旅策先認真處理 10 份想走進中國深處的旅程需求，人工判斷目的地、季節、舒適度與在地照應。",
-    eyebrow: "先收 10 份旅程評估",
-    h2: "我們先認真處理 10 份想走進中國深處的旅程需求。",
+    title: "中國深度路線初談",
+    description: "若青中國旅策先理解你想靠近的中國風景，人工判斷目的地、季節、舒適度與在地照應。",
+    eyebrow: "私人路線初談",
+    h2: "先理解你想靠近的中國風景",
     lead: "這不是廉價促銷，也不是制式行程。你留下季節、人數、舒適需求與擔心的地方，我們人工判斷路線是否適合、哪裡太趕、需要什麼在地照應。",
     formTitle: "更像私人顧問的第一步。",
-    formLead: "這 10 份早期評估，會幫我們更精準理解外國旅人真正想要的高舒適中國深度旅行。",
+    formLead: "我們會先讀你的季節、節奏與舒適需求，再回覆一個適合開始討論的方向。",
     fallback: "如果表單無法送出，也可以直接寄到",
-    cta: "加入這 10 份評估",
-    sticky: "開始旅程評估",
-    secondary: "10 份人工評估",
+    cta: "開始路線初談",
+    sticky: "開始路線初談",
+    secondary: "了解顧問方式",
     steps: [
       ["01", "說出你想靠近的風景", "雲南、新疆、敦煌、三亞、東北，或只是先說你想要的空氣。"],
       ["02", "我們判斷是否適合", "季節、距離、住宿舒適、語言需求與同行者體力，一起放進路線裡看。"],
@@ -68,17 +69,17 @@ const languages = {
     consultFiles: ["ja/consult/index.html"],
     consultUrl: "/ja/consult/",
     langTag: "ja",
-    title: "最初の10件の旅レビュー",
-    description: "北京・上海の次に中国を深く旅したい方へ、最初の10件を丁寧に拝見します。",
-    eyebrow: "最初の10件",
-    h2: "中国をもう少し深く旅したい方へ、最初の10件を丁寧に拝見します。",
+    title: "静かな初回相談",
+    description: "北京・上海の次に中国を深く旅したい方へ、静かに最初の方向を整えます。",
+    eyebrow: "個別相談",
+    h2: "中国をもう少し深く旅したい方へ、個別相談を丁寧に拝見します。",
     lead: "強い営業ではありません。季節、人数、快適さ、不安を読み、合う場所、急ぎすぎる場所、必要な現地サポートを静かに整理します。",
     formTitle: "より私的な最初の相談。",
-    formLead: "最初の10件は、海外旅行者がいま求める心地よい中国深度旅行を理解するために丁寧に読みます。",
+    formLead: "季節、ペース、快適さへの希望を丁寧に読み、最初の方向を整えます。",
     fallback: "フォームが送信できない場合は、こちらへ直接ご連絡ください",
-    cta: "10件のレビューに入る",
-    sticky: "旅レビューを始める",
-    secondary: "10件のレビュー",
+    cta: "最初の相談をする",
+    sticky: "相談を始める",
+    secondary: "個別相談",
     steps: [
       ["01", "風景を伝える", "雲南、新疆、敦煌、三亜、東北、または旅で感じたい空気だけでも大丈夫です。"],
       ["02", "相性を見る", "季節、距離、宿の質感、言語サポート、同行者の体力を含めて判断します。"],
@@ -95,17 +96,17 @@ const languages = {
     consultFiles: ["ko/consult/index.html"],
     consultUrl: "/ko/consult/",
     langTag: "ko",
-    title: "첫 10건의 조용한 여정 리뷰",
-    description: "베이징과 상하이 이후의 중국을 더 깊게 여행하려는 분들을 위해 첫 10건을 세심하게 검토합니다.",
-    eyebrow: "첫 10건 리뷰",
-    h2: "중국을 더 깊게 여행하려는 분들을 위해 첫 10건을 세심하게 검토합니다.",
+    title: "조용한 첫 상담",
+    description: "베이징과 상하이 이후의 중국을 더 깊게 여행하려는 분들을 위해 차분히 첫 방향을 정리합니다.",
+    eyebrow: "첫 상담",
+    h2: "중국을 더 깊게 여행하려는 분들을 위해 첫 방향을 차분히 정리합니다.",
     lead: "강한 판매가 아닙니다. 계절, 인원, 편안함, 걱정거리를 읽고 어디가 맞는지, 어디가 빠듯한지, 어떤 현지 케어가 필요한지 정리합니다.",
     formTitle: "더 개인적인 첫 상담.",
-    formLead: "첫 10건은 해외 여행자가 원하는 편안한 중국 심층 여행을 더 정확히 이해하기 위해 직접 읽습니다.",
+    formLead: "계절, 속도, 편안함에 대한 요청을 직접 읽고 첫 방향을 정리합니다.",
     fallback: "양식 전송이 어렵다면 여기로 직접 보내주세요",
-    cta: "첫 10건 리뷰에 참여",
-    sticky: "여정 리뷰 시작",
-    secondary: "첫 10건 리뷰",
+    cta: "조용한 상담 시작",
+    sticky: "상담 시작",
+    secondary: "첫 상담",
     steps: [
       ["01", "원하는 풍경을 남깁니다", "윈난, 신장, 둔황, 싼야, 동북, 또는 원하는 분위기만 적어도 됩니다."],
       ["02", "여정의 적합성을 봅니다", "계절, 거리, 숙소 감각, 언어 지원, 동행자의 체력을 함께 봅니다."],
@@ -122,17 +123,17 @@ const languages = {
     consultFiles: ["th/consult/index.html"],
     consultUrl: "/th/consult/",
     langTag: "th",
-    title: "10 รีวิวทริปแรกอย่างสงบ",
-    description: "สำหรับคนที่อยากเห็นจีนให้ลึกกว่าเมืองใหญ่ เราจะอ่าน 10 คำขอแรกอย่างละเอียดและตอบทิศทางแรกอย่างตรงไปตรงมา",
-    eyebrow: "10 รีวิวแรก",
-    h2: "เราจะอ่าน 10 คำขอแรกอย่างละเอียด สำหรับคนที่อยากเห็นจีนให้ลึกกว่าเมืองใหญ่",
+    title: "การปรึกษาเส้นทางจีนแบบส่วนตัว",
+    description: "สำหรับคนที่อยากเห็นจีนให้ลึกกว่าเมืองใหญ่ เราจะอ่านฤดูกาล ความสบาย และความกังวลของคุณ แล้วตอบทิศทางแรกอย่างตรงไปตรงมา",
+    eyebrow: "การปรึกษาเส้นทางส่วนตัว",
+    h2: "บอกภูมิทัศน์ของจีนที่คุณอยากเข้าใกล้",
     lead: "นี่ไม่ใช่การขายแพ็กเกจแรง ๆ แต่เป็นการดูฤดูกาล จำนวนคน ความสบาย และความกังวลของคุณ แล้วตอบทิศทางแรกอย่างตรงไปตรงมา",
-    formTitle: "คำแนะนำแรกที่เป็นส่วนตัวกว่า",
-    formLead: "10 รีวิวแรกจะช่วยให้เราเข้าใจทริปจีนแบบสบาย มีคุณภาพ และคุ้มค่าที่นักเดินทางต่างชาติต้องการจริง ๆ",
+    formTitle: "บทสนทนาแรกที่เป็นส่วนตัวกว่า",
+    formLead: "เราจะอ่านฤดูกาล จังหวะ และความสบายที่คุณต้องการ แล้วตอบทิศทางแรกที่เหมาะกับการเริ่มต้น",
     fallback: "หากส่งแบบฟอร์มไม่ได้ สามารถส่งอีเมลมาได้ที่",
-    cta: "เข้าร่วม 10 รีวิวแรก",
-    sticky: "เริ่มรีวิวทริป",
-    secondary: "10 รีวิวแรก",
+    cta: "ขอคำแนะนำแรก",
+    sticky: "เริ่มปรึกษาเส้นทาง",
+    secondary: "วิธีการปรึกษา",
     steps: [
       ["01", "บอกภูมิทัศน์ที่อยากเห็น", "ยูนนาน ซินเจียง ตุนหวง ซานย่า ตะวันออกเฉียงเหนือ หรือแค่อารมณ์ของทริปก็ได้"],
       ["02", "เราดูความเหมาะสม", "ฤดูกาล ระยะทาง ที่พัก ภาษา และแรงของผู้ร่วมทริปจะถูกนำมาพิจารณา"],
@@ -178,7 +179,7 @@ function reviewUrl(lang, source, destination = "") {
   const params = new URLSearchParams({
     utm_source: source,
     utm_medium: "site",
-    utm_campaign: "ten_calm_reviews",
+    utm_campaign: campaign,
   });
   if (destination) params.set("destination", destination);
   return `${config.interest}?${params.toString()}`;
@@ -247,7 +248,7 @@ function formProof(lang) {
 
 function formFallback(lang) {
   const config = languages[lang];
-  const subject = encodeURIComponent("Bluehour China journey review");
+  const subject = encodeURIComponent("Bluehour China route consultation");
   return `
         <!-- form-fallback-start -->
         <p class="form-fallback">${escapeHtml(config.fallback)} <a href="mailto:bluehourchina@gmail.com?subject=${subject}">bluehourchina@gmail.com</a></p>
@@ -300,15 +301,15 @@ function enhanceInterest(html, lang) {
   html = removeGoogleSheetBackend(cleanManaged(html));
   html = html.replace('<form class="lead-form"', `${formProof(lang)}\n      <form class="lead-form"`);
   if (!html.includes('name="campaign"')) {
-    html = html.replace('<input type="hidden" name="priority" value="Medium">', '<input type="hidden" name="priority" value="Medium">\n        <input type="hidden" name="campaign" value="ten_calm_reviews">');
+    html = html.replace('<input type="hidden" name="priority" value="Medium">', `<input type="hidden" name="priority" value="Medium">\n        <input type="hidden" name="campaign" value="${campaign}">`);
   }
   if (!html.includes('name="intake_provider"')) {
-    html = html.replace('<input type="hidden" name="campaign" value="ten_calm_reviews">', '<input type="hidden" name="campaign" value="ten_calm_reviews">\n        <input type="hidden" name="intake_provider" value="formsubmit_email">');
+    html = html.replace(`<input type="hidden" name="campaign" value="${campaign}">`, `<input type="hidden" name="campaign" value="${campaign}">\n        <input type="hidden" name="intake_provider" value="formsubmit_email">`);
   }
   if (!html.includes("<!-- form-fallback-start -->")) {
     html = html.replace("</form>", `${formFallback(lang)}\n      </form>`);
   }
-  html = html.replace('utm_campaign: params.get("utm_campaign") || "bluehour_china_review"', 'utm_campaign: params.get("utm_campaign") || "ten_calm_reviews"');
+  html = html.replace(/utm_campaign: params\.get\("utm_campaign"\) \|\| "[^"]+"/g, `utm_campaign: params.get("utm_campaign") || "${campaign}"`);
   return html;
 }
 
@@ -409,19 +410,19 @@ async function updateLlms() {
     shortText += `
 
 ## Lead Capture Campaign
-- [First 10 calm journey reviews](/consult/)
-- The consultation path is designed to collect the first 10 serious journey review requests and route them to localized inquiry pages with UTM tracking.
+- [Private China route consultation](/consult/)
+- The consultation path is designed to collect serious private inquiries and route them to localized inquiry pages with UTM tracking.
 `;
   }
   await write("llms.txt", shortText.trimEnd() + "\n");
 
   let fullText = await read("llms-full.txt");
-  if (!fullText.includes("First 10 Calm Journey Reviews")) {
+  if (!fullText.includes("Private China Route Consultation")) {
     fullText += `
 
-## First 10 Calm Journey Reviews
+## Private China Route Consultation
 
-The current conversion goal is to obtain the first 10 serious consultation leads. The site should present this as a careful manual review, not a discount campaign. Users are invited to share destination interest, timing, group size, comfort expectations, language needs, budget range and prior China travel experience. Every homepage, story page and destination page can route to the localized inquiry form with UTM campaign ten_calm_reviews.
+The current conversion goal is to obtain serious consultation leads through a careful, high-trust route consultation. Users are invited to share destination interest, timing, group size, comfort expectations, language needs, budget range and prior China travel experience. Every homepage, story page and destination page can route to the localized inquiry form with UTM campaign ${campaign}.
 
 Primary consultation URLs:
 - /consult/

@@ -74,7 +74,7 @@ function createPayload() {
 
   const blocks = [
     block("FORM_TITLE", "FORM_TITLE", {
-      html: "Bluehour China Journey Review",
+      html: "Bluehour China Route Consultation",
       logo: `${siteUrl}/assets/bluehourchina-icon-a.png`,
       cover: `${siteUrl}/assets/ai/bluehour-china-hero-luxury-lake-v2.jpg`,
       coverSettings: { objectPositionYPercent: 48 },
@@ -110,9 +110,9 @@ function createPayload() {
       hasSelfEmailNotifications: true,
       selfEmailTo: richText(replyTo),
       selfEmailReplyTo: richText(replyTo),
-      selfEmailSubject: richText("New Bluehour China journey review"),
+      selfEmailSubject: richText("New Bluehour China route consultation"),
       selfEmailFromName: richText("Bluehour China"),
-      selfEmailBody: richText("A new Bluehour China journey review request has arrived. Open the Tally dashboard to review the full submission."),
+      selfEmailBody: richText("A new Bluehour China route consultation request has arrived. Open the Tally dashboard to review the full submission."),
       hasProgressBar: false,
       saveForLater: true,
     },

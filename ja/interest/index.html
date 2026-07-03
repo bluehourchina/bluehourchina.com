@@ -47,13 +47,13 @@
 
       <!-- form-proof-start -->
       <div class="form-proof">
-        <p class="eyebrow">最初の10件</p>
+        <p class="eyebrow">個別相談</p>
         <h3>より私的な最初の相談。</h3>
-        <p>最初の10件は、海外旅行者がいま求める心地よい中国深度旅行を理解するために丁寧に読みます。</p>
+        <p>季節、ペース、快適さへの希望を丁寧に読み、最初の方向を整えます。</p>
         <div><span>人が返信</span><span>通常24時間以内</span><span>押し売りなし</span><span>合う場合だけ現地紹介</span></div>
       </div>
       <!-- form-proof-end -->
-      <form class="lead-form" data-sheet-endpoint="https://script.google.com/macros/s/AKfycbyjOIushIwcAxmjH1DJfGZ5fQrXduxSAglhAaeN9oFHlcdH2sXWrxHVUQmdTCrsn1Y1/exec" data-form-lang="ja" data-sending-message="送信中..." data-success-message="受け取りました。若青中國旅策が落ち着いて確認し、最初の方向性をお返事します。" data-error-message="フォームを送信できませんでした。直接メールでご連絡ください。" name="bluehour-china-journey-review-ja" method="POST" action="https://formsubmit.co/bluehourchina@gmail.com">
+      <form class="lead-form" data-form-lang="ja" data-sending-message="送信中..." data-success-message="受け取りました。若青中國旅策が落ち着いて確認し、最初の方向性をお返事します。" data-error-message="フォームを送信できませんでした。直接メールでご連絡ください。" name="bluehour-china-journey-review-ja" method="POST" action="https://formsubmit.co/bluehourchina@gmail.com">
         <input type="hidden" name="_next" value="https://bluehourchina.com/thanks.html">
         <input type="hidden" name="_subject" value="Bluehour China Journeys inquiry (ja)">
         <input type="hidden" name="_template" value="table">
@@ -63,7 +63,7 @@
         <input type="hidden" name="submitted_at" value="">
         <input type="hidden" name="status" value="New">
         <input type="hidden" name="priority" value="Medium">
-        <input type="hidden" name="campaign" value="ten_calm_reviews">
+        <input type="hidden" name="campaign" value="private_route_consultation">
         <input type="hidden" name="intake_provider" value="google_sheet_webapp">
         <input type="hidden" name="language" value="日本語">
         <input type="hidden" name="page_url" value="">
@@ -108,7 +108,7 @@
         <p class="note">Bluehour China Journeys は目的地相談、旅程づくり、現地事業者のマッチングを行います。実際の旅行サービスは適切な現地事業者が提供します。</p>
 
         <!-- form-fallback-start -->
-        <p class="form-fallback">フォームが送信できない場合は、こちらへ直接ご連絡ください <a href="mailto:bluehourchina@gmail.com?subject=Bluehour%20China%20journey%20review">bluehourchina@gmail.com</a></p>
+        <p class="form-fallback">フォームが送信できない場合は、こちらへ直接ご連絡ください <a href="mailto:bluehourchina@gmail.com?subject=Bluehour%20China%20route%20consultation">bluehourchina@gmail.com</a></p>
         <!-- form-fallback-end -->
       </form>
     </div></section>
@@ -129,7 +129,7 @@
         referrer: document.referrer || "",
         utm_source: params.get("utm_source") || "site",
         utm_medium: params.get("utm_medium") || "multilingual",
-        utm_campaign: params.get("utm_campaign") || "ten_calm_reviews"
+        utm_campaign: params.get("utm_campaign") || "private_route_consultation"
       };
       Object.entries(fields).forEach(([name, value]) => {
         const input = leadForm.querySelector(`[name="${name}"]`);
@@ -157,7 +157,7 @@
           referrer: document.referrer || "",
           utm_source: params.get("utm_source") || "site",
           utm_medium: params.get("utm_medium") || "multilingual",
-          utm_campaign: params.get("utm_campaign") || "ten_calm_reviews"
+          utm_campaign: params.get("utm_campaign") || "private_route_consultation"
         };
       };
 

@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
-const campaign = "ten_calm_reviews";
+const campaign = "private_route_consultation";
 const destinations = ["yunnan", "xinjiang", "dunhuang", "sanya", "northeast"];
 
 const languages = {
@@ -131,7 +131,7 @@ for (const config of Object.values(languages)) {
 
 for (const file of ["apply/index.html", "review/index.html", "journey-review/index.html"]) {
   await checkFile(file, [
-    ["missing consultation content", (html) => html.includes("consult") || html.includes("journey review")],
+    ["missing consultation content", (html) => html.includes("consult") || html.includes("route consultation")],
     ["missing campaign", (html) => html.includes(campaign)],
   ]);
 }
@@ -143,7 +143,7 @@ await checkFile("sitemap.xml", [
 ]);
 
 await checkFile("llms-full.txt", [
-  ["missing AI search conversion note", (text) => text.includes("First 10 Calm Journey Reviews") && text.includes(campaign)],
+  ["missing AI search conversion note", (text) => text.includes("Private China Route Consultation") && text.includes(campaign)],
 ]);
 
 await checkFile("scripts/create-tally-intake-form.mjs", [

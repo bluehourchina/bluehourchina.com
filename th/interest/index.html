@@ -47,13 +47,13 @@
 
       <!-- form-proof-start -->
       <div class="form-proof">
-        <p class="eyebrow">10 รีวิวแรก</p>
-        <h3>คำแนะนำแรกที่เป็นส่วนตัวกว่า</h3>
-        <p>10 รีวิวแรกจะช่วยให้เราเข้าใจทริปจีนแบบสบาย มีคุณภาพ และคุ้มค่าที่นักเดินทางต่างชาติต้องการจริง ๆ</p>
+        <p class="eyebrow">การปรึกษาเส้นทางส่วนตัว</p>
+        <h3>บทสนทนาแรกที่เป็นส่วนตัวกว่า</h3>
+        <p>เราจะอ่านฤดูกาล จังหวะ และความสบายที่คุณต้องการ แล้วตอบทิศทางแรกที่เหมาะกับการเริ่มต้น</p>
         <div><span>คนจริงตอบ</span><span>มักตอบใน 24 ชม.</span><span>ไม่บังคับซื้อแพ็กเกจ</span><span>เหมาะจึงแนะนำในพื้นที่</span></div>
       </div>
       <!-- form-proof-end -->
-      <form class="lead-form" data-sheet-endpoint="https://script.google.com/macros/s/AKfycbyjOIushIwcAxmjH1DJfGZ5fQrXduxSAglhAaeN9oFHlcdH2sXWrxHVUQmdTCrsn1Y1/exec" data-form-lang="th" data-sending-message="กำลังส่ง..." data-success-message="เราได้รับคำขอของคุณแล้ว ทีม Ruoqing China Journeys จะตอบกลับพร้อมทิศทางแรกอย่างใจเย็น" data-error-message="ส่งแบบฟอร์มไม่สำเร็จ กรุณาอีเมลถึงเราโดยตรง" name="bluehour-china-journey-review-th" method="POST" action="https://formsubmit.co/bluehourchina@gmail.com">
+      <form class="lead-form" data-form-lang="th" data-sending-message="กำลังส่ง..." data-success-message="เราได้รับคำขอของคุณแล้ว ทีม Ruoqing China Journeys จะตอบกลับพร้อมทิศทางแรกอย่างใจเย็น" data-error-message="ส่งแบบฟอร์มไม่สำเร็จ กรุณาอีเมลถึงเราโดยตรง" name="bluehour-china-journey-review-th" method="POST" action="https://formsubmit.co/bluehourchina@gmail.com">
         <input type="hidden" name="_next" value="https://bluehourchina.com/thanks.html">
         <input type="hidden" name="_subject" value="Bluehour China Journeys inquiry (th)">
         <input type="hidden" name="_template" value="table">
@@ -63,7 +63,7 @@
         <input type="hidden" name="submitted_at" value="">
         <input type="hidden" name="status" value="New">
         <input type="hidden" name="priority" value="Medium">
-        <input type="hidden" name="campaign" value="ten_calm_reviews">
+        <input type="hidden" name="campaign" value="private_route_consultation">
         <input type="hidden" name="intake_provider" value="google_sheet_webapp">
         <input type="hidden" name="language" value="ไทย">
         <input type="hidden" name="page_url" value="">
@@ -108,7 +108,7 @@
         <p class="note">Bluehour China Journeys ให้คำปรึกษาจุดหมาย วางจังหวะเส้นทาง และจับคู่ผู้ให้บริการท้องถิ่น บริการเดินทางจริงดำเนินการโดยผู้ให้บริการที่เหมาะสมในพื้นที่</p>
 
         <!-- form-fallback-start -->
-        <p class="form-fallback">หากส่งแบบฟอร์มไม่ได้ สามารถส่งอีเมลมาได้ที่ <a href="mailto:bluehourchina@gmail.com?subject=Bluehour%20China%20journey%20review">bluehourchina@gmail.com</a></p>
+        <p class="form-fallback">หากส่งแบบฟอร์มไม่ได้ สามารถส่งอีเมลมาได้ที่ <a href="mailto:bluehourchina@gmail.com?subject=Bluehour%20China%20route%20consultation">bluehourchina@gmail.com</a></p>
         <!-- form-fallback-end -->
       </form>
     </div></section>
@@ -129,7 +129,7 @@
         referrer: document.referrer || "",
         utm_source: params.get("utm_source") || "site",
         utm_medium: params.get("utm_medium") || "multilingual",
-        utm_campaign: params.get("utm_campaign") || "ten_calm_reviews"
+        utm_campaign: params.get("utm_campaign") || "private_route_consultation"
       };
       Object.entries(fields).forEach(([name, value]) => {
         const input = leadForm.querySelector(`[name="${name}"]`);
@@ -157,7 +157,7 @@
           referrer: document.referrer || "",
           utm_source: params.get("utm_source") || "site",
           utm_medium: params.get("utm_medium") || "multilingual",
-          utm_campaign: params.get("utm_campaign") || "ten_calm_reviews"
+          utm_campaign: params.get("utm_campaign") || "private_route_consultation"
         };
       };
 
