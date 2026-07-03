@@ -4,57 +4,61 @@ const SHEET_NAME = "Leads CRM";
 function doPost(event) {
   const params = readPayload_(event);
   if (params["bot-field"]) {
-    return ContentService
-      .createTextOutput(JSON.stringify({ ok: true, skipped: "bot-field" }))
-      .setMimeType(ContentService.MimeType.JSON);
+    return json_({ ok: true, skipped: "bot-field" });
   }
 
-  const sheet = SpreadsheetApp.openById(SPREADSHEET_ID).getSheetByName(SHEET_NAME);
-  const receivedAt = params.submitted_at ? new Date(params.submitted_at) : new Date();
-  const leadId = "BHC-" + Utilities.formatDate(receivedAt, "Asia/Taipei", "yyyyMMdd-HHmmss");
-  const source = params.utm_source || "site";
-  const medium = params.utm_medium || "website";
+  const lock = LockService.getScriptLock();
+  lock.waitLock(10000);
 
-  const row = [
-    leadId,
-    receivedAt,
-    params.status || "New",
-    params.priority || "Medium",
-    params.name || "",
-    params.contact || "",
-    params.email || "",
-    params.messenger || "",
-    params.country || "",
-    params.language || params.language_needs || "",
-    params.destination || "",
-    params.travel_window || params.month || "",
-    params.group_size || "",
-    params.comfort_level || "",
-    params.budget || "",
-    params.visited_china_before || "",
-    params.message || "",
-    params.page_url || "",
-    params.utm_campaign || "",
-    params.owner || "Bluehour",
-    "Source: " + source + " / " + medium,
-    params.next_step || "",
-    "",
-    "",
-    "",
-    ""
-  ];
+  try {
+    const sheet = SpreadsheetApp.openById(SPREADSHEET_ID).getSheetByName(SHEET_NAME);
+    if (!sheet) throw new Error("Missing sheet: " + SHEET_NAME);
 
-  sheet.appendRow(row);
+    const receivedAt = params.submitted_at ? new Date(params.submitted_at) : new Date();
+    const leadId = "BHC-" + Utilities.formatDate(receivedAt, "Asia/Taipei", "yyyyMMdd-HHmmss") + "-" + Utilities.getUuid().slice(0, 4).toUpperCase();
+    const source = params.utm_source || "site";
+    const medium = params.utm_medium || "website";
 
-  return ContentService
-    .createTextOutput(JSON.stringify({ ok: true, leadId }))
-    .setMimeType(ContentService.MimeType.JSON);
+    const row = [
+      leadId,
+      receivedAt,
+      params.status || "New",
+      params.priority || "Medium",
+      params.name || "",
+      params.contact || "",
+      params.email || "",
+      params.messenger || "",
+      params.country || "",
+      params.language || params.language_needs || "",
+      params.destination || "",
+      params.travel_window || params.month || "",
+      params.group_size || "",
+      params.comfort_level || "",
+      params.budget || "",
+      params.visited_china_before || "",
+      params.message || "",
+      params.page_url || "",
+      params.utm_campaign || "",
+      params.owner || "Bluehour",
+      "Source: " + source + " / " + medium,
+      params.next_step || "",
+      "",
+      "",
+      "",
+      ""
+    ];
+
+    sheet.appendRow(row);
+    return json_({ ok: true, leadId });
+  } catch (error) {
+    return json_({ ok: false, error: String(error) });
+  } finally {
+    lock.releaseLock();
+  }
 }
 
 function doGet() {
-  return ContentService
-    .createTextOutput(JSON.stringify({ ok: true, service: "Bluehour China Leads Webhook" }))
-    .setMimeType(ContentService.MimeType.JSON);
+  return json_({ ok: true, service: "Bluehour China Leads Webhook" });
 }
 
 function readPayload_(event) {
@@ -81,4 +85,10 @@ function readPayload_(event) {
   });
 
   return params;
+}
+
+function json_(payload) {
+  return ContentService
+    .createTextOutput(JSON.stringify(payload))
+    .setMimeType(ContentService.MimeType.JSON);
 }
