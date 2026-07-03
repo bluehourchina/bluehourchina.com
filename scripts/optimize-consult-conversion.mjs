@@ -27,7 +27,7 @@ const languages = {
     sticky: "Begin a private consultation",
     secondary: "How consultation works",
     steps: [
-      ["01", "Share the landscape", "Yunnan, Xinjiang, Dunhuang, Sanya, Northeast China, or simply the mood you want."],
+      ["01", "Share the landscape", "Yunnan, Xinjiang, Dunhuang, Sanya, Northeast, or simply the mood you want."],
       ["02", "We check the fit", "Season, distance, comfort level, language needs and whether the route is becoming too rushed."],
       ["03", "You decide calmly", "If it fits, we can match suitable local providers. If it does not, we will say so."],
     ],

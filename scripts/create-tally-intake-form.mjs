@@ -83,7 +83,7 @@ function createPayload() {
     ...emailQuestion("Email", "email", "Email address"),
     ...textQuestion("Preferred contact", "contact", "WhatsApp / WeChat / LINE / other contact"),
     ...textQuestion("Country or region", "country", "Where are you based?"),
-    ...textQuestion("Destination or mood", "destination_interest", "Yunnan, Xinjiang, Dunhuang, Sanya, Northeast China, or not sure yet"),
+    ...textQuestion("Destination or mood", "destination_interest", "Yunnan, Xinjiang, Dunhuang, Sanya, Northeast, or not sure yet"),
     ...textQuestion("Travel window", "travel_window", "When are you hoping to travel?"),
     ...textQuestion("Travellers", "group_size", "Number of travellers and who is joining"),
     ...textQuestion("Language support", "language_needs", "English, Chinese-English, Japanese, Korean, Thai, or other needs"),
