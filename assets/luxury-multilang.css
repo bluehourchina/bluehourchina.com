@@ -402,3 +402,90 @@ h1,h2,h3,
   .route-copy h2{font-size:clamp(31px,8vw,42px)}
 }
 /* standard-route-end */
+
+/* mobile-overflow-guard-start */
+html,
+body{
+  max-width:100%;
+  overflow-x:hidden;
+}
+.wrap,
+.hero-inner,
+.section-head,
+.split,
+.conversion-wrap,
+.route-showcase,
+.destinations,
+.promise-grid,
+.care-grid,
+.notes,
+.story-grid,
+.hero-actions{
+  min-width:0;
+  max-width:100%;
+}
+.section-head > *,
+.split > *,
+.conversion-wrap > *,
+.route-showcase > *,
+.destinations > *,
+.promise-grid > *,
+.care-grid > *,
+.notes > *,
+.story-grid > *,
+.place-copy,
+.conversion-copy,
+.conversion-steps,
+.route-copy,
+.route-card{
+  min-width:0;
+  max-width:100%;
+}
+.btn{
+  max-width:100%;
+  min-width:0;
+  white-space:normal;
+  text-align:center;
+}
+@media(max-width:760px){
+  .wrap{
+    width:calc(100% - 36px);
+  }
+  .hero,
+  .home-hero,
+  .section,
+  .cta,
+  .next{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+  }
+  h1,
+  h2,
+  h3,
+  .cjk-title,
+  .place-copy h3,
+  .copy-block h3,
+  .quiet-panel h2,
+  .conversion-copy h2,
+  .route-copy h2,
+  .cta h2,
+  .next h2{
+    max-width:100%;
+    word-break:normal;
+    overflow-wrap:anywhere;
+    line-break:auto;
+  }
+  .conversion-copy h2{
+    font-size:clamp(30px,8vw,36px);
+    line-height:1.14;
+  }
+  .conversion-copy > p,
+  .section-head p,
+  .quiet-panel p,
+  .cta p,
+  .next p{
+    max-width:100%;
+  }
+}
+/* mobile-overflow-guard-end */
