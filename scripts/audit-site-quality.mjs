@@ -3,7 +3,7 @@ import path from "node:path";
 
 const root = process.cwd();
 const siteOrigin = "https://bluehourchina.com";
-const currentLuxuryCssVersion = "v=20260703-iosfix3";
+const currentLuxuryCssVersion = "v=20260703-launch1";
 const htmlFiles = [];
 const issues = [];
 const warnings = [];
@@ -140,6 +140,11 @@ async function auditFile(file) {
       report("issue", file, "luxury CSS link is missing current cache-busting version");
     }
     if (!(await resolvesToFile(href, file))) report("issue", file, `broken local link asset: ${href}`);
+  }
+
+  for (const script of tags(html, "script")) {
+    const src = readAttr(script, "src");
+    if (src && !(await resolvesToFile(src, file))) report("issue", file, `broken script source: ${src}`);
   }
 
   for (const img of tags(html, "img")) {
