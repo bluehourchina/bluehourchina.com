@@ -48,13 +48,34 @@ function doPost(event) {
       ""
     ];
 
-    sheet.appendRow(row);
+    writeLeadRow_(sheet, row);
     return json_({ ok: true, leadId });
   } catch (error) {
     return json_({ ok: false, error: String(error) });
   } finally {
     lock.releaseLock();
   }
+}
+
+function writeLeadRow_(sheet, row) {
+  const firstDataRow = 2;
+  const leadIds = sheet
+    .getRange(firstDataRow, 1, Math.max(sheet.getMaxRows() - firstDataRow + 1, 1), 1)
+    .getDisplayValues();
+  let targetRow = firstDataRow;
+
+  for (let index = leadIds.length - 1; index >= 0; index--) {
+    if (String(leadIds[index][0] || "").trim()) {
+      targetRow = firstDataRow + index + 1;
+      break;
+    }
+  }
+
+  if (targetRow > sheet.getMaxRows()) {
+    sheet.insertRowsAfter(sheet.getMaxRows(), targetRow - sheet.getMaxRows());
+  }
+
+  sheet.getRange(targetRow, 1, 1, row.length).setValues([row]);
 }
 
 function doGet() {
