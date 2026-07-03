@@ -21,3 +21,179 @@
 @media(max-width:900px){.conversion-wrap{grid-template-columns:1fr}.conversion-steps h3{font-size:26px}.sticky-review{display:flex}.footer{padding-bottom:92px}.interest-body .sticky-review{display:none}}
 @media(max-width:760px){.hero-inner{padding-bottom:118px}.home-hero .hero-actions a[href*="utm_source=home_cta"]{display:none}.interest-page{display:block;width:100vw;max-width:100vw;overflow:hidden}.interest-story{width:100vw;max-width:100vw;overflow:hidden}.interest-story h1{width:calc(100vw - 44px);max-width:calc(100vw - 44px);font-size:clamp(32px,8.5vw,40px);line-height:1.12;text-wrap:wrap;overflow-wrap:anywhere;line-break:anywhere}.interest-story .lead{width:calc(100vw - 44px);max-width:calc(100vw - 44px);overflow-wrap:anywhere}.sticky-review{bottom:14px}}
 /* conversion-optimization-end */
+
+/* lv-inspired-intake-start */
+.interest-body{
+  background:
+    linear-gradient(90deg,rgba(7,17,15,.88),rgba(7,17,15,.54) 48%,rgba(7,17,15,.12)),
+    linear-gradient(180deg,rgba(7,17,15,.05),rgba(7,17,15,.66)),
+    url("/assets/ai/bluehour-china-hero-luxury-lake-v2.jpg") center/cover no-repeat fixed;
+}
+.interest-body .nav{
+  padding:18px clamp(18px,3.8vw,54px);
+  background:linear-gradient(180deg,rgba(7,17,15,.62),rgba(7,17,15,0));
+}
+.interest-body .brand{grid-template-columns:36px auto;gap:11px}
+.interest-body .brand img{width:36px;height:36px}
+.interest-body .brand strong{font-size:18px;font-weight:500}
+.interest-body .brand span span{font-size:10px;letter-spacing:.16em}
+.interest-body .nav-links{color:rgba(23,32,28,.66);font-size:12px;gap:20px;font-weight:650}
+.interest-body .language-switch{color:rgba(23,32,28,.46)}
+.interest-body .language-switch a[aria-current=page]{color:var(--ink);border-bottom-color:rgba(23,32,28,.42)}
+.interest-body .nav-cta{min-height:36px;padding:0 14px;border-color:rgba(23,32,28,.24);background:rgba(255,250,241,.22)}
+.interest-page{grid-template-columns:minmax(0,1fr) minmax(400px,500px)}
+.interest-story{
+  justify-content:center;
+  gap:clamp(42px,8vw,92px);
+  padding:clamp(116px,9vw,158px) clamp(40px,7vw,110px) clamp(52px,6vw,86px);
+  border-right:0;
+}
+.interest-story h1{
+  max-width:650px;
+  font-size:clamp(38px,4.5vw,64px);
+  line-height:1.12;
+  text-wrap:balance;
+}
+.interest-story .lead{
+  max-width:760px;
+  margin-top:26px;
+  color:rgba(255,250,241,.78);
+  font-size:clamp(16px,1.18vw,18px);
+  line-height:1.9;
+}
+.interest-body .eyebrow{
+  margin-bottom:18px;
+  font-size:11px;
+  letter-spacing:.18em;
+}
+.interest-body .points{
+  width:min(760px,100%);
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:34px;
+  border:0;
+  border-top:1px solid rgba(255,250,241,.24);
+  background:transparent;
+}
+.interest-body .points div{
+  min-height:auto;
+  padding:18px 0 0;
+  background:transparent;
+}
+.interest-body .points span{
+  margin-bottom:9px;
+  color:rgba(255,250,241,.5);
+  font-size:10px;
+  letter-spacing:.18em;
+}
+.interest-body .points b{
+  max-width:160px;
+  color:rgba(255,250,241,.88);
+  font-family:"Helvetica Neue",Arial,"Noto Sans TC",sans-serif;
+  font-size:14px;
+  font-weight:500;
+  line-height:1.65;
+}
+.interest-body .form-side{
+  align-items:flex-start;
+  padding:clamp(92px,8vw,124px) clamp(26px,3.5vw,46px) 42px;
+  color:var(--ink);
+  background:rgba(246,241,232,.96);
+  backdrop-filter:none;
+}
+.interest-body .form-card{
+  padding:0;
+  border:0;
+  background:transparent;
+}
+.interest-body .form-card h2{
+  font-size:clamp(24px,2.2vw,30px);
+  line-height:1.2;
+}
+.interest-body .form-card p{
+  color:rgba(23,32,28,.66);
+  font-size:14px;
+  line-height:1.76;
+}
+.interest-body .form-proof{
+  margin:22px 0 26px;
+  padding:18px 0 0;
+  border:0;
+  border-top:1px solid rgba(23,32,28,.18);
+  background:transparent;
+}
+.interest-body .form-proof h3{
+  font-size:21px;
+  line-height:1.22;
+}
+.interest-body .form-proof div{gap:7px}
+.interest-body .form-proof span{
+  min-height:28px;
+  border-color:rgba(23,32,28,.18);
+  color:rgba(23,32,28,.64);
+  font-size:11px;
+}
+.interest-body input,
+.interest-body select,
+.interest-body textarea{
+  min-height:44px;
+  border:0;
+  border-bottom:1px solid rgba(23,32,28,.22);
+  background:transparent;
+  color:var(--ink);
+  padding:11px 0;
+  font-size:14px;
+}
+.interest-body textarea{min-height:96px}
+.interest-body input::placeholder,
+.interest-body textarea::placeholder,
+.interest-body select:invalid{color:rgba(23,32,28,.45)}
+.interest-body button{
+  min-height:50px;
+  margin-top:10px;
+  background:var(--deep);
+  color:var(--ivory);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.interest-body .note,
+.interest-body .form-fallback,
+.interest-body .form-status{
+  color:rgba(23,32,28,.56);
+}
+.interest-body .form-fallback a,
+.interest-body .form-status a{
+  color:var(--ink);
+  border-bottom-color:rgba(23,32,28,.28);
+}
+.interest-body .form-status.success{color:#7b5b2e}
+.interest-body .form-status.error{color:#8f4f3e}
+@media(max-width:1100px){
+  .interest-page{grid-template-columns:1fr}
+  .interest-body .form-side{padding:42px 22px 38px}
+  .interest-body .form-card{width:min(760px,100%);margin:0 auto}
+}
+@media(max-width:760px){
+  .interest-body .nav{padding:14px 18px}
+  .interest-body .brand{grid-template-columns:32px auto}
+  .interest-body .brand img{width:32px;height:32px}
+  .interest-body .brand strong{font-size:17px}
+  .interest-story{
+    padding:104px 22px 34px;
+    gap:34px;
+  }
+  .interest-story h1{
+    width:calc(100vw - 44px);
+    max-width:calc(100vw - 44px);
+    font-size:clamp(34px,9.2vw,44px);
+    line-height:1.14;
+    overflow-wrap:normal;
+    line-break:strict;
+  }
+  .interest-body .points{grid-template-columns:1fr;gap:18px}
+  .interest-body .points b{max-width:none}
+  .interest-body .form-side{padding:34px 22px 36px}
+}
+/* lv-inspired-intake-end */
