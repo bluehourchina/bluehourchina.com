@@ -2,9 +2,9 @@
 /zh    /zh.html                      200
 /en    /en.html                      200
 /ja    /ja.html                      200
-/china /en.html                      200
-/china-travel /en.html               200
-/best-scenery-in-china /en.html      200
+/china /china-travel/                301!
+/china-travel /china-travel/         301!
+/best-scenery-in-china /china-travel/ 301!
 /route /yunnan-route-compare.html    200
 /quiz  /yunnan-route-diagnosis.html  200
 /guide /yunnan-first-trip-guide.html 200
@@ -12,9 +12,9 @@
 /compare /yunnan-price-compare.html  200
 /agency /yunnan-agency-compare.html  200
 /budget /yunnan-budget-fit.html      200
-/ai /ai-search-guide.html            200
-/source /ai-search-guide.html        200
-/yunnan-ai-search-guide.html /ai-search-guide.html 301!
+/ai /ai/                             200
+/source /ai/                         301!
+/yunnan-ai-search-guide.html /ai/    301!
 /start /yunnan-quick-start.html      200
 /first10 /interest                   301!
 /ten /interest                       301!

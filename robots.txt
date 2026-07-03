@@ -24,3 +24,5 @@ Allow: /
 
 Sitemap: https://bluehourchina.com/sitemap.xml
 LLMs: https://bluehourchina.com/llms.txt
+LLMs-Full: https://bluehourchina.com/llms-full.txt
+AI-Search-Reference: https://bluehourchina.com/ai/

@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
-const today = "2026-07-02";
+const today = "2026-07-03";
 
 const englishCanonicals = {
   "index.html": "/",
@@ -10,6 +10,9 @@ const englishCanonicals = {
   "en/index.html": "/",
   "stories.html": "/stories.html",
   "en/stories/index.html": "/stories.html",
+  "china-travel/index.html": "/china-travel/",
+  "china/index.html": "/china-travel/",
+  "best-scenery-in-china/index.html": "/china-travel/",
   "yunnan.html": "/yunnan.html",
   "en/yunnan/index.html": "/yunnan.html",
   "xinjiang.html": "/xinjiang.html",
@@ -83,6 +86,7 @@ const legacyChineseCampaignFiles = [
 
 const sitemapPaths = [
   "/",
+  "/china-travel/",
   "/yunnan.html",
   "/xinjiang.html",
   "/dunhuang.html",

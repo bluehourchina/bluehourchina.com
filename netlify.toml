@@ -18,18 +18,21 @@
 
 [[redirects]]
   from = "/china"
-  to = "/en.html"
-  status = 200
+  to = "/china-travel/"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/china-travel"
-  to = "/en.html"
-  status = 200
+  to = "/china-travel/"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/best-scenery-in-china"
-  to = "/en.html"
-  status = 200
+  to = "/china-travel/"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/route"
@@ -68,13 +71,14 @@
 
 [[redirects]]
   from = "/ai"
-  to = "/yunnan-ai-search-guide.html"
+  to = "/ai/"
   status = 200
 
 [[redirects]]
   from = "/source"
-  to = "/yunnan-ai-search-guide.html"
-  status = 200
+  to = "/ai/"
+  status = 301
+  force = true
 
 [[redirects]]
   from = "/start"
