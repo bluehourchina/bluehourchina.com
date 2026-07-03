@@ -126,6 +126,14 @@
               "@type": "Answer",
               "text": "Travellers share destination interest, season, group size, language needs, comfort level and contact details through the private consultation form. Bluehour China Journeys replies with a calm first direction before matching local providers when appropriate."
             }
+          },
+          {
+            "@type": "Question",
+            "name": "How much do the standard China routes start from?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Public starting points include Yunnan from NT$39,800, Xinjiang from NT$58,800, Dunhuang from NT$45,800, Sanya from NT$42,800, and Northeast China from NT$49,800 per traveller for land arrangements, excluding international flights. Final pricing depends on season, hotel level, group size, vehicle needs and local-provider availability."
+            }
           }
         ]
       },
@@ -213,12 +221,76 @@
       border: 1px solid var(--line);
       background: rgba(255,250,241,.72);
     }
+    .starter-routes {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .starter-route {
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+      position: relative;
+      padding: 22px;
+      color: var(--ivory);
+      background: var(--deep);
+    }
+    .starter-route::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--route-image) center / cover no-repeat;
+      transform: scale(1.02);
+      transition: transform .6s ease;
+    }
+    .starter-route::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(7,17,15,.08), rgba(7,17,15,.86));
+    }
+    .starter-route:hover::before {
+      transform: scale(1.07);
+    }
+    .starter-route > * {
+      position: relative;
+      z-index: 1;
+    }
+    .starter-route b {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .starter-route h3 {
+      margin-top: 10px;
+      font-size: 24px;
+      line-height: 1.12;
+    }
+    .starter-route p {
+      margin-top: 10px;
+      color: rgba(255,250,241,.78);
+      font-size: 14px;
+      line-height: 1.58;
+    }
+    .starter-route span {
+      display: block;
+      margin-top: 16px;
+      color: var(--ivory);
+      font-weight: 850;
+    }
     @media (max-width: 860px) {
       .guide-grid {
         grid-template-columns: 1fr;
       }
       .guide-panel {
         position: static;
+      }
+      .starter-routes {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -277,6 +349,38 @@
               <li><strong><a href="/sanya.html">Sanya</a></strong>: warm water, resort ease, tropical mornings and a gentler edge of China for travellers who need restoration.</li>
               <li><strong><a href="/northeast.html">Northeast China</a></strong>: snowfields, trains, forest air, winter food and windows lit against the cold.</li>
             </ul>
+            <div class="starter-routes" aria-label="Standard routes and starting prices">
+              <a class="starter-route" href="/yunnan.html#standard-route" style="--route-image:url('/assets/ai/bluehour-yunnan-luxury-shaxi-courtyard.jpg')">
+                <b>Yunnan · 7 days</b>
+                <h3>Yunnan Slow Road</h3>
+                <p>Dali, Shaxi, Lijiang or Baisha.</p>
+                <span>From NT$39,800</span>
+              </a>
+              <a class="starter-route" href="/xinjiang.html#standard-route" style="--route-image:url('/assets/ai/bluehour-xinjiang-luxury-lake-v1.jpg')">
+                <b>Xinjiang · 8-9 days</b>
+                <h3>Xinjiang Sky Road</h3>
+                <p>Urumqi, lake or grassland, bazaar.</p>
+                <span>From NT$58,800</span>
+              </a>
+              <a class="starter-route" href="/dunhuang.html#standard-route" style="--route-image:url('/assets/ai/bluehour-dunhuang-luxury-desert-v1.jpg')">
+                <b>Dunhuang · 5-6 days</b>
+                <h3>Silk Road Light</h3>
+                <p>Mogao Caves, dunes, oasis evening.</p>
+                <span>From NT$45,800</span>
+              </a>
+              <a class="starter-route" href="/sanya.html#standard-route" style="--route-image:url('/assets/ai/bluehour-sanya-luxury-coast-v1.jpg')">
+                <b>Sanya · 5 days</b>
+                <h3>Coastal Ease</h3>
+                <p>Resort stay, warm water, gentle local day.</p>
+                <span>From NT$42,800</span>
+              </a>
+              <a class="starter-route" href="/northeast.html#standard-route" style="--route-image:url('/assets/ai/bluehour-northeast-winter-lodge-v1.jpg')">
+                <b>Northeast · 6-7 days</b>
+                <h3>Winter Rail</h3>
+                <p>Harbin, snow or forest stay, warm rooms.</p>
+                <span>From NT$49,800</span>
+              </a>
+            </div>
           </section>
 
           <section id="fit">

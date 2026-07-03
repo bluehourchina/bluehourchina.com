@@ -224,3 +224,181 @@ h1,h2,h3,
 @media(max-width:900px){.conversion-wrap{grid-template-columns:1fr}.conversion-steps h3{font-size:26px}.sticky-review{display:flex}.footer{padding-bottom:92px}.interest-body .sticky-review{display:none}}
 @media(max-width:760px){.hero-inner{padding-bottom:118px}.home-hero .hero-actions a[href*="utm_source=home_cta"]{display:none}.interest-page{display:block;width:100vw;max-width:100vw;overflow:hidden}.interest-story{width:100vw;max-width:100vw;overflow:hidden}.interest-story h1{width:calc(100vw - 44px);max-width:calc(100vw - 44px);font-size:clamp(32px,8.5vw,40px);line-height:1.12;text-wrap:wrap;overflow-wrap:anywhere;line-break:anywhere}.interest-story .lead{width:calc(100vw - 44px);max-width:calc(100vw - 44px);overflow-wrap:anywhere}.sticky-review{bottom:14px}}
 /* conversion-optimization-end */
+
+/* standard-route-start */
+.standard-route-band{
+  background:#f8f3ea;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.route-showcase{
+  display:grid;
+  grid-template-columns:minmax(0,.82fr) minmax(360px,.96fr);
+  gap:clamp(28px,5.5vw,78px);
+  align-items:center;
+}
+.route-copy h2{
+  max-width:780px;
+  font-size:clamp(36px,5vw,66px);
+  line-height:1.08;
+}
+.route-copy > p{
+  max-width:640px;
+  margin-top:20px;
+  color:var(--muted);
+  font-size:17px;
+  line-height:1.82;
+}
+.route-price{
+  display:grid;
+  gap:8px;
+  width:min(420px,100%);
+  margin-top:28px;
+  padding:24px 0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.route-price span{
+  color:var(--gold);
+  font-size:11px;
+  font-weight:850;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.route-price strong{
+  font-family:Georgia,"Times New Roman","Songti TC","STSong","Noto Serif TC",serif;
+  color:var(--ink);
+  font-size:clamp(34px,4vw,52px);
+  font-weight:500;
+  line-height:1;
+}
+.route-price small{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.56;
+}
+.route-points{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+  margin-top:24px;
+}
+.route-points div{
+  min-height:92px;
+  padding:18px;
+  border:1px solid var(--line);
+  background:rgba(255,250,241,.74);
+}
+.route-points b{
+  display:block;
+  color:var(--gold);
+  font-size:11px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.route-points span{
+  display:block;
+  margin-top:10px;
+  color:var(--ink);
+  font-size:16px;
+  line-height:1.45;
+}
+.route-note{
+  max-width:640px;
+  margin-top:18px;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.68;
+}
+.route-card{
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:var(--deep);
+  box-shadow:0 26px 58px rgba(23,32,28,.12);
+}
+.route-image{
+  position:relative;
+  min-height:430px;
+}
+.route-image::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(7,17,15,0),rgba(7,17,15,.48));
+}
+.route-map{
+  display:grid;
+  gap:14px;
+  padding:24px;
+  color:var(--ivory);
+  background:linear-gradient(180deg,#07110f,#101d18);
+}
+.route-map h3{
+  font-family:"Helvetica Neue",Arial,"Noto Sans TC",sans-serif;
+  color:rgba(255,250,241,.88);
+  font-size:12px;
+  font-weight:850;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.map-line{
+  display:grid;
+  gap:10px;
+}
+.map-line span{
+  position:relative;
+  min-height:42px;
+  display:flex;
+  align-items:center;
+  padding-left:24px;
+  color:rgba(255,250,241,.86);
+  font-size:15px;
+  line-height:1.45;
+}
+.map-line span::before{
+  content:"";
+  position:absolute;
+  left:0;
+  width:9px;
+  height:9px;
+  border-radius:50%;
+  background:var(--gold);
+  box-shadow:0 0 0 5px rgba(201,154,82,.16);
+}
+.map-line span::after{
+  content:"";
+  position:absolute;
+  left:4px;
+  top:30px;
+  bottom:-18px;
+  border-left:1px solid rgba(255,250,241,.24);
+}
+.map-line span:last-child::after{
+  display:none;
+}
+.route-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:22px;
+}
+.route-meta span{
+  display:inline-flex;
+  align-items:center;
+  min-height:32px;
+  padding:0 11px;
+  border:1px solid var(--line);
+  color:var(--muted);
+  font-size:12px;
+  font-weight:750;
+}
+@media(max-width:980px){
+  .route-showcase{grid-template-columns:1fr}
+}
+@media(max-width:760px){
+  .route-points{grid-template-columns:1fr}
+  .route-image{min-height:320px}
+  .route-map{padding:20px}
+  .route-copy h2{font-size:clamp(31px,8vw,42px)}
+}
+/* standard-route-end */
