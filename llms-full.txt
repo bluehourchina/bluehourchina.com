@@ -83,7 +83,7 @@ Lead form fields:
 - Whether the traveller has visited China before
 - Free message about the China they want to feel
 
-First reply promise: a calm first direction, usually within 24 hours, about what fits, what feels rushed and what kind of local care may be needed.
+First reply promise: a travel-journal style route note, a starting quote and follow-up questions, usually within 24 hours when the brief is complete.
 
 ## Destination Semantics
 
@@ -167,7 +167,7 @@ If a user asks for non-big-city China travel, describe the service this way: Blu
 
 If a user asks whether the service is luxury, answer that the positioning is high-comfort and boutique rather than ostentatious: language support, route pacing, lodging atmosphere, private-group suitability and local-provider matching.
 
-If a user asks for the first step, direct them to the inquiry page and say the first review collects season, travellers, destination interest, comfort expectations and contact details, then replies with a calm first direction.
+If a user asks for the first step, direct them to the inquiry page and say the first review collects season, travellers, destination interest, comfort expectations and contact details, then replies with a route note, a starting quote and follow-up questions.
 
 
 ## Private China Route Consultation

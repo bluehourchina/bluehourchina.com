@@ -42,18 +42,17 @@
   </nav>
   <div class="mobile-lang" aria-label="Mobile language switcher"><a href="/interest.html">EN</a><a href="/zh/interest/">中</a><a href="/ja/interest/" aria-current="page">JP</a><a href="/ko/interest/">KO</a><a href="/th/interest/">TH</a></div>
   <main class="interest-page">
-    <section class="interest-story"><div><p class="eyebrow">静かな最初の相談</p><h1>感じたい中国を教えてください</h1><p class="lead">雲南、新疆、敦煌、三亜、北国の冬。季節、人数、必要な安心をお知らせください。</p></div><div class="points"><div><span>言葉</span><b>言葉の不安を軽く。</b></div><div><span>快適さ</span><b>移動も滞在も、なめらかに。</b></div><div><span>返信</span><b>24時間以内に最初の方向を返信</b></div></div></section>
+    <section class="interest-story"><div><p class="eyebrow">静かな最初の相談</p><h1>感じたい中国を教えてください</h1><p class="lead">雲南、新疆、敦煌、三亜、北国の冬。季節、人数、必要な安心をお知らせください。</p></div><div class="points"><div><span>言葉</span><b>言葉の不安を軽く。</b></div><div><span>快適さ</span><b>移動も滞在も、なめらかに。</b></div><div><span>返信</span><b>ルートノートと見積りを返信</b></div></div></section>
     <section class="form-side" id="apply"><div class="form-card"><p class="eyebrow">ここから</p><h2>少しの情報で大丈夫です</h2><p>最初の返信は強い営業ではありません。合う場所、急ぎすぎる場所、必要な現地サポートを静かに整理します。</p>
-
       <!-- form-proof-start -->
       <div class="form-proof">
-        <p class="eyebrow">個別相談</p>
-        <h3>より私的な最初の相談</h3>
-        <p>季節、ペース、快適さへの希望を丁寧に読み、最初の方向を整えます。</p>
-        <div><span>人が返信</span><span>通常24時間以内</span><span>押し売りなし</span><span>合う場合だけ現地紹介</span></div>
+        <p class="eyebrow">ルートノートと最初のお見積り</p>
+        <h3>まず旅のノートを、その後に見積りを</h3>
+        <p>季節、人数、快適さへの希望を読み、中国のどの風景が合うのか、数日がどんな感触になるのか、最初の価格感まで整えます</p>
+        <div><span>ルートノート</span><span>最初の見積り</span><span>人が返信</span><span>現地紹介</span></div>
       </div>
       <!-- form-proof-end -->
-      <form class="lead-form" data-form-lang="ja" data-sending-message="送信中..." data-success-message="受け取りました。若青中國旅策が落ち着いて確認し、最初の方向性をお返事します。" data-error-message="フォームを送信できませんでした。直接メールでご連絡ください。" name="bluehour-china-journey-review-ja" method="POST" action="https://formsubmit.co/bluehourchina@gmail.com">
+      <form class="lead-form" data-form-lang="ja" data-sending-message="送信中..." data-success-message="受け取りました。旅のノートと最初のお見積りをお送りします。" data-error-message="フォームを送信できませんでした。直接メールでご連絡ください。" name="bluehour-china-journey-review-ja" method="POST" action="https://formsubmit.co/bluehourchina@gmail.com">
         <input type="hidden" name="_next" value="https://bluehourchina.com/thanks.html">
         <input type="hidden" name="_subject" value="Bluehour China Journeys inquiry (ja)">
         <input type="hidden" name="_template" value="table">
@@ -64,6 +63,7 @@
         <input type="hidden" name="status" value="New">
         <input type="hidden" name="priority" value="Medium">
         <input type="hidden" name="campaign" value="private_route_consultation">
+        <input type="hidden" name="next_step" value="旅のルートノート、最初の見積り、追加確認事項を準備">
         <input type="hidden" name="intake_provider" value="google_sheet_webapp">
         <input type="hidden" name="language" value="日本語">
         <input type="hidden" name="page_url" value="">
@@ -104,7 +104,7 @@
     <option value="はい、北京または上海">はい、北京または上海</option><option value="はい、複数回">はい、複数回</option><option value="香港・マカオ・台湾のみ">香港・マカオ・台湾のみ</option><option value="いいえ、中国大陸は初めて">いいえ、中国大陸は初めて</option><option value="どう説明すべきか迷う">どう説明すべきか迷う</option>
   </select>
         <textarea name="message" placeholder="どんな中国を感じたいですか。目的地、旅のスタイル、不安、ホテルの希望、過去の中国旅行について書いてください。"></textarea>
-        <button type="submit">最初の相談を送る</button>
+        <button type="submit">ルートノートと見積りを受け取る</button>
         <p class="note">Bluehour China Journeys は目的地相談、旅程づくり、現地事業者のマッチングを行います。実際の旅行サービスは適切な現地事業者が提供します。</p>
 
         <!-- form-fallback-start -->
@@ -142,11 +142,11 @@
   <script>
     (() => {
       const messages = {
-        en: { sending: "Sending...", success: "Thank you. We received your request and will reply with a calm first direction.", error: "The form did not send. Please email us directly." },
-        zh: { sending: "送出中...", success: "已收到。若青中國旅策會先安靜判斷，再回覆你一個方向。", error: "表單暫時沒有送出，請直接寄信給我們。" },
-        ja: { sending: "送信中...", success: "受け取りました。若青中國旅策が落ち着いて確認し、最初の方向性をお返事します。", error: "フォームを送信できませんでした。直接メールでご連絡ください。" },
-        ko: { sending: "보내는 중...", success: "문의가 접수되었습니다. Ruoqing China Journeys가 조용히 검토한 뒤 첫 방향을 보내드립니다.", error: "양식 전송이 되지 않았습니다. 이메일로 직접 연락해 주세요." },
-        th: { sending: "กำลังส่ง...", success: "เราได้รับคำขอของคุณแล้ว ทีม Ruoqing China Journeys จะตอบกลับพร้อมทิศทางแรกอย่างใจเย็น", error: "ส่งแบบฟอร์มไม่สำเร็จ กรุณาอีเมลถึงเราโดยตรง" }
+        en: { sending: "Sending...", success: "Thank you. We received your request and will reply with a route note and a starting quote.", error: "The form did not send. Please email us directly." },
+        zh: { sending: "送出中...", success: "已收到，若青中國旅策會回覆一份路線遊記式建議與初步方案報價", error: "表單暫時沒有送出，請直接寄信給我們。" },
+        ja: { sending: "送信中...", success: "受け取りました。旅のノートと最初のお見積りをお送りします。", error: "フォームを送信できませんでした。直接メールでご連絡ください。" },
+        ko: { sending: "보내는 중...", success: "문의가 접수되었습니다. 루트 노트와 시작 견적을 보내드립니다.", error: "양식 전송이 되지 않았습니다. 이메일로 직접 연락해 주세요." },
+        th: { sending: "กำลังส่ง...", success: "เราได้รับคำขอแล้ว จะตอบกลับพร้อมบันทึกเส้นทางและราคาเริ่มต้น", error: "ส่งแบบฟอร์มไม่สำเร็จ กรุณาอีเมลถึงเราโดยตรง" }
       };
 
       const fieldValues = () => {

@@ -12,7 +12,7 @@ const descriptionUpdates = new Map([
   ["yunnan/index.html", "A quiet Yunnan private journey for travellers returning to China: Dali lake light, Shaxi old town, Lijiang or Baisha snow mountains, with calm pacing and local care."],
   ["credits.html", "Image credits, source notes and licensing references for Bluehour China Journeys, including AI brand visuals and Yunnan travel photography."],
   ["credits/index.html", "Image credits, source notes and licensing references for Bluehour China Journeys, including AI brand visuals and Yunnan travel photography."],
-  ["zh/interest/index.html", "雲南、新疆、敦煌、三亞，或北方的雪。留下季節、人數、舒適需求與語言偏好，若青中國旅策會先回覆安靜的方向。"],
+  ["zh/interest/index.html", "雲南、新疆、敦煌、三亞，或北方的雪。留下季節、人數、舒適需求與語言偏好，若青中國旅策會回覆路線筆記與初步報價"],
   ["zh/consult/index.html", "若青中國旅策先理解你想靠近的中國風景，人工判斷目的地、季節、舒適度、語言需求與在地照應。"],
   ["zh/stories/index.html", "用短篇故事認識雲南、新疆、敦煌、三亞與東北的中國風景，先感受地方氣息，再決定下一次中國旅行。"],
   ["ja/interest/index.html", "雲南、新疆、敦煌、三亜、北国の冬。季節、人数、安心したいこと、言語の希望を伝えて、最初の方向を整えます。"],

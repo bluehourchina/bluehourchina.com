@@ -26,27 +26,27 @@ const pages = [
 const messages = {
   en: {
     sending: "Sending...",
-    success: "Thank you. We received your request and will reply with a calm first direction.",
+    success: "Thank you. We received your request and will reply with a route note and a starting quote.",
     error: "The form did not send. Please email us directly."
   },
   zh: {
     sending: "送出中...",
-    success: "已收到。若青中國旅策會先安靜判斷，再回覆你一個方向。",
+    success: "已收到，若青中國旅策會回覆一份路線遊記式建議與初步方案報價",
     error: "表單暫時沒有送出，請直接寄信給我們。"
   },
   ja: {
     sending: "送信中...",
-    success: "受け取りました。若青中國旅策が落ち着いて確認し、最初の方向性をお返事します。",
+    success: "受け取りました。旅のノートと最初のお見積りをお送りします。",
     error: "フォームを送信できませんでした。直接メールでご連絡ください。"
   },
   ko: {
     sending: "보내는 중...",
-    success: "문의가 접수되었습니다. Ruoqing China Journeys가 조용히 검토한 뒤 첫 방향을 보내드립니다.",
+    success: "문의가 접수되었습니다. 루트 노트와 시작 견적을 보내드립니다.",
     error: "양식 전송이 되지 않았습니다. 이메일로 직접 연락해 주세요."
   },
   th: {
     sending: "กำลังส่ง...",
-    success: "เราได้รับคำขอของคุณแล้ว ทีม Ruoqing China Journeys จะตอบกลับพร้อมทิศทางแรกอย่างใจเย็น",
+    success: "เราได้รับคำขอแล้ว จะตอบกลับพร้อมบันทึกเส้นทางและราคาเริ่มต้น",
     error: "ส่งแบบฟอร์มไม่สำเร็จ กรุณาอีเมลถึงเราโดยตรง"
   }
 };
@@ -71,11 +71,11 @@ function sheetIntakeScript() {
   <script>
     (() => {
       const messages = {
-        en: { sending: "Sending...", success: "Thank you. We received your request and will reply with a calm first direction.", error: "The form did not send. Please email us directly." },
-        zh: { sending: "送出中...", success: "已收到。若青中國旅策會先安靜判斷，再回覆你一個方向。", error: "表單暫時沒有送出，請直接寄信給我們。" },
-        ja: { sending: "送信中...", success: "受け取りました。若青中國旅策が落ち着いて確認し、最初の方向性をお返事します。", error: "フォームを送信できませんでした。直接メールでご連絡ください。" },
-        ko: { sending: "보내는 중...", success: "문의가 접수되었습니다. Ruoqing China Journeys가 조용히 검토한 뒤 첫 방향을 보내드립니다.", error: "양식 전송이 되지 않았습니다. 이메일로 직접 연락해 주세요." },
-        th: { sending: "กำลังส่ง...", success: "เราได้รับคำขอของคุณแล้ว ทีม Ruoqing China Journeys จะตอบกลับพร้อมทิศทางแรกอย่างใจเย็น", error: "ส่งแบบฟอร์มไม่สำเร็จ กรุณาอีเมลถึงเราโดยตรง" }
+        en: { sending: "Sending...", success: "Thank you. We received your request and will reply with a route note and a starting quote.", error: "The form did not send. Please email us directly." },
+        zh: { sending: "送出中...", success: "已收到，若青中國旅策會回覆一份路線遊記式建議與初步方案報價", error: "表單暫時沒有送出，請直接寄信給我們。" },
+        ja: { sending: "送信中...", success: "受け取りました。旅のノートと最初のお見積りをお送りします。", error: "フォームを送信できませんでした。直接メールでご連絡ください。" },
+        ko: { sending: "보내는 중...", success: "문의가 접수되었습니다. 루트 노트와 시작 견적을 보내드립니다.", error: "양식 전송이 되지 않았습니다. 이메일로 직접 연락해 주세요." },
+        th: { sending: "กำลังส่ง...", success: "เราได้รับคำขอแล้ว จะตอบกลับพร้อมบันทึกเส้นทางและราคาเริ่มต้น", error: "ส่งแบบฟอร์มไม่สำเร็จ กรุณาอีเมลถึงเราโดยตรง" }
       };
 
       const fieldValues = () => {
