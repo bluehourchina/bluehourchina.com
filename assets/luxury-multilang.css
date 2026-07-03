@@ -406,8 +406,20 @@ h1,h2,h3,
 /* mobile-overflow-guard-start */
 html,
 body{
+  width:100%;
   max-width:100%;
   overflow-x:hidden;
+}
+@supports (overflow:clip){
+  html,
+  body{
+    overflow-x:clip;
+  }
+}
+body,
+main{
+  position:relative;
+  max-width:100vw;
 }
 .wrap,
 .hero-inner,
@@ -448,6 +460,12 @@ body{
   text-align:center;
 }
 @media(max-width:760px){
+  body,
+  main{
+    width:100%;
+    max-width:100vw;
+    overflow-x:hidden;
+  }
   .wrap{
     width:calc(100% - 36px);
   }
@@ -459,6 +477,21 @@ body{
     width:100%;
     max-width:100%;
     overflow-x:hidden;
+  }
+  .home-hero .hero-media{
+    width:100%;
+    max-width:100vw;
+    overflow:hidden;
+    contain:paint;
+  }
+  .home-hero .hero-scene{
+    width:100%;
+    max-width:100%;
+    transform:none !important;
+    animation-name:mobileHeroScene !important;
+    animation-duration:21s !important;
+    animation-timing-function:ease-in-out !important;
+    animation-iteration-count:infinite !important;
   }
   h1,
   h2,
@@ -480,6 +513,15 @@ body{
     font-size:clamp(30px,8vw,36px);
     line-height:1.14;
   }
+  .conversion-wrap{
+    grid-template-columns:minmax(0,1fr) !important;
+  }
+  .conversion-copy,
+  .conversion-steps,
+  .hero-actions,
+  .hero-actions .btn{
+    width:100%;
+  }
   .conversion-copy > p,
   .section-head p,
   .quiet-panel p,
@@ -487,5 +529,9 @@ body{
   .next p{
     max-width:100%;
   }
+}
+@keyframes mobileHeroScene{
+  0%,28%{opacity:1}
+  38%,100%{opacity:0}
 }
 /* mobile-overflow-guard-end */
