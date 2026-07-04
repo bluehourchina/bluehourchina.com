@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>去有風的地方吧！｜短片後的雲南路線入口</title>
+  <meta name="description" content="從去有風的地方吧！短片來到這裡，先看雲南大理、沙溪、麗江 6-7 日路線筆記，也可以用 60 秒留下需求。">
+  <meta property="og:title" content="去有風的地方吧！｜短片後的雲南路線入口">
+  <meta property="og:description" content="第一次去雲南，不要每天換城市。先看路線筆記，再決定要不要留下需求。">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="去有風的地方吧！">
+  <meta property="og:image" content="/assets/social/gowind-route-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="/assets/social/gowind-avatar.png">
+  <style>
+    :root {
+      --deep: #081511;
+      --forest: #102d26;
+      --paper: #f6efe3;
+      --white: #fffaf0;
+      --ink: #1f2924;
+      --muted: #65716a;
+      --gold: #d7a85f;
+      --line: rgba(31,41,36,.16);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.7;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1080px, calc(100% - 42px)); margin: 0 auto; }
+    .hero {
+      min-height: 88svh;
+      display: flex;
+      align-items: flex-end;
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(8,21,17,.96), rgba(8,21,17,.62), rgba(8,21,17,.12)),
+        linear-gradient(180deg, rgba(8,21,17,.04), rgba(8,21,17,.9)),
+        url("/assets/real-yunnan/erhai-cangshan-web.jpg") center / cover no-repeat;
+    }
+    .hero .wrap { padding: 34px 0 56px; }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 13px;
+      margin-bottom: clamp(72px, 14vh, 168px);
+    }
+    .brand img { width: 54px; height: 54px; border: 1px solid rgba(255,250,240,.24); }
+    .brand strong {
+      display: block;
+      font-family: "Noto Serif TC", "Songti TC", serif;
+      font-size: 27px;
+      letter-spacing: 0;
+    }
+    .brand span {
+      display: block;
+      color: rgba(255,250,240,.66);
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 950;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 {
+      font-family: "Noto Serif TC", "Songti TC", serif;
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+    h1 {
+      max-width: 840px;
+      margin: 0;
+      font-size: clamp(42px, 8vw, 82px);
+    }
+    .lead {
+      max-width: 680px;
+      margin: 22px 0 0;
+      color: rgba(255,250,240,.84);
+      font-size: clamp(18px, 1.8vw, 23px);
+      font-weight: 760;
+    }
+    .context {
+      display: inline-flex;
+      max-width: 760px;
+      margin-top: 22px;
+      padding: 10px 13px;
+      border: 1px solid rgba(255,250,240,.26);
+      background: rgba(255,250,240,.1);
+      color: rgba(255,250,240,.82);
+      font-weight: 820;
+      backdrop-filter: blur(10px);
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+    .btn {
+      min-height: 54px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255,250,240,.38);
+      padding: 13px 20px;
+      color: var(--white);
+      font-weight: 950;
+    }
+    .btn.primary {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #10241d;
+    }
+    .section { padding: 72px 0; }
+    .section-head {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 32px;
+      align-items: end;
+      border-top: 1px solid var(--line);
+      padding-top: 30px;
+      margin-bottom: 28px;
+    }
+    .section-head h2 {
+      margin: 0;
+      color: var(--forest);
+      font-size: clamp(32px, 4vw, 52px);
+    }
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 19px;
+      font-weight: 720;
+    }
+    .path-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+    .path {
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: #fffaf0;
+      padding: 24px;
+    }
+    .path b {
+      color: var(--gold);
+      font-size: 13px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    .path h3 {
+      margin: 18px 0 10px;
+      color: var(--forest);
+      font-size: 31px;
+    }
+    .path p {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 720;
+    }
+    .path a {
+      margin-top: 20px;
+      color: var(--forest);
+      font-weight: 950;
+      border-bottom: 1px solid rgba(16,45,38,.28);
+      width: fit-content;
+    }
+    .form-band {
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(8,21,17,.96), rgba(8,21,17,.58)),
+        url("/assets/real-yunnan/shaxi-old-town-web.jpg") center / cover no-repeat;
+    }
+    .form-band .wrap {
+      display: grid;
+      grid-template-columns: .86fr 1.14fr;
+      gap: 34px;
+      align-items: start;
+      padding: 78px 0;
+    }
+    .form-copy h2 {
+      margin: 0;
+      font-size: clamp(36px, 5vw, 62px);
+    }
+    .form-copy p {
+      margin: 20px 0 0;
+      color: rgba(255,250,240,.82);
+      font-size: 20px;
+      font-weight: 760;
+    }
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      background: rgba(255,250,240,.96);
+      border: 1px solid rgba(255,250,240,.2);
+      padding: 22px;
+    }
+    input, select, textarea, button {
+      width: 100%;
+      min-height: 52px;
+      border-radius: 0;
+      font: inherit;
+      font-weight: 780;
+    }
+    input, select, textarea {
+      border: 1px solid rgba(31,41,36,.16);
+      background: #fffdf8;
+      color: var(--ink);
+      padding: 13px 14px;
+    }
+    textarea {
+      grid-column: 1 / -1;
+      min-height: 104px;
+      line-height: 1.62;
+      resize: vertical;
+    }
+    .full, button, .submit-note { grid-column: 1 / -1; }
+    .submit-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+      font-weight: 650;
+    }
+    button {
+      border: 0;
+      background: var(--gold);
+      color: #10241d;
+      cursor: pointer;
+      padding: 14px 18px;
+      font-weight: 950;
+    }
+    .handoff-panel {
+      display: grid;
+      gap: 18px;
+      background: rgba(255,250,240,.96);
+      border: 1px solid rgba(255,250,240,.2);
+      padding: 26px;
+      color: var(--ink);
+    }
+    .handoff-panel h3 {
+      margin: 0;
+      color: var(--forest);
+      font-size: clamp(30px, 3vw, 44px);
+    }
+    .handoff-panel p {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 720;
+    }
+    .handoff-list {
+      display: grid;
+      gap: 1px;
+      background: rgba(31,41,36,.14);
+      border: 1px solid rgba(31,41,36,.14);
+    }
+    .handoff-list div {
+      display: grid;
+      grid-template-columns: 86px 1fr;
+      gap: 14px;
+      align-items: start;
+      background: #fffdf8;
+      padding: 15px;
+    }
+    .handoff-list b {
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .handoff-panel .actions { margin-top: 4px; }
+    .handoff-panel .btn {
+      border-color: rgba(16,45,38,.2);
+      color: var(--forest);
+    }
+    .handoff-panel .btn.primary {
+      background: var(--gold);
+      color: #10241d;
+      border-color: var(--gold);
+    }
+    footer {
+      padding: 30px 0 42px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 760;
+    }
+    @media (max-width: 880px) {
+      .hero { min-height: 90svh; }
+      .brand { margin-bottom: 76px; }
+      h1 {
+        max-width: 100%;
+        font-size: 34px;
+        line-height: 1.2;
+        overflow-wrap: anywhere;
+        word-break: break-all;
+      }
+      .lead, .context {
+        max-width: 100%;
+        font-size: 16px;
+        overflow-wrap: anywhere;
+        word-break: break-all;
+      }
+      .actions, .section-head, .path-grid, .form-band .wrap, form { grid-template-columns: 1fr; }
+      .actions { display: grid; }
+      .btn, textarea, .full, button, .submit-note { width: 100%; grid-column: span 1; }
+      .handoff-list div { grid-template-columns: 1fr; }
+      .path { min-height: auto; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <a class="brand" href="/gowind">
+        <img src="/assets/social/gowind-avatar.png" alt="去有風的地方吧！">
+        <span><strong>去有風的地方吧！</strong><span>GO WITH WIND</span></span>
+      </a>
+      <p class="eyebrow">After The Short</p>
+      <h1>剛看完短片？<br>先拿雲南路線方向。</h1>
+      <p class="lead">第一次去雲南，不要先急著填表。先看大理、沙溪、麗江 6-7 日怎麼排；如果你已經有月份、人數與預算，再用 60 秒留下需求。</p>
+      <div class="context" id="video-context">正在讀取你剛看的短片主題。</div>
+      <div class="actions">
+        <a class="btn primary carry-query" href="/gowind-route">看 6-7 日路線筆記</a>
+        <a class="btn carry-query" href="/quick/">60 秒留下需求</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="eyebrow">Choose Next</p><h2>影片看完，下一步不要跳太遠</h2></div>
+          <p>短片負責讓你有感覺，網站負責幫你判斷：這趟雲南要排幾天、哪些地方值得住、你比較適合自由行、大團，還是親友私密同行。</p>
+        </div>
+        <div class="path-grid">
+          <article class="path">
+            <div><b>Route</b><h3>先看路線</h3><p>大理、沙溪、麗江怎麼排比較順；6 天、7 天、9 天差在哪。</p></div>
+            <a class="carry-query" href="/gowind-route">看路線筆記</a>
+          </article>
+          <article class="path">
+            <div><b>Check</b><h3>已有行程</h3><p>如果你正在比旅行社、自由行或私旅，先檢查住宿位置、車程與沙溪是否只是路過。</p></div>
+            <a class="carry-query" href="/yunnan-itinerary-check.html">看行程檢查</a>
+          </article>
+          <article class="path">
+            <div><b>Lead</b><h3>準備出發</h3><p>已有月份、人數、天數與預算，就直接留下需求，若青中國旅策先幫你判斷適不適合。</p></div>
+            <a class="carry-query" href="/quick/">留下需求</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="form-band" id="quick">
+      <div class="wrap">
+        <div class="form-copy">
+          <p class="eyebrow">60 Sec Check</p>
+          <h2>有出發可能，<br>就先留下四個條件。</h2>
+          <p>這不是正式報名，也不是立刻報價。先看你比較適合大團、自由行，還是大理・沙溪・麗江一週慢走私旅。</p>
+        </div>
+        <div class="handoff-panel">
+          <h3>真正有意向的人，送到需求快篩。</h3>
+          <p>短片頁先不做硬表單，避免剛被影片吸引的人立刻跳出。讓他先看懂路線，再把明確需求送進需求快篩頁。</p>
+          <div class="handoff-list">
+            <div><b>Step 01</b><p>先看大理、沙溪、麗江 6-7 日的節奏，不急著要求報價。</p></div>
+            <div><b>Step 02</b><p>確認月份、人數、天數、預算四個條件，判斷是不是有效客戶。</p></div>
+            <div><b>Step 03</b><p>表單送出後由若青中國旅策承接，不讓雙人旅行帳號變成硬廣告。</p></div>
+          </div>
+          <div class="actions">
+            <a class="btn primary carry-query" href="/quick/">60 秒留下需求</a>
+            <a class="btn carry-query" href="/gowind-route">先看路線筆記</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap">去有風的地方吧！｜短片導流頁。路線整理與需求承接由若青中國旅策協助維護。</div></footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const pathVideo = (() => {
+      const path = window.location.pathname;
+      if (path.includes("/mistake")) return "mistake";
+      if (path.includes("/partner")) return "partner";
+      if (path.includes("/private")) return "private";
+      if (path.includes("/route")) return "route";
+      return "";
+    })();
+    const video = params.get("video") || pathVideo || params.get("utm_campaign") || "";
+    const context = document.getElementById("video-context");
+    const contextMap = {
+      mistake: "你剛看的主題是：第一次去雲南，不要把 6-7 天排成每天換城市。",
+      partner: "你剛看的主題是：把這趟雲南傳給想一起去的人，先看對方想不想慢慢走。",
+      private: "你剛看的主題是：私旅不只是飯店更好，而是路線節奏、接送、語言與緩衝。",
+      route: "你剛看的主題是：大理、沙溪、麗江各自適合停留的角色。"
+    };
+    if (context) context.textContent = contextMap[video] || "你是從短片或帳號連結進來：先看路線，再決定要不要留下需求。";
+
+    const query = new URLSearchParams(window.location.search);
+    const carried = new URLSearchParams({
+      utm_source: query.get("utm_source") || "youtube",
+      utm_medium: query.get("utm_medium") || "shorts",
+      utm_campaign: query.get("utm_campaign") || video || "gowind_video_landing"
+    });
+    if (video) carried.set("video", video);
+    document.querySelectorAll(".carry-query").forEach((link) => {
+      if (!carried.toString()) return;
+      const url = new URL(link.getAttribute("href"), window.location.origin);
+      carried.forEach((value, key) => url.searchParams.set(key, value));
+      link.href = url.pathname + url.search + url.hash;
+    });
+  </script>
+</body>
+</html>
