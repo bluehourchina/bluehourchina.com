@@ -9,6 +9,8 @@ Internal operating sheet for getting the first qualified consultation from socia
 - Funnel target: 300 social profile visits, 30 landing-page clicks, 3 form submissions, 1 qualified reply.
 - Execution scripts: `ops/first-customer-social-scripts.md`
 - Today launch pack: `ops/first-customer-today-launch-pack.md`
+- Outreach board: `ops/first-customer-outreach-board.md`
+- Outreach targets: `ops/first-customer-outreach-targets.csv`
 - Daily tracker import file: `ops/first-customer-week-tracker.csv`
 
 ## Tracking Links
@@ -36,6 +38,8 @@ Publish the partner-share angle. Ask viewers to send the reel to the person they
 
 If there are already comments, likes or profile visits by then, do not only publish new content. Reply to every relevant comment and send a soft DM to warm users who asked about route, price, days or travel style.
 
+Do not rely only on algorithmic reach. Every day, use the outreach board to find current itinerary questions on Reddit, Facebook groups, Threads/Instagram search, 背包客棧, Dcard or LINE warm network. A useful reply to an active question is higher intent than a cold brand post.
+
 ## Daily Scoreboard
 
 Track these numbers every night:
@@ -46,8 +50,12 @@ Track these numbers every night:
 - Form submissions
 - Qualified leads
 - Replies sent within 12 hours
+- Public helpful replies posted
+- Warm DMs / LINE shares sent
 
 If website clicks are low, improve the video opening and pinned comment. If clicks are high but forms are low, use the direct `/quick/` link and mention that the form is only for an initial route direction, not immediate payment.
+
+If there are no clicks after the first 24 hours, increase active outreach before producing more content: 10 public replies, 20 warm DMs and 3 direct route conversations.
 
 ## Lead Qualification
 
