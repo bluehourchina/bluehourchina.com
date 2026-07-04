@@ -11,7 +11,7 @@ const destinations = {
       title: "Yunnan Slow Road",
       intro: "A clear first route for guests who want Yunnan to feel calm, beautiful and manageable: lake wind in Dali, one quiet night in Shaxi, then Lijiang or Baisha with the snow mountain kept at a respectful distance.",
       days: "7 days",
-      price: "From NT$39,800",
+      price: "From US$1,250",
       priceNote: "per traveller, land arrangement from price",
       points: [
         ["Route", "Dali · Shaxi · Lijiang or Baisha"],
@@ -30,7 +30,7 @@ const destinations = {
       title: "雲南慢路線",
       intro: "給第一次走進深度雲南的客人一個清楚基本盤：大理的湖風、沙溪的一個夜晚，再把麗江或白沙的雪山放在遠處。",
       days: "一週",
-      price: "NT$39,800 起",
+      price: "RMB 8,800 起",
       priceNote: "每人，地接安排起價",
       points: [
         ["路線", "大理 · 沙溪 · 麗江或白沙"],
@@ -49,7 +49,7 @@ const destinations = {
       title: "雲南スロー・ルート",
       intro: "雲南を穏やかに感じるための基本形です。大理の湖風、沙溪の一泊、そして麗江または白沙から望む雪山へ。",
       days: "7日間",
-      price: "NT$39,800 から",
+      price: "JPY 205,000 から",
       priceNote: "1名様あたり、現地手配の目安",
       points: [
         ["ルート", "大理 · 沙溪 · 麗江または白沙"],
@@ -68,7 +68,7 @@ const destinations = {
       title: "윈난 슬로우 루트",
       intro: "윈난을 차분하게 느끼기 위한 기본 여정입니다. 다리의 호수 바람, 샤시의 하룻밤, 그리고 리장 또는 바이샤의 설산 전망으로 이어집니다.",
       days: "7일",
-      price: "NT$39,800 부터",
+      price: "KRW 1,950,000 부터",
       priceNote: "1인 기준, 현지 일정 시작가",
       points: [
         ["루트", "다리 · 샤시 · 리장 또는 바이샤"],
@@ -87,7 +87,7 @@ const destinations = {
       title: "เส้นทางช้าในยูนนาน",
       intro: "เส้นทางพื้นฐานสำหรับผู้ที่อยากสัมผัสยูนนานอย่างสงบ: ลมริมทะเลสาบต้าหลี่ หนึ่งคืนที่ซาซี แล้วไปมองภูเขาหิมะจากลี่เจียงหรือไป๋ซา",
       days: "7 วัน",
-      price: "เริ่มที่ NT$39,800",
+      price: "เริ่มที่ THB 42,000",
       priceNote: "ต่อท่าน ราคาเริ่มต้นเฉพาะบริการในพื้นที่",
       points: [
         ["เส้นทาง", "ต้าหลี่ · ซาซี · ลี่เจียงหรือไป๋ซา"],
@@ -110,7 +110,7 @@ const destinations = {
       title: "Xinjiang Sky Road",
       intro: "A wider route for guests who want the scale of inland China without turning every day into a transfer. We begin from Urumqi, then shape the lake, grassland or oasis days around the season.",
       days: "8-9 days",
-      price: "From NT$58,800",
+      price: "From US$1,850",
       priceNote: "per traveller, land arrangement from price",
       points: [
         ["Route", "Urumqi · Sayram Lake or Ili · grassland or bazaar"],
@@ -129,7 +129,7 @@ const destinations = {
       title: "新疆天山大路線",
       intro: "給想感受中國內陸尺度的客人一條清楚路線。從烏魯木齊進入，再依季節選擇湖泊、草原、巴扎與較舒服的車程節奏。",
       days: "8-9 日",
-      price: "NT$58,800 起",
+      price: "RMB 12,800 起",
       priceNote: "每人，地接安排起價",
       points: [
         ["路線", "烏魯木齊 · 賽里木湖或伊犁 · 草原或巴扎"],
@@ -148,7 +148,7 @@ const destinations = {
       title: "新疆スカイ・ロード",
       intro: "中国内陸の大きさを、無理なく感じるための基本形です。ウルムチから入り、季節に合わせて湖、草原、バザールを組み立てます。",
       days: "8-9日間",
-      price: "NT$58,800 から",
+      price: "JPY 300,000 から",
       priceNote: "1名様あたり、現地手配の目安",
       points: [
         ["ルート", "ウルムチ · サイラム湖またはイリ · 草原またはバザール"],
@@ -167,7 +167,7 @@ const destinations = {
       title: "신장 스카이 로드",
       intro: "중국 내륙의 넓이를 무리 없이 느끼기 위한 기본 여정입니다. 우루무치에서 시작해 계절에 맞춰 호수, 초원, 바자를 정합니다.",
       days: "8-9일",
-      price: "NT$58,800 부터",
+      price: "KRW 2,850,000 부터",
       priceNote: "1인 기준, 현지 일정 시작가",
       points: [
         ["루트", "우루무치 · 싸이리무 호수 또는 이리 · 초원 또는 바자"],
@@ -186,7 +186,7 @@ const destinations = {
       title: "เส้นทางฟ้ากว้างซินเจียง",
       intro: "เส้นทางพื้นฐานสำหรับคนที่อยากเห็นความกว้างของจีนแผ่นดินใน โดยไม่ให้ทุกวันกลายเป็นแค่การนั่งรถ เริ่มจากอุรุมชี แล้วเลือกทะเลสาบ ทุ่งหญ้า หรือตลาดตามฤดูกาล",
       days: "8-9 วัน",
-      price: "เริ่มที่ NT$58,800",
+      price: "เริ่มที่ THB 62,000",
       priceNote: "ต่อท่าน ราคาเริ่มต้นเฉพาะบริการในพื้นที่",
       points: [
         ["เส้นทาง", "อุรุมชี · ทะเลสาบไซหลี่มู่หรืออีหลี · ทุ่งหญ้าหรือตลาด"],
@@ -209,7 +209,7 @@ const destinations = {
       title: "Dunhuang Silk Road Light",
       intro: "A compact route for guests who want desert light, Mogao Caves and oasis evenings without treating Dunhuang as a single photo stop.",
       days: "5-6 days",
-      price: "From NT$45,800",
+      price: "From US$1,450",
       priceNote: "per traveller, land arrangement from price",
       points: [
         ["Route", "Dunhuang · Mogao Caves · Mingsha dunes · oasis evening"],
@@ -228,7 +228,7 @@ const destinations = {
       title: "敦煌絲路光線",
       intro: "給想看沙漠、莫高窟與綠洲夜色的客人一條不趕的短線。不把敦煌做成一個拍照點，而是保留歷史與光線的重量。",
       days: "5-6 日",
-      price: "NT$45,800 起",
+      price: "RMB 9,800 起",
       priceNote: "每人，地接安排起價",
       points: [
         ["路線", "敦煌 · 莫高窟 · 鳴沙山月牙泉 · 綠洲夜晚"],
@@ -247,7 +247,7 @@ const destinations = {
       title: "敦煌シルクロードの光",
       intro: "砂漠の光、莫高窟、オアシスの夜を、写真だけで終わらせないための短い基本ルートです。",
       days: "5-6日間",
-      price: "NT$45,800 から",
+      price: "JPY 235,000 から",
       priceNote: "1名様あたり、現地手配の目安",
       points: [
         ["ルート", "敦煌 · 莫高窟 · 鳴沙山月牙泉 · オアシスの夜"],
@@ -266,7 +266,7 @@ const destinations = {
       title: "둔황 실크로드 빛",
       intro: "사막의 빛, 막고굴, 오아시스의 밤을 사진 한 장으로 끝내지 않기 위한 짧고 깊은 기본 여정입니다.",
       days: "5-6일",
-      price: "NT$45,800 부터",
+      price: "KRW 2,200,000 부터",
       priceNote: "1인 기준, 현지 일정 시작가",
       points: [
         ["루트", "둔황 · 막고굴 · 명사산 월아천 · 오아시스의 밤"],
@@ -285,7 +285,7 @@ const destinations = {
       title: "แสงเส้นทางสายไหมตุนหวง",
       intro: "เส้นทางสั้นที่ไม่เร่ง สำหรับคนที่อยากเห็นแสงทะเลทราย ถ้ำม่อเกา และค่ำคืนโอเอซิส โดยไม่ทำให้ตุนหวงเหลือแค่จุดถ่ายรูป",
       days: "5-6 วัน",
-      price: "เริ่มที่ NT$45,800",
+      price: "เริ่มที่ THB 48,000",
       priceNote: "ต่อท่าน ราคาเริ่มต้นเฉพาะบริการในพื้นที่",
       points: [
         ["เส้นทาง", "ตุนหวง · ถ้ำม่อเกา · หมิงซาซานเย่ว์หยาฉวน · ค่ำคืนโอเอซิส"],
@@ -308,7 +308,7 @@ const destinations = {
       title: "Sanya Coastal Ease",
       intro: "A resort-led China route for guests who want warm water, good rooms and a softer cultural edge, with enough open time for the stay itself to matter.",
       days: "5 days",
-      price: "From NT$42,800",
+      price: "From US$1,350",
       priceNote: "per traveller, land arrangement from price",
       points: [
         ["Route", "Sanya resort stay · coastal day · gentle local moment"],
@@ -327,7 +327,7 @@ const destinations = {
       title: "三亞海岸慢休日",
       intro: "給想要海、好房間與柔和中國感的客人一條度假主導路線。行程不塞滿，讓住宿本身成為旅程的一部分。",
       days: "5 日",
-      price: "NT$42,800 起",
+      price: "RMB 9,200 起",
       priceNote: "每人，地接安排起價",
       points: [
         ["路線", "三亞度假酒店 · 海岸日 · 柔和在地半日"],
@@ -346,7 +346,7 @@ const destinations = {
       title: "三亜コースタル・イーズ",
       intro: "海、よい部屋、やわらかな中国らしさを求める方のためのリゾート中心ルートです。滞在そのものが旅になります。",
       days: "5日間",
-      price: "NT$42,800 から",
+      price: "JPY 220,000 から",
       priceNote: "1名様あたり、現地手配の目安",
       points: [
         ["ルート", "三亜リゾート滞在 · 海岸の日 · 軽いローカル体験"],
@@ -365,7 +365,7 @@ const destinations = {
       title: "싼야 코스털 이즈",
       intro: "따뜻한 바다, 좋은 객실, 부드러운 중국의 분위기를 원하는 분을 위한 리조트 중심 여정입니다. 숙소 자체가 여행의 일부가 됩니다.",
       days: "5일",
-      price: "NT$42,800 부터",
+      price: "KRW 2,100,000 부터",
       priceNote: "1인 기준, 현지 일정 시작가",
       points: [
         ["루트", "싼야 리조트 숙박 · 해안의 하루 · 부드러운 현지 시간"],
@@ -384,7 +384,7 @@ const destinations = {
       title: "วันพักช้าริมทะเลซานย่า",
       intro: "เส้นทางรีสอร์ตสำหรับคนที่อยากได้ทะเล ห้องพักดี และความรู้สึกจีนที่นุ่มลง ให้ที่พักเป็นส่วนหนึ่งของทริปจริง ๆ",
       days: "5 วัน",
-      price: "เริ่มที่ NT$42,800",
+      price: "เริ่มที่ THB 45,000",
       priceNote: "ต่อท่าน ราคาเริ่มต้นเฉพาะบริการในพื้นที่",
       points: [
         ["เส้นทาง", "พักรีสอร์ตซานย่า · วันริมทะเล · ครึ่งวันท้องถิ่นเบา ๆ"],
@@ -407,7 +407,7 @@ const destinations = {
       title: "Northeast Winter Rail",
       intro: "A winter route for guests who want snow, rail movement, forest air and warm rooms, planned around cold-weather comfort rather than endurance.",
       days: "6-7 days",
-      price: "From NT$49,800",
+      price: "From US$1,600",
       priceNote: "per traveller, land arrangement from price",
       points: [
         ["Route", "Harbin · snow or forest stay · winter rail movement"],
@@ -426,7 +426,7 @@ const destinations = {
       title: "東北雪線暖房",
       intro: "給想看雪、鐵路、森林空氣與溫暖房間的客人一條冬季線。重點不是忍耐寒冷，而是把冷空氣與室內溫暖都安排好。",
       days: "6-7 日",
-      price: "NT$49,800 起",
+      price: "RMB 10,800 起",
       priceNote: "每人，地接安排起價",
       points: [
         ["路線", "哈爾濱 · 雪地或森林住宿 · 冬季鐵路移動"],
@@ -445,7 +445,7 @@ const destinations = {
       title: "東北ウィンター・レール",
       intro: "雪、列車、森の空気、あたたかい部屋を楽しむ冬の基本ルートです。寒さに耐える旅ではなく、外の冷気と室内の温かさを整えます。",
       days: "6-7日間",
-      price: "NT$49,800 から",
+      price: "JPY 255,000 から",
       priceNote: "1名様あたり、現地手配の目安",
       points: [
         ["ルート", "ハルビン · 雪原または森の滞在 · 冬の鉄道"],
@@ -464,7 +464,7 @@ const destinations = {
       title: "동북 윈터 레일",
       intro: "눈, 기차, 숲의 공기, 따뜻한 방을 위한 겨울 기본 여정입니다. 추위를 견디는 여행이 아니라, 바깥의 차가움과 안쪽의 따뜻함을 함께 준비합니다.",
       days: "6-7일",
-      price: "NT$49,800 부터",
+      price: "KRW 2,400,000 부터",
       priceNote: "1인 기준, 현지 일정 시작가",
       points: [
         ["루트", "하얼빈 · 설원 또는 숲 숙박 · 겨울 철도 이동"],
@@ -483,7 +483,7 @@ const destinations = {
       title: "รถไฟฤดูหนาวภาคตะวันออกเฉียงเหนือ",
       intro: "เส้นทางฤดูหนาวสำหรับคนที่อยากเห็นหิมะ รถไฟ อากาศป่า และห้องพักอุ่น ๆ ไม่ใช่ทริปทนหนาว แต่เป็นทริปที่จัดความเย็นและความอุ่นให้พอดี",
       days: "6-7 วัน",
-      price: "เริ่มที่ NT$49,800",
+      price: "เริ่มที่ THB 52,000",
       priceNote: "ต่อท่าน ราคาเริ่มต้นเฉพาะบริการในพื้นที่",
       points: [
         ["เส้นทาง", "ฮาร์บิน · พักในหิมะหรือป่า · รถไฟฤดูหนาว"],
