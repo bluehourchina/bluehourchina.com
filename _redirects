@@ -28,8 +28,8 @@
 /gowind-ig /gowind.html              200
 /gowind-youtube /gowind.html         200
 /gowind-route /gowind.html           200
-/social-kit /social-kit.html         200
-/quick /yunnan-quick-start.html      200
+/social-kit /social-kit/             301!
+/quick /quick/                       301!
 /invite /yunnan-referral-invite.html 200
 /friend /yunnan-referral-invite.html 200
 /check /yunnan-itinerary-check.html  200

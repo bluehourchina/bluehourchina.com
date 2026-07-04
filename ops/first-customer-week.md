@@ -7,6 +7,8 @@ Internal operating sheet for getting the first qualified consultation from socia
 - Window: 7 days after launch.
 - Business goal: 1 qualified travel consultation.
 - Funnel target: 300 social profile visits, 30 landing-page clicks, 3 form submissions, 1 qualified reply.
+- Execution scripts: `ops/first-customer-social-scripts.md`
+- Daily tracker import file: `ops/first-customer-week-tracker.csv`
 
 ## Tracking Links
 
@@ -26,8 +28,23 @@ Publish the route-shape angle. Explain why Dali, Shaxi and Lijiang each need a d
 Day 5:
 Publish the private-route value angle. Explain that private planning reduces mistakes in vehicle time, lodging location, language and the pace of older travellers or families.
 
-Day 6-7:
+Final two days:
 Publish the partner-share angle. Ask viewers to send the reel to the person they may travel with. CTA: "先一起確認想要的風景和預算感."
+
+If there are already comments, likes or profile visits by then, do not only publish new content. Reply to every relevant comment and send a soft DM to warm users who asked about route, price, days or travel style.
+
+## Daily Scoreboard
+
+Track these numbers every night:
+
+- Views by platform
+- Profile visits
+- Website clicks
+- Form submissions
+- Qualified leads
+- Replies sent within 12 hours
+
+If website clicks are low, improve the video opening and pinned comment. If clicks are high but forms are low, use the direct `/quick/` link and mention that the form is only for an initial route direction, not immediate payment.
 
 ## Lead Qualification
 
