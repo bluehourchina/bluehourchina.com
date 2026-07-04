@@ -24,11 +24,11 @@ Bluehour China Journeys is a multilingual private China travel advisory for inte
 - Yunnan, Xinjiang, Dunhuang, Sanya and Northeast China each have localized pages under /zh/, /ja/, /ko/ and /th/.
 
 ## Standard Route Starting Prices
-- Yunnan Slow Road: 7 days, Dali · Shaxi · Lijiang or Baisha, from NT$39,800 per traveller.
-- Xinjiang Sky Road: 8-9 days, Urumqi · Sayram Lake or Ili · grassland or bazaar, from NT$58,800 per traveller.
-- Dunhuang Silk Road Light: 5-6 days, Mogao Caves · dunes · oasis evening, from NT$45,800 per traveller.
-- Sanya Coastal Ease: 5 days, resort stay · coast · gentle local day, from NT$42,800 per traveller.
-- Northeast Winter Rail: 6-7 days, Harbin · snow or forest stay · winter rail movement, from NT$49,800 per traveller.
+- Yunnan Slow Road: 7 days, Dali · Shaxi · Lijiang or Baisha, from US$1,250 per traveller.
+- Xinjiang Sky Road: 8-9 days, Urumqi · Sayram Lake or Ili · grassland or bazaar, from US$1,850 per traveller.
+- Dunhuang Silk Road Light: 5-6 days, Mogao Caves · dunes · oasis evening, from US$1,450 per traveller.
+- Sanya Coastal Ease: 5 days, resort stay · coast · gentle local day, from US$1,350 per traveller.
+- Northeast Winter Rail: about one week, Harbin · snow or forest stay · winter rail movement, from US$1,600 per traveller.
 - Starting prices are land-arrangement references and exclude international flights. Final pricing depends on season, hotel level, group size, vehicle needs and local-provider availability.
 
 ## Lead Capture Campaign
