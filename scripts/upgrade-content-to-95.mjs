@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
-const cssVersion = "v=20260704-content95d";
+const cssVersion = "v=20260704-content95e";
 const today = "2026-07-04";
 
 const files = {
@@ -971,6 +971,11 @@ function renderHeading(tag, title) {
   return `<${tag}>${title}</${tag}>`;
 }
 
+function replaceHeading(html, text, lines, tag = "h2") {
+  const escaped = text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return html.replace(new RegExp(`<${tag}>${escaped}</${tag}>`, "g"), renderHeading(tag, lines));
+}
+
 function destinationDetail(lang, slug) {
   if (lang === "en") {
     const data = destinations[slug];
@@ -1319,6 +1324,21 @@ async function updateSitePolish() {
           "<h1>下一次中國，安靜一點就好</h1>",
           '<h1 class="cjk-title"><span class="title-line">下一次中國</span><span class="title-line">安靜一點就好</span></h1>',
         );
+        next = replaceHeading(next, "先讀懂一個地方，再決定去哪裡", ["先讀懂一個地方", "再決定去哪裡"]);
+        next = replaceHeading(next, "先讀懂一個地方，再決定去哪裡", ["先讀懂一個地方", "再決定去哪裡"], "h1");
+        next = replaceHeading(next, "告訴我們你想靠近的風景，我們幫你整理成可行路線", ["告訴我們你想靠近的風景", "我們幫你整理成可行路線"]);
+        next = replaceHeading(next, "選ぶ前に、その土地の空気を読む", ["選ぶ前に", "その土地の空気を読む"]);
+        next = replaceHeading(next, "選ぶ前に、その土地の空気を読む", ["選ぶ前に", "その土地の空気を読む"], "h1");
+        next = replaceHeading(next, "静かなケアこそ、旅の贅沢", ["静かなケアこそ", "旅の贅沢"]);
+        next = replaceHeading(next, "見たい風景を教えてください。旅にできる形へ整えます", ["見たい風景を教えてください", "旅にできる形へ整えます"]);
+        next = replaceHeading(next, "목적지를 고르기 전, 그 땅의 기운을 읽습니다", ["목적지를 고르기 전", "그 땅의 기운을 읽습니다"]);
+        next = replaceHeading(next, "목적지를 고르기 전, 그 땅의 기운을 읽습니다", ["목적지를 고르기 전", "그 땅의 기운을 읽습니다"], "h1");
+        next = replaceHeading(next, "조용한 돌봄이 가장 큰 럭셔리입니다", ["조용한 돌봄이", "가장 큰 럭셔리입니다"]);
+        next = replaceHeading(next, "원하는 풍경을 알려주세요. 가능한 여정으로 정리해드립니다", ["원하는 풍경을 알려주세요", "가능한 여정으로 정리해드립니다"]);
+        next = replaceHeading(next, "อ่านลมหายใจของสถานที่ ก่อนเลือกเส้นทาง", ["อ่านลมหายใจของสถานที่", "ก่อนเลือกเส้นทาง"]);
+        next = replaceHeading(next, "อ่านลมหายใจของสถานที่ ก่อนเลือกเส้นทาง", ["อ่านลมหายใจของสถานที่", "ก่อนเลือกเส้นทาง"], "h1");
+        next = replaceHeading(next, "ความหรูหราคือความสบายที่ไม่ต้องพูดดัง", ["ความหรูหราคือความสบาย", "ที่ไม่ต้องพูดดัง"]);
+        next = replaceHeading(next, "บอกภูมิทัศน์ที่คุณอยากเห็น เราจะช่วยทำให้เป็นทริปที่เป็นไปได้", ["บอกภูมิทัศน์ที่คุณอยากเห็น", "เราจะช่วยทำให้เป็นทริปที่เป็นไปได้"]);
         next = next
           .replace(/<h1>Tell us the China you want to feel<\/h1>/g, "<h1>Tell us your China</h1>")
           .replace(/<h1>Tell us the China landscape you want to move toward<\/h1>/g, "<h1>Begin with your China</h1>");
