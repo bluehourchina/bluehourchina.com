@@ -144,6 +144,7 @@ function sheetIntakeScript() {
               keepalive: true,
               headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" }
             });
+            window.BluehourLeadTracking?.generateLead?.(form, { intakeProvider: "google_sheet_webapp" });
             status.className = "form-status success";
             status.textContent = form.dataset.successMessage || copy.success;
             form.reset();

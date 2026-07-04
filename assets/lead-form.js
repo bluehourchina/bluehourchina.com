@@ -1,4 +1,74 @@
 (() => {
+  const leadFieldValue = (form, name) =>
+    form.querySelector('[name="' + name + '"]')?.value?.trim() || "";
+
+  const leadTrackingPayload = (form, overrides = {}) => {
+    const destination = leadFieldValue(form, "destination") || "private-china-route";
+    const source = leadFieldValue(form, "utm_source") || "site";
+    const medium = leadFieldValue(form, "utm_medium") || "website";
+    const campaign = leadFieldValue(form, "utm_campaign") || leadFieldValue(form, "campaign") || "private_route_consultation";
+    const language =
+      leadFieldValue(form, "language") ||
+      leadFieldValue(form, "language_needs") ||
+      document.documentElement.lang ||
+      "";
+    const itemName =
+      destination === "private-china-route"
+        ? "Private China route consultation"
+        : "Private China route consultation - " + destination;
+    const value = Number(form.dataset.leadValue || leadFieldValue(form, "lead_value") || "");
+    const payload = {
+      lead_source: source + " / " + medium,
+      form_name: form.getAttribute("name") || "",
+      destination,
+      language,
+      campaign,
+      source,
+      medium,
+      intake_provider:
+        overrides.intakeProvider ||
+        leadFieldValue(form, "intake_provider") ||
+        (form.dataset.sheetEndpoint ? "google_sheet_webapp" : "formsubmit_email"),
+      page_location: window.location.href,
+      items: [
+        {
+          item_id: destination,
+          item_name: itemName,
+          item_category: "Private China travel consultation"
+        }
+      ]
+    };
+
+    if (Number.isFinite(value) && value > 0) {
+      payload.value = value;
+      payload.currency = form.dataset.leadCurrency || leadFieldValue(form, "lead_currency") || "USD";
+    }
+
+    return Object.assign(payload, overrides.payload || {});
+  };
+
+  const pushLeadEvent = (form, overrides = {}) => {
+    const now = Date.now();
+    const lastTrackedAt = Number(form.dataset.generateLeadTrackedAt || 0);
+    if (now - lastTrackedAt < 4000) return null;
+    form.dataset.generateLeadTrackedAt = String(now);
+
+    const payload = leadTrackingPayload(form, overrides);
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "generate_lead", payload);
+    } else {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(Object.assign({ event: "generate_lead" }, payload));
+    }
+    window.dispatchEvent(new CustomEvent("bluehour:generate_lead", { detail: payload }));
+    return payload;
+  };
+
+  window.BluehourLeadTracking = Object.assign({}, window.BluehourLeadTracking, {
+    generateLead: pushLeadEvent,
+    payload: leadTrackingPayload
+  });
+
   const forms = document.querySelectorAll(".lead-form");
   if (!forms.length) return;
 
@@ -85,19 +155,6 @@
     HTMLFormElement.prototype.submit.call(form);
   };
 
-  const pushLeadEvent = (form) => {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "generate_lead",
-      form_name: form.getAttribute("name") || "",
-      destination: form.querySelector('[name="destination"]')?.value || "",
-      language: form.querySelector('[name="language"]')?.value || document.documentElement.lang || "",
-      campaign: form.querySelector('[name="utm_campaign"]')?.value || "",
-      source: form.querySelector('[name="utm_source"]')?.value || "",
-      medium: form.querySelector('[name="utm_medium"]')?.value || ""
-    });
-  };
-
   forms.forEach((form) => {
     setHiddenFields(form);
     ensurePrivacyNotice(form);
@@ -124,13 +181,13 @@
       }
 
       try {
-        pushLeadEvent(form);
         await fetch(form.action, {
           method: "POST",
           body: new FormData(form),
           mode: "no-cors",
           keepalive: true
         });
+        pushLeadEvent(form, { intakeProvider: "formsubmit_email" });
         window.location.href = nextUrl;
       } catch (error) {
         status.className = "form-status error";
@@ -141,6 +198,7 @@
           button.disabled = false;
           button.textContent = originalLabel;
         }
+        pushLeadEvent(form, { intakeProvider: "formsubmit_email_fallback" });
         fallbackSubmit(form);
       }
     });

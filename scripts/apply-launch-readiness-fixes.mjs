@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
-const scriptTag = '  <script src="/assets/lead-form.js?v=20260703-launch1" defer></script>';
+const scriptTag = '  <script src="/assets/lead-form.js?v=20260704-lead1" defer></script>';
 const skipDirs = new Set([".git", "node_modules", "outputs"]);
 const htmlFiles = [];
 
