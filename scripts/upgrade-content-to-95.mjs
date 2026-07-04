@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
-const cssVersion = "v=20260704-content95b";
+const cssVersion = "v=20260704-content95d";
 const today = "2026-07-04";
 
 const files = {
@@ -292,7 +292,7 @@ const localizedHomeTrust = {
   },
   zh: {
     eyebrow: "為什麼是若青中國",
-    title: ["真正舒服的中國路線", "不只是一張漂亮清單"],
+    title: ["真正舒服的", "中國路線", "不只是一張清單"],
     intro:
       "北京上海之外，真正讓外國旅人緊張的往往不是風景，而是語言、距離、住宿感、天氣、票務與每天是否還有餘裕。我們做的，是把一個模糊想法整理成可行而舒服的路線。",
     cards: [
@@ -304,7 +304,7 @@ const localizedHomeTrust = {
   },
   ja: {
     eyebrow: "Bluehour China の考え方",
-    title: ["心地よい中国の旅は", "美しい行程表だけでは足りない"],
+    title: ["心地よい中国の旅は", "美しい行程表", "だけでは足りない"],
     intro:
       "北京や上海を離れるほど、旅の質は言葉、距離、宿、季節、予約、そして一日の余白に左右されます。ぼんやりした希望を、無理のない静かなルートへ整えることが私たちの役割です。",
     cards: [
@@ -316,7 +316,7 @@ const localizedHomeTrust = {
   },
   ko: {
     eyebrow: "Bluehour China 의 방식",
-    title: ["좋은 중국 여행은", "예쁜 일정표만으로 완성되지 않습니다"],
+    title: ["좋은 중국 여행은", "예쁜 일정표만으로", "완성되지 않습니다"],
     intro:
       "베이징과 상하이를 벗어나면 언어, 거리, 숙소, 날씨, 예약, 하루의 여백이 여행의 질을 결정합니다. 막연한 바람을 편안하고 가능한 루트로 정리하는 것이 우리의 역할입니다.",
     cards: [
@@ -328,7 +328,7 @@ const localizedHomeTrust = {
   },
   th: {
     eyebrow: "แนวทางของ Bluehour China",
-    title: ["ทริปจีนที่สบาย", "ไม่ใช่แค่แผนสวยบนกระดาษ"],
+    title: ["ทริปจีนที่สบาย", "ไม่ใช่แค่แผน", "สวยบนกระดาษ"],
     intro:
       "เมื่อนอกเหนือจากปักกิ่งและเซี่ยงไฮ้ คุณภาพของทริปขึ้นอยู่กับภาษา ระยะทาง ที่พัก ฤดูกาล การจอง และจังหวะของแต่ละวัน เราช่วยเปลี่ยนความอยากเที่ยวแบบกว้าง ๆ ให้เป็นเส้นทางที่ไปได้จริงและสบายใจ",
     cards: [
@@ -1125,9 +1125,10 @@ async function updateCss() {
 /* content-95-start */
 .content-95-band{background:#f8f3ea;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .content-note-band{background:#edf1ed;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.content-95-wrap{display:grid;grid-template-columns:minmax(0,.78fr) minmax(360px,1fr);gap:clamp(28px,6vw,82px);align-items:start}
+.content-95-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.82fr);gap:clamp(28px,5vw,68px);align-items:start}
 .content-95-wrap>*,.planning-checks>*,.fit-grid,.faq-grid,.decision-table,.planning-checks ol{min-width:0}
-.content-95-intro h2,.planning-checks h2{max-width:780px;font-size:clamp(34px,4.8vw,64px);line-height:1.08}
+.content-95-intro h2,.planning-checks h2{max-width:100%;font-size:clamp(34px,4.25vw,58px);line-height:1.1}
+.content-95-intro h2.cjk-title,.planning-checks h2.cjk-title{font-size:clamp(33px,4vw,56px);text-wrap:balance}
 .content-95-intro p,.planning-checks p{max-width:660px;margin-top:20px;color:var(--muted);font-size:17px;line-height:1.82}
 .fit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
 .fit-grid article,.faq-item,.decision-table article{padding:24px;border:1px solid var(--line);background:rgba(255,250,241,.72)}
@@ -1399,7 +1400,7 @@ This structure is intended to help both human travellers and AI search systems a
 
 async function updateSitemapAndAudit() {
   let sitemap = await read(files.sitemap);
-  sitemap = sitemap.replace(/<lastmod>2026-07-03<\/lastmod>/g, `<lastmod>${today}</lastmod>`);
+  sitemap = sitemap.replace(/<lastmod>2026-07-(02|03)<\/lastmod>/g, `<lastmod>${today}</lastmod>`);
   await write(files.sitemap, sitemap);
 
   let audit = await read(files.audit);

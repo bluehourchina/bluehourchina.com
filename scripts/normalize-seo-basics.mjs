@@ -13,10 +13,10 @@ const descriptionUpdates = new Map([
   ["credits.html", "Image credits, source notes and licensing references for Bluehour China Journeys, including AI brand visuals and Yunnan travel photography."],
   ["credits/index.html", "Image credits, source notes and licensing references for Bluehour China Journeys, including AI brand visuals and Yunnan travel photography."],
   ["zh/interest/index.html", "雲南、新疆、敦煌、三亞，或北方的雪。留下季節、人數、舒適需求與語言偏好，若青中國旅策會回覆路線筆記與初步報價"],
-  ["zh/consult/index.html", "若青中國旅策先理解你想靠近的中國風景，人工判斷目的地、季節、舒適度、語言需求與在地照應。"],
+  ["zh/consult/index.html", "若青中國旅策為外國旅人整理中國深度路線初談，人工判斷目的地、季節、舒適度、語言需求與在地照應方式。"],
   ["zh/stories/index.html", "用短篇故事認識雲南、新疆、敦煌、三亞與東北的中國風景，先感受地方氣息，再決定下一次中國旅行。"],
   ["ja/interest/index.html", "雲南、新疆、敦煌、三亜、北国の冬。季節、人数、安心したいこと、言語の希望を伝えて、最初の方向を整えます。"],
-  ["ja/consult/index.html", "北京・上海の次に中国を深く旅したい方へ。目的地、季節、移動の負担、宿泊の好みを伺い、静かな第一案を整えます。"],
+  ["ja/consult/index.html", "北京・上海の次に中国を深く旅したい方へ、季節、移動、宿、言葉の不安を読み、静かな初回相談で方向を整えます。"],
   ["ja/stories/index.html", "雲南、新疆、敦煌、三亜、東北の短い物語から、次の中国旅行が自分に合うかを静かに感じてください。"],
 ]);
 

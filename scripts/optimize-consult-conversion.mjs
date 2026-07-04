@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
-const today = "2026-07-02";
+const today = "2026-07-04";
 const campaign = "private_route_consultation";
 
 const languages = {
@@ -43,9 +43,9 @@ const languages = {
     consultUrl: "/zh/consult/",
     langTag: "zh-Hant",
     title: "中國深度路線初談",
-    description: "若青中國旅策先理解你想靠近的中國風景，人工判斷目的地、季節、舒適度與在地照應。",
+    description: "若青中國旅策為外國旅人整理中國深度路線初談，人工判斷目的地、季節、舒適度、語言需求與在地照應方式。",
     eyebrow: "私人路線初談",
-    h2: "先理解你想靠近的中國風景",
+    h2: ["先理解你想靠近的", "中國風景"],
     lead: "這不是廉價促銷，也不是制式行程。你留下季節、人數、舒適需求與擔心的地方，我們人工判斷路線是否適合、哪裡太趕、需要什麼在地照應。",
     formTitle: "先給一份路線遊記，再給初步報價",
     formLead: "我們會把你的季節、人數與舒適需求整理成一份短短的中國路線筆記：為什麼適合、每天大概怎麼感受、價格從哪裡開始",
@@ -70,9 +70,9 @@ const languages = {
     consultUrl: "/ja/consult/",
     langTag: "ja",
     title: "静かな初回相談",
-    description: "北京・上海の次に中国を深く旅したい方へ、静かに最初の方向を整えます。",
+    description: "北京・上海の次に中国を深く旅したい方へ、季節、移動、宿、言葉の不安を読み、静かな初回相談で方向を整えます。",
     eyebrow: "個別相談",
-    h2: "中国をもう少し深く旅したい方へ、個別相談を丁寧に拝見します",
+    h2: ["中国をもう少し深く", "旅したい方へ", "個別相談を拝見します"],
     lead: "送信後、旅の記録のように読める短いルートノートと、最初のお見積り、次に確認したいことをお送りします",
     formTitle: "まず旅のノートを、その後に見積りを",
     formLead: "季節、人数、快適さへの希望を読み、中国のどの風景が合うのか、数日がどんな感触になるのか、最初の価格感まで整えます",
@@ -99,7 +99,7 @@ const languages = {
     title: "조용한 첫 상담",
     description: "베이징과 상하이 이후의 중국을 더 깊게 여행하려는 분들을 위해 루트 노트와 시작 견적을 정리합니다.",
     eyebrow: "첫 상담",
-    h2: "중국을 더 깊게 여행하려는 분들을 위해 루트 노트와 견적을 정리합니다",
+    h2: ["중국을 더 깊게", "여행하려는 분께", "루트 노트와 견적을 정리합니다"],
     lead: "보내주시면 여행기처럼 읽히는 짧은 루트 노트와 시작 견적, 다음에 확인할 질문을 정리해드립니다.",
     formTitle: "먼저 루트 노트, 그다음 시작 견적",
     formLead: "계절, 인원, 편안함에 대한 요청을 읽고 어떤 중국 풍경이 맞는지, 하루하루가 어떤 느낌일지, 첫 가격대를 정리합니다.",
@@ -126,7 +126,7 @@ const languages = {
     title: "การปรึกษาเส้นทางจีนแบบส่วนตัว",
     description: "สำหรับคนที่อยากเห็นจีนให้ลึกกว่าเมืองใหญ่ เราจะเตรียมบันทึกเส้นทางและราคาเริ่มต้นอย่างเป็นส่วนตัว",
     eyebrow: "การปรึกษาเส้นทางส่วนตัว",
-    h2: "บอกภูมิทัศน์ของจีนที่คุณอยากเข้าใกล้",
+    h2: ["บอกภูมิทัศน์ของจีน", "ที่คุณอยากเข้าใกล้"],
     lead: "หลังส่งแบบฟอร์ม เราจะเตรียมบันทึกเส้นทางสั้น ๆ ที่อ่านเหมือนบันทึกการเดินทาง พร้อมราคาเริ่มต้นและคำถามถัดไปที่ต้องยืนยัน",
     formTitle: "เริ่มจากบันทึกเส้นทาง แล้วตามด้วยราคา",
     formLead: "เราจะเปลี่ยนคำตอบของคุณเป็นบันทึกเส้นทางจีนสั้น ๆ ว่าทำไมจุดหมายนี้เหมาะ วันเดินทางจะรู้สึกอย่างไร และราคาเริ่มจากตรงไหน",
@@ -154,6 +154,14 @@ const englishDestinationFiles = {
 
 function escapeHtml(value) {
   return String(value).replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
+}
+
+function renderHeading(tag, value) {
+  if (Array.isArray(value)) {
+    const lines = value.map((line) => `<span class="title-line">${escapeHtml(line)}</span>`).join("");
+    return `<${tag} class="cjk-title">${lines}</${tag}>`;
+  }
+  return `<${tag}>${escapeHtml(value)}</${tag}>`;
 }
 
 async function read(file) {
@@ -211,7 +219,7 @@ function conversionSection(lang, source, destination = "") {
       <div class="wrap conversion-wrap">
         <div class="conversion-copy">
           <p class="eyebrow">${escapeHtml(c.eyebrow)}</p>
-          <h2>${escapeHtml(c.h2)}</h2>
+          ${renderHeading("h2", c.h2)}
           <p>${escapeHtml(c.lead)}</p>
           <div class="hero-actions">
             <a class="btn primary dark-gold" href="${reviewUrl(lang, source, destination)}">${escapeHtml(c.cta)}</a>
@@ -326,7 +334,7 @@ function consultPageFromInterest(html, lang) {
   html = html.replace(/<span class="language-switch" aria-label="Language switcher">[\s\S]*?<\/span>/, `<span class="language-switch" aria-label="Language switcher">${consultLanguageSwitch(lang)}</span>`);
   html = html.replace(/<div class="mobile-lang" aria-label="Mobile language switcher">[\s\S]*?<\/div>/, `<div class="mobile-lang" aria-label="Mobile language switcher">${consultLanguageSwitch(lang)}</div>`);
   html = html.replace(new RegExp(`class="nav-cta" href="${config.interest.replaceAll("/", "\\/")}"`, "g"), `class="nav-cta" href="${reviewUrl(lang, "consult_nav")}"`);
-  html = html.replace(/<section class="interest-story"><div><p class="eyebrow">[\s\S]*?<\/p><h1>[\s\S]*?<\/h1><p class="lead">[\s\S]*?<\/p><\/div>/, `<section class="interest-story"><div><p class="eyebrow">${escapeHtml(config.eyebrow)}</p><h1>${escapeHtml(config.h2)}</h1><p class="lead">${escapeHtml(config.lead)}</p></div>`);
+  html = html.replace(/<section class="interest-story"><div><p class="eyebrow">[\s\S]*?<\/p><h1[\s\S]*?<\/h1><p class="lead">[\s\S]*?<\/p><\/div>/, `<section class="interest-story"><div><p class="eyebrow">${escapeHtml(config.eyebrow)}</p>${renderHeading("h1", config.h2)}<p class="lead">${escapeHtml(config.lead)}</p></div>`);
   return html;
 }
 
@@ -336,10 +344,11 @@ function appendCss(css) {
 
 /* conversion-optimization-start */
 .conversion-band{background:linear-gradient(180deg,#f7f2e8,#e8eee9);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.conversion-wrap{display:grid;grid-template-columns:minmax(0,.85fr) minmax(320px,.9fr);gap:clamp(26px,5vw,72px);align-items:start}
-.conversion-copy h2{max-width:760px;font-size:clamp(36px,5vw,66px);line-height:1.07}.conversion-copy p{max-width:660px;margin-top:20px;color:var(--muted);font-size:17px;line-height:1.82}
+.conversion-wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.82fr);gap:clamp(26px,5vw,68px);align-items:start}
+.conversion-wrap>*,.conversion-copy,.conversion-steps{min-width:0;max-width:100%}
+.conversion-copy h2{max-width:100%;font-size:clamp(34px,4.25vw,58px);line-height:1.1}.conversion-copy h2.cjk-title{font-size:clamp(33px,4vw,56px);text-wrap:balance}.conversion-copy p{max-width:660px;margin-top:20px;color:var(--muted);font-size:17px;line-height:1.82}
 .conversion-steps{display:grid;gap:12px}.conversion-steps article{padding:26px;border:1px solid var(--line);background:rgba(255,250,241,.7)}.conversion-steps b{display:block;color:var(--gold);font-size:12px;letter-spacing:.14em;text-transform:uppercase}.conversion-steps h3{margin-top:12px;font-size:30px;line-height:1.12}.conversion-steps p{margin-top:12px;color:var(--muted);line-height:1.72}
-.dark-gold{box-shadow:0 16px 36px rgba(93,63,31,.16)}.form-proof{margin:20px 0 22px;padding:18px;border:1px solid rgba(255,250,241,.2);background:rgba(255,250,241,.08)}.form-proof h3{margin-top:8px;font-size:24px;line-height:1.16}.form-proof p{margin:10px 0 14px}.form-proof div{display:flex;flex-wrap:wrap;gap:8px}.form-proof span{display:inline-flex;align-items:center;min-height:30px;padding:0 10px;border:1px solid rgba(255,250,241,.2);color:rgba(255,250,241,.76);font-size:12px}.form-fallback{margin:8px 0 0;color:rgba(255,250,241,.62);font-size:12px;line-height:1.5}.form-fallback a{color:rgba(255,250,241,.9);border-bottom:1px solid rgba(255,250,241,.32)}
+.dark-gold{box-shadow:0 16px 36px rgba(93,63,31,.16)}.form-proof{margin:20px 0 22px;padding:18px;border:1px solid rgba(255,250,241,.2);background:rgba(255,250,241,.08)}.form-proof h3{margin-top:8px;font-size:24px;line-height:1.16}.form-proof p{margin:10px 0 14px}.form-proof div{display:flex;flex-wrap:wrap;gap:8px}.form-proof span{display:inline-flex;align-items:center;min-height:30px;padding:0 10px;border:1px solid rgba(255,250,241,.2);color:rgba(255,250,241,.76);font-size:12px}.form-fallback,.form-consent{margin:8px 0 0;color:rgba(255,250,241,.62);font-size:12px;line-height:1.5}.form-fallback a,.form-consent a{color:rgba(255,250,241,.9);border-bottom:1px solid rgba(255,250,241,.32)}
 .tally-backend{margin-top:18px}.tally-backend iframe{display:block;min-height:620px;border:0;background:transparent}.email-backup-form{margin-top:14px;border-top:1px solid rgba(255,250,241,.16);padding-top:12px}.email-backup-form summary{cursor:pointer;color:rgba(255,250,241,.72);font-size:12px;font-weight:850;letter-spacing:.08em;text-transform:uppercase}.email-backup-form[open] summary{margin-bottom:12px}
 .interest-story h1{max-width:min(100%,780px);overflow-wrap:break-word}.interest-story .lead{max-width:min(100%,650px)}
 .sticky-review{position:fixed;left:50%;bottom:18px;z-index:40;transform:translateX(-50%);display:none;align-items:center;justify-content:center;min-height:48px;width:min(360px,calc(100% - 36px));padding:0 18px;background:var(--gold);color:#10231d;font-weight:850;box-shadow:0 16px 36px rgba(0,0,0,.28)}
@@ -375,7 +384,9 @@ async function updateSitemap() {
   for (const item of lowPriorityLegacy) paths.delete(item);
   const priorityFor = (u) => {
     if (u === "/") return "1.0";
+    if (u === "/china-travel/") return "0.9";
     if (u.includes("consult") || u.includes("apply") || u.includes("review") || u.includes("interest")) return "0.9";
+    if (u.includes("privacy")) return "0.5";
     return "0.8";
   };
   const body = [...paths].map((u) => `  <url>

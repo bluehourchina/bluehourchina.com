@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
-const today = "2026-07-03";
+const today = "2026-07-04";
 
 const englishCanonicals = {
   "index.html": "/",
