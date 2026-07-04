@@ -24,7 +24,7 @@
   <meta property="og:url" content="https://bluehourchina.com/ko/interest/">
   <meta property="og:image" content="https://bluehourchina.com/assets/ai/bluehour-china-hero-luxury-lake-v2.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="/assets/luxury-multilang.css?v=20260703-launch1">
+  <link rel="stylesheet" href="/assets/luxury-multilang.css?v=20260704-content95">
 </head>
 <body class="interest-body">
   <nav class="nav" aria-label="Primary navigation">
@@ -44,6 +44,14 @@
   <main class="interest-page">
     <section class="interest-story"><div><p class="eyebrow">조용한 첫 상담</p><h1>느끼고 싶은 중국을 알려주세요</h1><p class="lead">윈난, 신장, 둔황, 싼야, 북쪽의 겨울. 계절과 인원, 필요한 편안함을 알려주세요.</p></div><div class="points"><div><span>언어</span><b>언어 부담을 덜어드립니다.</b></div><div><span>편안함</span><b>이동과 숙박을 부드럽게.</b></div><div><span>답장</span><b>루트 노트와 견적 답장</b></div></div></section>
     <section class="form-side" id="apply"><div class="form-card"><p class="eyebrow">여기서 시작</p><h2>몇 가지 정보면 충분합니다</h2><p>첫 답장은 강한 판매가 아닙니다. 맞는 곳, 빠듯한 곳, 필요한 현지 케어를 차분히 정리합니다.</p>
+
+      <!-- content-95-start -->
+      <div class="consult-assurance">
+        <div><b>확인하는 것</b><span>계절, 인원, 속도, 언어, 숙소 분위기, 편안함의 기준.</span></div>
+        <div><b>받는 것</b><span>짧은 루트 메모, 시작 견적, 다음 확인 질문.</span></div>
+        <div><b>하지 않는 것</b><span>강요하는 패키지, 과한 일정, 맞지 않는 현지 연결.</span></div>
+      </div>
+      <!-- content-95-end -->
       <!-- form-proof-start -->
       <div class="form-proof">
         <p class="eyebrow">루트 노트와 시작 견적</p>
@@ -64,7 +72,7 @@
         <input type="hidden" name="priority" value="Medium">
         <input type="hidden" name="campaign" value="private_route_consultation">
         <input type="hidden" name="next_step" value="루트 노트, 시작 견적, 추가 확인 질문 준비">
-        <input type="hidden" name="intake_provider" value="google_sheet_webapp">
+        <input type="hidden" name="intake_provider" value="formsubmit_email">
         <input type="hidden" name="language" value="한국어">
         <input type="hidden" name="page_url" value="">
         <input type="hidden" name="referrer" value="">
@@ -137,102 +145,5 @@
       });
     }
   </script>
-
-  <!-- sheet-intake-start -->
-  <script>
-    (() => {
-      const messages = {
-        en: { sending: "Sending...", success: "Thank you. We received your request and will reply with a route note and a starting quote.", error: "The form did not send. Please email us directly." },
-        zh: { sending: "送出中...", success: "已收到，若青中國旅策會回覆一份路線遊記式建議與初步方案報價", error: "表單暫時沒有送出，請直接寄信給我們。" },
-        ja: { sending: "送信中...", success: "受け取りました。旅のノートと最初のお見積りをお送りします。", error: "フォームを送信できませんでした。直接メールでご連絡ください。" },
-        ko: { sending: "보내는 중...", success: "문의가 접수되었습니다. 루트 노트와 시작 견적을 보내드립니다.", error: "양식 전송이 되지 않았습니다. 이메일로 직접 연락해 주세요." },
-        th: { sending: "กำลังส่ง...", success: "เราได้รับคำขอแล้ว จะตอบกลับพร้อมบันทึกเส้นทางและราคาเริ่มต้น", error: "ส่งแบบฟอร์มไม่สำเร็จ กรุณาอีเมลถึงเราโดยตรง" }
-      };
-
-      const fieldValues = () => {
-        const params = new URLSearchParams(window.location.search);
-        return {
-          submitted_at: new Date().toISOString(),
-          page_url: window.location.href,
-          referrer: document.referrer || "",
-          utm_source: params.get("utm_source") || "site",
-          utm_medium: params.get("utm_medium") || "multilingual",
-          utm_campaign: params.get("utm_campaign") || "private_route_consultation"
-        };
-      };
-
-      const setHiddenFields = (form) => {
-        Object.entries(fieldValues()).forEach(([name, value]) => {
-          const input = form.querySelector('[name="' + name + '"]');
-          if (input) input.value = value;
-        });
-      };
-
-      const getStatus = (form) => {
-        let status = form.querySelector(".form-status");
-        if (!status) {
-          status = document.createElement("p");
-          status.className = "form-status";
-          const button = form.querySelector('button[type="submit"]');
-          if (button) button.insertAdjacentElement("afterend", status);
-          else form.appendChild(status);
-        }
-        return status;
-      };
-
-      document.querySelectorAll(".lead-form[data-sheet-endpoint]").forEach((form) => {
-        const endpoint = form.dataset.sheetEndpoint || "";
-        if (!endpoint.startsWith("https://")) return;
-        const lang = (form.dataset.formLang || document.documentElement.lang || "en").slice(0, 2);
-        const copy = messages[lang] || messages.en;
-        setHiddenFields(form);
-
-        form.addEventListener("submit", async (event) => {
-          event.preventDefault();
-          if (form.querySelector('[name="bot-field"]')?.value) return;
-
-          setHiddenFields(form);
-          const data = new FormData(form);
-          data.set("intake_provider", "google_sheet_webapp");
-          const body = new URLSearchParams();
-          data.forEach((value, key) => body.append(key, value));
-
-          const status = getStatus(form);
-          const button = form.querySelector('button[type="submit"]');
-          const originalLabel = button ? button.textContent : "";
-          status.className = "form-status";
-          status.textContent = "";
-          if (button) {
-            button.disabled = true;
-            button.textContent = form.dataset.sendingMessage || copy.sending;
-          }
-
-          try {
-            await fetch(endpoint, {
-              method: "POST",
-              body,
-              mode: "no-cors",
-              keepalive: true,
-              headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" }
-            });
-            status.className = "form-status success";
-            status.textContent = form.dataset.successMessage || copy.success;
-            form.reset();
-            setHiddenFields(form);
-          } catch (error) {
-            status.className = "form-status error";
-            const fallback = form.dataset.errorMessage || copy.error;
-            status.innerHTML = fallback + ' <a href="mailto:bluehourchina@gmail.com?subject=Bluehour%20China%20journey%20review">bluehourchina@gmail.com</a>';
-          } finally {
-            if (button) {
-              button.disabled = false;
-              button.textContent = originalLabel;
-            }
-          }
-        });
-      });
-    })();
-  </script>
-  <!-- sheet-intake-end -->
   <script src="/assets/lead-form.js?v=20260704-lead1" defer></script>
 </body></html>

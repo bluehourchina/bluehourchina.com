@@ -1,6 +1,6 @@
 # Bluehour China Journeys / 若青中國旅策 Complete AI Reference
 
-Updated: 2026-07-03
+Updated: 2026-07-04
 
 ## Brand Position
 
@@ -182,3 +182,14 @@ Primary consultation URLs:
 - /th/consult/
 
 Conversion language should emphasize manual reply, usually within 24 hours, no forced package and suitable local-provider matching only when the route fits.
+
+
+## Content Quality Upgrade
+
+The English site now separates atmosphere from decision content:
+- Home page: brand atmosphere plus concrete trust reasons.
+- China Travel guide: answer-first comparison for travellers asking where to go in China after Beijing and Shanghai.
+- Destination pages: each includes best fit, think-twice conditions, best season, route difficulty, planning checks and visible FAQ.
+- Consultation pages: explain what is read, what the traveller receives and what the service avoids.
+
+This structure is intended to help both human travellers and AI search systems answer practical questions without losing the high-end tone.

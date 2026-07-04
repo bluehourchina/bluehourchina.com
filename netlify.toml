@@ -3,12 +3,12 @@
 
 [[redirects]]
   from = "/"
-  to = "/yunnan.html"
+  to = "/index.html"
   status = 200
 
 [[redirects]]
   from = "/zh"
-  to = "/yunnan.html"
+  to = "/zh.html"
   status = 200
 
 [[redirects]]
@@ -94,6 +94,12 @@
 [[redirects]]
   from = "/ten"
   to = "/interest"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/first10.html"
+  to = "/interest.html"
   status = 301
   force = true
 
