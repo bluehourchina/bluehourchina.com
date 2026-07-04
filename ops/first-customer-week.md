@@ -8,6 +8,7 @@ Internal operating sheet for getting the first qualified consultation from socia
 - Business goal: 1 qualified travel consultation.
 - Funnel target: 300 social profile visits, 30 landing-page clicks, 3 form submissions, 1 qualified reply.
 - Execution scripts: `ops/first-customer-social-scripts.md`
+- Today launch pack: `ops/first-customer-today-launch-pack.md`
 - Daily tracker import file: `ops/first-customer-week-tracker.csv`
 
 ## Tracking Links
@@ -21,6 +22,8 @@ Internal operating sheet for getting the first qualified consultation from socia
 
 Day 1-2:
 Publish the pain-point angle. The opening should be direct: "第一次去雲南，不要把一週排成每天換城市." Reply to comments with the route link, not a hard sell.
+
+For Day 1, use `ops/first-customer-today-launch-pack.md` directly. It contains the caption, pinned comment, story copy, DM copy and the six-hour follow-up sequence.
 
 Day 3-4:
 Publish the route-shape angle. Explain why Dali, Shaxi and Lijiang each need a different pace. CTA: "有月份、人數與預算感，就先留下條件."
