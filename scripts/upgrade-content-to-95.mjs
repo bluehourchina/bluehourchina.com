@@ -976,6 +976,10 @@ function replaceHeading(html, text, lines, tag = "h2") {
   return html.replace(new RegExp(`<${tag}>${escaped}</${tag}>`, "g"), renderHeading(tag, lines));
 }
 
+function replaceHeadingMarkup(html, from, to) {
+  return html.split(from).join(to);
+}
+
 function destinationDetail(lang, slug) {
   if (lang === "en") {
     const data = destinations[slug];
@@ -1339,6 +1343,38 @@ async function updateSitePolish() {
         next = replaceHeading(next, "อ่านลมหายใจของสถานที่ ก่อนเลือกเส้นทาง", ["อ่านลมหายใจของสถานที่", "ก่อนเลือกเส้นทาง"], "h1");
         next = replaceHeading(next, "ความหรูหราคือความสบายที่ไม่ต้องพูดดัง", ["ความหรูหราคือความสบาย", "ที่ไม่ต้องพูดดัง"]);
         next = replaceHeading(next, "บอกภูมิทัศน์ที่คุณอยากเห็น เราจะช่วยทำให้เป็นทริปที่เป็นไปได้", ["บอกภูมิทัศน์ที่คุณอยากเห็น", "เราจะช่วยทำให้เป็นทริปที่เป็นไปได้"]);
+        next = replaceHeading(next, "次の中国は、もっと静かでいい", ["次の中国は", "もっと静かでいい"], "h1");
+        next = replaceHeading(next, "五つの風景、五つの余韻", ["五つの風景", "五つの余韻"]);
+        next = replaceHeading(next, "三亜では、中国が海辺で息をする", ["三亜では", "中国が海辺で息をする"], "h1");
+        next = replaceHeading(next, "雲南では、道がゆっくりになる", ["雲南では", "道がゆっくりになる"], "h1");
+        next = replaceHeading(next, "風、古い町、雪をいただく山", ["風の中庭", "遠い雪"]);
+        next = replaceHeading(next, "砂、石窟、静けさ", ["砂と石窟", "静けさの奥"]);
+        next = replaceHeading(next, "雪、列車、あたたかな窓", ["雪の夜", "汽車と灯り"]);
+        next = replaceHeadingMarkup(
+          next,
+          '<h2 class="cjk-title"><span class="title-line">沙、石窟</span><span class="title-line">與沉默。</span></h2>',
+          '<h2 class="cjk-title"><span class="title-line">沙色沉下去</span><span class="title-line">石窟仍亮</span></h2>',
+        );
+        next = replaceHeadingMarkup(
+          next,
+          '<h2 class="cjk-title"><span class="title-line">雪、列車</span><span class="title-line">與溫暖窗光。</span></h2>',
+          '<h2 class="cjk-title"><span class="title-line">雪夜列車</span><span class="title-line">窗裡有光</span></h2>',
+        );
+        next = replaceHeadingMarkup(
+          next,
+          '<h2 class="cjk-title"><span class="title-line">被海風柔化的</span><span class="title-line">中國。</span></h2>',
+          '<h2 class="cjk-title"><span class="title-line">海風把中國</span><span class="title-line">放得更輕</span></h2>',
+        );
+        next = replaceHeadingMarkup(
+          next,
+          '<h2 class="cjk-title"><span class="title-line">讓天空變大的</span><span class="title-line">路。</span></h2>',
+          '<h2 class="cjk-title"><span class="title-line">天光放大</span><span class="title-line">路也放慢</span></h2>',
+        );
+        next = replaceHeadingMarkup(
+          next,
+          '<h2 class="cjk-title"><span class="title-line">讓天空</span><span class="title-line">變大的路。</span></h2>',
+          '<h2 class="cjk-title"><span class="title-line">天光放大</span><span class="title-line">路也放慢</span></h2>',
+        );
         next = next
           .replace(/<h1>Tell us the China you want to feel<\/h1>/g, "<h1>Tell us your China</h1>")
           .replace(/<h1>Tell us the China landscape you want to move toward<\/h1>/g, "<h1>Begin with your China</h1>");
