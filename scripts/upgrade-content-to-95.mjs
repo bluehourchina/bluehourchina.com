@@ -1318,6 +1318,9 @@ async function updateSitePolish() {
           "<h1>下一次中國，安靜一點就好</h1>",
           '<h1 class="cjk-title"><span class="title-line">下一次中國</span><span class="title-line">安靜一點就好</span></h1>',
         );
+        next = next
+          .replace(/<h1>Tell us the China you want to feel<\/h1>/g, "<h1>Tell us your China</h1>")
+          .replace(/<h1>Tell us the China landscape you want to move toward<\/h1>/g, "<h1>Begin with your China</h1>");
         if (!/data-sheet-endpoint=/.test(next)) {
           next = next.replace(/name="intake_provider" value="google_sheet_webapp"/g, 'name="intake_provider" value="formsubmit_email"');
           next = next

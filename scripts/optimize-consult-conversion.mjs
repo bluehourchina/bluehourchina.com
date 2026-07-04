@@ -18,7 +18,7 @@ const languages = {
     title: "Private China route consultation",
     description: "A calm first consultation for travellers planning a deeper China journey beyond Beijing and Shanghai.",
     eyebrow: "Private route consultation",
-    h2: "Tell us the China landscape you want to move toward",
+    h2: "Begin with your China",
     lead: "For serious travellers, we read your season, route, comfort needs and concerns, then return an honest first direction. No package pressure, just a calm next step.",
     formTitle: "A route note first, then a quote",
     formLead: "We turn your answers into a concise China route note: why the destination fits, what the days might feel like, and the starting quote for the first plan.",
@@ -344,7 +344,7 @@ function appendCss(css) {
 .interest-story h1{max-width:min(100%,780px);overflow-wrap:break-word}.interest-story .lead{max-width:min(100%,650px)}
 .sticky-review{position:fixed;left:50%;bottom:18px;z-index:40;transform:translateX(-50%);display:none;align-items:center;justify-content:center;min-height:48px;width:min(360px,calc(100% - 36px));padding:0 18px;background:var(--gold);color:#10231d;font-weight:850;box-shadow:0 16px 36px rgba(0,0,0,.28)}
 @media(max-width:900px){.conversion-wrap{grid-template-columns:1fr}.conversion-steps h3{font-size:26px}.sticky-review{display:flex}.footer{padding-bottom:92px}.interest-body .sticky-review{display:none}}
-@media(max-width:760px){.hero-inner{padding-bottom:118px}.home-hero .hero-actions a[href*="utm_source=home_cta"]{display:none}.interest-page{display:block;width:100vw;max-width:100vw;overflow:hidden}.interest-story{width:100vw;max-width:100vw;overflow:hidden}.interest-story h1{width:calc(100vw - 44px);max-width:calc(100vw - 44px);font-size:clamp(32px,8.5vw,40px);line-height:1.12;text-wrap:wrap;overflow-wrap:anywhere;line-break:anywhere}.interest-story .lead{width:calc(100vw - 44px);max-width:calc(100vw - 44px);overflow-wrap:anywhere}.sticky-review{bottom:14px}}
+@media(max-width:760px){.hero-inner{padding-bottom:118px}.home-hero .hero-actions a[href*="utm_source=home_cta"]{display:none}.interest-page{display:block;width:100vw;max-width:100vw;overflow:hidden}.interest-story{width:100vw;max-width:100vw;overflow:hidden}.interest-story h1{width:calc(100vw - 44px);max-width:calc(100vw - 44px);font-size:clamp(32px,8.5vw,40px);line-height:1.12;text-wrap:balance;overflow-wrap:normal;word-break:normal;line-break:auto;hyphens:none}.interest-story .lead{width:calc(100vw - 44px);max-width:calc(100vw - 44px);overflow-wrap:break-word}.sticky-review{bottom:14px}}
 /* conversion-optimization-end */
 `;
 }
