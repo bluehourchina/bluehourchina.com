@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,follow">
+  <title>正在前往雲南需求快篩｜去有風的地方吧！</title>
+  <meta http-equiv="refresh" content="0; url=/quick/?utm_source=g_start&utm_medium=social&utm_campaign=gowind_direct_start">
+  <link rel="canonical" href="https://bluehourchina.com/quick/">
+  <style>
+    :root {
+      --forest: #102d26;
+      --paper: #f6efe3;
+      --gold: #d7a85f;
+      --muted: #65716a;
+    }
+    body {
+      min-height: 100svh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      background: var(--paper);
+      color: var(--forest);
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+    }
+    main {
+      width: min(560px, calc(100% - 42px));
+      border-top: 1px solid rgba(16,45,38,.2);
+      padding-top: 24px;
+    }
+    h1 {
+      margin: 0;
+      font-family: "Noto Serif TC", "Songti TC", serif;
+      font-size: clamp(30px, 7vw, 52px);
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+    p {
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.68;
+      font-weight: 720;
+    }
+    a {
+      display: inline-flex;
+      margin-top: 22px;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      background: var(--gold);
+      color: #10241d;
+      padding: 12px 18px;
+      text-decoration: none;
+      font-weight: 950;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>正在前往需求快篩</h1>
+    <p>如果沒有自動跳轉，請點下方按鈕，60 秒留下月份、人數、天數與預算。</p>
+    <a href="/quick/?utm_source=g_start&utm_medium=social&utm_campaign=gowind_direct_start">前往 60 秒需求快篩</a>
+  </main>
+  <script>
+    const target = new URL("/quick/", window.location.origin);
+    const params = new URLSearchParams(window.location.search);
+    target.searchParams.set("utm_source", params.get("utm_source") || "g_start");
+    target.searchParams.set("utm_medium", params.get("utm_medium") || "social");
+    target.searchParams.set("utm_campaign", params.get("utm_campaign") || "gowind_direct_start");
+    if (params.get("video")) target.searchParams.set("video", params.get("video"));
+    window.location.replace(target.pathname + target.search);
+  </script>
+</body>
+</html>
