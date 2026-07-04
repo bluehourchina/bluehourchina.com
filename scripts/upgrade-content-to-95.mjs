@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
-const cssVersion = "v=20260704-content95e";
+const cssVersion = "v=20260704-polish95f";
 const today = "2026-07-04";
 
 const files = {

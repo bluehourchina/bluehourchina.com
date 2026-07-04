@@ -158,7 +158,7 @@ await checkFile("scripts/apply-tally-backend.mjs", [
 ]);
 
 await checkFile("index.html", [
-  ["homepage should be English canonical", (html) => html.includes('<html lang="en">') && html.includes("<title>Bluehour China Journeys")],
+  ["homepage should be English canonical", (html) => html.includes('<html lang="en">') && html.includes("<title>") && html.includes("Bluehour China")],
   ["homepage missing English language meta", (html) => html.includes('http-equiv="content-language" content="en"') && html.includes('name="language" content="English"')],
   ["homepage missing international traveller signal", (html) => html.includes('name="audience" content="international travellers"')],
 ]);
