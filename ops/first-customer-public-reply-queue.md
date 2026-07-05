@@ -21,6 +21,14 @@ English conversion link:
 - 3 people moved into direct route conversation
 - 1 form submission or one person asking for quote/month/route
 
+## Verified Target To Reply First
+
+- Tripadvisor China Forum: `16 days in Yunnan from end of Jan to Feb 10 - advise`
+- URL: `https://www.tripadvisor.co.uk/ShowTopic-g294211-i642-k15451421-16_days_in_Yunnan_from_end_of_Jan_to_Feb_10_advise-China.html`
+- Why first: readable thread, route-specific Yunnan question, replies visible through 2026-01-02, includes Dali, Shaxi, Lijiang, Tiger Leaping Gorge, Shangri-La, Yuanyang and Jianshui.
+- Fit: medium. It is backpacker-oriented, so answer generously and use a soft route-note link only if forum rules allow.
+- Copy-ready reply: `ops/first-customer-verified-reply-2026-07-05.md`
+
 ## Evidence To Use In Replies
 
 Use these as quiet support when answering; do not over-cite in social comments.

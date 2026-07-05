@@ -19,7 +19,7 @@ These are not leads yet. They are reply targets or search sources. Count a lead 
 | Priority | Target | URL | Intent Signal | Status | Next Action |
 |---:|---|---|---|---|---|
 | 9 | 背包客棧：洱海、沙溪古鎮行程及大理-瀘沽湖交通請益 | `https://www.backpackers.com.tw/forum/showthread.php?t=10565820` | 14-day Kunming-Dali-Lijiang plan; asks Erhai/Shaxi order and Dali-Lugu Lake/Lijiang transport | Verified readable; old 2024 thread | Reply only if logged in and rules allow; use as evergreen route-help answer |
-| 8 | TripAdvisor：16 days in Yunnan from end of Jan to Feb 10 advise | `https://www.tripadvisor.co.uk/ShowTopic-g294211-i642-k15451421-16_days_in_Yunnan_from_end_of_Jan_to_Feb_10_advise-China.html` | 16-day Yunnan route timing | Search result found; page blocks automated read | Open manually; reply only after confirming content and rules |
+| 8 | TripAdvisor：16 days in Yunnan from end of Jan to Feb 10 advise | `https://www.tripadvisor.co.uk/ShowTopic-g294211-i642-k15451421-16_days_in_Yunnan_from_end_of_Jan_to_Feb_10_advise-China.html` | 16-day Yunnan route timing; transport, hostel, sequence and comfort questions | Verified readable; original post 2025-10-31, replies through 2026-01-02 | Reply after login; answer first, soft link only if rules allow |
 | 8 | Facebook：雲南自由行 group post asking about June Yunnan and Shaxi | `https://www.facebook.com/groups/420563792239922/posts/1471103790519245/` | Specific Shaxi route question with comment activity | Needs logged-in verification | Search inside group for newer Shaxi/Dali/Lijiang questions |
 | 7 | Google Chinese search source | `https://www.google.com/search?q=%E9%9B%B2%E5%8D%97+%E8%87%AA%E7%94%B1%E8%A1%8C+%E5%A4%A7%E7%90%86+%E9%BA%97%E6%B1%9F+%E6%B2%99%E6%BA%AA+%E8%A1%8C%E7%A8%8B` | Repeatedly surfaces Backpackers, Facebook, competitor routes | Repeat daily | Filter for recent/forum/group pages |
 | 7 | Google English search source | `https://www.google.com/search?q=Yunnan+Dali+Lijiang+itinerary+forum+2026` | English forum intent around Yunnan itinerary advice | Repeat daily | Filter for posts with dates, days, group size or transport concerns |
@@ -45,15 +45,23 @@ https://bluehourchina.com/quiz/?utm_source=backpackers&utm_medium=forum_reply&ut
 
 ### Tripadvisor 16-Day Yunnan
 
-Use this only after manually verifying the thread content.
+Use this after logging in. The thread is readable and has a reply box, but do not hard-sell because the original poster is a solo backpacker.
 
 ```text
-For a 16-day Yunnan trip, I would first decide whether this is a comfort route or a maximum-coverage route. Dali, Shaxi, Lijiang/Baisha and Shangri-La can work beautifully together, but the sequence matters because the risk is usually not one missing attraction. It is changing hotels too often, station transfers, luggage, car time and altitude/temperature shifts.
+For this 16-day Yunnan route, I would decide the sequence before adding any more places. The risk is not that you miss one attraction; it is backtracking through Kunming, changing hotels too often, and mixing low-altitude south Yunnan with the higher north too quickly.
 
-If your dates are late January to early February, I would keep at least one slower night in Shaxi, avoid making Dali only a transit point, and leave enough buffer around the mountain or Shangri-La side.
+Your core route already has enough: Dali, Shaxi, Lijiang, Tiger Leaping Gorge and Shangri-La can take ten days without feeling slow. Shaxi is worth one night rather than a pass-through. Dali should not be only a transit point if you want lake/village time. For Yuanyang and Jianshui, I would keep them as a separate south-Yunnan block so you are not constantly returning to Kunming.
 
-If helpful, you can leave month, group size, preferred comfort level and rough budget here. We can reply with an initial route note and starting quote:
+For transport, Didi/Amap/Alipay can solve city movement, but for route comfort the bigger question is where your hotels are and how many station transfers you accept with luggage. Public transport is possible; a private car only becomes useful for the awkward legs or if you care more about comfort than lowest cost.
+
+If you later want a more comfortable private version of this route rather than a hostel/public-transport version, you can leave month, group size and comfort level here and we will reply with an initial route note:
 https://bluehourchina.com/quick/en/?utm_source=tripadvisor&utm_medium=forum_reply&utm_campaign=first_customer_week&video=yunnan_16_days
+```
+
+If the forum feels strict about links, replace the last paragraph with:
+
+```text
+If you want, reply with your final arrival/departure cities, whether you prefer south-to-north or north-to-south, and your comfort level. I can suggest a cleaner sequence.
 ```
 
 ## Evidence For Professional Replies
