@@ -28,6 +28,16 @@ Before-China practical checklist:
 
 ## Verified Target To Reply First
 
+- Tripadvisor China Forum: `First trip to China - Which natural wonders to add?`
+- URL: `https://www.tripadvisor.co.uk/ShowTopic-g294211-i642-k15550431-First_trip_to_China_Which_natural_wonders_to_add-China.html`
+- Why first: booked flights, exact dates, classic China itinerary, asks which nature stop to add, reply box visible. This is currently the highest-fit public route-conversation target.
+- Copy-ready approval queue: `ops/first-customer-tripadvisor-approval-queue-2026-07-05.md`
+
+- Tripadvisor China Forum: `Money matters. Payment in China for foreign visitors.`
+- URL: `https://www.tripadvisor.co.uk/ShowTopic-g294211-i642-k14734141-Money_matters_Payment_in_China_for_foreign_visitors-China.html`
+- Why second: very active practical-prep thread, reply box visible, directly matches the new Before-China payment cluster.
+- Copy-ready approval queue: `ops/first-customer-tripadvisor-approval-queue-2026-07-05.md`
+
 - Tripadvisor China Forum: `16 days in Yunnan from end of Jan to Feb 10 - advise`
 - URL: `https://www.tripadvisor.co.uk/ShowTopic-g294211-i642-k15451421-16_days_in_Yunnan_from_end_of_Jan_to_Feb_10_advise-China.html`
 - Why first: readable thread, route-specific Yunnan question, replies visible through 2026-01-02, includes Dali, Shaxi, Lijiang, Tiger Leaping Gorge, Shangri-La, Yuanyang and Jianshui.
