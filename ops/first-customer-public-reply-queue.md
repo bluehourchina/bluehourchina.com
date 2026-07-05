@@ -38,6 +38,21 @@ Before-China practical checklist:
 - Why second: very active practical-prep thread, reply box visible, directly matches the new Before-China payment cluster.
 - Copy-ready approval queue: `ops/first-customer-tripadvisor-approval-queue-2026-07-05.md`
 
+- Tripadvisor Zhangjiajie Forum: `Stairway to HeaveWhich is the best route for two Sr citizens`
+- URL: `https://www.tripadvisor.co.uk/ShowTopic-g494933-i14757-k15550534-Stairway_to_HeaveWhich_is_the_best_route_for_two_Sr_citizens-Zhangjiajie_Hunan.html`
+- Why third: senior travellers, route comfort, height/stair risk and local navigation anxiety. This is closer to paid planning than a generic attraction question.
+- Copy-ready approval queue: `ops/first-customer-tripadvisor-batch2-approval-queue-2026-07-05.md`
+
+- Tripadvisor Guangzhou Forum: `Reccomendation luxury hotel`
+- URL: `https://www.tripadvisor.co.uk/ShowTopic-g298555-i3651-k15548498-Reccomendation_luxury_hotel-Guangzhou_Guangdong.html`
+- Why fourth: family of 3 with a 5-year-old asks about Ritz/Four Seasons/Voco and service quality. High comfort and hotel-intent signal.
+- Copy-ready approval queue: `ops/first-customer-tripadvisor-batch2-approval-queue-2026-07-05.md`
+
+- Tripadvisor China Forum: `Guangzhou / Guilin`
+- URL: `https://www.tripadvisor.co.uk/ShowTopic-g294211-i642-k15552987-Guangzhou_Guilin-China.html`
+- Why hold: 1am airport arrival and Club Med Guilin transfer are relevant comfort signals, but the OP already thanked a useful answer. Lower priority unless we need a third reply.
+- Copy-ready approval queue: `ops/first-customer-tripadvisor-batch2-approval-queue-2026-07-05.md`
+
 - Tripadvisor China Forum: `16 days in Yunnan from end of Jan to Feb 10 - advise`
 - URL: `https://www.tripadvisor.co.uk/ShowTopic-g294211-i642-k15451421-16_days_in_Yunnan_from_end_of_Jan_to_Feb_10_advise-China.html`
 - Why first: readable thread, route-specific Yunnan question, replies visible through 2026-01-02, includes Dali, Shaxi, Lijiang, Tiger Leaping Gorge, Shangri-La, Yuanyang and Jianshui.
