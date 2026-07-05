@@ -7,6 +7,8 @@ Goal today: create 10 useful public replies, 20 warm DMs, 3 direct route convers
 Primary links:
 
 - English inquiry form: `https://bluehourchina.com/quick/en/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=live_targets_20260705`
+- Before-China checklist: `https://bluehourchina.com/before-china/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&angle=payment_setup`
+- Before-China direct inquiry: `https://bluehourchina.com/interest.html?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&angle=payment_setup`
 - Chinese route self-check: `https://bluehourchina.com/quiz/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=live_targets_20260705`
 - Chinese direct inquiry form: `https://bluehourchina.com/quick/?utm_source=warm_dm&utm_medium=direct&utm_campaign=first_customer_week&video=live_targets_20260705`
 - Lead inbox: `ops/first-customer-lead-inbox.csv`
@@ -23,6 +25,9 @@ These are not leads yet. They are reply targets or search sources. Count a lead 
 | 8 | Facebook：雲南自由行 group post asking about June Yunnan and Shaxi | `https://www.facebook.com/groups/420563792239922/posts/1471103790519245/` | Specific Shaxi route question with comment activity | Needs logged-in verification | Search inside group for newer Shaxi/Dali/Lijiang questions |
 | 7 | Google Chinese search source | `https://www.google.com/search?q=%E9%9B%B2%E5%8D%97+%E8%87%AA%E7%94%B1%E8%A1%8C+%E5%A4%A7%E7%90%86+%E9%BA%97%E6%B1%9F+%E6%B2%99%E6%BA%AA+%E8%A1%8C%E7%A8%8B` | Repeatedly surfaces Backpackers, Facebook, competitor routes | Repeat daily | Filter for recent/forum/group pages |
 | 7 | Google English search source | `https://www.google.com/search?q=Yunnan+Dali+Lijiang+itinerary+forum+2026` | English forum intent around Yunnan itinerary advice | Repeat daily | Filter for posts with dates, days, group size or transport concerns |
+| 9 | Reddit payment search | `https://www.reddit.com/r/travelchina/search/?q=WeChat%20Pay&restrict_sr=1&sort=new` | Foreign travellers asking how to pay in China | New Before-China angle | Reply with payment/app checklist, then qualify route if they mention destinations |
+| 9 | Reddit app friction search | `https://www.reddit.com/r/chinatravel/search/?q=payment&restrict_sr=1&sort=new` | Payment, Alipay, WeChat Pay, card or app friction | New Before-China angle | Use no-link reply first if rules are strict |
+| 8 | Google payment search source | `https://www.google.com/search?q=site%3Areddit.com%2Fr%2Ftravelchina+%22WeChat+Pay%22+China+travel` | Indexed traveller payment problems | New Before-China angle | Open current/replyable threads manually |
 
 ## Target-Specific Replies
 
@@ -79,7 +84,9 @@ Use these only to strengthen the advice. Do not turn social replies into citatio
 |---:|---|---|---|---|---|
 | 10 | Facebook | Yunnan travel groups | `https://www.facebook.com/search/groups/?q=Yunnan%20travel` | People asking Dali/Lijiang/Shangri-La route days or driver advice | Join where allowed, answer first, link only after useful reply |
 | 10 | Reddit | r/travelchina new Yunnan search | `https://www.reddit.com/r/travelchina/search/?q=Yunnan&restrict_sr=1&sort=new` | Foreign travellers asking itinerary and logistics | Reply with route shape; use English form |
+| 10 | Reddit | r/travelchina payment search | `https://www.reddit.com/r/travelchina/search/?q=WeChat%20Pay&restrict_sr=1&sort=new` | Foreign travellers asking payment setup | Reply with Before-China checklist; ask month/destination after useful answer |
 | 9 | Reddit | r/chinatravel Yunnan search | `https://www.reddit.com/r/chinatravel/search/?q=Yunnan&restrict_sr=1&sort=new` | Travellers comparing China destinations | Reply with second-trip framing; use English form |
+| 9 | Reddit | r/chinatravel payment search | `https://www.reddit.com/r/chinatravel/search/?q=payment&restrict_sr=1&sort=new` | Practical payment/app friction | Use official-source-backed answer; link only where allowed |
 | 9 | Google | English Yunnan itinerary forum search | `https://www.google.com/search?q=Yunnan+Dali+Lijiang+itinerary+forum` | People asking plans outside social feeds | Find replyable forum/community posts |
 | 9 | Google | Taiwan/HK Yunnan route search | `https://www.google.com/search?q=%E9%9B%B2%E5%8D%97+%E5%A4%A7%E7%90%86+%E9%BA%97%E6%B1%9F+%E6%B2%99%E6%BA%AA+%E8%A1%8C%E7%A8%8B` | Chinese users asking route sequence | Reply in Chinese if account exists |
 | 8 | YouTube | Recent Yunnan videos | `https://www.youtube.com/results?search_query=Yunnan+travel+Dali+Lijiang` | Comments asking days, transport, route comfort | Reply to questions only; avoid spam |
@@ -94,6 +101,17 @@ Use these only to strengthen the advice. Do not turn social replies into citatio
 | 6 | Threads | Yunnan / China travel search | manual in app | Fast replies, lower intent than forums | Ask one question, move to DM only if they reply |
 
 ## English Public Reply Templates
+
+### Before China Payment / Apps
+
+```text
+The practical layer matters more than most first-time visitors expect. Before China, I would set up mobile payment where available, keep a backup card and some cash, make sure your phone can receive SMS verification, and save hotel addresses in Chinese.
+
+WeChat Pay can support some overseas cards for supported consumption scenarios, but I would still not rely on one method only. If your route goes beyond Beijing/Shanghai, also check hotel location, car time, language/app friction and whether the daily pace is realistic.
+
+Checklist:
+https://bluehourchina.com/before-china/?utm_source=reddit&utm_medium=reply&utm_campaign=first_customer_week&angle=payment_setup
+```
 
 ### Route Too Rushed
 

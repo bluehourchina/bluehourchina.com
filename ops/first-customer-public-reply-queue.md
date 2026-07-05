@@ -14,12 +14,17 @@ English conversion link:
 
 `https://bluehourchina.com/quick/en/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=public_reply`
 
+Before-China practical checklist:
+
+`https://bluehourchina.com/before-china/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&angle=payment_setup`
+
 ## Today Minimum
 
 - 10 useful public replies
 - 20 warm DMs / LINE shares
 - 3 people moved into direct route conversation
 - 1 form submission or one person asking for quote/month/route
+- Additional payment-prep sprint: 5 helpful replies to WeChat Pay / Alipay / Visa / Mastercard / eSIM questions using `ops/first-customer-before-china-launch-pack-2026-07-05.md`.
 
 ## Verified Target To Reply First
 
@@ -46,6 +51,8 @@ Use these searches manually while logged in. Reply only where recommendations or
 
 - `https://www.reddit.com/r/travelchina/search/?q=Yunnan&restrict_sr=1&sort=new`
 - `https://www.reddit.com/r/chinatravel/search/?q=Yunnan&restrict_sr=1&sort=new`
+- `https://www.reddit.com/r/travelchina/search/?q=WeChat%20Pay&restrict_sr=1&sort=new`
+- `https://www.reddit.com/r/chinatravel/search/?q=payment&restrict_sr=1&sort=new`
 - `https://www.reddit.com/search/?q=Yunnan%20Dali%20Lijiang%20itinerary&sort=new`
 - `https://www.reddit.com/search/?q=China%20itinerary%20beyond%20Beijing%20Shanghai&sort=new`
 
@@ -54,6 +61,7 @@ High-intent signals:
 - They mention `Yunnan`, `Dali`, `Lijiang`, `Shaxi`, `Shangri-La`, `Tiger Leaping Gorge`.
 - They ask how many days, whether the route is too rushed, transport, app friction, payment, private driver or where to stay.
 - They say they already visited Beijing/Shanghai or want a second China trip.
+- They ask about WeChat Pay, Alipay, Visa/Mastercard, eSIM, VPN, SMS verification or whether China is difficult for foreign visitors.
 
 Reply template:
 
@@ -62,6 +70,17 @@ If this is your first Yunnan route, I would not change cities every day. A comfo
 
 If helpful, you can leave month, group size and budget here and we will reply with an initial route note:
 https://bluehourchina.com/quick/en/?utm_source=reddit&utm_medium=reply&utm_campaign=first_customer_week&video=travelchina
+```
+
+Payment/app reply template:
+
+```text
+The practical layer matters more than most first-time visitors expect. Before China, I would set up mobile payment where available, keep a backup card and some cash, make sure your phone can receive SMS verification, and save hotel addresses in Chinese.
+
+WeChat Pay can support some overseas cards for supported consumption scenarios, but I would still not rely on one method only. If your route goes beyond Beijing/Shanghai, also check hotel location, car time, language/app friction and whether the daily pace is realistic.
+
+Checklist:
+https://bluehourchina.com/before-china/?utm_source=reddit&utm_medium=reply&utm_campaign=first_customer_week&angle=payment_setup
 ```
 
 ### Facebook Groups

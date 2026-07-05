@@ -10,6 +10,14 @@ English lead link:
 
 `https://bluehourchina.com/quick/en/?utm_source=english_social&utm_medium=first_reply&utm_campaign=first_customer_week&video=day1`
 
+Before-China article link:
+
+`https://bluehourchina.com/before-china/?utm_source=social&utm_medium=prep_content&utm_campaign=first_customer_week&angle=payment_setup`
+
+Before-China inquiry link:
+
+`https://bluehourchina.com/interest.html?utm_source=social&utm_medium=prep_content&utm_campaign=first_customer_week&angle=payment_setup`
+
 ## Day 1: Instagram Reels / TikTok
 
 Asset:
@@ -88,6 +96,39 @@ Link sticker:
 
 `https://bluehourchina.com/quiz/?utm_source=instagram&utm_medium=story&utm_campaign=first_customer_week&video=mistake`
 
+## Day 1B: English Prep Post / Reel
+
+Use when the channel is English-first or practical-prep oriented.
+
+Caption:
+
+```text
+The first friction for foreign travellers in China is often not the destination. It is payment, data, SMS verification, app setup, hotel addresses and transport timing.
+
+Before you land, prepare mobile payment where available, keep a backup card and cash plan, confirm data/SMS access, and check the route realistically.
+
+If your trip goes beyond Beijing and Shanghai into Yunnan, Xinjiang, Dunhuang, Sanya or Northeast China, we can review the route and reply with a practical first note.
+
+Checklist:
+https://bluehourchina.com/before-china/?utm_source=instagram&utm_medium=caption&utm_campaign=first_customer_week&angle=payment_setup
+
+#ChinaTravel #TravelChina #WeChatPay #Alipay #ChinaTrip #YunnanTravel #XinjiangTravel #Dunhuang #PrivateTravel
+```
+
+Pinned comment:
+
+```text
+Before China checklist: payment, Visa/Mastercard setup, mobile data, entry checks and route support.
+https://bluehourchina.com/before-china/?utm_source=comment&utm_medium=social&utm_campaign=first_customer_week&angle=payment_setup
+```
+
+Direct CTA after a warm reply:
+
+```text
+If you already know your month, group size and places, leave a route brief here and we will reply with an initial route note and starting quote:
+https://bluehourchina.com/interest.html?utm_source=dm&utm_medium=prep_reply&utm_campaign=first_customer_week&angle=payment_setup
+```
+
 ## Warm DM / LINE Share
 
 Send to people who may know travellers, not only people who will travel themselves.
@@ -113,6 +154,17 @@ https://bluehourchina.com/quick/en/?utm_source=reddit&utm_medium=reply&utm_campa
 
 ```text
 If this is your first Yunnan route, I would not change cities every day. A comfortable shape is Dali for lake/old-town pacing, Shaxi for one slower night, then Lijiang or Baisha for the snow-mountain side. The hard part is hotel location, car time, language/app friction and how tired the group gets. If you share month, group size and comfort level, I can suggest a first route shape.
+```
+
+## Public Reply: English, Payment / App Setup
+
+```text
+The practical layer matters more than most first-time visitors expect. Before China, I would set up mobile payment where available, keep a backup card and some cash, make sure your phone can receive SMS verification, and save hotel addresses in Chinese.
+
+WeChat Pay can support some overseas cards for supported consumption scenarios, but I would still not rely on one method only. If your route goes beyond Beijing/Shanghai, also check hotel location, car time, language/app friction and whether the daily pace is realistic.
+
+Checklist:
+https://bluehourchina.com/before-china/?utm_source=reddit&utm_medium=reply&utm_campaign=first_customer_week&angle=payment_setup
 ```
 
 ## Public Reply: Traditional Chinese, Link Allowed
