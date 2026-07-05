@@ -19,6 +19,22 @@ Internal operating sheet for getting the first qualified consultation from socia
 - Today live targets: `ops/first-customer-live-targets-2026-07-05.md`
 - Today reply log: `ops/first-customer-reply-log-2026-07-05.csv`
 - Daily tracker import file: `ops/first-customer-week-tracker.csv`
+- Funnel audit: `scripts/audit-first-customer-funnel.mjs`
+
+## Current Gate
+
+Updated 2026-07-05:
+
+- Lead inbox is still empty; the first-customer goal is not complete.
+- The site now has high-intent decision pages for natural China routes, Zhangjiajie senior pacing and Guangzhou luxury family hotels.
+- Four Tripadvisor replies are prepared but still awaiting explicit user approval before public posting.
+- Priority is public distribution and reply logging, not more page production.
+
+Next required action:
+
+- Get approval to post the first four no-link public replies.
+- After posting, log live URLs in `ops/first-customer-execution-log-2026-07-05.csv`.
+- Run `node scripts/audit-first-customer-funnel.mjs` every day until the first qualified lead appears.
 
 ## Tracking Links
 

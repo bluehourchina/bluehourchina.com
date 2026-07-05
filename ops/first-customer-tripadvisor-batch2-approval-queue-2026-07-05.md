@@ -39,7 +39,7 @@ If both travellers are steady walkers and not afraid of heights, the glass-platf
 For senior travellers, Zhangjiajie is one of those places where the "best" route is often the one that prevents exhaustion. I would not combine too many scenic zones in one day. Pick one main mountain experience, start early, and keep the evening light.
 
 If you prefer a private route note, you can leave travel month, hotel area, mobility level and comfort preference here:
-https://bluehourchina.com/quick/en/?utm_source=tripadvisor&utm_medium=forum_reply&utm_campaign=first_customer_week&angle=zhangjiajie_senior_route
+https://bluehourchina.com/china-travel/zhangjiajie-senior-friendly-route/?utm_source=tripadvisor&utm_medium=forum_reply&utm_campaign=first_customer_week&angle=zhangjiajie_senior_route
 ```
 
 ## Priority 2 — Guangzhou Luxury Hotel Family
@@ -81,7 +81,7 @@ White Swan is worth considering if you want a more classic Guangzhou feeling, ri
 Voco can make sense if you prefer value and local street access, but I would not choose only by price with a 5-year-old. Lobby comfort, breakfast, taxi access and whether the surrounding area is easy after dinner matter more than they look on a booking page.
 
 If Guangzhou is part of a wider China route, the hotel decision should match the next city and transfer day. You can leave month, group size and route here for an initial route note:
-https://bluehourchina.com/quick/en/?utm_source=tripadvisor&utm_medium=forum_reply&utm_campaign=first_customer_week&angle=guangzhou_luxury_family
+https://bluehourchina.com/china-travel/guangzhou-luxury-hotel-family/?utm_source=tripadvisor&utm_medium=forum_reply&utm_campaign=first_customer_week&angle=guangzhou_luxury_family
 ```
 
 ## Priority 3 — Guangzhou / Guilin Club Med Transfer

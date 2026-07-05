@@ -32,7 +32,7 @@ For your dates, I would probably choose Huangshan if you want the cleanest class
 If you want a clean 15-day skeleton, reply with how many nights you planned for Shanghai, Xi'an and Beijing, plus your rough budget/comfort level.
 
 We also have a short route-note form if you prefer to send the constraints privately:
-https://bluehourchina.com/quick/en/?utm_source=tripadvisor&utm_medium=forum_reply&utm_campaign=first_customer_week&angle=natural_wonders_15d
+https://bluehourchina.com/china-travel/china-natural-wonders-15-days/?utm_source=tripadvisor&utm_medium=forum_reply&utm_campaign=first_customer_week&angle=natural_wonders_15d
 ```
 
 ### No-Link Version
