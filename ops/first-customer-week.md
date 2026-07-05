@@ -16,6 +16,7 @@ Internal operating sheet for getting the first qualified consultation from socia
 - Today launch pack: `ops/first-customer-today-launch-pack.md`
 - Outreach board: `ops/first-customer-outreach-board.md`
 - Outreach targets: `ops/first-customer-outreach-targets.csv`
+- Today live targets: `ops/first-customer-live-targets-2026-07-05.md`
 - Daily tracker import file: `ops/first-customer-week-tracker.csv`
 
 ## Tracking Links
