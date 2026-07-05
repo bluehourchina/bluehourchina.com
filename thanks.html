@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="googlebot" content="noindex,follow">
-  <title>We Received Your Consultation｜Bluehour China Journeys</title>
+  <title>Request Received｜Bluehour China Journeys</title>
   <meta name="robots" content="noindex,follow">
   <meta name="description" content="Bluehour China Journeys has received your private China consultation request.">
   <link rel="icon" type="image/svg+xml" href="/assets/ruoqing-avatar.svg">
@@ -18,13 +18,14 @@
       --muted: #657069;
       --gold: #c99a52;
       --line: rgba(255, 250, 241, .2);
+      --line-strong: rgba(255, 250, 241, .34);
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
       color: var(--ivory);
       background:
-        linear-gradient(90deg, rgba(7,17,15,.9), rgba(7,17,15,.46)),
+        linear-gradient(90deg, rgba(7,17,15,.92), rgba(7,17,15,.58), rgba(7,17,15,.42)),
         url("/assets/ai/bluehour-yunnan-luxury-shaxi-courtyard.jpg") center / cover no-repeat;
       font-family: "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
       overflow-x: hidden;
@@ -37,7 +38,7 @@
       padding: clamp(28px, 5vw, 72px);
     }
     .panel {
-      width: min(860px, 100%);
+      width: min(940px, 100%);
       border: 1px solid var(--line);
       background: rgba(7,17,15,.66);
       backdrop-filter: blur(12px);
@@ -55,16 +56,26 @@
       margin: 0;
       font-family: Georgia, "Times New Roman", "Noto Serif TC", serif;
       font-weight: 500;
-      font-size: clamp(42px, 6vw, 76px);
-      line-height: 1.02;
+      font-size: clamp(40px, 5.5vw, 70px);
+      line-height: 1.04;
       letter-spacing: 0;
     }
     p {
-      max-width: 620px;
+      max-width: 720px;
       margin: 22px 0 0;
       color: rgba(255,250,241,.8);
       font-size: 18px;
       line-height: 1.7;
+    }
+    .status {
+      width: fit-content;
+      margin-top: 24px;
+      padding: 10px 13px;
+      border: 1px solid rgba(201,154,82,.44);
+      color: rgba(255,250,241,.88);
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .02em;
     }
     .grid {
       display: grid;
@@ -114,6 +125,37 @@
       background: var(--gold);
       color: #14221d;
     }
+    .fast-note {
+      margin-top: 34px;
+      border: 1px solid var(--line-strong);
+      padding: clamp(20px, 3vw, 28px);
+      background: rgba(255,250,241,.08);
+    }
+    .fast-note h2 {
+      margin: 0;
+      color: var(--ivory);
+      font-family: Georgia, "Times New Roman", "Noto Serif TC", serif;
+      font-weight: 500;
+      font-size: clamp(26px, 3vw, 36px);
+      line-height: 1.16;
+    }
+    .fast-note p {
+      margin-top: 14px;
+      font-size: 16px;
+    }
+    .email {
+      display: inline-block;
+      margin-top: 16px;
+      color: var(--gold);
+      font-weight: 850;
+      overflow-wrap: anywhere;
+    }
+    .small {
+      margin-top: 18px;
+      color: rgba(255,250,241,.66);
+      font-size: 14px;
+      line-height: 1.6;
+    }
     @media (max-width: 760px) {
       .hero {
         display: block;
@@ -139,7 +181,9 @@
         overflow-wrap: anywhere;
       }
       .grid { grid-template-columns: 1fr; }
+      .status { width: 100%; }
       .btn { width: 100%; }
+      .fast-note { padding: 20px; }
     }
   </style>
 </head>
@@ -147,19 +191,42 @@
   <main class="hero">
     <section class="panel">
       <p class="eyebrow">Request received</p>
-      <h1>Your route note is being prepared</h1>
-      <p>We will read your brief, then prepare a route note, a starting quote and the next questions needed to refine the plan.</p>
-      <p lang="zh-Hant">我們會把問卷整理成路線遊記式建議，並附上初步方案報價與下一輪確認問題</p>
+      <h1>Your route note is now in our hands</h1>
+      <p>We will read your travel month, destination, group size and comfort needs, then reply with a concise route note, a starting quote direction and the few questions needed before a formal plan.</p>
+      <p lang="zh-Hant">我們已收到你的需求。接下來會先整理成路線筆記，再回覆初步方案方向與下一輪需要確認的問題。</p>
+      <div class="status" aria-label="Reply time">Manual reply, usually within 24 hours</div>
       <div class="grid" aria-label="What happens next">
-        <div><b>First</b><span>We read the feeling, season and people.</span></div>
-        <div><b>Then</b><span>We shape a short China route note.</span></div>
-        <div><b>Next</b><span>We add a starting quote and the questions we need next.</span></div>
+        <div><b>First</b><span>We check whether the route is realistic for your month and pace.</span></div>
+        <div><b>Then</b><span>We shape a short note with the right destination rhythm.</span></div>
+        <div><b>Next</b><span>We send the quote direction and the final details we need.</span></div>
+      </div>
+      <div class="fast-note">
+        <h2>If your dates are close, send the fixed details now</h2>
+        <p>If you already have flights, hotels, a fixed travel month or family mobility concerns, email those details directly. This helps us answer faster and avoid a beautiful but impractical route.</p>
+        <a class="email" href="mailto:bluehourchina@gmail.com?subject=Bluehour%20China%20route%20details&body=Travel%20month%3A%0AGroup%20size%3A%0ADays%20outside%20Beijing%20%2F%20Shanghai%3A%0ADestination%20or%20landscape%3A%0AComfort%20or%20budget%3A%0AFixed%20flights%20or%20hotels%3A%0ALanguage%20support%20needed%3A%0A">bluehourchina@gmail.com</a>
+        <p class="small" lang="zh-Hant">若已經有機票、飯店、人數、長輩同行或語言需求，請直接補充。這會讓我們更快判斷路線、住宿與在地接待是否合適。</p>
       </div>
       <div class="actions">
-        <a class="btn primary" href="/">Return to Bluehour China</a>
-        <a class="btn" href="/stories.html">Read the stories</a>
+        <a class="btn primary" href="mailto:bluehourchina@gmail.com?subject=Bluehour%20China%20route%20details&body=Travel%20month%3A%0AGroup%20size%3A%0ADays%20outside%20Beijing%20%2F%20Shanghai%3A%0ADestination%20or%20landscape%3A%0AComfort%20or%20budget%3A%0AFixed%20flights%20or%20hotels%3A%0ALanguage%20support%20needed%3A%0A">Add urgent details</a>
+        <a class="btn" href="/before-china/?utm_source=thanks&utm_medium=site&utm_campaign=first_customer_week&angle=before_china_setup">Before China checklist</a>
+        <a class="btn" href="/route-note/?utm_source=thanks&utm_medium=site&utm_campaign=first_customer_week&angle=route_note_followup">Review the form</a>
       </div>
+      <p class="small">This page is not indexed. It is only shown after a request has been sent.</p>
     </section>
   </main>
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var payload = {
+        event: "lead_thank_you",
+        source: params.get("source") || "unknown",
+        angle: params.get("angle") || "",
+        page_location: window.location.href
+      };
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push(payload);
+      window.dispatchEvent(new CustomEvent("bluehour:lead_thank_you", { detail: payload }));
+    })();
+  </script>
 </body>
 </html>
