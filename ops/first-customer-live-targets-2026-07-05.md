@@ -9,6 +9,51 @@ Primary links:
 - English inquiry form: `https://bluehourchina.com/quick/en/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=live_targets_20260705`
 - Chinese inquiry form: `https://bluehourchina.com/quick/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=live_targets_20260705`
 - Lead inbox: `ops/first-customer-lead-inbox.csv`
+- Reply log: `ops/first-customer-reply-log-2026-07-05.csv`
+
+## Live Search Findings
+
+These are not leads yet. They are reply targets or search sources. Count a lead only after someone replies with route details or submits the form.
+
+| Priority | Target | URL | Intent Signal | Status | Next Action |
+|---:|---|---|---|---|---|
+| 9 | 背包客棧：洱海、沙溪古鎮行程及大理-瀘沽湖交通請益 | `https://www.backpackers.com.tw/forum/showthread.php?t=10565820` | 14-day Kunming-Dali-Lijiang plan; asks Erhai/Shaxi order and Dali-Lugu Lake/Lijiang transport | Verified readable; old 2024 thread | Reply only if logged in and rules allow; use as evergreen route-help answer |
+| 8 | TripAdvisor：16 days in Yunnan from end of Jan to Feb 10 advise | `https://www.tripadvisor.co.uk/ShowTopic-g294211-i642-k15451421-16_days_in_Yunnan_from_end_of_Jan_to_Feb_10_advise-China.html` | 16-day Yunnan route timing | Search result found; page blocks automated read | Open manually; reply only after confirming content and rules |
+| 8 | Facebook：雲南自由行 group post asking about June Yunnan and Shaxi | `https://www.facebook.com/groups/420563792239922/posts/1471103790519245/` | Specific Shaxi route question with comment activity | Needs logged-in verification | Search inside group for newer Shaxi/Dali/Lijiang questions |
+| 7 | Google Chinese search source | `https://www.google.com/search?q=%E9%9B%B2%E5%8D%97+%E8%87%AA%E7%94%B1%E8%A1%8C+%E5%A4%A7%E7%90%86+%E9%BA%97%E6%B1%9F+%E6%B2%99%E6%BA%AA+%E8%A1%8C%E7%A8%8B` | Repeatedly surfaces Backpackers, Facebook, competitor routes | Repeat daily | Filter for recent/forum/group pages |
+| 7 | Google English search source | `https://www.google.com/search?q=Yunnan+Dali+Lijiang+itinerary+forum+2026` | English forum intent around Yunnan itinerary advice | Repeat daily | Filter for posts with dates, days, group size or transport concerns |
+
+## Target-Specific Replies
+
+### Backpackers Erhai / Shaxi / Lugu Lake
+
+Use this only if logged in and the thread still accepts replies. If self-promotion feels unsafe, remove the last line.
+
+```text
+這個行程我會先用「少折返」來看，不會只看地圖距離。
+
+如果昆明進、大理開始玩，我會比較傾向先把大理古城或海西住穩，隔天用半天到一天把洱海節奏放慢，再往沙溪住一晚。沙溪比較值得留夜晚和隔天早晨，不太建議只當中途拍照點。之後再往麗江或白沙接雪山、古城一帶。
+
+大理直接接瀘沽湖理論上可以省回頭路，但真正要看同行者體力、車程耐受度、行李和當天交通穩定性。若同行者不想太累，寧可路線少一點，住宿位置排好一點，整體體驗會比多塞一個點更好。
+
+我會先問五件事：月份、幾位同行、有沒有長輩小孩、預算偏省還是偏舒服、最後是從哪個城市離開。這五個答案會直接決定要不要把瀘沽湖放進去。
+
+如果你想先用條件判斷路線是否太趕，可以填這個 60 秒初談表：
+https://bluehourchina.com/quick/?utm_source=backpackers&utm_medium=forum_reply&utm_campaign=first_customer_week&video=erhai_shaxi_lugu
+```
+
+### Tripadvisor 16-Day Yunnan
+
+Use this only after manually verifying the thread content.
+
+```text
+For a 16-day Yunnan trip, I would first decide whether this is a comfort route or a maximum-coverage route. Dali, Shaxi, Lijiang/Baisha and Shangri-La can work beautifully together, but the sequence matters because the risk is usually not one missing attraction. It is changing hotels too often, station transfers, luggage, car time and altitude/temperature shifts.
+
+If your dates are late January to early February, I would keep at least one slower night in Shaxi, avoid making Dali only a transit point, and leave enough buffer around the mountain or Shangri-La side.
+
+If helpful, you can leave month, group size, preferred comfort level and rough budget here. We can reply with an initial route note and starting quote:
+https://bluehourchina.com/quick/en/?utm_source=tripadvisor&utm_medium=forum_reply&utm_campaign=first_customer_week&video=yunnan_16_days
+```
 
 ## Evidence For Professional Replies
 
