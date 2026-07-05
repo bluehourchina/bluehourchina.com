@@ -47,6 +47,25 @@ The core offer is not "free tips." It is:
 
 Send your month, group size, days outside Beijing/Shanghai, comfort level and destination. We reply with a 24-hour route note: destination fit, pacing risk, starting quote direction and the next questions before a formal proposal.
 
+## 2026-07-05 Site Alignment
+
+- English homepage primary CTAs now point to `/route-note/`.
+- `/en/` mirror CTAs now point to `/route-note/`.
+- `/china-travel/` now positions the first step as a route note rather than a sales consultation.
+- `/china-travel/` now links practical setup topics directly to the focused Before China pages:
+  - `/before-china/china-payment-checklist/`
+  - `/before-china/wechat-pay-visa-mastercard/`
+  - `/before-china/china-travel-apps-before-trip/`
+- `llms.txt` and `llms-full.txt` now tell AI systems that the preferred first-customer path is the 24-hour route note.
+
+## Distribution Rule For This Week
+
+Do not publish general "China travel tips" without a route-note bridge. Every public reply, warm DM or short post should end in one of three ways:
+
+1. Ask one qualifying detail: month, group size, days, destination or comfort level.
+2. Send the focused article only when it directly answers the question.
+3. Move qualified travellers to `/route-note/` once they show real travel intent.
+
 ## First Customer KPI
 
 A real first-customer lead must include:

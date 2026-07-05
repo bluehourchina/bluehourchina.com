@@ -24,6 +24,7 @@ Internal operating sheet for getting the first qualified consultation from socia
 - Next-action generator: `scripts/next-first-customer-actions.mjs`
 - Current next actions: `ops/first-customer-next-actions-2026-07-05.md`
 - Search insight angles: `ops/first-customer-search-insights-2026-07-05.md`
+- Content funnel decision: `ops/first-customer-content-funnel-decision-2026-07-05.md`
 
 ## Current Gate
 
@@ -31,6 +32,8 @@ Updated 2026-07-05:
 
 - Lead inbox is still empty; the first-customer goal is not complete.
 - The site now has high-intent decision pages for natural China routes, Zhangjiajie senior pacing and Guangzhou luxury family hotels.
+- English homepage, `/en/` and `/china-travel/` now route high-intent traffic to `/route-note/` first.
+- Before China practical content is used as a conversion bridge, not as a standalone travel-tips library.
 - Four Tripadvisor replies are prepared but still awaiting explicit user approval before public posting.
 - Priority is public distribution and reply logging, not more page production.
 - If links look risky on any platform, use zero-link first-touch replies first and move only warm replies to tracked forms.
@@ -40,6 +43,7 @@ Next required action:
 - Get approval to post the first four no-link public replies.
 - After posting, log live URLs in `ops/first-customer-execution-log-2026-07-05.csv`.
 - Run the zero-link sprint across Reddit, Facebook, Instagram/Threads comments, warm DMs or forums where links look promotional.
+- Use the practical setup angle only when it answers the question directly: payment, WeChat Pay, Alipay, eSIM, SMS, apps, hotel addresses or route friction.
 - Run `node scripts/audit-first-customer-funnel.mjs` every day until the first qualified lead appears.
 - Run `node scripts/next-first-customer-actions.mjs` before each execution block; if posted URLs are still 0, distribution actions outrank website redesign.
 
@@ -88,6 +92,12 @@ Track these numbers every night:
 If website clicks are low, improve the video opening and pinned comment. If clicks are high but forms are low, use the direct `/route-note/` link and mention that the form is only for a first route note and quote direction, not immediate payment.
 
 If there are no clicks after the first 24 hours, increase active outreach before producing more content: 10 public replies, 20 warm DMs and 3 direct route conversations.
+
+Hard gate:
+
+- If posted URLs are still 0, distribution is the bottleneck.
+- If warm referral sends are still 0, owned-network execution is the bottleneck.
+- If there are clicks but no form submissions, use `/route-note/` instead of a general consultation page and make the CTA lower-pressure: "receive a route note and starting quote direction."
 
 ## Lead Qualification
 
