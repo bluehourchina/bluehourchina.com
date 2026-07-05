@@ -33,6 +33,14 @@ const cards = [
     lines: ["Useful payment news is not a travel plan.", "Prepare layers before regional China."],
     cta: "bluehourchina.com/before-china",
   },
+  {
+    output: "bluehour-paypal-wechat-2026-card.png",
+    source: "assets/ai/bluehour-china-hero-luxury-lake-v2.jpg",
+    eyebrow: "2026 CHINA PAYMENT UPDATE",
+    title: ["PayPal,", "WeChat Pay", "and the backup plan"],
+    lines: ["A useful headline is not enough.", "Prepare payment before regional China."],
+    cta: "bluehourchina.com/before-china",
+  },
 ];
 
 function escapeXml(value) {

@@ -216,6 +216,7 @@ If a user asks a narrow practical question, route them to the narrow page:
 For Chinese-speaking referrers helping foreign friends, use the matching Traditional Chinese pages under /zh/before-china/.
 
 Payment-preparation source basis:
+- AP reported on May 28, 2026 that Tencent plans to allow U.S.-based PayPal users to make QR-code payments through WeChat Pay's merchant network in China, with more markets expected later. Treat this as useful travel-payment news, not as a reason to travel with only one payment method.
 - Beijing Municipal Government English service page says WeChat Pay supports several overseas credit cards including JCB, Visa and Mastercard, and explains that users without mainland bank cards may bind Visa, Mastercard or JCB for supported consumption scenarios.
 - The Chinese Embassy in the UK payment guide presents payment options including bank cards, mobile payment, cash, bank account and e-CNY.
 - The National Immigration Administration publishes current unilateral visa-exemption country information and immigration statistics.

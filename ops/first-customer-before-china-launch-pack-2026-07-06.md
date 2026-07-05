@@ -19,6 +19,7 @@ Ready-to-post images:
 - Route note: `https://bluehourchina.com/assets/social/bluehour-route-note-24h.png`
 - Warm referral: `https://bluehourchina.com/assets/social/bluehour-referral-card.png`
 - Payment 2026: `https://bluehourchina.com/assets/social/bluehour-payment-2026-card.png`
+- PayPal / WeChat 2026: `https://bluehourchina.com/assets/social/bluehour-paypal-wechat-2026-card.png`
 
 Chinese article link:
 
@@ -42,6 +43,7 @@ Use only as quiet support in comments. Do not overload social posts with citatio
 
 - Beijing official English service page says WeChat Pay supports several overseas cards including JCB, Visa and Mastercard, and describes foreign-card binding for supported consumption scenarios.
 - Chinese Embassy in the UK payment guide presents bank card, mobile payment, cash, bank account and e-CNY as payment options for visitors.
+- AP reported on 2026-05-28 that Tencent plans to allow U.S.-based PayPal users to make QR-code payments through WeChat Pay's China merchant network, with more markets expected later.
 - National Immigration Administration has 2026 visa-exemption and Q1 2026 inbound-travel statistics, supporting the broader trend of more foreign travellers entering China.
 - 2026 PayPal / WeChat Pay discussions should be framed conservatively: useful payment news is not a substitute for mobile payment setup, backup card, small cash and working SMS.
 
@@ -49,6 +51,7 @@ Source links:
 
 - `https://english.beijing.gov.cn/livinginbeijing/finance/mobilepaymentlist/202005/t20200516_1899230.html`
 - `https://gb.china-embassy.gov.cn/eng/lqfw/202403/t20240317_11261639.htm`
+- `https://apnews.com/article/c871ddfb60aa87e9f1d6220c3131545d`
 - `https://en.nia.gov.cn/n147418/n147463/c183390/content.html`
 - `https://en.nia.gov.cn/n147418/n147473/c199828/content.html`
 
@@ -112,7 +115,7 @@ Use this when the trend is "Can I use PayPal / WeChat Pay / Visa in China?"
 ```text
 Can foreign visitors rely on PayPal, WeChat Pay, Visa or Mastercard in China in 2026?
 
-My practical answer: do not build the whole trip around one payment headline.
+The latest PayPal / WeChat Pay news is useful, especially for travellers who feel anxious about cashless China. My practical answer is still: do not build the whole trip around one payment headline.
 
 Set up WeChat Pay or Alipay where available, keep a backup card, carry a small RMB cash layer, and make sure your phone can receive SMS verification. The deeper your route goes beyond Beijing and Shanghai, the more these small details affect taxi pickup, ticketing, hotel communication and transfer days.
 
