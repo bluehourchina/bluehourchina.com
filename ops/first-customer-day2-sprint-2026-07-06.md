@@ -5,7 +5,8 @@
 - Lead rows: 0
 - Qualified leads: 0
 - Posted or sent proof rows: 0
-- Public Tripadvisor replies awaiting explicit approval: 4
+- Public Tripadvisor replies awaiting explicit approval: 0
+- Approved Tripadvisor replies requiring manual posting: 4
 - Highest-leverage available action without public-posting approval: warm referrals and partner referrals.
 
 ## Day 2 Objective
@@ -70,10 +71,10 @@ Use `/ops/first-customer-lead-triage.html` for every meaningful reply.
 - Score 3-4: warm lead; ask contact method or one missing route field.
 - Score 5-6 plus contact method: qualified; send route note and starting quote direction within 12 hours.
 
-## Blocking Rule
+## Manual Posting Rule
 
-Public Tripadvisor replies remain approval-gated. Do not post them unless the user explicitly writes:
+Public Tripadvisor replies have been approved, but Chrome automation was blocked by Tripadvisor. Use the manual posting page:
 
-`同意貼前 4 個無連結版`
+`https://bluehourchina.com/ops/first-customer-approved-public-replies-2026-07-06.html`
 
-Until that approval exists, owned-network outreach and partner referrals are the main executable path.
+Open each original thread, paste the no-link reply manually, then log the live reply URL or screenshot. Until a posted URL exists, owned-network outreach and partner referrals remain the main executable path.
