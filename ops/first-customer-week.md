@@ -28,6 +28,7 @@ Internal operating sheet for getting the first qualified consultation from socia
 - Mobile action board: `ops/first-customer-mobile-action.html`
 - Partner outreach board: `ops/first-customer-partner-outreach.html`
 - Partner target CSV: `ops/first-customer-partner-targets-2026-07-05.csv`
+- Lead triage board: `ops/first-customer-lead-triage.html`
 
 ## Current Gate
 
@@ -51,6 +52,7 @@ Next required action:
 - Use the practical setup angle only when it answers the question directly: payment, WeChat Pay, Alipay, eSIM, SMS, apps, hotel addresses or route friction.
 - Run `node scripts/audit-first-customer-funnel.mjs` every day until the first qualified lead appears.
 - Run `node scripts/next-first-customer-actions.mjs` before each execution block; if posted URLs are still 0, distribution actions outrank website redesign.
+- Any serious reply should be pasted into `/ops/first-customer-lead-triage.html` before quoting. The board generates the next reply and the lead inbox CSV row.
 
 ## Tracking Links
 
@@ -111,6 +113,7 @@ Mobile execution rule:
 - When finished, use `/ops/first-customer-mobile-action.html` to generate the `manual_send_batch_20` execution row.
 - When partner messages are finished, use `/ops/first-customer-partner-outreach.html` to generate the `manual_partner_batch_15` execution row.
 - Any reply with a month, group size, travel days, destination, budget/comfort need or contact method must be copied into `ops/first-customer-lead-inbox.csv`.
+- Use `/ops/first-customer-lead-triage.html` to classify replies as `needs_qualification`, `warm` or `qualified`.
 
 ## Lead Qualification
 

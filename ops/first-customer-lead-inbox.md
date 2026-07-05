@@ -7,7 +7,7 @@ Purpose: decide quickly whether a social reply is only interest or a real first-
 - `new_interest`: liked, commented or replied, but has not answered route details.
 - `warm_reply`: answered at least 3 qualification fields.
 - `form_submitted`: submitted `/route-note/` or another lead form.
-- `qualified`: has contact method plus at least 4 qualification fields.
+- `qualified`: has contact method plus at least 5 qualification fields.
 - `quoted`: received a first route note and starting quote.
 - `won`: paid deposit or confirmed paid route-consultation/service path.
 - `lost`: not a fit, no budget, no reply after follow-up, or trip cancelled.
@@ -21,12 +21,13 @@ Score 1 point for each confirmed item:
 - Route days
 - Budget range or comfort priority
 - Reachable contact method
+- Destination interest or route idea
 
 Use this rule:
 
 - `0-2`: do not quote yet. Ask missing fields.
-- `3`: warm lead. Ask for contact method and one missing field.
-- `4-5`: qualified lead. Send route note and starting quote within 12 hours.
+- `3-4`: warm lead. Ask for contact method and one missing field.
+- `5-6`: qualified lead. Send route note and starting quote within 12 hours.
 
 ## What Counts As A Real Lead
 

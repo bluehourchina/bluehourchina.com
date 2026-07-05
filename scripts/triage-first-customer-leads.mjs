@@ -29,12 +29,12 @@ function parseCsvLine(line) {
 }
 
 function score(row) {
-  const fields = ["travel_month", "group_size", "route_days", "budget_or_comfort", "contact_method"];
+  const fields = ["travel_month", "group_size", "route_days", "budget_or_comfort", "contact_method", "destination_interest"];
   return fields.reduce((sum, field) => sum + (row[field]?.trim() ? 1 : 0), 0);
 }
 
 function nextAction(row, scoreValue) {
-  if (scoreValue >= 4 && row.contact_method) return "Send route note and starting quote within 12 hours";
+  if (scoreValue >= 5 && row.contact_method) return "Send route note and starting quote within 12 hours";
   if (scoreValue >= 3) return "Ask for contact method and one missing route field";
   if (/quote|budget|price/i.test(row.first_message || "")) return "Ask for month, group size and comfort level before quoting";
   return "Ask the five qualification fields before counting as a lead";
@@ -61,7 +61,7 @@ const triage = rows.map((row) => {
     profile_or_thread_url: row.profile_or_thread_url,
     lead_stage: row.lead_stage,
     qualification_score: qualificationScore,
-    is_qualified: qualificationScore >= 4 && Boolean(row.contact_method),
+    is_qualified: qualificationScore >= 5 && Boolean(row.contact_method),
     next_action: nextAction(row, qualificationScore),
   };
 });
