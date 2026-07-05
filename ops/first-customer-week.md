@@ -10,6 +10,9 @@ Internal operating sheet for getting the first qualified consultation from socia
 - Execution scripts: `ops/first-customer-social-scripts.md`
 - Mobile launch board: `ops/first-customer-launch.html`
 - Public reply queue: `ops/first-customer-public-reply-queue.md`
+- Platform-ready posts: `ops/first-customer-platform-posts.md`
+- Lead inbox: `ops/first-customer-lead-inbox.csv`
+- Lead scoring and reply rules: `ops/first-customer-lead-inbox.md`
 - Today launch pack: `ops/first-customer-today-launch-pack.md`
 - Outreach board: `ops/first-customer-outreach-board.md`
 - Outreach targets: `ops/first-customer-outreach-targets.csv`
@@ -54,6 +57,8 @@ Track these numbers every night:
 - Replies sent within 12 hours
 - Public helpful replies posted
 - Warm DMs / LINE shares sent
+- New rows added to `ops/first-customer-lead-inbox.csv`
+- Leads with score 4-5 that need a quote within 12 hours
 
 If website clicks are low, improve the video opening and pinned comment. If clicks are high but forms are low, use the direct `/quick/` link and mention that the form is only for an initial route direction, not immediate payment.
 
