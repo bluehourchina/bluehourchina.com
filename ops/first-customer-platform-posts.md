@@ -4,7 +4,7 @@ Purpose: paste-ready posts for the first customer week. Use these to publish qui
 
 Primary lead link:
 
-`https://bluehourchina.com/quick/?utm_source=social&utm_medium=first_reply&utm_campaign=first_customer_week&video=day1`
+`https://bluehourchina.com/quiz/?utm_source=social&utm_medium=route_check&utm_campaign=first_customer_week&video=day1`
 
 English lead link:
 
@@ -34,8 +34,8 @@ Link in bio / pinned comment.
 Pinned comment:
 
 ```text
-想走大理、沙溪、麗江一週慢路線，可以先用 60 秒留下月份、人數、天數與預算感。我們先回初步方向，不需要立刻付訂：
-https://bluehourchina.com/quick/?utm_source=comment&utm_medium=social&utm_campaign=first_customer_week&video=mistake
+想走大理、沙溪、麗江一週慢路線，可以先做 1 分鐘路線自測，留下月份、人數、天數與預算感。我們先回初步方向，不需要立刻付訂：
+https://bluehourchina.com/quiz/?utm_source=comment&utm_medium=social&utm_campaign=first_customer_week&video=mistake
 ```
 
 ## Day 1: YouTube Shorts
@@ -57,8 +57,8 @@ https://bluehourchina.com/g/mistake/?utm_source=youtube&utm_medium=shorts&utm_ca
 Pinned comment:
 
 ```text
-60 秒留下旅行條件，先收到雲南一週慢路線方向：
-https://bluehourchina.com/quick/?utm_source=youtube_comment&utm_medium=shorts&utm_campaign=first_customer_week&video=mistake
+1 分鐘路線自測，先收到雲南一週慢路線方向：
+https://bluehourchina.com/quiz/?utm_source=youtube_comment&utm_medium=shorts&utm_campaign=first_customer_week&video=mistake
 ```
 
 ## Day 1: Instagram Story
@@ -81,12 +81,12 @@ Story 3:
 
 ```text
 有月份、人數、預算感
-先做 60 秒路線初談
+先做 1 分鐘路線自測
 ```
 
 Link sticker:
 
-`https://bluehourchina.com/quick/?utm_source=instagram&utm_medium=story&utm_campaign=first_customer_week&video=mistake`
+`https://bluehourchina.com/quiz/?utm_source=instagram&utm_medium=story&utm_campaign=first_customer_week&video=mistake`
 
 ## Warm DM / LINE Share
 
@@ -121,7 +121,7 @@ If this is your first Yunnan route, I would not change cities every day. A comfo
 如果是第一次排雲南，我會先避免每天換城市。比較舒服的形狀是：大理留湖邊和早晨，沙溪留一個晚上，麗江或白沙留雪山遠景。真正容易出問題的通常不是景點，而是住宿位置、車程、同行者體力和語言/支付細節。
 
 如果你已經有月份、人數、天數和預算感，可以先留下條件，我們回一份初步路線方向：
-https://bluehourchina.com/quick/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=tw_forum
+https://bluehourchina.com/quiz/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=tw_forum
 ```
 
 ## Public Reply: Traditional Chinese, No Link Allowed
@@ -162,7 +162,7 @@ Use only for people who commented, replied, liked with clear travel intent, or a
 ## Daily Posting Order
 
 1. Publish Day 1 pain-point video to IG Reels, TikTok and YouTube Shorts.
-2. Pin the direct `/quick/` comment on all three platforms.
+2. Pin the `/quiz/` route-check comment for cold traffic; use `/quick/` only after someone asks for a quote.
 3. Send 20 warm DMs or LINE shares.
 4. Post 10 useful public replies from `ops/first-customer-public-reply-queue.md`.
 5. Move every meaningful reply into `ops/first-customer-lead-inbox.csv`.

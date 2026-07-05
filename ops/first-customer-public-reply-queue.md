@@ -2,9 +2,13 @@
 
 Purpose: spend today finding people already asking about China, Yunnan, Dali, Shaxi or Lijiang. The goal is not visibility; the goal is one person who replies with month, group size, route days, budget sense and contact method.
 
-Primary conversion link:
+Primary route-check link:
 
-`https://bluehourchina.com/quick/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=public_reply`
+`https://bluehourchina.com/quiz/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=public_reply`
+
+Direct inquiry link:
+
+`https://bluehourchina.com/quick/?utm_source=warm_reply&utm_medium=direct&utm_campaign=first_customer_week&video=public_reply`
 
 English conversion link:
 
@@ -103,8 +107,8 @@ Reply template:
 ```text
 如果是第一次排雲南，我會先避免每天換城市。比較舒服的形狀是：大理留湖邊和早晨，沙溪留一個晚上，麗江或白沙留雪山遠景。真正容易出問題的通常不是景點，而是住宿位置、車程、同行者體力和語言/支付細節。
 
-如果你已經有月份、人數、天數和預算感，可以先留下條件，我們回一份初步路線方向：
-https://bluehourchina.com/quick/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=tw_forum
+如果你已經有月份、人數、天數和預算感，可以先做 1 分鐘路線自測，我們再回一份初步方向：
+https://bluehourchina.com/quiz/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=tw_forum
 ```
 
 ### Instagram / Threads
@@ -127,8 +131,8 @@ First comment should be a question, not a link:
 If they reply:
 
 ```text
-可以，我們有一份 60 秒路線初談。你留下月份、人數和預算感，我們先回一個方向，不需要立刻付訂：
-https://bluehourchina.com/quick/?utm_source=instagram&utm_medium=comment_reply&utm_campaign=first_customer_week&video=ig_search
+可以，我們有一份 1 分鐘路線自測。你留下月份、人數和預算感，我們先回一個方向，不需要立刻付訂：
+https://bluehourchina.com/quiz/?utm_source=instagram&utm_medium=comment_reply&utm_campaign=first_customer_week&video=ig_search
 ```
 
 ## Qualification
@@ -141,7 +145,7 @@ Warm lead: answers at least 3 of these:
 4. Budget level or comfort priority
 5. Reachable email / WhatsApp / LINE / WeChat
 
-Qualified lead: leaves contact details through `/quick/` or directly gives contact plus enough route context to quote.
+Qualified lead: leaves contact details through `/quiz/`, `/quick/` or directly gives contact plus enough route context to quote.
 
 ## Daily Log
 

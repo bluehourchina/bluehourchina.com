@@ -17,7 +17,7 @@ Use today as a direct-response launch. Publish one pain-point short video, one r
 
 Use this in pinned comments and DMs:
 
-`https://bluehourchina.com/quick/?utm_source=social&utm_medium=first_reply&utm_campaign=first_customer_week&video=day1`
+`https://bluehourchina.com/quiz/?utm_source=social&utm_medium=route_check&utm_campaign=first_customer_week&video=day1`
 
 Use this in the video profile/link sticker when the platform allows only one link:
 
@@ -60,8 +60,8 @@ Hashtags:
 
 Pinned comment:
 
-想走大理、沙溪、麗江一週慢路線，可以先用 60 秒留下月份、人數、天數與預算感。我們先回初步方向，不需要立刻付訂：
-https://bluehourchina.com/quick/?utm_source=comment&utm_medium=social&utm_campaign=first_customer_week&video=mistake
+想走大理、沙溪、麗江一週慢路線，可以先做 1 分鐘路線自測，留下月份、人數、天數與預算感。我們先回初步方向，不需要立刻付訂：
+https://bluehourchina.com/quiz/?utm_source=comment&utm_medium=social&utm_campaign=first_customer_week&video=mistake
 
 ## YouTube Shorts Version
 
@@ -78,8 +78,8 @@ https://bluehourchina.com/g/mistake/?utm_source=youtube&utm_medium=shorts&utm_ca
 
 Pinned comment:
 
-60 秒留下旅行條件，先收到雲南一週慢路線方向：
-https://bluehourchina.com/quick/?utm_source=youtube_comment&utm_medium=shorts&utm_campaign=first_customer_week&video=mistake
+1 分鐘路線自測，先收到雲南一週慢路線方向：
+https://bluehourchina.com/quiz/?utm_source=youtube_comment&utm_medium=shorts&utm_campaign=first_customer_week&video=mistake
 
 ## Instagram Story
 
@@ -96,11 +96,11 @@ Story 2 text:
 Story 3 text:
 
 有月份、人數、預算感
-先做 60 秒路線初談
+先做 1 分鐘路線自測
 
 Link sticker:
 
-`https://bluehourchina.com/quick/?utm_source=instagram&utm_medium=story&utm_campaign=first_customer_week&video=mistake`
+`https://bluehourchina.com/quiz/?utm_source=instagram&utm_medium=story&utm_campaign=first_customer_week&video=mistake`
 
 ## Warm DM / LINE Share
 
@@ -120,13 +120,13 @@ Use only where self-promotion is allowed or where someone is asking about China/
 
 Reply 1:
 
-如果是第一次去雲南，我會先避免每天換城市。大理、沙溪、麗江或白沙比較適合做成一週左右的慢路線，重點是住宿位置、車程和同行者體力。這裡有一個 60 秒初談入口，可以先拿到路線方向：
-https://bluehourchina.com/quick/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=mistake
+如果是第一次去雲南，我會先避免每天換城市。大理、沙溪、麗江或白沙比較適合做成一週左右的慢路線，重點是住宿位置、車程和同行者體力。這裡有一個 1 分鐘路線自測，可以先拿到路線方向：
+https://bluehourchina.com/quiz/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=mistake
 
 Reply 2:
 
 雲南不是景點越多越好。大理適合湖和早晨，沙溪值得住一晚，麗江或白沙適合把雪山放遠一點。如果已經有月份、人數和預算感，可以先留下條件，讓我們回初步方向：
-https://bluehourchina.com/quick/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=route
+https://bluehourchina.com/quiz/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=route
 
 ## Six-Hour Follow-Up
 

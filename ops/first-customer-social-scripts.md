@@ -72,7 +72,7 @@ CTA:
 先做一份路線初談。
 
 Link:
-`https://bluehourchina.com/quick/?utm_source=instagram&utm_medium=reel&utm_campaign=first_customer_week&video=compare`
+`https://bluehourchina.com/quiz/?utm_source=instagram&utm_medium=reel&utm_campaign=first_customer_week&video=compare`
 
 ### Final Two Days: Direct Lead
 
@@ -83,7 +83,7 @@ Voiceover:
 不用立刻報名。先留下四個條件，我們回覆你一份初步路線、起價範圍，以及還需要確認的問題。
 
 CTA:
-60 秒留下旅行條件。
+1 分鐘路線自測，留下旅行條件。
 
 Link:
 `https://bluehourchina.com/quick/?utm_source=instagram&utm_medium=reel&utm_campaign=first_customer_week&video=direct_lead`
@@ -92,7 +92,7 @@ Link:
 
 Price question:
 可以先抓 RMB 8,800/人起，但會看季節、住宿、車輛和人數調整。你如果已經有月份和同行人數，可以先填這份，我們回一個比較準的方向：
-`https://bluehourchina.com/quick/?utm_source=comment&utm_medium=social&utm_campaign=first_customer_week`
+`https://bluehourchina.com/quiz/?utm_source=comment&utm_medium=social&utm_campaign=first_customer_week`
 
 Route days question:
 雲南最舒服的起點是一週。大理留風和湖，沙溪留一個夜晚，麗江或白沙留雪山遠景。太短會一直趕路。這裡有路線入口：
@@ -100,7 +100,7 @@ Route days question:
 
 Private tour question:
 私旅的價值不只是飯店更好，而是把車程、住宿位置、語言溝通和同行者節奏先整理好。你可以先留下條件，我們回初步方向：
-`https://bluehourchina.com/quick/?utm_source=comment&utm_medium=social&utm_campaign=first_customer_week`
+`https://bluehourchina.com/quiz/?utm_source=comment&utm_medium=social&utm_campaign=first_customer_week`
 
 ## DM Flow
 

@@ -7,7 +7,8 @@ Goal today: create 10 useful public replies, 20 warm DMs, 3 direct route convers
 Primary links:
 
 - English inquiry form: `https://bluehourchina.com/quick/en/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=live_targets_20260705`
-- Chinese inquiry form: `https://bluehourchina.com/quick/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=live_targets_20260705`
+- Chinese route self-check: `https://bluehourchina.com/quiz/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=live_targets_20260705`
+- Chinese direct inquiry form: `https://bluehourchina.com/quick/?utm_source=warm_dm&utm_medium=direct&utm_campaign=first_customer_week&video=live_targets_20260705`
 - Lead inbox: `ops/first-customer-lead-inbox.csv`
 - Reply log: `ops/first-customer-reply-log-2026-07-05.csv`
 
@@ -38,8 +39,8 @@ Use this only if logged in and the thread still accepts replies. If self-promoti
 
 我會先問五件事：月份、幾位同行、有沒有長輩小孩、預算偏省還是偏舒服、最後是從哪個城市離開。這五個答案會直接決定要不要把瀘沽湖放進去。
 
-如果你想先用條件判斷路線是否太趕，可以填這個 60 秒初談表：
-https://bluehourchina.com/quick/?utm_source=backpackers&utm_medium=forum_reply&utm_campaign=first_customer_week&video=erhai_shaxi_lugu
+如果你想先判斷路線是否太趕，可以做這個 1 分鐘雲南路線自測：
+https://bluehourchina.com/quiz/?utm_source=backpackers&utm_medium=forum_reply&utm_campaign=first_customer_week&video=erhai_shaxi_lugu
 ```
 
 ### Tripadvisor 16-Day Yunnan
@@ -118,8 +119,8 @@ https://bluehourchina.com/quick/en/?utm_source=youtube&utm_medium=comment_reply&
 ```text
 如果是第一次排雲南，我會先避免每天換城市。比較舒服的形狀是：大理留湖邊和早晨，沙溪留一個晚上，麗江或白沙留雪山遠景。真正容易出問題的通常不是景點，而是住宿位置、車程、同行者體力和語言/支付細節。
 
-如果你已經有月份、人數、天數和預算感，可以先留下條件，我們回一份初步路線方向：
-https://bluehourchina.com/quick/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=live_targets_20260705
+如果你已經有月份、人數、天數和預算感，可以先做 1 分鐘路線自測，我們再回一份初步方向：
+https://bluehourchina.com/quiz/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=live_targets_20260705
 ```
 
 ### 私訊追問
@@ -155,7 +156,7 @@ Warm lead:
 
 Qualified lead:
 
-- Gives contact method plus enough route context to prepare an initial quote; or submits `/quick/` or `/quick/en/`.
+- Gives contact method plus enough route context to prepare an initial quote; or submits `/quiz/`, `/quick/` or `/quick/en/`.
 
 Immediate next step after any warm reply:
 

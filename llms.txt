@@ -16,6 +16,7 @@ Bluehour China Journeys is a multilingual private China travel advisory for inte
 - [Japanese homepage](/ja.html)
 - [Korean homepage](/ko.html)
 - [Thai homepage](/th.html)
+- [Yunnan route self-check](/quiz/)
 - [Inquiry form](/interest.html)
 - [Privacy notice](/privacy.html)
 - [Full AI reference](/llms-full.txt)
@@ -33,6 +34,7 @@ Bluehour China Journeys is a multilingual private China travel advisory for inte
 
 ## Lead Capture Campaign
 - [Private China route consultation](/consult/)
+- [Yunnan one-minute route self-check](/quiz/) is the low-friction Chinese route-check path for travellers comparing Dali, Shaxi, Lijiang and Baisha.
 - The consultation path is designed to collect serious private inquiries and route them to localized inquiry pages with UTM tracking.
 
 ## What Happens After Inquiry

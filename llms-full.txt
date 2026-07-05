@@ -63,6 +63,7 @@ Bluehour China Journeys provides destination advisory, route shaping, traveller 
 ## Conversion Path
 
 Primary lead pages:
+- /quiz/ for Chinese Yunnan route self-check and cold social traffic
 - /interest.html
 - /zh/interest/
 - /ja/interest/
