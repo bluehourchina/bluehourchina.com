@@ -2,6 +2,8 @@
 
 Goal: create one qualified consultation path today. Do not wait for organic search. Publish, reply, and move any serious reply into `ops/first-customer-lead-inbox.csv`.
 
+Fastest operating page: `ops/first-customer-post-console.html`
+
 ## Success Definition
 
 Do not count likes, saves, views, vague "looks nice" comments or old search results.
@@ -126,6 +128,7 @@ Move every serious reply into `ops/first-customer-lead-inbox.csv`.
 Update:
 
 - `ops/first-customer-execution-log-2026-07-05.csv`
+- `ops/first-customer-candidate-tracker-2026-07-05.csv`
 - `ops/first-customer-week-tracker.csv`
 - `ops/first-customer-lead-inbox.csv` if any warm or qualified lead appears
 
