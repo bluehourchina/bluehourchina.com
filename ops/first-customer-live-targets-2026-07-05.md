@@ -4,6 +4,13 @@ Status: operating queue, not verified leads yet.
 
 Goal today: create 10 useful public replies, 20 warm DMs, 3 direct route conversations, and at least 1 form submission or quote-ready reply.
 
+Operating principle:
+
+- First public touch should usually be no-link and useful.
+- Ask for month, group size, days, comfort/budget and contact method.
+- Send tracked links only after the person replies with real travel intent.
+- Use `ops/first-customer-zero-link-sprint-2026-07-05.md` when platform rules or account trust are uncertain.
+
 Primary links:
 
 - English inquiry form: `https://bluehourchina.com/quick/en/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=live_targets_20260705`

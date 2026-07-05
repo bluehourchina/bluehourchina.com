@@ -18,6 +18,10 @@ Before-China practical checklist:
 
 `https://bluehourchina.com/before-china/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&angle=payment_setup`
 
+Zero-link first-touch pack:
+
+`ops/first-customer-zero-link-sprint-2026-07-05.md`
+
 ## Today Minimum
 
 - 10 useful public replies
@@ -25,6 +29,7 @@ Before-China practical checklist:
 - 3 people moved into direct route conversation
 - 1 form submission or one person asking for quote/month/route
 - Additional payment-prep sprint: 5 helpful replies to WeChat Pay / Alipay / Visa / Mastercard / eSIM questions using `ops/first-customer-before-china-launch-pack-2026-07-05.md`.
+- Default to no-link replies first unless the platform clearly allows helpful resource links.
 
 ## Verified Target To Reply First
 

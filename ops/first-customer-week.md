@@ -20,6 +20,7 @@ Internal operating sheet for getting the first qualified consultation from socia
 - Today reply log: `ops/first-customer-reply-log-2026-07-05.csv`
 - Daily tracker import file: `ops/first-customer-week-tracker.csv`
 - Funnel audit: `scripts/audit-first-customer-funnel.mjs`
+- Zero-link first-touch scripts: `ops/first-customer-zero-link-sprint-2026-07-05.md`
 
 ## Current Gate
 
@@ -29,11 +30,13 @@ Updated 2026-07-05:
 - The site now has high-intent decision pages for natural China routes, Zhangjiajie senior pacing and Guangzhou luxury family hotels.
 - Four Tripadvisor replies are prepared but still awaiting explicit user approval before public posting.
 - Priority is public distribution and reply logging, not more page production.
+- If links look risky on any platform, use zero-link first-touch replies first and move only warm replies to tracked forms.
 
 Next required action:
 
 - Get approval to post the first four no-link public replies.
 - After posting, log live URLs in `ops/first-customer-execution-log-2026-07-05.csv`.
+- Run the zero-link sprint across Reddit, Facebook, Instagram/Threads comments, warm DMs or forums where links look promotional.
 - Run `node scripts/audit-first-customer-funnel.mjs` every day until the first qualified lead appears.
 
 ## Tracking Links
