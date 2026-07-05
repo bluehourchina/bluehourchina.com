@@ -28,6 +28,11 @@ Primary links:
 
 These are not leads yet. They are reply targets or search sources. Count a lead only after someone replies with route details or submits the form.
 
+Access note:
+
+- Reddit public JSON search returned a network-security block from this environment on 2026-07-05. Do not treat automated Reddit search as a verified source until it is manually checked in a logged-in browser.
+- Keep Reddit as a manual-search channel; rely first on already verified Tripadvisor targets, warm network messages and direct social comments where the account can actually reply.
+
 | Priority | Target | URL | Intent Signal | Status | Next Action |
 |---:|---|---|---|---|---|
 | 9 | 背包客棧：洱海、沙溪古鎮行程及大理-瀘沽湖交通請益 | `https://www.backpackers.com.tw/forum/showthread.php?t=10565820` | 14-day Kunming-Dali-Lijiang plan; asks Erhai/Shaxi order and Dali-Lugu Lake/Lijiang transport | Verified readable; old 2024 thread | Reply only if logged in and rules allow; use as evergreen route-help answer |

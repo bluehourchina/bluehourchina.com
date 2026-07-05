@@ -47,6 +47,27 @@ Reply order:
 2. If route fields are present but contact is weak, ask for the best email or WhatsApp first.
 3. If only a narrow practical question is present, answer it, then ask one route-qualifying question.
 
+## First-Customer Closing Path
+
+For the first customer week, do not leave a warm lead in "thanks, noted" mode. Move them to one of these outcomes within 12 hours:
+
+1. `qualified`: contact method plus enough route context is present.
+2. `quoted`: send a short route note, starting quote range and three remaining questions.
+3. `not_fit`: tell them clearly if the route is too rushed, budget is too low or they only need a public answer.
+
+Use this closer after a warm public reply:
+
+```text
+Thanks, this is enough to make the first note useful. I would not quote a fixed package yet, but I can give you a route direction and starting range.
+
+Based on what you shared, the next step is:
+1. I check whether the route is realistic for your month, group size and pace.
+2. I send a short route note with the starting price range for land arrangements.
+3. If it fits, we then refine hotels, transfers, language support and local-provider matching.
+
+Please send the best contact method for the first route note: email, WhatsApp, LINE or WeChat.
+```
+
 ## English Template: Natural Wonder In 15 Days
 
 Subject:

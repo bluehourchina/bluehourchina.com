@@ -109,8 +109,40 @@
     th { color: var(--forest); background: #fffdf8; }
     td { color: var(--muted); font-weight: 680; }
     .table-wrap { overflow-x: auto; margin-top: 14px; border: 1px solid var(--line); }
+    .lead-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .lead-grid label {
+      display: grid;
+      gap: 6px;
+      color: var(--forest);
+      font-size: 13px;
+      font-weight: 900;
+    }
+    .lead-grid input,
+    .lead-grid textarea {
+      width: 100%;
+      min-height: 42px;
+      border: 1px solid var(--line);
+      background: #fffdf8;
+      color: var(--ink);
+      padding: 10px 12px;
+      font: 700 15px/1.5 "Noto Sans TC", "PingFang TC", sans-serif;
+    }
+    .lead-grid textarea {
+      min-height: 92px;
+      resize: vertical;
+    }
+    .lead-grid label:nth-child(5),
+    .lead-grid label:nth-child(12) {
+      grid-column: 1 / -1;
+    }
     @media (max-width: 850px) {
       .grid { grid-template-columns: 1fr; }
+      .lead-grid { grid-template-columns: 1fr; }
       header { padding: 28px 17px 42px; }
     }
   </style>
@@ -437,6 +469,35 @@ I would also not plan around any brand-new payment feature until it has been tes
       </article>
 
       <article class="card full">
+        <h2>Warm lead 快速記錄器</h2>
+        <div class="meta">
+          <span class="pill">lead inbox</span>
+          <span class="pill">copy csv row</span>
+          <span class="pill">12h reply</span>
+        </div>
+        <div class="lead-grid">
+          <label>來源 / 平台<input data-lead-field="source" value="manual_social_reply"></label>
+          <label>平台<input data-lead-field="platform" placeholder="Tripadvisor / Instagram / LINE / Reddit"></label>
+          <label>名稱或帳號<input data-lead-field="handle_or_name" placeholder="handle or name"></label>
+          <label>Thread / Profile URL<input data-lead-field="profile_or_thread_url" placeholder="https://..."></label>
+          <label>第一句訊息<textarea data-lead-field="first_message" placeholder="Paste the person's reply or request"></textarea></label>
+          <label>月份<input data-lead-field="travel_month" placeholder="Nov 2026 / Spring / not sure"></label>
+          <label>人數<input data-lead-field="group_size" placeholder="2 / family of 3 / seniors"></label>
+          <label>天數<input data-lead-field="route_days" placeholder="7 days / 15 days"></label>
+          <label>預算或舒適需求<input data-lead-field="budget_or_comfort" placeholder="comfort-first / US$2500+ / luxury hotel"></label>
+          <label>聯絡方式<input data-lead-field="contact_method" placeholder="email / WhatsApp / LINE / WeChat"></label>
+          <label>目的地<input data-lead-field="destination_interest" placeholder="Yunnan / Zhangjiajie / China prep"></label>
+          <label>下一步<input data-lead-field="next_action" value="Ask 5 qualification fields and prepare route note"></label>
+        </div>
+        <div class="actions">
+          <button type="button" data-generate-lead-row>產生 lead inbox CSV row</button>
+          <button type="button" class="secondary" data-copy-lead-row>複製 CSV row</button>
+          <a class="btn secondary" href="/ops/first-customer-lead-inbox.csv" target="_blank" rel="noopener">打開 lead inbox</a>
+        </div>
+        <pre data-lead-row>先填欄位，再按「產生 lead inbox CSV row」。</pre>
+      </article>
+
+      <article class="card full">
         <h2>今日必回填</h2>
         <div class="table-wrap">
           <table>
@@ -476,6 +537,59 @@ I would also not plan around any brand-new payment feature until it has been tes
   </main>
 
   <script>
+    const csvCell = (value) => {
+      const text = String(value || "").replace(/\r?\n/g, " ").trim();
+      return /[",\n]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text;
+    };
+
+    const leadValue = (name) => document.querySelector(`[data-lead-field="${name}"]`)?.value || "";
+
+    const leadScore = () => {
+      const fields = ["travel_month", "group_size", "route_days", "budget_or_comfort", "contact_method", "destination_interest"];
+      return fields.reduce((score, name) => score + (leadValue(name).trim() ? 1 : 0), 0);
+    };
+
+    const buildLeadRow = () => {
+      const score = leadScore();
+      const stage = score >= 5 && leadValue("contact_method").trim() ? "qualified" : score >= 3 ? "warm" : "needs_qualification";
+      const now = new Date();
+      const due = new Date(now.getTime() + 12 * 60 * 60 * 1000).toISOString();
+      const values = [
+        now.toISOString(),
+        leadValue("source"),
+        leadValue("platform"),
+        leadValue("handle_or_name"),
+        leadValue("profile_or_thread_url"),
+        leadValue("first_message"),
+        leadValue("travel_month"),
+        leadValue("group_size"),
+        leadValue("route_days"),
+        leadValue("budget_or_comfort"),
+        leadValue("contact_method"),
+        leadValue("destination_interest"),
+        stage,
+        String(score),
+        leadValue("next_action"),
+        due,
+        "若青中國旅策",
+        "Generated from first-customer post console"
+      ];
+      return values.map(csvCell).join(",");
+    };
+
+    document.querySelector("[data-generate-lead-row]")?.addEventListener("click", () => {
+      document.querySelector("[data-lead-row]").textContent = buildLeadRow();
+    });
+
+    document.querySelector("[data-copy-lead-row]")?.addEventListener("click", async (event) => {
+      const output = document.querySelector("[data-lead-row]");
+      if (!output || output.textContent.startsWith("先填")) return;
+      await navigator.clipboard.writeText(output.textContent.trim());
+      const original = event.currentTarget.textContent;
+      event.currentTarget.textContent = "已複製 CSV row";
+      setTimeout(() => { event.currentTarget.textContent = original; }, 1200);
+    });
+
     document.querySelectorAll("[data-copy-button]").forEach((button) => {
       button.addEventListener("click", async () => {
         const block = button.closest(".card")?.querySelector("[data-copy]");
