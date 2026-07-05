@@ -25,6 +25,7 @@ Internal operating sheet for getting the first qualified consultation from socia
 - Current next actions: `ops/first-customer-next-actions-2026-07-06.md`
 - Day 2 sprint: `ops/first-customer-day2-sprint-2026-07-06.md`
 - Before-China launch pack: `ops/first-customer-before-china-launch-pack-2026-07-06.md`
+- Approved public replies manual page: `ops/first-customer-approved-public-replies-2026-07-06.html`
 - Search insight angles: `ops/first-customer-search-insights-2026-07-05.md`
 - Content funnel decision: `ops/first-customer-content-funnel-decision-2026-07-05.md`
 - Mobile action board: `ops/first-customer-mobile-action.html`
@@ -40,7 +41,8 @@ Updated 2026-07-06:
 - The site now has high-intent decision pages for natural China routes, Zhangjiajie senior pacing and Guangzhou luxury family hotels.
 - English homepage, `/en/` and `/china-travel/` now route high-intent traffic to `/route-note/` first.
 - Before China practical content is used as a conversion bridge, not as a standalone travel-tips library.
-- Four Tripadvisor replies are prepared but still awaiting explicit user approval before public posting.
+- Four Tripadvisor replies are approved for public posting, but not yet posted.
+- User approved public posting on 2026-07-06, but Chrome automation hit Tripadvisor temporary access restriction. Use `ops/first-customer-approved-public-replies-2026-07-06.html` to post the no-link replies manually.
 - Priority is public distribution and reply logging, not more page production.
 - If links look risky on any platform, use zero-link first-touch replies first and move only warm replies to tracked forms.
 
@@ -48,7 +50,7 @@ Next required action:
 
 - If working from a phone, open `/ops/first-customer-mobile-action.html` and complete 20 warm referral sends first.
 - If direct traveller contacts are limited, open `/ops/first-customer-partner-outreach.html` and send 15 partner referral messages to people who can introduce travellers.
-- Get approval to post the first four no-link public replies.
+- Manually post the first four approved no-link Tripadvisor replies using `ops/first-customer-approved-public-replies-2026-07-06.html`.
 - After posting or sending, log live URLs or manual send batches in `ops/first-customer-execution-log-2026-07-06.csv`.
 - Run the zero-link sprint across Reddit, Facebook, Instagram/Threads comments, warm DMs or forums where links look promotional.
 - Use the practical setup angle only when it answers the question directly: payment, WeChat Pay, Alipay, eSIM, SMS, apps, hotel addresses or route friction.

@@ -92,11 +92,12 @@ const replies = parseCsv(await fs.readFile(files.replies, "utf8"));
 const leads = parseCsv(await fs.readFile(files.leads, "utf8"));
 
 const awaitingApproval = execution.filter((row) => /awaiting_user_approval_to_post/.test(row.status));
-const readyNotPosted = execution.filter((row) => /ready_not_posted|ready_not_sent|needs_login/.test(row.status));
+const approvedManualPending = execution.filter((row) => /approved_manual_post_required/.test(row.status));
+const readyNotPosted = execution.filter((row) => /ready_not_posted|ready_not_sent|needs_login|approved_manual_post_required/.test(row.status));
 const posted = execution.filter(
   (row) =>
     row.posting_url?.trim() &&
-    !/awaiting_user_approval_to_post|ready_not_posted|ready_not_sent|needs_login|hold_low_priority/.test(row.status)
+    !/awaiting_user_approval_to_post|approved_manual_post_required|ready_not_posted|ready_not_sent|needs_login|hold_low_priority/.test(row.status)
 );
 const qualifiedLeads = leads.filter((row) => row.lead_stage === "qualified" || row.lead_stage === "quoted" || row.lead_stage === "won");
 
@@ -140,6 +141,7 @@ for (const check of internalFileChecks) {
 }
 if (!leads.length) issues.push("No lead rows yet; first customer goal is not complete.");
 if (awaitingApproval.length) issues.push(`${awaitingApproval.length} public Tripadvisor actions are still awaiting explicit user approval.`);
+if (approvedManualPending.length) issues.push(`${approvedManualPending.length} approved Tripadvisor actions still require manual posting because Chrome automation was blocked.`);
 if (!posted.length) issues.push("No public/social post URL has been logged yet.");
 
 const summary = {
@@ -152,12 +154,20 @@ const summary = {
   leadRows: leads.length,
   qualifiedLeadRows: qualifiedLeads.length,
   awaitingApprovalRows: awaitingApproval.length,
+  approvedManualPendingRows: approvedManualPending.length,
   readyNotPostedRows: readyNotPosted.length,
   postedRows: posted.length,
   issueCount: issues.length,
   issues,
   internalFileChecks,
   awaitingApproval: awaitingApproval.map((row) => ({
+    channel: row.channel,
+    action: row.action,
+    url: row.posting_url,
+    tracking_link: row.tracking_link,
+    status: row.status,
+  })),
+  approvedManualPending: approvedManualPending.map((row) => ({
     channel: row.channel,
     action: row.action,
     url: row.posting_url,
@@ -177,6 +187,7 @@ console.log(`Reply file: ${summary.replyFile}`);
 console.log(`Lead rows: ${summary.leadRows}`);
 console.log(`Qualified leads: ${summary.qualifiedLeadRows}`);
 console.log(`Awaiting approval: ${summary.awaitingApprovalRows}`);
+console.log(`Approved manual pending: ${summary.approvedManualPendingRows}`);
 console.log(`Posted URLs logged: ${summary.postedRows}`);
 console.log(`Issues: ${summary.issueCount}`);
 for (const issue of issues) console.log(`ISSUE ${issue}`);
