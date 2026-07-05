@@ -32,7 +32,7 @@ Caption:
 
 大理、沙溪、麗江或白沙，其實需要的是不同節奏：湖邊的早晨、古鎮的夜、雪山遠遠在那裡。
 
-如果你已經有出發月份、人數和預算感，可以先做 1 分鐘路線自測，我們回你一份初步路線方向。
+如果你已經有出發月份、人數和預算感，可以先留下需求。我們會回一份 24 小時路線筆記，先判斷這條路是否真的舒服。
 
 Link in bio / pinned comment.
 
@@ -42,8 +42,8 @@ Link in bio / pinned comment.
 Pinned comment:
 
 ```text
-想走大理、沙溪、麗江一週慢路線，可以先做 1 分鐘路線自測，留下月份、人數、天數與預算感。我們先回初步方向，不需要立刻付訂：
-https://bluehourchina.com/quiz/?utm_source=instagram&utm_medium=pinned_comment&utm_campaign=first_customer_week&video=mistake
+想走大理、沙溪、麗江一週慢路線，可以先留下月份、人數、天數與預算感。我們先回 24 小時路線筆記與初步報價方向，不需要立刻付訂：
+https://bluehourchina.com/route-note/?utm_source=instagram&utm_medium=pinned_comment&utm_campaign=first_customer_week&angle=yunnan_slow_route
 ```
 
 After publishing, paste the post URL into `ops/first-customer-execution-log-2026-07-05.csv`.
@@ -68,12 +68,12 @@ Story frame 3:
 
 ```text
 有月份、人數、預算感
-先做 1 分鐘路線自測
+留下需求，拿 24 小時路線筆記
 ```
 
 Link sticker:
 
-`https://bluehourchina.com/quiz/?utm_source=instagram&utm_medium=story&utm_campaign=first_customer_week&video=mistake`
+`https://bluehourchina.com/route-note/?utm_source=instagram&utm_medium=story&utm_campaign=first_customer_week&angle=yunnan_slow_route`
 
 ## 30-50 Minutes: Send 20 Warm Referral Messages
 
@@ -82,9 +82,9 @@ Send to people who may know travellers, not only people who are travelling thems
 ```text
 我最近在做一個中國非大城市深度旅遊的路線諮詢，先從雲南開始。不是大團，也不是廉價行程，重點是幫想去大理、沙溪、麗江的人把一週路線排得舒服一點。
 
-如果你身邊有人今年或明年想去雲南，可以把這個連結給他。我們會先回一份初步路線方向，不會要求立刻付訂。
+如果你身邊有人今年或明年想去中國深度旅行，可以把這個連結給他。我們會先回一份路線筆記與初步報價方向，不會要求立刻付訂。
 
-https://bluehourchina.com/quick/?utm_source=line&utm_medium=warm_dm&utm_campaign=first_customer_week&video=day1
+https://bluehourchina.com/refer/?utm_source=line&utm_medium=warm_dm&utm_campaign=first_customer_week&angle=warm_referral
 ```
 
 If they ask "what should I tell them", send:

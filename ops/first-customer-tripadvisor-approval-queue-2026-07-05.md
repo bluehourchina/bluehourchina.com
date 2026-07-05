@@ -121,7 +121,7 @@ Your core route already has enough: Dali, Shaxi, Lijiang, Tiger Leaping Gorge an
 For transport, Didi/Amap/Alipay can solve city movement, but for route comfort the bigger question is where your hotels are and how many station transfers you accept with luggage. Public transport is possible; a private car only becomes useful for the awkward legs or if you care more about comfort than lowest cost.
 
 If you later want a more comfortable private version of this route rather than a hostel/public-transport version, you can leave month, group size and comfort level here and we will reply with an initial route note:
-https://bluehourchina.com/quick/en/?utm_source=tripadvisor&utm_medium=forum_reply&utm_campaign=first_customer_week&video=yunnan_16_days
+https://bluehourchina.com/route-note/?utm_source=tripadvisor&utm_medium=forum_reply&utm_campaign=first_customer_week&angle=yunnan_16_days
 ```
 
 ### No-Link Version

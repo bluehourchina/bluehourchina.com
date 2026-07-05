@@ -2,7 +2,7 @@
 
 Objective: get the first qualified inquiry, not general brand exposure.
 
-Use today as a direct-response launch. Publish one pain-point short video, one route-shape story/post, and one direct outreach message. Every action should move people to a trackable link and then to `/quick/`.
+Use today as a direct-response launch. Publish one pain-point short video, one route-shape story/post, and one direct outreach message. Every action should move people to a trackable link and then to `/route-note/`.
 
 ## Success Meter For Today
 
@@ -17,11 +17,11 @@ Use today as a direct-response launch. Publish one pain-point short video, one r
 
 Use this in pinned comments and DMs:
 
-`https://bluehourchina.com/quiz/?utm_source=social&utm_medium=route_check&utm_campaign=first_customer_week&video=day1`
+`https://bluehourchina.com/route-note/?utm_source=social&utm_medium=route_check&utm_campaign=first_customer_week&angle=day1`
 
 Use this in the video profile/link sticker when the platform allows only one link:
 
-`https://bluehourchina.com/g/mistake/?utm_source=social&utm_medium=profile&utm_campaign=first_customer_week&video=mistake`
+`https://bluehourchina.com/route-note/?utm_source=social&utm_medium=profile&utm_campaign=first_customer_week&angle=mistake`
 
 ## Short Video 1: Pain Point
 
@@ -50,7 +50,7 @@ Caption for Instagram / TikTok:
 
 大理、沙溪、麗江或白沙，其實需要的是不同節奏：湖邊的早晨、古鎮的夜、雪山遠遠在那裡。
 
-如果你已經有出發月份、人數和預算感，可以先留下條件，我們回你一份初步路線方向。
+如果你已經有出發月份、人數和預算感，可以先留下條件，我們回你一份 24 小時路線筆記與初步報價方向。
 
 Link in bio / pinned comment.
 
@@ -60,8 +60,8 @@ Hashtags:
 
 Pinned comment:
 
-想走大理、沙溪、麗江一週慢路線，可以先做 1 分鐘路線自測，留下月份、人數、天數與預算感。我們先回初步方向，不需要立刻付訂：
-https://bluehourchina.com/quiz/?utm_source=comment&utm_medium=social&utm_campaign=first_customer_week&video=mistake
+想走大理、沙溪、麗江一週慢路線，可以先留下月份、人數、天數與預算感。我們先回 24 小時路線筆記與初步報價方向，不需要立刻付訂：
+https://bluehourchina.com/route-note/?utm_source=comment&utm_medium=social&utm_campaign=first_customer_week&angle=mistake
 
 ## YouTube Shorts Version
 
@@ -71,15 +71,15 @@ Title:
 
 Description:
 
-大理、沙溪、麗江或白沙，不該只是景點清單。先看一週慢路線怎麼排，已經有月份、人數與預算感，可以留下條件，我們回一份初步方向。
+大理、沙溪、麗江或白沙，不該只是景點清單。先看一週慢路線怎麼排，已經有月份、人數與預算感，可以留下條件，我們回一份 24 小時路線筆記與初步報價方向。
 
 Link:
-https://bluehourchina.com/g/mistake/?utm_source=youtube&utm_medium=shorts&utm_campaign=first_customer_week&video=mistake
+https://bluehourchina.com/route-note/?utm_source=youtube&utm_medium=shorts&utm_campaign=first_customer_week&angle=mistake
 
 Pinned comment:
 
-1 分鐘路線自測，先收到雲南一週慢路線方向：
-https://bluehourchina.com/quiz/?utm_source=youtube_comment&utm_medium=shorts&utm_campaign=first_customer_week&video=mistake
+24 小時路線筆記，先收到雲南一週慢路線方向：
+https://bluehourchina.com/route-note/?utm_source=youtube_comment&utm_medium=shorts&utm_campaign=first_customer_week&angle=mistake
 
 ## Instagram Story
 
@@ -96,11 +96,11 @@ Story 2 text:
 Story 3 text:
 
 有月份、人數、預算感
-先做 1 分鐘路線自測
+先留下需求，拿 24 小時路線筆記
 
 Link sticker:
 
-`https://bluehourchina.com/quiz/?utm_source=instagram&utm_medium=story&utm_campaign=first_customer_week&video=mistake`
+`https://bluehourchina.com/route-note/?utm_source=instagram&utm_medium=story&utm_campaign=first_customer_week&angle=mistake`
 
 ## Warm DM / LINE Share
 
@@ -110,9 +110,9 @@ Message:
 
 我最近在做一個中國非大城市深度旅遊的路線諮詢，先從雲南開始。不是大團，也不是廉價行程，重點是幫想去大理、沙溪、麗江的人把一週路線排得舒服一點。
 
-如果你身邊有人今年或明年想去雲南，可以把這個 60 秒初談連結給他。我們會先回一份初步路線方向，不會要求立刻付訂。
+如果你身邊有人今年或明年想去雲南，可以把這個 24 小時路線筆記連結給他。我們會先回一份 24 小時路線筆記與初步報價方向，不會要求立刻付訂。
 
-https://bluehourchina.com/quick/?utm_source=line&utm_medium=warm_dm&utm_campaign=first_customer_week&video=day1
+https://bluehourchina.com/route-note/?utm_source=line&utm_medium=warm_dm&utm_campaign=first_customer_week&angle=day1
 
 ## Public Reply Seeds
 
@@ -120,13 +120,13 @@ Use only where self-promotion is allowed or where someone is asking about China/
 
 Reply 1:
 
-如果是第一次去雲南，我會先避免每天換城市。大理、沙溪、麗江或白沙比較適合做成一週左右的慢路線，重點是住宿位置、車程和同行者體力。這裡有一個 1 分鐘路線自測，可以先拿到路線方向：
-https://bluehourchina.com/quiz/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=mistake
+如果是第一次去雲南，我會先避免每天換城市。大理、沙溪、麗江或白沙比較適合做成一週左右的慢路線，重點是住宿位置、車程和同行者體力。這裡可以留下需求，拿 24 小時路線筆記與初步報價方向：
+https://bluehourchina.com/route-note/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&angle=mistake
 
 Reply 2:
 
-雲南不是景點越多越好。大理適合湖和早晨，沙溪值得住一晚，麗江或白沙適合把雪山放遠一點。如果已經有月份、人數和預算感，可以先留下條件，讓我們回初步方向：
-https://bluehourchina.com/quiz/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=route
+雲南不是景點越多越好。大理適合湖和早晨，沙溪值得住一晚，麗江或白沙適合把雪山放遠一點。如果已經有月份、人數和預算感，可以先留下條件，讓我們回 24 小時路線筆記與初步報價方向：
+https://bluehourchina.com/route-note/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&angle=route
 
 ## Six-Hour Follow-Up
 
@@ -134,7 +134,7 @@ At 1 hour:
 
 - Reply to every comment.
 - Like useful comments.
-- If someone asks price, reply with RMB 8,800/person starting point and the `/quick/` link.
+- If someone asks price, reply with RMB 8,800/person starting point and the `/route-note/` link.
 
 At 3 hours:
 
@@ -145,7 +145,7 @@ At 6 hours:
 
 - Record views, profile visits, website clicks and form submissions in `ops/first-customer-week-tracker.csv`.
 - If clicks are below 5, rewrite the first 3 seconds and repost tomorrow.
-- If clicks are above 10 but no form, use the direct `/quick/` link in the next post instead of `/g/mistake/`.
+- If clicks are above 10 but no form, use the direct `/route-note/` link in the next post instead of `/route-note/`.
 
 ## First Reply If A Form Arrives
 

@@ -41,10 +41,10 @@ Next required action:
 
 ## Tracking Links
 
-- Instagram pain-point reel: `https://bluehourchina.com/g/mistake/?utm_source=instagram&utm_medium=reel&utm_campaign=first_customer_week&video=mistake`
-- YouTube Shorts route note: `https://bluehourchina.com/g/route/?utm_source=youtube&utm_medium=shorts&utm_campaign=first_customer_week&video=route`
-- TikTok private-route value: `https://bluehourchina.com/g/private/?utm_source=tiktok&utm_medium=short_video&utm_campaign=first_customer_week&video=private`
-- LINE / direct share: `https://bluehourchina.com/g/partner/?utm_source=line&utm_medium=chat&utm_campaign=first_customer_week&video=partner`
+- Instagram pain-point reel: `https://bluehourchina.com/route-note/?utm_source=instagram&utm_medium=pinned_comment&utm_campaign=first_customer_week&angle=yunnan_slow_route`
+- YouTube Shorts route note: `https://bluehourchina.com/route-note/?utm_source=youtube&utm_medium=shorts&utm_campaign=first_customer_week&angle=route_note_24h`
+- TikTok private-route value: `https://bluehourchina.com/route-note/?utm_source=tiktok&utm_medium=short_video&utm_campaign=first_customer_week&angle=private_route_value`
+- LINE / direct share: `https://bluehourchina.com/refer/?utm_source=line&utm_medium=chat&utm_campaign=first_customer_week&angle=warm_referral`
 
 ## Daily Actions
 
@@ -81,7 +81,7 @@ Track these numbers every night:
 - New rows added to `ops/first-customer-lead-inbox.csv`
 - Leads with score 4-5 that need a quote within 12 hours
 
-If website clicks are low, improve the video opening and pinned comment. If clicks are high but forms are low, use the direct `/quick/` link and mention that the form is only for an initial route direction, not immediate payment.
+If website clicks are low, improve the video opening and pinned comment. If clicks are high but forms are low, use the direct `/route-note/` link and mention that the form is only for a first route note and quote direction, not immediate payment.
 
 If there are no clicks after the first 24 hours, increase active outreach before producing more content: 10 public replies, 20 warm DMs and 3 direct route conversations.
 

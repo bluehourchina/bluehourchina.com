@@ -4,11 +4,11 @@ Purpose: paste-ready posts for the first customer week. Use these to publish qui
 
 Primary lead link:
 
-`https://bluehourchina.com/quiz/?utm_source=social&utm_medium=route_check&utm_campaign=first_customer_week&video=day1`
+`https://bluehourchina.com/route-note/?utm_source=social&utm_medium=route_check&utm_campaign=first_customer_week&angle=day1`
 
 English lead link:
 
-`https://bluehourchina.com/quick/en/?utm_source=english_social&utm_medium=first_reply&utm_campaign=first_customer_week&video=day1`
+`https://bluehourchina.com/route-note/?utm_source=english_social&utm_medium=first_reply&utm_campaign=first_customer_week&angle=day1`
 
 Before-China article link:
 
@@ -32,7 +32,7 @@ Caption:
 
 大理、沙溪、麗江或白沙，其實需要的是不同節奏：湖邊的早晨、古鎮的夜、雪山遠遠在那裡。
 
-如果你已經有出發月份、人數和預算感，可以先做 1 分鐘路線自測，我們回你一份初步路線方向。
+如果你已經有出發月份、人數和預算感，可以先留下需求。我們會回一份 24 小時路線筆記與初步報價方向。
 
 Link in bio / pinned comment.
 
@@ -42,8 +42,8 @@ Link in bio / pinned comment.
 Pinned comment:
 
 ```text
-想走大理、沙溪、麗江一週慢路線，可以先做 1 分鐘路線自測，留下月份、人數、天數與預算感。我們先回初步方向，不需要立刻付訂：
-https://bluehourchina.com/quiz/?utm_source=comment&utm_medium=social&utm_campaign=first_customer_week&video=mistake
+想走大理、沙溪、麗江一週慢路線，可以先留下月份、人數、天數與預算感。我們先回 24 小時路線筆記與初步報價方向，不需要立刻付訂：
+https://bluehourchina.com/route-note/?utm_source=comment&utm_medium=social&utm_campaign=first_customer_week&angle=mistake
 ```
 
 ## Day 1: YouTube Shorts
@@ -57,16 +57,16 @@ Title:
 Description:
 
 ```text
-大理、沙溪、麗江或白沙，不該只是景點清單。先看一週慢路線怎麼排，已經有月份、人數與預算感，可以留下條件，我們回一份初步方向。
+大理、沙溪、麗江或白沙，不該只是景點清單。先看一週慢路線怎麼排，已經有月份、人數與預算感，可以留下條件，我們回一份 24 小時路線筆記與初步報價方向。
 
-https://bluehourchina.com/g/mistake/?utm_source=youtube&utm_medium=shorts&utm_campaign=first_customer_week&video=mistake
+https://bluehourchina.com/route-note/?utm_source=youtube&utm_medium=shorts&utm_campaign=first_customer_week&angle=mistake
 ```
 
 Pinned comment:
 
 ```text
-1 分鐘路線自測，先收到雲南一週慢路線方向：
-https://bluehourchina.com/quiz/?utm_source=youtube_comment&utm_medium=shorts&utm_campaign=first_customer_week&video=mistake
+24 小時路線筆記，先收到雲南一週慢路線方向：
+https://bluehourchina.com/route-note/?utm_source=youtube_comment&utm_medium=shorts&utm_campaign=first_customer_week&angle=mistake
 ```
 
 ## Day 1: Instagram Story
@@ -89,12 +89,12 @@ Story 3:
 
 ```text
 有月份、人數、預算感
-先做 1 分鐘路線自測
+先留下需求，拿 24 小時路線筆記
 ```
 
 Link sticker:
 
-`https://bluehourchina.com/quiz/?utm_source=instagram&utm_medium=story&utm_campaign=first_customer_week&video=mistake`
+`https://bluehourchina.com/route-note/?utm_source=instagram&utm_medium=story&utm_campaign=first_customer_week&angle=mistake`
 
 ## Day 1B: English Prep Post / Reel
 
@@ -136,9 +136,9 @@ Send to people who may know travellers, not only people who will travel themselv
 ```text
 我最近在做一個中國非大城市深度旅遊的路線諮詢，先從雲南開始。不是大團，也不是廉價行程，重點是幫想去大理、沙溪、麗江的人把一週路線排得舒服一點。
 
-如果你身邊有人今年或明年想去雲南，可以把這個連結給他。我們會先回一份初步路線方向，不會要求立刻付訂。
+如果你身邊有人今年或明年想去雲南，可以把這個連結給他。我們會先回一份 24 小時路線筆記與初步報價方向，不會要求立刻付訂。
 
-https://bluehourchina.com/quick/?utm_source=line&utm_medium=warm_dm&utm_campaign=first_customer_week&video=day1
+https://bluehourchina.com/route-note/?utm_source=line&utm_medium=warm_dm&utm_campaign=first_customer_week&angle=day1
 ```
 
 ## Public Reply: English, Link Allowed
@@ -147,7 +147,7 @@ https://bluehourchina.com/quick/?utm_source=line&utm_medium=warm_dm&utm_campaign
 If this is your first Yunnan route, I would not try to change cities every day. A comfortable shape is usually Dali for lake/old-town pacing, Shaxi for one slower night, then Lijiang or Baisha for the snow-mountain side. The hard part is not the number of sights; it is hotel location, car time, language/app friction and how tired the group gets.
 
 If helpful, you can leave month, group size and budget here and we will reply with an initial route note:
-https://bluehourchina.com/quick/en/?utm_source=reddit&utm_medium=reply&utm_campaign=first_customer_week&video=travelchina
+https://bluehourchina.com/route-note/?utm_source=reddit&utm_medium=reply&utm_campaign=first_customer_week&angle=travelchina
 ```
 
 ## Public Reply: English, No Link Allowed
@@ -172,8 +172,8 @@ https://bluehourchina.com/before-china/?utm_source=reddit&utm_medium=reply&utm_c
 ```text
 如果是第一次排雲南，我會先避免每天換城市。比較舒服的形狀是：大理留湖邊和早晨，沙溪留一個晚上，麗江或白沙留雪山遠景。真正容易出問題的通常不是景點，而是住宿位置、車程、同行者體力和語言/支付細節。
 
-如果你已經有月份、人數、天數和預算感，可以先做 1 分鐘路線自測，我們回一份初步路線方向：
-https://bluehourchina.com/quiz/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=tw_forum
+如果你已經有月份、人數、天數和預算感，可以先留下需求，拿 24 小時路線筆記，我們回一份 24 小時路線筆記與初步報價方向：
+https://bluehourchina.com/route-note/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&angle=tw_forum
 ```
 
 ## Public Reply: Traditional Chinese, No Link Allowed
@@ -186,14 +186,14 @@ https://bluehourchina.com/quiz/?utm_source=community&utm_medium=reply&utm_campai
 
 ```text
 雲南慢路線公開起價是 RMB 8,800/人起，國際機票另計。正式價格會看季節、住宿等級、房型、人數、車輛和語言支援。你如果已經有月份和人數，可以先留下需求，我們回比較準的方向：
-https://bluehourchina.com/quick/?utm_source=comment&utm_medium=price_reply&utm_campaign=first_customer_week
+https://bluehourchina.com/route-note/?utm_source=comment&utm_medium=price_reply&utm_campaign=first_customer_week
 ```
 
 ## Reply When Someone Says "Interested"
 
 ```text
 可以。先不用急著報名，我們先看 5 件事：月份、人數、天數、預算感、希望怎麼聯絡。你可以直接填這份，資訊比較不會漏：
-https://bluehourchina.com/quick/?utm_source=dm&utm_medium=interested_reply&utm_campaign=first_customer_week
+https://bluehourchina.com/route-note/?utm_source=dm&utm_medium=interested_reply&utm_campaign=first_customer_week
 ```
 
 ## Six-Hour Follow-Up DM
@@ -203,7 +203,7 @@ Use only for people who commented, replied, liked with clear travel intent, or a
 ```text
 剛剛看到你對雲南路線有興趣。我們這邊不是先推套裝，而是先看月份、人數、天數和預算感，判斷大理、沙溪、麗江/白沙這條一週慢路線適不適合。
 
-如果你願意，我可以先用這幾個條件幫你回一份初步方向：
+如果你願意，我可以先用這幾個條件幫你回一份 24 小時路線筆記與初步報價方向：
 1. 大概哪個月份
 2. 幾位同行
 3. 想走一週還是一週多一點
@@ -214,7 +214,7 @@ Use only for people who commented, replied, liked with clear travel intent, or a
 ## Daily Posting Order
 
 1. Publish Day 1 pain-point video to IG Reels, TikTok and YouTube Shorts.
-2. Pin the `/quiz/` route-check comment for cold traffic; use `/quick/` only after someone asks for a quote.
+2. Pin the `/route-note/` route-check comment for cold traffic; use `/route-note/` only after someone asks for a quote.
 3. Send 20 warm DMs or LINE shares.
 4. Post 10 useful public replies from `ops/first-customer-public-reply-queue.md`.
 5. Move every meaningful reply into `ops/first-customer-lead-inbox.csv`.

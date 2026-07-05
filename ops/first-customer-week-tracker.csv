@@ -1,17 +1,17 @@
 date,platform,asset_or_script,post_url,tracking_link,views,profile_visits,landing_clicks,form_submissions,qualified_leads,owner,next_action
-Day 1,Instagram,痛點片,,https://bluehourchina.com/quiz/?utm_source=instagram&utm_medium=pinned_comment&utm_campaign=first_customer_week&video=mistake,0,0,0,0,0,若青中國旅策,發布痛點片並把 URL 回填到 ops/first-customer-execution-log-2026-07-05.csv
-Day 1,TikTok,痛點片,,https://bluehourchina.com/quiz/?utm_source=tiktok&utm_medium=pinned_comment&utm_campaign=first_customer_week&video=mistake,0,0,0,0,0,若青中國旅策,同步短片並把 URL 回填到 execution log
-Day 1,LINE/DM,20 則暖私訊,,https://bluehourchina.com/quick/?utm_source=line&utm_medium=warm_dm&utm_campaign=first_customer_week&video=day1,0,0,0,0,0,若青中國旅策,發送 20 則並把回覆數回填到 execution log
-Day 1,Community Reply,5 則公開回覆,,https://bluehourchina.com/quiz/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=mistake,0,0,0,0,0,若青中國旅策,只在允許自薦或有人問雲南路線時回覆
-Day 1,Reddit,旅行問題回覆,,https://bluehourchina.com/quick/en/?utm_source=reddit&utm_medium=reply&utm_campaign=first_customer_week&video=travelchina,0,0,0,0,0,若青中國旅策,在 r/travelchina 或 r/chinatravel 回覆 3 則高意圖問題
+Day 1,Instagram,痛點片,,https://bluehourchina.com/route-note/?utm_source=instagram&utm_medium=pinned_comment&utm_campaign=first_customer_week&angle=yunnan_slow_route,0,0,0,0,0,若青中國旅策,發布痛點片並把 URL 回填到 ops/first-customer-execution-log-2026-07-05.csv
+Day 1,TikTok,痛點片,,https://bluehourchina.com/route-note/?utm_source=tiktok&utm_medium=pinned_comment&utm_campaign=first_customer_week&angle=yunnan_slow_route,0,0,0,0,0,若青中國旅策,同步短片並把 URL 回填到 execution log
+Day 1,LINE/DM,20 則暖私訊,,https://bluehourchina.com/refer/?utm_source=line&utm_medium=warm_dm&utm_campaign=first_customer_week&angle=warm_referral,0,0,0,0,0,若青中國旅策,發送 20 則並把回覆數回填到 execution log
+Day 1,Community Reply,5 則公開回覆,,https://bluehourchina.com/route-note/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&angle=route_note_24h,0,0,0,0,0,若青中國旅策,先回答問題；只有對方提供月份/人數/天數後才導 route-note
+Day 1,Reddit,旅行問題回覆,,https://bluehourchina.com/route-note/?utm_source=reddit&utm_medium=reply&utm_campaign=first_customer_week&angle=route_note_24h,0,0,0,0,0,若青中國旅策,在 r/travelchina 或 r/chinatravel 回覆 3 則高意圖問題
 Day 1,Reddit,Before China 支付準備回覆,,https://bluehourchina.com/before-china/?utm_source=reddit&utm_medium=reply&utm_campaign=first_customer_week&angle=payment_setup,0,0,0,0,0,若青中國旅策,搜尋 WeChat Pay / Alipay / payment / Visa Mastercard 問題並回覆 3-5 則
-Day 1,Facebook Groups,旅行社群回覆,,https://bluehourchina.com/quick/en/?utm_source=facebook&utm_medium=group_reply&utm_campaign=first_customer_week&video=facebook_group,0,0,0,0,0,若青中國旅策,加入或搜尋 China/Yunnan travel groups 並回覆 2 則合規問題
+Day 1,Facebook Groups,旅行社群回覆,,https://bluehourchina.com/route-note/?utm_source=facebook&utm_medium=group_reply&utm_campaign=first_customer_week&angle=facebook_group,0,0,0,0,0,若青中國旅策,加入或搜尋 China/Yunnan travel groups 並回覆 2 則合規問題
 Day 1,Facebook Groups,Before China 支付準備貼文,,https://bluehourchina.com/before-china/?utm_source=facebook&utm_medium=group_post&utm_campaign=first_customer_week&angle=payment_setup,0,0,0,0,0,若青中國旅策,只在允許分享實用資源的社團發布；若不允許連結則先回答問題
-Day 1,Public Reply Queue,10 則高意圖公開回覆,,https://bluehourchina.com/quiz/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=public_reply,0,0,0,0,0,若青中國旅策,先執行 ops/first-customer-90min-execution-2026-07-05.md 的 verified reply
-Day 2,Instagram,路線收藏片,,https://bluehourchina.com/g/route/?utm_source=instagram&utm_medium=reel&utm_campaign=first_customer_week&video=route,0,0,0,0,0,若青中國旅策,發布路線片並加限動
+Day 1,Public Reply Queue,10 則高意圖公開回覆,,https://bluehourchina.com/route-note/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&angle=public_reply,0,0,0,0,0,若青中國旅策,先執行 ops/first-customer-90min-execution-2026-07-05.md 的 verified reply
+Day 2,Instagram,路線收藏片,,https://bluehourchina.com/route-note/?utm_source=instagram&utm_medium=reel&utm_campaign=first_customer_week&angle=route_note_24h,0,0,0,0,0,若青中國旅策,發布路線片並加限動
 Day 2,Instagram,Before China 英文準備片,,https://bluehourchina.com/before-china/?utm_source=instagram&utm_medium=reel&utm_campaign=first_customer_week&angle=payment_setup,0,0,0,0,0,若青中國旅策,發布支付/網路/路線準備短片；互動者導到 interest 表單
-Day 3,YouTube Shorts,路線形狀片,,https://bluehourchina.com/g/route/?utm_source=youtube&utm_medium=shorts&utm_campaign=first_customer_week&video=route,0,0,0,0,0,若青中國旅策,發布 Shorts 並固定留言
-Day 4,LINE,同行者分享,,https://bluehourchina.com/g/partner/?utm_source=line&utm_medium=chat&utm_campaign=first_customer_week&video=partner,0,0,0,0,0,若青中國旅策,傳給既有朋友與潛在同行者
-Day 5,TikTok,私旅價值片,,https://bluehourchina.com/g/private/?utm_source=tiktok&utm_medium=short_video&utm_campaign=first_customer_week&video=private,0,0,0,0,0,若青中國旅策,發布私旅價值片
-Day 6,Instagram,直接轉化片,,https://bluehourchina.com/quick/?utm_source=instagram&utm_medium=reel&utm_campaign=first_customer_week&video=direct_lead,0,0,0,0,0,若青中國旅策,發布直接轉化片
-Day 7,All,補強最高互動腳本,,https://bluehourchina.com/quick/?utm_source=social&utm_medium=remarketing&utm_campaign=first_customer_week&video=best_angle,0,0,0,0,0,若青中國旅策,重發最高互動角度並私訊互動者
+Day 3,YouTube Shorts,路線形狀片,,https://bluehourchina.com/route-note/?utm_source=youtube&utm_medium=shorts&utm_campaign=first_customer_week&angle=route_note_24h,0,0,0,0,0,若青中國旅策,發布 Shorts 並固定留言
+Day 4,LINE,同行者分享,,https://bluehourchina.com/refer/?utm_source=line&utm_medium=chat&utm_campaign=first_customer_week&angle=warm_referral,0,0,0,0,0,若青中國旅策,傳給既有朋友與潛在同行者
+Day 5,TikTok,私旅價值片,,https://bluehourchina.com/route-note/?utm_source=tiktok&utm_medium=short_video&utm_campaign=first_customer_week&angle=private_route_value,0,0,0,0,0,若青中國旅策,發布私旅價值片
+Day 6,Instagram,直接轉化片,,https://bluehourchina.com/route-note/?utm_source=instagram&utm_medium=reel&utm_campaign=first_customer_week&angle=direct_lead,0,0,0,0,0,若青中國旅策,發布直接轉化片
+Day 7,All,補強最高互動腳本,,https://bluehourchina.com/route-note/?utm_source=social&utm_medium=remarketing&utm_campaign=first_customer_week&angle=best_angle,0,0,0,0,0,若青中國旅策,重發最高互動角度並私訊互動者

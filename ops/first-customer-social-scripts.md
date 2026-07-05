@@ -16,7 +16,7 @@ CTA:
 先看一週慢路線。
 
 Link:
-`https://bluehourchina.com/g/mistake/?utm_source=instagram&utm_medium=reel&utm_campaign=first_customer_week&video=mistake`
+`https://bluehourchina.com/route-note/?utm_source=instagram&utm_medium=reel&utm_campaign=first_customer_week&angle=mistake`
 
 ### Day 2: Route Shape
 
@@ -30,7 +30,7 @@ CTA:
 收藏，出發前再看。
 
 Link:
-`https://bluehourchina.com/g/route/?utm_source=instagram&utm_medium=reel&utm_campaign=first_customer_week&video=route`
+`https://bluehourchina.com/route-note/?utm_source=instagram&utm_medium=reel&utm_campaign=first_customer_week&angle=route`
 
 ### Day 3: Private Route Value
 
@@ -44,7 +44,7 @@ CTA:
 留下條件，先收到方向。
 
 Link:
-`https://bluehourchina.com/g/private/?utm_source=tiktok&utm_medium=short_video&utm_campaign=first_customer_week&video=private`
+`https://bluehourchina.com/route-note/?utm_source=tiktok&utm_medium=short_video&utm_campaign=first_customer_week&angle=private`
 
 ### Day 4: Partner Share
 
@@ -58,7 +58,7 @@ CTA:
 一起留下旅行條件。
 
 Link:
-`https://bluehourchina.com/g/partner/?utm_source=line&utm_medium=chat&utm_campaign=first_customer_week&video=partner`
+`https://bluehourchina.com/route-note/?utm_source=line&utm_medium=chat&utm_campaign=first_customer_week&angle=partner`
 
 ### Day 5: Compare Options
 
@@ -72,7 +72,7 @@ CTA:
 先做一份路線初談。
 
 Link:
-`https://bluehourchina.com/quiz/?utm_source=instagram&utm_medium=reel&utm_campaign=first_customer_week&video=compare`
+`https://bluehourchina.com/route-note/?utm_source=instagram&utm_medium=reel&utm_campaign=first_customer_week&angle=compare`
 
 ### Final Two Days: Direct Lead
 
@@ -83,30 +83,30 @@ Voiceover:
 不用立刻報名。先留下四個條件，我們回覆你一份初步路線、起價範圍，以及還需要確認的問題。
 
 CTA:
-1 分鐘路線自測，留下旅行條件。
+24 小時路線筆記，留下旅行條件。
 
 Link:
-`https://bluehourchina.com/quick/?utm_source=instagram&utm_medium=reel&utm_campaign=first_customer_week&video=direct_lead`
+`https://bluehourchina.com/route-note/?utm_source=instagram&utm_medium=reel&utm_campaign=first_customer_week&angle=direct_lead`
 
 ## Comment Replies
 
 Price question:
 可以先抓 RMB 8,800/人起，但會看季節、住宿、車輛和人數調整。你如果已經有月份和同行人數，可以先填這份，我們回一個比較準的方向：
-`https://bluehourchina.com/quiz/?utm_source=comment&utm_medium=social&utm_campaign=first_customer_week`
+`https://bluehourchina.com/route-note/?utm_source=comment&utm_medium=social&utm_campaign=first_customer_week`
 
 Route days question:
 雲南最舒服的起點是一週。大理留風和湖，沙溪留一個夜晚，麗江或白沙留雪山遠景。太短會一直趕路。這裡有路線入口：
-`https://bluehourchina.com/g/route/?utm_source=comment&utm_medium=social&utm_campaign=first_customer_week&video=route`
+`https://bluehourchina.com/route-note/?utm_source=comment&utm_medium=social&utm_campaign=first_customer_week&angle=route`
 
 Private tour question:
-私旅的價值不只是飯店更好，而是把車程、住宿位置、語言溝通和同行者節奏先整理好。你可以先留下條件，我們回初步方向：
-`https://bluehourchina.com/quiz/?utm_source=comment&utm_medium=social&utm_campaign=first_customer_week`
+私旅的價值不只是飯店更好，而是把車程、住宿位置、語言溝通和同行者節奏先整理好。你可以先留下條件，我們回 24 小時路線筆記與初步報價方向：
+`https://bluehourchina.com/route-note/?utm_source=comment&utm_medium=social&utm_campaign=first_customer_week`
 
 ## DM Flow
 
 First reply:
 謝謝你剛剛問雲南。先不用急著報名，我會先看 4 件事：月份、人數、天數、預算感。你可以直接填這份，我們再回你比較適合的路線方向：
-`https://bluehourchina.com/quick/?utm_source=dm&utm_medium=social&utm_campaign=first_customer_week`
+`https://bluehourchina.com/route-note/?utm_source=dm&utm_medium=social&utm_campaign=first_customer_week`
 
 If they ask whether it is expensive:
 我們不是最低價大團。雲南慢路線公開起價是 RMB 8,800/人，真正價格會看出發時間、住宿、車輛和人數。你可以先留下條件，我們會回一個比較負責任的方向。

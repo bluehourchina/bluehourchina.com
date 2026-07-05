@@ -13,14 +13,14 @@ Operating principle:
 
 Primary links:
 
-- English inquiry form: `https://bluehourchina.com/quick/en/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=live_targets_20260705`
+- English inquiry form: `https://bluehourchina.com/route-note/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&angle=live_targets_20260705`
 - Before-China checklist: `https://bluehourchina.com/before-china/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&angle=payment_setup`
 - WeChat Pay Visa/Mastercard guide: `https://bluehourchina.com/before-china/wechat-pay-visa-mastercard/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&angle=wechat_pay`
 - China payment checklist: `https://bluehourchina.com/before-china/china-payment-checklist/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&angle=payment_setup`
 - China travel apps checklist: `https://bluehourchina.com/before-china/china-travel-apps-before-trip/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&angle=apps_sms`
 - Before-China direct inquiry: `https://bluehourchina.com/interest.html?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&angle=payment_setup`
-- Chinese route self-check: `https://bluehourchina.com/quiz/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=live_targets_20260705`
-- Chinese direct inquiry form: `https://bluehourchina.com/quick/?utm_source=warm_dm&utm_medium=direct&utm_campaign=first_customer_week&video=live_targets_20260705`
+- Chinese route note: `https://bluehourchina.com/route-note/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&angle=live_targets_20260705`
+- Chinese direct inquiry form: `https://bluehourchina.com/route-note/?utm_source=warm_dm&utm_medium=direct&utm_campaign=first_customer_week&angle=live_targets_20260705`
 - Lead inbox: `ops/first-customer-lead-inbox.csv`
 - Reply log: `ops/first-customer-reply-log-2026-07-05.csv`
 
@@ -59,8 +59,8 @@ Use this only if logged in and the thread still accepts replies. If self-promoti
 
 我會先問五件事：月份、幾位同行、有沒有長輩小孩、預算偏省還是偏舒服、最後是從哪個城市離開。這五個答案會直接決定要不要把瀘沽湖放進去。
 
-如果你想先判斷路線是否太趕，可以做這個 1 分鐘雲南路線自測：
-https://bluehourchina.com/quiz/?utm_source=backpackers&utm_medium=forum_reply&utm_campaign=first_customer_week&video=erhai_shaxi_lugu
+如果你想先判斷路線是否太趕，可以留下需求，我們回 24 小時雲南路線筆記：
+https://bluehourchina.com/route-note/?utm_source=backpackers&utm_medium=forum_reply&utm_campaign=first_customer_week&angle=erhai_shaxi_lugu
 ```
 
 ### Tripadvisor 16-Day Yunnan
@@ -75,7 +75,7 @@ Your core route already has enough: Dali, Shaxi, Lijiang, Tiger Leaping Gorge an
 For transport, Didi/Amap/Alipay can solve city movement, but for route comfort the bigger question is where your hotels are and how many station transfers you accept with luggage. Public transport is possible; a private car only becomes useful for the awkward legs or if you care more about comfort than lowest cost.
 
 If you later want a more comfortable private version of this route rather than a hostel/public-transport version, you can leave month, group size and comfort level here and we will reply with an initial route note:
-https://bluehourchina.com/quick/en/?utm_source=tripadvisor&utm_medium=forum_reply&utm_campaign=first_customer_week&video=yunnan_16_days
+https://bluehourchina.com/route-note/?utm_source=tripadvisor&utm_medium=forum_reply&utm_campaign=first_customer_week&angle=yunnan_16_days
 ```
 
 If the forum feels strict about links, replace the last paragraph with:
@@ -137,7 +137,7 @@ https://bluehourchina.com/before-china/wechat-pay-visa-mastercard/?utm_source=re
 For a first Yunnan route, I would avoid changing cities every day. A calmer shape is Dali for lake/old-town pacing, Shaxi for one slower night, then Lijiang or Baisha for the snow-mountain side. The real risk is not missing one attraction; it is hotel location, car time, language/app friction and how tired the group gets.
 
 If you already know your month, group size and comfort level, you can leave the basics here and we will reply with an initial route note:
-https://bluehourchina.com/quick/en/?utm_source=reddit&utm_medium=reply&utm_campaign=first_customer_week&video=live_targets_20260705
+https://bluehourchina.com/route-note/?utm_source=reddit&utm_medium=reply&utm_campaign=first_customer_week&angle=live_targets_20260705
 ```
 
 ### Second Trip To China
@@ -146,14 +146,14 @@ https://bluehourchina.com/quick/en/?utm_source=reddit&utm_medium=reply&utm_campa
 If you have already done Beijing or Shanghai, Yunnan is a strong second-China route because it feels different without becoming too hard to enter. I would choose the route by pace first: Dali, Shaxi and Lijiang/Baisha each need a different kind of time.
 
 If helpful, share month, group size, days and budget/comfort level here:
-https://bluehourchina.com/quick/en/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=live_targets_20260705
+https://bluehourchina.com/route-note/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&angle=live_targets_20260705
 ```
 
 ### YouTube Comment
 
 ```text
 Yunnan works better when you plan rhythm before attractions. Dali can take the lake/old-town time, Shaxi is worth one slower night, and Lijiang/Baisha should not be squeezed in only for a photo. If you already have a month and group size, this 60-second form is enough for an initial route note:
-https://bluehourchina.com/quick/en/?utm_source=youtube&utm_medium=comment_reply&utm_campaign=first_customer_week&video=live_targets_20260705
+https://bluehourchina.com/route-note/?utm_source=youtube&utm_medium=comment_reply&utm_campaign=first_customer_week&angle=live_targets_20260705
 ```
 
 ## Chinese Public Reply Templates
@@ -163,8 +163,8 @@ https://bluehourchina.com/quick/en/?utm_source=youtube&utm_medium=comment_reply&
 ```text
 如果是第一次排雲南，我會先避免每天換城市。比較舒服的形狀是：大理留湖邊和早晨，沙溪留一個晚上，麗江或白沙留雪山遠景。真正容易出問題的通常不是景點，而是住宿位置、車程、同行者體力和語言/支付細節。
 
-如果你已經有月份、人數、天數和預算感，可以先做 1 分鐘路線自測，我們再回一份初步方向：
-https://bluehourchina.com/quiz/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=live_targets_20260705
+如果你已經有月份、人數、天數和預算感，可以先留下需求，拿 24 小時路線筆記，我們再回一份 24 小時路線筆記與初步報價方向：
+https://bluehourchina.com/route-note/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&angle=live_targets_20260705
 ```
 
 ### 私訊追問
@@ -184,10 +184,10 @@ https://bluehourchina.com/quiz/?utm_source=community&utm_medium=reply&utm_campai
 ## Warm DM Script
 
 ```text
-我這週在推一個「雲南一週慢路線初談」，目標是幫想去大理、沙溪、麗江的人先判斷怎麼排比較舒服。不是大團，也不是一上來要你付錢；先看月份、人數、天數和預算感，再回初步方向。
+我這週在推一個「雲南一週慢路線初談」，目標是幫想去大理、沙溪、麗江的人先判斷怎麼排比較舒服。不是大團，也不是一上來要你付錢；先看月份、人數、天數和預算感，再回 24 小時路線筆記與初步報價方向。
 
 如果你身邊有人今年或明年想去雲南，可以幫我轉這個：
-https://bluehourchina.com/quick/?utm_source=line&utm_medium=warm_network&utm_campaign=first_customer_week&video=live_targets_20260705
+https://bluehourchina.com/route-note/?utm_source=line&utm_medium=warm_network&utm_campaign=first_customer_week&angle=live_targets_20260705
 ```
 
 ## Qualification Rule
@@ -200,7 +200,7 @@ Warm lead:
 
 Qualified lead:
 
-- Gives contact method plus enough route context to prepare an initial quote; or submits `/quiz/`, `/quick/` or `/quick/en/`.
+- Gives contact method plus enough route context to prepare an initial quote; or submits `/route-note/`, `/route-note/` or `/route-note/`.
 
 Immediate next step after any warm reply:
 

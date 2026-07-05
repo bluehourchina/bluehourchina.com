@@ -6,7 +6,7 @@ Purpose: decide quickly whether a social reply is only interest or a real first-
 
 - `new_interest`: liked, commented or replied, but has not answered route details.
 - `warm_reply`: answered at least 3 qualification fields.
-- `form_submitted`: submitted `/quick/` or another lead form.
+- `form_submitted`: submitted `/route-note/` or another lead form.
 - `qualified`: has contact method plus at least 4 qualification fields.
 - `quoted`: received a first route note and starting quote.
 - `won`: paid deposit or confirmed paid route-consultation/service path.
@@ -50,7 +50,7 @@ Do not count generic likes, saves, "nice", "interested" or "how much" as a lead 
 4. 預算接近 RMB 8,800/人起，還是更重視住宿舒適？
 5. Email / WhatsApp / LINE / 微信 哪個方便？
 
-有這些資訊後，我們可以先回一份初步路線方向與起價判斷。
+有這些資訊後，我們可以先回一份 24 小時路線筆記與初步報價方向與起價判斷。
 ```
 
 ## First Reply: Qualified Yunnan Lead
@@ -88,7 +88,7 @@ If this direction feels close, we can prepare a more complete route note and for
 ```text
 我先幫你留著這個方向。雲南一週慢路線最重要的是不要排太滿，否則大理、沙溪、麗江會都變成路過。
 
-你方便時只要回月份、人數和預算感，我們就能先判斷是否適合，再回初步路線方向。
+你方便時只要回月份、人數和預算感，我們就能先判斷是否適合，再回 24 小時路線筆記與初步報價方向。
 ```
 
 ## Daily Operating Rule
