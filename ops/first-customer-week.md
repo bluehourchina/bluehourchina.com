@@ -21,6 +21,9 @@ Internal operating sheet for getting the first qualified consultation from socia
 - Daily tracker import file: `ops/first-customer-week-tracker.csv`
 - Funnel audit: `scripts/audit-first-customer-funnel.mjs`
 - Zero-link first-touch scripts: `ops/first-customer-zero-link-sprint-2026-07-05.md`
+- Next-action generator: `scripts/next-first-customer-actions.mjs`
+- Current next actions: `ops/first-customer-next-actions-2026-07-05.md`
+- Search insight angles: `ops/first-customer-search-insights-2026-07-05.md`
 
 ## Current Gate
 
@@ -38,6 +41,7 @@ Next required action:
 - After posting, log live URLs in `ops/first-customer-execution-log-2026-07-05.csv`.
 - Run the zero-link sprint across Reddit, Facebook, Instagram/Threads comments, warm DMs or forums where links look promotional.
 - Run `node scripts/audit-first-customer-funnel.mjs` every day until the first qualified lead appears.
+- Run `node scripts/next-first-customer-actions.mjs` before each execution block; if posted URLs are still 0, distribution actions outrank website redesign.
 
 ## Tracking Links
 
