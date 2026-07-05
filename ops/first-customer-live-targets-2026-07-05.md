@@ -8,6 +8,9 @@ Primary links:
 
 - English inquiry form: `https://bluehourchina.com/quick/en/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=live_targets_20260705`
 - Before-China checklist: `https://bluehourchina.com/before-china/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&angle=payment_setup`
+- WeChat Pay Visa/Mastercard guide: `https://bluehourchina.com/before-china/wechat-pay-visa-mastercard/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&angle=wechat_pay`
+- China payment checklist: `https://bluehourchina.com/before-china/china-payment-checklist/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&angle=payment_setup`
+- China travel apps checklist: `https://bluehourchina.com/before-china/china-travel-apps-before-trip/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&angle=apps_sms`
 - Before-China direct inquiry: `https://bluehourchina.com/interest.html?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&angle=payment_setup`
 - Chinese route self-check: `https://bluehourchina.com/quiz/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=live_targets_20260705`
 - Chinese direct inquiry form: `https://bluehourchina.com/quick/?utm_source=warm_dm&utm_medium=direct&utm_campaign=first_customer_week&video=live_targets_20260705`
@@ -84,9 +87,9 @@ Use these only to strengthen the advice. Do not turn social replies into citatio
 |---:|---|---|---|---|---|
 | 10 | Facebook | Yunnan travel groups | `https://www.facebook.com/search/groups/?q=Yunnan%20travel` | People asking Dali/Lijiang/Shangri-La route days or driver advice | Join where allowed, answer first, link only after useful reply |
 | 10 | Reddit | r/travelchina new Yunnan search | `https://www.reddit.com/r/travelchina/search/?q=Yunnan&restrict_sr=1&sort=new` | Foreign travellers asking itinerary and logistics | Reply with route shape; use English form |
-| 10 | Reddit | r/travelchina payment search | `https://www.reddit.com/r/travelchina/search/?q=WeChat%20Pay&restrict_sr=1&sort=new` | Foreign travellers asking payment setup | Reply with Before-China checklist; ask month/destination after useful answer |
+| 10 | Reddit | r/travelchina payment search | `https://www.reddit.com/r/travelchina/search/?q=WeChat%20Pay&restrict_sr=1&sort=new` | Foreign travellers asking payment setup | Reply with exact guide: WeChat Pay page for card-binding questions, payment checklist for broad payment, app checklist for eSIM/SMS |
 | 9 | Reddit | r/chinatravel Yunnan search | `https://www.reddit.com/r/chinatravel/search/?q=Yunnan&restrict_sr=1&sort=new` | Travellers comparing China destinations | Reply with second-trip framing; use English form |
-| 9 | Reddit | r/chinatravel payment search | `https://www.reddit.com/r/chinatravel/search/?q=payment&restrict_sr=1&sort=new` | Practical payment/app friction | Use official-source-backed answer; link only where allowed |
+| 9 | Reddit | r/chinatravel payment search | `https://www.reddit.com/r/chinatravel/search/?q=payment&restrict_sr=1&sort=new` | Practical payment/app friction | Use official-source-backed answer; link only where allowed; ask month/destination after useful answer |
 | 9 | Google | English Yunnan itinerary forum search | `https://www.google.com/search?q=Yunnan+Dali+Lijiang+itinerary+forum` | People asking plans outside social feeds | Find replyable forum/community posts |
 | 9 | Google | Taiwan/HK Yunnan route search | `https://www.google.com/search?q=%E9%9B%B2%E5%8D%97+%E5%A4%A7%E7%90%86+%E9%BA%97%E6%B1%9F+%E6%B2%99%E6%BA%AA+%E8%A1%8C%E7%A8%8B` | Chinese users asking route sequence | Reply in Chinese if account exists |
 | 8 | YouTube | Recent Yunnan videos | `https://www.youtube.com/results?search_query=Yunnan+travel+Dali+Lijiang` | Comments asking days, transport, route comfort | Reply to questions only; avoid spam |
@@ -110,7 +113,10 @@ The practical layer matters more than most first-time visitors expect. Before Ch
 WeChat Pay can support some overseas cards for supported consumption scenarios, but I would still not rely on one method only. If your route goes beyond Beijing/Shanghai, also check hotel location, car time, language/app friction and whether the daily pace is realistic.
 
 Checklist:
-https://bluehourchina.com/before-china/?utm_source=reddit&utm_medium=reply&utm_campaign=first_customer_week&angle=payment_setup
+https://bluehourchina.com/before-china/china-payment-checklist/?utm_source=reddit&utm_medium=reply&utm_campaign=first_customer_week&angle=payment_setup
+
+WeChat Pay with Visa/Mastercard:
+https://bluehourchina.com/before-china/wechat-pay-visa-mastercard/?utm_source=reddit&utm_medium=reply&utm_campaign=first_customer_week&angle=wechat_pay
 ```
 
 ### Route Too Rushed
