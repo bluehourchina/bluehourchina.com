@@ -235,13 +235,40 @@
       border-bottom: 1px solid rgba(102,112,105,.38);
       padding-bottom: 3px;
     }
+    .promise-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      margin: 0 0 24px;
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+    .promise-grid div {
+      background: #fffdf8;
+      padding: 14px;
+    }
+    .promise-grid span {
+      display: block;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .promise-grid b {
+      display: block;
+      margin-top: 6px;
+      color: var(--forest);
+      font-size: 15px;
+      line-height: 1.45;
+    }
     @media (max-width: 980px) {
       .page { grid-template-columns: 1fr; }
       .intro, .form-side { min-height: auto; }
       .intro { padding: 30px 24px 40px; }
       .intro::after { inset: 18px; }
       .hero-copy { padding: 82px 0 54px; }
-      .mini-grid, form { grid-template-columns: 1fr; }
+      .mini-grid, .promise-grid, form { grid-template-columns: 1fr; }
       textarea, .submit-note, button, .full { grid-column: span 1; }
     }
   </style>
@@ -276,6 +303,11 @@
           <p class="eyebrow">QUICK FORM</p>
           <h2>填完 4 題<br>先收到方向</h2>
           <p>這一步只是初談，不需要立刻付訂。若青中國旅策會先看季節、同行者、住宿感與預算，再回覆第一份路線建議。</p>
+        </div>
+        <div class="promise-grid" aria-label="送出後會收到的內容">
+          <div><span>01</span><b>12 小時內先回覆是否適合這條路線</b></div>
+          <div><span>02</span><b>給出 RMB 8,800 起的初步價格判斷</b></div>
+          <div><span>03</span><b>列出下一輪要確認的住宿、車程與同行者需求</b></div>
         </div>
 
         <form class="lead-form" data-lead-value="8800" data-lead-currency="CNY" name="yunnan-private-tour-zh" method="POST" action="https://formsubmit.co/bluehourchina@gmail.com">

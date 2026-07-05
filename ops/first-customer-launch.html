@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,follow">
+  <meta name="googlebot" content="noindex,follow">
+  <title>First Customer Launch Board｜若青中國旅策</title>
+  <meta name="description" content="若青中國旅策第一位客戶獲客作戰板：今日發文、社群回覆、私訊、追蹤與首封回覆。">
+  <link rel="icon" type="image/png" href="/assets/social/gowind-avatar.png">
+  <style>
+    :root {
+      --forest: #102d26;
+      --paper: #f6efe3;
+      --white: #fffaf0;
+      --ink: #1f2924;
+      --muted: #667069;
+      --gold: #c99a52;
+      --line: rgba(31,41,36,.16);
+      --soft: rgba(255,250,240,.7);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    .hero {
+      min-height: 58svh;
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(8,20,16,.96), rgba(8,20,16,.66), rgba(8,20,16,.24)),
+        url("/assets/real-yunnan/erhai-cangshan-web.jpg") center / cover no-repeat;
+      display: flex;
+      align-items: flex-end;
+      padding: clamp(26px, 5vw, 68px);
+    }
+    .hero-inner { width: min(1120px, 100%); }
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 950;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 {
+      margin: 0;
+      font-family: "Noto Serif TC", "Songti TC", serif;
+      letter-spacing: 0;
+      line-height: 1.12;
+    }
+    h1 {
+      max-width: 920px;
+      font-size: clamp(38px, 7vw, 76px);
+    }
+    .lead {
+      max-width: 780px;
+      margin: 20px 0 0;
+      color: rgba(255,250,240,.82);
+      font-size: clamp(18px, 2vw, 24px);
+      font-weight: 720;
+    }
+    .wrap {
+      width: min(1120px, calc(100% - 34px));
+      margin: 0 auto;
+      padding: 42px 0;
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+    .metric {
+      background: var(--white);
+      padding: 18px;
+      min-height: 116px;
+    }
+    .metric span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .metric b {
+      display: block;
+      margin-top: 8px;
+      color: var(--forest);
+      font-size: 28px;
+    }
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+      gap: 28px;
+      align-items: end;
+      border-top: 1px solid var(--line);
+      padding-top: 28px;
+      margin-bottom: 18px;
+    }
+    .section-head h2 {
+      color: var(--forest);
+      font-size: clamp(28px, 4vw, 48px);
+    }
+    .section-head p {
+      margin: 0;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .video-card {
+      border: 1px solid var(--line);
+      background: var(--white);
+      padding: 12px;
+    }
+    .video-card video {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      display: block;
+      object-fit: cover;
+      background: var(--forest);
+    }
+    .video-card h3 {
+      margin-top: 12px;
+      color: var(--forest);
+      font-size: 20px;
+    }
+    .video-card p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 680;
+    }
+    .card {
+      border: 1px solid var(--line);
+      background: var(--white);
+      padding: 20px;
+    }
+    .card h3 { color: var(--forest); font-size: 26px; }
+    .card p, .card li { color: var(--muted); font-weight: 680; }
+    .card ul { margin: 14px 0 0; padding-left: 20px; }
+    .task {
+      display: grid;
+      grid-template-columns: 22px minmax(0, 1fr);
+      gap: 12px;
+      align-items: start;
+      padding: 12px 0;
+      border-top: 1px solid rgba(31,41,36,.1);
+    }
+    .task:first-of-type { border-top: 0; }
+    input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 4px;
+      accent-color: var(--gold);
+    }
+    pre {
+      white-space: pre-wrap;
+      margin: 14px 0 0;
+      padding: 16px;
+      background: #fffdf8;
+      border: 1px solid var(--line);
+      color: var(--ink);
+      font: 650 15px/1.7 "Noto Sans TC", "PingFang TC", sans-serif;
+      overflow-wrap: anywhere;
+    }
+    .copy-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    button, .link-btn {
+      min-height: 42px;
+      border: 1px solid var(--forest);
+      background: var(--forest);
+      color: var(--white);
+      padding: 10px 14px;
+      font: inherit;
+      font-weight: 900;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    button.secondary, .link-btn.secondary {
+      background: transparent;
+      color: var(--forest);
+    }
+    .table-wrap { overflow-x: auto; border: 1px solid var(--line); background: var(--white); }
+    table {
+      width: 100%;
+      min-width: 760px;
+      border-collapse: collapse;
+    }
+    th, td {
+      border-bottom: 1px solid var(--line);
+      padding: 13px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      color: var(--forest);
+      background: #fffdf8;
+      font-size: 13px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    td { color: var(--muted); font-weight: 680; }
+    .sticky {
+      position: sticky;
+      bottom: 0;
+      z-index: 5;
+      background: rgba(246,238,227,.94);
+      border-top: 1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+    .sticky .wrap {
+      padding: 12px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .sticky strong { color: var(--forest); }
+    @media (max-width: 860px) {
+      .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .section-head, .grid, .video-grid { grid-template-columns: 1fr; }
+      .hero { min-height: 52svh; }
+      .card { padding: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">First Customer Week</p>
+      <h1>今天只做一件事：拿到第一個可跟進的旅行需求</h1>
+      <p class="lead">不要等演算法。今天要同時發短片、回覆高意圖問題、暖私訊轉發，全部導到 60 秒表單。</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="wrap">
+      <div class="metrics">
+        <div class="metric"><span>Public replies</span><b>10</b></div>
+        <div class="metric"><span>Warm DMs</span><b>20</b></div>
+        <div class="metric"><span>Website clicks</span><b>10</b></div>
+        <div class="metric"><span>Form goal</span><b>1</b></div>
+        <div class="metric"><span>Reply SLA</span><b>12h</b></div>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="section-head">
+        <div><p class="eyebrow">Today Links</p><h2>今天只推這兩個入口</h2></div>
+        <p>短片、留言、私訊不要分散導流。高意圖的人直接送到 `/quick/`，還在看內容的人送到 `/g/mistake/`。</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>直接轉換連結</h3>
+          <pre data-copy>https://bluehourchina.com/quick/?utm_source=social&utm_medium=first_reply&utm_campaign=first_customer_week&video=day1</pre>
+          <div class="copy-row"><button data-copy-button>複製</button><a class="link-btn secondary" href="/quick/?utm_source=social&utm_medium=first_reply&utm_campaign=first_customer_week&video=day1">打開表單</a></div>
+        </article>
+        <article class="card">
+          <h3>內容承接連結</h3>
+          <pre data-copy>https://bluehourchina.com/g/mistake/?utm_source=social&utm_medium=profile&utm_campaign=first_customer_week&video=mistake</pre>
+          <div class="copy-row"><button data-copy-button>複製</button><a class="link-btn secondary" href="/g/mistake/?utm_source=social&utm_medium=profile&utm_campaign=first_customer_week&video=mistake">打開入口</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="section-head">
+        <div><p class="eyebrow">Ready Videos</p><h2>首週短片素材</h2></div>
+        <p>今天先發第一支 `mistake hook`。其餘三支用於 Day 2-5，不要等重新剪片。</p>
+      </div>
+      <div class="video-grid">
+        <article class="video-card">
+          <video controls preload="metadata" poster="/assets/social/gowind-mistake-hook-cover.jpg"><source src="/assets/social/gowind-mistake-hook.webm" type="video/webm"></video>
+          <h3>Day 1：排錯痛點</h3>
+          <p>主推今天。固定留言導到 `/quick/`。</p>
+          <div class="copy-row"><a class="link-btn" href="/assets/social/gowind-mistake-hook.webm" download>下載影片</a><a class="link-btn secondary" href="/assets/social/gowind-mistake-hook-cover.jpg" download>下載封面</a></div>
+        </article>
+        <article class="video-card">
+          <video controls preload="metadata" poster="/assets/social/gowind-route-logic-cover.jpg"><source src="/assets/social/gowind-route-logic.webm" type="video/webm"></video>
+          <h3>Day 2：路線邏輯</h3>
+          <p>用來解釋大理、沙溪、麗江節奏。</p>
+          <div class="copy-row"><a class="link-btn" href="/assets/social/gowind-route-logic.webm" download>下載影片</a><a class="link-btn secondary" href="/assets/social/gowind-route-logic-cover.jpg" download>下載封面</a></div>
+        </article>
+        <article class="video-card">
+          <video controls preload="metadata" poster="/assets/social/gowind-premium-planning-cover.jpg"><source src="/assets/social/gowind-premium-planning.webm" type="video/webm"></video>
+          <h3>Day 3：私旅價值</h3>
+          <p>把價值放在少出錯、少折騰。</p>
+          <div class="copy-row"><a class="link-btn" href="/assets/social/gowind-premium-planning.webm" download>下載影片</a><a class="link-btn secondary" href="/assets/social/gowind-premium-planning-cover.jpg" download>下載封面</a></div>
+        </article>
+        <article class="video-card">
+          <video controls preload="metadata" poster="/assets/social/gowind-partner-share-cover.jpg"><source src="/assets/social/gowind-partner-share.webm" type="video/webm"></video>
+          <h3>Day 4：同行者分享</h3>
+          <p>適合 LINE、限動與私訊轉發。</p>
+          <div class="copy-row"><a class="link-btn" href="/assets/social/gowind-partner-share.webm" download>下載影片</a><a class="link-btn secondary" href="/assets/social/gowind-partner-share-cover.jpg" download>下載封面</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="section-head">
+        <div><p class="eyebrow">Six-Hour Sprint</p><h2>6 小時執行順序</h2></div>
+        <p>先把高意圖流量帶進來，再看數據。沒有留言就去找正在問路線的人，不等自然流量。</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>發布與固定留言</h3>
+          <label class="task"><input type="checkbox" data-task="post_ig"><span>IG Reels 發痛點片：第一次去雲南，不要把一週排成每天換城市。</span></label>
+          <label class="task"><input type="checkbox" data-task="post_tiktok"><span>TikTok 同步痛點片，文字用同一個 opening。</span></label>
+          <label class="task"><input type="checkbox" data-task="post_youtube"><span>YouTube Shorts 同步，description 放 `/g/mistake/`。</span></label>
+          <label class="task"><input type="checkbox" data-task="pin_comment"><span>三個平台都固定留言，使用 `/quick/` 直接表單連結。</span></label>
+        </article>
+        <article class="card">
+          <h3>主動獲客</h3>
+          <label class="task"><input type="checkbox" data-task="warm_dm_20"><span>發 20 則暖私訊/LINE，對象是可能認識雲南或中國旅客的人。</span></label>
+          <label class="task"><input type="checkbox" data-task="public_reply_10"><span>回 10 則公開問題：Reddit、FB group、Dcard、背包客棧、Threads。</span></label>
+          <label class="task"><input type="checkbox" data-task="route_convo_3"><span>拉出 3 個路線對話，問月份、人數、天數、預算感。</span></label>
+          <label class="task"><input type="checkbox" data-task="tracker_update"><span>6 小時後更新 tracker：曝光、點擊、表單、暖線索。</span></label>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="section-head">
+        <div><p class="eyebrow">Short Video</p><h2>今天的短片稿</h2></div>
+        <p>只用一個痛點。不要講品牌故事，不要講太多景點，先讓使用者覺得「我可能真的會排錯」。</p>
+      </div>
+      <article class="card">
+        <h3>15 秒腳本</h3>
+        <pre data-copy>Opening：
+第一次去雲南，不要把一週排成每天換城市
+
+Voiceover：
+雲南最容易排錯的地方，不是景點不夠，而是每天都在換城市。大理需要清晨，沙溪需要夜晚，麗江或白沙適合把雪山放遠一點。真正舒服的一週，是讓每個地方都有自己的時間。
+
+End text：
+有月份、人數與預算感，先留下條件</pre>
+        <div class="copy-row"><button data-copy-button>複製腳本</button></div>
+      </article>
+    </section>
+
+    <section class="wrap">
+      <div class="section-head">
+        <div><p class="eyebrow">Captions</p><h2>貼文文案</h2></div>
+        <p>中文用在 IG/TikTok/LINE；英文用在 Reddit、Facebook travel groups、YouTube comment。</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>中文 caption</h3>
+          <pre data-copy>第一次去雲南，最常見的錯不是少去一個景點，而是每天都在換城市。
+
+大理、沙溪、麗江或白沙，其實需要的是不同節奏：湖邊的早晨、古鎮的夜、雪山遠遠在那裡。
+
+如果你已經有出發月份、人數和預算感，可以先留下條件，我們回你一份初步路線方向。
+
+Link in bio / pinned comment.
+
+#雲南旅遊 #大理旅行 #沙溪古鎮 #麗江旅行 #中國旅行 #私人旅行 #慢旅行 #高端旅行 #ChinaTravel #YunnanTravel</pre>
+          <div class="copy-row"><button data-copy-button>複製中文</button></div>
+        </article>
+        <article class="card">
+          <h3>English caption</h3>
+          <pre data-copy>The most common Yunnan mistake is not missing one more sight. It is moving cities every day.
+
+Dali, Shaxi and Lijiang/Baisha need different kinds of time: a lake morning, one old-town night, and the snow mountain kept at a gentle distance.
+
+If you already know your month, group size and comfort level, leave the details. We will reply with an initial route note and a starting quote.
+
+https://bluehourchina.com/quick/?utm_source=english_social&utm_medium=caption&utm_campaign=first_customer_week&video=mistake
+
+#ChinaTravel #YunnanTravel #DaliTravel #Lijiang #PrivateTravel #SlowTravel</pre>
+          <div class="copy-row"><button data-copy-button>複製英文</button></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="section-head">
+        <div><p class="eyebrow">Replies</p><h2>高意圖社群回覆</h2></div>
+        <p>先給有用答案，再放連結。遇到禁止自薦的群，只給建議並請對方私訊。</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <h3>英文路線回覆</h3>
+          <pre data-copy>If this is your first Yunnan route, I would not try to change cities every day. A comfortable shape is usually Dali for lake/old-town pacing, Shaxi for one slower night, then Lijiang or Baisha for the snow-mountain side. The hard part is not the number of sights; it is hotel location, car time, language/app friction and how tired the group gets.
+
+If helpful, you can leave month, group size and budget here and we will reply with an initial route note:
+https://bluehourchina.com/quick/?utm_source=reddit&utm_medium=reply&utm_campaign=first_customer_week&video=travelchina</pre>
+          <div class="copy-row"><button data-copy-button>複製英文回覆</button></div>
+        </article>
+        <article class="card">
+          <h3>中文路線回覆</h3>
+          <pre data-copy>如果是第一次排雲南，我會先避免每天換城市。比較舒服的形狀是：大理留湖邊和早晨，沙溪留一個晚上，麗江或白沙留雪山遠景。真正容易出問題的通常不是景點，而是住宿位置、車程、同行者體力和語言/支付細節。
+
+如果你已經有月份、人數、天數和預算感，可以先留下條件，我們回一份初步路線方向：
+https://bluehourchina.com/quick/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=tw_forum</pre>
+          <div class="copy-row"><button data-copy-button>複製中文回覆</button></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="section-head">
+        <div><p class="eyebrow">Warm DM</p><h2>暖私訊與轉發</h2></div>
+        <p>不要只找會旅行的人，也找「認識會旅行的人」。這是今天最快拿到第一個有效需求的路徑。</p>
+      </div>
+      <article class="card">
+        <h3>LINE / DM 訊息</h3>
+        <pre data-copy>我這週在測一個雲南深度路線初談，目標是幫想去大理、沙溪、麗江的人先判斷一週路線怎麼排比較舒服。不是大團，也不是廉價行程；先看月份、人數、天數和預算感，再回初步方向。
+
+如果你身邊有人今年或明年想去雲南，可以把這個連結給他：
+https://bluehourchina.com/quick/?utm_source=line&utm_medium=warm_network&utm_campaign=first_customer_week&video=referral</pre>
+        <div class="copy-row"><button data-copy-button>複製私訊</button></div>
+      </article>
+    </section>
+
+    <section class="wrap">
+      <div class="section-head">
+        <div><p class="eyebrow">Lead Qualification</p><h2>有人回覆時只問這 5 題</h2></div>
+        <p>對方答到 3 題以上就是暖線索；如果留下聯絡方式，就是表單跟進對象。</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>欄位</th><th>問題</th><th>判斷</th></tr></thead>
+          <tbody>
+            <tr><td>月份</td><td>大概哪個月份出發？</td><td>判斷季節、價格與住宿壓力。</td></tr>
+            <tr><td>人數</td><td>幾位同行？有小孩或長輩嗎？</td><td>判斷車、房、體力與路線節奏。</td></tr>
+            <tr><td>天數</td><td>想走一週，還是一週多一點？</td><td>一週主推大理、沙溪、麗江/白沙。</td></tr>
+            <tr><td>預算</td><td>預算接近 RMB 8,800/人起，還是更重視住宿舒適？</td><td>先篩掉不適合的低價需求。</td></tr>
+            <tr><td>聯絡</td><td>Email、WhatsApp、LINE 還是微信方便？</td><td>可跟進才算有效線索。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="wrap">
+      <div class="section-head">
+        <div><p class="eyebrow">Search Targets</p><h2>今天要找人的地方</h2></div>
+        <p>目標不是曝光，是找到正在問路線、預算、天數、交通的人。</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Channel</th><th>Search</th><th>Use this link</th></tr></thead>
+          <tbody>
+            <tr><td>Reddit</td><td>Yunnan itinerary, Dali Lijiang itinerary, China beyond Beijing Shanghai</td><td>https://bluehourchina.com/quick/?utm_source=reddit&utm_medium=reply&utm_campaign=first_customer_week&video=travelchina</td></tr>
+            <tr><td>Facebook groups</td><td>China travel, Yunnan travel, Asia travel planning</td><td>https://bluehourchina.com/quick/?utm_source=facebook&utm_medium=group_reply&utm_campaign=first_customer_week&video=facebook_group</td></tr>
+            <tr><td>Dcard / 背包客棧</td><td>雲南 自由行 大理 麗江、雲南 沙溪 行程、雲南 包車</td><td>https://bluehourchina.com/quick/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=tw_forum</td></tr>
+            <tr><td>Instagram / Threads</td><td>#YunnanTravel, #ChinaTravel, #DaliTravel, #雲南旅遊</td><td>https://bluehourchina.com/quick/?utm_source=instagram&utm_medium=comment_reply&utm_campaign=first_customer_week&video=ig_search</td></tr>
+            <tr><td>YouTube</td><td>Recent Yunnan travel videos, Dali Lijiang comments</td><td>https://bluehourchina.com/quick/?utm_source=youtube&utm_medium=comment_reply&utm_campaign=first_customer_week&video=youtube_search</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <div class="sticky">
+    <div class="wrap">
+      <strong>今天主入口：/quick/</strong>
+      <div class="copy-row">
+        <a class="link-btn" href="/quick/?utm_source=social&utm_medium=first_reply&utm_campaign=first_customer_week&video=day1">打開表單</a>
+        <a class="link-btn secondary" href="/ops/first-customer-week-tracker.csv">下載 tracker</a>
+        <a class="link-btn secondary" href="/ops/first-customer-outreach-targets.csv">下載 targets</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const storageKey = "bluehour-first-customer-launch";
+    const saved = JSON.parse(localStorage.getItem(storageKey) || "{}");
+    document.querySelectorAll("[data-task]").forEach((checkbox) => {
+      checkbox.checked = Boolean(saved[checkbox.dataset.task]);
+      checkbox.addEventListener("change", () => {
+        saved[checkbox.dataset.task] = checkbox.checked;
+        localStorage.setItem(storageKey, JSON.stringify(saved));
+      });
+    });
+    document.querySelectorAll("[data-copy-button]").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const copyBlock = button.closest(".card")?.querySelector("[data-copy]");
+        if (!copyBlock) return;
+        await navigator.clipboard.writeText(copyBlock.textContent.trim());
+        const original = button.textContent;
+        button.textContent = "已複製";
+        setTimeout(() => { button.textContent = original; }, 1200);
+      });
+    });
+  </script>
+</body>
+</html>
