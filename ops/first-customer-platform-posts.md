@@ -24,7 +24,7 @@ Caption:
 
 大理、沙溪、麗江或白沙，其實需要的是不同節奏：湖邊的早晨、古鎮的夜、雪山遠遠在那裡。
 
-如果你已經有出發月份、人數和預算感，可以先留下條件，我們回你一份初步路線方向。
+如果你已經有出發月份、人數和預算感，可以先做 1 分鐘路線自測，我們回你一份初步路線方向。
 
 Link in bio / pinned comment.
 
@@ -95,7 +95,7 @@ Send to people who may know travellers, not only people who will travel themselv
 ```text
 我最近在做一個中國非大城市深度旅遊的路線諮詢，先從雲南開始。不是大團，也不是廉價行程，重點是幫想去大理、沙溪、麗江的人把一週路線排得舒服一點。
 
-如果你身邊有人今年或明年想去雲南，可以把這個 60 秒初談連結給他。我們會先回一份初步路線方向，不會要求立刻付訂。
+如果你身邊有人今年或明年想去雲南，可以把這個連結給他。我們會先回一份初步路線方向，不會要求立刻付訂。
 
 https://bluehourchina.com/quick/?utm_source=line&utm_medium=warm_dm&utm_campaign=first_customer_week&video=day1
 ```
@@ -120,7 +120,7 @@ If this is your first Yunnan route, I would not change cities every day. A comfo
 ```text
 如果是第一次排雲南，我會先避免每天換城市。比較舒服的形狀是：大理留湖邊和早晨，沙溪留一個晚上，麗江或白沙留雪山遠景。真正容易出問題的通常不是景點，而是住宿位置、車程、同行者體力和語言/支付細節。
 
-如果你已經有月份、人數、天數和預算感，可以先留下條件，我們回一份初步路線方向：
+如果你已經有月份、人數、天數和預算感，可以先做 1 分鐘路線自測，我們回一份初步路線方向：
 https://bluehourchina.com/quiz/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=tw_forum
 ```
 
@@ -133,7 +133,7 @@ https://bluehourchina.com/quiz/?utm_source=community&utm_medium=reply&utm_campai
 ## Reply When Someone Asks Price
 
 ```text
-雲南慢路線公開起價是 RMB 8,800/人起，國際機票另計。正式價格會看季節、住宿等級、房型、人數、車輛和語言支援。你如果已經有月份和人數，可以先填 60 秒初談，我們回比較準的方向：
+雲南慢路線公開起價是 RMB 8,800/人起，國際機票另計。正式價格會看季節、住宿等級、房型、人數、車輛和語言支援。你如果已經有月份和人數，可以先留下需求，我們回比較準的方向：
 https://bluehourchina.com/quick/?utm_source=comment&utm_medium=price_reply&utm_campaign=first_customer_week
 ```
 
