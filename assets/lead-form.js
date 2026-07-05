@@ -7,6 +7,9 @@
     const source = leadFieldValue(form, "utm_source") || "site";
     const medium = leadFieldValue(form, "utm_medium") || "website";
     const campaign = leadFieldValue(form, "utm_campaign") || leadFieldValue(form, "campaign") || "private_route_consultation";
+    const intentAngle = leadFieldValue(form, "intent_angle");
+    const sourcePath = leadFieldValue(form, "source_path");
+    const sourceContent = leadFieldValue(form, "source_content");
     const language =
       leadFieldValue(form, "language") ||
       leadFieldValue(form, "language_needs") ||
@@ -25,6 +28,9 @@
       campaign,
       source,
       medium,
+      intent_angle: intentAngle || undefined,
+      source_path: sourcePath || undefined,
+      source_content: sourceContent || undefined,
       intake_provider:
         overrides.intakeProvider ||
         leadFieldValue(form, "intake_provider") ||
@@ -116,6 +122,8 @@
       submitted_at: new Date().toISOString(),
       page_url: window.location.href,
       referrer: document.referrer || "",
+      intent_angle: params.get("angle") || params.get("intent_angle") || params.get("video") || "",
+      source_path: params.get("source_path") || params.get("source_page") || "",
       utm_source: params.get("utm_source") || "site",
       utm_medium: params.get("utm_medium") || "multilingual",
       utm_campaign: params.get("utm_campaign") || "private_route_consultation"
@@ -124,7 +132,13 @@
 
   const setHiddenFields = (form) => {
     Object.entries(fieldValues()).forEach(([name, value]) => {
-      const input = form.querySelector('[name="' + name + '"]');
+      let input = form.querySelector('[name="' + name + '"]');
+      if (!input && ["intent_angle", "source_path"].includes(name)) {
+        input = document.createElement("input");
+        input.type = "hidden";
+        input.name = name;
+        form.appendChild(input);
+      }
       if (input) input.value = value;
     });
   };

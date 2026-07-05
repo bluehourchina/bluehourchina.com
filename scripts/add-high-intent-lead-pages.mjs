@@ -96,7 +96,8 @@ const pages = [
 
 function pageHtml(page) {
   const canonical = `https://bluehourchina.com/china-travel/${page.slug}/`;
-  const consultUrl = `/quick/en/?utm_source=high_intent_page&utm_medium=site&utm_campaign=first_customer_week&angle=${page.angle}`;
+  const sourcePath = `/china-travel/${page.slug}/`;
+  const consultUrl = `/quick/en/?utm_source=high_intent_page&utm_medium=site&utm_campaign=first_customer_week&angle=${page.angle}&source_path=${encodeURIComponent(sourcePath)}`;
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
