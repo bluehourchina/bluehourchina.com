@@ -19,6 +19,7 @@ const pages = [
   "/",
   "/before-china/",
   "/before-china/wechat-pay-visa-mastercard/",
+  "/before-china/wechat-pay-paypal-china-2026/",
   "/before-china/china-payment-checklist/",
   "/before-china/china-travel-apps-before-trip/",
   "/china-travel/",

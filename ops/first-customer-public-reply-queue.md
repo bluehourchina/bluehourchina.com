@@ -8,11 +8,11 @@ Primary route-check link:
 
 Direct inquiry link:
 
-`https://bluehourchina.com/quick/?utm_source=warm_reply&utm_medium=direct&utm_campaign=first_customer_week&video=public_reply`
+`https://bluehourchina.com/route-note/?utm_source=warm_reply&utm_medium=direct&utm_campaign=first_customer_week&angle=route_note_24h`
 
 English conversion link:
 
-`https://bluehourchina.com/quick/en/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=public_reply`
+`https://bluehourchina.com/route-note/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&angle=route_note_24h`
 
 Before-China practical checklist:
 
@@ -83,6 +83,8 @@ Use these searches manually while logged in. Reply only where recommendations or
 - `https://www.reddit.com/r/chinatravel/search/?q=Yunnan&restrict_sr=1&sort=new`
 - `https://www.reddit.com/r/travelchina/search/?q=WeChat%20Pay&restrict_sr=1&sort=new`
 - `https://www.reddit.com/r/chinatravel/search/?q=payment&restrict_sr=1&sort=new`
+- `https://www.reddit.com/r/travelchina/search/?q=PayPal%20WeChat%20Pay&restrict_sr=1&sort=new`
+- `https://www.reddit.com/r/chinatravel/search/?q=Visa%20Mastercard%20WeChat%20Pay&restrict_sr=1&sort=new`
 - `https://www.reddit.com/search/?q=Yunnan%20Dali%20Lijiang%20itinerary&sort=new`
 - `https://www.reddit.com/search/?q=China%20itinerary%20beyond%20Beijing%20Shanghai&sort=new`
 
@@ -99,7 +101,7 @@ Reply template:
 If this is your first Yunnan route, I would not change cities every day. A comfortable shape is usually Dali for lake/old-town pacing, Shaxi for one slower night, then Lijiang or Baisha for the snow-mountain side. The hard part is not the number of sights; it is hotel location, car time, language/app friction and how tired the group gets.
 
 If helpful, you can leave month, group size and budget here and we will reply with an initial route note:
-https://bluehourchina.com/quick/en/?utm_source=reddit&utm_medium=reply&utm_campaign=first_customer_week&video=travelchina
+https://bluehourchina.com/route-note/?utm_source=reddit&utm_medium=reply&utm_campaign=first_customer_week&angle=route_note_24h
 ```
 
 Payment/app reply template:
@@ -111,6 +113,17 @@ WeChat Pay can support some overseas cards for supported consumption scenarios, 
 
 Checklist:
 https://bluehourchina.com/before-china/?utm_source=reddit&utm_medium=reply&utm_campaign=first_customer_week&angle=payment_setup
+```
+
+PayPal / WeChat Pay 2026 reply template:
+
+```text
+I would not plan a China trip around one payment headline. PayPal-related China payment news is useful, but the practical setup is still layered: WeChat Pay or Alipay where available, an overseas card backup, a small RMB cash layer, and a phone number that can receive SMS verification.
+
+This matters more outside Beijing and Shanghai, where payment readiness can affect taxi pickup, ticketing, hotel communication and transfer days.
+
+2026 payment note:
+https://bluehourchina.com/before-china/wechat-pay-paypal-china-2026/?utm_source=reddit&utm_medium=reply&utm_campaign=first_customer_week&angle=paypal_wechat_pay_2026
 ```
 
 ### Facebook Groups
@@ -129,7 +142,7 @@ Reply template when links are allowed:
 Planning Yunnan after Beijing/Shanghai? The biggest route mistake is moving every day. Dali, Shaxi and Lijiang/Baisha work better as a slow one-week route, especially for couples, families or travellers who care about hotel comfort and less friction.
 
 If you already know your month, group size and budget range, leave it here and we will reply with an initial route note:
-https://bluehourchina.com/quick/en/?utm_source=facebook&utm_medium=group_reply&utm_campaign=first_customer_week&video=yunnan_group
+https://bluehourchina.com/route-note/?utm_source=facebook&utm_medium=group_reply&utm_campaign=first_customer_week&angle=route_note_24h
 ```
 
 ### YouTube Comments
@@ -146,7 +159,7 @@ Reply template:
 
 ```text
 For Yunnan, I would plan pace before attractions. Dali, Shaxi and Lijiang/Baisha each need a different kind of time, and the comfort risks are hotel location, car hours and language/app friction. If you already have month and group size, this 60-second form gives enough detail for an initial route note:
-https://bluehourchina.com/quick/en/?utm_source=youtube&utm_medium=comment_reply&utm_campaign=first_customer_week&video=youtube_search
+https://bluehourchina.com/route-note/?utm_source=youtube&utm_medium=comment_reply&utm_campaign=first_customer_week&angle=route_note_24h
 ```
 
 ### Taiwan / Hong Kong Forums

@@ -8,7 +8,11 @@ Primary article link:
 
 Primary direct inquiry link:
 
-`https://bluehourchina.com/interest.html?utm_source=social&utm_medium=prep_content&utm_campaign=first_customer_week&angle=payment_setup`
+`https://bluehourchina.com/route-note/?utm_source=social&utm_medium=prep_content&utm_campaign=first_customer_week&angle=payment_setup`
+
+2026 PayPal / WeChat Pay article link:
+
+`https://bluehourchina.com/before-china/wechat-pay-paypal-china-2026/?utm_source=social&utm_medium=prep_content&utm_campaign=first_customer_week&angle=paypal_wechat_pay_2026`
 
 Chinese article link:
 
@@ -33,6 +37,7 @@ Use only as quiet support in comments. Do not overload social posts with citatio
 - Beijing official English service page says WeChat Pay supports several overseas cards including JCB, Visa and Mastercard, and describes foreign-card binding for supported consumption scenarios.
 - Chinese Embassy in the UK payment guide presents bank card, mobile payment, cash, bank account and e-CNY as payment options for visitors.
 - National Immigration Administration has 2026 visa-exemption and Q1 2026 inbound-travel statistics, supporting the broader trend of more foreign travellers entering China.
+- 2026 PayPal / WeChat Pay discussions should be framed conservatively: useful payment news is not a substitute for mobile payment setup, backup card, small cash and working SMS.
 
 Source links:
 
@@ -92,6 +97,33 @@ Pinned comment:
 ```text
 Before China checklist: payment, Visa/Mastercard setup, mobile data, entry checks and route support.
 https://bluehourchina.com/before-china/?utm_source=comment&utm_medium=social&utm_campaign=first_customer_week&angle=payment_setup
+```
+
+## Short Post — PayPal / WeChat Pay 2026
+
+Use this when the trend is "Can I use PayPal / WeChat Pay / Visa in China?"
+
+```text
+Can foreign visitors rely on PayPal, WeChat Pay, Visa or Mastercard in China in 2026?
+
+My practical answer: do not build the whole trip around one payment headline.
+
+Set up WeChat Pay or Alipay where available, keep a backup card, carry a small RMB cash layer, and make sure your phone can receive SMS verification. The deeper your route goes beyond Beijing and Shanghai, the more these small details affect taxi pickup, ticketing, hotel communication and transfer days.
+
+I wrote a short 2026 payment note here:
+https://bluehourchina.com/before-china/wechat-pay-paypal-china-2026/?utm_source=instagram&utm_medium=caption&utm_campaign=first_customer_week&angle=paypal_wechat_pay_2026
+
+If you already know your month, group size and route, send those details and we can reply with a 24-hour route note:
+https://bluehourchina.com/route-note/?utm_source=instagram&utm_medium=caption&utm_campaign=first_customer_week&angle=paypal_wechat_pay_2026
+
+#ChinaTravel #WeChatPay #PayPal #Visa #Mastercard #TravelChina #ChinaTrip #BeforeChina
+```
+
+Pinned comment:
+
+```text
+2026 China payment note: PayPal / WeChat Pay / Visa / Mastercard, plus why you still need a backup plan.
+https://bluehourchina.com/before-china/wechat-pay-paypal-china-2026/?utm_source=comment&utm_medium=social&utm_campaign=first_customer_week&angle=paypal_wechat_pay_2026
 ```
 
 ## Short Video Script — Traditional Chinese
