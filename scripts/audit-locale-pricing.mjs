@@ -22,8 +22,14 @@ const checks = [
       "en/dunhuang/index.html",
       "en/sanya/index.html",
       "en/northeast/index.html",
+      "interest.html",
+      "interest/index.html",
+      "en/interest/index.html",
+      "consult/index.html",
+      "en/consult/index.html",
     ],
     requiredOnDestinationPages: /US\$/,
+    requiredOnBudgetPages: /US\$/,
     forbidden: [/\bNT\$/i, /\bTWD\b/i, /\bJPY\b/i, /\bRMB\b/i, /\bCNY\b/i, /人民幣/],
   },
   {
@@ -36,8 +42,11 @@ const checks = [
       "zh/dunhuang/index.html",
       "zh/sanya/index.html",
       "zh/northeast/index.html",
+      "zh/interest/index.html",
+      "zh/consult/index.html",
     ],
     requiredOnDestinationPages: /\bRMB\b/,
+    requiredOnBudgetPages: /\bRMB\b/,
     forbidden: [/\bNT\$/i, /\bTWD\b/i, /\bJPY\b/i, /\bUSD\b/i, /US\$/],
   },
   {
@@ -50,8 +59,11 @@ const checks = [
       "ja/dunhuang/index.html",
       "ja/sanya/index.html",
       "ja/northeast/index.html",
+      "ja/interest/index.html",
+      "ja/consult/index.html",
     ],
     requiredOnDestinationPages: /\bJPY\b/,
+    requiredOnBudgetPages: /\bJPY\b/,
     forbidden: [/\bNT\$/i, /\bTWD\b/i, /\bRMB\b/i, /\bCNY\b/i, /US\$/],
   },
   {
@@ -64,8 +76,11 @@ const checks = [
       "ko/dunhuang/index.html",
       "ko/sanya/index.html",
       "ko/northeast/index.html",
+      "ko/interest/index.html",
+      "ko/consult/index.html",
     ],
     requiredOnDestinationPages: /\bKRW\b/,
+    requiredOnBudgetPages: /\bKRW\b/,
     forbidden: [/\bNT\$/i, /\bTWD\b/i, /\bRMB\b/i, /\bCNY\b/i, /\bJPY\b/i, /US\$/],
   },
   {
@@ -78,14 +93,21 @@ const checks = [
       "th/dunhuang/index.html",
       "th/sanya/index.html",
       "th/northeast/index.html",
+      "th/interest/index.html",
+      "th/consult/index.html",
     ],
     requiredOnDestinationPages: /\bTHB\b/,
+    requiredOnBudgetPages: /\bTHB\b/,
     forbidden: [/\bNT\$/i, /\bTWD\b/i, /\bRMB\b/i, /\bCNY\b/i, /\bJPY\b/i, /US\$/],
   },
 ];
 
 function isDestination(file) {
   return /(?:^|\/)(yunnan|xinjiang|dunhuang|sanya|northeast)(?:\.html|\/index\.html)$/.test(file);
+}
+
+function hasBudgetSelect(html) {
+  return /<select\b[^>]*name=["']budget["'][\s\S]*?<\/select>/i.test(html);
 }
 
 async function readIfExists(file) {
@@ -115,6 +137,9 @@ for (const check of checks) {
     }
     if (isDestination(file) && !check.requiredOnDestinationPages.test(html)) {
       issues.push(`${check.locale} ${file}: missing expected destination currency ${check.requiredOnDestinationPages}`);
+    }
+    if (hasBudgetSelect(html) && check.requiredOnBudgetPages && !check.requiredOnBudgetPages.test(html)) {
+      issues.push(`${check.locale} ${file}: missing expected budget form currency ${check.requiredOnBudgetPages}`);
     }
   }
 }
