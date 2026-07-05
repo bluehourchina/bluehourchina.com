@@ -9,6 +9,7 @@ Internal operating sheet for getting the first qualified consultation from socia
 - Funnel target: 300 social profile visits, 30 landing-page clicks, 3 form submissions, 1 qualified reply.
 - Execution scripts: `ops/first-customer-social-scripts.md`
 - Mobile launch board: `ops/first-customer-launch.html`
+- Public reply queue: `ops/first-customer-public-reply-queue.md`
 - Today launch pack: `ops/first-customer-today-launch-pack.md`
 - Outreach board: `ops/first-customer-outreach-board.md`
 - Outreach targets: `ops/first-customer-outreach-targets.csv`
