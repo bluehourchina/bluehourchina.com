@@ -14,6 +14,12 @@ Primary direct inquiry link:
 
 `https://bluehourchina.com/before-china/wechat-pay-paypal-china-2026/?utm_source=social&utm_medium=prep_content&utm_campaign=first_customer_week&angle=paypal_wechat_pay_2026`
 
+Ready-to-post images:
+
+- Route note: `https://bluehourchina.com/assets/social/bluehour-route-note-24h.png`
+- Warm referral: `https://bluehourchina.com/assets/social/bluehour-referral-card.png`
+- Payment 2026: `https://bluehourchina.com/assets/social/bluehour-payment-2026-card.png`
+
 Chinese article link:
 
 `https://bluehourchina.com/zh/before-china/?utm_source=social&utm_medium=prep_content&utm_campaign=first_customer_week&angle=payment_setup`
@@ -282,4 +288,4 @@ Warm lead:
 
 Qualified lead:
 
-- Person gives contact method plus enough route context to quote, or submits `/interest.html`, `/quick/`, `/quick/en/`, or a localized inquiry form.
+- Person gives contact method plus enough route context to quote, or submits `/route-note/`, `/refer/`, `/interest.html`, or a localized inquiry form.
