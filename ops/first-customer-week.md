@@ -25,6 +25,7 @@ Internal operating sheet for getting the first qualified consultation from socia
 - Current next actions: `ops/first-customer-next-actions-2026-07-05.md`
 - Search insight angles: `ops/first-customer-search-insights-2026-07-05.md`
 - Content funnel decision: `ops/first-customer-content-funnel-decision-2026-07-05.md`
+- Mobile action board: `ops/first-customer-mobile-action.html`
 
 ## Current Gate
 
@@ -40,6 +41,7 @@ Updated 2026-07-05:
 
 Next required action:
 
+- If working from a phone, open `/ops/first-customer-mobile-action.html` and complete 20 warm referral sends first.
 - Get approval to post the first four no-link public replies.
 - After posting, log live URLs in `ops/first-customer-execution-log-2026-07-05.csv`.
 - Run the zero-link sprint across Reddit, Facebook, Instagram/Threads comments, warm DMs or forums where links look promotional.
@@ -98,6 +100,12 @@ Hard gate:
 - If posted URLs are still 0, distribution is the bottleneck.
 - If warm referral sends are still 0, owned-network execution is the bottleneck.
 - If there are clicks but no form submissions, use `/route-note/` instead of a general consultation page and make the CTA lower-pressure: "receive a route note and starting quote direction."
+
+Mobile execution rule:
+
+- Send the warm referral message to 20 people who may know foreign travellers.
+- When finished, use `/ops/first-customer-mobile-action.html` to generate the `manual_send_batch_20` execution row.
+- Any reply with a month, group size, travel days, destination, budget/comfort need or contact method must be copied into `ops/first-customer-lead-inbox.csv`.
 
 ## Lead Qualification
 
