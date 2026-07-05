@@ -554,6 +554,54 @@ I would also not plan around any brand-new payment feature until it has been tes
       </article>
 
       <article class="card full">
+        <h2>20 則暖轉介紹：今天先發這段</h2>
+        <div class="meta">
+          <span class="pill">warm network</span>
+          <span class="pill">20 sends</span>
+          <span class="pill">no public posting</span>
+        </div>
+        <pre data-copy>我最近在做一個給外國旅客的中國深度旅行路線服務，品牌叫 Bluehour China / 若青中國旅策。
+
+我們不是做制式大團，而是先幫已經想來中國、又不只想去北京上海的人，把雲南、敦煌、張家界、新疆、東北或三亞這類路線排得更舒服：月份、人數、天數、住宿舒適度、語言支援、交通和支付準備都一起看。
+
+如果你身邊有外國朋友、海外同事、國際學生、外派家庭或正在計畫第二次來中國旅行的人，可以把這個轉介紹頁給他。對方只要留下大概月份、人數、天數和想去的地方，我們會先回一份 24 小時路線筆記與初步報價方向，不需要一開始就付費。
+
+https://bluehourchina.com/refer/?utm_source=warm_network&utm_medium=direct_message&utm_campaign=first_customer_week&angle=warm_referral</pre>
+        <div class="actions">
+          <button data-copy-button>複製暖轉介紹訊息</button>
+          <a class="btn secondary" href="/refer/?utm_source=console&utm_medium=ops&utm_campaign=first_customer_week&angle=warm_referral" target="_blank" rel="noopener">打開 referral 頁</a>
+          <a class="btn secondary" href="/assets/social/bluehour-referral-card.png" download>下載轉介紹圖</a>
+        </div>
+      </article>
+
+      <article class="card full">
+        <h2>Execution log 快速記錄器</h2>
+        <div class="meta">
+          <span class="pill">execution log</span>
+          <span class="pill">copy csv row</span>
+          <span class="pill">proof first</span>
+        </div>
+        <div class="lead-grid">
+          <label>渠道<input data-exec-field="channel" placeholder="Instagram / LINE / WhatsApp / Reddit"></label>
+          <label>動作<input data-exec-field="action" placeholder="sent warm referral batch / posted reel / replied thread"></label>
+          <label>素材或文案<input data-exec-field="asset_or_copy" placeholder="bluehour-referral-card.png / warm-dm-copy"></label>
+          <label>實際貼文或回覆 URL<input data-exec-field="posting_url" placeholder="https://... or manual_send_batch_20"></label>
+          <label>追蹤連結<input data-exec-field="tracking_link" value="https://bluehourchina.com/refer/?utm_source=warm_network&utm_medium=direct_message&utm_campaign=first_customer_week&angle=warm_referral"></label>
+          <label>狀態<input data-exec-field="status" value="posted_or_sent"></label>
+          <label>回覆數<input data-exec-field="reply_count" value="0"></label>
+          <label>Lead 數<input data-exec-field="lead_count" value="0"></label>
+          <label>下次檢查時間<input data-exec-field="next_check_at" placeholder="2026-07-06 09:00"></label>
+          <label>備註<input data-exec-field="notes" placeholder="Sent to 20 warm contacts; check replies in 12 hours"></label>
+        </div>
+        <div class="actions">
+          <button type="button" data-generate-exec-row>產生 execution log CSV row</button>
+          <button type="button" class="secondary" data-copy-exec-row>複製 CSV row</button>
+          <a class="btn secondary" href="/ops/first-customer-execution-log-2026-07-05.csv" target="_blank" rel="noopener">打開 execution log</a>
+        </div>
+        <pre data-exec-row>先填欄位，再按「產生 execution log CSV row」。</pre>
+      </article>
+
+      <article class="card full">
         <h2>Warm lead 快速記錄器</h2>
         <div class="meta">
           <span class="pill">lead inbox</span>
@@ -628,6 +676,7 @@ I would also not plan around any brand-new payment feature until it has been tes
     };
 
     const leadValue = (name) => document.querySelector(`[data-lead-field="${name}"]`)?.value || "";
+    const execValue = (name) => document.querySelector(`[data-exec-field="${name}"]`)?.value || "";
 
     const leadScore = () => {
       const fields = ["travel_month", "group_size", "route_days", "budget_or_comfort", "contact_method", "destination_interest"];
@@ -662,12 +711,45 @@ I would also not plan around any brand-new payment feature until it has been tes
       return values.map(csvCell).join(",");
     };
 
+    const buildExecRow = () => {
+      const now = new Date();
+      const nextCheck = execValue("next_check_at") || new Date(now.getTime() + 12 * 60 * 60 * 1000).toISOString();
+      const values = [
+        now.toISOString(),
+        execValue("channel"),
+        execValue("action"),
+        execValue("asset_or_copy"),
+        execValue("posting_url"),
+        execValue("tracking_link"),
+        execValue("status"),
+        execValue("reply_count") || "0",
+        execValue("lead_count") || "0",
+        nextCheck,
+        "若青中國旅策",
+        execValue("notes") || "Generated from first-customer post console"
+      ];
+      return values.map(csvCell).join(",");
+    };
+
     document.querySelector("[data-generate-lead-row]")?.addEventListener("click", () => {
       document.querySelector("[data-lead-row]").textContent = buildLeadRow();
     });
 
     document.querySelector("[data-copy-lead-row]")?.addEventListener("click", async (event) => {
       const output = document.querySelector("[data-lead-row]");
+      if (!output || output.textContent.startsWith("先填")) return;
+      await navigator.clipboard.writeText(output.textContent.trim());
+      const original = event.currentTarget.textContent;
+      event.currentTarget.textContent = "已複製 CSV row";
+      setTimeout(() => { event.currentTarget.textContent = original; }, 1200);
+    });
+
+    document.querySelector("[data-generate-exec-row]")?.addEventListener("click", () => {
+      document.querySelector("[data-exec-row]").textContent = buildExecRow();
+    });
+
+    document.querySelector("[data-copy-exec-row]")?.addEventListener("click", async (event) => {
+      const output = document.querySelector("[data-exec-row]");
       if (!output || output.textContent.startsWith("先填")) return;
       await navigator.clipboard.writeText(output.textContent.trim());
       const original = event.currentTarget.textContent;
