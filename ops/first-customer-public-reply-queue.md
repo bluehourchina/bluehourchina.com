@@ -6,6 +6,10 @@ Primary conversion link:
 
 `https://bluehourchina.com/quick/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=public_reply`
 
+English conversion link:
+
+`https://bluehourchina.com/quick/en/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&video=public_reply`
+
 ## Today Minimum
 
 - 10 useful public replies
@@ -45,7 +49,7 @@ Reply template:
 If this is your first Yunnan route, I would not change cities every day. A comfortable shape is usually Dali for lake/old-town pacing, Shaxi for one slower night, then Lijiang or Baisha for the snow-mountain side. The hard part is not the number of sights; it is hotel location, car time, language/app friction and how tired the group gets.
 
 If helpful, you can leave month, group size and budget here and we will reply with an initial route note:
-https://bluehourchina.com/quick/?utm_source=reddit&utm_medium=reply&utm_campaign=first_customer_week&video=travelchina
+https://bluehourchina.com/quick/en/?utm_source=reddit&utm_medium=reply&utm_campaign=first_customer_week&video=travelchina
 ```
 
 ### Facebook Groups
@@ -64,7 +68,7 @@ Reply template when links are allowed:
 Planning Yunnan after Beijing/Shanghai? The biggest route mistake is moving every day. Dali, Shaxi and Lijiang/Baisha work better as a slow one-week route, especially for couples, families or travellers who care about hotel comfort and less friction.
 
 If you already know your month, group size and budget range, leave it here and we will reply with an initial route note:
-https://bluehourchina.com/quick/?utm_source=facebook&utm_medium=group_reply&utm_campaign=first_customer_week&video=yunnan_group
+https://bluehourchina.com/quick/en/?utm_source=facebook&utm_medium=group_reply&utm_campaign=first_customer_week&video=yunnan_group
 ```
 
 ### YouTube Comments
@@ -81,7 +85,7 @@ Reply template:
 
 ```text
 For Yunnan, I would plan pace before attractions. Dali, Shaxi and Lijiang/Baisha each need a different kind of time, and the comfort risks are hotel location, car hours and language/app friction. If you already have month and group size, this 60-second form gives enough detail for an initial route note:
-https://bluehourchina.com/quick/?utm_source=youtube&utm_medium=comment_reply&utm_campaign=first_customer_week&video=youtube_search
+https://bluehourchina.com/quick/en/?utm_source=youtube&utm_medium=comment_reply&utm_campaign=first_customer_week&video=youtube_search
 ```
 
 ### Taiwan / Hong Kong Forums

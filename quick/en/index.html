@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="googlebot" content="noindex,follow">
+  <meta name="robots" content="noindex,follow">
+  <meta name="audience" content="international travellers">
+  <title>60-Second Yunnan Route Check｜Bluehour China Journeys</title>
+  <meta name="description" content="Share your month, group size, route days and comfort level. Bluehour China Journeys will reply with a first Yunnan route note and starting quote.">
+  <meta property="og:title" content="60-Second Yunnan Route Check">
+  <meta property="og:description" content="Dali, Shaxi and Lijiang/Baisha in one slower week. Leave a few details and receive an initial route note.">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Bluehour China Journeys">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://bluehourchina.com/quick/en/">
+  <meta property="og:image" content="https://bluehourchina.com/assets/og/yunnan-og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="/assets/ruoqing-avatar.svg">
+  <style>
+    :root {
+      --forest: #102d26;
+      --paper: #f5ecdf;
+      --white: #fffaf0;
+      --ink: #1f2924;
+      --muted: #667069;
+      --gold: #c99a52;
+      --line: rgba(31,41,36,.16);
+    }
+    * { box-sizing: border-box; }
+    html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Helvetica Neue", Arial, sans-serif;
+    }
+    a { color: inherit; text-decoration: none; }
+    .page {
+      min-height: 100svh;
+      display: grid;
+      grid-template-columns: .94fr 1.06fr;
+      background:
+        linear-gradient(90deg, rgba(8,18,15,.94), rgba(8,18,15,.7), rgba(8,18,15,.24)),
+        url("/assets/ai/bluehour-yunnan-luxury-shaxi-courtyard.jpg") center / cover no-repeat;
+    }
+    .intro {
+      min-height: 100svh;
+      color: var(--white);
+      padding: clamp(34px, 5vw, 68px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+    .intro::after {
+      content: "";
+      position: absolute;
+      inset: 28px;
+      border: 1px solid rgba(255,250,240,.18);
+      pointer-events: none;
+    }
+    .brand {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: flex-start;
+    }
+    .brand strong {
+      display: block;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 28px;
+      font-weight: 500;
+    }
+    .brand span {
+      display: block;
+      margin-top: 4px;
+      color: rgba(255,250,240,.62);
+      font-size: 12px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+    .tag {
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-weight: 900;
+      padding-top: 8px;
+    }
+    .hero-copy {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      padding: 86px 0;
+    }
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+    h1, h2 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      letter-spacing: 0;
+    }
+    h1 {
+      font-size: clamp(40px, 5vw, 72px);
+      line-height: 1.02;
+      text-wrap: balance;
+    }
+    .lead {
+      margin: 26px 0 0;
+      color: rgba(255,250,240,.82);
+      font-size: clamp(19px, 1.8vw, 25px);
+      line-height: 1.62;
+      font-weight: 650;
+      max-width: 720px;
+    }
+    .mini-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,250,240,.18);
+      border: 1px solid rgba(255,250,240,.18);
+    }
+    .mini-grid div {
+      padding: 18px;
+      background: rgba(10,28,23,.72);
+    }
+    .mini-grid span {
+      display: block;
+      margin-bottom: 6px;
+      color: rgba(255,250,240,.58);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .mini-grid b {
+      color: var(--white);
+      font-size: 18px;
+      line-height: 1.35;
+    }
+    .form-side {
+      min-height: 100svh;
+      padding: clamp(28px, 4vw, 58px);
+      display: flex;
+      align-items: center;
+      background: rgba(245,236,223,.96);
+    }
+    .form-card {
+      width: min(760px, 100%);
+      margin: 0 auto;
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: clamp(28px, 4vw, 48px);
+    }
+    .form-head {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+    .form-head h2 {
+      color: var(--forest);
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: 1.1;
+    }
+    .form-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.68;
+      font-weight: 650;
+    }
+    .promise-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      margin: 0 0 24px;
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+    .promise-grid div {
+      background: #fffdf8;
+      padding: 14px;
+    }
+    .promise-grid span {
+      display: block;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .promise-grid b {
+      display: block;
+      margin-top: 6px;
+      color: var(--forest);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    input, select, textarea {
+      width: 100%;
+      min-height: 54px;
+      border: 1px solid var(--line);
+      background: #fffdf8;
+      color: var(--ink);
+      padding: 14px 16px;
+      font: inherit;
+      font-weight: 650;
+      border-radius: 0;
+    }
+    textarea {
+      grid-column: 1 / -1;
+      min-height: 116px;
+      resize: vertical;
+      line-height: 1.65;
+    }
+    button {
+      grid-column: 1 / -1;
+      min-height: 60px;
+      border: 0;
+      background: var(--gold);
+      color: #14251f;
+      font: inherit;
+      font-weight: 900;
+      cursor: pointer;
+    }
+    .submit-note,
+    .form-fallback,
+    .form-consent,
+    .form-status {
+      grid-column: 1 / -1;
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+      font-weight: 600;
+    }
+    .form-fallback a,
+    .form-consent a,
+    .form-status a {
+      border-bottom: 1px solid rgba(102,112,105,.38);
+    }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 800;
+    }
+    .links a {
+      border-bottom: 1px solid rgba(102,112,105,.38);
+      padding-bottom: 3px;
+    }
+    @media (max-width: 980px) {
+      .page { grid-template-columns: 1fr; }
+      .intro, .form-side { min-height: auto; }
+      .intro { padding: 30px 24px 40px; }
+      .intro::after { inset: 18px; }
+      .hero-copy { padding: 82px 0 54px; }
+      .mini-grid, .promise-grid, form { grid-template-columns: 1fr; }
+      textarea, button, .submit-note, .form-fallback, .form-consent, .form-status { grid-column: span 1; }
+      h1 { font-size: clamp(34px, 9vw, 46px); }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="intro">
+      <div class="brand">
+        <a href="/">
+          <strong>Bluehour China</strong>
+          <span>Yunnan private route</span>
+        </a>
+        <div class="tag">60 SEC CHECK</div>
+      </div>
+
+      <div class="hero-copy">
+        <p class="eyebrow">Yunnan quick route check</p>
+        <h1>Share a few details. Receive a first route note.</h1>
+        <p class="lead">For travellers considering Dali, Shaxi and Lijiang or Baisha in one slower week. We read your month, group size, comfort level and route days before quoting.</p>
+      </div>
+
+      <div class="mini-grid" aria-label="Quick route facts">
+        <div><span>Route</span><b>Dali · Shaxi · Lijiang/Baisha</b></div>
+        <div><span>Best for</span><b>Couples, families, small groups</b></div>
+        <div><span>From</span><b>RMB 8,800 per traveller</b></div>
+      </div>
+    </section>
+
+    <section class="form-side" id="quick">
+      <div class="form-card">
+        <div class="form-head">
+          <p class="eyebrow">Quick form</p>
+          <h2>Enough to start</h2>
+          <p>This is not a booking deposit. It is a first route check: we tell you whether this Yunnan shape fits, what the starting quote looks like, and what needs to be confirmed next.</p>
+        </div>
+        <div class="promise-grid" aria-label="What you receive">
+          <div><span>01</span><b>Route fit and pacing risk</b></div>
+          <div><span>02</span><b>Starting quote from RMB 8,800</b></div>
+          <div><span>03</span><b>Next questions for hotels, car time and language</b></div>
+        </div>
+
+        <form class="lead-form" data-form-lang="en" data-lead-value="1250" data-lead-currency="USD" data-sending-message="Sending..." data-success-message="Thank you. We received your Yunnan route request and will reply with a route note and starting quote." data-error-message="The form did not send. Please email us directly." name="yunnan-private-route-en" method="POST" action="https://formsubmit.co/bluehourchina@gmail.com">
+          <input type="hidden" name="_next" value="https://bluehourchina.com/thanks.html">
+          <input type="hidden" name="_subject" value="Bluehour China Yunnan quick route inquiry (en)">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="form-name" value="yunnan-private-route-en">
+          <input type="hidden" name="bot-field">
+          <input type="hidden" name="submitted_at" value="">
+          <input type="hidden" name="status" value="New">
+          <input type="hidden" name="priority" value="High">
+          <input type="hidden" name="next_step" value="Prepare Yunnan route note, starting quote and follow-up questions">
+          <input type="hidden" name="source_content" value="yunnan-quick-en">
+          <input type="hidden" name="page_url" value="">
+          <input type="hidden" name="referrer" value="">
+          <input type="hidden" name="utm_source" value="">
+          <input type="hidden" name="utm_medium" value="">
+          <input type="hidden" name="utm_campaign" value="">
+          <input type="hidden" name="campaign" value="private_route_consultation">
+          <input type="hidden" name="intake_provider" value="formsubmit_email">
+          <input type="hidden" name="language" value="English">
+          <input type="hidden" name="destination" value="yunnan">
+          <input type="text" name="name" placeholder="Name" aria-label="Name" required>
+          <input type="text" name="contact" placeholder="Email / WhatsApp / WeChat / LINE" aria-label="Contact method" required>
+          <select name="group_size" aria-label="Group size" required>
+            <option value="" disabled selected>Group size</option>
+            <option>2 travellers</option>
+            <option>3-4 travellers</option>
+            <option>5-6 travellers</option>
+            <option>Family with parents or children</option>
+            <option>Not sure yet</option>
+          </select>
+          <select name="month" aria-label="Travel window" required>
+            <option value="" disabled selected>Travel window</option>
+            <option>Within 1-3 months</option>
+            <option>Within 3-6 months</option>
+            <option>Next spring or summer</option>
+            <option>Next autumn or winter</option>
+            <option>Still exploring</option>
+          </select>
+          <select name="route_days" aria-label="Preferred trip length" required>
+            <option value="" disabled selected>Preferred trip length</option>
+            <option>One week</option>
+            <option>A little more than one week</option>
+            <option>9 slow days</option>
+            <option>Not sure, need route advice</option>
+          </select>
+          <select name="budget" aria-label="Budget or comfort level" required>
+            <option value="" disabled selected>Budget or comfort level</option>
+            <option>Need to understand the price range first</option>
+            <option>RMB 8,800 / about US$1,250 per traveller is possible</option>
+            <option>US$1,500-2,500 per traveller is possible</option>
+            <option>Hotel comfort matters more than lowest price</option>
+          </select>
+          <select name="readiness" aria-label="Travel readiness" required>
+            <option value="" disabled selected>Travel readiness</option>
+            <option>If the plan fits, we can decide within one month</option>
+            <option>Comparing agencies and private routes</option>
+            <option>Checking for family or travel partners</option>
+            <option>Early research only</option>
+          </select>
+          <select name="language_needs" aria-label="Language support" required>
+            <option value="" disabled selected>Language support</option>
+            <option>English support preferred</option>
+            <option>Chinese-English support preferred</option>
+            <option>Japanese support preferred</option>
+            <option>Chinese is okay</option>
+            <option>Other language needs</option>
+          </select>
+          <textarea name="message" placeholder="Optional: hotel expectations, route concerns, whether you have visited China before, or what kind of Yunnan you want to feel."></textarea>
+          <p class="submit-note">After submission, Bluehour China will reply with an initial route note, a starting quote and the next questions needed to refine the plan. Local reception and travel services are handled by suitable local providers.</p>
+          <button type="submit">Send my route details</button>
+          <p class="form-fallback">If the form does not send, write directly to <a href="mailto:bluehourchina@gmail.com?subject=Bluehour%20China%20Yunnan%20route%20check">bluehourchina@gmail.com</a></p>
+        </form>
+
+        <div class="links">
+          <a href="/yunnan.html">Read the Yunnan route</a>
+          <a href="/interest.html">Full consultation form</a>
+          <a href="/china-travel/">China beyond Beijing and Shanghai</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const leadForm = document.querySelector(".lead-form");
+    if (leadForm) {
+      const params = new URLSearchParams(window.location.search);
+      const fields = {
+        submitted_at: new Date().toISOString(),
+        page_url: window.location.href,
+        referrer: document.referrer || "",
+        utm_source: params.get("utm_source") || "site",
+        utm_medium: params.get("utm_medium") || "quick_en",
+        utm_campaign: params.get("utm_campaign") || "first_customer_week"
+      };
+      Object.entries(fields).forEach(([name, value]) => {
+        const input = leadForm.querySelector(`[name="${name}"]`);
+        if (input) input.value = value;
+      });
+    }
+  </script>
+  <script src="/assets/lead-form.js?v=20260704-lead1" defer></script>
+</body>
+</html>

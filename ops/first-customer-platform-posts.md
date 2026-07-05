@@ -6,6 +6,10 @@ Primary lead link:
 
 `https://bluehourchina.com/quick/?utm_source=social&utm_medium=first_reply&utm_campaign=first_customer_week&video=day1`
 
+English lead link:
+
+`https://bluehourchina.com/quick/en/?utm_source=english_social&utm_medium=first_reply&utm_campaign=first_customer_week&video=day1`
+
 ## Day 1: Instagram Reels / TikTok
 
 Asset:
@@ -102,7 +106,7 @@ https://bluehourchina.com/quick/?utm_source=line&utm_medium=warm_dm&utm_campaign
 If this is your first Yunnan route, I would not try to change cities every day. A comfortable shape is usually Dali for lake/old-town pacing, Shaxi for one slower night, then Lijiang or Baisha for the snow-mountain side. The hard part is not the number of sights; it is hotel location, car time, language/app friction and how tired the group gets.
 
 If helpful, you can leave month, group size and budget here and we will reply with an initial route note:
-https://bluehourchina.com/quick/?utm_source=reddit&utm_medium=reply&utm_campaign=first_customer_week&video=travelchina
+https://bluehourchina.com/quick/en/?utm_source=reddit&utm_medium=reply&utm_campaign=first_customer_week&video=travelchina
 ```
 
 ## Public Reply: English, No Link Allowed

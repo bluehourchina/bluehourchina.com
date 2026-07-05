@@ -64,7 +64,7 @@ English reply:
 If this is your first Yunnan route, I would not try to change cities every day. A comfortable shape is usually Dali for lake/old-town pacing, Shaxi for one slower night, then Lijiang or Baisha for the snow-mountain side. The hard part is not the number of sights; it is hotel location, car time, language/app friction and how tired the group gets.
 
 I am building a small private China route advisory for travellers going beyond Beijing/Shanghai. If helpful, you can leave month, group size and budget here and we will reply with an initial route note:
-https://bluehourchina.com/quick/?utm_source=reddit&utm_medium=reply&utm_campaign=first_customer_week&video=travelchina
+https://bluehourchina.com/quick/en/?utm_source=reddit&utm_medium=reply&utm_campaign=first_customer_week&video=travelchina
 
 ### 2. Reddit: r/chinatravel
 
@@ -83,7 +83,7 @@ English short reply:
 For a second China trip, Yunnan is a strong choice, but I would plan it around pace rather than checklist: Dali, Shaxi and Lijiang/Baisha each need a different kind of time. If the group wants comfort, the important checks are luggage, car hours, hotel location, language support and whether one week is enough.
 
 I can share an initial route note if you leave month, group size and comfort level:
-https://bluehourchina.com/quick/?utm_source=reddit&utm_medium=reply&utm_campaign=first_customer_week&video=chinatravel
+https://bluehourchina.com/quick/en/?utm_source=reddit&utm_medium=reply&utm_campaign=first_customer_week&video=chinatravel
 
 ### 3. Facebook Travel Groups
 
@@ -104,7 +104,7 @@ English post when allowed:
 Planning Yunnan after Beijing/Shanghai? The biggest mistake I see is trying to move every day. Dali, Shaxi and Lijiang/Baisha work better as a slow one-week route, especially for couples, families or travellers who care about hotel comfort and less friction.
 
 I am testing a small route-note service this week. If you already know your month, group size and budget range, leave it here:
-https://bluehourchina.com/quick/?utm_source=facebook&utm_medium=group_post&utm_campaign=first_customer_week&video=yunnan
+https://bluehourchina.com/quick/en/?utm_source=facebook&utm_medium=group_post&utm_campaign=first_customer_week&video=yunnan
 
 ### 4. 背包客棧 / Dcard / PTT
 
