@@ -92,9 +92,9 @@ Then I can tell you whether this route is realistic and what starting price rang
 ## Link Only After Intent
 
 - General English route form:
-  `https://bluehourchina.com/interest.html?utm_source=direct_reply&utm_medium=qualified_conversation&utm_campaign=first_customer_week&angle=manual_route_qualification`
+  `https://bluehourchina.com/route-note/?utm_source=direct_reply&utm_medium=qualified_conversation&utm_campaign=first_customer_week&angle=route_note_24h`
 - Before-China readiness:
-  `https://bluehourchina.com/interest.html?utm_source=direct_reply&utm_medium=qualified_conversation&utm_campaign=first_customer_week&angle=before_china_setup&source_path=%2Fbefore-china%2F`
+  `https://bluehourchina.com/route-note/?utm_source=direct_reply&utm_medium=qualified_conversation&utm_campaign=first_customer_week&angle=before_china_setup&source_path=%2Fbefore-china%2F`
 - Natural-wonders decision:
   `https://bluehourchina.com/china-travel/china-natural-wonders-15-days/?utm_source=direct_reply&utm_medium=qualified_conversation&utm_campaign=first_customer_week&angle=natural_wonders_15d`
 - Zhangjiajie senior route:
@@ -105,4 +105,3 @@ Then I can tell you whether this route is realistic and what starting price rang
 ## Log Every Conversation
 
 After any reply with real intent, add a row to `ops/first-customer-lead-inbox.csv`. Do not wait for the form if the person gave enough details in DM or forum reply.
-

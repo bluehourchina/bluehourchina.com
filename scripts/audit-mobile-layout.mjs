@@ -32,6 +32,7 @@ const pages = [
   "/northeast.html",
   "/stories.html",
   "/interest.html",
+  "/route-note/",
   "/consult/",
   "/quick/",
   "/quick/en/",

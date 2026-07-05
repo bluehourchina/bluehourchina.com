@@ -116,22 +116,31 @@
 
   const message = (form) => copy[langKey(form)] || copy.en;
 
-  const fieldValues = () => {
+  const fieldValues = (form) => {
     const params = new URLSearchParams(window.location.search);
     return {
       submitted_at: new Date().toISOString(),
       page_url: window.location.href,
       referrer: document.referrer || "",
-      intent_angle: params.get("angle") || params.get("intent_angle") || params.get("video") || "",
-      source_path: params.get("source_path") || params.get("source_page") || "",
-      utm_source: params.get("utm_source") || "site",
-      utm_medium: params.get("utm_medium") || "multilingual",
-      utm_campaign: params.get("utm_campaign") || "private_route_consultation"
+      intent_angle:
+        params.get("angle") ||
+        params.get("intent_angle") ||
+        params.get("video") ||
+        leadFieldValue(form, "intent_angle") ||
+        "",
+      source_path:
+        params.get("source_path") ||
+        params.get("source_page") ||
+        leadFieldValue(form, "source_path") ||
+        window.location.pathname,
+      utm_source: params.get("utm_source") || leadFieldValue(form, "utm_source") || "site",
+      utm_medium: params.get("utm_medium") || leadFieldValue(form, "utm_medium") || "multilingual",
+      utm_campaign: params.get("utm_campaign") || leadFieldValue(form, "utm_campaign") || "private_route_consultation"
     };
   };
 
   const setHiddenFields = (form) => {
-    Object.entries(fieldValues()).forEach(([name, value]) => {
+    Object.entries(fieldValues(form)).forEach(([name, value]) => {
       let input = form.querySelector('[name="' + name + '"]');
       if (!input && ["intent_angle", "source_path"].includes(name)) {
         input = document.createElement("input");

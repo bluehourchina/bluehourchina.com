@@ -172,7 +172,7 @@ Send to friends who may know foreigners, international students, expats, Taiwan/
 https://bluehourchina.com/before-china/?utm_source=line&utm_medium=warm_network&utm_campaign=first_customer_week&angle=payment_setup
 
 如果他已經有月份、人數和想去的地方，也可以直接填需求，我們會先回一份路線方向與初步報價：
-https://bluehourchina.com/interest.html?utm_source=line&utm_medium=warm_network&utm_campaign=first_customer_week&angle=payment_setup
+https://bluehourchina.com/route-note/?utm_source=line&utm_medium=warm_network&utm_campaign=first_customer_week&angle=payment_setup
 ```
 
 ## DM To Warm Network — English
@@ -184,7 +184,7 @@ If you know someone considering China this year or next year, this may save them
 https://bluehourchina.com/before-china/?utm_source=whatsapp&utm_medium=warm_network&utm_campaign=first_customer_week&angle=payment_setup
 
 If they already know month, group size and destination, they can leave a route brief and we will reply with an initial route note and starting quote:
-https://bluehourchina.com/interest.html?utm_source=whatsapp&utm_medium=warm_network&utm_campaign=first_customer_week&angle=payment_setup
+https://bluehourchina.com/route-note/?utm_source=whatsapp&utm_medium=warm_network&utm_campaign=first_customer_week&angle=payment_setup
 ```
 
 ## Reply When Someone Says "Can I Just Use My Visa Card?"
