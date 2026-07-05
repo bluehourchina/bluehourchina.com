@@ -26,6 +26,8 @@ Internal operating sheet for getting the first qualified consultation from socia
 - Search insight angles: `ops/first-customer-search-insights-2026-07-05.md`
 - Content funnel decision: `ops/first-customer-content-funnel-decision-2026-07-05.md`
 - Mobile action board: `ops/first-customer-mobile-action.html`
+- Partner outreach board: `ops/first-customer-partner-outreach.html`
+- Partner target CSV: `ops/first-customer-partner-targets-2026-07-05.csv`
 
 ## Current Gate
 
@@ -42,6 +44,7 @@ Updated 2026-07-05:
 Next required action:
 
 - If working from a phone, open `/ops/first-customer-mobile-action.html` and complete 20 warm referral sends first.
+- If direct traveller contacts are limited, open `/ops/first-customer-partner-outreach.html` and send 15 partner referral messages to people who can introduce travellers.
 - Get approval to post the first four no-link public replies.
 - After posting, log live URLs in `ops/first-customer-execution-log-2026-07-05.csv`.
 - Run the zero-link sprint across Reddit, Facebook, Instagram/Threads comments, warm DMs or forums where links look promotional.
@@ -104,7 +107,9 @@ Hard gate:
 Mobile execution rule:
 
 - Send the warm referral message to 20 people who may know foreign travellers.
+- Send the partner referral message to 15 people who may know travellers through work, school, hospitality or expat networks.
 - When finished, use `/ops/first-customer-mobile-action.html` to generate the `manual_send_batch_20` execution row.
+- When partner messages are finished, use `/ops/first-customer-partner-outreach.html` to generate the `manual_partner_batch_15` execution row.
 - Any reply with a month, group size, travel days, destination, budget/comfort need or contact method must be copied into `ops/first-customer-lead-inbox.csv`.
 
 ## Lead Qualification
