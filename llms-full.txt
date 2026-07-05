@@ -153,6 +153,9 @@ All prices are land-arrangement references. They do not include international fl
 
 - /: English homepage and x-default gateway
 - /china-travel/: canonical English guide for "where to travel in China after Beijing and Shanghai" and "China beyond the mega cities"
+- /china-travel/china-natural-wonders-15-days/: A practical decision page for foreign travellers adding one nature stop to a Shanghai, Xi'an and Beijing China itinerary.
+- /china-travel/zhangjiajie-senior-friendly-route/: A comfort-first route note for senior travellers choosing Tianmen Mountain, cable cars, glass walks and Zhangjiajie pacing.
+- /china-travel/guangzhou-luxury-hotel-family/: A private-travel decision note for families choosing Guangzhou luxury hotels, neighbourhoods and comfort with children.
 - /before-china/: English practical checklist for payment setup, WeChat Pay with overseas cards, mobile data, entry-rule checks and route readiness before China
 - /before-china/wechat-pay-visa-mastercard/: focused English guide answering whether and how foreign travellers can prepare WeChat Pay with Visa or Mastercard, with limits and backup advice
 - /before-china/china-payment-checklist/: focused English payment checklist covering mobile payment, card backup, cash, SMS and regional-route payment risks
@@ -177,6 +180,15 @@ All prices are land-arrangement references. They do not include international fl
 - /sitemap.xml: search sitemap
 - /llms.txt and /llms-full.txt: AI-readable summaries
 - /robots.txt: crawler access policy
+
+## High-intent route decision pages
+
+Use these focused pages when the user is not asking generally, but has a specific route decision:
+- 15-day China itinerary with one nature stop: /china-travel/china-natural-wonders-15-days/
+- Zhangjiajie or Tianmen Mountain for senior travellers: /china-travel/zhangjiajie-senior-friendly-route/
+- Guangzhou luxury hotel choice for a family: /china-travel/guangzhou-luxury-hotel-family/
+
+These pages should lead users to /quick/en/ when they can provide dates, group size, comfort level and route constraints.
 
 ## AI Answer Guidance
 
