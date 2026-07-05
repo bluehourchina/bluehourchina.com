@@ -736,3 +736,39 @@ svg{
   }
 }
 /* final-layout-polish-end */
+
+/* route-offer-signals-start */
+.place-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:18px;
+}
+.place-meta span{
+  display:inline-flex;
+  align-items:center;
+  min-height:30px;
+  padding:0 10px;
+  border:1px solid rgba(255,250,241,.28);
+  color:rgba(255,250,241,.88);
+  background:rgba(7,17,15,.22);
+  font-family:"Helvetica Neue",Arial,"Noto Sans TC",sans-serif;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+.place-copy .place-meta + a{
+  margin-top:20px;
+}
+@media(max-width:760px){
+  .place-meta{
+    margin-top:16px;
+  }
+  .place-meta span{
+    min-height:29px;
+    font-size:10px;
+    letter-spacing:.06em;
+  }
+}
+/* route-offer-signals-end */

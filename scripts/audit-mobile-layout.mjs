@@ -17,6 +17,7 @@ const chromeExecutable =
 
 const pages = [
   "/",
+  "/before-china/",
   "/china-travel/",
   "/yunnan.html",
   "/xinjiang.html",
@@ -29,6 +30,7 @@ const pages = [
   "/quick/",
   "/quick/en/",
   "/zh.html",
+  "/zh/before-china/",
   "/zh/yunnan/",
   "/zh/xinjiang/",
   "/zh/dunhuang/",

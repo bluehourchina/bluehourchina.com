@@ -11,6 +11,11 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://bluehourchina.com/before-china/</loc>
+    <lastmod>2026-07-05</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://bluehourchina.com/yunnan.html</loc>
     <lastmod>2026-07-04</lastmod>
     <priority>0.8</priority>
@@ -63,6 +68,11 @@
   <url>
     <loc>https://bluehourchina.com/zh.html</loc>
     <lastmod>2026-07-04</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bluehourchina.com/zh/before-china/</loc>
+    <lastmod>2026-07-05</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
