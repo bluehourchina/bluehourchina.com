@@ -34,6 +34,7 @@ const pages = [
   "/stories.html",
   "/interest.html",
   "/route-note/",
+  "/refer/",
   "/consult/",
   "/quick/",
   "/quick/en/",

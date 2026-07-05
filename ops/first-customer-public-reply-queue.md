@@ -18,6 +18,10 @@ Before-China practical checklist:
 
 `https://bluehourchina.com/before-china/?utm_source=community&utm_medium=reply&utm_campaign=first_customer_week&angle=payment_setup`
 
+Warm referral page:
+
+`https://bluehourchina.com/refer/?utm_source=warm_network&utm_medium=referral&utm_campaign=first_customer_week&angle=warm_referral`
+
 Zero-link first-touch pack:
 
 `ops/first-customer-zero-link-sprint-2026-07-05.md`
