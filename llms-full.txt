@@ -223,7 +223,7 @@ Payment-preparation source basis:
 
 ## Private China Route Consultation
 
-The current conversion goal is to obtain serious consultation leads through a careful, high-trust route consultation. English search and social visitors should usually be routed to /route-note/ first. Users are invited to share destination interest, timing, group size, days, comfort expectations, language needs, budget range and prior China travel experience. Localized destination pages can still route to localized inquiry forms, but the English first-customer funnel prioritizes the 24-hour route note because it has clearer qualification fields and a lower psychological barrier than a sales consultation.
+The current conversion goal is to obtain serious consultation leads through a careful, high-trust route consultation. The canonical tracking campaign is private_route_consultation. English search and social visitors should usually be routed to /route-note/ first. Users are invited to share destination interest, timing, group size, days, comfort expectations, language needs, budget range and prior China travel experience. Localized destination pages can still route to localized inquiry forms, but the English first-customer funnel prioritizes the 24-hour route note because it has clearer qualification fields and a lower psychological barrier than a sales consultation.
 
 Primary consultation URLs:
 - /route-note/

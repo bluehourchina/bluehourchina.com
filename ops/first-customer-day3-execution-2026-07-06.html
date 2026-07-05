@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,follow">
+  <title>今日獲客執行包｜若青中國旅策</title>
+  <style>
+    :root {
+      --forest: #102d26;
+      --paper: #f5efe5;
+      --cream: #fffaf0;
+      --ink: #18241f;
+      --muted: #647069;
+      --gold: #c99a52;
+      --line: rgba(24,36,31,.16);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+      line-height: 1.62;
+    }
+    header {
+      padding: clamp(30px, 6vw, 72px) 18px;
+      color: var(--cream);
+      background:
+        linear-gradient(90deg, rgba(7,17,15,.94), rgba(7,17,15,.58)),
+        url("/assets/ai/bluehour-china-hero-luxury-lake-v2.jpg") center / cover no-repeat;
+    }
+    .wrap { width: min(980px, calc(100% - 28px)); margin: 0 auto; }
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 {
+      margin: 0;
+      font-family: "Noto Serif TC", "Songti TC", Georgia, serif;
+      line-height: 1.14;
+      letter-spacing: 0;
+    }
+    h1 { max-width: 820px; font-size: clamp(36px, 8vw, 72px); font-weight: 600; }
+    header p { max-width: 740px; margin: 16px 0 0; color: rgba(255,250,240,.84); font-size: 18px; font-weight: 760; }
+    main { padding: 18px 0 88px; }
+    .score {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 18px;
+      background: rgba(255,250,240,.24);
+      border: 1px solid rgba(255,250,240,.22);
+    }
+    .score div { padding: 14px; background: rgba(16,45,38,.78); }
+    .score b { display: block; color: var(--gold); font-size: 24px; }
+    .score span { display: block; color: rgba(255,250,240,.74); font-size: 12px; font-weight: 850; }
+    .card {
+      margin-top: 14px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: var(--cream);
+      min-width: 0;
+    }
+    .card h2 { color: var(--forest); font-size: clamp(28px, 5vw, 44px); }
+    .card h3 { margin-top: 4px; color: var(--forest); font-size: 24px; }
+    .card p { margin: 10px 0 0; color: var(--muted); font-weight: 730; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .full { grid-column: 1 / -1; }
+    .steps {
+      display: grid;
+      gap: 8px;
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .steps li {
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,250,240,.68);
+      color: var(--muted);
+      font-weight: 800;
+    }
+    pre {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      margin: 14px 0 0;
+      padding: 14px;
+      border: 1px solid var(--line);
+      background: #fffdf8;
+      color: var(--ink);
+      font: 720 15px/1.72 "Noto Sans TC", "PingFang TC", sans-serif;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+      min-width: 0;
+    }
+    button, .btn {
+      min-height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 14px;
+      border: 1px solid var(--forest);
+      background: var(--forest);
+      color: var(--cream);
+      font: inherit;
+      font-weight: 920;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .gold { border-color: var(--gold); background: var(--gold); color: #13241f; }
+    .secondary { background: transparent; color: var(--forest); }
+    .status { min-height: 24px; margin-top: 10px; color: var(--forest); font-weight: 900; }
+    @media (max-width: 760px) {
+      .grid, .score { grid-template-columns: 1fr; }
+      button, .btn { width: 100%; }
+      .card { padding: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <p class="eyebrow">First customer execution</p>
+      <h1>今天只算真正發出去的動作</h1>
+      <p>目標不是再準備資料，而是把高意圖回答、社群貼文、暖轉介紹和 partner 介紹發出去；任何有月份、人數、天數、目的地或聯絡方式的人，立刻進 lead inbox。</p>
+      <div class="score" aria-label="Today targets">
+        <div><b>5</b><span>公開回覆/貼文</span></div>
+        <div><b>20</b><span>暖轉介紹</span></div>
+        <div><b>15</b><span>Partner 訊息</span></div>
+        <div><b>1</b><span>合格 lead</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <p class="eyebrow">Order</p>
+      <h2>今日順序</h2>
+      <ul class="steps">
+        <li>先發 20 則暖轉介紹，因為最容易拿到信任轉介。</li>
+        <li>再發 15 則 partner 介紹，找能把我們帶到旅客面前的人。</li>
+        <li>接著手動貼出 4 則已批准 Tripadvisor 無連結回覆。</li>
+        <li>最後發一篇 Before China 英文社群貼文，抓付款/App 搜尋意圖。</li>
+        <li>每個實際發出的 URL、截圖或批次紀錄，都回填 execution log。</li>
+      </ul>
+      <div class="actions">
+        <a class="btn gold" href="/ops/first-customer-lead-triage.html" target="_blank" rel="noopener">有人回覆後做 lead triage</a>
+        <a class="btn secondary" href="/route-note/?utm_source=day3_execution&utm_medium=ops&utm_campaign=first_customer_week&angle=route_note_24h" target="_blank" rel="noopener">測試 route-note 表單</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card full">
+        <p class="eyebrow">01 · Warm referral</p>
+        <h2>先發給可能認識外國旅客的人</h2>
+        <pre id="warm-referral">我最近在做 Bluehour China / 若青中國旅策，幫外國旅客規劃「北京上海之外」的中國深度路線，例如雲南、張家界、敦煌、新疆、三亞或東北。
+
+我們不是制式大團，而是先看月份、人數、天數、住宿舒適度、語言支援、交通和支付/App 準備，回一份 24 小時路線筆記與初步報價方向。
+
+如果你身邊有外國朋友、海外同事、國際學生、外派家庭或跨國家庭今年或明年想來中國，可以把這個轉介紹頁給他：
+https://bluehourchina.com/refer/?utm_source=warm_network&utm_medium=direct_message&utm_campaign=first_customer_week&angle=warm_referral</pre>
+        <div class="actions">
+          <button class="gold" data-copy="#warm-referral">複製暖轉介紹</button>
+          <a class="btn secondary" href="https://wa.me/?text=%E6%88%91%E6%9C%80%E8%BF%91%E5%9C%A8%E5%81%9A%20Bluehour%20China%20%2F%20%E8%8B%A5%E9%9D%92%E4%B8%AD%E5%9C%8B%E6%97%85%E7%AD%96%EF%BC%8C%E5%B9%AB%E5%A4%96%E5%9C%8B%E6%97%85%E5%AE%A2%E8%A6%8F%E5%8A%83%E3%80%8C%E5%8C%97%E4%BA%AC%E4%B8%8A%E6%B5%B7%E4%B9%8B%E5%A4%96%E3%80%8D%E7%9A%84%E4%B8%AD%E5%9C%8B%E6%B7%B1%E5%BA%A6%E8%B7%AF%E7%B7%9A%EF%BC%9A%0Ahttps%3A%2F%2Fbluehourchina.com%2Frefer%2F%3Futm_source%3Dwhatsapp%26utm_medium%3Dwarm_network%26utm_campaign%3Dfirst_customer_week%26angle%3Dwarm_referral" target="_blank" rel="noopener">WhatsApp 分享</a>
+          <a class="btn secondary" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fbluehourchina.com%2Frefer%2F%3Futm_source%3Dline%26utm_medium%3Dwarm_network%26utm_campaign%3Dfirst_customer_week%26angle%3Dwarm_referral" target="_blank" rel="noopener">LINE 分享</a>
+        </div>
+        <div class="status" data-status="#warm-referral"></div>
+      </article>
+
+      <article class="card">
+        <p class="eyebrow">02 · Partner</p>
+        <h3>發給能介紹旅客的人</h3>
+        <pre id="partner-copy">如果你遇到想來中國、但不只想去北京上海的外國旅客，可以先把他轉給 Bluehour China / 若青中國旅策。
+
+我們先做 24 小時路線初評：月份、人數、天數、想去地點、舒適需求、支付/App 準備、語言支援。適合才往正式行程與報價走。
+
+轉介紹入口：
+https://bluehourchina.com/refer/?utm_source=partner&utm_medium=direct_message&utm_campaign=first_customer_week&angle=partner_referral</pre>
+        <div class="actions">
+          <button class="gold" data-copy="#partner-copy">複製 partner 訊息</button>
+          <a class="btn secondary" href="/ops/first-customer-partner-outreach.html" target="_blank" rel="noopener">更多 partner 版本</a>
+        </div>
+        <div class="status" data-status="#partner-copy"></div>
+      </article>
+
+      <article class="card">
+        <p class="eyebrow">03 · English social</p>
+        <h3>Before China 英文貼文</h3>
+        <pre id="before-china-post">The first friction for foreign travellers in China is often not the destination. It is payment, data, SMS verification, app setup, hotel addresses and transport timing.
+
+Before you land, prepare mobile payment where available, keep a backup card and cash plan, confirm data/SMS access, and check the route realistically.
+
+If your trip goes beyond Beijing and Shanghai into Yunnan, Zhangjiajie, Dunhuang, Xinjiang, Sanya or Northeast China, we can review the route and reply with a practical first note.
+
+Before China checklist:
+https://bluehourchina.com/before-china/?utm_source=social&utm_medium=caption&utm_campaign=first_customer_week&angle=payment_setup
+
+24-hour route note:
+https://bluehourchina.com/route-note/?utm_source=social&utm_medium=caption&utm_campaign=first_customer_week&angle=route_note_24h
+
+#ChinaTravel #TravelChina #WeChatPay #Alipay #ChinaTrip #YunnanTravel #Zhangjiajie #Dunhuang #XinjiangTravel #PrivateTravel</pre>
+        <div class="actions">
+          <button class="gold" data-copy="#before-china-post">複製英文貼文</button>
+          <a class="btn secondary" href="/assets/social/bluehour-payment-2026-card.png" target="_blank" rel="noopener">打開配圖</a>
+        </div>
+        <div class="status" data-status="#before-china-post"></div>
+      </article>
+
+      <article class="card">
+        <p class="eyebrow">04 · Public reply</p>
+        <h3>付款/App 高意圖回覆</h3>
+        <pre id="payment-reply">The practical layer matters more than most first-time visitors expect. Before China, I would set up mobile payment where available, keep a backup card and some cash, make sure your phone can receive SMS verification, and save hotel addresses in Chinese.
+
+WeChat Pay and Alipay can work well when prepared, but I would still not rely on one method only. If your route goes beyond Beijing and Shanghai, also check hotel location, car time, language/app friction and whether the daily pace is realistic.
+
+If you share month, group size, route days and the places you are considering, I can suggest what to check first.</pre>
+        <div class="actions"><button class="gold" data-copy="#payment-reply">複製無連結回覆</button></div>
+        <div class="status" data-status="#payment-reply"></div>
+      </article>
+
+      <article class="card">
+        <p class="eyebrow">05 · Public reply</p>
+        <h3>北京上海之外路線回覆</h3>
+        <pre id="beyond-reply">For a second China trip, I would choose by friction and comfort, not only by famous sights.
+
+Yunnan is good for slower old-town, lake and snow-mountain atmosphere. Zhangjiajie is dramatic but needs careful pacing. Dunhuang is excellent for desert and Silk Road feeling. Xinjiang is much larger and needs route control. Northeast China is beautiful in winter but weather and transfers matter.
+
+The right first question is: what month are you going, how many days do you have outside Beijing/Shanghai, and who is travelling with you?</pre>
+        <div class="actions"><button class="gold" data-copy="#beyond-reply">複製無連結回覆</button></div>
+        <div class="status" data-status="#beyond-reply"></div>
+      </article>
+
+      <article class="card">
+        <p class="eyebrow">06 · Manual public</p>
+        <h3>已批准 Tripadvisor 四則</h3>
+        <p>這四則已批准，但平台擋住自動貼文。請手動打開原帖，複製無連結文案貼出。</p>
+        <div class="actions">
+          <a class="btn gold" href="/ops/first-customer-approved-public-replies-2026-07-06.html" target="_blank" rel="noopener">打開四則已批准回覆</a>
+          <a class="btn secondary" href="/ops/first-customer-execution-log-2026-07-06.csv" target="_blank" rel="noopener">查看 execution log</a>
+        </div>
+      </article>
+
+      <article class="card full">
+        <p class="eyebrow">Qualification</p>
+        <h2>有人回覆後，只問這段</h2>
+        <pre id="qualify-copy">I can give a more useful first note if you share:
+
+1. Travel month or rough season
+2. Group size
+3. Places you are considering
+4. Days available
+5. Comfort level or budget range
+6. Best contact method: email, WhatsApp, LINE or WeChat
+
+Then I can tell you whether the route is realistic and what starting price range to expect.</pre>
+        <div class="actions">
+          <button class="gold" data-copy="#qualify-copy">複製英文追問</button>
+          <a class="btn secondary" href="/ops/first-customer-lead-triage.html" target="_blank" rel="noopener">開 lead triage</a>
+        </div>
+        <div class="status" data-status="#qualify-copy"></div>
+      </article>
+
+      <article class="card full">
+        <p class="eyebrow">Proof</p>
+        <h2>發完後產生紀錄</h2>
+        <p>選一個已完成的動作產生 CSV row；把實際貼文 URL、截圖或批次名稱留住，否則不算真正發佈。</p>
+        <pre id="execution-row">created_at,channel,action,asset_or_copy,posting_url,tracking_link,status,reply_count,lead_count,next_check_at,owner,notes</pre>
+        <div class="actions">
+          <button class="gold" data-build-row="warm">已發 20 則暖轉介紹</button>
+          <button class="gold" data-build-row="partner">已發 15 則 partner 訊息</button>
+          <button class="gold" data-build-row="social">已發 Before China 社群貼文</button>
+          <button class="secondary" data-copy="#execution-row">複製紀錄</button>
+        </div>
+        <div class="status" data-status="#execution-row"></div>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    const setStatus = (selector, message) => {
+      const status = document.querySelector(`[data-status="${selector}"]`);
+      if (status) status.textContent = message;
+    };
+    const csvCell = (value) => {
+      const text = String(value || "").replace(/\r?\n/g, " ").trim();
+      return /[",\n]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text;
+    };
+    document.querySelectorAll("[data-copy]").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const selector = button.dataset.copy;
+        const text = document.querySelector(selector)?.textContent.trim() || "";
+        await navigator.clipboard.writeText(text);
+        setStatus(selector, "已複製");
+      });
+    });
+    document.querySelectorAll("[data-build-row]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const now = new Date();
+        const next = new Date(now.getTime() + 12 * 60 * 60 * 1000).toISOString();
+        const kind = button.dataset.buildRow;
+        const rows = {
+          warm: ["LINE/WhatsApp/Email", "sent 20 warm referral messages", "day3-warm-referral-copy", "manual_warm_referral_batch_20", "https://bluehourchina.com/refer/?utm_source=warm_network&utm_medium=direct_message&utm_campaign=first_customer_week&angle=warm_referral", "posted_or_sent", "Sent from day3 execution pack; check replies in 12 hours"],
+          partner: ["LINE/WhatsApp/Email", "sent 15 partner referral messages", "day3-partner-referral-copy", "manual_partner_batch_15", "https://bluehourchina.com/refer/?utm_source=partner&utm_medium=direct_message&utm_campaign=first_customer_week&angle=partner_referral", "posted_or_sent", "Sent to partner/referral contacts; ask for one direct introduction"],
+          social: ["Instagram/Facebook/LinkedIn/Threads", "posted Before China practical prep post", "before-china-payment-apps-social-copy", "PASTE_ACTUAL_POST_URL_HERE", "https://bluehourchina.com/before-china/?utm_source=social&utm_medium=caption&utm_campaign=first_customer_week&angle=payment_setup", "posted_or_sent", "Public practical-prep post; replace posting_url with actual URL"]
+        };
+        const item = rows[kind];
+        const row = [
+          now.toISOString(),
+          item[0],
+          item[1],
+          item[2],
+          item[3],
+          item[4],
+          item[5],
+          "0",
+          "0",
+          next,
+          "若青中國旅策",
+          item[6]
+        ].map(csvCell).join(",");
+        document.querySelector("#execution-row").textContent = row;
+        setStatus("#execution-row", "已產生，請複製保存或回傳給我");
+      });
+    });
+  </script>
+</body>
+</html>
