@@ -34,6 +34,7 @@ const pages = [
   "/stories.html",
   "/interest.html",
   "/route-note/",
+  "/payment-rescue/",
   "/refer/",
   "/ops/first-customer-24h-close-board-2026-07-06.html",
   "/ops/first-customer-day3-execution-2026-07-06.html",

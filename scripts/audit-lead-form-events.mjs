@@ -63,6 +63,21 @@ const pages = [
     }
   },
   {
+    path: "/payment-rescue/",
+    formName: "bluehour-payment-rescue-en",
+    values: {
+      name: "Codex Payment Rescue Test",
+      email: "codex-test@example.com",
+      contact: "+1 555 0188 WhatsApp",
+      current_city: "Shanghai",
+      next_city_or_region: "Yunnan",
+      urgency: "Within 2-3 days",
+      payment_issue: "Alipay setup or payment failed",
+      group_size: "2 travellers",
+      message: "Testing the payment rescue route-check lead event without external submission."
+    }
+  },
+  {
     path: "/quick/china/",
     formName: "bluehour-china-quick-route-check-en",
     values: {
