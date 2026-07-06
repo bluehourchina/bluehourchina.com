@@ -35,6 +35,7 @@ Internal operating sheet for getting the first qualified consultation from socia
 - Search insight angles: `ops/first-customer-search-insights-2026-07-05.md`
 - Content funnel decision: `ops/first-customer-content-funnel-decision-2026-07-05.md`
 - Mobile action board: `ops/first-customer-mobile-action.html`
+- 2026-07-07 target desk: `ops/first-customer-2026-07-07-target-desk.html`
 - 2026-07-07 live send console: `ops/first-customer-2026-07-07-live-send-console.html`
 - 2026-07-07 social close sprint: `ops/first-customer-2026-07-07-social-close-sprint.html`
 - Partner outreach board: `ops/first-customer-partner-outreach.html`
@@ -43,13 +44,15 @@ Internal operating sheet for getting the first qualified consultation from socia
 
 ## Current Gate
 
-Updated 2026-07-06:
+Updated 2026-07-07:
 
 - Lead inbox is still empty; the first-customer goal is not complete.
 - The site now has high-intent decision pages for natural China routes, Zhangjiajie senior pacing and Guangzhou luxury family hotels.
 - English homepage, `/en/` and `/china-travel/` now route high-intent traffic to `/route-note/` first.
+- Cold social and warm-referral traffic should use `/quick/china/` first. It is the lowest-friction 60-second route check.
+- Today execution starts from `ops/first-customer-2026-07-07-target-desk.html`: 20 targets, exact copy, quick-form links and execution-row generator.
 - Before China practical content is used as a conversion bridge, not as a standalone travel-tips library.
-- Four Tripadvisor replies are approved for public posting, but not yet posted.
+- Five Tripadvisor replies are approved for public posting, but not yet posted.
 - User approved public posting on 2026-07-06, but Chrome automation hit Tripadvisor temporary access restriction. Use `ops/first-customer-approved-public-replies-2026-07-06.html` to post the no-link replies manually.
 - Priority is public distribution and reply logging, not more page production.
 - If links look risky on any platform, use zero-link first-touch replies first and move only warm replies to tracked forms.
@@ -57,12 +60,13 @@ Updated 2026-07-06:
 
 Next required action:
 
-- If working from a phone, open `/ops/first-customer-mobile-action.html` and complete 20 warm referral sends first.
+- If working from a phone, open `/ops/first-customer-mobile-action.html`, then open the 7/7 Target Desk from the first button.
+- If working from desktop, start with `/ops/first-customer-2026-07-07-target-desk.html` and execute the 20 targets in priority order.
 - If the user has only one execution window today, open `/ops/first-customer-24h-close-board-2026-07-06.html` first and finish the 35 direct sends before redesigning anything.
 - If owned-network contacts are limited, open `/ops/first-customer-partner-dispatch-2026-07-06.html` and send the top 7 named partner connector messages before posting more generic content.
 - Before sending the top 7 partner messages, check `ops/first-customer-partner-entry-check-2026-07-06.csv`, then use `ops/first-customer-partner-send-packet-2026-07-06.html` for exact subject and message. Do not post GoKunming forum/classified promotion; use its contact/advertiser route. Use directory/listing language for SmartShanghai and That's Mags.
 - If direct traveller contacts are limited, open `/ops/first-customer-partner-outreach.html` and send 15 partner referral messages to people who can introduce travellers.
-- Manually post the first four approved no-link Tripadvisor replies using `ops/first-customer-approved-public-replies-2026-07-06.html`.
+- Manually post the five approved no-link Tripadvisor replies using `ops/first-customer-approved-public-replies-2026-07-06.html`.
 - After posting or sending, log live URLs or manual send batches in `ops/first-customer-execution-log-2026-07-06.csv`.
 - Run the zero-link sprint board across Reddit, Facebook, Instagram/Threads comments, warm DMs or forums where links look promotional.
 - Use the practical setup angle only when it answers the question directly: payment, WeChat Pay, Alipay, eSIM, SMS, apps, hotel addresses or route friction.
