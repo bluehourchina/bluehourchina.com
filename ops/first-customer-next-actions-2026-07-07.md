@@ -64,4 +64,6 @@ If public posting is possible, use `/ops/first-customer-2026-07-07-high-intent-r
 
 Live search note: Reddit direct endpoints are blocked from automation, but Google search can still surface recent r/travelchina payment questions. Today, prioritize recent payment searches over generic Yunnan searches because those questions often come from travellers who are already preparing or already in China.
 
+For payment-problem replies, use the payment rescue section first: `https://bluehourchina.com/before-china/china-payment-checklist/?utm_source=direct_reply&utm_medium=qualified_conversation&utm_campaign=first_customer_week&angle=payment_rescue#payment-rescue`. Only send it after answering the practical question and asking which city they are in or heading to next.
+
 If any person replies with travel intent, paste the reply into `/ops/first-customer-lead-triage.html` before quoting. Qualified means contact method plus at least 5 route fields.

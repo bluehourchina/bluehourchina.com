@@ -73,6 +73,7 @@ Updated 2026-07-07:
 - If a traveller is asking about payment, WeChat Pay, Alipay, eSIM, SMS, maps, translation apps or hotel addresses, use the Payment/App sprint board before route selling. These questions usually mean the trip is real enough to qualify.
 - Today social angle should lead with PayPal / WeChat Pay 2026 payment news when posting to Threads, Instagram or Facebook, then convert the anxiety into a 60-second route check for regional China.
 - 2026-07-07 live search check: Reddit JSON/search endpoints can be blocked by network security, but Google search can still surface recent r/travelchina payment questions. Prioritize Google searches for `WeChat Pay Visa Alipay China travel` in the past week before generic Yunnan itinerary searches.
+- Payment-problem replies should now route warm users to `/before-china/china-payment-checklist/?utm_source=direct_reply&utm_medium=qualified_conversation&utm_campaign=first_customer_week&angle=payment_rescue#payment-rescue`, then ask for city, next destination and contact method before quoting.
 
 Next required action:
 
