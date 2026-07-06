@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,follow">
+  <title>送出證據回填｜若青中國旅策</title>
+  <style>
+    :root {
+      --forest: #102d26;
+      --paper: #f5efe5;
+      --cream: #fffaf0;
+      --ink: #18241f;
+      --muted: #65706a;
+      --gold: #c99a52;
+      --line: rgba(24, 36, 31, .16);
+      --soft: #fffdf8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+      line-height: 1.62;
+    }
+    header {
+      padding: 36px 18px 34px;
+      color: var(--cream);
+      background:
+        linear-gradient(95deg, rgba(7, 17, 15, .96), rgba(7, 17, 15, .62)),
+        url("/assets/ai/bluehour-yunnan-luxury-dali-terrace.jpg") center / cover no-repeat;
+    }
+    main { padding: 16px 0 82px; }
+    .wrap { width: min(980px, calc(100% - 28px)); margin: 0 auto; }
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 {
+      margin: 0;
+      font-family: "Noto Serif TC", "Songti TC", Georgia, serif;
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+    h1 { max-width: 820px; font-size: clamp(35px, 9vw, 72px); font-weight: 600; }
+    h2 { color: var(--forest); font-size: clamp(28px, 5vw, 46px); }
+    header p { max-width: 760px; margin: 16px 0 0; color: rgba(255, 250, 240, .84); font-size: 17px; font-weight: 760; }
+    .grid { display: grid; grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr); gap: 14px; align-items: start; }
+    .card {
+      min-width: 0;
+      margin-top: 14px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: var(--cream);
+    }
+    .full { grid-column: 1 / -1; }
+    .card p { margin: 10px 0 0; color: var(--muted); font-weight: 720; }
+    label {
+      display: grid;
+      gap: 6px;
+      margin-top: 12px;
+      color: var(--forest);
+      font-weight: 900;
+    }
+    input, select, textarea {
+      width: 100%;
+      min-height: 44px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      background: var(--soft);
+      color: var(--ink);
+      font: 720 15px/1.5 "Noto Sans TC", "PingFang TC", sans-serif;
+    }
+    textarea { min-height: 104px; resize: vertical; }
+    pre {
+      overflow-x: auto;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      margin: 12px 0 0;
+      padding: 14px;
+      border: 1px solid var(--line);
+      background: var(--soft);
+      color: var(--ink);
+      font: 720 14px/1.7 "Noto Sans TC", "PingFang TC", sans-serif;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    button, .btn {
+      min-height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 14px;
+      border: 1px solid var(--forest);
+      background: var(--forest);
+      color: var(--cream);
+      font: inherit;
+      font-weight: 920;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .gold { border-color: var(--gold); background: var(--gold); color: #13241f; }
+    .secondary { background: transparent; color: var(--forest); }
+    .status { min-height: 24px; margin-top: 10px; color: var(--forest); font-weight: 900; }
+    .score {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 18px;
+      border: 1px solid rgba(255, 250, 240, .22);
+      background: rgba(255, 250, 240, .2);
+    }
+    .score div { padding: 14px; background: rgba(16, 45, 38, .78); }
+    .score b { display: block; color: var(--gold); font-size: 24px; line-height: 1; }
+    .score span { display: block; margin-top: 7px; color: rgba(255, 250, 240, .72); font-size: 12px; font-weight: 850; }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 22px, 640px); }
+      header { padding-top: 30px; }
+      header p { font-size: 16px; }
+      .grid, .score { grid-template-columns: 1fr; }
+      .card { padding: 16px; }
+      button, .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <p class="eyebrow">First customer · proof capture · 2026-07-07</p>
+      <h1>送出後 30 秒內回填，不讓 lead 掉地上</h1>
+      <p>公開貼文、論壇回覆、partner email、暖轉私訊都用這頁產生內部追蹤列。有人回覆，就立刻進 lead triage。</p>
+      <div class="score">
+        <div><b>10</b><span>送出隊列</span></div>
+        <div><b>1</b><span>證據列</span></div>
+        <div><b>12h</b><span>跟進 SLA</span></div>
+        <div><b>1</b><span>合格 lead</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="grid">
+      <article class="card">
+        <p class="eyebrow">Input</p>
+        <h2>貼上送出證據</h2>
+        <label>送出項目
+          <select id="action-key">
+            <option value="public">1 · 支付救援公開貼</option>
+            <option value="natural">2 · Tripadvisor 自然景點 15 天</option>
+            <option value="payment">3 · Tripadvisor 支付問題</option>
+            <option value="zhangjiajie">4 · Tripadvisor 張家界長者</option>
+            <option value="guangzhou">5 · Tripadvisor 廣州家庭酒店</option>
+            <option value="gac">6 · Go Abroad China</option>
+            <option value="thatsmandarin">7 · That's Mandarin</option>
+            <option value="chinaadmissions">8 · China Admissions</option>
+            <option value="beijinger">9 · The Beijinger</option>
+            <option value="jingkids">10 · Jingkids / True Run</option>
+            <option value="warm">暖轉私訊 batch</option>
+          </select>
+        </label>
+        <label>證據 URL / 寄件備註 / 截圖檔名
+          <input id="proof" placeholder="live post URL / reply URL / sent email note / screenshot filename">
+        </label>
+        <label>目前回覆數
+          <input id="reply-count" type="number" min="0" value="0">
+        </label>
+        <label>目前 lead 數
+          <input id="lead-count" type="number" min="0" value="0">
+        </label>
+        <label>對方回覆內容
+          <textarea id="response-note" placeholder="Paste reply if any. If there is month/group/days/destination/contact, move to lead triage."></textarea>
+        </label>
+        <div class="actions">
+          <button class="gold" id="build-rows">產生追蹤列</button>
+          <a class="btn secondary" href="/ops/first-customer-2026-07-07-real-send-queue.html" target="_blank" rel="noopener">回送出隊列</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <p class="eyebrow">Output</p>
+        <h2>貼回內部紀錄</h2>
+        <p>第一列貼到 execution log；第二列貼到 follow-up tracker。若有具體旅行需求，直接打開 lead triage。</p>
+        <p class="eyebrow" style="margin-top:20px">Execution row</p>
+        <pre id="execution-row">尚未產生</pre>
+        <div class="actions">
+          <button class="gold" data-copy="#execution-row">複製 execution row</button>
+          <a class="btn secondary" href="/ops/first-customer-execution-log-2026-07-07.csv" target="_blank" rel="noopener">查看 execution log</a>
+        </div>
+        <div class="status" data-status="#execution-row"></div>
+        <p class="eyebrow" style="margin-top:20px">Follow-up row</p>
+        <pre id="follow-row">尚未產生</pre>
+        <div class="actions">
+          <button class="gold" data-copy="#follow-row">複製 follow-up row</button>
+          <a class="btn secondary" href="/ops/first-customer-followup-tracker-2026-07-07.csv" target="_blank" rel="noopener">查看 follow-up tracker</a>
+          <a class="btn gold" href="/ops/first-customer-lead-triage.html" target="_blank" rel="noopener">打開 lead triage</a>
+          <a class="btn secondary" href="/route-note/?utm_source=proof_capture&utm_medium=ops&utm_campaign=first_customer_week&angle=route_note_24h" target="_blank" rel="noopener">Start route note</a>
+          <a class="btn secondary" href="/payment-rescue/?utm_source=proof_capture&utm_medium=ops&utm_campaign=first_customer_week&angle=payment_rescue" target="_blank" rel="noopener">Start payment route check</a>
+        </div>
+        <div class="status" data-status="#follow-row"></div>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    const actions = {
+      public: ["X/Threads/Facebook", "posted payment rescue public post", "first-customer-real-send-queue-public", "https://bluehourchina.com/payment-rescue/?utm_source=threads&utm_medium=post&utm_campaign=first_customer_week&angle=payment_rescue", "check replies and move city/next-stop/payment issue into lead triage"],
+      natural: ["Tripadvisor", "posted natural wonders route reply", "no-link-natural-wonders", "https://bluehourchina.com/china-travel/china-natural-wonders-15-days/?utm_source=tripadvisor&utm_medium=forum_reply&utm_campaign=first_customer_week&angle=natural_wonders_15d", "if OP replies with nights/comfort, ask contact and route-note permission"],
+      payment: ["Tripadvisor", "posted payment layer reply", "no-link-payment-layer", "https://bluehourchina.com/payment-rescue/?utm_source=tripadvisor&utm_medium=forum_reply&utm_campaign=first_customer_week&angle=payment_rescue", "if traveller mentions current city or next stop, route to payment rescue triage"],
+      zhangjiajie: ["Tripadvisor", "posted Zhangjiajie senior route reply", "no-link-zhangjiajie-senior", "https://bluehourchina.com/china-travel/zhangjiajie-senior-friendly-route/?utm_source=tripadvisor&utm_medium=forum_reply&utm_campaign=first_customer_week&angle=zhangjiajie_senior_route", "if OP gives month/mobility, prepare senior route note"],
+      guangzhou: ["Tripadvisor", "posted Guangzhou luxury family reply", "no-link-guangzhou-family", "https://bluehourchina.com/china-travel/guangzhou-luxury-hotel-family/?utm_source=tripadvisor&utm_medium=forum_reply&utm_campaign=first_customer_week&angle=guangzhou_luxury_family", "if OP has wider China route, ask days/destination/contact"],
+      gac: ["Gmail partner", "sent Go Abroad China route-note email", "partner-go-abroad-china", "https://bluehourchina.com/route-note/?utm_source=partner_followup&utm_medium=go_abroad_china&utm_campaign=first_customer_week&angle=study_abroad_route", "if partner replies, ask for one student/family intro"],
+      thatsmandarin: ["Gmail partner", "sent That's Mandarin route-note email", "partner-thats-mandarin", "https://bluehourchina.com/route-note/?utm_source=partner_followup&utm_medium=thats_mandarin&utm_campaign=first_customer_week&angle=student_route_note", "if partner replies, ask for student activities or community contact"],
+      chinaadmissions: ["Gmail partner", "sent China Admissions route-note email", "partner-china-admissions", "https://bluehourchina.com/route-note/?utm_source=partner_followup&utm_medium=china_admissions&utm_campaign=first_customer_week&angle=student_parent_route", "if partner replies, ask for parent/student resources channel"],
+      beijinger: ["Gmail partner", "sent The Beijinger listing inquiry", "partner-the-beijinger", "https://bluehourchina.com/route-note/?utm_source=partner_followup&utm_medium=thebeijinger&utm_campaign=first_customer_week&angle=expat_route_note", "if media replies, ask cheapest listing or newsletter path"],
+      jingkids: ["Gmail partner", "sent Jingkids family route note email", "partner-jingkids", "https://bluehourchina.com/route-note/?utm_source=partner_followup&utm_medium=jingkids&utm_campaign=first_customer_week&angle=family_route_note", "if they reply, ask family directory or parent newsletter path"],
+      warm: ["LINE/WhatsApp/Email", "sent warm referral batch", "warm-referral-batch", "https://bluehourchina.com/route-note/?utm_source=warm_network&utm_medium=direct_message&utm_campaign=first_customer_week&angle=warm_referral", "any intro to traveller goes into lead triage immediately"]
+    };
+    const csv = (value) => '"' + String(value || "").replaceAll('"', '""') + '"';
+    const getValue = (id) => document.querySelector(id).value.trim();
+    const setStatus = (selector, message) => {
+      const status = document.querySelector('[data-status="' + selector + '"]');
+      if (status) status.textContent = message;
+    };
+    document.querySelector("#build-rows").addEventListener("click", () => {
+      const key = getValue("#action-key");
+      const payload = actions[key];
+      const now = new Date();
+      const next = new Date(now.getTime() + 12 * 60 * 60 * 1000);
+      const proof = getValue("#proof") || "manual_proof_pending";
+      const replyCount = getValue("#reply-count") || "0";
+      const leadCount = getValue("#lead-count") || "0";
+      const responseNote = getValue("#response-note");
+      const execution = [
+        now.toISOString(),
+        payload[0],
+        payload[1],
+        payload[2],
+        proof,
+        payload[3],
+        proof === "manual_proof_pending" ? "sent_manual_pending_proof" : "sent_or_posted",
+        replyCount,
+        leadCount,
+        next.toISOString(),
+        "若青中國旅策",
+        responseNote ? "Response captured: " + responseNote : "Generated from proof capture page; next action: " + payload[4]
+      ].map(csv).join(",");
+      const follow = [
+        now.toISOString(),
+        "proof_capture",
+        payload[0],
+        payload[2],
+        payload[1],
+        proof,
+        Number(replyCount) > 0 ? "replied" : "sent_waiting",
+        leadCount,
+        next.toISOString(),
+        Number(replyCount) > 0 ? "move reply into lead triage" : payload[4],
+        "若青中國旅策",
+        responseNote || "No reply yet"
+      ].map(csv).join(",");
+      document.querySelector("#execution-row").textContent = execution;
+      document.querySelector("#follow-row").textContent = follow;
+      setStatus("#execution-row", "已產生 execution row");
+      setStatus("#follow-row", "已產生 follow-up row");
+    });
+    document.querySelectorAll("[data-copy]").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const selector = button.getAttribute("data-copy");
+        await navigator.clipboard.writeText(document.querySelector(selector).textContent.trim());
+        setStatus(selector, "已複製");
+      });
+    });
+  </script>
+</body>
+</html>
