@@ -39,6 +39,7 @@ const pages = [
   "/ops/first-customer-day3-execution-2026-07-06.html",
   "/ops/first-customer-mobile-action.html",
   "/ops/first-customer-2026-07-07-live-send-console.html",
+  "/ops/first-customer-2026-07-07-social-close-sprint.html",
   "/ops/first-customer-one-hour-sprint-2026-07-06.html",
   "/ops/first-customer-2026-07-07-morning-send-queue.html",
   "/ops/first-customer-followup-tracker-2026-07-07.html",

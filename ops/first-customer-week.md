@@ -36,6 +36,7 @@ Internal operating sheet for getting the first qualified consultation from socia
 - Content funnel decision: `ops/first-customer-content-funnel-decision-2026-07-05.md`
 - Mobile action board: `ops/first-customer-mobile-action.html`
 - 2026-07-07 live send console: `ops/first-customer-2026-07-07-live-send-console.html`
+- 2026-07-07 social close sprint: `ops/first-customer-2026-07-07-social-close-sprint.html`
 - Partner outreach board: `ops/first-customer-partner-outreach.html`
 - Partner target CSV: `ops/first-customer-partner-targets-2026-07-06.csv`
 - Lead triage board: `ops/first-customer-lead-triage.html`
