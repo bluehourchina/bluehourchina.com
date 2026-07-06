@@ -106,7 +106,7 @@ const readyNotPosted = execution.filter((row) => /ready_not_posted|ready_not_sen
 const posted = execution.filter(
   (row) =>
     row.posting_url?.trim() &&
-    !/awaiting_user_approval_to_post|approved_manual_post_required|ready_not_posted|ready_not_sent|needs_login|hold_low_priority/.test(row.status)
+    !/awaiting_user_approval_to_post|approved_manual_post_required|ready_not_posted|ready_not_sent|needs_login|hold_low_priority|blocked|failed/.test(row.status)
 );
 const qualifiedLeads = leads.filter((row) => row.lead_stage === "qualified" || row.lead_stage === "quoted" || row.lead_stage === "won");
 

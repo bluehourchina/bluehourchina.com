@@ -29,8 +29,13 @@ Internal operating sheet for getting the first qualified consultation from socia
 - Payment/App first-touch sprint: `ops/first-customer-payment-sprint-2026-07-06.html`
 - Next-action generator: `scripts/next-first-customer-actions.mjs`
 - Current next actions: `ops/first-customer-next-actions-2026-07-06.md`
+- Current next actions 2026-07-07: `ops/first-customer-next-actions-2026-07-07.md`
 - Day 2 sprint: `ops/first-customer-day2-sprint-2026-07-06.md`
 - Before-China launch pack: `ops/first-customer-before-china-launch-pack-2026-07-06.md`
+- Before-China launch pack 2026-07-07: `ops/first-customer-before-china-launch-pack-2026-07-07.md`
+- Execution log 2026-07-07: `ops/first-customer-execution-log-2026-07-07.csv`
+- Zero-link sprint 2026-07-07: `ops/first-customer-zero-link-sprint-2026-07-07.md`
+- Verified reply 2026-07-07: `ops/first-customer-verified-reply-2026-07-07.md`
 - Approved public replies manual page: `ops/first-customer-approved-public-replies-2026-07-06.html`
 - Search insight angles: `ops/first-customer-search-insights-2026-07-05.md`
 - Content funnel decision: `ops/first-customer-content-funnel-decision-2026-07-05.md`
@@ -56,6 +61,9 @@ Updated 2026-07-07:
 - Before China practical content is used as a conversion bridge, not as a standalone travel-tips library.
 - Five Tripadvisor replies are approved for public posting, but not yet posted.
 - User approved public posting on 2026-07-06, but Chrome automation hit Tripadvisor temporary access restriction. Use `ops/first-customer-approved-public-replies-2026-07-06.html` to post the no-link replies manually.
+- 2026-07-07 execution log has 0 posted URLs and 0 lead rows. The first-customer goal is still not complete.
+- Gmail SMTP is blocked with a 535 BadCredentials response. Do not retry SMTP; use Gmail web, mailto, or manual sending for partner follow-ups.
+- Hutong / That's Mandarin web form automation is blocked by a country-field validation. Do not count it as sent; use the one-tap partner follow-up page or manual Gmail web send.
 - Priority is public distribution and reply logging, not more page production.
 - If links look risky on any platform, use zero-link first-touch replies first and move only warm replies to tracked forms.
 - If a traveller is asking about payment, WeChat Pay, Alipay, eSIM, SMS, maps, translation apps or hotel addresses, use the Payment/App sprint board before route selling. These questions usually mean the trip is real enough to qualify.
@@ -71,7 +79,7 @@ Next required action:
 - Before sending the top 7 partner messages, check `ops/first-customer-partner-entry-check-2026-07-06.csv`, then use `ops/first-customer-partner-send-packet-2026-07-06.html` for exact subject and message. Do not post GoKunming forum/classified promotion; use its contact/advertiser route. Use directory/listing language for SmartShanghai and That's Mags.
 - If direct traveller contacts are limited, open `/ops/first-customer-partner-outreach.html` and send 15 partner referral messages to people who can introduce travellers.
 - Manually post the five approved no-link Tripadvisor replies using `ops/first-customer-approved-public-replies-2026-07-06.html`.
-- After posting or sending, log live URLs or manual send batches in `ops/first-customer-execution-log-2026-07-06.csv`.
+- After posting or sending, log live URLs or manual send batches in `ops/first-customer-execution-log-2026-07-07.csv`.
 - Run the zero-link sprint board across Reddit, Facebook, Instagram/Threads comments, warm DMs or forums where links look promotional.
 - Use the practical setup angle only when it answers the question directly: payment, WeChat Pay, Alipay, eSIM, SMS, apps, hotel addresses or route friction.
 - Use the Payment/App sprint board to turn practical setup questions into route-note conversations only after the traveller shares month, group size, days, destination or comfort needs.
