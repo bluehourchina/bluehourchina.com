@@ -43,6 +43,19 @@ function tags(html, tagName) {
   return html.match(new RegExp(`<${tagName}\\b[^>]*>`, "gi")) || [];
 }
 
+function cssUrls(text) {
+  return [...text.matchAll(/url\(\s*["']?([^"')]+)["']?\s*\)/gi)]
+    .map((match) => match[1].trim())
+    .filter(Boolean);
+}
+
+function cssTexts(html) {
+  const styles = (html.match(/<style\b[^>]*>[\s\S]*?<\/style>/gi) || [])
+    .map((block) => block.replace(/^<style\b[^>]*>/i, "").replace(/<\/style>$/i, ""));
+  const styleAttrs = [...html.matchAll(/\sstyle\s*=\s*["']([^"']+)["']/gi)].map((match) => match[1]);
+  return [...styles, ...styleAttrs];
+}
+
 function isIndexable(html) {
   if (/google-site-verification/i.test(html)) return false;
   const robots = html.match(/<meta\b[^>]*name=["']robots["'][^>]*>/i)?.[0] || "";
@@ -157,6 +170,12 @@ async function auditFile(file) {
   for (const source of tags(html, "source")) {
     const src = readAttr(source, "src") || readAttr(source, "srcset");
     if (src && !(await resolvesToFile(src.split(/\s+/)[0], file))) report("issue", file, `broken source media: ${src}`);
+  }
+
+  for (const cssText of cssTexts(html)) {
+    for (const url of cssUrls(cssText)) {
+      if (!(await resolvesToFile(url, file))) report("issue", file, `broken CSS url reference: ${url}`);
+    }
   }
 
   for (const anchor of tags(html, "a")) {
