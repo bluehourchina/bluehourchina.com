@@ -61,6 +61,19 @@ const pages = [
       visited_china_before: "Yes, Beijing or Shanghai",
       message: "Testing the 24-hour route note lead event without external submission."
     }
+  },
+  {
+    path: "/quick/china/",
+    formName: "bluehour-china-quick-route-check-en",
+    values: {
+      name: "Codex Quick China Test",
+      contact: "+1 555 0144 WhatsApp",
+      destination: "Dunhuang",
+      travel_window: "Within 3-6 months",
+      route_days: "About one week",
+      group_size: "2 travellers",
+      message: "Testing the short social route-check form without external submission."
+    }
   }
 ];
 

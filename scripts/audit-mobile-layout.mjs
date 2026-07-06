@@ -56,6 +56,7 @@ const pages = [
   "/consult/",
   "/quick/",
   "/quick/en/",
+  "/quick/china/",
   "/zh.html",
   "/zh/before-china/",
   "/zh/before-china/wechat-pay-visa-mastercard/",
