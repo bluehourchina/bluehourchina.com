@@ -38,6 +38,7 @@ const pages = [
   "/ops/first-customer-24h-close-board-2026-07-06.html",
   "/ops/first-customer-day3-execution-2026-07-06.html",
   "/ops/first-customer-mobile-action.html",
+  "/ops/first-customer-2026-07-07-30min-live-room.html",
   "/ops/first-customer-2026-07-07-target-desk.html",
   "/ops/first-customer-2026-07-07-live-send-console.html",
   "/ops/first-customer-2026-07-07-social-close-sprint.html",

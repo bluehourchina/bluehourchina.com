@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>30 分鐘實貼作戰室｜若青中國旅策</title>
+  <style>
+    :root {
+      --ink: #13211c;
+      --muted: #65726b;
+      --paper: #f4eee4;
+      --cream: #fffaf1;
+      --forest: #0e2b24;
+      --gold: #d3a04e;
+      --line: rgba(19, 33, 28, .16);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Noto Sans", sans-serif;
+      line-height: 1.66;
+    }
+    .wrap { width: min(1040px, calc(100% - 28px)); margin: 0 auto; }
+    header {
+      padding: 42px 0 28px;
+      color: var(--cream);
+      background:
+        linear-gradient(95deg, rgba(7, 17, 15, .96), rgba(7, 17, 15, .64)),
+        url("/assets/ai/bluehour-china-hero-luxury-lake-v2.jpg") center / cover no-repeat;
+    }
+    main { padding: 18px 0 78px; }
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 {
+      font-family: Georgia, "Noto Serif TC", "Songti TC", serif;
+      font-weight: 600;
+      letter-spacing: 0;
+      line-height: 1.1;
+    }
+    h1 { max-width: 900px; margin-bottom: 14px; font-size: clamp(38px, 8vw, 78px); }
+    h2 { margin-bottom: 10px; color: var(--forest); font-size: clamp(29px, 5vw, 48px); }
+    h3 { margin-bottom: 8px; color: var(--forest); font-size: 23px; }
+    header p {
+      max-width: 770px;
+      margin-bottom: 0;
+      color: rgba(255, 250, 241, .84);
+      font-size: 18px;
+      font-weight: 760;
+    }
+    .score {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 20px;
+      border: 1px solid rgba(255, 250, 241, .22);
+      background: rgba(255, 250, 241, .18);
+    }
+    .score div { padding: 14px; background: rgba(14, 43, 36, .72); }
+    .score b {
+      display: block;
+      color: var(--gold);
+      font-family: Georgia, serif;
+      font-size: 30px;
+      line-height: 1;
+    }
+    .score span {
+      display: block;
+      margin-top: 7px;
+      color: rgba(255, 250, 241, .72);
+      font-size: 12px;
+      font-weight: 860;
+    }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .card {
+      min-width: 0;
+      margin-top: 16px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      background: rgba(255, 250, 241, .9);
+      box-shadow: 0 18px 44px rgba(19, 33, 28, .05);
+    }
+    .full { grid-column: 1 / -1; }
+    .card p { color: var(--muted); font-weight: 720; }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .step {
+      padding: 14px;
+      border: 1px solid var(--line);
+      background: #fffdf8;
+    }
+    .step b {
+      display: block;
+      color: var(--gold);
+      font-family: Georgia, serif;
+      font-size: 25px;
+      line-height: 1;
+    }
+    .step strong { display: block; margin-top: 10px; color: var(--forest); }
+    .step span { display: block; margin-top: 6px; color: var(--muted); font-size: 14px; font-weight: 760; }
+    pre {
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+      margin: 12px 0 0;
+      padding: 15px;
+      border: 1px solid var(--line);
+      background: #fffdf8;
+      color: var(--ink);
+      font: 720 14px/1.72 "Noto Sans TC", "Segoe UI", sans-serif;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    button, .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      border: 1px solid var(--forest);
+      padding: 11px 15px;
+      background: var(--forest);
+      color: var(--cream);
+      font: inherit;
+      font-weight: 920;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .gold { border-color: var(--gold); background: var(--gold); color: #14221d; }
+    .secondary { background: transparent; color: var(--forest); }
+    .status { min-height: 24px; margin-top: 10px; color: var(--forest); font-weight: 900; }
+    label {
+      display: grid;
+      gap: 7px;
+      margin-top: 12px;
+      color: var(--forest);
+      font-weight: 900;
+    }
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: #fffdf8;
+      color: var(--ink);
+      padding: 12px;
+      font: inherit;
+      font-weight: 720;
+    }
+    textarea { min-height: 92px; resize: vertical; }
+    .sticky {
+      position: sticky;
+      top: 0;
+      z-index: 4;
+      border-bottom: 1px solid rgba(255, 250, 241, .18);
+      background: rgba(14, 43, 36, .96);
+      color: var(--cream);
+      backdrop-filter: blur(12px);
+    }
+    .sticky .wrap {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 9px 0;
+    }
+    .sticky strong { font-size: 13px; letter-spacing: .06em; text-transform: uppercase; }
+    .sticky a {
+      min-height: 36px;
+      padding: 7px 10px;
+      border: 1px solid rgba(255, 250, 241, .24);
+      color: var(--cream);
+      font-size: 13px;
+      font-weight: 900;
+      text-decoration: none;
+    }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 22px, 640px); }
+      header { padding-top: 30px; }
+      header p { font-size: 16px; }
+      .grid, .score, .steps { grid-template-columns: 1fr; }
+      .card { padding: 16px; }
+      button, .btn { width: 100%; }
+      .sticky .wrap { flex-wrap: wrap; }
+      .sticky a { flex: 1 1 auto; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="sticky" aria-label="Live room shortcuts">
+    <div class="wrap">
+      <strong>30 min live room</strong>
+      <a href="#post">開始貼文</a>
+      <a href="#dm">開始私訊</a>
+      <a href="#proof">記錄證據</a>
+    </div>
+  </nav>
+
+  <header>
+    <div class="wrap">
+      <p class="eyebrow">First customer live room · 2026-07-07</p>
+      <h1>30 分鐘內，把準備動作變成真實觸達</h1>
+      <p>今晚不再新增策略。照順序完成公開回覆、即時社群貼文、12 則暖轉介紹。任何回覆只問五個條件，立刻進 lead triage。</p>
+      <div class="score" aria-label="30 minute live targets">
+        <div><b>5</b><span>公開回覆</span></div>
+        <div><b>1</b><span>即時社群貼文</span></div>
+        <div><b>12</b><span>暖轉私訊</span></div>
+        <div><b>1</b><span>可跟進需求</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card full">
+      <p class="eyebrow">Order</p>
+      <h2>今天只照這四步</h2>
+      <div class="steps">
+        <div class="step"><b>01</b><strong>貼五則 Tripadvisor 回覆</strong><span>已批准、無連結、手動發布。</span></div>
+        <div class="step"><b>02</b><strong>發 PayPal / WeChat 即時貼文</strong><span>用支付焦慮導到 60 秒 route check。</span></div>
+        <div class="step"><b>03</b><strong>發 12 則暖轉介紹</strong><span>每人只求介紹一位外國旅客。</span></div>
+        <div class="step"><b>04</b><strong>有人回覆就問五題</strong><span>月份、人數、天數、目的地、聯絡方式。</span></div>
+      </div>
+      <div class="actions">
+        <a class="btn gold" href="/ops/first-customer-approved-public-replies-2026-07-06.html" target="_blank" rel="noopener">開始貼 5 則公開回覆</a>
+        <a class="btn gold" href="/quick/china/?utm_source=30min_live_room&utm_medium=ops&utm_campaign=first_customer_week&angle=quick_route_check" target="_blank" rel="noopener">測試 60 秒短表單</a>
+        <a class="btn secondary" href="/ops/first-customer-lead-triage.html" target="_blank" rel="noopener">收到回覆後分類</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card" id="post">
+        <p class="eyebrow">Step 02</p>
+        <h2>PayPal / WeChat 即時貼文</h2>
+        <p>適合 Threads、Instagram、Facebook。重點不是賣行程，是把「支付不確定」轉成「路線要被照顧」。</p>
+        <pre id="paypal-post">PayPal may soon make China payments easier through WeChat Pay. Good news, but I still would not plan a regional China trip around one payment headline.
+
+For China beyond Beijing and Shanghai, payment is part of route comfort:
+- WeChat Pay / Alipay where available
+- one backup overseas card
+- small RMB cash layer
+- SMS that actually works abroad
+- hotel names and driver pickup points saved in Chinese
+
+This matters most in Yunnan, Zhangjiajie, Dunhuang, Xinjiang, Sanya or Northeast China. The stressful moment is often the taxi pickup, hotel check-in, ticket window or late transfer when one app fails.
+
+If you know your month, group size, days and destination idea, send a 60-second route check. We reply with a first route note and starting quote direction before any paid planning:
+https://bluehourchina.com/quick/china/?utm_source=threads&utm_medium=post&utm_campaign=first_customer_week&angle=paypal_wechat_payment_route</pre>
+        <div class="actions">
+          <button class="gold" data-copy="#paypal-post">複製即時貼文</button>
+          <a class="btn secondary" href="/assets/social/bluehour-paypal-wechat-2026-card.png" target="_blank" rel="noopener">打開配圖</a>
+          <a class="btn secondary" href="/ops/first-customer-2026-07-07-social-close-sprint.html" target="_blank" rel="noopener">更多社群文案</a>
+        </div>
+        <div class="status" data-status="#paypal-post"></div>
+      </article>
+
+      <article class="card" id="dm">
+        <p class="eyebrow">Step 03</p>
+        <h2>12 則暖轉介紹</h2>
+        <p>發給有外國朋友、海外同事、外派家庭、國際學生、旅宿或旅遊人脈的人。今天只求一位介紹。</p>
+        <pre id="warm-dm">我今天在幫 Bluehour China 找第一個真正有中國旅行需求的外國旅客。
+
+如果你身邊有外國朋友、國際學生、外派家庭、海外同事，或有人已經去過北京上海、想看更自然文化感的中國，請幫我轉這個 60 秒短表單給一位就好：
+https://bluehourchina.com/quick/china/?utm_source=warm_network&utm_medium=batch_12&utm_campaign=first_customer_week&angle=one_referral
+
+我們先回路線方向，不是叫對方立刻付費。</pre>
+        <div class="actions">
+          <button class="gold" data-copy="#warm-dm">複製中文暖轉訊息</button>
+          <a class="btn secondary" id="line-share" href="#">LINE 分享</a>
+          <a class="btn secondary" id="whatsapp-share" href="#">WhatsApp 分享</a>
+        </div>
+        <div class="status" data-status="#warm-dm"></div>
+      </article>
+
+      <article class="card">
+        <p class="eyebrow">English DM</p>
+        <h2>直接給外國旅客</h2>
+        <pre id="traveller-dm">Quick question: do you know anyone considering a China trip beyond Beijing or Shanghai?
+
+Bluehour China helps foreign travellers turn places like Yunnan, Zhangjiajie, Dunhuang, Xinjiang, Sanya or Northeast China into a realistic and comfortable route.
+
+If one person comes to mind, could you send them this 60-second route check?
+https://bluehourchina.com/quick/china/?utm_source=warm_network&utm_medium=direct_message&utm_campaign=first_customer_week&angle=foreign_friend_referral</pre>
+        <div class="actions">
+          <button class="gold" data-copy="#traveller-dm">複製英文訊息</button>
+          <a class="btn secondary" href="/route-note/?utm_source=30min_live_room&utm_medium=ops&utm_campaign=first_customer_week&angle=route_note_24h" target="_blank" rel="noopener">打開 route-note</a>
+        </div>
+        <div class="status" data-status="#traveller-dm"></div>
+      </article>
+
+      <article class="card">
+        <p class="eyebrow">If someone replies</p>
+        <h2>只問這五題</h2>
+        <pre id="qualify-five">我先不直接推套裝。你回我 5 個條件就好：
+
+1. 大概哪個月份
+2. 幾位同行，有沒有長輩或小孩
+3. 想走幾天
+4. 想去哪裡，或想要什麼感覺的中國
+5. Email / WhatsApp / LINE / 微信 哪個方便後續確認
+
+有這些我才能判斷路線適不適合，並回一份初步路線筆記與報價方向。</pre>
+        <div class="actions">
+          <button class="gold" data-copy="#qualify-five">複製五題追問</button>
+          <a class="btn secondary" href="/ops/first-customer-lead-triage.html" target="_blank" rel="noopener">開始 lead triage</a>
+        </div>
+        <div class="status" data-status="#qualify-five"></div>
+      </article>
+    </section>
+
+    <section class="card full" id="proof">
+      <p class="eyebrow">Proof row</p>
+      <h2>做完一批，馬上產生紀錄</h2>
+      <p>沒有證據 URL、截圖或批次說明，就不能算真的觸達。這一行用來貼回 execution log。</p>
+      <div class="grid">
+        <label>完成動作
+          <select id="action">
+            <option value="posted_tripadvisor_5">貼出 5 則 Tripadvisor 無連結回覆</option>
+            <option value="posted_paypal_wechat_social">發布 PayPal / WeChat 社群貼文</option>
+            <option value="sent_warm_referral_12">送出 12 則暖轉介紹</option>
+            <option value="received_reply_needs_triage">收到回覆，待 lead triage</option>
+          </select>
+        </label>
+        <label>平台
+          <select id="platform">
+            <option>Tripadvisor</option>
+            <option>Threads/Instagram</option>
+            <option>Facebook</option>
+            <option>LINE/WhatsApp</option>
+            <option>Email</option>
+            <option>Manual mixed batch</option>
+          </select>
+        </label>
+      </div>
+      <label>證據 URL / 截圖 / 批次說明
+        <textarea id="proof-note" placeholder="例如：5 個回覆 URL / Threads 貼文 URL / manual_warm_batch_12 / 截圖檔名"></textarea>
+      </label>
+      <pre id="execution-row">created_at,channel,action,asset_or_copy,posting_url,tracking_link,status,reply_count,lead_count,next_check_at,owner,notes</pre>
+      <div class="actions">
+        <button class="gold" id="build-row">產生 execution row</button>
+        <button class="secondary" data-copy="#execution-row">複製 execution row</button>
+        <a class="btn secondary" href="/ops/first-customer-execution-log-2026-07-06.csv" target="_blank" rel="noopener">查看 execution log</a>
+      </div>
+      <div class="status" data-status="#execution-row"></div>
+    </section>
+  </main>
+
+  <script>
+    const setStatus = (selector, message) => {
+      const status = document.querySelector(`[data-status="${selector}"]`);
+      if (status) status.textContent = message;
+    };
+
+    document.querySelectorAll("[data-copy]").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const selector = button.dataset.copy;
+        const text = document.querySelector(selector)?.textContent.trim() || "";
+        await navigator.clipboard.writeText(text);
+        setStatus(selector, "已複製");
+      });
+    });
+
+    const warmText = document.querySelector("#warm-dm").textContent.trim();
+    const encodedWarm = encodeURIComponent(warmText);
+    document.querySelector("#line-share").href = `https://social-plugins.line.me/lineit/share?text=${encodedWarm}`;
+    document.querySelector("#whatsapp-share").href = `https://wa.me/?text=${encodedWarm}`;
+
+    document.querySelector("#build-row").addEventListener("click", () => {
+      const now = new Date();
+      const next = new Date(now.getTime() + 6 * 60 * 60 * 1000);
+      const action = document.querySelector("#action").value;
+      const platform = document.querySelector("#platform").value;
+      const proof = document.querySelector("#proof-note").value.trim() || "manual_30min_live_room_batch";
+      const hasReply = action === "received_reply_needs_triage";
+      const tracking = hasReply
+        ? "https://bluehourchina.com/ops/first-customer-lead-triage.html"
+        : "https://bluehourchina.com/quick/china/?utm_source=30min_live_room&utm_medium=ops&utm_campaign=first_customer_week&angle=quick_route_check";
+      const row = [
+        now.toISOString(),
+        platform,
+        action,
+        "first-customer-2026-07-07-30min-live-room",
+        proof,
+        tracking,
+        hasReply ? "reply_needs_triage" : "posted_or_sent",
+        hasReply ? "1" : "0",
+        hasReply ? "1" : "0",
+        next.toISOString(),
+        "若青中國旅策",
+        "Generated from 30-minute live room; move any real reply into lead triage before quoting."
+      ];
+      document.querySelector("#execution-row").textContent =
+        row.map((value) => `"${String(value).replace(/"/g, '""')}"`).join(",");
+      setStatus("#execution-row", "已產生紀錄 row");
+    });
+  </script>
+</body>
+</html>

@@ -35,6 +35,7 @@ Internal operating sheet for getting the first qualified consultation from socia
 - Search insight angles: `ops/first-customer-search-insights-2026-07-05.md`
 - Content funnel decision: `ops/first-customer-content-funnel-decision-2026-07-05.md`
 - Mobile action board: `ops/first-customer-mobile-action.html`
+- 2026-07-07 30-minute live room: `ops/first-customer-2026-07-07-30min-live-room.html`
 - 2026-07-07 target desk: `ops/first-customer-2026-07-07-target-desk.html`
 - 2026-07-07 live send console: `ops/first-customer-2026-07-07-live-send-console.html`
 - 2026-07-07 social close sprint: `ops/first-customer-2026-07-07-social-close-sprint.html`
@@ -50,6 +51,7 @@ Updated 2026-07-07:
 - The site now has high-intent decision pages for natural China routes, Zhangjiajie senior pacing and Guangzhou luxury family hotels.
 - English homepage, `/en/` and `/china-travel/` now route high-intent traffic to `/route-note/` first.
 - Cold social and warm-referral traffic should use `/quick/china/` first. It is the lowest-friction 60-second route check.
+- If the user has 30 minutes, open `ops/first-customer-2026-07-07-30min-live-room.html` first: post five approved Tripadvisor replies, publish the PayPal / WeChat social post, send 12 warm referral DMs, then log proof.
 - Today execution starts from `ops/first-customer-2026-07-07-target-desk.html`: 20 targets, exact copy, quick-form links and execution-row generator.
 - Before China practical content is used as a conversion bridge, not as a standalone travel-tips library.
 - Five Tripadvisor replies are approved for public posting, but not yet posted.
@@ -61,7 +63,8 @@ Updated 2026-07-07:
 
 Next required action:
 
-- If working from a phone, open `/ops/first-customer-mobile-action.html`, then open the 7/7 Target Desk from the first button.
+- If working from a phone, open `/ops/first-customer-mobile-action.html`, then open the 30-minute live room from the first button.
+- If the user has one focused block today, start at `/ops/first-customer-2026-07-07-30min-live-room.html` and finish its four steps before making more content.
 - If working from desktop, start with `/ops/first-customer-2026-07-07-target-desk.html` and execute the 20 targets in priority order.
 - If the user has only one execution window today, open `/ops/first-customer-24h-close-board-2026-07-06.html` first and finish the 35 direct sends before redesigning anything.
 - If owned-network contacts are limited, open `/ops/first-customer-partner-dispatch-2026-07-06.html` and send the top 7 named partner connector messages before posting more generic content.
