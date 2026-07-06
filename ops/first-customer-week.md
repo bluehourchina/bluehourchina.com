@@ -24,6 +24,7 @@ Internal operating sheet for getting the first qualified consultation from socia
 - Real partner target CSV: `ops/first-customer-real-partner-targets-2026-07-06.csv`
 - Real partner dispatch board: `ops/first-customer-partner-dispatch-2026-07-06.html`
 - Partner entry check CSV: `ops/first-customer-partner-entry-check-2026-07-06.csv`
+- Top 7 partner send packet: `ops/first-customer-partner-send-packet-2026-07-06.html`
 - Zero-link first-touch board: `ops/first-customer-zero-link-sprint-2026-07-06.html`
 - Payment/App first-touch sprint: `ops/first-customer-payment-sprint-2026-07-06.html`
 - Next-action generator: `scripts/next-first-customer-actions.mjs`
@@ -57,7 +58,7 @@ Next required action:
 - If working from a phone, open `/ops/first-customer-mobile-action.html` and complete 20 warm referral sends first.
 - If the user has only one execution window today, open `/ops/first-customer-24h-close-board-2026-07-06.html` first and finish the 35 direct sends before redesigning anything.
 - If owned-network contacts are limited, open `/ops/first-customer-partner-dispatch-2026-07-06.html` and send the top 7 named partner connector messages before posting more generic content.
-- Before sending the top 7 partner messages, check `ops/first-customer-partner-entry-check-2026-07-06.csv`. Do not post GoKunming forum/classified promotion; use its contact/advertiser route. Use directory/listing language for SmartShanghai and That's Mags.
+- Before sending the top 7 partner messages, check `ops/first-customer-partner-entry-check-2026-07-06.csv`, then use `ops/first-customer-partner-send-packet-2026-07-06.html` for exact subject and message. Do not post GoKunming forum/classified promotion; use its contact/advertiser route. Use directory/listing language for SmartShanghai and That's Mags.
 - If direct traveller contacts are limited, open `/ops/first-customer-partner-outreach.html` and send 15 partner referral messages to people who can introduce travellers.
 - Manually post the first four approved no-link Tripadvisor replies using `ops/first-customer-approved-public-replies-2026-07-06.html`.
 - After posting or sending, log live URLs or manual send batches in `ops/first-customer-execution-log-2026-07-06.csv`.
