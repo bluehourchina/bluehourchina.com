@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>7/7 現場送出控制台｜若青中國旅策</title>
+  <style>
+    :root {
+      --ink: #111d18;
+      --muted: #62706a;
+      --paper: #f6f0e6;
+      --card: #fffaf1;
+      --line: #ddd3c4;
+      --gold: #d5a049;
+      --gold-dark: #a87522;
+      --forest: #0f2620;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Noto Sans", sans-serif;
+      line-height: 1.65;
+    }
+    .wrap {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+    header {
+      padding: 44px 0 24px;
+      background:
+        linear-gradient(135deg, rgba(15, 38, 32, .96), rgba(15, 38, 32, .84)),
+        url("/assets/yunnan-main-cinematic.jpg") center/cover;
+      color: #fffaf1;
+    }
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 860px;
+      margin-bottom: 14px;
+      font-family: Georgia, "Noto Serif TC", serif;
+      font-size: clamp(42px, 7vw, 86px);
+      line-height: .98;
+      letter-spacing: 0;
+    }
+    h2 {
+      margin-bottom: 8px;
+      font-family: Georgia, "Noto Serif TC", serif;
+      font-size: clamp(28px, 4.2vw, 46px);
+      line-height: 1.08;
+      letter-spacing: 0;
+    }
+    h3 {
+      margin-bottom: 8px;
+      font-size: 18px;
+      line-height: 1.25;
+    }
+    header p {
+      max-width: 760px;
+      margin-bottom: 22px;
+      color: rgba(255, 250, 241, .82);
+      font-size: 18px;
+    }
+    .quick {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+    main {
+      padding: 28px 0 64px;
+    }
+    .notice, .panel, .reply {
+      border: 1px solid var(--line);
+      background: rgba(255, 250, 241, .86);
+      box-shadow: 0 18px 50px rgba(17, 29, 24, .06);
+    }
+    .notice {
+      padding: 22px;
+      margin-bottom: 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+    .panel {
+      padding: 22px;
+      margin-bottom: 18px;
+    }
+    .reply {
+      padding: 18px;
+      margin-bottom: 14px;
+    }
+    .reply-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 10px;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+    .tag {
+      border: 1px solid rgba(213, 160, 73, .48);
+      color: var(--gold-dark);
+      padding: 4px 8px;
+      font-size: 12px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+    pre {
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+      margin: 12px 0 0;
+      padding: 16px;
+      border: 1px solid var(--line);
+      background: #fffdf8;
+      color: #25302c;
+      font-family: "SFMono-Regular", Consolas, monospace;
+      font-size: 14px;
+      line-height: 1.62;
+    }
+    details {
+      margin-top: 10px;
+    }
+    summary {
+      cursor: pointer;
+      color: var(--gold-dark);
+      font-weight: 900;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    button, .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      border: 1px solid var(--forest);
+      padding: 11px 16px;
+      background: var(--forest);
+      color: #fffaf1;
+      font: inherit;
+      font-weight: 900;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .gold {
+      border-color: var(--gold);
+      background: var(--gold);
+      color: #111d18;
+    }
+    .secondary {
+      background: transparent;
+      color: var(--forest);
+    }
+    .ghost {
+      border-color: rgba(255, 250, 241, .56);
+      color: #fffaf1;
+    }
+    .status {
+      min-height: 24px;
+      margin-top: 10px;
+      color: var(--gold-dark);
+      font-weight: 900;
+    }
+    .mini {
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .score {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .score div {
+      border: 1px solid rgba(255, 250, 241, .22);
+      padding: 14px;
+      background: rgba(255, 250, 241, .08);
+    }
+    .score b {
+      display: block;
+      font-family: Georgia, serif;
+      font-size: 30px;
+      line-height: 1;
+    }
+    .score span {
+      display: block;
+      margin-top: 6px;
+      color: rgba(255, 250, 241, .72);
+      font-size: 13px;
+      font-weight: 800;
+    }
+    label {
+      display: grid;
+      gap: 6px;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 900;
+    }
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: #fffdf8;
+      color: var(--ink);
+      padding: 12px;
+      font: inherit;
+    }
+    textarea { min-height: 92px; resize: vertical; }
+    .lead-rule {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .lead-rule div {
+      border: 1px solid var(--line);
+      padding: 14px;
+      background: #fffdf8;
+    }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 22px, 640px); }
+      header { padding-top: 32px; }
+      header p { font-size: 16px; }
+      .grid, .score, .lead-rule { grid-template-columns: 1fr; }
+      .notice, .panel, .reply { padding: 16px; }
+      .reply-head { display: block; }
+      .tags { justify-content: flex-start; margin-top: 8px; }
+      button, .btn { width: 100%; }
+      .quick .btn { width: auto; flex: 1 1 190px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <p class="eyebrow">First customer · live console</p>
+      <h1>今天先把第一個真需求拉進來</h1>
+      <p>這不是網站美化頁，是現場送出頁。順序是：先貼高意圖公開回覆，再發暖轉與 partner 跟進；只要有人回月份、人數、天數、目的地或聯絡方式，就進 lead triage。</p>
+      <div class="score" aria-label="Today's funnel score">
+        <div><b>5</b><span>公開無連結回覆</span></div>
+        <div><b>20</b><span>暖轉私訊</span></div>
+        <div><b>7</b><span>partner 跟進</span></div>
+        <div><b>1</b><span>合格 lead</span></div>
+      </div>
+      <div class="quick">
+        <a class="btn ghost" href="#public">貼公開回覆</a>
+        <a class="btn ghost" href="#warm">發暖轉</a>
+        <a class="btn ghost" href="#reply">有人回覆</a>
+        <a class="btn ghost" href="#log">回填紀錄</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="notice">
+      <p class="eyebrow">Current state</p>
+      <h2>現在還不能說第一個客戶到手</h2>
+      <p>Lead inbox 目前仍是空的，所以目標還在「分發與回覆」階段。今天所有動作都要留下實際 URL、截圖或手動送出批次紀錄；沒有紀錄，就不能算進展。</p>
+      <div class="actions">
+        <a class="btn gold" href="/ops/first-customer-lead-triage.html" target="_blank" rel="noopener">有人回覆就進 lead triage</a>
+        <a class="btn secondary" href="/route-note/?utm_source=live_console&utm_medium=ops&utm_campaign=first_customer_week&angle=route_note_24h" target="_blank" rel="noopener">測試 route-note 表單</a>
+        <a class="btn secondary" href="/ops/first-customer-lead-inbox.csv" target="_blank" rel="noopener">查看 lead inbox</a>
+      </div>
+    </section>
+
+    <section class="panel" id="public">
+      <p class="eyebrow">Step 1 · Public replies</p>
+      <h2>先貼 5 則已批准 Tripadvisor 無連結回覆</h2>
+      <p>這些是高意圖問題：雲南 16 天、自然景點、張家界長者、廣州親子高端酒店、中國支付。每則都先不放網址，只用專業回答換對方回覆。</p>
+
+      <article class="reply">
+        <div class="reply-head">
+          <div>
+            <p class="eyebrow">01 Tripadvisor</p>
+            <h3>雲南 16 天路線</h3>
+          </div>
+          <div class="tags"><span class="tag">approved</span><span class="tag">no link</span></div>
+        </div>
+        <details>
+          <summary>展開文案</summary>
+          <pre id="reply-yunnan">For this 16-day Yunnan route, I would decide the sequence before adding any more places. The risk is not that you miss one attraction; it is backtracking through Kunming, changing hotels too often, and mixing low-altitude south Yunnan with the higher north too quickly.
+
+Your core route already has enough: Dali, Shaxi, Lijiang, Tiger Leaping Gorge and Shangri-La can take ten days without feeling slow. Shaxi is worth one night rather than a pass-through. Dali should not be only a transit point if you want lake/village time. For Yuanyang and Jianshui, I would keep them as a separate south-Yunnan block so you are not constantly returning to Kunming.
+
+For transport, Didi/Amap/Alipay can solve city movement, but for route comfort the bigger question is where your hotels are and how many station transfers you accept with luggage. Public transport is possible; a private car only becomes useful for the awkward legs or if you care more about comfort than lowest cost.
+
+If you want, reply with your final arrival/departure cities, whether you prefer south-to-north or north-to-south, and your comfort level. I can suggest a cleaner sequence.</pre>
+        </details>
+        <div class="actions">
+          <button class="gold" data-copy="#reply-yunnan">複製文案</button>
+          <a class="btn secondary" href="https://www.tripadvisor.co.uk/ShowTopic-g294211-i642-k15451421-16_days_in_Yunnan_from_end_of_Jan_to_Feb_10_advise-China.html" target="_blank" rel="noopener">打開原帖</a>
+        </div>
+        <div class="status" data-status="#reply-yunnan"></div>
+      </article>
+
+      <article class="reply">
+        <div class="reply-head">
+          <div>
+            <p class="eyebrow">02 Tripadvisor</p>
+            <h3>自然景點決策</h3>
+          </div>
+          <div class="tags"><span class="tag">highest intent</span><span class="tag">no link</span></div>
+        </div>
+        <details>
+          <summary>展開文案</summary>
+          <pre id="reply-natural">With 15 days, I would choose the fourth stop by friction, not by fame.
+
+You already have Shanghai, Xi'an and Beijing, so the extra nature stop should not create too many flights, transfers or hotel changes.
+
+My practical ranking would be:
+
+1. Huangshan + Hongcun: lowest-friction nature/culture add-on from Shanghai by train. Good if budget and efficiency matter.
+2. Jiuzhaigou + Huanglong: probably the strongest pure scenery choice, but it adds more moving parts around Chengdu and the park transfers.
+3. Guilin/Yangshuo: iconic karst scenery and easier than many western-China routes, though it can feel more touristy.
+4. Yunnan: beautiful and a very different China, but Dali/Shaxi/Lijiang really wants 5-6 days to feel worthwhile. I would only choose it if you are willing to reduce time elsewhere.
+
+For your dates, I would probably choose Huangshan if you want the cleanest classic-route add-on, Jiuzhaigou if the priority is dramatic scenery, and Yunnan only if the priority is slower atmosphere rather than simply adding one scenic stop.
+
+If you want, reply with how many nights you planned for Shanghai, Xi'an and Beijing, plus your rough budget/comfort level, and I can suggest a cleaner 15-day skeleton.</pre>
+        </details>
+        <div class="actions">
+          <button class="gold" data-copy="#reply-natural">複製文案</button>
+          <a class="btn secondary" href="https://www.tripadvisor.co.uk/ShowTopic-g294211-i642-k15550431-First_trip_to_China_Which_natural_wonders_to_add-China.html" target="_blank" rel="noopener">打開原帖</a>
+        </div>
+        <div class="status" data-status="#reply-natural"></div>
+      </article>
+
+      <article class="reply">
+        <div class="reply-head">
+          <div>
+            <p class="eyebrow">03 Tripadvisor</p>
+            <h3>張家界長者路線</h3>
+          </div>
+          <div class="tags"><span class="tag">senior comfort</span><span class="tag">no link</span></div>
+        </div>
+        <details>
+          <summary>展開文案</summary>
+          <pre id="reply-zhangjiajie">For F63 and M72, I would choose the route by comfort and risk, not by the most dramatic view.
+
+The key questions are: knee condition, fear of heights, tolerance for crowds, and whether a long walk after the cable car would make the rest of the day unpleasant.
+
+If both travellers are steady walkers and not afraid of heights, the glass-platform route can be memorable. If either person is cautious with knees, balance or vertigo, I would keep the route simpler: use the cable car/escalator-heavy option, reduce unnecessary walking, and leave enough margin for queues.
+
+For senior travellers, Zhangjiajie is one of those places where the "best" route is often the one that prevents exhaustion. I would not combine too many scenic zones in one day. Pick one main mountain experience, start early, and keep the evening light.
+
+If you share the travel month, hotel area, whether they can manage stairs, and whether heights are a concern, I can narrow this to the safer route.</pre>
+        </details>
+        <div class="actions">
+          <button class="gold" data-copy="#reply-zhangjiajie">複製文案</button>
+          <a class="btn secondary" href="https://www.tripadvisor.co.uk/ShowTopic-g494933-i14757-k15550534-Stairway_to_HeaveWhich_is_the_best_route_for_two_Sr_citizens-Zhangjiajie_Hunan.html" target="_blank" rel="noopener">打開原帖</a>
+        </div>
+        <div class="status" data-status="#reply-zhangjiajie"></div>
+      </article>
+
+      <article class="reply">
+        <div class="reply-head">
+          <div>
+            <p class="eyebrow">04 Tripadvisor</p>
+            <h3>廣州高端酒店家庭</h3>
+          </div>
+          <div class="tags"><span class="tag">luxury family</span><span class="tag">no link</span></div>
+        </div>
+        <details>
+          <summary>展開文案</summary>
+          <pre id="reply-guangzhou">For Guangzhou with a 5-year-old, I would choose by neighbourhood and daily rhythm before choosing by brand.
+
+The luxury hotels in Guangzhou can be very good value compared with Europe, but the experience feels different depending on area.
+
+Four Seasons / Ritz style choices are usually stronger if you want a polished, high-rise, business-district stay around Tianhe and do not mind using taxis for most things.
+
+White Swan is worth considering if you want a more classic Guangzhou feeling, river/Shamian atmosphere and a softer family pace. It can feel less "international tower" and more rooted in the city.
+
+Voco can make sense if you prefer value and local street access, but I would not choose only by price with a 5-year-old. Lobby comfort, breakfast, taxi access and whether the surrounding area is easy after dinner matter more than they look on a booking page.
+
+For mid-November, I would first decide whether you want Guangzhou to feel like a polished city stop or a gentler family base. Then the hotel choice becomes clearer.</pre>
+        </details>
+        <div class="actions">
+          <button class="gold" data-copy="#reply-guangzhou">複製文案</button>
+          <a class="btn secondary" href="https://www.tripadvisor.co.uk/ShowTopic-g298555-i3651-k15548498-Reccomendation_luxury_hotel-Guangzhou_Guangdong.html" target="_blank" rel="noopener">打開原帖</a>
+        </div>
+        <div class="status" data-status="#reply-guangzhou"></div>
+      </article>
+
+      <article class="reply">
+        <div class="reply-head">
+          <div>
+            <p class="eyebrow">05 Tripadvisor</p>
+            <h3>中國支付準備</h3>
+          </div>
+          <div class="tags"><span class="tag">search value</span><span class="tag">no link</span></div>
+        </div>
+        <details>
+          <summary>展開文案</summary>
+          <pre id="reply-payment">Small 2026 update / framing point: I would still plan China payment as layers, not as one perfect method.
+
+Set up Alipay and/or WeChat Pay before departure where available, keep a second card, carry a small RMB cash layer, and make sure the phone number tied to the cards can receive SMS verification. The first few payment failures are often issuer/SMS/setup problems rather than a lack of merchants.
+
+For travellers going beyond Beijing and Shanghai, payment setup becomes part of route comfort. If you are moving through Yunnan, Xinjiang, Dunhuang or smaller towns, the stressful moments are often not the scenery but taxi pickup, hotel communication, ticketing, late arrivals and whether one app suddenly refuses a payment.
+
+I would also not plan around any brand-new payment feature until it has been tested on the ground. Useful news can help, but a backup card + cash + working SMS is still the safer travel plan.</pre>
+        </details>
+        <div class="actions">
+          <button class="gold" data-copy="#reply-payment">複製文案</button>
+          <a class="btn secondary" href="https://www.tripadvisor.co.uk/ShowTopic-g294211-i642-k14734141-Money_matters_Payment_in_China_for_foreign_visitors-China.html" target="_blank" rel="noopener">打開原帖</a>
+        </div>
+        <div class="status" data-status="#reply-payment"></div>
+      </article>
+    </section>
+
+    <section class="grid" id="warm">
+      <div class="panel">
+        <p class="eyebrow">Step 2 · Warm referral</p>
+        <h2>發給能介紹外國旅客的人</h2>
+        <p>先用人脈找第一個 lead，速度比等 Google 搜索快。目標不是品牌曝光，是讓對方把一個正在計畫中國旅行的人介紹過來。</p>
+        <pre id="warm-cn">我最近在做 Bluehour China / 若青中國旅策，幫外國旅客規劃北京上海之外的中國深度路線。
+
+最適合的人是：已經想來中國、但不確定雲南、敦煌、張家界、新疆、東北或三亞怎麼排才舒服的外國旅客。不是大團，也不是廉價行程；我們先看月份、人數、天數、住宿舒適度、語言支援、交通和支付準備，再回一份 24 小時路線筆記與初步報價方向。
+
+如果你身邊有外國朋友、海外同事、國際學生、外派家庭或正在計畫第二次來中國旅行的人，可以把這個給他：
+
+https://bluehourchina.com/refer/?utm_source=warm_network&utm_medium=direct_message&utm_campaign=first_customer_week&angle=warm_referral</pre>
+        <div class="actions">
+          <button class="gold" data-copy="#warm-cn">複製中文暖轉</button>
+          <a class="btn secondary" id="line-share" href="#">LINE</a>
+          <a class="btn secondary" id="whatsapp-share" href="#">WhatsApp</a>
+        </div>
+        <div class="status" data-status="#warm-cn"></div>
+      </div>
+
+      <div class="panel">
+        <p class="eyebrow">Traveller DM</p>
+        <h2>直接發給外國旅客</h2>
+        <p>只發給真的可能來中國的人。文案短，目的明確：請他留下 5 個條件，進 24 小時 route note。</p>
+        <pre id="warm-en">Hi, I’m helping build Bluehour China Journeys, a small private route-advisory service for travellers who want to see China beyond Beijing and Shanghai.
+
+If you are considering Yunnan, Zhangjiajie, Dunhuang, Xinjiang, Sanya or Northeast China, you can send your month, group size, days, comfort level and destination idea here. We reply with a 24-hour route note and starting quote direction before any paid planning.
+
+https://bluehourchina.com/route-note/?utm_source=warm_network&utm_medium=direct_message&utm_campaign=first_customer_week&angle=route_note_24h</pre>
+        <div class="actions">
+          <button class="gold" data-copy="#warm-en">複製英文私訊</button>
+          <a class="btn secondary" href="/route-note/?utm_source=live_console&utm_medium=ops&utm_campaign=first_customer_week&angle=route_note_24h" target="_blank" rel="noopener">打開 route-note</a>
+        </div>
+        <div class="status" data-status="#warm-en"></div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <p class="eyebrow">Step 3 · Partner follow-up</p>
+      <h2>對已接觸的 partner 做一次輕跟進</h2>
+      <p>目前 partner outreach 已有部分送出。今天不要再重寫長信，發一封輕跟進即可，請對方介紹「一位正在計畫中國二次旅遊的人」。</p>
+      <pre id="partner-follow">Hi, just following up once in case this is useful for your students, guests or foreign friends in China.
+
+Bluehour China Journeys helps English-speaking travellers plan comfortable routes beyond Beijing and Shanghai, especially Yunnan, Zhangjiajie, Dunhuang, Xinjiang, Sanya and Northeast China.
+
+The first step is not a paid itinerary. They can send their month, group size, days, destination idea and comfort level, and we reply with a practical 24-hour route note and starting quote direction.
+
+Referral page:
+https://bluehourchina.com/refer/?utm_source=partner&utm_medium=followup&utm_campaign=first_customer_week&angle=partner_referral</pre>
+      <div class="actions">
+        <button class="gold" data-copy="#partner-follow">複製 partner 跟進</button>
+        <a class="btn secondary" href="/ops/first-customer-partner-followup-2026-07-07.html" target="_blank" rel="noopener">打開 partner follow-up</a>
+        <a class="btn secondary" href="/ops/first-customer-partner-dispatch-2026-07-06.html" target="_blank" rel="noopener">查看已送 partner</a>
+      </div>
+      <div class="status" data-status="#partner-follow"></div>
+    </section>
+
+    <section class="panel" id="reply">
+      <p class="eyebrow">After reply</p>
+      <h2>有人回覆後，只問五題</h2>
+      <p>不要急著賣。先把對方從「有興趣」變成「可以報價的需求」。</p>
+      <pre id="five-questions">Thanks, I can help you think through the route. To make the first note useful, could you send five details?
+
+1. Approximate travel month
+2. Group size, and whether there are parents, seniors or children
+3. Number of travel days
+4. Destination idea, or the feeling of China you want
+5. Best contact method for follow-up: email, WhatsApp, LINE or WeChat
+
+With these, I can reply with a practical route note and starting quote direction.</pre>
+      <div class="lead-rule">
+        <div><strong>Warm</strong><br><span class="mini">有目的地或月份，但沒有聯絡方式。</span></div>
+        <div><strong>Qualified</strong><br><span class="mini">聯絡方式 + 月份/人數/目的地至少兩項。</span></div>
+        <div><strong>Quote-ready</strong><br><span class="mini">再加天數、舒適度、預算或飯店偏好。</span></div>
+      </div>
+      <div class="actions">
+        <button class="gold" data-copy="#five-questions">複製五題</button>
+        <a class="btn secondary" href="/ops/first-customer-lead-triage.html" target="_blank" rel="noopener">打開 lead triage</a>
+        <a class="btn secondary" href="/ops/first-customer-first-quote-builder-2026-07-06.html" target="_blank" rel="noopener">產生 route note</a>
+      </div>
+      <div class="status" data-status="#five-questions"></div>
+    </section>
+
+    <section class="panel" id="log">
+      <p class="eyebrow">Evidence</p>
+      <h2>做完後產生一行執行紀錄</h2>
+      <p>填入實際 URL、截圖檔名，或手動送出批次。這一行回傳給我，我才能回填漏斗，否則系統仍會判定沒有真正分發。</p>
+      <label>完成動作
+        <select id="log-action">
+          <option value="tripadvisor_5">貼出 5 則 Tripadvisor 無連結回覆</option>
+          <option value="warm_20">送出 20 則暖轉私訊</option>
+          <option value="partner_7">送出 7 則 partner 跟進</option>
+          <option value="qualified_reply">收到一個可跟進回覆</option>
+        </select>
+      </label>
+      <label>URL、截圖檔名或批次說明
+        <textarea id="log-proof" placeholder="例如：manual_tripadvisor_batch_5 / 截圖檔名 / 實際回覆 URL"></textarea>
+      </label>
+      <pre id="execution-row">created_at,channel,action,asset_or_copy,posting_url,tracking_link,status,reply_count,lead_count,next_check_at,owner,notes</pre>
+      <div class="actions">
+        <button class="gold" id="build-row">產生紀錄 row</button>
+        <button class="secondary" data-copy="#execution-row">複製紀錄 row</button>
+        <a class="btn secondary" href="/ops/first-customer-execution-log-2026-07-06.csv" target="_blank" rel="noopener">查看 execution log</a>
+      </div>
+      <div class="status" data-status="#execution-row"></div>
+    </section>
+  </main>
+
+  <script>
+    const warmText = document.querySelector("#warm-cn").textContent.trim();
+    document.querySelector("#line-share").href =
+      `https://social-plugins.line.me/lineit/share?text=${encodeURIComponent(warmText)}`;
+    document.querySelector("#whatsapp-share").href =
+      `https://wa.me/?text=${encodeURIComponent(warmText)}`;
+
+    const setStatus = (selector, message) => {
+      const status = document.querySelector(`[data-status="${selector}"]`);
+      if (status) status.textContent = message;
+    };
+
+    document.querySelectorAll("[data-copy]").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const selector = button.dataset.copy;
+        const text = document.querySelector(selector)?.textContent.trim() || "";
+        await navigator.clipboard.writeText(text);
+        setStatus(selector, "已複製");
+      });
+    });
+
+    const logRows = {
+      tripadvisor_5: {
+        channel: "Tripadvisor",
+        action: "posted 5 approved no-link public replies",
+        asset: "first-customer-2026-07-07-live-send-console",
+        tracking: "https://bluehourchina.com/route-note/?utm_source=tripadvisor&utm_medium=reply_followup&utm_campaign=first_customer_week&angle=manual_public_replies",
+        status: "posted_or_sent",
+        notes: "Manual post from approved no-link replies; route-note sent only after traveller replies with real trip details."
+      },
+      warm_20: {
+        channel: "LINE/WhatsApp/Email",
+        action: "sent 20 warm referral messages",
+        asset: "first-customer-2026-07-07-live-send-console",
+        tracking: "https://bluehourchina.com/refer/?utm_source=warm_network&utm_medium=direct_message&utm_campaign=first_customer_week&angle=warm_referral",
+        status: "posted_or_sent",
+        notes: "Manual warm-network send batch; check replies within 12 hours."
+      },
+      partner_7: {
+        channel: "Email/Partner DM",
+        action: "sent 7 partner follow-up messages",
+        asset: "first-customer-2026-07-07-live-send-console",
+        tracking: "https://bluehourchina.com/refer/?utm_source=partner&utm_medium=followup&utm_campaign=first_customer_week&angle=partner_referral",
+        status: "posted_or_sent",
+        notes: "Partner follow-up batch asking for one traveller introduction."
+      },
+      qualified_reply: {
+        channel: "Direct Reply",
+        action: "received traveller reply for lead triage",
+        asset: "first-customer-lead-triage",
+        tracking: "https://bluehourchina.com/ops/first-customer-lead-triage.html",
+        status: "reply_needs_triage",
+        notes: "Paste reply into lead triage, then generate lead inbox row."
+      }
+    };
+
+    document.querySelector("#build-row").addEventListener("click", () => {
+      const now = new Date();
+      const next = new Date(now.getTime() + 12 * 60 * 60 * 1000);
+      const item = logRows[document.querySelector("#log-action").value];
+      const proof = document.querySelector("#log-proof").value.trim() || "manual_batch_pending_proof";
+      const row = [
+        now.toISOString(),
+        item.channel,
+        item.action,
+        item.asset,
+        proof,
+        item.tracking,
+        item.status,
+        "0",
+        item.status === "reply_needs_triage" ? "1" : "0",
+        next.toISOString(),
+        "若青中國旅策",
+        item.notes
+      ];
+      document.querySelector("#execution-row").textContent =
+        row.map((value) => `"${String(value).replace(/"/g, '""')}"`).join(",");
+      setStatus("#execution-row", "已產生紀錄 row，請複製回傳或保存");
+    });
+  </script>
+</body>
+</html>

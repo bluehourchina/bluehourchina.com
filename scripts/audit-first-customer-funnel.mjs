@@ -9,21 +9,30 @@ const dateKey = new Intl.DateTimeFormat("en-CA", {
   month: "2-digit",
   day: "2-digit",
 }).format(new Date());
-const seedDate = "2026-07-05";
-
-async function preferTodayFile(prefix, ext) {
+async function preferLatestDatedFile(prefix, ext) {
   const today = path.join(root, "ops", `${prefix}-${dateKey}.${ext}`);
   try {
     await fs.access(today);
     return today;
   } catch {
-    return path.join(root, "ops", `${prefix}-${seedDate}.${ext}`);
+    const opsDir = path.join(root, "ops");
+    const entries = await fs.readdir(opsDir);
+    const pattern = new RegExp(`^${prefix}-(\\d{4}-\\d{2}-\\d{2})\\.${ext}$`);
+    const candidates = entries
+      .map((entry) => {
+        const match = entry.match(pattern);
+        return match ? { entry, date: match[1] } : null;
+      })
+      .filter(Boolean)
+      .sort((a, b) => b.date.localeCompare(a.date));
+    if (!candidates.length) throw new Error(`No dated file found for ${prefix}`);
+    return path.join(opsDir, candidates[0].entry);
   }
 }
 
 const files = {
-  execution: await preferTodayFile("first-customer-execution-log", "csv"),
-  replies: await preferTodayFile("first-customer-reply-log", "csv"),
+  execution: await preferLatestDatedFile("first-customer-execution-log", "csv"),
+  replies: await preferLatestDatedFile("first-customer-reply-log", "csv"),
   leads: path.join(root, "ops", "first-customer-lead-inbox.csv"),
 };
 
