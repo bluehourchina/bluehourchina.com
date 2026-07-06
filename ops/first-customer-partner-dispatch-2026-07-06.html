@@ -141,9 +141,39 @@
       font-size: 12px;
       font-weight: 900;
     }
+    .entry-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .entry {
+      padding: 14px;
+      border: 1px solid var(--line);
+      background: #fffdf8;
+      min-width: 0;
+    }
+    .entry b {
+      display: block;
+      color: var(--forest);
+      font-size: 17px;
+    }
+    .entry span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-weight: 730;
+    }
+    .entry em {
+      display: block;
+      margin-top: 8px;
+      color: #8a5f25;
+      font-style: normal;
+      font-weight: 920;
+    }
     .status { min-height: 24px; margin-top: 10px; color: var(--forest); font-weight: 900; }
     @media (max-width: 760px) {
-      .grid, .score { grid-template-columns: 1fr; }
+      .grid, .score, .entry-list { grid-template-columns: 1fr; }
       .target { grid-template-columns: 1fr; }
       button, .btn { width: 100%; }
       .card { padding: 16px; }
@@ -189,6 +219,24 @@
           <div class="target"><div class="rank">10</div><div><strong>International School of Beijing</strong><span>國際家庭社群；先找 community/newsletter/parent association route。</span><code>family-partner</code></div><a class="btn secondary" href="https://www.isb.cn/" target="_blank" rel="noopener">打開</a></div>
           <div class="target"><div class="rank">11</div><div><strong>Alliance Francaise de Kunming</strong><span>GoKunming listing 中的昆明法語教育組織；適合 Yunnan French route angle。</span><code>yunnan-local-partner</code></div><a class="btn secondary" href="https://www.gokunming.com/en/" target="_blank" rel="noopener">查找</a></div>
           <div class="target"><div class="rank">12</div><div><strong>Kunming College of Eastern Language and Culture</strong><span>GoKunming listing 中的 Mandarin school；適合學生路線與雲南短線需求。</span><code>yunnan-local-partner</code></div><a class="btn secondary" href="https://www.gokunming.com/en/" target="_blank" rel="noopener">查找</a></div>
+        </div>
+      </article>
+
+      <article class="card full">
+        <p class="eyebrow">Entry check · 2026-07-06</p>
+        <h2>前 7 個入口要分開處理</h2>
+        <p>不要把同一段話貼到所有地方。語言學校走 student activities / partnerships；媒體走 directory / advertising；GoKunming 不走 forum 硬廣，改走 contact 或 advertiser。</p>
+        <div class="actions">
+          <a class="btn secondary" href="/ops/first-customer-partner-entry-check-2026-07-06.csv" target="_blank" rel="noopener">打開入口檢查 CSV</a>
+        </div>
+        <div class="entry-list">
+          <div class="entry"><b>1 · LTL Mandarin School</b><span>有 Name、Email、WhatsApp / WeChat / Mobile、Message 表單欄位；適合 student advisor / activities / post-study route。</span><em>先送 contact form。</em></div>
+          <div class="entry"><b>2 · Go Abroad China</b><span>有 WhatsApp、email、phone 和 application form；application form 偏學生申請，partner 訊息先走直接聯絡。</span><em>先走 WhatsApp / email，不用 CV 表單。</em></div>
+          <div class="entry"><b>3 · Hutong School</b><span>網站指向 Contact Us，並有 partnerships、agents、universities、educational tours 等入口。</span><em>先送 partnerships / agents 角度。</em></div>
+          <div class="entry"><b>4 · That's Mandarin</b><span>Hutong School 現在導向 That's Mandarin 生態；適合把 route-note 包成學生課後中國路線。</span><em>先用語言學校版文案。</em></div>
+          <div class="entry"><b>5 · SmartShanghai</b><span>Contact 頁建議用 app 搜 Contact，也有 WeChat、advertisement options 和 List Your Venue / Directory。</span><em>先問 directory / advertising route。</em></div>
+          <div class="entry"><b>6 · That's Mags</b><span>有明確 Contact Us 表單，欄位含 City、Department；Department 可選 Sales & Marketing、Editorial、Directory、Events。</span><em>先選 Directory 或 Sales & Marketing。</em></div>
+          <div class="entry"><b>7 · GoKunming</b><span>Contact 表單有 captcha；posting guidelines 說企業推廣不該發 forum / classifieds，企業要透過 contact form 或 advertiser。</span><em>不要貼 forum 廣告，走 contact。</em></div>
         </div>
       </article>
 
