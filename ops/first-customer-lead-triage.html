@@ -141,7 +141,7 @@
     <div class="wrap">
       <p class="eyebrow">12-hour reply tool</p>
       <h1>有人回覆後，12 小時內完成判斷與追問</h1>
-      <p>第一個客戶常常不是「立即下單」，而是先回你一句有興趣。這頁用來判斷他是 cold、warm 還是 qualified，並生成下一句回覆與 lead inbox CSV row。</p>
+      <p>第一個客戶常常不是「立即下單」，而是先回你一句有興趣。這頁用來判斷他是 cold、warm 還是 qualified；如果對方人在中國且支付卡住，會優先進入 payment rescue 跟進。</p>
     </div>
   </header>
 
@@ -163,6 +163,18 @@
         <label>名稱或帳號<input data-field="handle_or_name" placeholder="Name or handle"></label>
         <label>Profile / thread URL<input data-field="profile_or_thread_url" placeholder="https://... or manual"></label>
         <label>對方第一句訊息<textarea data-field="first_message" placeholder="Paste the reply here"></textarea></label>
+        <label>目前城市<input data-field="current_city" placeholder="Shanghai / Lijiang / Chengdu / already in China"></label>
+        <label>下一站<input data-field="next_stop" placeholder="Dali / Zhangjiajie / airport transfer / not sure"></label>
+        <label>支付或 App 問題<input data-field="payment_issue" placeholder="Visa failed / Alipay verification / WeChat Pay / SMS / taxi payment"></label>
+        <label>急迫程度
+          <select data-field="urgency">
+            <option value="">not sure</option>
+            <option value="today">today / already stuck</option>
+            <option value="48h">within 48 hours</option>
+            <option value="before_departure">before departure</option>
+            <option value="route_planning">route planning only</option>
+          </select>
+        </label>
         <label>月份 / 季節<input data-field="travel_month" placeholder="Oct 2026 / next spring / not sure"></label>
         <label>人數<input data-field="group_size" placeholder="2 / family of 4 / parents"></label>
         <label>天數<input data-field="route_days" placeholder="7 days / 10-15 days"></label>
@@ -179,7 +191,7 @@
         <p class="eyebrow">Output</p>
         <h2>下一步回覆</h2>
         <div class="result" aria-label="Lead score result">
-          <div><b id="score">0</b><span>qualification score / 6</span></div>
+          <div><b id="score">0</b><span>best signal score / 6</span></div>
           <div><b id="stage" class="stage-cold">cold</b><span>lead stage</span></div>
           <div><b id="sla">ask</b><span>next action</span></div>
         </div>
@@ -205,7 +217,8 @@
   <script>
     const field = (name) => document.querySelector(`[data-field="${name}"]`)?.value.trim() || "";
     const setField = (id, text) => { document.querySelector(id).textContent = text; };
-    const scoreFields = ["travel_month", "group_size", "route_days", "budget_or_comfort", "contact_method", "destination_interest"];
+    const routeScoreFields = ["travel_month", "group_size", "route_days", "budget_or_comfort", "contact_method", "destination_interest"];
+    const paymentScoreFields = ["current_city", "next_stop", "payment_issue", "contact_method"];
     const csvCell = (value) => {
       const text = String(value || "").replace(/\r?\n/g, " ").trim();
       return /[",\n]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text;
@@ -218,14 +231,42 @@
       contact_method: "email / WhatsApp / LINE / WeChat",
       destination_interest: "destination or route idea"
     };
-    const computeScore = () => scoreFields.reduce((sum, name) => sum + (field(name) ? 1 : 0), 0);
-    const missing = () => scoreFields.filter((name) => !field(name)).map((name) => missingLabels[name]);
+    const paymentSignal = () => /pay|payment|card|visa|master|alipay|wechat|wallet|sms|verification|taxi|hotel|ticket|failed|declined|刷|付|支付|卡|付款|錢包|驗證|短信|簡訊|微信|支付寶/i.test(
+      [field("first_message"), field("payment_issue")].join(" ")
+    );
+    const routeScore = () => routeScoreFields.reduce((sum, name) => sum + (field(name) ? 1 : 0), 0);
+    const paymentScore = () => {
+      const base = paymentScoreFields.reduce((sum, name) => sum + (field(name) ? 1 : 0), 0);
+      return base + (paymentSignal() ? 1 : 0) + (field("urgency") && field("urgency") !== "route_planning" ? 1 : 0);
+    };
+    const computeScore = () => Math.max(routeScore(), paymentScore());
+    const missing = () => routeScoreFields.filter((name) => !field(name)).map((name) => missingLabels[name]);
+    const missingPayment = () => {
+      const labels = {
+        current_city: "current city",
+        next_stop: "next stop",
+        payment_issue: "what failed",
+        contact_method: "email / WhatsApp / LINE / WeChat"
+      };
+      return paymentScoreFields.filter((name) => !field(name)).map((name) => labels[name]);
+    };
+    const isPaymentQualified = () => Boolean(paymentSignal() && paymentScore() >= 4 && field("contact_method") && (field("current_city") || field("next_stop")));
 
     const replyFor = (score, stage) => {
       const destination = field("destination_interest") || "China";
       const month = field("travel_month") || "your travel month";
       const group = field("group_size") || "your group";
       const needs = field("budget_or_comfort") || "comfort level";
+      if (isPaymentQualified()) {
+        const city = field("current_city") || "your current city";
+        const nextStop = field("next_stop") || "your next stop";
+        const issue = field("payment_issue") || "the payment issue";
+        return `Thanks. This is enough for a first payment-sensitive route check.\n\nI would not make the next transfer tighter until ${issue} is separated into card issuer, wallet verification, merchant scenario and phone/SMS risk.\n\nI will check ${city} to ${nextStop} as a route problem, not only a payment problem:\n1. which day has the highest friction\n2. where cash or hotel backup matters\n3. whether taxi, ticket or check-in timing should be softened\n4. what we need before a formal quote\n\nPlease confirm this is the best contact method. Do not send card numbers, passwords or verification codes.`;
+      }
+      if (paymentSignal() && paymentScore() >= 3) {
+        const miss = missingPayment().slice(0, 3).join(", ");
+        return `This sounds like a payment-sensitive route issue, not just an app issue.\n\nBefore giving a route note, could you send: ${miss}?\n\nPlease do not send card numbers, passwords or verification codes. Once I know the city, next stop and what failed, I can tell you which part of the route should be made calmer.`;
+      }
       if (stage === "qualified") {
         return `Thanks, this is enough to make the first note useful.\n\nMy next step is to check whether ${destination} is realistic for ${month}, ${group}, the days you have and the ${needs} you mentioned. I would not quote a fixed package yet, but I can send a first route note with the starting price direction and the main pacing risks.\n\nI will prepare:\n1. destination fit\n2. route pace and friction points\n3. starting quote direction for land arrangements\n4. the few questions needed before a formal proposal\n\nPlease confirm this is the best contact method for the route note.`;
       }
@@ -260,17 +301,24 @@
         stage === "qualified" ? "Send route note and starting quote within 12 hours" : "Ask missing qualification fields",
         due,
         "若青中國旅策",
-        "Generated from first-customer lead triage board"
+        [
+          "Generated from first-customer lead triage board",
+          field("current_city") ? "current_city=" + field("current_city") : "",
+          field("next_stop") ? "next_stop=" + field("next_stop") : "",
+          field("payment_issue") ? "payment_issue=" + field("payment_issue") : "",
+          field("urgency") ? "urgency=" + field("urgency") : "",
+          isPaymentQualified() ? "priority=payment_rescue" : ""
+        ].filter(Boolean).join("; ")
       ];
       return values.map(csvCell).join(",");
     };
 
     document.querySelector("#score-lead").addEventListener("click", () => {
       const score = computeScore();
-      const stage = score >= 5 && field("contact_method") ? "qualified" : score >= 3 ? "warm" : "needs_qualification";
+      const stage = isPaymentQualified() || (routeScore() >= 5 && field("contact_method")) ? "qualified" : score >= 3 ? "warm" : "needs_qualification";
       setField("#score", String(score));
       setField("#stage", stage);
-      setField("#sla", stage === "qualified" ? "quote" : "ask");
+      setField("#sla", isPaymentQualified() ? "payment rescue" : stage === "qualified" ? "quote" : "ask");
       document.querySelector("#stage").className = stage === "qualified" ? "stage-qualified" : stage === "warm" ? "stage-warm" : "stage-cold";
       setField("#reply", replyFor(score, stage));
       setField("#lead-row", buildRow(score, stage));
