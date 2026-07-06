@@ -43,6 +43,7 @@ const pages = [
   "/ops/first-customer-zero-link-sprint-2026-07-06.html",
   "/ops/first-customer-payment-sprint-2026-07-06.html",
   "/ops/first-customer-lead-triage.html",
+  "/ops/first-customer-first-quote-builder-2026-07-06.html",
   "/ops/first-customer-partner-outreach.html",
   "/ops/first-customer-partner-dispatch-2026-07-06.html",
   "/ops/first-customer-partner-send-packet-2026-07-06.html",
