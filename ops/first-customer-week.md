@@ -57,6 +57,7 @@ Updated 2026-07-07:
 - Priority is public distribution and reply logging, not more page production.
 - If links look risky on any platform, use zero-link first-touch replies first and move only warm replies to tracked forms.
 - If a traveller is asking about payment, WeChat Pay, Alipay, eSIM, SMS, maps, translation apps or hotel addresses, use the Payment/App sprint board before route selling. These questions usually mean the trip is real enough to qualify.
+- Today social angle should lead with PayPal / WeChat Pay 2026 payment news when posting to Threads, Instagram or Facebook, then convert the anxiety into a 60-second route check for regional China.
 
 Next required action:
 
@@ -71,6 +72,7 @@ Next required action:
 - Run the zero-link sprint board across Reddit, Facebook, Instagram/Threads comments, warm DMs or forums where links look promotional.
 - Use the practical setup angle only when it answers the question directly: payment, WeChat Pay, Alipay, eSIM, SMS, apps, hotel addresses or route friction.
 - Use the Payment/App sprint board to turn practical setup questions into route-note conversations only after the traveller shares month, group size, days, destination or comfort needs.
+- For cold social posts, use the PayPal / WeChat Pay 2026 copy in `/ops/first-customer-2026-07-07-social-close-sprint.html`, because it is timely and less sales-like than a generic route-planning post.
 - Run `node scripts/audit-first-customer-funnel.mjs` every day until the first qualified lead appears.
 - Run `node scripts/next-first-customer-actions.mjs` before each execution block; if posted URLs are still 0, distribution actions outrank website redesign.
 - Any serious reply should be pasted into `/ops/first-customer-lead-triage.html` before quoting. The board generates the next reply and the lead inbox CSV row.
