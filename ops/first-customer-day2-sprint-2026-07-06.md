@@ -6,7 +6,7 @@
 - Qualified leads: 0
 - Posted or sent proof rows: 0
 - Public Tripadvisor replies awaiting explicit approval: 0
-- Approved Tripadvisor replies requiring manual posting: 4
+- Approved Tripadvisor replies requiring manual posting: 5
 - Highest-leverage available action without public-posting approval: warm referrals and partner referrals.
 
 ## Day 2 Objective
