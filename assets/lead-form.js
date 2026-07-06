@@ -81,30 +81,35 @@
   const copy = {
     en: {
       sending: "Sending...",
+      success: "Thank you. We received your request and will reply with a route note and a starting quote.",
       privacy:
         'By submitting, you agree that Bluehour China Journeys may use these details to reply to your inquiry and prepare a route note. See <a href="/privacy.html">Privacy Notice</a>.',
       fallback: "The form did not send. Please email us directly."
     },
     zh: {
       sending: "送出中...",
+      success: "已收到，若青中國旅策會回覆一份路線遊記式建議與初步方案報價。",
       privacy:
         '送出後，若青中國旅策會使用這些資料回覆你的諮詢、整理路線筆記與初步報價。請閱讀 <a href="/privacy.html">隱私告知</a>。',
       fallback: "表單暫時沒有送出，請直接寄信給我們。"
     },
     ja: {
       sending: "送信中...",
+      success: "受け取りました。旅のノートと最初のお見積りをお送りします。",
       privacy:
         '送信後、Bluehour China Journeys はご相談への返信、旅のノート、最初のお見積りのために情報を使用します。<a href="/privacy.html">Privacy Notice</a> をご確認ください。',
       fallback: "フォームを送信できませんでした。直接メールでご連絡ください。"
     },
     ko: {
       sending: "보내는 중...",
+      success: "문의가 접수되었습니다. 루트 노트와 시작 견적을 보내드립니다.",
       privacy:
         '제출하신 정보는 상담 답변, 루트 노트, 시작 견적 준비에 사용됩니다. <a href="/privacy.html">Privacy Notice</a>를 확인해 주세요.',
       fallback: "양식 전송이 되지 않았습니다. 이메일로 직접 연락해 주세요."
     },
     th: {
       sending: "กำลังส่ง...",
+      success: "เราได้รับคำขอแล้ว จะตอบกลับพร้อมบันทึกเส้นทางและราคาเริ่มต้น",
       privacy:
         'หลังส่งแบบฟอร์ม Bluehour China Journeys จะใช้ข้อมูลนี้เพื่อตอบกลับ จัดทำบันทึกเส้นทาง และราคาเริ่มต้น โปรดอ่าน <a href="/privacy.html">Privacy Notice</a>',
       fallback: "ส่งแบบฟอร์มไม่สำเร็จ กรุณาอีเมลถึงเราโดยตรง"
@@ -142,7 +147,7 @@
   const setHiddenFields = (form) => {
     Object.entries(fieldValues(form)).forEach(([name, value]) => {
       let input = form.querySelector('[name="' + name + '"]');
-      if (!input && ["intent_angle", "source_path"].includes(name)) {
+      if (!input) {
         input = document.createElement("input");
         input.type = "hidden";
         input.name = name;
@@ -178,11 +183,98 @@
     HTMLFormElement.prototype.submit.call(form);
   };
 
+  const setIntakeProvider = (form, value) => {
+    let input = form.querySelector('[name="intake_provider"]');
+    if (!input) {
+      input = document.createElement("input");
+      input.type = "hidden";
+      input.name = "intake_provider";
+      form.appendChild(input);
+    }
+    input.value = value;
+  };
+
+  const formBody = (form, intakeProvider) => {
+    setHiddenFields(form);
+    setIntakeProvider(form, intakeProvider);
+    const body = new URLSearchParams();
+    new FormData(form).forEach((value, key) => body.append(key, value));
+    return body;
+  };
+
+  const enableButton = (button, originalLabel) => {
+    if (!button) return;
+    button.disabled = false;
+    button.textContent = originalLabel;
+  };
+
+  const handleSheetSubmit = (form) => {
+    form.addEventListener("submit", async (event) => {
+      if (form.querySelector('[name="bot-field"]')?.value) return;
+      event.preventDefault();
+
+      const endpoint = form.dataset.sheetEndpoint || "";
+      const status = getStatus(form);
+      const button = form.querySelector('button[type="submit"]');
+      const originalLabel = button ? button.textContent : "";
+      const copyText = message(form);
+      const fallbackMessage = form.dataset.errorMessage || copyText.fallback;
+
+      status.className = "form-status";
+      status.textContent = "";
+      if (button) {
+        button.disabled = true;
+        button.textContent = form.dataset.sendingMessage || copyText.sending;
+      }
+
+      if (!endpoint.startsWith("https://")) {
+        status.className = "form-status error";
+        status.innerHTML =
+          fallbackMessage +
+          ' <a href="mailto:bluehourchina@gmail.com?subject=Bluehour%20China%20journey%20review">bluehourchina@gmail.com</a>';
+        enableButton(button, originalLabel);
+        return;
+      }
+
+      try {
+        await fetch(endpoint, {
+          method: "POST",
+          body: formBody(form, "google_sheet_webapp"),
+          mode: "no-cors",
+          keepalive: true
+        });
+        pushLeadEvent(form, { intakeProvider: "google_sheet_webapp" });
+        status.className = "form-status success";
+        status.textContent = form.dataset.successMessage || copyText.success;
+        form.reset();
+        setHiddenFields(form);
+        setIntakeProvider(form, "google_sheet_webapp");
+        enableButton(button, originalLabel);
+      } catch (error) {
+        if (/formsubmit\.co/i.test(form.action || "")) {
+          setIntakeProvider(form, "formsubmit_email_fallback");
+          pushLeadEvent(form, { intakeProvider: "formsubmit_email_fallback" });
+          fallbackSubmit(form);
+          return;
+        }
+        status.className = "form-status error";
+        status.innerHTML =
+          fallbackMessage +
+          ' <a href="mailto:bluehourchina@gmail.com?subject=Bluehour%20China%20journey%20review">bluehourchina@gmail.com</a>';
+        enableButton(button, originalLabel);
+      }
+    });
+  };
+
   forms.forEach((form) => {
     setHiddenFields(form);
     ensurePrivacyNotice(form);
 
-    if (form.dataset.sheetEndpoint) return;
+    if (form.dataset.sheetEndpoint) {
+      setIntakeProvider(form, "google_sheet_webapp");
+      handleSheetSubmit(form);
+      return;
+    }
     if (!/formsubmit\.co/i.test(form.action || "")) return;
 
     form.addEventListener("submit", async (event) => {
