@@ -21,6 +21,7 @@ Internal operating sheet for getting the first qualified consultation from socia
 - Daily tracker import file: `ops/first-customer-week-tracker.csv`
 - Funnel audit: `scripts/audit-first-customer-funnel.mjs`
 - Zero-link first-touch board: `ops/first-customer-zero-link-sprint-2026-07-06.html`
+- Payment/App first-touch sprint: `ops/first-customer-payment-sprint-2026-07-06.html`
 - Next-action generator: `scripts/next-first-customer-actions.mjs`
 - Current next actions: `ops/first-customer-next-actions-2026-07-06.md`
 - Day 2 sprint: `ops/first-customer-day2-sprint-2026-07-06.md`
@@ -45,6 +46,7 @@ Updated 2026-07-06:
 - User approved public posting on 2026-07-06, but Chrome automation hit Tripadvisor temporary access restriction. Use `ops/first-customer-approved-public-replies-2026-07-06.html` to post the no-link replies manually.
 - Priority is public distribution and reply logging, not more page production.
 - If links look risky on any platform, use zero-link first-touch replies first and move only warm replies to tracked forms.
+- If a traveller is asking about payment, WeChat Pay, Alipay, eSIM, SMS, maps, translation apps or hotel addresses, use the Payment/App sprint board before route selling. These questions usually mean the trip is real enough to qualify.
 
 Next required action:
 
@@ -54,6 +56,7 @@ Next required action:
 - After posting or sending, log live URLs or manual send batches in `ops/first-customer-execution-log-2026-07-06.csv`.
 - Run the zero-link sprint board across Reddit, Facebook, Instagram/Threads comments, warm DMs or forums where links look promotional.
 - Use the practical setup angle only when it answers the question directly: payment, WeChat Pay, Alipay, eSIM, SMS, apps, hotel addresses or route friction.
+- Use the Payment/App sprint board to turn practical setup questions into route-note conversations only after the traveller shares month, group size, days, destination or comfort needs.
 - Run `node scripts/audit-first-customer-funnel.mjs` every day until the first qualified lead appears.
 - Run `node scripts/next-first-customer-actions.mjs` before each execution block; if posted URLs are still 0, distribution actions outrank website redesign.
 - Any serious reply should be pasted into `/ops/first-customer-lead-triage.html` before quoting. The board generates the next reply and the lead inbox CSV row.
