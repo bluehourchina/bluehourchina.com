@@ -57,6 +57,19 @@
       <p>不要請對方「合作」。請對方做一個小動作：轉給一位正在準備中國旅行的外國旅客，或告訴我們哪個 listing / newsletter / community channel 適合。</p>
     </section>
 
+    <section class="card full">
+      <p class="eyebrow">One-tap send</p>
+      <h2>先追 4 個已送出的真實 connector</h2>
+      <p>這四封是最容易今天就補上的 follow-up。點按後會打開郵件草稿；送出後，再到下方產生 execution row。不要把它當成完成，真正按送出才算。</p>
+      <div class="actions">
+        <a class="btn gold" id="mail-gac" href="#">打開 Go Abroad China follow-up</a>
+        <a class="btn gold" id="mail-thatsmandarin" href="#">打開 That's Mandarin follow-up</a>
+        <a class="btn gold" id="mail-beijinger" href="#">打開 The Beijinger follow-up</a>
+        <a class="btn gold" id="mail-jingkids" href="#">打開 Jingkids follow-up</a>
+      </div>
+      <p class="status" id="mailto-status">送出後請回填：平台、收件人、截圖或寄件備註。</p>
+    </section>
+
     <section class="grid">
       <article class="card">
         <p class="eyebrow">01 · Sent partners</p>
@@ -154,6 +167,90 @@ https://bluehourchina.com/route-note/?utm_source=partner_followup&utm_medium=war
     const setStatus=(selector,message)=>{const status=document.querySelector(`[data-status="${selector}"]`);if(status)status.textContent=message};
     async function copyText(selector){const source=document.querySelector(selector);if(!source)return;const text=source.textContent.trim();try{await navigator.clipboard.writeText(text);setStatus(selector,"已複製")}catch{setStatus(selector,"請手動複製")}}
     document.querySelectorAll("[data-copy]").forEach((button)=>button.addEventListener("click",()=>copyText(button.dataset.copy)));
+    const buildMailto=({id,to,subject,body})=>{
+      const link=document.querySelector(`#${id}`);
+      if(!link)return;
+      link.href=`mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      link.addEventListener("click",()=>{document.querySelector("#mailto-status").textContent=`已打開 ${to} 草稿；真正送出後再回填 execution row。`});
+    };
+    [
+      {
+        id:"mail-gac",
+        to:"inquiry@goabroadchina.com",
+        subject:"Follow-up: China route-note support for GAC participants",
+        body:`Hi Go Abroad China team,
+
+Following up once on Bluehour China Journeys.
+
+The smallest useful next step is simply this: if one participant, visiting parent or family friend is considering a China route beyond Beijing and Shanghai, you can send them this route-note page.
+
+They only need to leave month, group size, days, destination interest and comfort needs. We reply with a concise route note and starting quote direction before any paid planning.
+
+https://bluehourchina.com/route-note/?utm_source=partner_followup&utm_medium=go_abroad_china&utm_campaign=first_customer_week&angle=study_abroad_route
+
+If there is a better person for student activities, participant support or partnerships, could you point me in the right direction?
+
+Best,
+Bluehour China Journeys`
+      },
+      {
+        id:"mail-thatsmandarin",
+        to:"marketing@thatsmandarin.com",
+        subject:"Follow-up: route-note support for Mandarin learners and visiting families",
+        body:`Hi That's Mandarin team,
+
+Following up once on Bluehour China Journeys.
+
+We may be useful when a Mandarin learner, visiting friend or family wants to add Yunnan, Zhangjiajie, Dunhuang, Xinjiang, Sanya or Northeast China before/after a China program, but needs help with pacing, hotels, transfers, payment apps and language support.
+
+The first step is light: month, group size, days, destination idea and comfort needs. We reply with a first route note and starting quote direction.
+
+https://bluehourchina.com/route-note/?utm_source=partner_followup&utm_medium=thats_mandarin&utm_campaign=first_customer_week&angle=student_route_note
+
+If this is not the right contact, could you point me to whoever handles student activities, partnerships or community resources?
+
+Best,
+Bluehour China Journeys`
+      },
+      {
+        id:"mail-beijinger",
+        to:"listings@thebeijinger.com",
+        subject:"Follow-up: listing route for China travel advisory service",
+        body:`Hi The Beijinger team,
+
+Following up once to ask whether Bluehour China Journeys fits a listing, directory, newsletter or advertising route.
+
+We help English-speaking visitors and China-based expat families plan comfortable routes beyond Beijing and Shanghai: Yunnan, Zhangjiajie, Dunhuang, Xinjiang, Sanya and Northeast China.
+
+The first step for travellers is not a sales call. They submit month, group size, days and comfort needs, then receive a concise route note and starting quote direction.
+
+https://bluehourchina.com/route-note/?utm_source=partner_followup&utm_medium=thebeijinger&utm_campaign=first_customer_week&angle=expat_route_note
+
+Could you let me know the most suitable listing or promotion path?
+
+Best,
+Bluehour China Journeys`
+      },
+      {
+        id:"mail-jingkids",
+        to:"sales@truerun.com",
+        subject:"Follow-up: family-friendly China route note for international parents",
+        body:`Hi Jingkids / True Run team,
+
+Following up once on Bluehour China Journeys.
+
+We may be useful for international families who want to see China beyond the first cities, but need a calmer plan for parents, children or visiting relatives.
+
+The traveller only needs to send month, group size, days, destination interest and comfort needs. We reply with a concise route note and starting quote direction before any paid planning.
+
+https://bluehourchina.com/route-note/?utm_source=partner_followup&utm_medium=jingkids&utm_campaign=first_customer_week&angle=family_route_note
+
+Could you let me know whether this fits a family directory, newsletter, listing or another channel?
+
+Best,
+Bluehour China Journeys`
+      }
+    ].forEach(buildMailto);
     document.querySelector("#build-exec")?.addEventListener("click",()=>{
       const row=[
         new Date().toISOString(),
