@@ -37,6 +37,7 @@ const pages = [
   "/refer/",
   "/ops/first-customer-day3-execution-2026-07-06.html",
   "/ops/first-customer-mobile-action.html",
+  "/ops/first-customer-zero-link-sprint-2026-07-06.html",
   "/ops/first-customer-lead-triage.html",
   "/ops/first-customer-partner-outreach.html",
   "/ops/first-customer-post-console.html",

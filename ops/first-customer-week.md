@@ -20,7 +20,7 @@ Internal operating sheet for getting the first qualified consultation from socia
 - Today reply log: `ops/first-customer-reply-log-2026-07-05.csv`
 - Daily tracker import file: `ops/first-customer-week-tracker.csv`
 - Funnel audit: `scripts/audit-first-customer-funnel.mjs`
-- Zero-link first-touch scripts: `ops/first-customer-zero-link-sprint-2026-07-06.md`
+- Zero-link first-touch board: `ops/first-customer-zero-link-sprint-2026-07-06.html`
 - Next-action generator: `scripts/next-first-customer-actions.mjs`
 - Current next actions: `ops/first-customer-next-actions-2026-07-06.md`
 - Day 2 sprint: `ops/first-customer-day2-sprint-2026-07-06.md`
@@ -52,7 +52,7 @@ Next required action:
 - If direct traveller contacts are limited, open `/ops/first-customer-partner-outreach.html` and send 15 partner referral messages to people who can introduce travellers.
 - Manually post the first four approved no-link Tripadvisor replies using `ops/first-customer-approved-public-replies-2026-07-06.html`.
 - After posting or sending, log live URLs or manual send batches in `ops/first-customer-execution-log-2026-07-06.csv`.
-- Run the zero-link sprint across Reddit, Facebook, Instagram/Threads comments, warm DMs or forums where links look promotional.
+- Run the zero-link sprint board across Reddit, Facebook, Instagram/Threads comments, warm DMs or forums where links look promotional.
 - Use the practical setup angle only when it answers the question directly: payment, WeChat Pay, Alipay, eSIM, SMS, apps, hotel addresses or route friction.
 - Run `node scripts/audit-first-customer-funnel.mjs` every day until the first qualified lead appears.
 - Run `node scripts/next-first-customer-actions.mjs` before each execution block; if posted URLs are still 0, distribution actions outrank website redesign.
