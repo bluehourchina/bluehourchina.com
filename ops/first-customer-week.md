@@ -41,6 +41,7 @@ Internal operating sheet for getting the first qualified consultation from socia
 - Content funnel decision: `ops/first-customer-content-funnel-decision-2026-07-05.md`
 - Mobile action board: `ops/first-customer-mobile-action.html`
 - 2026-07-07 15-minute send-now console: `ops/first-customer-2026-07-07-15min-send-now.html`
+- 2026-07-07 high-intent reply board: `ops/first-customer-2026-07-07-high-intent-reply-board.html`
 - 2026-07-07 30-minute live room: `ops/first-customer-2026-07-07-30min-live-room.html`
 - 2026-07-07 target desk: `ops/first-customer-2026-07-07-target-desk.html`
 - 2026-07-07 live send console: `ops/first-customer-2026-07-07-live-send-console.html`
@@ -58,6 +59,7 @@ Updated 2026-07-07:
 - English homepage, `/en/` and `/china-travel/` now route high-intent traffic to `/route-note/` first.
 - Cold social and warm-referral traffic should use `/quick/china/` first. It is the lowest-friction 60-second route check.
 - If the user has 15 minutes, open `ops/first-customer-2026-07-07-15min-send-now.html` first: publish one payment-comfort social post, send five partner follow-ups, send eight warm referral DMs, then log proof.
+- If the user can do public replies today, open `ops/first-customer-2026-07-07-high-intent-reply-board.html` first: complete 4 known high-intent forum replies, 4 social search replies and 4 warm referral messages, then log proof.
 - If the user has 30 minutes, open `ops/first-customer-2026-07-07-30min-live-room.html` next: post five approved Tripadvisor replies, publish the PayPal / WeChat social post, send 12 warm referral DMs, then log proof.
 - Today execution starts from `ops/first-customer-2026-07-07-target-desk.html`: 20 targets, exact copy, quick-form links and execution-row generator.
 - Before China practical content is used as a conversion bridge, not as a standalone travel-tips library.
@@ -74,6 +76,7 @@ Updated 2026-07-07:
 Next required action:
 
 - If working from a phone, open `/ops/first-customer-mobile-action.html`, then open the 15-minute send-now console from the first button.
+- If working from a phone and public posting is possible, open `/ops/first-customer-2026-07-07-high-intent-reply-board.html` before making more website edits.
 - If the user has one focused block today, start at `/ops/first-customer-2026-07-07-15min-send-now.html` and finish its four steps before making more content.
 - If working from desktop, start with `/ops/first-customer-2026-07-07-target-desk.html` and execute the 20 targets in priority order.
 - If the user has only one execution window today, open `/ops/first-customer-24h-close-board-2026-07-06.html` first and finish the 35 direct sends before redesigning anything.
