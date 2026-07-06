@@ -20,6 +20,7 @@ Internal operating sheet for getting the first qualified consultation from socia
 - Today reply log: `ops/first-customer-reply-log-2026-07-05.csv`
 - Daily tracker import file: `ops/first-customer-week-tracker.csv`
 - Funnel audit: `scripts/audit-first-customer-funnel.mjs`
+- 24-hour first customer close board: `ops/first-customer-24h-close-board-2026-07-06.html`
 - Zero-link first-touch board: `ops/first-customer-zero-link-sprint-2026-07-06.html`
 - Payment/App first-touch sprint: `ops/first-customer-payment-sprint-2026-07-06.html`
 - Next-action generator: `scripts/next-first-customer-actions.mjs`
@@ -51,6 +52,7 @@ Updated 2026-07-06:
 Next required action:
 
 - If working from a phone, open `/ops/first-customer-mobile-action.html` and complete 20 warm referral sends first.
+- If the user has only one execution window today, open `/ops/first-customer-24h-close-board-2026-07-06.html` first and finish the 35 direct sends before redesigning anything.
 - If direct traveller contacts are limited, open `/ops/first-customer-partner-outreach.html` and send 15 partner referral messages to people who can introduce travellers.
 - Manually post the first four approved no-link Tripadvisor replies using `ops/first-customer-approved-public-replies-2026-07-06.html`.
 - After posting or sending, log live URLs or manual send batches in `ops/first-customer-execution-log-2026-07-06.csv`.
