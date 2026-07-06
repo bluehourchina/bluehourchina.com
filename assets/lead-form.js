@@ -237,12 +237,16 @@
       }
 
       try {
-        await fetch(endpoint, {
+        const response = await fetch(endpoint, {
           method: "POST",
           body: formBody(form, "google_sheet_webapp"),
-          mode: "no-cors",
+          redirect: "follow",
           keepalive: true
         });
+        const result = await response.json().catch(() => ({}));
+        if (!response.ok || result.ok === false) {
+          throw new Error(result.error || "Google Sheet intake failed");
+        }
         pushLeadEvent(form, { intakeProvider: "google_sheet_webapp" });
         status.className = "form-status success";
         status.textContent = form.dataset.successMessage || copyText.success;

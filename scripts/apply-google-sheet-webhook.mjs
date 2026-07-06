@@ -62,8 +62,8 @@ function apply(html, file) {
   const lang = inferLang(next, file);
   const copy = messages[lang] || messages.en;
   next = next.replace(
-    /<form class="lead-form"/g,
-    `<form class="lead-form" data-sheet-endpoint="${escapeAttr(endpoint)}" data-form-lang="${lang}" data-sending-message="${escapeAttr(copy.sending)}" data-success-message="${escapeAttr(copy.success)}" data-error-message="${escapeAttr(copy.error)}"`
+    /<form class="([^"]*\blead-form\b[^"]*)"/g,
+    `<form class="$1" data-sheet-endpoint="${escapeAttr(endpoint)}" data-form-lang="${lang}" data-sending-message="${escapeAttr(copy.sending)}" data-success-message="${escapeAttr(copy.success)}" data-error-message="${escapeAttr(copy.error)}"`
   );
   next = next.replace(/name="intake_provider" value="[^"]*"/g, `name="intake_provider" value="google_sheet_webapp"`);
   return next;
@@ -92,7 +92,7 @@ async function discoverPages(dir = root) {
     if (relative === "netlify-forms.html") continue;
 
     const html = await fs.readFile(fullPath, "utf8");
-    if (/<form\s+class="lead-form"/.test(html)) pages.push(relative);
+    if (/<form\s+class="[^"]*\blead-form\b[^"]*"/.test(html)) pages.push(relative);
   }
 
   return pages.sort();
