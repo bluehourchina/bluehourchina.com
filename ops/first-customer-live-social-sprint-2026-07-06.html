@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,follow">
+  <title>今日社群獲客衝刺｜若青中國旅策</title>
+  <style>
+    :root {
+      --forest: #102d26;
+      --paper: #f5efe5;
+      --cream: #fffaf0;
+      --ink: #18241f;
+      --muted: #647069;
+      --gold: #c99a52;
+      --line: rgba(24,36,31,.16);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+      line-height: 1.64;
+    }
+    header {
+      padding: clamp(34px, 6vw, 76px) 18px;
+      color: var(--cream);
+      background:
+        linear-gradient(90deg, rgba(7,17,15,.95), rgba(7,17,15,.58)),
+        url("/assets/ai/bluehour-china-hero-luxury-lake-v2.jpg") center / cover no-repeat;
+    }
+    main { padding: 18px 0 88px; }
+    .wrap { width: min(1060px, calc(100% - 28px)); margin: 0 auto; }
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 {
+      margin: 0;
+      font-family: "Noto Serif TC", "Songti TC", Georgia, serif;
+      line-height: 1.14;
+      letter-spacing: 0;
+    }
+    h1 { max-width: 850px; font-size: clamp(36px, 7.8vw, 72px); font-weight: 600; }
+    h2 { color: var(--forest); font-size: clamp(28px, 4.8vw, 44px); }
+    h3 { color: var(--forest); font-size: 24px; }
+    header p { max-width: 760px; margin: 16px 0 0; color: rgba(255,250,240,.84); font-size: 18px; font-weight: 760; }
+    .score {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 18px;
+      background: rgba(255,250,240,.24);
+      border: 1px solid rgba(255,250,240,.22);
+    }
+    .score div { min-width: 0; padding: 14px; background: rgba(16,45,38,.78); }
+    .score b { display: block; color: var(--gold); font-size: 24px; }
+    .score span { display: block; color: rgba(255,250,240,.74); font-size: 12px; font-weight: 850; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .card {
+      min-width: 0;
+      margin-top: 14px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: var(--cream);
+    }
+    .full { grid-column: 1 / -1; }
+    .card p { margin: 10px 0 0; color: var(--muted); font-weight: 730; }
+    .steps, .searches {
+      display: grid;
+      gap: 8px;
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .steps li,
+    .searches a,
+    .searches code {
+      display: block;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,250,240,.68);
+      color: var(--ink);
+      font-weight: 800;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+    .searches code { font: 760 14px/1.55 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    pre {
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      margin: 14px 0 0;
+      padding: 14px;
+      border: 1px solid var(--line);
+      background: #fffdf8;
+      color: var(--ink);
+      font: 720 15px/1.72 "Noto Sans TC", "PingFang TC", sans-serif;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+      min-width: 0;
+    }
+    button, .btn {
+      min-height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 14px;
+      border: 1px solid var(--forest);
+      background: var(--forest);
+      color: var(--cream);
+      font: inherit;
+      font-weight: 920;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .gold { border-color: var(--gold); background: var(--gold); color: #13241f; }
+    .secondary { background: transparent; color: var(--forest); }
+    label { display: block; margin-top: 12px; color: var(--forest); font-weight: 900; }
+    input, textarea, select {
+      width: 100%;
+      margin-top: 6px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: #fffdf8;
+      color: var(--ink);
+      font: inherit;
+      font-weight: 700;
+    }
+    textarea { min-height: 110px; resize: vertical; }
+    .status { min-height: 24px; margin-top: 10px; color: var(--forest); font-weight: 900; }
+    .tiny { font-size: 13px; color: var(--muted); }
+    @media (max-width: 760px) {
+      .grid, .score { grid-template-columns: 1fr; }
+      .card { padding: 16px; }
+      button, .btn { width: 100%; }
+      h1 { font-size: clamp(34px, 10vw, 52px); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <p class="eyebrow">Live social sprint</p>
+      <h1>今天先拿到一個真正會回覆的人</h1>
+      <p>不要把社群回覆寫成廣告。先解決支付、行程節奏、舒適度的焦慮；對方回月份、人數、天數或目的地後，再送 24 小時路線初評。</p>
+      <div class="score" aria-label="Today social targets">
+        <div><b>12</b><span>高意圖問題</span></div>
+        <div><b>8</b><span>無連結回覆</span></div>
+        <div><b>3</b><span>追問成功</span></div>
+        <div><b>1</b><span>合格 lead</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <p class="eyebrow">Operating rule</p>
+      <h2>公開社群先不貼網址</h2>
+      <ul class="steps">
+        <li>第一則只回答問題，語氣像懂中國路線的朋友，不像旅行社銷售。</li>
+        <li>每則結尾只問一個判斷需求的問題：月份、人數、天數、目的地或舒適度。</li>
+        <li>對方回覆三個以上旅行欄位後，才送 route-note 表單。</li>
+        <li>任何願意留下 Email、WhatsApp、LINE 或微信的人，立刻進 lead triage。</li>
+      </ul>
+      <div class="actions">
+        <a class="btn gold" href="/ops/first-customer-lead-triage.html" target="_blank" rel="noopener">有人回覆後做 lead triage</a>
+        <a class="btn secondary" href="/route-note/?utm_source=live_social_sprint&utm_medium=ops&utm_campaign=first_customer_week&angle=route_note_24h" target="_blank" rel="noopener">測試 route-note 表單</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <p class="eyebrow">Where to find people today</p>
+      <h2>先找已經在問問題的人</h2>
+      <p>今天不要泛泛發品牌文。用下面搜尋入口找正在問支付、行程、長者、親子或二次旅遊的人。</p>
+      <div class="searches">
+        <a href="https://www.google.com/search?q=site%3Areddit.com%2Fr%2Ftravelchina+Yunnan+itinerary+China+travel" target="_blank" rel="noopener">Google 搜尋：Reddit 雲南 itinerary</a>
+        <a href="https://www.google.com/search?q=site%3Areddit.com%2Fr%2Fchinatravel+WeChat+Pay+Alipay+Visa+China+travel" target="_blank" rel="noopener">Google 搜尋：Reddit 支付 / Visa / Alipay</a>
+        <a href="https://www.google.com/search?q=site%3Atripadvisor.com%2FShowTopic+China+WeChat+Pay+foreign+visitor" target="_blank" rel="noopener">Google 搜尋：Tripadvisor 中國支付問題</a>
+        <a href="https://www.google.com/search?q=site%3Atripadvisor.com%2FShowTopic+China+Yunnan+itinerary+travel+forum" target="_blank" rel="noopener">Google 搜尋：Tripadvisor 雲南路線問題</a>
+        <code>Facebook / Threads 搜尋：China travel WeChat Pay foreign card</code>
+        <code>Facebook / Threads 搜尋：Yunnan itinerary China travel advice</code>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <p class="eyebrow">01 · Payment</p>
+        <h3>WeChat Pay / Alipay / Visa</h3>
+        <pre id="reply-payment">I would plan China payments in layers rather than relying on one perfect method.
+
+Set up WeChat Pay and/or Alipay before departure where available, keep a second overseas card, carry a small RMB cash layer, and make sure the phone number tied to your cards can receive SMS verification. Many first payment failures are issuer, SMS or setup problems, not merchant problems.
+
+This matters more once you go beyond Beijing and Shanghai. In Yunnan, Xinjiang, Dunhuang, Zhangjiajie or smaller towns, payment readiness affects taxi pickup, ticketing, hotel communication and transfer days.
+
+Which month are you going, and are you staying mostly in big cities or going into smaller scenic regions?</pre>
+        <div class="actions"><button class="gold" data-copy="#reply-payment">複製支付回覆</button></div>
+        <div class="status" data-status="#reply-payment"></div>
+      </article>
+
+      <article class="card">
+        <p class="eyebrow">02 · Yunnan</p>
+        <h3>雲南路線太趕</h3>
+        <pre id="reply-yunnan">For Yunnan, I would decide the rhythm before adding more places.
+
+Dali, Shaxi and Lijiang/Baisha are not just dots on a map. Each needs a different kind of time. The common mistake is changing cities every day and then losing the quiet part of the trip.
+
+If you have about a week, I would usually protect one slower Dali day, one Shaxi night, and then use Lijiang or Baisha for the snow-mountain side. The right shape depends less on famous sights and more on hotel location, car time, luggage and how tired the group gets.
+
+What month are you going, how many travellers, and how many full days do you have in Yunnan?</pre>
+        <div class="actions"><button class="gold" data-copy="#reply-yunnan">複製雲南回覆</button></div>
+        <div class="status" data-status="#reply-yunnan"></div>
+      </article>
+
+      <article class="card">
+        <p class="eyebrow">03 · Beyond mega cities</p>
+        <h3>二次來中國</h3>
+        <pre id="reply-second">If you have already done Beijing or Shanghai, I would choose the next China route by friction level, not only by beauty.
+
+Yunnan is good when you want old towns, snow-mountain distance and a slower atmosphere. Zhangjiajie is dramatic but needs careful pacing. Dunhuang is beautiful if you want desert and Silk Road feeling. Xinjiang can be extraordinary, but it is large and needs more route control.
+
+For a second China trip, the better question is: what can feel comfortable with your dates, transfer tolerance and hotel expectations?
+
+How many days do you have outside the big cities?</pre>
+        <div class="actions"><button class="gold" data-copy="#reply-second">複製二次旅遊回覆</button></div>
+        <div class="status" data-status="#reply-second"></div>
+      </article>
+
+      <article class="card">
+        <p class="eyebrow">04 · Xinjiang / Dunhuang</p>
+        <h3>大尺度路線</h3>
+        <pre id="reply-west">For Xinjiang or Dunhuang, I would be careful with map distance. Western China can look simple on a map but feel very large on the ground.
+
+The route should protect arrival time, driver days, hotel quality, language handoff and weather season. The beautiful parts are often not the problem; the problem is too many long transfers stacked together.
+
+If your group wants comfort, I would rather reduce one stop and keep the route calm than collect every famous name.
+
+Which month are you travelling, and are you more interested in desert, lakes, grassland or Silk Road history?</pre>
+        <div class="actions"><button class="gold" data-copy="#reply-west">複製西部路線回覆</button></div>
+        <div class="status" data-status="#reply-west"></div>
+      </article>
+
+      <article class="card">
+        <p class="eyebrow">05 · Senior comfort</p>
+        <h3>長者 / 親子舒適度</h3>
+        <pre id="reply-comfort">For senior travellers or families, I would choose the route by comfort first.
+
+The route is not only attractions. It is breakfast rhythm, taxi pickup, walking distance, stairs, luggage, hotel location, ticket timing, language support and whether the evening still feels calm.
+
+The best-looking route on paper can be a bad route if every day asks too much from the group.
+
+Are there seniors, children, knee issues or a strong preference for slower mornings?</pre>
+        <div class="actions"><button class="gold" data-copy="#reply-comfort">複製舒適度回覆</button></div>
+        <div class="status" data-status="#reply-comfort"></div>
+      </article>
+
+      <article class="card">
+        <p class="eyebrow">06 · After reply</p>
+        <h3>對方回覆後才貼</h3>
+        <pre id="reply-after">That helps. If you want, you can put the rough details here and we can reply with a short 24-hour route note before any paid planning:
+
+https://bluehourchina.com/route-note/?utm_source=direct_reply&utm_medium=qualified_conversation&utm_campaign=first_customer_week&angle=live_social
+
+The useful details are:
+1. travel month
+2. group size
+3. number of days
+4. destinations or feeling you want
+5. comfort level or starting budget range
+6. best contact method for follow-up</pre>
+        <div class="actions">
+          <button class="gold" data-copy="#reply-after">複製表單邀請</button>
+          <a class="btn secondary" href="/route-note/?utm_source=direct_reply&utm_medium=qualified_conversation&utm_campaign=first_customer_week&angle=live_social" target="_blank" rel="noopener">打開表單</a>
+        </div>
+        <div class="status" data-status="#reply-after"></div>
+      </article>
+    </section>
+
+    <section class="card">
+      <p class="eyebrow">Warm DM</p>
+      <h2>沒有公開社群帳號時，先發暖轉介紹</h2>
+      <pre id="warm-dm">我最近在做 Bluehour China / 若青中國旅策，幫外國旅客規劃北京上海之外的中國深度路線。
+
+我們不是賣制式大團，而是先看月份、人數、天數、想去的地方、住宿舒適度、語言支援、支付與交通準備，再回一份 24 小時路線初評。
+
+如果你身邊有外國朋友、海外同事、外派家庭、國際學生，或已經來過北京上海、想看雲南 / 敦煌 / 新疆 / 張家界 / 東北 / 三亞的人，可以把這個給他：
+
+https://bluehourchina.com/route-note/?utm_source=warm_network&utm_medium=direct_message&utm_campaign=first_customer_week&angle=live_social</pre>
+      <div class="actions">
+        <button class="gold" data-copy="#warm-dm">複製暖轉訊息</button>
+        <a class="btn secondary" href="/assets/social/bluehour-route-note-24h.png" target="_blank" rel="noopener">打開分享圖</a>
+      </div>
+      <div class="status" data-status="#warm-dm"></div>
+    </section>
+
+    <section class="card">
+      <p class="eyebrow">Log</p>
+      <h2>貼完後立刻產生紀錄列</h2>
+      <p>有 URL 就填 URL；如果是 LINE、WhatsApp、Email 批次發送，就填平台與數量。這不是形式，是為了知道哪裡真的帶來第一個客戶。</p>
+      <div class="grid">
+        <label>平台
+          <select id="log-platform">
+            <option>Reddit</option>
+            <option>Tripadvisor</option>
+            <option>Facebook group</option>
+            <option>Threads</option>
+            <option>LINE</option>
+            <option>WhatsApp</option>
+            <option>Email</option>
+            <option>Partner</option>
+          </select>
+        </label>
+        <label>狀態
+          <select id="log-status">
+            <option>posted_no_link_reply</option>
+            <option>sent_warm_dm</option>
+            <option>sent_partner_followup</option>
+            <option>reply_received</option>
+            <option>lead_created</option>
+          </select>
+        </label>
+      </div>
+      <label>URL / 對象 / 批次說明
+        <input id="log-target" placeholder="貼上回覆 URL，或寫 LINE 20 人、某 partner 名稱">
+      </label>
+      <label>備註
+        <textarea id="log-notes" placeholder="例如：支付問題；對方問 7 月雲南；已追問月份與人數"></textarea>
+      </label>
+      <div class="actions">
+        <button class="gold" id="make-log">產生 execution log 列</button>
+        <a class="btn secondary" href="/ops/first-customer-execution-log-2026-07-06.csv" target="_blank" rel="noopener">查看 execution log</a>
+      </div>
+      <pre id="log-output">created_at,channel,action,status,tracking_link,notes</pre>
+      <div class="status" id="log-status-text"></div>
+    </section>
+  </main>
+
+  <script>
+    function copyText(text, statusEl) {
+      navigator.clipboard.writeText(text).then(() => {
+        if (statusEl) statusEl.textContent = "已複製。";
+      }).catch(() => {
+        if (statusEl) statusEl.textContent = "請手動選取複製。";
+      });
+    }
+    document.querySelectorAll("[data-copy]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const target = document.querySelector(button.dataset.copy);
+        const status = document.querySelector('[data-status="' + button.dataset.copy + '"]');
+        if (target) copyText(target.innerText.trim(), status);
+      });
+    });
+    document.getElementById("make-log").addEventListener("click", () => {
+      const platform = document.getElementById("log-platform").value;
+      const status = document.getElementById("log-status").value;
+      const target = document.getElementById("log-target").value.trim();
+      const notes = document.getElementById("log-notes").value.trim();
+      const row = [
+        new Date().toISOString(),
+        platform,
+        "live_social_sprint",
+        status,
+        target,
+        notes
+      ].map((value) => '"' + String(value).replaceAll('"', '""') + '"').join(",");
+      document.getElementById("log-output").textContent = row;
+      copyText(row, document.getElementById("log-status-text"));
+    });
+  </script>
+</body>
+</html>
