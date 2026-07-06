@@ -57,6 +57,7 @@ const pages = [
   "/zh.html",
   "/zh/before-china/",
   "/zh/before-china/wechat-pay-visa-mastercard/",
+  "/zh/before-china/wechat-pay-paypal-china-2026/",
   "/zh/before-china/china-payment-checklist/",
   "/zh/before-china/china-travel-apps-before-trip/",
   "/zh/yunnan/",

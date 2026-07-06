@@ -24,6 +24,7 @@ Bluehour China Journeys is a multilingual private China travel advisory for inte
 - [Traditional Chinese homepage](/zh.html)
 - [繁中出發中國前準備清單](/zh/before-china/)
 - [繁中：微信支付綁 Visa / Mastercard](/zh/before-china/wechat-pay-visa-mastercard/)
+- [繁中：2026 外國人來中國支付更新](/zh/before-china/wechat-pay-paypal-china-2026/)
 - [繁中：外國人來中國支付準備清單](/zh/before-china/china-payment-checklist/)
 - [繁中：出發中國前必備 App 與手機準備](/zh/before-china/china-travel-apps-before-trip/)
 - [Japanese homepage](/ja.html)
