@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>15 分鐘真送出控制台｜若青中國旅策</title>
+  <style>
+    :root {
+      --ink: #13211c;
+      --muted: #64716b;
+      --paper: #f4eee4;
+      --cream: #fffaf1;
+      --forest: #0e2b24;
+      --gold: #d3a04e;
+      --line: rgba(19, 33, 28, .16);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", "Noto Sans", sans-serif;
+      line-height: 1.64;
+    }
+    .wrap { width: min(1040px, calc(100% - 28px)); margin: 0 auto; }
+    header {
+      padding: 38px 0 26px;
+      color: var(--cream);
+      background:
+        linear-gradient(95deg, rgba(7, 17, 15, .96), rgba(7, 17, 15, .62)),
+        url("/assets/ai/bluehour-yunnan-luxury-shaxi-courtyard.jpg") center / cover no-repeat;
+    }
+    main { padding: 18px 0 74px; }
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 {
+      font-family: Georgia, "Noto Serif TC", "Songti TC", serif;
+      font-weight: 600;
+      letter-spacing: 0;
+      line-height: 1.08;
+    }
+    h1 { max-width: 880px; margin-bottom: 14px; font-size: clamp(38px, 8vw, 78px); }
+    h2 { margin-bottom: 10px; color: var(--forest); font-size: clamp(29px, 5vw, 48px); }
+    h3 { margin-bottom: 8px; color: var(--forest); font-size: 23px; }
+    header p { max-width: 760px; color: rgba(255, 250, 241, .84); font-size: 18px; font-weight: 760; }
+    .score {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1px;
+      margin-top: 18px;
+      border: 1px solid rgba(255, 250, 241, .22);
+      background: rgba(255, 250, 241, .18);
+    }
+    .score div { padding: 14px; background: rgba(14, 43, 36, .72); }
+    .score b { display: block; color: var(--gold); font-family: Georgia, serif; font-size: 30px; line-height: 1; }
+    .score span { display: block; margin-top: 7px; color: rgba(255, 250, 241, .72); font-size: 12px; font-weight: 860; }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .card {
+      min-width: 0;
+      margin-top: 16px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      background: rgba(255, 250, 241, .9);
+      box-shadow: 0 18px 44px rgba(19, 33, 28, .05);
+    }
+    .full { grid-column: 1 / -1; }
+    .card p { color: var(--muted); font-weight: 720; }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .step { padding: 14px; border: 1px solid var(--line); background: #fffdf8; }
+    .step b { display: block; color: var(--gold); font-family: Georgia, serif; font-size: 25px; line-height: 1; }
+    .step strong { display: block; margin-top: 9px; color: var(--forest); }
+    .step span { display: block; margin-top: 6px; color: var(--muted); font-size: 14px; font-weight: 760; }
+    pre {
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+      margin: 12px 0 0;
+      padding: 15px;
+      border: 1px solid var(--line);
+      background: #fffdf8;
+      color: var(--ink);
+      font: 720 14px/1.7 "Noto Sans TC", "Segoe UI", sans-serif;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    button, .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      border: 1px solid var(--forest);
+      padding: 11px 15px;
+      background: var(--forest);
+      color: var(--cream);
+      font: inherit;
+      font-weight: 920;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .gold { border-color: var(--gold); background: var(--gold); color: #14221d; }
+    .secondary { background: transparent; color: var(--forest); }
+    .status { min-height: 24px; margin-top: 10px; color: var(--forest); font-weight: 900; }
+    .asset {
+      display: grid;
+      grid-template-columns: 136px minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+      margin-top: 14px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: #fffdf8;
+    }
+    .asset img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border: 1px solid var(--line); }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 22px, 640px); }
+      header { padding-top: 30px; }
+      header p { font-size: 16px; }
+      .grid, .score, .steps, .asset { grid-template-columns: 1fr; }
+      .card { padding: 16px; }
+      button, .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <p class="eyebrow">First customer · send now · 2026-07-07</p>
+      <h1>15 分鐘內，留下今天的第一批真實觸達</h1>
+      <p>這頁只做一件事：把內容送出去。先貼一則社群文，再發 5 封 partner follow-up，再發 8 則暖轉介紹。任何回覆都進 lead triage。</p>
+      <div class="score">
+        <div><b>1</b><span>公開社群貼文</span></div>
+        <div><b>5</b><span>partner follow-ups</span></div>
+        <div><b>8</b><span>暖轉私訊</span></div>
+        <div><b>1</b><span>可跟進需求</span></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="card full">
+      <p class="eyebrow">Order</p>
+      <h2>今晚只照四步，不再新增策略</h2>
+      <div class="steps">
+        <div class="step"><b>01</b><strong>貼一則支付焦慮貼文</strong><span>用 PayPal / WeChat Pay 的時事切入。</span></div>
+        <div class="step"><b>02</b><strong>寄 5 封 partner follow-up</strong><span>Gmail 草稿已填好，只差人工按送出。</span></div>
+        <div class="step"><b>03</b><strong>發 8 則暖轉介紹</strong><span>找能介紹外國旅客的人，不追泛流量。</span></div>
+        <div class="step"><b>04</b><strong>回覆進 lead triage</strong><span>月份、人數、天數、目的地、聯絡方式。</span></div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <p class="eyebrow">Step 01 · social</p>
+        <h2>先貼這則</h2>
+        <p>這則比一般旅遊廣告更容易被搜尋與轉發，因為它回答出發前支付/App 焦慮。</p>
+        <pre id="social-post">PayPal may soon make China payments easier for some foreign visitors through WeChat Pay. That is good news, but I would not plan a regional China trip around one payment headline.
+
+For China beyond Beijing and Shanghai, payment is part of route comfort:
+- WeChat Pay / Alipay where available
+- one backup overseas card
+- a small RMB cash layer
+- SMS that actually works abroad
+- hotel names and driver pickup points saved in Chinese
+
+This matters most when the route goes into Yunnan, Zhangjiajie, Dunhuang, Xinjiang, Sanya or Northeast China. The stressful moment is rarely the scenic spot. It is the taxi pickup, hotel check-in, ticket window or late transfer when one app fails.
+
+If you already know your month, group size, days and destination idea, send a 60-second route check. We reply with a first route note and starting quote direction before any paid planning:
+https://bluehourchina.com/quick/china/?utm_source=threads&utm_medium=post&utm_campaign=first_customer_week&angle=paypal_wechat_payment_route
+
+#ChinaTravel #WeChatPay #PayPal #Alipay #TravelChina #BeforeChina #PrivateTravel</pre>
+        <div class="asset">
+          <img src="/assets/social/bluehour-paypal-wechat-2026-card.png" alt="Bluehour China payment prep social card">
+          <div>
+            <strong>配圖</strong>
+            <p>先用這張支付卡片，不用等新設計。目標是把第一批人導到 60 秒短表單。</p>
+            <div class="actions">
+              <a class="btn secondary" href="/assets/social/bluehour-paypal-wechat-2026-card.png" target="_blank" rel="noopener">打開配圖</a>
+              <a class="btn secondary" href="https://bluehourchina.com/quick/china/?utm_source=send_now&utm_medium=ops&utm_campaign=first_customer_week&angle=quick_route_check" target="_blank" rel="noopener">測試短表單</a>
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="gold" data-copy="#social-post">複製社群貼文</button>
+          <a class="btn secondary" id="share-x" href="#" target="_blank" rel="noopener">用 X 開貼文</a>
+          <a class="btn secondary" id="share-whatsapp-social" href="#" target="_blank" rel="noopener">WhatsApp 分享</a>
+        </div>
+        <div class="status" data-status="#social-post"></div>
+      </article>
+
+      <article class="card">
+        <p class="eyebrow">Step 02 · partner</p>
+        <h2>再寄這 5 封</h2>
+        <p>這些不是冷名單亂寄，而是公開入口清楚、客群相近的 connector。點開 Gmail 草稿後，真正按送出才算。</p>
+        <div class="actions">
+          <a class="btn gold" id="mail-gac" href="#">Go Abroad China</a>
+          <a class="btn gold" id="mail-thatsmandarin" href="#">That's Mandarin</a>
+          <a class="btn gold" id="mail-chinaadmissions" href="#">China Admissions</a>
+          <a class="btn gold" id="mail-beijinger" href="#">The Beijinger</a>
+          <a class="btn gold" id="mail-jingkids" href="#">Jingkids / True Run</a>
+          <a class="btn secondary" href="/ops/first-customer-partner-followup-2026-07-07.html" target="_blank" rel="noopener">打開完整 partner 頁</a>
+        </div>
+        <p class="status" id="partner-status">寄完後請產生下方 execution row。</p>
+      </article>
+
+      <article class="card">
+        <p class="eyebrow">Step 03 · warm referral</p>
+        <h2>發給 8 個能介紹人的人</h2>
+        <p>不要問「你要不要買」。只問「你身邊有沒有一位正在想中國旅行的人」。</p>
+        <pre id="warm-referral">我今天想找一位真正正在計畫中國旅行的外國旅客，尤其是外派家庭、國際學生、海外同事、外國朋友、帶長輩或小孩的人。
+
+我們做 Bluehour China / 若青中國旅策，幫外國旅客規劃北京上海之外的舒適路線：雲南、張家界、敦煌、新疆、三亞、東北。重點不是塞景點，而是路線節奏、飯店位置、語言支援、支付/App、交通會不會太累。
+
+如果你身邊剛好有一位這樣的人，可以幫我轉這個 60 秒短表單嗎？
+https://bluehourchina.com/quick/china/?utm_source=warm_network&utm_medium=direct_message&utm_campaign=first_customer_week&angle=warm_referral</pre>
+        <div class="actions">
+          <button class="gold" data-copy="#warm-referral">複製暖轉文字</button>
+          <a class="btn secondary" id="warm-line" href="#" target="_blank" rel="noopener">LINE 分享</a>
+          <a class="btn secondary" id="warm-whatsapp" href="#" target="_blank" rel="noopener">WhatsApp 分享</a>
+          <a class="btn secondary" id="warm-email" href="#" target="_blank" rel="noopener">Email 分享</a>
+        </div>
+        <div class="status" data-status="#warm-referral"></div>
+      </article>
+
+      <article class="card">
+        <p class="eyebrow">Step 04 · qualify</p>
+        <h2>有人回覆後，只問五題</h2>
+        <pre id="qualify-five">我先不直接推套裝。你回我 5 個條件就好：
+
+1. 大概哪個月份
+2. 幾位同行，有沒有長輩或小孩
+3. 想走幾天
+4. 想去哪裡，或想要什麼感覺的中國
+5. Email / WhatsApp / LINE / 微信 哪個方便後續確認
+
+有這些我才能判斷路線適不適合，並回一份初步路線筆記與報價方向。</pre>
+        <div class="actions">
+          <button class="gold" data-copy="#qualify-five">複製五題追問</button>
+          <a class="btn secondary" href="/ops/first-customer-lead-triage.html" target="_blank" rel="noopener">打開 lead triage</a>
+          <a class="btn secondary" href="/ops/first-customer-first-quote-builder-2026-07-06.html" target="_blank" rel="noopener">產生首封 route note</a>
+        </div>
+        <div class="status" data-status="#qualify-five"></div>
+      </article>
+
+      <article class="card full">
+        <p class="eyebrow">Proof</p>
+        <h2>送完後，立刻留下證據</h2>
+        <p>沒有送出 URL 或批次紀錄，漏斗就還停在準備階段。先記錄，再等回覆。</p>
+        <pre id="execution-row">created_at,channel,action,asset_or_copy,posting_url,tracking_link,status,reply_count,lead_count,next_check_at,owner,notes</pre>
+        <div class="actions">
+          <button class="gold" id="build-social-row">產生社群貼文紀錄</button>
+          <button class="gold" id="build-partner-row">產生 5 封 partner 紀錄</button>
+          <button class="gold" id="build-warm-row">產生 8 則暖轉紀錄</button>
+          <button class="secondary" data-copy="#execution-row">複製 execution row</button>
+          <a class="btn secondary" href="/ops/first-customer-execution-log-2026-07-07.csv" target="_blank" rel="noopener">查看 execution log</a>
+        </div>
+        <div class="status" data-status="#execution-row"></div>
+      </article>
+    </section>
+  </main>
+
+  <script>
+    const setStatus = (selector, message) => {
+      const status = document.querySelector(`[data-status="${selector}"]`);
+      if (status) status.textContent = message;
+    };
+    const copy = async (selector) => {
+      const text = document.querySelector(selector)?.textContent.trim() || "";
+      try {
+        await navigator.clipboard.writeText(text);
+        setStatus(selector, "已複製");
+      } catch {
+        setStatus(selector, "請手動複製");
+      }
+    };
+    document.querySelectorAll("[data-copy]").forEach((button) => {
+      button.addEventListener("click", () => copy(button.dataset.copy));
+    });
+
+    const socialText = document.querySelector("#social-post").textContent.trim();
+    const warmText = document.querySelector("#warm-referral").textContent.trim();
+    document.querySelector("#share-x").href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(socialText)}`;
+    document.querySelector("#share-whatsapp-social").href = `https://wa.me/?text=${encodeURIComponent(socialText)}`;
+    document.querySelector("#warm-line").href = `https://social-plugins.line.me/lineit/share?text=${encodeURIComponent(warmText)}`;
+    document.querySelector("#warm-whatsapp").href = `https://wa.me/?text=${encodeURIComponent(warmText)}`;
+    document.querySelector("#warm-email").href = `mailto:?subject=${encodeURIComponent("Bluehour China / 若青中國旅策")}&body=${encodeURIComponent(warmText)}`;
+
+    const gmail = ({ id, to, subject, body }) => {
+      const link = document.querySelector(`#${id}`);
+      if (!link) return;
+      link.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      link.target = "_blank";
+      link.rel = "noopener";
+      link.addEventListener("click", () => {
+        document.querySelector("#partner-status").textContent = `已打開 ${to} 草稿；真正送出後才算。`;
+      });
+    };
+    [
+      {
+        id: "mail-gac",
+        to: "inquiry@goabroadchina.com",
+        subject: "Follow-up: China route-note support for GAC participants",
+        body: `Hi Go Abroad China team,
+
+Following up once on Bluehour China Journeys.
+
+The smallest useful next step is simply this: if one participant, visiting parent or family friend is considering a China route beyond Beijing and Shanghai, you can send them this route-note page.
+
+They only need to leave month, group size, days, destination interest and comfort needs. We reply with a concise route note and starting quote direction before any paid planning.
+
+https://bluehourchina.com/route-note/?utm_source=partner_followup&utm_medium=go_abroad_china&utm_campaign=first_customer_week&angle=study_abroad_route
+
+If there is a better person for student activities, participant support or partnerships, could you point me in the right direction?
+
+Best,
+Bluehour China Journeys`
+      },
+      {
+        id: "mail-thatsmandarin",
+        to: "marketing@thatsmandarin.com",
+        subject: "Follow-up: route-note support for Mandarin learners and visiting families",
+        body: `Hi That's Mandarin team,
+
+Following up once on Bluehour China Journeys.
+
+We may be useful when a Mandarin learner, visiting friend or family wants to add Yunnan, Zhangjiajie, Dunhuang, Xinjiang, Sanya or Northeast China before/after a China program, but needs help with pacing, hotels, transfers, payment apps and language support.
+
+The first step is light: month, group size, days, destination idea and comfort needs. We reply with a first route note and starting quote direction.
+
+https://bluehourchina.com/route-note/?utm_source=partner_followup&utm_medium=thats_mandarin&utm_campaign=first_customer_week&angle=student_route_note
+
+If this is not the right contact, could you point me to whoever handles student activities, partnerships or community resources?
+
+Best,
+Bluehour China Journeys`
+      },
+      {
+        id: "mail-chinaadmissions",
+        to: "info@china-admissions.com",
+        subject: "Referral fit: China route-note support for international students and parents",
+        body: `Hi China Admissions team,
+
+I’m reaching out from Bluehour China Journeys.
+
+We may be useful for international students, visiting parents or short-program participants who are already considering China and want a comfortable private route beyond Beijing and Shanghai.
+
+The first step is light: month, group size, days, destination interest and comfort needs. We reply with a concise route note and starting quote direction before any paid planning.
+
+Route note:
+https://bluehourchina.com/route-note/?utm_source=partner_followup&utm_medium=china_admissions&utm_campaign=first_customer_week&angle=student_parent_route
+
+If this is not the right contact, could you point me to whoever handles student resources, parent resources, partnerships or community listings?
+
+Best,
+Bluehour China Journeys`
+      },
+      {
+        id: "mail-beijinger",
+        to: "listings@thebeijinger.com",
+        subject: "Follow-up: listing route for China travel advisory service",
+        body: `Hi The Beijinger team,
+
+Following up once to ask whether Bluehour China Journeys fits a listing, directory, newsletter or advertising route.
+
+We help English-speaking visitors and China-based expat families plan comfortable routes beyond Beijing and Shanghai: Yunnan, Zhangjiajie, Dunhuang, Xinjiang, Sanya and Northeast China.
+
+The first step for travellers is not a sales call. They submit month, group size, days and comfort needs, then receive a concise route note and starting quote direction.
+
+https://bluehourchina.com/route-note/?utm_source=partner_followup&utm_medium=thebeijinger&utm_campaign=first_customer_week&angle=expat_route_note
+
+Could you let me know the most suitable listing or promotion path?
+
+Best,
+Bluehour China Journeys`
+      },
+      {
+        id: "mail-jingkids",
+        to: "sales@truerun.com",
+        subject: "Follow-up: family-friendly China route note for international parents",
+        body: `Hi Jingkids / True Run team,
+
+Following up once on Bluehour China Journeys.
+
+We may be useful for international families who want to see China beyond the first cities, but need a calmer plan for parents, children or visiting relatives.
+
+The traveller only needs to send month, group size, days, destination interest and comfort needs. We reply with a concise route note and starting quote direction before any paid planning.
+
+https://bluehourchina.com/route-note/?utm_source=partner_followup&utm_medium=jingkids&utm_campaign=first_customer_week&angle=family_route_note
+
+Could you let me know whether this fits a family directory, newsletter, listing or another channel?
+
+Best,
+Bluehour China Journeys`
+      }
+    ].forEach(gmail);
+
+    const buildRow = ({ channel, action, asset, postingUrl, trackingLink, status, notes }) => {
+      const now = new Date();
+      const next = new Date(now.getTime() + 12 * 60 * 60 * 1000).toISOString();
+      const row = [
+        now.toISOString(),
+        channel,
+        action,
+        asset,
+        postingUrl,
+        trackingLink,
+        status,
+        "0",
+        "0",
+        next,
+        "若青中國旅策",
+        notes
+      ].map((value) => `"${String(value).replaceAll('"', '""')}"`).join(",");
+      document.querySelector("#execution-row").textContent = row;
+      setStatus("#execution-row", "已產生，請複製保存或回傳給我");
+    };
+    document.querySelector("#build-social-row").addEventListener("click", () => buildRow({
+      channel: "Instagram/Threads/X",
+      action: "posted payment comfort social post",
+      asset: "first-customer-2026-07-07-15min-send-now.html",
+      postingUrl: "paste_live_social_url_here",
+      trackingLink: "https://bluehourchina.com/quick/china/?utm_source=threads&utm_medium=post&utm_campaign=first_customer_week&angle=paypal_wechat_payment_route",
+      status: "posted_manual_pending_url",
+      notes: "Use PayPal / WeChat Pay social copy; replace posting_url with live post URL after publishing."
+    }));
+    document.querySelector("#build-partner-row").addEventListener("click", () => buildRow({
+      channel: "Partner/Gmail",
+      action: "sent 5 partner follow-up emails",
+      asset: "first-customer-2026-07-07-15min-send-now.html",
+      postingUrl: "manual_partner_email_batch_5",
+      trackingLink: "https://bluehourchina.com/route-note/?utm_source=partner_followup&utm_medium=batch&utm_campaign=first_customer_week&angle=partner_referral",
+      status: "sent_manual",
+      notes: "Gmail compose links opened for Go Abroad China, That's Mandarin, China Admissions, The Beijinger and Jingkids / True Run; use only after Send is clicked."
+    }));
+    document.querySelector("#build-warm-row").addEventListener("click", () => buildRow({
+      channel: "LINE/WhatsApp/Email",
+      action: "sent 8 warm referral messages",
+      asset: "first-customer-2026-07-07-15min-send-now.html",
+      postingUrl: "manual_warm_referral_batch_8",
+      trackingLink: "https://bluehourchina.com/quick/china/?utm_source=warm_network&utm_medium=direct_message&utm_campaign=first_customer_week&angle=warm_referral",
+      status: "sent_manual",
+      notes: "Sent to people who can introduce foreign travellers, international students, expat families or overseas friends."
+    }));
+  </script>
+</body>
+</html>
