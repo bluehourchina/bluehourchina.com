@@ -173,6 +173,7 @@ Bluehour China Journeys</pre>
           <div class="actions">
             <button class="gold" data-copy="#copy-black-sesame">複製</button>
             <a class="btn secondary" data-mailto="black-sesame" href="#">Email</a>
+            <a class="btn secondary" data-gmail="black-sesame" href="#" target="_blank" rel="noopener">Gmail</a>
           </div>
           <div class="status" data-status="#copy-black-sesame"></div>
         </article>
@@ -200,6 +201,7 @@ Bluehour China Journeys</pre>
           <div class="actions">
             <button class="gold" data-copy="#copy-cook-shanghai">複製</button>
             <a class="btn secondary" data-mailto="cook-shanghai" href="#">Email</a>
+            <a class="btn secondary" data-gmail="cook-shanghai" href="#" target="_blank" rel="noopener">Gmail</a>
           </div>
           <div class="status" data-status="#copy-cook-shanghai"></div>
         </article>
@@ -323,6 +325,18 @@ https://bluehourchina.com/route-note/?utm_source=partner&utm_medium=helloworld&u
       const item = mailtoMap[link.dataset.mailto];
       if (!item) return;
       link.href = "mailto:" + item.to + "?subject=" + encode(item.subject) + "&body=" + encode(shareText(item.body));
+    });
+
+    document.querySelectorAll("[data-gmail]").forEach((link) => {
+      const item = mailtoMap[link.dataset.gmail];
+      if (!item) return;
+      link.href =
+        "https://mail.google.com/mail/?view=cm&fs=1&to=" +
+        encode(item.to) +
+        "&su=" +
+        encode(item.subject) +
+        "&body=" +
+        encode(shareText(item.body));
     });
 
     document.querySelectorAll("[data-copy]").forEach((button) => {
