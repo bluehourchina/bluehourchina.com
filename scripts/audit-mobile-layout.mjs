@@ -39,6 +39,7 @@ const pages = [
   "/ops/first-customer-24h-close-board-2026-07-06.html",
   "/ops/first-customer-day3-execution-2026-07-06.html",
   "/ops/first-customer-mobile-action.html",
+  "/ops/first-customer-2026-07-07-before-china-social-push.html",
   "/ops/first-customer-2026-07-07-real-send-queue.html",
   "/ops/first-customer-2026-07-07-proof-capture.html",
   "/ops/first-customer-2026-07-07-45min-lead-room.html",
