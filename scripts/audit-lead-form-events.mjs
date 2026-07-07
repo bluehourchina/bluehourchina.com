@@ -145,6 +145,7 @@ async function auditPage(browser, config) {
       window.recordBluehourFetch({
         url: String(input),
         method: init.method || "GET",
+        mode: init.mode || "cors",
         fields: summarizeBody(init.body)
       });
       return new Response("", { status: 200 });
@@ -169,9 +170,13 @@ async function auditPage(browser, config) {
     const fetchFields = fetches[0]?.fields || [];
     const fieldMap = Object.fromEntries(fetchFields);
     const event = events[0] || null;
+    const sheetPost = fetches.find((fetch) => /script\.google\.com\/macros\/s\//i.test(fetch.url));
+    const emailCopyPost = fetches.find((fetch) => /formsubmit\.co/i.test(fetch.url));
     const ok =
       events.length === 1 &&
-      fetches.length >= 1 &&
+      fetches.length >= 2 &&
+      sheetPost?.mode === "no-cors" &&
+      emailCopyPost?.mode === "no-cors" &&
       fieldMap.campaign === "private_route_consultation" &&
       fieldMap.name === config.values.name &&
       fieldMap.contact === config.values.contact &&
@@ -186,6 +191,8 @@ async function auditPage(browser, config) {
       fetchCount: fetches.length,
       campaign: fieldMap.campaign || "",
       intakeProvider: fieldMap.intake_provider || "",
+      sheetPostMode: sheetPost?.mode || "",
+      emailCopyPostMode: emailCopyPost?.mode || "",
       destination: fieldMap.destination || "",
       eventProvider: event?.intake_provider || "",
       eventCampaign: event?.campaign || "",

@@ -202,6 +202,24 @@
     return body;
   };
 
+  const postNoCors = (url, body) =>
+    fetch(url, {
+      method: "POST",
+      body,
+      mode: "no-cors",
+      redirect: "follow",
+      keepalive: true
+    });
+
+  const sendEmailCopy = async (form) => {
+    if (!/formsubmit\.co/i.test(form.action || "")) return;
+    try {
+      await postNoCors(form.action, formBody(form, "google_sheet_webapp_email_copy"));
+    } catch (error) {
+      // The Google Sheet is the primary intake. Email is a quiet backup only.
+    }
+  };
+
   const enableButton = (button, originalLabel) => {
     if (!button) return;
     button.disabled = false;
@@ -237,16 +255,8 @@
       }
 
       try {
-        const response = await fetch(endpoint, {
-          method: "POST",
-          body: formBody(form, "google_sheet_webapp"),
-          redirect: "follow",
-          keepalive: true
-        });
-        const result = await response.json().catch(() => ({}));
-        if (!response.ok || result.ok === false) {
-          throw new Error(result.error || "Google Sheet intake failed");
-        }
+        await postNoCors(endpoint, formBody(form, "google_sheet_webapp"));
+        await sendEmailCopy(form);
         pushLeadEvent(form, { intakeProvider: "google_sheet_webapp" });
         status.className = "form-status success";
         status.textContent = form.dataset.successMessage || copyText.success;
