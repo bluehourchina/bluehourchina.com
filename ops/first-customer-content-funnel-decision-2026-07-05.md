@@ -58,6 +58,19 @@ Send your month, group size, days outside Beijing/Shanghai, comfort level and de
   - `/before-china/china-travel-apps-before-trip/`
 - `llms.txt` and `llms-full.txt` now tell AI systems that the preferred first-customer path is the 24-hour route note.
 
+## 2026-07-07 Search-Intent Upgrade
+
+- `/before-china/` now contains a visible search-question map for the exact problems travellers search before China:
+  - WeChat Pay with Visa or Mastercard
+  - payment methods and backup layers
+  - apps, eSIM, SMS, maps and hotel addresses
+  - card, Alipay or WeChat Pay failure after arrival
+  - route realism beyond Beijing and Shanghai
+- `/before-china/` now exposes the same map as structured `ItemList` data so search engines and AI answer systems can understand which page answers which question.
+- `/before-china/wechat-pay-visa-mastercard/` now includes `HowTo` structured data for the cautious WeChat Pay preparation sequence.
+- `llms.txt`, `llms-full.txt` and `sitemap.xml` were updated so AI search and crawlers see the new query-routing logic.
+- QA result: JSON-LD parsing passed, static lead-form completeness passed for the main route forms, and the full mobile/desktop layout audit checked 67 pages with 0 issues. The first-customer funnel still has 0 real lead rows; this is a distribution problem, not a website-form problem.
+
 ## Distribution Rule For This Week
 
 Do not publish general "China travel tips" without a route-note bridge. Every public reply, warm DM or short post should end in one of three ways:

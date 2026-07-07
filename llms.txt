@@ -24,6 +24,7 @@ Bluehour China Journeys is a multilingual private China travel advisory for inte
 - [China travel apps before your trip](/before-china/china-travel-apps-before-trip/)
 - The English homepage now includes a Before China search bridge for payment, phone setup, WeChat Pay card setup and urgent payment rescue. Use it when a traveller starts with a practical problem rather than a destination.
 - The Before China pages include embedded route-check forms, so travellers can ask for a route note directly from payment, app or entry-preparation pages without leaving the article.
+- High-intent Before China search questions should route this way: WeChat Pay with Visa or Mastercard to /before-china/wechat-pay-visa-mastercard/; general payment preparation to /before-china/china-payment-checklist/; apps, eSIM, SMS, maps and hotel addresses to /before-china/china-travel-apps-before-trip/; card, Alipay or WeChat Pay failure after arrival to /payment-rescue/; full regional route realism to /route-note/.
 - [Traditional Chinese homepage](/zh.html)
 - [繁中出發中國前準備清單](/zh/before-china/)
 - [繁中：微信支付綁 Visa / Mastercard](/zh/before-china/wechat-pay-visa-mastercard/)
