@@ -233,7 +233,7 @@
       <h2>今天只照這四步</h2>
       <div class="steps">
         <div class="step"><b>01</b><strong>貼五則 Tripadvisor 回覆</strong><span>已批准、無連結、手動發布。</span></div>
-        <div class="step"><b>02</b><strong>發 PayPal / WeChat 即時貼文</strong><span>用支付焦慮導到 60 秒 route check。</span></div>
+        <div class="step"><b>02</b><strong>發 PayPal / WeChat 即時貼文</strong><span>用支付焦慮導到 route-note 或 payment rescue。</span></div>
         <div class="step"><b>03</b><strong>發 12 則暖轉介紹</strong><span>每人只求介紹一位外國旅客。</span></div>
         <div class="step"><b>04</b><strong>有人回覆就問五題</strong><span>月份、人數、天數、目的地、聯絡方式。</span></div>
       </div>
@@ -241,7 +241,7 @@
         <a class="btn gold" href="/ops/first-customer-2026-07-07-15min-send-now.html" target="_blank" rel="noopener">先跑 15 分鐘真送出</a>
         <a class="btn gold" href="/ops/first-customer-approved-public-replies-2026-07-06.html" target="_blank" rel="noopener">開始貼 5 則公開回覆</a>
         <a class="btn gold" href="/ops/first-customer-partner-followup-2026-07-07.html" target="_blank" rel="noopener">開始 5 封 partner follow-up</a>
-        <a class="btn gold" href="/quick/china/?utm_source=30min_live_room&utm_medium=ops&utm_campaign=first_customer_week&angle=quick_route_check" target="_blank" rel="noopener">測試 60 秒短表單</a>
+        <a class="btn gold" href="/route-note/?utm_source=30min_live_room&utm_medium=ops&utm_campaign=first_customer_week&angle=route_note_24h" target="_blank" rel="noopener">打開 24 小時路線筆記</a>
         <a class="btn secondary" href="/ops/first-customer-lead-triage.html" target="_blank" rel="noopener">收到回覆後分類</a>
       </div>
     </section>
@@ -262,8 +262,8 @@ For China beyond Beijing and Shanghai, payment is part of route comfort:
 
 This matters most in Yunnan, Zhangjiajie, Dunhuang, Xinjiang, Sanya or Northeast China. The stressful moment is often the taxi pickup, hotel check-in, ticket window or late transfer when one app fails.
 
-If you know your month, group size, days and destination idea, send a 60-second route check. We reply with a first route note and starting quote direction before any paid planning:
-https://bluehourchina.com/quick/china/?utm_source=threads&utm_medium=post&utm_campaign=first_customer_week&angle=paypal_wechat_payment_route</pre>
+If you know your month, group size, days and destination idea, send a route-note request. We reply with a first route note and starting quote direction before any paid planning:
+https://bluehourchina.com/route-note/?utm_source=threads&utm_medium=post&utm_campaign=first_customer_week&angle=paypal_wechat_payment_route</pre>
         <div class="actions">
           <button class="gold" data-copy="#paypal-post">複製即時貼文</button>
           <a class="btn secondary" href="/assets/social/bluehour-paypal-wechat-2026-card.png" target="_blank" rel="noopener">打開配圖</a>
@@ -278,8 +278,8 @@ https://bluehourchina.com/quick/china/?utm_source=threads&utm_medium=post&utm_ca
         <p>發給有外國朋友、海外同事、外派家庭、國際學生、旅宿或旅遊人脈的人。今天只求一位介紹。</p>
         <pre id="warm-dm">我今天在幫 Bluehour China 找第一個真正有中國旅行需求的外國旅客。
 
-如果你身邊有外國朋友、國際學生、外派家庭、海外同事，或有人已經去過北京上海、想看更自然文化感的中國，請幫我轉這個 60 秒短表單給一位就好：
-https://bluehourchina.com/quick/china/?utm_source=warm_network&utm_medium=batch_12&utm_campaign=first_customer_week&angle=one_referral
+如果你身邊有外國朋友、國際學生、外派家庭、海外同事，或有人已經去過北京上海、想看更自然文化感的中國，請幫我轉這個 24 小時路線筆記入口給一位就好：
+https://bluehourchina.com/route-note/?utm_source=warm_network&utm_medium=batch_12&utm_campaign=first_customer_week&angle=one_referral
 
 我們先回路線方向，不是叫對方立刻付費。</pre>
         <div class="actions">
@@ -297,8 +297,8 @@ https://bluehourchina.com/quick/china/?utm_source=warm_network&utm_medium=batch_
 
 Bluehour China helps foreign travellers turn places like Yunnan, Zhangjiajie, Dunhuang, Xinjiang, Sanya or Northeast China into a realistic and comfortable route.
 
-If one person comes to mind, could you send them this 60-second route check?
-https://bluehourchina.com/quick/china/?utm_source=warm_network&utm_medium=direct_message&utm_campaign=first_customer_week&angle=foreign_friend_referral</pre>
+If one person comes to mind, could you send them this route-note request?
+https://bluehourchina.com/route-note/?utm_source=warm_network&utm_medium=direct_message&utm_campaign=first_customer_week&angle=foreign_friend_referral</pre>
         <div class="actions">
           <button class="gold" data-copy="#traveller-dm">複製英文訊息</button>
           <a class="btn secondary" href="/route-note/?utm_source=30min_live_room&utm_medium=ops&utm_campaign=first_customer_week&angle=route_note_24h" target="_blank" rel="noopener">打開 route-note</a>
@@ -392,7 +392,7 @@ https://bluehourchina.com/quick/china/?utm_source=warm_network&utm_medium=direct
       const hasReply = action === "received_reply_needs_triage";
       const tracking = hasReply
         ? "https://bluehourchina.com/ops/first-customer-lead-triage.html"
-        : "https://bluehourchina.com/quick/china/?utm_source=30min_live_room&utm_medium=ops&utm_campaign=first_customer_week&angle=quick_route_check";
+        : "https://bluehourchina.com/route-note/?utm_source=30min_live_room&utm_medium=ops&utm_campaign=first_customer_week&angle=route_note_24h";
       const row = [
         now.toISOString(),
         platform,
