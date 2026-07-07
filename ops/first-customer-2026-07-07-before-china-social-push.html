@@ -124,6 +124,28 @@
     .gold { border-color: var(--gold); background: var(--gold); color: #13231e; }
     .secondary { background: transparent; color: var(--forest); }
     .status { min-height: 24px; margin-top: 10px; color: var(--forest); font-weight: 900; }
+    .fast-share {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .fast-share a {
+      min-height: 52px;
+      border: 1px solid var(--line);
+      padding: 12px;
+      background: #fffdf8;
+      color: var(--forest);
+      font-weight: 920;
+      text-decoration: none;
+    }
+    .fast-share small {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 760;
+    }
     .checklist {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -139,7 +161,7 @@
       font-weight: 820;
     }
     @media (max-width: 860px) {
-      .score, .grid, .checklist { grid-template-columns: 1fr; }
+      .score, .grid, .checklist, .fast-share { grid-template-columns: 1fr; }
       .card, .post { padding: 16px; }
       button, .btn { width: 100%; }
     }
@@ -176,6 +198,20 @@
         <a class="btn gold" href="/payment-rescue/?utm_source=ops&utm_medium=control_panel&utm_campaign=first_customer_week&angle=payment_rescue" target="_blank" rel="noopener">Payment rescue</a>
         <a class="btn gold" href="/route-note/?utm_source=ops&utm_medium=control_panel&utm_campaign=first_customer_week&angle=route_note_24h" target="_blank" rel="noopener">Route note</a>
         <a class="btn secondary" href="/ops/first-customer-lead-triage.html" target="_blank" rel="noopener">有人回覆後分類</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <p class="eyebrow">15-minute send</p>
+      <h2>手機先發 4 個入口</h2>
+      <p>先不要完美主義。打開一個渠道，貼出一則；有人問細節，就回第 12 則五題。</p>
+      <div class="fast-share">
+        <a id="share-before-fb" href="#" target="_blank" rel="noopener">Facebook 開貼文<small>分享 Before China 清單</small></a>
+        <a id="share-before-x" href="#" target="_blank" rel="noopener">X 開貼文<small>英文短版，適合公開搜尋</small></a>
+        <a id="share-before-whatsapp" href="#" target="_blank" rel="noopener">WhatsApp 發送<small>發給外國朋友或介紹人</small></a>
+        <a id="share-before-line" href="#" target="_blank" rel="noopener">LINE 發送<small>中文暖轉介紹</small></a>
+        <a id="share-before-email" href="#" target="_blank" rel="noopener">Email 發送<small>適合 partner / 學校 / 活動商家</small></a>
+        <a href="/ops/first-customer-2026-07-07-proof-capture.html" target="_blank" rel="noopener">貼完回填證據<small>沒有 URL 或截圖就不算曝光</small></a>
       </div>
     </section>
 
@@ -407,6 +443,21 @@ With that, we can reply with a first route direction, pacing risks and starting 
 
   <script>
     const shareText = (selector) => document.querySelector(selector)?.innerText.trim() || "";
+    const encode = (value) => encodeURIComponent(value);
+    const beforeChinaUrl = "https://bluehourchina.com/before-china/?utm_source=share_button&utm_medium=organic&utm_campaign=first_customer_week&angle=before_china_setup";
+    const shortSocial = "Before travelling to China, prepare payment, data, SMS, maps, hotel addresses and route pacing before the itinerary gets ambitious.\n\nChecklist:\n" + beforeChinaUrl;
+    const warmSocial = "如果你身邊有外國朋友準備來中國旅行，可以把這份出發前清單給他。外國旅客最常卡住的不是景點，而是支付、網路、簡訊驗證、飯店中文地址和交通銜接。\n\n" + beforeChinaUrl;
+
+    const setHref = (selector, href) => {
+      const node = document.querySelector(selector);
+      if (node) node.href = href;
+    };
+    setHref("#share-before-fb", "https://www.facebook.com/sharer/sharer.php?u=" + encode(beforeChinaUrl));
+    setHref("#share-before-x", "https://twitter.com/intent/tweet?text=" + encode(shortSocial));
+    setHref("#share-before-whatsapp", "https://wa.me/?text=" + encode(shortSocial));
+    setHref("#share-before-line", "https://social-plugins.line.me/lineit/share?text=" + encode(warmSocial));
+    setHref("#share-before-email", "mailto:?subject=" + encode("Before travelling to China") + "&body=" + encode(shortSocial));
+
     document.querySelectorAll("[data-copy]").forEach((button) => {
       button.addEventListener("click", async () => {
         const selector = button.getAttribute("data-copy");
@@ -418,6 +469,25 @@ With that, we can reply with a first route direction, pacing risks and starting 
         } catch (error) {
           if (status) status.textContent = "複製失敗，請手動選取文字。";
         }
+      });
+
+      const selector = button.getAttribute("data-copy");
+      if (!selector || !selector.startsWith("#post-")) return;
+      const actions = button.closest(".actions");
+      if (!actions) return;
+      const text = shareText(selector);
+      [
+        ["WhatsApp", "https://wa.me/?text=" + encode(text)],
+        ["X", "https://twitter.com/intent/tweet?text=" + encode(text.slice(0, 248) + (text.length > 248 ? "..." : ""))],
+        ["Email", "mailto:?subject=" + encode("Bluehour China travel note") + "&body=" + encode(text)]
+      ].forEach(([label, href]) => {
+        const link = document.createElement("a");
+        link.className = "btn secondary";
+        link.href = href;
+        link.target = "_blank";
+        link.rel = "noopener";
+        link.textContent = label;
+        actions.appendChild(link);
       });
     });
   </script>
