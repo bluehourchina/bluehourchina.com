@@ -78,6 +78,20 @@ const pages = [
     }
   },
   {
+    path: "/before-china/china-first-day-arrival-checklist/",
+    formName: "bluehour-before-china-en-arrival_day_setup",
+    values: {
+      name: "Codex Arrival Day Test",
+      email: "codex-test@example.com",
+      contact: "+1 555 0177 WhatsApp",
+      country: "United States",
+      destination: "multi-region",
+      travel_window: "Within 1-3 months",
+      group_size: "2 travellers",
+      message: "Testing arrival-day payment, hotel address and first-transfer route-check lead event without external submission."
+    }
+  },
+  {
     path: "/quick/china/",
     formName: "bluehour-china-quick-route-check-en",
     values: {
