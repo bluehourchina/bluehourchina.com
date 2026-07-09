@@ -489,7 +489,7 @@
               <li>實際落地接待由當地服務商提供，若青中國旅策負責前期策劃與把關。</li>
             </ul>
           </aside>
-          <form class="lead-form" data-sheet-endpoint="https://script.google.com/macros/s/AKfycbx5gEgkB8rQYkd6kgSni1OraS_wZTBEVXfJqX68VsilzNPWjsupErGqn96CeFmR3-W6TA/exec" data-form-lang="zh" data-sending-message="送出中..." data-success-message="已收到，若青中國旅策會回覆一份路線遊記式建議與初步方案報價" data-error-message="表單暫時沒有送出，請直接寄信給我們。" name="yunnan-private-tour-zh" method="POST" action="https://formsubmit.co/bluehourchina@gmail.com">
+          <form class="lead-form" data-sheet-endpoint="https://script.google.com/macros/s/AKfycbxCxsA5x0zzq_5pqI2MNJcki0MC9R236i_e3oRtu_0QPl7osg9CDHnaOzsSW_sZiRrh/exec" data-form-lang="zh" data-sending-message="送出中..." data-success-message="已收到，若青中國旅策會回覆一份路線遊記式建議與初步方案報價" data-error-message="表單暫時沒有送出，請直接寄信給我們。" name="yunnan-private-tour-zh" method="POST" action="https://formsubmit.co/67d31e8a5231a5944bbb8f18952a58df">
           <input type="hidden" name="_next" value="https://bluehourchina.com/thanks.html">
           <input type="hidden" name="_subject" value="Bluehour China Journeys website inquiry">
           <input type="hidden" name="_template" value="table">
@@ -502,6 +502,7 @@
             <input type="hidden" name="utm_source" value="">
             <input type="hidden" name="utm_medium" value="">
             <input type="hidden" name="utm_campaign" value="">
+            <input type="hidden" name="utm_content" value="">
             <input type="hidden" name="campaign" value="private_route_consultation">
             <input type="text" name="name" placeholder="姓名" aria-label="姓名" required>
             <input type="tel" name="contact" placeholder="手機 / LINE / 微信" aria-label="聯絡方式" required>
@@ -510,7 +511,7 @@
             <select name="route_days" aria-label="偏好天數" required><option value="" disabled selected>偏好天數</option><option>一週</option>
             <option>一週多一點</option>
             <option>9 日慢走</option><option>還不確定，想先判斷</option></select>
-            <select name="budget" aria-label="預算感" required><option value="" disabled selected>預算感</option><option>希望接近 RMB 8,800/人</option><option>可接受 RMB 10,200-11,800/人</option><option>更重視住宿與舒適度</option><option>預算還不確定，想先比較</option></select>
+            <select name="budget" aria-label="預算感" required><option value="" disabled selected>預算感</option><option>希望接近 NT$59,800/人起</option><option>願意比較旅行社與小團私旅</option><option>更重視住宿與舒適度</option><option>預算還不確定，想先比較</option></select>
             <select name="readiness" aria-label="出發意願" required><option value="" disabled selected>出發意願</option><option>如果方案合適，1 個月內可付訂</option><option>正在比較旅行社與私旅</option><option>想先替家人/朋友看方案</option><option>目前只是初步了解</option></select>
             <select name="style" aria-label="最在意的事" required><option value="" disabled selected>最在意的事</option><option>住宿位置與舒適度</option><option>不要拉車太累</option><option>拍照與古鎮氛圍</option><option>整體價格與品質平衡</option></select>
             <textarea class="wide" name="itinerary_text" placeholder="貼上你正在看的旅行社行程、網址、價格或你最猶豫的地方"></textarea>
@@ -518,7 +519,7 @@
             <div class="qualify" aria-label="有效需求條件">
               <div><b>四題優先</b><span>月份、人數、天數、預算。</span></div>
               <div><b>比較重點</b><span>住宿、車程、沙溪停留。</span></div>
-              <div><b>主力價格</b><span>RMB 8,800/人起（機票另計）。</span></div>
+              <div><b>主力價格</b><span>NT$59,800/人起起（機票另計）。</span></div>
               <div><b>服務方式</b><span>先判斷，再推進方案。</span></div>
             </div>
             <p class="form-note-text">送出後會進入感謝頁。若資料不足，若青中國旅策會先請你補齊四題；條件適合才進一步整理方案方向。</p>
@@ -575,6 +576,7 @@
       setValue("utm_source", params.get("utm_source"));
       setValue("utm_medium", params.get("utm_medium"));
       setValue("utm_campaign", params.get("utm_campaign"));
+      setValue("utm_content", params.get("utm_content") || params.get("content"));
     }
   </script>
   <script src="/assets/lead-form-20260706-sheet.js" defer></script>

@@ -3,10 +3,30 @@ import path from "node:path";
 import { createRequire } from "node:module";
 
 const require = createRequire(import.meta.url);
-const bundledNodeModules =
-  process.env.NODE_MODULE_DIR ||
-  "/Users/jojo/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules";
-const { chromium } = require(path.join(bundledNodeModules, "playwright"));
+const nodeModuleCandidates = [
+  process.env.NODE_MODULE_DIR,
+  path.join(process.env.HOME || "", ".cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules"),
+  "/Users/jojo/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules",
+].filter(Boolean);
+
+let chromium;
+let lastPlaywrightError;
+for (const nodeModulesDir of nodeModuleCandidates) {
+  try {
+    ({ chromium } = require(path.join(nodeModulesDir, "playwright")));
+    break;
+  } catch (error) {
+    lastPlaywrightError = error;
+  }
+}
+if (!chromium) {
+  try {
+    ({ chromium } = require("playwright"));
+  } catch (error) {
+    lastPlaywrightError = error;
+  }
+}
+if (!chromium) throw lastPlaywrightError;
 
 const root = process.cwd();
 const origin = process.env.AUDIT_ORIGIN || "http://127.0.0.1:8787";
@@ -16,6 +36,38 @@ const chromeExecutable =
   "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 
 const pages = [
+  {
+    path: "/interest.html",
+    formName: "bluehour-china-journey-review-en",
+    values: {
+      name: "Codex Journey Review Test",
+      email: "codex-test@example.com",
+      contact: "+1 555 0120 WhatsApp",
+      country: "United States",
+      destination: "yunnan-grand-loop",
+      travel_window: "Within 3-6 months",
+      group_size: "2 travellers",
+      language_needs: "English support preferred",
+      comfort_level: "Boutique and comfortable",
+      message: "Testing the main private China inquiry form without external submission."
+    }
+  },
+  {
+    path: "/zh/interest/",
+    formName: "bluehour-china-journey-review-zh",
+    values: {
+      name: "Codex 私人路線測試",
+      email: "codex-test@example.com",
+      contact: "微信 codex-test",
+      country: "台灣",
+      destination: "yunnan-grand-loop",
+      travel_window: "3-6 個月內",
+      group_size: "2 位旅人",
+      language_needs: "偏好中英支援",
+      comfort_level: "精品舒適",
+      message: "測試繁中主詢問表單，不送出到外部服務。"
+    }
+  },
   {
     path: "/before-china/wechat-pay-paypal-china-2026/",
     formName: "bluehour-before-china-en-paypal_wechat_pay_2026",
@@ -116,7 +168,19 @@ async function fillForm(form, values) {
     if ((await field.count()) === 0) continue;
     const tagName = await field.evaluate((element) => element.tagName.toLowerCase());
     if (tagName === "select") {
-      await field.selectOption(value);
+      const matched = await field.evaluate((element, wanted) => {
+        const option = [...element.options].find(
+          (item) => item.value === wanted || item.textContent.trim() === wanted
+        );
+        if (!option) return false;
+        element.value = option.value;
+        element.dispatchEvent(new Event("input", { bubbles: true }));
+        element.dispatchEvent(new Event("change", { bubbles: true }));
+        return true;
+      }, value);
+      if (!matched) {
+        throw new Error(`No select option for ${name}: ${value}`);
+      }
     } else {
       await field.fill(value);
     }

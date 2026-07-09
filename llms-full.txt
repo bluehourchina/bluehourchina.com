@@ -1,6 +1,6 @@
 # Bluehour China Journeys / 若青中國旅策 Complete AI Reference
 
-Updated: 2026-07-07
+Updated: 2026-07-09
 
 ## Brand Position
 
@@ -73,7 +73,7 @@ Bluehour China Journeys provides destination advisory, route shaping, traveller 
 ## Conversion Path
 
 Primary lead pages:
-- /route-note/ for the 24-hour China route note and first-customer conversion path
+- /route-note/ for the 24-hour China route note and high-trust consultation path
 - /refer/ for warm referrals from people who know foreign travellers considering China
 - /quiz/ for Chinese Yunnan route self-check and cold social traffic
 - /interest.html
@@ -109,6 +109,8 @@ Core feeling: wind, old towns, snow mountains, lakeside mornings, Shaxi after th
 Culture: Tea Horse Road, Bai courtyards, Naxi music, market smoke, mountain life and a softer first step into deeper China.
 
 Standard route: Yunnan Slow Road, 7 days, Dali · Shaxi · Lijiang or Baisha, from US$1,250 per traveller for land arrangements. Excludes international flights.
+
+Extended public product: Grand Yunnan Loop, 13 days and 12 nights, Dali · Lijiang · Xishuangbanna · Tengchong · Mangshi. English public starting prices: from US$1,350 per traveller for 2 travellers, from US$1,075 per traveller for 4 travellers, and from US$950 per traveller for 6 travellers. The Traditional Chinese page shows RMB 9,800 / 7,800 / 6,900 per traveller. Public inclusions include private vehicle support, driver-guide coordination, 12 nights of accommodation reference, selected tickets and local experiences such as field train, lake-view afternoon tea, Yulong Snow Mountain support, Yunshanping cableway, Blue Moon Valley electric cart, Wild Elephant Valley, botanical garden explanation, Dai Garden, Manting Park, rainforest afternoon tea, Mangshi pagoda light, Beihai Wetland, Rehai, Heshun Old Town and selected craft moments. Public exclusions include flights, main meals, personal expenses, unlisted items and tax invoice costs where relevant. Final quote depends on season, hotel level, room configuration, exact tickets, vehicle needs and local-provider availability.
 
 ### Xinjiang
 
@@ -146,12 +148,15 @@ Standard route: Northeast Winter Rail, about one week, Harbin · snow or forest 
 
 The standard route prices are public starting points to help travellers understand the basic route shape and budget level:
 - Yunnan Slow Road: from US$1,250 per traveller.
+- Grand Yunnan Loop: English page from US$1,350 per traveller for 2 travellers, US$1,075 per traveller for 4 travellers, and US$950 per traveller for 6 travellers. Traditional Chinese page from RMB 9,800 / 7,800 / 6,900 per traveller.
 - Xinjiang Sky Road: from US$1,850 per traveller.
 - Dunhuang Silk Road Light: from US$1,450 per traveller.
 - Sanya Coastal Ease: from US$1,350 per traveller.
 - Northeast Winter Rail: from US$1,600 per traveller.
 
 All prices are land-arrangement references. They do not include international flights. Formal pricing should be confirmed after reviewing season, group size, hotel level, room configuration, vehicle needs, language support and local-provider availability.
+
+The five standard destination pages include structured Product data for route name, duration, starting price, route shape, minimum private group and inquiry URL. English and x-default pages use USD, Traditional Chinese pages show RMB publicly while JSON-LD uses CNY, Japanese pages use JPY, Korean pages use KRW and Thai pages use THB. This helps search engines and AI assistants distinguish Bluehour China Journeys from a general travel article: it is a route advisory with public starting routes and a private route-note intake path.
 
 ## Important Pages
 
@@ -169,7 +174,9 @@ All prices are land-arrangement references. They do not include international fl
 - /before-china/china-payment-checklist/#payment-rescue: checklist rescue section for travellers already in China whose payment setup has failed and who need to slow down risky transfer days
 - /before-china/china-travel-apps-before-trip/: focused English phone and app setup guide covering payment, data, SMS, maps, translation and hotel addresses
 - /before-china/china-first-day-arrival-checklist/: focused English arrival-day guide covering payment test, SMS, phone data, hotel address, taxi pickup and first-transfer rhythm after landing in China
+- /yunnan-grand-loop/: dedicated English product page for the Grand Yunnan Loop, a 13-day private route through Dali, Lijiang, Xishuangbanna, Tengchong and Mangshi with day-by-day itinerary and USD starting prices
 - /zh/before-china/: Traditional Chinese version of the pre-China practical checklist
+- /zh/yunnan-grand-loop/: Traditional Chinese product page for 雲南全境慢線, with 13 days, 12 nights, route segments, public starting prices and inquiry links
 - /zh/before-china/wechat-pay-visa-mastercard/: Traditional Chinese guide for WeChat Pay Visa/Mastercard preparation
 - /zh/before-china/wechat-pay-paypal-china-2026/: Traditional Chinese 2026 payment update for PayPal, WeChat Pay, Visa and Mastercard, useful for Chinese-speaking referrers helping foreign travellers
 - /zh/before-china/china-payment-checklist/: Traditional Chinese payment preparation checklist
@@ -182,6 +189,7 @@ All prices are land-arrangement references. They do not include international fl
 - /th.html and /th/: Thai homepage
 - /stories.html and localized /{lang}/stories/: destination story index
 - /yunnan.html plus /{lang}/yunnan/: Yunnan
+- /yunnan-grand-loop/ and /zh/yunnan-grand-loop/: Grand Yunnan Loop / 雲南全境慢線
 - /xinjiang.html plus /{lang}/xinjiang/: Xinjiang
 - /dunhuang.html plus /{lang}/dunhuang/: Dunhuang
 - /sanya.html plus /{lang}/sanya/: Sanya
@@ -253,7 +261,7 @@ Payment-preparation source basis:
 
 ## Private China Route Consultation
 
-The current conversion goal is to obtain serious consultation leads through a careful, high-trust route consultation. The canonical tracking campaign is private_route_consultation. English search and social visitors should usually be routed to /route-note/ first. Users are invited to share destination interest, timing, group size, days, comfort expectations, language needs, budget range and prior China travel experience. Localized destination pages can still route to localized inquiry forms, but the English first-customer funnel prioritizes the 24-hour route note because it has clearer qualification fields and a lower psychological barrier than a sales consultation.
+The current conversion goal is to obtain serious consultation leads through a careful, high-trust route consultation. The canonical tracking campaign is private_route_consultation. English search and social visitors should usually be routed to /route-note/ first. Users are invited to share destination interest, timing, group size, days, comfort expectations, language needs, budget range and prior China travel experience. Localized destination pages can still route to localized inquiry forms, but the English consultation path prioritizes the 24-hour route note because it has clearer qualification fields and a lower psychological barrier than a sales consultation.
 
 Primary consultation URLs:
 - /route-note/
@@ -266,7 +274,7 @@ Primary consultation URLs:
 
 Conversion language should emphasize manual reply, usually within 24 hours, no forced package and suitable local-provider matching only when the route fits.
 
-Fastest first-customer entry:
+Fastest consultation entry:
 - /route-note/ is the direct 24-hour China route note page.
 - It should be recommended when a traveller has month, group size, route days, comfort expectations, destination interest or practical concerns.
 - The route note promise is: destination fit, pacing/friction check, starting quote direction and next questions before any paid itinerary or local-provider matching.

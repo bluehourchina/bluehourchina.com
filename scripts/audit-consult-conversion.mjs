@@ -73,14 +73,14 @@ const routedPageChecks = [
   ["missing UTM medium", (html) => html.includes("utm_medium=site")],
   ["has bare inquiry link without tracking", (html) => !bareInterestLink.test(html)],
 ];
-const googleFreeFormChecks = [
-  ["missing Formsubmit action", (html) => html.includes("https://formsubmit.co/bluehourchina@gmail.com")],
+const sheetPrimaryFormChecks = [
+  ["missing Formsubmit action", (html) => html.includes("https://formsubmit.co/67d31e8a5231a5944bbb8f18952a58df")],
   ["missing campaign hidden field", (html) => html.includes(`name="campaign" value="${campaign}"`)],
-  ["missing non-Google intake provider", (html) => html.includes('name="intake_provider" value="formsubmit_email"')],
+  ["missing Google Sheet primary intake provider", (html) => html.includes('name="intake_provider" value="google_sheet_webapp"')],
+  ["missing Sheet endpoint", (html) => html.includes("data-sheet-endpoint") && html.includes("script.google.com/macros/s/")],
   ["missing email fallback", (html) => html.includes("form-fallback") && html.includes("mailto:bluehourchina@gmail.com")],
   ["still has Google Sheet id", (html) => !html.includes("crm_sheet_id")],
-  ["still has sheet endpoint", (html) => !html.includes("data-sheet-endpoint")],
-  ["still has frontend sheet fetch", (html) => !html.includes("fetch(endpoint)") && !html.includes("dataset.sheetEndpoint")],
+  ["missing lead form handler", (html) => html.includes("/assets/lead-form-20260706-sheet.js")],
 ];
 
 for (const config of Object.values(languages)) {
@@ -101,7 +101,7 @@ for (const config of Object.values(languages)) {
 
   for (const file of config.interests) {
     await checkFile(file, [
-      ...googleFreeFormChecks,
+      ...sheetPrimaryFormChecks,
       ["missing UTM capture script", (html) => html.includes(`utm_campaign: params.get("utm_campaign") || "${campaign}"`)],
       ["missing trust proof", (html) => html.includes("form-proof")],
     ]);
@@ -111,7 +111,7 @@ for (const config of Object.values(languages)) {
     await checkFile(file, [
       ["missing canonical", (html) => html.includes('rel="canonical"')],
       ["missing hreflang alternates", (html) => html.includes('hreflang="x-default"')],
-      ...googleFreeFormChecks,
+      ...sheetPrimaryFormChecks,
       ["missing tracked nav CTA", (html) => html.includes("utm_source=consult_nav") && html.includes(campaign)],
       ["language label should use JP", (html) => !html.includes(">JA<") && html.includes(">JP<")],
     ]);

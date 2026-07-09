@@ -223,7 +223,7 @@
     }
     .starter-routes {
       display: grid;
-      grid-template-columns: repeat(5, minmax(180px, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 12px;
       margin-top: 24px;
     }
@@ -282,6 +282,81 @@
       color: var(--ivory);
       font-weight: 850;
     }
+    .grand-route-callout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0;
+      margin-top: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,250,241,.72);
+      overflow: hidden;
+    }
+    .grand-route-callout figure {
+      min-height: 360px;
+      margin: 0;
+      position: relative;
+      background: #102821;
+    }
+    .grand-route-callout img {
+      width: 100%;
+      height: 100%;
+      min-height: 360px;
+      object-fit: cover;
+      display: block;
+    }
+    .grand-route-callout figcaption {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      color: var(--ivory);
+      font-size: 13px;
+      font-weight: 850;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .grand-route-copy {
+      padding: clamp(28px, 4vw, 46px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .grand-route-copy h3 {
+      margin: 0;
+      font-size: clamp(34px, 4.2vw, 58px);
+      line-height: 1.05;
+    }
+    .grand-route-copy p {
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.78;
+    }
+    .grand-price-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin: 22px 0;
+    }
+    .grand-price-grid div {
+      border: 1px solid var(--line);
+      padding: 14px;
+      background: rgba(255,255,255,.28);
+    }
+    .grand-price-grid b {
+      display: block;
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .grand-price-grid span {
+      display: block;
+      margin-top: 6px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 24px;
+      line-height: 1.05;
+      color: var(--ink);
+    }
     @media (max-width: 860px) {
       .guide-grid {
         grid-template-columns: 1fr;
@@ -289,8 +364,14 @@
       .guide-panel {
         position: static;
       }
-      .starter-routes {
+      .starter-routes,
+      .grand-route-callout,
+      .grand-price-grid {
         grid-template-columns: 1fr;
+      }
+      .grand-route-callout figure,
+      .grand-route-callout img {
+        min-height: 320px;
       }
     }
   </style>
@@ -306,7 +387,7 @@
       <a href="/stories.html">Stories</a>
       <a href="/before-china/">Before China</a>
       <a href="/ai/">AI Reference</a>
-      <a class="nav-cta" href="/route-note/?utm_source=china_travel_nav&utm_medium=site&utm_campaign=first_customer_week&angle=second_trip_china&source_path=%2Fchina-travel%2F">Get a route note</a>
+      <a class="nav-cta" href="/route-note/?utm_source=china_travel_nav&utm_medium=site&utm_campaign=private_route_consultation&angle=second_trip_china&source_path=%2Fchina-travel%2F">Get a route note</a>
     </div>
   </nav>
 
@@ -317,7 +398,7 @@
         <h1>Where to travel in China after Beijing and Shanghai</h1>
         <p class="lead">A second China journey is not about collecting more famous names. It is about choosing the air around you: lake wind, desert dusk, snow light, coastal ease or a long road beneath a wider sky.</p>
         <div class="hero-actions">
-          <a class="btn primary" href="/route-note/?utm_source=china_travel_hero&utm_medium=site&utm_campaign=first_customer_week&angle=second_trip_china&source_path=%2Fchina-travel%2F">Ask for route advice</a>
+          <a class="btn primary" href="/route-note/?utm_source=china_travel_hero&utm_medium=site&utm_campaign=private_route_consultation&angle=second_trip_china&source_path=%2Fchina-travel%2F">Ask for route advice</a>
           <a class="btn" href="/before-china/">Before China checklist</a>
         </div>
       </div>
@@ -382,6 +463,26 @@
                 <span>From US$1,600</span>
               </a>
             </div>
+            <div class="grand-route-callout">
+              <figure>
+                <img src="/assets/wechat-reference-20260709/wechat-yunnan-dali-field-train-11.jpg" alt="Dali field train and Yunnan route atmosphere">
+                <figcaption>Flagship sample route</figcaption>
+              </figure>
+              <div class="grand-route-copy">
+                <p class="eyebrow">Most concrete starting point</p>
+                <h3>Grand Yunnan Loop</h3>
+                <p>A 13-day private route through Dali, Lijiang, Xishuangbanna, Tengchong and Mangshi. It is the clearest example of how Bluehour China turns a landscape wish into days, hotels, road rhythm and starting prices.</p>
+                <div class="grand-price-grid" aria-label="Grand Yunnan Loop starting prices">
+                  <div><b>2 travellers</b><span>US$1,350</span></div>
+                  <div><b>4 travellers</b><span>US$1,075</span></div>
+                  <div><b>6 travellers</b><span>US$950</span></div>
+                </div>
+                <div class="hero-actions">
+                  <a class="btn primary dark-gold" href="/yunnan-grand-loop/">See the 13-day route</a>
+                  <a class="btn dark" href="/route-note/?utm_source=china_travel_grand_loop&utm_medium=site&utm_campaign=private_route_consultation&destination=yunnan-grand-loop">Ask about this route</a>
+                </div>
+              </div>
+            </div>
           </section>
 
           <!-- content-95-start -->
@@ -443,7 +544,7 @@
             <h2>Begin with a route note, not a sales call</h2>
             <p>Tell us when you may travel, how many people are coming, how many days you have, whether you need English, Chinese, Japanese, Korean or Thai support, and what level of comfort feels right. We reply with a first direction: what fits, what feels rushed, the starting quote direction and where local care may be useful.</p>
             <div class="hero-actions">
-              <a class="btn primary dark-gold" href="/route-note/?utm_source=china_travel_bottom&utm_medium=site&utm_campaign=first_customer_week&angle=second_trip_china&source_path=%2Fchina-travel%2F">Send my route brief</a>
+              <a class="btn primary dark-gold" href="/route-note/?utm_source=china_travel_bottom&utm_medium=site&utm_campaign=private_route_consultation&angle=second_trip_china&source_path=%2Fchina-travel%2F">Send my route brief</a>
               <a class="btn dark" href="/ai/">AI-readable reference</a>
             </div>
           </section>

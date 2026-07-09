@@ -22,7 +22,7 @@ const destinations = {
     file: "yunnan.html",
     title: "Private Yunnan Travel｜Bluehour China Journeys",
     description:
-      "Private Yunnan travel planning for foreign travellers: Dali, Shaxi, Lijiang or Baisha, snow mountains, boutique comfort, language support and a 7-day route from US$1,250.",
+      "Private Yunnan travel planning for foreign travellers: 7-day Dali, Shaxi and Lijiang routes, plus a 13-day Grand Yunnan Loop through Dali, Lijiang, Xishuangbanna, Tengchong and Mangshi.",
     name: "Yunnan",
     route: "Yunnan Slow Road",
     days: "7 days",
@@ -436,7 +436,7 @@ const localizedDestinationDetails = {
         ["雲南可以有高級感但不過度昂貴嗎", "可以。關鍵是精品舒適、少一點趕路、好的房間、溫暖餐食與保護早晨和夜晚的節奏。"],
       ],
       metaTitle: "雲南私人旅遊｜若青中國旅策",
-      metaDescription: "雲南私人旅遊規劃：大理、沙溪、麗江或白沙，一週慢路線 RMB 8,800 起，適合外國旅人的語言協助、住宿感與舒適節奏。",
+      metaDescription: "雲南私人旅遊規劃：一週大理、沙溪、麗江慢路線，與 13 天 12 晚雲南全境慢線，串起大理、麗江、西雙版納、騰衝、芒市，RMB 9,800/人起。",
     },
     xinjiang: {
       name: "新疆",

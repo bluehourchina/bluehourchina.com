@@ -467,8 +467,8 @@
               <label>預算感
                 <select id="fitBudget">
                   <option value="low">想控制在 RMB 8,900-50,000</option>
-                  <option value="main" selected>接近 RMB 8,800 可以討論</option>
-                  <option value="upgrade">可接受 RMB 10,200-11,800</option>
+                  <option value="main" selected>接近 NT$59,800/人起可以討論</option>
+                  <option value="upgrade">願意比較旅行社與小團私旅</option>
                   <option value="open">比起低價，更重視舒服</option>
                 </select>
               </label>
@@ -556,11 +556,11 @@
             <ul>
               <li>主線：大理、沙溪、麗江一週慢走</li>
               <li>主力：親友私密同行，4-6 人最推薦</li>
-              <li>價格：RMB 8,800/人起（機票另計），依住宿與人數調整</li>
+              <li>價格：NT$59,800/人起起（機票另計），依住宿與人數調整</li>
             </ul>
           </aside>
 
-          <form class="lead-form" data-sheet-endpoint="https://script.google.com/macros/s/AKfycbx5gEgkB8rQYkd6kgSni1OraS_wZTBEVXfJqX68VsilzNPWjsupErGqn96CeFmR3-W6TA/exec" data-form-lang="zh" data-sending-message="送出中..." data-success-message="已收到，若青中國旅策會回覆一份路線遊記式建議與初步方案報價" data-error-message="表單暫時沒有送出，請直接寄信給我們。" name="yunnan-private-tour-zh" method="POST" action="https://formsubmit.co/bluehourchina@gmail.com">
+          <form class="lead-form" data-sheet-endpoint="https://script.google.com/macros/s/AKfycbxCxsA5x0zzq_5pqI2MNJcki0MC9R236i_e3oRtu_0QPl7osg9CDHnaOzsSW_sZiRrh/exec" data-form-lang="zh" data-sending-message="送出中..." data-success-message="已收到，若青中國旅策會回覆一份路線遊記式建議與初步方案報價" data-error-message="表單暫時沒有送出，請直接寄信給我們。" name="yunnan-private-tour-zh" method="POST" action="https://formsubmit.co/67d31e8a5231a5944bbb8f18952a58df">
           <input type="hidden" name="_next" value="https://bluehourchina.com/thanks.html">
           <input type="hidden" name="_subject" value="Bluehour China Journeys website inquiry">
           <input type="hidden" name="_template" value="table">
@@ -576,6 +576,7 @@
             <input type="hidden" name="utm_source" value="">
             <input type="hidden" name="utm_medium" value="">
             <input type="hidden" name="utm_campaign" value="">
+            <input type="hidden" name="utm_content" value="">
             <input type="hidden" name="campaign" value="private_route_consultation">
             <input type="text" name="name" placeholder="姓名" aria-label="姓名" required>
             <input type="tel" name="contact" placeholder="手機 / LINE / 微信" aria-label="聯絡方式" required>
@@ -603,8 +604,8 @@
             <select name="budget" aria-label="預算感" required>
               <option value="" disabled selected>預算感</option>
               <option>想找 RMB 8,900-50,000 大團</option>
-              <option>接近 RMB 8,800/人可以討論</option>
-              <option>可接受 RMB 10,200-11,800/人</option>
+              <option>接近 NT$59,800/人起可以討論</option>
+              <option>願意比較旅行社與小團私旅</option>
               <option>更重視住宿與舒適度</option>
             </select>
             <select name="readiness" aria-label="出發意願" required>
@@ -719,7 +720,8 @@
         referrer: document.referrer || "",
         utm_source: params.get("utm_source") || "",
         utm_medium: params.get("utm_medium") || "",
-        utm_campaign: params.get("utm_campaign") || ""
+        utm_campaign: params.get("utm_campaign") || "",
+        utm_content: params.get("utm_content") || params.get("content") || ""
       };
       Object.entries(fields).forEach(([name, value]) => {
         const input = leadForm.querySelector(`[name="${name}"]`);

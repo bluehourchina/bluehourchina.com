@@ -1,6 +1,8 @@
 (() => {
-  const leadFieldValue = (form, name) =>
-    form.querySelector('[name="' + name + '"]')?.value?.trim() || "";
+  const leadFieldValue = (form, name) => {
+    const field = form.querySelector('[name="' + name + '"]');
+    return field && field.value ? field.value.trim() : "";
+  };
 
   const leadTrackingPayload = (form, overrides = {}) => {
     const destination = leadFieldValue(form, "destination") || "private-china-route";
@@ -10,6 +12,7 @@
     const intentAngle = leadFieldValue(form, "intent_angle");
     const sourcePath = leadFieldValue(form, "source_path");
     const sourceContent = leadFieldValue(form, "source_content");
+    const utmContent = leadFieldValue(form, "utm_content");
     const language =
       leadFieldValue(form, "language") ||
       leadFieldValue(form, "language_needs") ||
@@ -31,6 +34,7 @@
       intent_angle: intentAngle || undefined,
       source_path: sourcePath || undefined,
       source_content: sourceContent || undefined,
+      utm_content: utmContent || undefined,
       intake_provider:
         overrides.intakeProvider ||
         leadFieldValue(form, "intake_provider") ||
@@ -140,7 +144,8 @@
         window.location.pathname,
       utm_source: params.get("utm_source") || leadFieldValue(form, "utm_source") || "site",
       utm_medium: params.get("utm_medium") || leadFieldValue(form, "utm_medium") || "multilingual",
-      utm_campaign: params.get("utm_campaign") || leadFieldValue(form, "utm_campaign") || "private_route_consultation"
+      utm_campaign: params.get("utm_campaign") || leadFieldValue(form, "utm_campaign") || "private_route_consultation",
+      utm_content: params.get("utm_content") || params.get("content") || leadFieldValue(form, "utm_content") || ""
     };
   };
 
@@ -154,6 +159,19 @@
         form.appendChild(input);
       }
       if (input) input.value = value;
+    });
+  };
+
+  const setUrlSelectDefaults = (form) => {
+    const params = new URLSearchParams(window.location.search);
+    ["destination"].forEach((name) => {
+      const value = params.get(name);
+      if (!value) return;
+      const field = form.querySelector('select[name="' + name + '"]');
+      if (!field || field.value) return;
+      if ([...field.options].some((option) => option.value === value)) {
+        field.value = value;
+      }
     });
   };
 
@@ -210,7 +228,7 @@
 
   const handleSheetSubmit = (form) => {
     form.addEventListener("submit", async (event) => {
-      if (form.querySelector('[name="bot-field"]')?.value) return;
+      if (leadFieldValue(form, "bot-field")) return;
       event.preventDefault();
 
       const endpoint = form.dataset.sheetEndpoint || "";
@@ -271,6 +289,7 @@
   };
 
   forms.forEach((form) => {
+    setUrlSelectDefaults(form);
     setHiddenFields(form);
     ensurePrivacyNotice(form);
 
@@ -282,14 +301,14 @@
     if (!/formsubmit\.co/i.test(form.action || "")) return;
 
     form.addEventListener("submit", async (event) => {
-      if (form.querySelector('[name="bot-field"]')?.value) return;
+      if (leadFieldValue(form, "bot-field")) return;
       event.preventDefault();
 
       setHiddenFields(form);
       const status = getStatus(form);
       const button = form.querySelector('button[type="submit"]');
       const originalLabel = button ? button.textContent : "";
-      const nextUrl = form.querySelector('[name="_next"]')?.value || "/thanks.html";
+      const nextUrl = leadFieldValue(form, "_next") || "/thanks.html";
       const fallbackMessage = form.dataset.errorMessage || message(form).fallback;
 
       status.className = "form-status";

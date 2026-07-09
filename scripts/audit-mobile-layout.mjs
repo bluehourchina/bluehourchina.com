@@ -3,10 +3,30 @@ import path from "node:path";
 import { createRequire } from "node:module";
 
 const require = createRequire(import.meta.url);
-const bundledNodeModules =
-  process.env.NODE_MODULE_DIR ||
-  "/Users/jojo/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules";
-const { chromium } = require(path.join(bundledNodeModules, "playwright"));
+const nodeModuleCandidates = [
+  process.env.NODE_MODULE_DIR,
+  path.join(process.env.HOME || "", ".cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules"),
+  "/Users/jojo/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules",
+].filter(Boolean);
+
+let chromium;
+let lastPlaywrightError;
+for (const nodeModulesDir of nodeModuleCandidates) {
+  try {
+    ({ chromium } = require(path.join(nodeModulesDir, "playwright")));
+    break;
+  } catch (error) {
+    lastPlaywrightError = error;
+  }
+}
+if (!chromium) {
+  try {
+    ({ chromium } = require("playwright"));
+  } catch (error) {
+    lastPlaywrightError = error;
+  }
+}
+if (!chromium) throw lastPlaywrightError;
 
 const root = process.cwd();
 const origin = process.env.AUDIT_ORIGIN || "http://127.0.0.1:8787";
@@ -28,6 +48,7 @@ const pages = [
   "/china-travel/zhangjiajie-senior-friendly-route/",
   "/china-travel/guangzhou-luxury-hotel-family/",
   "/yunnan.html",
+  "/yunnan-grand-loop/",
   "/xinjiang.html",
   "/dunhuang.html",
   "/sanya.html",
@@ -37,33 +58,6 @@ const pages = [
   "/route-note/",
   "/payment-rescue/",
   "/refer/",
-  "/ops/first-customer-24h-close-board-2026-07-06.html",
-  "/ops/first-customer-day3-execution-2026-07-06.html",
-  "/ops/first-customer-mobile-action.html",
-  "/ops/first-customer-2026-07-07-before-china-social-push.html",
-  "/ops/first-customer-2026-07-07-australia-payment-push.html",
-  "/ops/first-customer-2026-07-07-partner-wave2.html",
-  "/ops/first-customer-2026-07-07-real-send-queue.html",
-  "/ops/first-customer-2026-07-07-proof-capture.html",
-  "/ops/first-customer-2026-07-07-45min-lead-room.html",
-  "/ops/first-customer-2026-07-07-30min-live-room.html",
-  "/ops/first-customer-2026-07-07-payment-rescue-live.html",
-  "/ops/first-customer-2026-07-07-target-desk.html",
-  "/ops/first-customer-2026-07-07-live-send-console.html",
-  "/ops/first-customer-2026-07-07-social-close-sprint.html",
-  "/ops/first-customer-one-hour-sprint-2026-07-06.html",
-  "/ops/first-customer-2026-07-07-morning-send-queue.html",
-  "/ops/first-customer-followup-tracker-2026-07-07.html",
-  "/ops/first-customer-72h-social-push-2026-07-06.html",
-  "/ops/first-customer-live-social-sprint-2026-07-06.html",
-  "/ops/first-customer-zero-link-sprint-2026-07-06.html",
-  "/ops/first-customer-payment-sprint-2026-07-06.html",
-  "/ops/first-customer-lead-triage.html",
-  "/ops/first-customer-first-quote-builder-2026-07-06.html",
-  "/ops/first-customer-partner-outreach.html",
-  "/ops/first-customer-partner-dispatch-2026-07-06.html",
-  "/ops/first-customer-partner-send-packet-2026-07-06.html",
-  "/ops/first-customer-post-console.html",
   "/consult/",
   "/quick/",
   "/quick/en/",
@@ -76,6 +70,7 @@ const pages = [
   "/zh/before-china/china-travel-apps-before-trip/",
   "/zh/before-china/china-first-day-arrival-checklist/",
   "/zh/yunnan/",
+  "/zh/yunnan-grand-loop/",
   "/zh/xinjiang/",
   "/zh/dunhuang/",
   "/zh/sanya/",

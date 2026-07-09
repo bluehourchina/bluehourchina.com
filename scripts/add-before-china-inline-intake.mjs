@@ -181,7 +181,7 @@ function formSnippet(page) {
                 ${c.proof.map((item) => `<span>${item}</span>`).join("\n                ")}
               </div>
             </div>
-            <form class="lead-form inline-lead-form" data-form-lang="${page.lang}" data-lead-value="1200" data-lead-currency="USD" data-sending-message="${c.sending}" data-success-message="${c.success}" data-error-message="${c.error}" name="bluehour-before-china-${page.lang}-${page.angle}" method="POST" action="https://formsubmit.co/bluehourchina@gmail.com">
+            <form class="lead-form inline-lead-form" data-form-lang="${page.lang}" data-lead-value="1200" data-lead-currency="USD" data-sending-message="${c.sending}" data-success-message="${c.success}" data-error-message="${c.error}" name="bluehour-before-china-${page.lang}-${page.angle}" method="POST" action="https://formsubmit.co/67d31e8a5231a5944bbb8f18952a58df">
               <input type="hidden" name="_next" value="https://bluehourchina.com/thanks.html?source=before_china&angle=${page.angle}">
               <input type="hidden" name="_subject" value="${subject}">
               <input type="hidden" name="_template" value="table">

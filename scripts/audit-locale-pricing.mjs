@@ -110,6 +110,10 @@ function hasBudgetSelect(html) {
   return /<select\b[^>]*name=["']budget["'][\s\S]*?<\/select>/i.test(html);
 }
 
+function visibleTextHtml(html) {
+  return html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
+}
+
 async function readIfExists(file) {
   try {
     return await fs.readFile(path.join(root, file), "utf8");
@@ -130,15 +134,16 @@ for (const check of checks) {
       continue;
     }
     checked.push(file);
+    const visibleHtml = visibleTextHtml(html);
     for (const forbidden of check.forbidden) {
-      if (forbidden.test(html)) {
+      if (forbidden.test(visibleHtml)) {
         issues.push(`${check.locale} ${file}: forbidden currency pattern ${forbidden}`);
       }
     }
-    if (isDestination(file) && !check.requiredOnDestinationPages.test(html)) {
+    if (isDestination(file) && !check.requiredOnDestinationPages.test(visibleHtml)) {
       issues.push(`${check.locale} ${file}: missing expected destination currency ${check.requiredOnDestinationPages}`);
     }
-    if (hasBudgetSelect(html) && check.requiredOnBudgetPages && !check.requiredOnBudgetPages.test(html)) {
+    if (hasBudgetSelect(visibleHtml) && check.requiredOnBudgetPages && !check.requiredOnBudgetPages.test(visibleHtml)) {
       issues.push(`${check.locale} ${file}: missing expected budget form currency ${check.requiredOnBudgetPages}`);
     }
   }
