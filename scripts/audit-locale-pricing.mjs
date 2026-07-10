@@ -48,6 +48,13 @@ const checks = [
     requiredOnDestinationPages: /\bRMB\b/,
     requiredOnBudgetPages: /\bRMB\b/,
     forbidden: [/\bNT\$/i, /\bTWD\b/i, /\bJPY\b/i, /\bUSD\b/i, /US\$/],
+    fileOverrides: {
+      "zh/yunnan/index.html": {
+        requiredOnDestinationPages: /NT\$/i,
+        requiredOnBudgetPages: /NT\$/i,
+        forbidden: [/\bJPY\b/i, /\bUSD\b/i, /US\$/],
+      },
+    },
   },
   {
     locale: "ja",
@@ -135,16 +142,17 @@ for (const check of checks) {
     }
     checked.push(file);
     const visibleHtml = visibleTextHtml(html);
-    for (const forbidden of check.forbidden) {
+    const rules = Object.assign({}, check, check.fileOverrides?.[file] || {});
+    for (const forbidden of rules.forbidden) {
       if (forbidden.test(visibleHtml)) {
         issues.push(`${check.locale} ${file}: forbidden currency pattern ${forbidden}`);
       }
     }
-    if (isDestination(file) && !check.requiredOnDestinationPages.test(visibleHtml)) {
-      issues.push(`${check.locale} ${file}: missing expected destination currency ${check.requiredOnDestinationPages}`);
+    if (isDestination(file) && !rules.requiredOnDestinationPages.test(visibleHtml)) {
+      issues.push(`${check.locale} ${file}: missing expected destination currency ${rules.requiredOnDestinationPages}`);
     }
-    if (hasBudgetSelect(visibleHtml) && check.requiredOnBudgetPages && !check.requiredOnBudgetPages.test(visibleHtml)) {
-      issues.push(`${check.locale} ${file}: missing expected budget form currency ${check.requiredOnBudgetPages}`);
+    if (hasBudgetSelect(visibleHtml) && rules.requiredOnBudgetPages && !rules.requiredOnBudgetPages.test(visibleHtml)) {
+      issues.push(`${check.locale} ${file}: missing expected budget form currency ${rules.requiredOnBudgetPages}`);
     }
   }
 }

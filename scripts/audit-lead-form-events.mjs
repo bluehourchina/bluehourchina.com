@@ -37,6 +37,19 @@ const chromeExecutable =
 
 const pages = [
   {
+    path: "/zh/yunnan/",
+    formName: "bluehour-yunnan-product-tw",
+    values: {
+      name: "Codex 台灣雲南表單測試",
+      contact: "LINE codex-taiwan-test",
+      travel_window: "3-6 個月內",
+      group_size: "2 人",
+      comfort_level: "精品舒適",
+      budget: "NT$35,000-50,000",
+      message: "測試台灣出發雲南頁的站內詢價表單，不送出到外部服務。"
+    }
+  },
+  {
     path: "/yunnan.html",
     formName: "bluehour-yunnan-product-en",
     values: {
