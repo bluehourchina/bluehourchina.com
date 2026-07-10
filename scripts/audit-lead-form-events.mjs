@@ -37,6 +37,19 @@ const chromeExecutable =
 
 const pages = [
   {
+    path: "/yunnan.html",
+    formName: "bluehour-yunnan-product-en",
+    values: {
+      name: "Codex Yunnan Product Test",
+      contact: "+1 555 0118 WhatsApp",
+      travel_window: "Within 3-6 months",
+      group_size: "2 travellers",
+      comfort_level: "Boutique comfort",
+      budget: "US$1,500-2,500",
+      message: "Testing the inline Yunnan quote form without external submission."
+    }
+  },
+  {
     path: "/interest.html",
     formName: "bluehour-china-journey-review-en",
     values: {

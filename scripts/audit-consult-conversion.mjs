@@ -122,7 +122,7 @@ for (const config of Object.values(languages)) {
       await checkFile(file, [
         ...routedPageChecks,
         ["missing destination tracking", (html) => html.includes(`destination=${destination}`)],
-        ["missing destination conversion band", (html) => html.includes("conversion-band")],
+        ["missing destination conversion path", (html) => html.includes("conversion-band") || html.includes("home-intake-band")],
         ["missing destination sticky review", (html) => html.includes("sticky-review")],
       ]);
     }
