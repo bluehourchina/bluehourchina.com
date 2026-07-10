@@ -1,0 +1,75 @@
+/* Shared mobile heading polish for current pages and legacy campaign pages. */
+h1,
+h2,
+h3,
+.title-line{
+  text-wrap:balance;
+}
+p,
+li,
+dd{
+  text-wrap:pretty;
+}
+
+@media(max-width:420px){
+  html:lang(zh) h1,
+  html:lang(ja) h1,
+  html:lang(ko) h1{
+    font-size:34px;
+    line-height:1.12;
+    word-break:auto-phrase;
+  }
+  html:lang(zh) h2,
+  html:lang(ja) h2,
+  html:lang(ko) h2{
+    font-size:30px;
+    line-height:1.16;
+    word-break:auto-phrase;
+  }
+  html:lang(zh) h3,
+  html:lang(ja) h3,
+  html:lang(ko) h3{
+    font-size:25px;
+    line-height:1.2;
+    word-break:auto-phrase;
+  }
+  html:lang(zh) .title-line,
+  html:lang(ja) .title-line,
+  html:lang(ko) .title-line{
+    word-break:auto-phrase;
+  }
+  html:lang(zh) p,
+  html:lang(zh) li,
+  html:lang(zh) dd,
+  html:lang(ja) p,
+  html:lang(ja) li,
+  html:lang(ja) dd,
+  html:lang(ko) p,
+  html:lang(ko) li,
+  html:lang(ko) dd{
+    word-break:auto-phrase;
+  }
+}
+
+@media(max-width:360px){
+  html:lang(zh) h1,
+  html:lang(ja) h1,
+  html:lang(ko) h1{
+    font-size:30px;
+  }
+  html:lang(zh) h2,
+  html:lang(ja) h2,
+  html:lang(ko) h2{
+    font-size:25px;
+  }
+  html:lang(zh) h3,
+  html:lang(ja) h3,
+  html:lang(ko) h3{
+    font-size:22px;
+  }
+  html:lang(zh) .home-intake-copy h2.cjk-title,
+  html:lang(ja) .home-intake-copy h2.cjk-title,
+  html:lang(ko) .home-intake-copy h2.cjk-title{
+    font-size:30px;
+  }
+}

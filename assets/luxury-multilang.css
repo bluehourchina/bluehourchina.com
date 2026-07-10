@@ -1438,6 +1438,29 @@ h1,h2,h3,
 }
 /* private-journey-funnel-end */
 
+/* heading-orphan-guard-start */
+.home-intake-copy .cjk-title .title-line{
+  word-break:keep-all;
+  overflow-wrap:normal;
+  text-wrap:nowrap;
+}
+@media(max-width:760px){
+  :lang(zh) .home-intake-copy h2.cjk-title,
+  :lang(ja) .home-intake-copy h2.cjk-title,
+  :lang(ko) .home-intake-copy h2.cjk-title{
+    font-size:36px;
+    line-height:1.12;
+  }
+}
+@media(max-width:360px){
+  :lang(zh) .home-intake-copy h2.cjk-title,
+  :lang(ja) .home-intake-copy h2.cjk-title,
+  :lang(ko) .home-intake-copy h2.cjk-title{
+    font-size:33px;
+  }
+}
+/* heading-orphan-guard-end */
+
 /* yunnan-material-notes-start */
 .material-notes-band{
   background:linear-gradient(180deg,#f4efe6,#ece4d8);
