@@ -11,6 +11,11 @@ dd{
   text-wrap:pretty;
 }
 
+.place-copy .title-line,
+.story-copy .title-line{
+  white-space:nowrap;
+}
+
 @media(max-width:420px){
   html:lang(zh) h1,
   html:lang(ja) h1,

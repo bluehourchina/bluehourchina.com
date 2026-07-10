@@ -1511,6 +1511,9 @@ h1,h2,h3,
 .material-card.large{
   grid-column:span 8;
 }
+.material-grid.four-up .material-card{
+  grid-column:span 3;
+}
 .material-card img{
   width:100%;
   height:auto;
@@ -1540,7 +1543,7 @@ h1,h2,h3,
 }
 @media(max-width:960px){
   .material-notes-intro{grid-template-columns:1fr}
-  .material-card,.material-card.large{grid-column:span 6}
+  .material-card,.material-card.large,.material-grid.four-up .material-card{grid-column:span 6}
 }
 @media(max-width:680px){
   .material-grid{grid-template-columns:1fr}
