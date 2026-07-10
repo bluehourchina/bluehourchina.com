@@ -4,6 +4,48 @@
     return field && field.value ? field.value.trim() : "";
   };
 
+  const looksLikeLeadSpam = (form) => {
+    if (leadFieldValue(form, "bot-field")) return true;
+
+    const values = [
+      "country",
+      "destination",
+      "travel_window",
+      "route_days",
+      "group_size",
+      "comfort_level",
+      "budget",
+      "visited_china_before",
+      "message",
+      "itinerary_text"
+    ]
+      .map((name) => leadFieldValue(form, name))
+      .filter(Boolean);
+    const normalizedCounts = new Map();
+
+    values.forEach((value) => {
+      if (value.length < 60) return;
+      const normalized = value.toLowerCase().replace(/\s+/g, " ").trim();
+      normalizedCounts.set(normalized, (normalizedCounts.get(normalized) || 0) + 1);
+    });
+
+    if ([...normalizedCounts.values()].some((count) => count >= 3)) return true;
+
+    const combined = values.join(" ");
+    return /\b(?:conversion rate optimization|search engine optimization|seo services?|web development services?|backlinks?|guest posts?|lead generation services?|boost your customer acquisition|my team specializes in)\b/i.test(combined);
+  };
+
+  const quietlyRejectSpam = (form, event) => {
+    if (!looksLikeLeadSpam(form)) return false;
+    event.preventDefault();
+    const status = getStatus(form);
+    status.className = "form-status success";
+    status.textContent = form.dataset.successMessage || message(form).success;
+    form.reset();
+    setHiddenFields(form);
+    return true;
+  };
+
   const leadTrackingPayload = (form, overrides = {}) => {
     const destination = leadFieldValue(form, "destination") || "private-china-route";
     const source = leadFieldValue(form, "utm_source") || "site";
@@ -246,10 +288,7 @@
 
   const handleSheetSubmit = (form) => {
     form.addEventListener("submit", async (event) => {
-      if (leadFieldValue(form, "bot-field")) {
-        event.preventDefault();
-        return;
-      }
+      if (quietlyRejectSpam(form, event)) return;
       event.preventDefault();
 
       const endpoint = form.dataset.sheetEndpoint || "";
@@ -314,7 +353,7 @@
     if (!/formsubmit\.co/i.test(form.action || "")) return;
 
     form.addEventListener("submit", async (event) => {
-      if (leadFieldValue(form, "bot-field")) return;
+      if (quietlyRejectSpam(form, event)) return;
       event.preventDefault();
 
       setHiddenFields(form);

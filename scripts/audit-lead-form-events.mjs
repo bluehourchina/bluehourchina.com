@@ -50,6 +50,20 @@ const pages = [
     }
   },
   {
+    path: "/yunnan.html",
+    formName: "bluehour-yunnan-product-en",
+    expectSpam: true,
+    values: {
+      name: "Danish",
+      contact: "spam-check@example.com",
+      travel_window: "Within 3-6 months",
+      group_size: "2 travellers",
+      comfort_level: "Boutique comfort",
+      budget: "US$1,500-2,500",
+      message: "My team specializes in conversion rate optimization, SEO services and web development services to boost your customer acquisition."
+    }
+  },
+  {
     path: "/interest.html",
     formName: "bluehour-china-journey-review-en",
     values: {
@@ -249,21 +263,23 @@ async function auditPage(browser, config) {
     const event = events[0] || null;
     const sheetPost = fetches.find((fetch) => /script\.google\.com\/macros\/s\//i.test(fetch.url));
     const emailCopyPost = fetches.find((fetch) => /formsubmit\.co/i.test(fetch.url));
-    const ok =
-      events.length === 1 &&
-      fetches.length >= 2 &&
-      sheetPost?.mode === "no-cors" &&
-      emailCopyPost?.mode === "no-cors" &&
-      fieldMap.campaign === "private_route_consultation" &&
-      fieldMap.name === config.values.name &&
-      fieldMap.contact === config.values.contact &&
-      event?.campaign &&
-      event?.items?.[0]?.item_category === "Private China travel consultation";
+    const ok = config.expectSpam
+      ? events.length === 0 && fetches.length === 0
+      : events.length === 1 &&
+        fetches.length >= 2 &&
+        sheetPost?.mode === "no-cors" &&
+        emailCopyPost?.mode === "no-cors" &&
+        fieldMap.campaign === "private_route_consultation" &&
+        fieldMap.name === config.values.name &&
+        fieldMap.contact === config.values.contact &&
+        event?.campaign &&
+        event?.items?.[0]?.item_category === "Private China travel consultation";
 
     return {
       path: config.path,
       formName: config.formName,
       ok,
+      expectedSpam: Boolean(config.expectSpam),
       eventCount: events.length,
       fetchCount: fetches.length,
       campaign: fieldMap.campaign || "",
