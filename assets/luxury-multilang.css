@@ -1435,6 +1435,11 @@ h1,h2,h3,
   .home-lead-form .form-status{
     grid-column:1;
   }
+  .promise,
+  .care{
+    min-height:0;
+    padding:24px;
+  }
 }
 /* private-journey-funnel-end */
 
