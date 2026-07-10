@@ -4,6 +4,7 @@ const yunnanBaseImage = "/assets/wechat-reference-20260709/wechat-yunnan-dali-la
 const fieldTrainImage = "/assets/wechat-reference-20260709/wechat-yunnan-dali-field-train-11.jpg";
 const snowImage = "/assets/wechat-reference-20260709/wechat-yunnan-snow-mountain-meadow-05.jpg";
 const dyeImage = "/assets/wechat-reference-20260709/wechat-yunnan-dali-blue-dye-craft-10.jpg";
+const lijiangImage = "/assets/real-yunnan/lijiang-old-town-web.jpg";
 
 const localePages = [
   {
@@ -86,7 +87,7 @@ const localePages = [
     files: ["zh/yunnan/index.html"],
     cjk: true,
     canonical: "https://bluehourchina.com/zh/yunnan/",
-    title: "昆明大理麗江 8 天慢線",
+    title: "昆明大理麗江 8天7晚",
     metaDescription:
       "雲南私人旅遊規劃：8 天 7 晚昆明、大理、麗江標準方案，公開 2/4/6 人起價，並可延伸 13 天雲南全境慢線。",
     productDescription:
@@ -357,9 +358,9 @@ function esc(value) {
 
 function cjkTitle(page, text) {
   if (!page.cjk) return esc(text);
-  const parts = String(text).split(" ");
-  if (parts.length > 1) {
-    return parts.map((part) => `<span class="title-line">${esc(part)}</span>`).join("");
+  const durationBreak = String(text).match(/^(.*)\s+(\d.*)$/);
+  if (durationBreak) {
+    return durationBreak.slice(1).map((part) => `<span class="title-line">${esc(part)}</span>`).join("");
   }
   return `<span class="title-line">${esc(text)}</span>`;
 }
@@ -368,6 +369,19 @@ function replaceBetween(html, start, end, replacement, file) {
   const pattern = new RegExp(`${start.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}[\\s\\S]*?${end.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`);
   if (!pattern.test(html)) throw new Error(`Missing block ${start} in ${file}`);
   return html.replace(pattern, `${start}\n${replacement}\n${end}`);
+}
+
+function moveBlockAfterHero(html, start, end, file) {
+  const blockPattern = new RegExp(`[\\t ]*${start.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}[\\s\\S]*?${end.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}[\\t ]*`);
+  const matchedBlock = html.match(blockPattern)?.[0];
+  if (!matchedBlock) throw new Error(`Missing movable block ${start} in ${file}`);
+  const block = matchedBlock.trim();
+  const withoutBlock = html.replace(blockPattern, "");
+  const heroStart = withoutBlock.indexOf('<section class="hero destination-hero">');
+  const heroEnd = withoutBlock.indexOf("</section>", heroStart);
+  if (heroStart < 0 || heroEnd < 0) throw new Error(`Missing destination hero in ${file}`);
+  const insertAt = heroEnd + "</section>".length;
+  return `${withoutBlock.slice(0, insertAt)}\n\n    ${block}${withoutBlock.slice(insertAt)}`;
 }
 
 function setMeta(html, name, content) {
@@ -413,19 +427,176 @@ ${JSON.stringify(
 </script>`;
 }
 
+function visualRouteCopy(page) {
+  const shared = {
+    images: [fieldTrainImage, yunnanBaseImage, lijiangImage, snowImage],
+    dayPairs: [
+      [page.days[0], page.days[1]],
+      [page.days[2], page.days[3]],
+      [page.days[4], page.days[5]],
+      [page.days[6], page.days[7]],
+    ],
+  };
+
+  if (page.lang === "zh-Hant") {
+    return {
+      ...shared,
+      eyebrow: "全程路線圖",
+      title: "8 天怎麼走 一眼先看懂",
+      intro: "先看城市與轉場，再看每天的細節。這條線從昆明落地，往西進大理與麗江，最後回昆明離境。",
+      path: "昆明 → 大理 → 麗江 → 昆明",
+      days: ["第 1–2 天", "第 3–4 天", "第 5–6 天", "第 7–8 天"],
+      cities: ["昆明 → 大理", "大理", "大理 → 麗江", "麗江 → 昆明"],
+      modes: ["接機 · 動車", "洱海周邊私人用車", "私人轉場 · 雪山區用車", "動車返昆 · 送機"],
+    };
+  }
+
+  if (page.lang === "ja") {
+    return {
+      ...shared,
+      eyebrow: "全行程マップ",
+      title: "8日間の流れをひと目で",
+      intro: "まず都市間の移動を見て、その後に毎日の詳細へ。昆明から大理、麗江へ進み、昆明に戻ります。",
+      path: "昆明 → 大理 → 麗江 → 昆明",
+      days: ["1–2日目", "3–4日目", "5–6日目", "7–8日目"],
+      cities: ["昆明 → 大理", "大理", "大理 → 麗江", "麗江 → 昆明"],
+      modes: ["到着送迎 · 高速鉄道", "洱海周辺の専用車", "専用車移動 · 雪山エリア", "高速鉄道 · 空港送迎"],
+    };
+  }
+
+  if (page.lang === "ko") {
+    return {
+      ...shared,
+      eyebrow: "전체 루트 맵",
+      title: "8일의 이동을 한눈에",
+      intro: "도시 이동을 먼저 보고 하루 일정으로 내려갑니다. 쿤밍에서 다리와 리장으로 이동한 뒤 쿤밍으로 돌아옵니다.",
+      path: "쿤밍 → 다리 → 리장 → 쿤밍",
+      days: ["1–2일차", "3–4일차", "5–6일차", "7–8일차"],
+      cities: ["쿤밍 → 다리", "다리", "다리 → 리장", "리장 → 쿤밍"],
+      modes: ["도착 픽업 · 고속철", "얼하이 전용 차량", "전용 이동 · 설산 구역", "고속철 · 공항 이동"],
+    };
+  }
+
+  if (page.lang === "th") {
+    return {
+      ...shared,
+      eyebrow: "แผนที่เส้นทางทั้งหมด",
+      title: "See the full 8-day flow at a glance",
+      intro: "Start with the city sequence, then open the daily detail: Kunming to Dali and Lijiang, returning to Kunming for departure.",
+      path: "Kunming → Dali → Lijiang → Kunming",
+      days: ["Days 1–2", "Days 3–4", "Days 5–6", "Days 7–8"],
+      cities: ["Kunming → Dali", "Dali", "Dali → Lijiang", "Lijiang → Kunming"],
+      modes: ["Arrival pickup · high-speed rail", "Private vehicle around Erhai", "Private transfer · mountain vehicle", "Rail return · airport transfer"],
+    };
+  }
+
+  return {
+    ...shared,
+    eyebrow: "Full route map",
+    title: "See the whole 8-day journey first",
+    intro: "Start with the city sequence, then open the daily detail: land in Kunming, move west through Dali and Lijiang, then return to Kunming for departure.",
+    path: "Kunming → Dali → Lijiang → Kunming",
+    days: ["Days 1–2", "Days 3–4", "Days 5–6", "Days 7–8"],
+    cities: ["Kunming → Dali", "Dali", "Dali → Lijiang", "Lijiang → Kunming"],
+    modes: ["Arrival pickup · high-speed rail", "Private vehicle around Erhai", "Private transfer · mountain vehicle", "Rail return · airport transfer"],
+  };
+}
+
+function visualRoute(page) {
+  const route = visualRouteCopy(page);
+  const stages = route.dayPairs
+    .map(
+      (pair, index) => `<article class="visual-route-stage">
+        <figure>
+          <img src="${route.images[index]}" alt="${esc(`${route.days[index]} ${route.cities[index]}`)}">
+          <figcaption><span>${esc(route.days[index])}</span><strong>${esc(route.cities[index])}</strong></figcaption>
+        </figure>
+        <div class="visual-route-stage-copy">
+          <b>${esc(route.modes[index])}</b>
+          <ul><li>${esc(pair[0][1])}</li><li>${esc(pair[1][1])}</li></ul>
+        </div>
+      </article>`,
+    )
+    .join("");
+  const stops = route.cities
+    .map((city, index) => `<li><span>${String(index + 1).padStart(2, "0")}</span><strong>${esc(city)}</strong><small>${esc(route.days[index])}</small></li>`)
+    .join("");
+
+  return `<section class="visual-route-overview" id="route-map" aria-label="${esc(route.eyebrow)}">
+    <div class="visual-route-heading">
+      <div><p class="eyebrow">${esc(route.eyebrow)}</p><h3>${esc(route.title)}</h3></div>
+      <div>
+        <p>${esc(route.intro)}</p>
+        <strong class="visual-route-path">${esc(route.path)}</strong>
+        <div class="visual-route-offer"><span>${esc(page.duration)}</span><strong>${esc(page.strongPrice)}</strong><small>${esc(page.terms.groupText)}</small></div>
+      </div>
+    </div>
+    <ol class="visual-route-rail">${stops}</ol>
+    <div class="visual-route-grid">${stages}</div>
+  </section>`;
+}
+
+function extensionStages(page) {
+  if (page.lang === "zh-Hant") {
+    return [
+      ["D1-2", "大理", "湖邊節奏、田野小火車、村路與柔和落地。"],
+      ["D3-4", "麗江", "雲杉坪、藍月谷與古鎮夜晚，依海拔安排節奏。"],
+      ["D5-7", "西雙版納", "雨林、傣族文化、植物園與熱帶餐桌。"],
+      ["D8-10", "騰衝", "濕地、溫泉、火山地貌與和順手作。"],
+      ["D11-13", "芒市", "佛塔光線、邊地文化與私人送機。"],
+    ];
+  }
+  if (page.lang === "ja") {
+    return [
+      ["D1-2", "大理", "湖畔、田園列車、村道から静かに始めます。"],
+      ["D3-4", "麗江", "雲杉坪、藍月谷、古城の夜を標高に合わせて。"],
+      ["D5-7", "シーサンパンナ", "熱帯雨林、タイ族文化、植物園と食卓。"],
+      ["D8-10", "騰衝", "湿地、温泉、火山景観と和順の手仕事。"],
+      ["D11-13", "芒市", "仏塔の光、国境文化、専用送迎で出発。"],
+    ];
+  }
+  if (page.lang === "ko") {
+    return [
+      ["D1-2", "다리", "호숫가, 들판 열차, 마을길로 부드럽게 시작합니다."],
+      ["D3-4", "리장", "윈산핑, 블루문밸리, 고성의 밤을 고도에 맞춥니다."],
+      ["D5-7", "시솽반나", "열대우림, 다이족 문화, 식물원과 현지 식사."],
+      ["D8-10", "텅충", "습지, 온천, 화산 지형과 허순의 공예."],
+      ["D11-13", "망시", "불탑의 빛, 국경 문화, 전용 출발 이동."],
+    ];
+  }
+  if (page.lang === "th") {
+    return [
+      ["D1-2", "Dali", "จังหวะริมทะเลสาบ รถไฟกลางทุ่ง ถนนหมู่บ้าน และการเริ่มต้นอย่างนุ่มนวล"],
+      ["D3-4", "Lijiang", "Yunshanping, Blue Moon Valley และค่ำคืนในเมืองเก่า โดยคำนึงถึงระดับความสูง"],
+      ["D5-7", "Xishuangbanna", "ป่าฝน วัฒนธรรมไท สวนพฤกษศาสตร์ และอาหารเขตร้อน"],
+      ["D8-10", "Tengchong", "พื้นที่ชุ่มน้ำ น้ำพุร้อน ภูมิประเทศภูเขาไฟ และงานฝีมือเหอซุ่น"],
+      ["D11-13", "Mangshi", "แสงจากเจดีย์ วัฒนธรรมชายแดน และรถรับส่งส่วนตัวในวันเดินทางกลับ"],
+    ];
+  }
+  return [
+    ["D1-2", "Dali", "Lake rhythm, field train, village roads and a softer landing."],
+    ["D3-4", "Lijiang", "Yunshanping, Blue Moon Valley and old-town evenings paced around altitude."],
+    ["D5-7", "Xishuangbanna", "Rainforest, Dai culture, botanical garden and tropical meals."],
+    ["D8-10", "Tengchong", "Wetland, hot springs, volcano landscape and Heshun craft time."],
+    ["D11-13", "Mangshi", "Pagoda light, borderland texture and private departure transfer."],
+  ];
+}
+
 function standardRoute(page, file) {
-  const ctaHref = file.includes("/zh/")
+  const ctaHref = file.startsWith("zh/") || file.includes("/zh/")
     ? "/zh/interest/?utm_source=standard_route&amp;utm_medium=site&amp;utm_campaign=private_route_consultation&amp;destination=yunnan"
-    : file.includes("/ja/")
+    : file.startsWith("ja/") || file.includes("/ja/")
       ? "/ja/interest/?utm_source=standard_route&amp;utm_medium=site&amp;utm_campaign=private_route_consultation&amp;destination=yunnan"
-      : file.includes("/ko/")
+      : file.startsWith("ko/") || file.includes("/ko/")
         ? "/ko/interest/?utm_source=standard_route&amp;utm_medium=site&amp;utm_campaign=private_route_consultation&amp;destination=yunnan"
-        : file.includes("/th/")
+        : file.startsWith("th/") || file.includes("/th/")
           ? "/th/interest/?utm_source=standard_route&amp;utm_medium=site&amp;utm_campaign=private_route_consultation&amp;destination=yunnan"
           : "/interest.html?utm_source=standard_route&amp;utm_medium=site&amp;utm_campaign=private_route_consultation&amp;destination=yunnan";
   return `
     <section class="section standard-route-band" id="standard-route">
-      <div class="wrap route-showcase">
+      <div class="wrap">
+      ${visualRoute(page)}
+      <div class="route-showcase">
         <div class="route-copy">
           <p class="eyebrow">${esc(page.eyebrow)}</p>
           <h2${page.cjk ? ' class="cjk-title"' : ""}>${cjkTitle(page, page.title)}</h2>
@@ -449,27 +620,31 @@ function standardRoute(page, file) {
         </div>
         <div class="route-card" aria-label="${esc(page.title)}">
           <div class="route-image"><img src="${yunnanBaseImage}" alt="${esc(page.title)}"></div>
-          <div class="route-map">
+          <div class="route-map route-photo-caption">
             <h3>${esc(page.mapTitle)}</h3>
-            <div class="map-line">${page.map.map((item) => `<span>${esc(item)}</span>`).join("")}</div>
+            <p>${esc(page.map[2])}</p>
           </div>
         </div>
+      </div>
       </div>
     </section>`;
 }
 
 function dayPlan(page, file) {
-  const localePrefix = file.includes("/zh/")
+  const localePrefix = file.startsWith("zh/") || file.includes("/zh/")
     ? "/zh"
-    : file.includes("/ja/")
+    : file.startsWith("ja/") || file.includes("/ja/")
       ? "/ja"
-      : file.includes("/ko/")
+      : file.startsWith("ko/") || file.includes("/ko/")
         ? "/ko"
-        : file.includes("/th/")
+        : file.startsWith("th/") || file.includes("/th/")
           ? "/th"
           : "";
   const interest = `${localePrefix}/interest/`.replace("//", "/");
   const loopHref = localePrefix === "/zh" ? "/zh/yunnan-grand-loop/" : "/yunnan-grand-loop/";
+  const extensionItems = extensionStages(page)
+    .map((stage) => `<article><b>${esc(stage[0])}</b><h3>${esc(stage[1])}</h3><p>${esc(stage[2])}</p></article>`)
+    .join("");
   const dayItems = page.days
     .map(
       (day) => `<article class="route-day-item">
@@ -536,7 +711,7 @@ function dayPlan(page, file) {
               .join("")}</div>
             <div class="route-extension-gallery"><figure><img src="${snowImage}" alt="Yunnan snow mountain"></figure><figure><img src="${yunnanBaseImage}" alt="Dali lakeside table"></figure><figure><img src="${dyeImage}" alt="Yunnan craft"></figure></div>
           </div>
-          <div class="route-extension-grid"><article><b>D1-2</b><h3>Dali</h3><p>Lake rhythm, field train, village roads and a softer landing.</p></article><article><b>D3-4</b><h3>Lijiang</h3><p>Yunshanping, Blue Moon Valley and old-town evenings paced around altitude.</p></article><article><b>D5-7</b><h3>Xishuangbanna</h3><p>Rainforest, Dai culture, botanical garden and tropical meals.</p></article><article><b>D8-10</b><h3>Tengchong</h3><p>Wetland, hot springs, volcano landscape and Heshun craft time.</p></article><article><b>D11-13</b><h3>Mangshi</h3><p>Pagoda light, borderland texture and private departure transfer.</p></article></div>
+          <div class="route-extension-grid">${extensionItems}</div>
           <div class="route-extension-actions"><a class="btn primary dark-gold" href="${loopHref}">${page.lang === "zh-Hant" ? "看完整 13 天方案" : "See the full 13-day route"}</a><a class="btn" href="${interest}?utm_source=route_extension&amp;utm_medium=site&amp;utm_campaign=private_route_consultation&amp;destination=yunnan-grand-loop">${esc(page.cta)}</a></div>
         </section>
       </div>
@@ -550,11 +725,13 @@ function updateYunnanPage(file, page) {
   html = replaceBetween(html, "<!-- route-product-schema-start -->", "<!-- route-product-schema-end -->", productSchema(page), file);
   html = replaceBetween(html, "<!-- standard-route-start -->", "<!-- standard-route-end -->", standardRoute(page, file), file);
   html = replaceBetween(html, "<!-- route-day-plan-start -->", "<!-- route-day-plan-end -->", dayPlan(page, file), file);
+  html = moveBlockAfterHero(html, "<!-- standard-route-start -->", "<!-- standard-route-end -->", file);
   html = html.replaceAll("7-day Dali, Shaxi and Lijiang", "8-day Kunming, Dali and Lijiang");
   html = html.replaceAll("一週大理、沙溪、麗江", "8 天 7 晚昆明、大理、麗江");
   html = html.replaceAll("大理、沙溪、麗江或白沙", "昆明、大理、麗江");
   html = html.replaceAll("Dali, Shaxi and Lijiang or Baisha", "Kunming, Dali and Lijiang");
   html = cleanOldYunnanStory(html, file);
+  html = html.replace(/[ \t]+$/gm, "");
   fs.writeFileSync(file, html);
   console.log(`deepened ${file}`);
 }
@@ -585,6 +762,11 @@ function cleanOldYunnanStory(html, file) {
       "一週是乾淨的起點。大理、沙溪、麗江或白沙可以有完整節奏，太短會把最迷人的夜晚刪掉。",
       "8 天 7 晚是更穩的起點。昆明、大理、麗江可以把抵達、湖邊、手作、雪山與返程排得比較舒服。",
     );
+    html = html.replaceAll("確認雲南慢路線前", "確認昆大麗 8 天路線前");
+    html = html.replaceAll(
+      "一週是乾淨的起點。昆明、大理、麗江可以有完整節奏，太短會把最迷人的夜晚刪掉。",
+      "8 天 7 晚是更穩的起點。昆明、大理、麗江可以把抵達、湖邊、手作、雪山與返程排得比較舒服。",
+    );
   } else if (file.includes("ja/yunnan")) {
     html = html.replaceAll(
       "洱海の風、沙溪の夜、麗江の外に見える雪の線。急がず、触れすぎず、余韻を残す旅です。",
@@ -598,6 +780,7 @@ function cleanOldYunnanStory(html, file) {
     html = html.replaceAll("7日間がよい出発点です。大理、沙溪、麗江または白沙を急がずにつなげられます。", "8日間がよい出発点です。昆明、大理、麗江を無理なくつなげられます。");
     html = html.replaceAll("公開ルートは最初の形です。7日間、大理 · 沙溪 · 麗江または白沙、JPY 205,000 から。本当に大切なのは、その形が旅する人に合うかどうかです。", "公開ルートは最初の形です。8日間、昆明 · 大理 · 麗江、JPY 86,000 から。本当に大切なのは、その形が旅する人に合うかどうかです。");
     html = html.replaceAll("大理、沙溪、麗江をすべて入れるか、もっとゆっくり残すか。", "昆明、大理、麗江をこのままつなぐか、予備日を加えるか。");
+    html = html.replaceAll("雲南スロー・ルートを決める前に", "昆明・大理・麗江 8日間を決める前に");
   } else {
     html = html.replaceAll("Reference from price", "Reference starting price");
     html = html.replaceAll("One quiet night in Shaxi", "Xizhou craft and lake sunrise");
@@ -611,6 +794,13 @@ function cleanOldYunnanStory(html, file) {
       "Whether Dali, Shaxi and Lijiang should all be included, or whether the route should stay slower.",
       "Whether Kunming, Dali and Lijiang should stay at this pace, or whether the group needs a buffer day.",
     );
+    html = html.replaceAll("What we would check before confirming Yunnan Slow Road", "What we would check before confirming the Yunnan Soft Landing Route");
+    html = html.replaceAll(
+      "Seven days is a clean starting point for Kunming, Dali and Lijiang. Shorter routes feel possible but lose the quiet night that makes Yunnan memorable.",
+      "Eight days and seven nights is the steadier starting point for Kunming, Dali and Lijiang, with room for arrival, lake time, craft, one mountain day and an unhurried return.",
+    );
+    html = html.replaceAll("윈난 슬로우 루트 확정 전", "쿤밍 · 다리 · 리장 8일 확정 전");
+    html = html.replaceAll("เส้นทางช้าในยูนนาน", "Kunming · Dali · Lijiang in 8 days");
   }
   return html;
 }

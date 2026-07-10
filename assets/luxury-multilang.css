@@ -369,6 +369,14 @@ h1,h2,h3,
   letter-spacing:.16em;
   text-transform:uppercase;
 }
+.route-photo-caption{
+  min-height:0;
+}
+.route-photo-caption p{
+  color:rgba(255,250,241,.78);
+  font-size:15px;
+  line-height:1.6;
+}
 .map-line{
   display:grid;
   gap:10px;
@@ -420,14 +428,257 @@ h1,h2,h3,
   font-size:12px;
   font-weight:750;
 }
+.visual-route-overview{
+  margin-top:0;
+  padding:clamp(28px,4.2vw,52px);
+  color:var(--ivory);
+  background:#0b1714;
+  box-shadow:0 28px 70px rgba(23,32,28,.12);
+}
+.visual-route-overview + .route-showcase{
+  margin-top:clamp(54px,7vw,92px);
+}
+.visual-route-heading{
+  display:grid;
+  grid-template-columns:minmax(0,.78fr) minmax(320px,.62fr);
+  gap:clamp(24px,5vw,72px);
+  align-items:end;
+}
+.visual-route-heading h3{
+  max-width:720px;
+  color:var(--ivory);
+  font-family:Georgia,"Times New Roman","Songti TC","STSong","Noto Serif TC",serif;
+  font-size:clamp(31px,4vw,54px);
+  font-weight:500;
+  line-height:1.08;
+}
+.visual-route-heading > div:last-child{
+  display:grid;
+  gap:18px;
+}
+.visual-route-heading p:not(.eyebrow){
+  color:rgba(255,250,241,.68);
+  font-size:15px;
+  line-height:1.75;
+}
+.visual-route-path{
+  color:var(--gold);
+  font-family:"Helvetica Neue",Arial,"Noto Sans TC",sans-serif;
+  font-size:clamp(16px,1.8vw,24px);
+  font-weight:750;
+  line-height:1.45;
+}
+.visual-route-offer{
+  display:grid;
+  grid-template-columns:auto minmax(0,1fr);
+  gap:5px 16px;
+  align-items:baseline;
+  padding-top:16px;
+  border-top:1px solid rgba(255,250,241,.2);
+}
+.visual-route-offer span{
+  color:rgba(255,250,241,.54);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+.visual-route-offer strong{
+  color:var(--ivory);
+  font-family:Georgia,"Times New Roman","Songti TC","STSong","Noto Serif TC",serif;
+  font-size:clamp(22px,2.4vw,34px);
+  font-weight:500;
+}
+.visual-route-offer small{
+  grid-column:1/-1;
+  color:rgba(255,250,241,.54);
+  font-size:11px;
+  line-height:1.55;
+}
+.visual-route-rail{
+  position:relative;
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:0;
+  margin:clamp(32px,5vw,54px) 0 26px;
+  padding:0;
+  list-style:none;
+}
+.visual-route-rail::before{
+  content:"";
+  position:absolute;
+  left:10%;
+  right:10%;
+  top:16px;
+  height:1px;
+  background:rgba(255,250,241,.28);
+}
+.visual-route-rail li{
+  position:relative;
+  z-index:1;
+  display:grid;
+  justify-items:center;
+  gap:6px;
+  min-width:0;
+  text-align:center;
+}
+.visual-route-rail span{
+  display:grid;
+  place-items:center;
+  width:33px;
+  height:33px;
+  border:1px solid rgba(255,250,241,.54);
+  border-radius:50%;
+  color:#0b1714;
+  background:var(--gold);
+  font-size:10px;
+  font-weight:850;
+}
+.visual-route-rail strong{
+  padding:0 10px;
+  color:var(--ivory);
+  font-size:14px;
+  line-height:1.4;
+}
+.visual-route-rail small{
+  color:rgba(255,250,241,.52);
+  font-size:11px;
+}
+.visual-route-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:1px;
+  border:1px solid rgba(255,250,241,.16);
+  background:rgba(255,250,241,.16);
+}
+.visual-route-stage{
+  min-width:0;
+  background:#101e1a;
+}
+.visual-route-stage figure{
+  position:relative;
+  overflow:hidden;
+  margin:0;
+  aspect-ratio:4/5;
+  background:#17241f;
+}
+.visual-route-stage figure::after{
+  content:"";
+  position:absolute;
+  inset:35% 0 0;
+  background:linear-gradient(180deg,rgba(8,17,15,0),rgba(8,17,15,.88));
+}
+.visual-route-stage img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.visual-route-stage figcaption{
+  position:absolute;
+  z-index:1;
+  left:18px;
+  right:18px;
+  bottom:17px;
+  display:grid;
+  gap:4px;
+}
+.visual-route-stage figcaption span{
+  color:var(--gold);
+  font-size:10px;
+  font-weight:850;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.visual-route-stage figcaption strong{
+  color:var(--ivory);
+  font-family:Georgia,"Times New Roman","Songti TC","STSong","Noto Serif TC",serif;
+  font-size:clamp(20px,2vw,29px);
+  font-weight:500;
+  line-height:1.12;
+}
+.visual-route-stage-copy{
+  min-height:190px;
+  padding:20px 18px 24px;
+}
+.visual-route-stage-copy > b{
+  color:var(--gold);
+  font-size:10px;
+  font-weight:850;
+  letter-spacing:.1em;
+  line-height:1.5;
+  text-transform:uppercase;
+}
+.visual-route-stage-copy ul{
+  display:grid;
+  gap:10px;
+  margin:16px 0 0;
+  padding:0;
+  list-style:none;
+}
+.visual-route-stage-copy li{
+  padding-top:10px;
+  border-top:1px solid rgba(255,250,241,.12);
+  color:rgba(255,250,241,.76);
+  font-size:13px;
+  line-height:1.55;
+}
 @media(max-width:980px){
   .route-showcase{grid-template-columns:1fr}
+  .visual-route-heading{grid-template-columns:1fr}
+  .visual-route-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 @media(max-width:760px){
   .route-points{grid-template-columns:1fr}
+  .route-showcase > .route-card{display:none}
   .route-image{min-height:320px}
   .route-map{padding:20px}
   .route-copy h2{font-size:clamp(31px,8vw,42px)}
+  .visual-route-overview{
+    margin-left:calc(var(--side) * -1);
+    margin-right:calc(var(--side) * -1);
+    padding:30px var(--side);
+  }
+  .visual-route-rail{
+    grid-template-columns:1fr;
+    gap:16px;
+    margin:30px 0 24px;
+  }
+  .visual-route-rail::before{
+    left:16px;
+    right:auto;
+    top:16px;
+    bottom:16px;
+    width:1px;
+    height:auto;
+  }
+  .visual-route-rail li{
+    grid-template-columns:33px minmax(0,1fr) auto;
+    justify-items:start;
+    align-items:center;
+    gap:12px;
+    text-align:left;
+  }
+  .visual-route-rail strong{padding:0}
+  .visual-route-grid{grid-template-columns:1fr}
+  .visual-route-stage{
+    display:grid;
+    grid-template-columns:minmax(128px,.42fr) minmax(0,.58fr);
+  }
+  .visual-route-stage figure{aspect-ratio:4/5}
+  .visual-route-stage-copy{
+    min-height:0;
+    padding:18px 16px;
+  }
+  .visual-route-stage figcaption{
+    left:12px;
+    right:12px;
+    bottom:12px;
+  }
+  .visual-route-stage figcaption strong{font-size:20px}
+}
+@media(max-width:440px){
+  .visual-route-stage{grid-template-columns:1fr}
+  .visual-route-stage figure{aspect-ratio:16/10}
 }
 /* standard-route-end */
 
