@@ -305,6 +305,60 @@
       color: #14251f;
     }
 
+    .reference-itinerary {
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+    .reference-itinerary-head {
+      display: grid;
+      grid-template-columns: .86fr 1.14fr;
+      gap: 34px;
+      align-items: end;
+      padding: 34px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(16,45,38,.05);
+    }
+    .reference-itinerary-head h2 {
+      margin: 0;
+      color: var(--forest);
+      font-size: clamp(34px, 4vw, 56px);
+      line-height: 1.1;
+    }
+    .reference-itinerary-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.7;
+      font-weight: 650;
+    }
+    .reference-day {
+      display: grid;
+      grid-template-columns: 92px 1fr 1.18fr;
+      gap: 20px;
+      padding: 22px 34px;
+      border-bottom: 1px solid var(--line);
+      align-items: start;
+    }
+    .reference-day:last-child { border-bottom: 0; }
+    .reference-day b {
+      color: var(--gold);
+      font-size: 13px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .reference-day strong {
+      display: block;
+      color: var(--forest);
+      font-size: 21px;
+      line-height: 1.35;
+    }
+    .reference-day span {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.65;
+      font-weight: 650;
+    }
+
     .path-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -400,7 +454,7 @@
       .nav { position: absolute; padding: 16px 20px; }
       .nav-links a:not(.nav-cta) { display: none; }
       .hero .wrap { padding-top: 126px; }
-      .facts, .section-head, .tool-shell, .tool-grid, .score-row, .path-grid, .form-shell, .lead-form {
+      .facts, .section-head, .tool-shell, .tool-grid, .score-row, .reference-itinerary-head, .reference-day, .path-grid, .form-shell, .lead-form {
         grid-template-columns: 1fr;
       }
       .section { padding: 70px 0; }
@@ -432,6 +486,7 @@
         <p class="hero-lead">用人數、天數、預算與旅行偏好，先判斷適合大團、自由行，還是私密慢旅。</p>
         <div class="hero-actions">
           <a class="btn primary" href="#tool">開始判斷</a>
+          <a class="btn" href="#sample-itinerary">看 7 日行程</a>
           <a class="btn" href="yunnan-agency-compare.html">先看旅行社比較</a>
           <a class="btn" href="yunnan-itinerary-check.html">我已經有行程</a>
         </div>
@@ -466,7 +521,7 @@
               </label>
               <label>預算感
                 <select id="fitBudget">
-                  <option value="low">想控制在 RMB 8,900-50,000</option>
+                  <option value="low">希望控制在 NT$45,000/人內</option>
                   <option value="main" selected>接近 NT$59,800/人起可以討論</option>
                   <option value="upgrade">願意比較旅行社與小團私旅</option>
                   <option value="open">比起低價，更重視舒服</option>
@@ -517,6 +572,27 @@
       </div>
     </section>
 
+    <section class="section" id="sample-itinerary">
+      <div class="wrap">
+        <div class="reference-itinerary" aria-label="有風雲南 7 日參考行程表">
+          <div class="reference-itinerary-head">
+            <div>
+              <p class="eyebrow">WHAT THIS BUDGET BUYS</p>
+              <h2>NT$59,800 起<br>對應的 7 日路線</h2>
+            </div>
+            <p>預算頁不能只談價格，必須讓客戶看到錢買到的是什麼節奏。這張表是有風雲南的基本路線骨架，正式安排會依出發月份、人數、住宿與航班調整。</p>
+          </div>
+          <div class="reference-day"><b>Day 1</b><strong>抵達大理，洱海傍晚</strong><span>接機或接站、入住，第一天先休整，不硬塞景點。</span></div>
+          <div class="reference-day"><b>Day 2</b><strong>洱海、喜洲、雙廊</strong><span>湖邊清晨、白族村落、田野和海景下午茶，重點是慢下來。</span></div>
+          <div class="reference-day"><b>Day 3</b><strong>大理前往沙溪</strong><span>私人車移動，保留停頓與午餐，不讓車程吃掉整天。</span></div>
+          <div class="reference-day"><b>Day 4</b><strong>沙溪完整停留</strong><span>寺登街、玉津橋、古戲台與留宿後的人少時段。</span></div>
+          <div class="reference-day"><b>Day 5</b><strong>沙溪到麗江或白沙</strong><span>移動到納西村落與雪山視野，下午安排得比較鬆。</span></div>
+          <div class="reference-day"><b>Day 6</b><strong>白沙、雪山遠景、麗江古城</strong><span>看雪山和古鎮，但不把玉龍雪山變成趕點消耗戰。</span></div>
+          <div class="reference-day"><b>Day 7</b><strong>返程或延伸香格里拉</strong><span>依航班高鐵返程；時間多再討論香格里拉延伸。</span></div>
+        </div>
+      </div>
+    </section>
+
     <section class="section dark">
       <div class="wrap">
         <div class="section-head">
@@ -556,7 +632,7 @@
             <ul>
               <li>主線：大理、沙溪、麗江一週慢走</li>
               <li>主力：親友私密同行，4-6 人最推薦</li>
-              <li>價格：NT$59,800/人起起（機票另計），依住宿與人數調整</li>
+              <li>價格：NT$59,800/人起（機票另計），依住宿與人數調整</li>
             </ul>
           </aside>
 
@@ -603,7 +679,7 @@
             </select>
             <select name="budget" aria-label="預算感" required>
               <option value="" disabled selected>預算感</option>
-              <option>想找 RMB 8,900-50,000 大團</option>
+              <option>希望控制在 NT$45,000/人內</option>
               <option>接近 NT$59,800/人起可以討論</option>
               <option>願意比較旅行社與小團私旅</option>
               <option>更重視住宿與舒適度</option>

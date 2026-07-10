@@ -4,7 +4,7 @@ import path from "node:path";
 const root = process.cwd();
 const outputDir = path.join(root, "outputs");
 
-const destinations = ["yunnan", "xinjiang", "dunhuang", "sanya", "northeast"];
+const destinations = ["yunnan", "xinjiang", "dunhuang", "sanya", "northeast", "inner-mongolia"];
 const files = [
   ...destinations.map((destination) => ({
     file: `${destination}.html`,
@@ -38,9 +38,10 @@ function visibleHtml(html) {
 }
 
 function routeHasInquiryUrl(product) {
+  const url = product.url || product.offers?.url;
   return (
-    typeof product.url === "string" &&
-    product.url.startsWith("https://bluehourchina.com/")
+    typeof url === "string" &&
+    url.startsWith("https://bluehourchina.com/")
   );
 }
 
@@ -79,7 +80,7 @@ for (const item of files) {
 
   const product = products[0];
   const currency = product.offers?.priceCurrency;
-  const price = product.offers?.price;
+  const price = product.offers?.price ?? product.offers?.lowPrice;
 
   if (currency !== item.expectedCurrency) {
     issues.push(`${item.file}: expected ${item.expectedCurrency} schema currency, found ${currency}`);

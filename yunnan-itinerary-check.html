@@ -299,6 +299,59 @@
       font-weight: 650;
       margin: 0;
     }
+    .reference-itinerary {
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+    .reference-itinerary-head {
+      display: grid;
+      grid-template-columns: .88fr 1.12fr;
+      gap: 34px;
+      align-items: end;
+      padding: 34px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(16,45,38,.05);
+    }
+    .reference-itinerary-head h2 {
+      margin: 0;
+      color: var(--forest);
+      font-size: clamp(34px, 4vw, 56px);
+      line-height: 1.1;
+    }
+    .reference-itinerary-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 19px;
+      line-height: 1.7;
+      font-weight: 650;
+    }
+    .reference-day {
+      display: grid;
+      grid-template-columns: 92px 1fr 1.18fr;
+      gap: 20px;
+      padding: 22px 34px;
+      border-bottom: 1px solid var(--line);
+      align-items: start;
+    }
+    .reference-day:last-child { border-bottom: 0; }
+    .reference-day b {
+      color: var(--gold);
+      font-size: 13px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .reference-day strong {
+      display: block;
+      color: var(--forest);
+      font-size: 21px;
+      line-height: 1.35;
+    }
+    .reference-day span {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.65;
+      font-weight: 650;
+    }
     .form-shell { grid-template-columns: .86fr 1.14fr; }
     .lead-form {
       display: grid;
@@ -377,6 +430,8 @@
       .section-head,
       .check-shell,
       .compare-grid,
+      .reference-itinerary-head,
+      .reference-day,
       .form-shell,
       .lead-form,
       .qualify {
@@ -411,6 +466,7 @@
         <div class="hero-actions">
           <a class="btn primary" href="#check">開始檢查</a>
           <a class="btn" href="#consult">貼行程給若青中國旅策看</a>
+          <a class="btn" href="#sample-itinerary">看若青參考行程</a>
           <a class="btn" href="yunnan-price-compare.html">先看價格怎麼比</a>
         </div>
         <div class="hero-strip">
@@ -418,6 +474,27 @@
           <div><span>核心路線</span><strong>大理・沙溪・麗江</strong></div>
           <div><span>建議天數</span><strong>一週先走穩</strong></div>
           <div><span>有效需求</span><strong>補齊四題才推進</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sample-itinerary">
+      <div class="wrap">
+        <div class="reference-itinerary" aria-label="若青有風雲南 7 日參考行程表">
+          <div class="reference-itinerary-head">
+            <div>
+              <p class="eyebrow">REFERENCE ROUTE</p>
+              <h2>若青有風雲南<br>7 日參考行程</h2>
+            </div>
+            <p>你手上的旅行社行程可以先拿這張表對照：有沒有把沙溪留出真正停留時間、每天車程是否合理、住宿位置是否清楚。正式版本會依出發月份、航班、人數與預算調整。</p>
+          </div>
+          <div class="reference-day"><b>Day 1</b><strong>抵達大理，洱海傍晚</strong><span>接機或接站、入住，晚一點只安排湖邊散步或好好吃飯，不硬塞景點。</span></div>
+          <div class="reference-day"><b>Day 2</b><strong>洱海、喜洲、雙廊</strong><span>洱海清晨、白族村落、喜洲田野與雙廊下午茶，重點是留白而不是打卡數。</span></div>
+          <div class="reference-day"><b>Day 3</b><strong>大理前往沙溪</strong><span>私人車移動，中途留午餐與休息，抵達後先熟悉古鎮，不把沙溪當路過。</span></div>
+          <div class="reference-day"><b>Day 4</b><strong>沙溪完整停留</strong><span>寺登街、玉津橋、古戲台與傍晚後的人少時段；這一天用來保護沙溪的質感。</span></div>
+          <div class="reference-day"><b>Day 5</b><strong>沙溪到麗江或白沙</strong><span>往納西村落與雪山視野移動，下午排鬆，避免高海拔與車程疊加。</span></div>
+          <div class="reference-day"><b>Day 6</b><strong>雪山遠景、白沙、麗江古城</strong><span>看雪山、走白沙或古城、安排一頓好飯；不是把玉龍雪山塞成一整天消耗戰。</span></div>
+          <div class="reference-day"><b>Day 7</b><strong>返程或延伸香格里拉</strong><span>依航班或高鐵時間送機送站；若同行者體力與假期足夠，再討論香格里拉延伸。</span></div>
         </div>
       </div>
     </section>
@@ -519,7 +596,7 @@
             <div class="qualify" aria-label="有效需求條件">
               <div><b>四題優先</b><span>月份、人數、天數、預算。</span></div>
               <div><b>比較重點</b><span>住宿、車程、沙溪停留。</span></div>
-              <div><b>主力價格</b><span>NT$59,800/人起起（機票另計）。</span></div>
+              <div><b>主力價格</b><span>NT$59,800/人起（機票另計）。</span></div>
               <div><b>服務方式</b><span>先判斷，再推進方案。</span></div>
             </div>
             <p class="form-note-text">送出後會進入感謝頁。若資料不足，若青中國旅策會先請你補齊四題；條件適合才進一步整理方案方向。</p>

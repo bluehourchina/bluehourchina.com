@@ -53,6 +53,7 @@ const pages = [
   "/dunhuang.html",
   "/sanya.html",
   "/northeast.html",
+  "/inner-mongolia.html",
   "/stories.html",
   "/interest.html",
   "/route-note/",
@@ -75,6 +76,7 @@ const pages = [
   "/zh/dunhuang/",
   "/zh/sanya/",
   "/zh/northeast/",
+  "/zh/inner-mongolia/",
   "/zh/interest/",
   "/ja.html",
   "/ja/yunnan/",
@@ -82,7 +84,10 @@ const pages = [
   "/ja/dunhuang/",
   "/ja/sanya/",
   "/ja/northeast/",
+  "/ja/inner-mongolia/",
   "/ja/interest/",
+  "/ko/inner-mongolia/",
+  "/th/inner-mongolia/",
 ];
 
 const viewports = [
@@ -133,7 +138,7 @@ async function auditPage(page, pagePath, viewport) {
     const hasVisibleForm = [...document.querySelectorAll("form")].some(visible);
     const hasVisibleCta = [...document.querySelectorAll("a,button")]
       .filter(visible)
-      .some((element) => /consult|start|route|tell us|諮詢|開始|相談|문의|ปรึกษา/i.test(element.textContent || ""));
+      .some((element) => /consult|start|plan|route|tell us|諮詢|開始|規劃|相談|문의|상담|ปรึกษา|วางแผน/i.test(element.textContent || ""));
 
     return {
       title: document.title,

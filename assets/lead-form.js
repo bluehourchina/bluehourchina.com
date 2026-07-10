@@ -228,7 +228,10 @@
 
   const handleSheetSubmit = (form) => {
     form.addEventListener("submit", async (event) => {
-      if (leadFieldValue(form, "bot-field")) return;
+      if (leadFieldValue(form, "bot-field")) {
+        event.preventDefault();
+        return;
+      }
       event.preventDefault();
 
       const endpoint = form.dataset.sheetEndpoint || "";

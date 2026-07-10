@@ -298,3 +298,5 @@ The English site now separates atmosphere from decision content:
 - Consultation pages: explain what is read, what the traveller receives and what the service avoids.
 
 This structure is intended to help both human travellers and AI search systems answer practical questions without losing the high-end tone.
+
+- Inner Mongolia private route: https://bluehourchina.com/inner-mongolia.html (6 days, Hohhot, Huitengxile grassland, Kubuqi Desert and Ordos; private from 2 travellers).

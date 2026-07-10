@@ -149,6 +149,21 @@
       color: var(--white);
       font-size: 19px;
     }
+    .route-jump {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      min-height: 48px;
+      margin-top: 18px;
+      padding: 12px 18px;
+      border: 1px solid rgba(255,250,240,.36);
+      color: var(--white);
+      background: rgba(10,28,23,.58);
+      font-weight: 950;
+    }
     .form-side {
       min-height: 100svh;
       padding: clamp(28px, 4vw, 58px);
@@ -235,6 +250,59 @@
       border-bottom: 1px solid rgba(102,112,105,.38);
       padding-bottom: 3px;
     }
+    .sample-itinerary {
+      margin: 0 0 24px;
+      border: 1px solid var(--line);
+      background: #fffdf8;
+    }
+    .sample-itinerary header {
+      display: grid;
+      gap: 8px;
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(16,45,38,.05);
+    }
+    .sample-itinerary h3 {
+      margin: 0;
+      color: var(--forest);
+      font-size: 24px;
+      line-height: 1.18;
+    }
+    .sample-itinerary p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+      font-weight: 650;
+    }
+    .itinerary-row {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 14px;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--line);
+    }
+    .itinerary-row:last-child { border-bottom: 0; }
+    .itinerary-row b {
+      color: var(--gold);
+      font-size: 13px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .itinerary-row strong {
+      display: block;
+      color: var(--forest);
+      font-size: 16px;
+      line-height: 1.4;
+    }
+    .itinerary-row span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+      font-weight: 620;
+    }
     .promise-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -265,10 +333,13 @@
     @media (max-width: 980px) {
       .page { grid-template-columns: 1fr; }
       .intro, .form-side { min-height: auto; }
-      .intro { padding: 30px 24px 40px; }
+      .intro { padding: 24px 24px 30px; }
       .intro::after { inset: 18px; }
-      .hero-copy { padding: 82px 0 54px; }
+      .hero-copy { padding: 58px 0 32px; }
       .mini-grid, .promise-grid, form { grid-template-columns: 1fr; }
+      .mini-grid div { padding: 14px 16px; }
+      .route-jump { width: 100%; margin-top: 14px; }
+      .itinerary-row { grid-template-columns: 1fr; gap: 6px; }
       textarea, .submit-note, button, .full { grid-column: span 1; }
     }
   </style>
@@ -295,6 +366,7 @@
         <div><span>Group</span><b>親友私密同行</b></div>
         <div><span>Budget</span><b>NT$59,800 起</b></div>
       </div>
+      <a class="route-jump" href="#sample-itinerary">先看 7 日參考行程表</a>
     </section>
 
     <section class="form-side" id="quick">
@@ -304,6 +376,20 @@
           <h2>填完 4 題<br>先收到方向</h2>
           <p>這一步只是初談，不需要立刻付訂。若青中國旅策會先看季節、同行者、住宿感與預算，再回覆第一份路線建議。</p>
         </div>
+        <section class="sample-itinerary" id="sample-itinerary" aria-label="有風雲南 7 日參考行程表">
+          <header>
+            <p class="eyebrow">7 DAY SAMPLE ROUTE</p>
+            <h3>有風雲南參考行程表</h3>
+            <p>這是初談用的路線骨架。正式安排會依月份、航班、人數、住宿級別與同行者體力調整。</p>
+          </header>
+          <div class="itinerary-row"><b>Day 1</b><div><strong>抵達大理，洱海傍晚</strong><span>接機或接站、入住，先把旅途疲勞降下來。</span></div></div>
+          <div class="itinerary-row"><b>Day 2</b><div><strong>洱海、喜洲、雙廊慢走</strong><span>湖邊清晨、白族村落、田野與下午茶，不用趕點。</span></div></div>
+          <div class="itinerary-row"><b>Day 3</b><div><strong>大理前往沙溪</strong><span>私人車移動，保留午餐與路上停頓，進入茶馬古道節奏。</span></div></div>
+          <div class="itinerary-row"><b>Day 4</b><div><strong>沙溪留宿後的古鎮時間</strong><span>寺登街、玉津橋、古戲台，重點是傍晚到清晨的人少時段。</span></div></div>
+          <div class="itinerary-row"><b>Day 5</b><div><strong>沙溪到麗江或白沙</strong><span>前往納西村落與雪山視野，下午排得鬆一點。</span></div></div>
+          <div class="itinerary-row"><b>Day 6</b><div><strong>雪山遠景、白沙、麗江古城</strong><span>看雪山、古鎮與一頓好飯，不把玉龍雪山變成清單。</span></div></div>
+          <div class="itinerary-row"><b>Day 7</b><div><strong>返程，或延伸香格里拉</strong><span>送機或送站；若時間更長，再討論香格里拉慢行延伸。</span></div></div>
+        </section>
         <div class="promise-grid" aria-label="送出後會收到的內容">
           <div><span>01</span><b>12 小時內先回覆是否適合這條路線</b></div>
           <div><span>02</span><b>給出 NT$59,800 起的初步價格判斷</b></div>
@@ -353,7 +439,7 @@
             <option value="" disabled selected>預算感</option>
             <option>希望先理解價格範圍</option>
             <option>接近 NT$59,800/人起可以討論</option>
-            <option>可接受 RMB 10,000-12,800/人</option>
+            <option>可接受 NT$69,800-79,800/人</option>
             <option>更重視住宿與舒適度</option>
           </select>
           <select name="readiness" aria-label="出發意願" required>

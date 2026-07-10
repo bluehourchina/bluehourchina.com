@@ -291,6 +291,52 @@
       font-weight: 650;
     }
 
+    .sample-route {
+      background: var(--cream);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .route-table {
+      display: grid;
+      gap: 1px;
+      margin-top: 28px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .route-row {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 18px;
+      padding: 18px 22px;
+      background: #fffdf8;
+    }
+
+    .route-row b {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 950;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .route-row strong {
+      display: block;
+      color: var(--forest);
+      font-size: 18px;
+      line-height: 1.35;
+    }
+
+    .route-row span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 15px;
+      font-weight: 650;
+      line-height: 1.65;
+    }
+
     .form-band {
       background:
         linear-gradient(90deg, rgba(245, 239, 229, .98), rgba(245, 239, 229, .86)),
@@ -460,6 +506,7 @@
       .strip-grid { width: 100%; }
       .strip-grid div { min-height: auto; }
       .step { grid-template-columns: 1fr; gap: 8px; }
+      .route-row { grid-template-columns: 1fr; gap: 8px; }
       .lead-form { grid-template-columns: 1fr; }
       textarea, button[type="submit"], .note, .form-fallback, .form-consent, .form-status { grid-column: span 1; }
     }
@@ -491,6 +538,7 @@
       <p class="hero-lead">Yunnan, Zhangjiajie, Dunhuang, Xinjiang, Sanya or winter in the north. Tell us the month, group, days and comfort you need. We reply with a concise route direction and starting quote.</p>
       <div class="hero-actions">
         <a class="btn primary" href="#route-note">Get a 24-hour route note</a>
+        <a class="btn" href="#yunnan-sample-route">See a Yunnan sample route</a>
         <a class="btn" href="/before-china/?utm_source=route_note&utm_medium=internal&utm_campaign=private_route_consultation&angle=before_china_setup">Before-China checklist</a>
       </div>
     </div>
@@ -534,6 +582,25 @@
             <p>If the direction fits, we refine the itinerary and match local support. If not, we say so early.</p>
           </div>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section sample-route" id="yunnan-sample-route">
+    <div class="wrap split">
+      <div class="section-title">
+        <p class="eyebrow">Example route shape</p>
+        <h2>Yunnan works best when Shaxi is not rushed.</h2>
+        <p>This is a sample 7-day Dali, Shaxi and Lijiang route. The final route note changes with season, flight times, hotel level, group age and whether comfort or maximum coverage matters more.</p>
+      </div>
+      <div class="route-table" aria-label="Sample 7-day Yunnan route">
+        <div class="route-row"><b>Day 1</b><div><strong>Arrive in Dali, settle by Erhai Lake</strong><span>Airport or station pickup, check-in and a light first evening so the trip starts calm.</span></div></div>
+        <div class="route-row"><b>Day 2</b><div><strong>Erhai, Xizhou and a slower Dali day</strong><span>Village lanes, lake views, local food and enough time to avoid turning Dali into a checklist.</span></div></div>
+        <div class="route-row"><b>Day 3</b><div><strong>Dali to Shaxi by private car</strong><span>Use the transfer as part of the route, with a real arrival window instead of a rushed detour.</span></div></div>
+        <div class="route-row"><b>Day 4</b><div><strong>Stay in Shaxi after the day-trippers leave</strong><span>Sidu Street, Yujin Bridge and the old theatre feel different in the quiet hours.</span></div></div>
+        <div class="route-row"><b>Day 5</b><div><strong>Shaxi to Baisha or Lijiang</strong><span>Move toward Naxi villages and Jade Dragon Snow Mountain views without stacking too much in the afternoon.</span></div></div>
+        <div class="route-row"><b>Day 6</b><div><strong>Baisha, snow mountain views and Lijiang</strong><span>Keep the mountain, village and old town day comfortable, especially for families or senior travellers.</span></div></div>
+        <div class="route-row"><b>Day 7</b><div><strong>Depart, or extend to Shangri-La</strong><span>Return by flight or train; extend only if altitude, transfer time and weather backup make sense.</span></div></div>
       </div>
     </div>
   </section>
@@ -590,7 +657,7 @@
             <option value="xinjiang">Xinjiang</option>
             <option value="dunhuang">Dunhuang</option>
             <option value="sanya">Sanya</option>
-            <option value="northeast">Northeast winter</option>
+            <option value="northeast">Northeast winter</option><option value="inner-mongolia">Inner Mongolia</option>
             <option value="multi-region">Multiple regions</option>
             <option value="not-sure">Not sure yet</option>
           </select>
