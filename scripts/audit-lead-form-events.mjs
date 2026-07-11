@@ -109,6 +109,68 @@ const pages = [
     }
   },
   {
+    path: "/ja/interest/",
+    formName: "bluehour-china-journey-review-ja",
+    values: {
+      name: "Codex 日本語フォームテスト",
+      email: "codex-test@example.com",
+      contact: "LINE codex-test",
+      country: "日本",
+      destination: "yunnan-grand-loop",
+      travel_window: "3-6か月以内",
+      group_size: "5-6名",
+      language_needs: "日本語サポート希望",
+      comfort_level: "ブティックで快適",
+      message: "日本語の問い合わせフォームを外部送信せずにテストします。"
+    }
+  },
+  {
+    path: "/ko/interest/",
+    formName: "bluehour-china-journey-review-ko",
+    values: {
+      name: "Codex 한국어 양식 테스트",
+      email: "codex-test@example.com",
+      contact: "Kakao codex-test",
+      country: "대한민국",
+      destination: "inner-mongolia",
+      travel_window: "3-6개월 이내",
+      group_size: "5-6명",
+      language_needs: "중국어-영어 지원 선호",
+      comfort_level: "부티크하고 편안하게",
+      message: "외부 전송 없이 한국어 문의 양식을 테스트합니다."
+    }
+  },
+  {
+    path: "/th/interest/",
+    formName: "bluehour-china-journey-review-th",
+    values: {
+      name: "Codex ทดสอบแบบฟอร์มไทย",
+      email: "codex-test@example.com",
+      contact: "LINE codex-test",
+      country: "ประเทศไทย",
+      destination: "dunhuang",
+      travel_window: "ภายใน 3-6 เดือน",
+      group_size: "5-6 คน",
+      language_needs: "ต้องการจีน-อังกฤษ",
+      comfort_level: "บูติกและสบาย",
+      message: "ทดสอบแบบฟอร์มภาษาไทยโดยไม่ส่งข้อมูลออกภายนอก"
+    }
+  },
+  {
+    path: "/ru/interest/",
+    formName: "bluehour-china-interest-ru",
+    values: {
+      name: "Codex тест русской формы",
+      contact: "Telegram codex-test",
+      destination: "xinjiang",
+      travel_window: "3-6 months",
+      route_days: "7-9",
+      group_size: "5-6",
+      budget: "RUB 120000-200000",
+      message: "Тест русской формы без внешней отправки."
+    }
+  },
+  {
     path: "/before-china/wechat-pay-paypal-china-2026/",
     formName: "bluehour-before-china-en-paypal_wechat_pay_2026",
     values: {
@@ -268,8 +330,7 @@ async function auditPage(browser, config) {
     await form.scrollIntoViewIfNeeded();
     await fillForm(form, config.values);
     await form.locator('button[type="submit"]').click();
-    await page.waitForFunction(() => document.body.textContent.includes("Thank you") || document.body.textContent.includes("已收到"), null, { timeout: 5000 }).catch(() => {});
-    await page.waitForTimeout(250);
+    await page.waitForTimeout(500);
 
     const fetchFields = fetches[0]?.fields || [];
     const fieldMap = Object.fromEntries(fetchFields);

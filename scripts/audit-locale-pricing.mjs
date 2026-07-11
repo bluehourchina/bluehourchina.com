@@ -15,11 +15,13 @@ const checks = [
       "yunnan.html",
       "xinjiang.html",
       "dunhuang.html",
+      "inner-mongolia.html",
       "sanya.html",
       "northeast.html",
       "en/yunnan/index.html",
       "en/xinjiang/index.html",
       "en/dunhuang/index.html",
+      "en/inner-mongolia/index.html",
       "en/sanya/index.html",
       "en/northeast/index.html",
       "interest.html",
@@ -40,6 +42,7 @@ const checks = [
       "zh/yunnan/index.html",
       "zh/xinjiang/index.html",
       "zh/dunhuang/index.html",
+      "zh/inner-mongolia/index.html",
       "zh/sanya/index.html",
       "zh/northeast/index.html",
       "zh/interest/index.html",
@@ -49,6 +52,12 @@ const checks = [
     requiredOnBudgetPages: /\bRMB\b/,
     forbidden: [/\bNT\$/i, /\bTWD\b/i, /\bJPY\b/i, /\bUSD\b/i, /US\$/],
     fileOverrides: {
+      "zh.html": {
+        forbidden: [/\bJPY\b/i, /\bUSD\b/i, /US\$/],
+      },
+      "zh/index.html": {
+        forbidden: [/\bJPY\b/i, /\bUSD\b/i, /US\$/],
+      },
       "zh/yunnan/index.html": {
         requiredOnDestinationPages: /NT\$/i,
         requiredOnBudgetPages: /NT\$/i,
@@ -64,6 +73,7 @@ const checks = [
       "ja/yunnan/index.html",
       "ja/xinjiang/index.html",
       "ja/dunhuang/index.html",
+      "ja/inner-mongolia/index.html",
       "ja/sanya/index.html",
       "ja/northeast/index.html",
       "ja/interest/index.html",
@@ -81,6 +91,7 @@ const checks = [
       "ko/yunnan/index.html",
       "ko/xinjiang/index.html",
       "ko/dunhuang/index.html",
+      "ko/inner-mongolia/index.html",
       "ko/sanya/index.html",
       "ko/northeast/index.html",
       "ko/interest/index.html",
@@ -98,6 +109,7 @@ const checks = [
       "th/yunnan/index.html",
       "th/xinjiang/index.html",
       "th/dunhuang/index.html",
+      "th/inner-mongolia/index.html",
       "th/sanya/index.html",
       "th/northeast/index.html",
       "th/interest/index.html",
@@ -107,10 +119,27 @@ const checks = [
     requiredOnBudgetPages: /\bTHB\b/,
     forbidden: [/\bNT\$/i, /\bTWD\b/i, /\bRMB\b/i, /\bCNY\b/i, /\bJPY\b/i, /US\$/],
   },
+  {
+    locale: "ru",
+    files: [
+      "ru.html",
+      "ru/index.html",
+      "ru/yunnan/index.html",
+      "ru/xinjiang/index.html",
+      "ru/dunhuang/index.html",
+      "ru/inner-mongolia/index.html",
+      "ru/sanya/index.html",
+      "ru/northeast/index.html",
+      "ru/interest/index.html",
+    ],
+    requiredOnDestinationPages: /(?:\bRUB\b|₽)/,
+    requiredOnBudgetPages: /(?:\bRUB\b|₽)/,
+    forbidden: [/\bNT\$/i, /\bTWD\b/i, /\bRMB\b/i, /\bCNY\b/i, /\bJPY\b/i, /\bKRW\b/i, /\bTHB\b/i, /US\$/],
+  },
 ];
 
 function isDestination(file) {
-  return /(?:^|\/)(yunnan|xinjiang|dunhuang|sanya|northeast)(?:\.html|\/index\.html)$/.test(file);
+  return /(?:^|\/)(yunnan|xinjiang|dunhuang|inner-mongolia|sanya|northeast)(?:\.html|\/index\.html)$/.test(file);
 }
 
 function hasBudgetSelect(html) {

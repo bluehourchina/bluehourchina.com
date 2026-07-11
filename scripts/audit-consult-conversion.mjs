@@ -113,7 +113,7 @@ for (const config of Object.values(languages)) {
       ["missing hreflang alternates", (html) => html.includes('hreflang="x-default"')],
       ...sheetPrimaryFormChecks,
       ["missing tracked nav CTA", (html) => html.includes("utm_source=consult_nav") && html.includes(campaign)],
-      ["language label should use JP", (html) => !html.includes(">JA<") && html.includes(">JP<")],
+      ["Japanese language option missing", (html) => html.includes('lang="ja"') && html.includes("日本語")],
     ]);
   }
 

@@ -28,6 +28,7 @@ const labels = {
 
 const targets = [
   { file: "index.html", locale: "en", routeLocale: null },
+  { file: "en.html", locale: "en", routeLocale: "en" },
   { file: "en/index.html", locale: "en", routeLocale: "en" },
   { file: "zh.html", locale: "zh", routeLocale: "zh", sync: "zh/index.html" },
   { file: "ja.html", locale: "ja", routeLocale: "ja", sync: "ja/index.html" },
@@ -136,7 +137,7 @@ for (const target of targets) {
           <dl class="product-route-meta"><div><dt>${labels[target.locale].from}</dt><dd>${price}</dd></div><div><dt>${labels[target.locale].group}</dt><dd>${group}</dd></div><div><dt>${labels[target.locale].route}</dt><dd>${route}</dd></div></dl>
           <ol class="mini-days">${miniDays}</ol><a class="text-link" href="${href}#day-plan">${labels[target.locale].view}</a>
         </div></article>`);
-    const offeredPrice = price.replace(/[^0-9]/g, "");
+    const offeredPrice = String(schema.offers?.price || schema.offers?.lowPrice || "");
     offers.push({
       "@type": "Offer",
       name: schema.name,

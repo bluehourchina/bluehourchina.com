@@ -35,8 +35,30 @@ const chromeExecutable =
   process.env.CHROME_EXECUTABLE ||
   "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 
-const pages = [
+const destinationSlugs = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast"];
+const multilingualPages = [
   "/",
+  "/interest.html",
+  ...destinationSlugs.map((slug) => `/${slug}.html`),
+  "/zh.html",
+  "/zh/interest/",
+  ...destinationSlugs.map((slug) => `/zh/${slug}/`),
+  "/ja.html",
+  "/ja/interest/",
+  ...destinationSlugs.map((slug) => `/ja/${slug}/`),
+  "/ko.html",
+  "/ko/interest/",
+  ...destinationSlugs.map((slug) => `/ko/${slug}/`),
+  "/th.html",
+  "/th/interest/",
+  ...destinationSlugs.map((slug) => `/th/${slug}/`),
+  "/ru.html",
+  "/ru/interest/",
+  ...destinationSlugs.map((slug) => `/ru/${slug}/`),
+];
+
+const pages = [...new Set([
+  ...multilingualPages,
   "/before-china/",
   "/before-china/wechat-pay-visa-mastercard/",
   "/before-china/wechat-pay-paypal-china-2026/",
@@ -47,15 +69,8 @@ const pages = [
   "/china-travel/china-natural-wonders-15-days/",
   "/china-travel/zhangjiajie-senior-friendly-route/",
   "/china-travel/guangzhou-luxury-hotel-family/",
-  "/yunnan.html",
   "/yunnan-grand-loop/",
-  "/xinjiang.html",
-  "/dunhuang.html",
-  "/sanya.html",
-  "/northeast.html",
-  "/inner-mongolia.html",
   "/stories.html",
-  "/interest.html",
   "/route-note/",
   "/payment-rescue/",
   "/refer/",
@@ -63,32 +78,14 @@ const pages = [
   "/quick/",
   "/quick/en/",
   "/quick/china/",
-  "/zh.html",
   "/zh/before-china/",
   "/zh/before-china/wechat-pay-visa-mastercard/",
   "/zh/before-china/wechat-pay-paypal-china-2026/",
   "/zh/before-china/china-payment-checklist/",
   "/zh/before-china/china-travel-apps-before-trip/",
   "/zh/before-china/china-first-day-arrival-checklist/",
-  "/zh/yunnan/",
   "/zh/yunnan-grand-loop/",
-  "/zh/xinjiang/",
-  "/zh/dunhuang/",
-  "/zh/sanya/",
-  "/zh/northeast/",
-  "/zh/inner-mongolia/",
-  "/zh/interest/",
-  "/ja.html",
-  "/ja/yunnan/",
-  "/ja/xinjiang/",
-  "/ja/dunhuang/",
-  "/ja/sanya/",
-  "/ja/northeast/",
-  "/ja/inner-mongolia/",
-  "/ja/interest/",
-  "/ko/inner-mongolia/",
-  "/th/inner-mongolia/",
-];
+])];
 
 const viewports = [
   { name: "mobile", width: 390, height: 844, isMobile: true },
@@ -138,7 +135,10 @@ async function auditPage(page, pagePath, viewport) {
     const hasVisibleForm = [...document.querySelectorAll("form")].some(visible);
     const hasVisibleCta = [...document.querySelectorAll("a,button")]
       .filter(visible)
-      .some((element) => /consult|start|plan|route|tell us|諮詢|開始|規劃|相談|문의|상담|ปรึกษา|วางแผน/i.test(element.textContent || ""));
+      .some((element) =>
+        element.tagName === "BUTTON" ||
+        /consult|start|plan|route|tell us|諮詢|開始|規劃|相談|문의|상담|ปรึกษา|วางแผน|ส่ง|маршрут|план|расчёт|предлож/i.test(element.textContent || "")
+      );
 
     return {
       title: document.title,
@@ -161,6 +161,7 @@ await fs.mkdir(outputDir, { recursive: true });
 
 const browser = await chromium.launch({ headless: true, executablePath: chromeExecutable });
 const context = await browser.newContext();
+await context.route(/player\.bilibili\.com/, (route) => route.abort());
 const results = [];
 
 try {

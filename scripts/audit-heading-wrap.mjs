@@ -63,6 +63,7 @@ const viewports = [
 
 const browser = await chromium.launch({ headless: true, executablePath: chromeExecutable });
 const context = await browser.newContext();
+await context.route(/player\.bilibili\.com/, (route) => route.abort());
 const page = await context.newPage();
 const results = [];
 

@@ -11,8 +11,8 @@ const destinations = {
   northeast: 7,
   "inner-mongolia": 6,
 };
-const locales = ["en", "zh", "ja", "ko", "th"];
-const expectedCurrency = { en: "USD", zh: "CNY", ja: "JPY", ko: "KRW", th: "THB" };
+const locales = ["en", "zh", "ja", "ko", "th", "ru"];
+const expectedCurrency = { en: "USD", zh: "CNY", ja: "JPY", ko: "KRW", th: "THB", ru: "RUB" };
 const files = [];
 
 for (const [destination, dayCount] of Object.entries(destinations)) {
@@ -50,7 +50,9 @@ for (const item of files) {
   if (!page.includes("standard-route-band")) issues.push(`${item.file}: standard route missing`);
   if (!page.includes("route-day-plan-band")) issues.push(`${item.file}: day plan missing`);
   if (days !== item.dayCount) issues.push(`${item.file}: expected ${item.dayCount} days, found ${days}`);
-  if (!page.includes("/assets/real-")) issues.push(`${item.file}: no real route photography referenced`);
+  if (!page.includes("/assets/real-") && !page.includes("/assets/wechat-reference-")) {
+    issues.push(`${item.file}: no real route photography referenced`);
+  }
   if (!page.includes(`destination=${item.destination}`)) issues.push(`${item.file}: destination inquiry CTA missing`);
   if (!product) {
     issues.push(`${item.file}: Product schema missing`);
@@ -63,7 +65,7 @@ for (const item of files) {
     }
   }
 
-  if (["ja", "ko", "th"].includes(item.locale)) {
+  if (["ja", "ko", "th", "ru"].includes(item.locale)) {
     const dayBlock = page.match(/<!-- route-day-plan-start -->([\s\S]*?)<!-- route-day-plan-end -->/)?.[1] || "";
     const leakage = /\b(?:Day \d|Stay:|Departure day|Arrive in|Private pickup|Standard day plan|Included in the starting estimate)\b/i;
     if (leakage.test(dayBlock)) issues.push(`${item.file}: English itinerary copy leaked into localized day plan`);

@@ -10,7 +10,7 @@ const files = [
     file: `${destination}.html`,
     expectedCurrency: "USD",
   })),
-  ...["en", "zh", "ja", "ko", "th"].flatMap((locale) =>
+  ...["en", "zh", "ja", "ko", "th", "ru"].flatMap((locale) =>
     destinations.map((destination) => ({
       file: `${locale}/${destination}/index.html`,
       expectedCurrency:
@@ -22,7 +22,9 @@ const files = [
               ? "KRW"
               : locale === "th"
                 ? "THB"
-                : "USD",
+                : locale === "ru"
+                  ? "RUB"
+                  : "USD",
     })),
   ),
 ];
