@@ -73,7 +73,8 @@ for (const [locale, config] of Object.entries(localeConfig)) {
     check(!html.includes('class="language-switch"'), file, "legacy horizontal language switch remains");
     check(html.includes("/assets/language-menu.js"), file, "language menu behavior script missing");
     check(count(html, /class="product-route-card"/g) === 6, file, "expected six route products");
-    check(count(html, /player\.bilibili\.com/g) === 3, file, "expected three official destination films");
+    check(count(html, /player\.bilibili\.com/g) === 0, file, "embedded Bilibili players should not appear on the luxury home page");
+    check(!html.includes("official-films-band"), file, "removed destination-film section returned");
     check(count(html, /hero-scene scene-/g) === 6, file, "expected six real-photo hero scenes");
     check(html.includes('class="lead-form home-lead-form"'), file, "home inquiry form missing");
     check(html.includes('hreflang="ru"'), file, "Russian hreflang missing");
