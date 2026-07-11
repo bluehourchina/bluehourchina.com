@@ -29,12 +29,16 @@ jobs:
         run: |
           node scripts/audit-customer-copy-ux.mjs
           node scripts/audit-form-accessibility.mjs
-          if node scripts/audit-form-accessibility.mjs --negative-test; then
-            echo "Form accessibility negative fixture was not blocked" >&2
+          node scripts/run-form-accessibility-negative-gate.mjs
+          set +e
+          node scripts/run-form-accessibility-negative-gate.mjs --simulate-audit-status=2
+          simulated_gate_status=$?
+          set -e
+          if [ "$simulated_gate_status" -ne 1 ]; then
+            echo "Negative gate self-test failed: simulated audit status 2 returned gate status $simulated_gate_status, expected 1" >&2
             exit 1
-          else
-            echo "Form accessibility negative fixture was blocked as expected"
           fi
+          echo "Negative gate self-test passed: simulated audit status 2 was rejected with gate status 1"
           node scripts/audit-navigation-continuity.mjs
           node scripts/audit-site-quality.mjs
           node scripts/audit-multilingual-parity.mjs
