@@ -24,6 +24,8 @@ async function capture({ file, url, viewport, selector, openMenu = false }) {
 }
 
 await capture({ file: "zh-home-routes-desktop.png", url: "/zh.html", viewport: { width: 1440, height: 1000 }, selector: ".product-routes-band" });
+await capture({ file: "zh-process-desktop.png", url: "/zh.html", viewport: { width: 1440, height: 1000 }, selector: ".conversion-band" });
+await capture({ file: "zh-process-mobile.png", url: "/zh.html", viewport: { width: 390, height: 844 }, selector: ".conversion-band" });
 await capture({ file: "zh-grand-yunnan-price.png", url: "/zh/yunnan/", viewport: { width: 1440, height: 1000 }, selector: ".route-extension" });
 await capture({ file: "zh-home-mobile.png", url: "/zh.html", viewport: { width: 390, height: 844 }, selector: ".product-routes-band" });
 await capture({ file: "ja-dunhuang-card-mobile.png", url: "/ja.html", viewport: { width: 320, height: 812 }, selector: ".product-route-card:nth-child(3)" });
