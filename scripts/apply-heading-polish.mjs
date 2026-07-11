@@ -3,7 +3,7 @@ import path from "node:path";
 
 const root = process.cwd();
 const excludedDirectories = new Set([".git", "node_modules", "output", "outputs"]);
-const stylesheet = '<link rel="stylesheet" href="/assets/heading-polish.css?v=20260711-rhythm8">';
+const stylesheet = '<link rel="stylesheet" href="/assets/heading-polish.css?v=20260711-rhythm9">';
 
 async function collectHtml(directory) {
   const files = [];

@@ -61,8 +61,8 @@ const pages = [
         eyebrow: "Route support",
         title: "Payment is part of route comfort",
         paragraphs: [
-          "For regional China, we review practical readiness together with the route: arrival time, hotel location, long drives, language handoff, payment backup and whether a local provider should hold key moments.",
-          "If you already know your travel month, group size and destination, send us the brief. We will reply with a route note and starting quote before any local-provider matching."
+          "For regional China, we review practical readiness together with the route: arrival time, hotel location, long drives, language handoff, payment backup and which pickup, hotel or ticket details need advance confirmation.",
+          "If you already know your travel month, group size and destination, send us the brief. We will reply with a route note and starting quote before you decide whether to continue planning."
         ],
         cta: true
       }
@@ -267,7 +267,7 @@ const pages = [
         eyebrow: "路線照應",
         title: "支付也是路線舒適度的一部分",
         paragraphs: [
-          "我們看深度中國路線時，會一起看抵達時間、住宿位置、車程、語言交接、付款備案，以及哪些關鍵時刻需要在地服務商照應。",
+          "規劃深度中國路線時，我們會一起看抵達時間、住宿、車程、語言與付款備案，也會先確認重要預訂。",
           "如果你已經知道月份、人數與想去地區，可以把需求交給我們。我們會先回一份路線筆記與起始報價方向。"
         ],
         cta: true
@@ -472,8 +472,8 @@ function jsonLd(page) {
         alternateName: page.lang === "zh" ? ["Bluehour China Journeys", "Ruoqing China"] : ["若青中國旅策", "Ruoqing China"],
         url: "https://bluehourchina.com/",
         description: page.lang === "zh"
-          ? "服務外國旅客前往北京上海之外的中國深度風景目的地，提供私人路線建議與在地服務商媒合。"
-          : "A private China travel advisory and local-provider matching brand for international travellers seeking landscapes beyond Beijing and Shanghai."
+          ? "服務外國旅客前往北京上海之外的中國深度風景目的地，提供私人路線建議與在地旅程規劃。"
+          : "A private China journey planning service for international travellers seeking landscapes beyond Beijing and Shanghai, with clear routes, starting prices and practical preparation."
       },
       {
         "@type": "FAQPage",
@@ -616,7 +616,7 @@ ${asideLinks}
   <script type="application/ld+json">
   ${jsonLd(page)}
   </script>
-  <link rel="stylesheet" href="/assets/luxury-multilang.css?v=20260711-rhythm8">
+  <link rel="stylesheet" href="/assets/luxury-multilang.css?v=20260711-rhythm9">
   <style>
     .prep-hero {
       min-height: 70vh;

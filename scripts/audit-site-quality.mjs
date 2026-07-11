@@ -3,7 +3,7 @@ import path from "node:path";
 
 const root = process.cwd();
 const siteOrigin = "https://bluehourchina.com";
-const currentLuxuryCssVersion = "v=20260711-rhythm8";
+const currentLuxuryCssVersion = "v=20260711-rhythm9";
 const htmlFiles = [];
 const issues = [];
 const warnings = [];

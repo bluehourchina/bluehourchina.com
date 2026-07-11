@@ -81,6 +81,8 @@ const allPages = [...new Set([
   "/th/stories/",
   "/ru/stories/",
   "/route-note/",
+  "/about.html",
+  "/faq.html",
   "/payment-rescue/",
   "/refer/",
   "/consult/",
@@ -116,6 +118,31 @@ async function auditPage(page, pagePath, viewport) {
   const url = urlFor(pagePath);
   const response = await page.goto(url, { waitUntil: "networkidle", timeout: 30000 });
   const status = response?.status() || 0;
+  const mobileMenus = { site: false, language: false, siteWithinViewport: false, languageWithinViewport: false };
+  if (viewport.isMobile) {
+    for (const [key, selector, optionsSelector] of [
+      ["site", ".mobile-lang details.site-menu", ".site-options"],
+      ["language", ".mobile-lang details.language-menu", ".language-options"],
+    ]) {
+      const menu = page.locator(selector).first();
+      if (await menu.count()) {
+        await menu.locator("summary").click();
+        const state = await menu.evaluate((element, childSelector) => {
+          const options = element.querySelector(childSelector);
+          if (!element.open || !options) return { visible: false, withinViewport: false };
+          const rect = options.getBoundingClientRect();
+          const style = getComputedStyle(options);
+          return {
+            visible: rect.width > 0 && rect.height > 0 && style.display !== "none" && style.visibility !== "hidden",
+            withinViewport: rect.left >= -2 && rect.right <= innerWidth + 2,
+          };
+        }, optionsSelector);
+        mobileMenus[key] = state.visible;
+        mobileMenus[`${key}WithinViewport`] = state.withinViewport;
+        await menu.locator("summary").click();
+      }
+    }
+  }
   const metrics = await page.evaluate(() => {
     const visible = (element) => {
       const rect = element.getBoundingClientRect();
@@ -170,7 +197,7 @@ async function auditPage(page, pagePath, viewport) {
     };
   });
 
-  return { path: pagePath, viewport: viewport.name, status, ...metrics };
+  return { path: pagePath, viewport: viewport.name, status, mobileMenus, ...metrics };
 }
 
 await fs.mkdir(outputDir, { recursive: true });
@@ -214,6 +241,14 @@ for (const result of results) {
   }
   if (!result.hasVisibleCta) {
     issues.push(`${result.viewport} ${result.path}: no visible consultation CTA`);
+  }
+  if (result.viewport === "mobile") {
+    if (!result.mobileMenus.site || !result.mobileMenus.siteWithinViewport) {
+      issues.push(`${result.viewport} ${result.path}: mobile site menu missing, closed or outside viewport`);
+    }
+    if (!result.mobileMenus.language || !result.mobileMenus.languageWithinViewport) {
+      issues.push(`${result.viewport} ${result.path}: mobile language menu missing, closed or outside viewport`);
+    }
   }
 }
 

@@ -37,6 +37,22 @@ const chromeExecutable =
 
 const pages = [
   {
+    path: "/zh.html",
+    formName: "bluehour-china-home-zh",
+    expectedDestination: "xian",
+    expectedSuccess: "1 個工作日內回覆",
+    values: {
+      name: "Codex 中文首頁表單測試",
+      contact: "LINE codex-home-test",
+      destination: "xian",
+      travel_window: "3-6 個月內",
+      route_days: "約一週",
+      group_size: "5-6 人",
+      budget: "RMB 10,000-18,000",
+      message: "測試首頁西安私人路線諮詢，不送出到外部服務。"
+    }
+  },
+  {
     path: "/zh/yunnan/",
     formName: "bluehour-yunnan-product-tw",
     values: {
@@ -334,6 +350,7 @@ async function auditPage(browser, config) {
 
     const fetchFields = fetches[0]?.fields || [];
     const fieldMap = Object.fromEntries(fetchFields);
+    const successText = await form.locator(".form-status.success").textContent().catch(() => "");
     const event = events[0] || null;
     const sheetPost = fetches.find((fetch) => /script\.google\.com\/macros\/s\//i.test(fetch.url));
     const emailCopyPost = fetches.find((fetch) => /formsubmit\.co/i.test(fetch.url));
@@ -346,6 +363,8 @@ async function auditPage(browser, config) {
         fieldMap.campaign === "private_route_consultation" &&
         fieldMap.name === config.values.name &&
         fieldMap.contact === config.values.contact &&
+        (!config.expectedDestination || fieldMap.destination === config.expectedDestination) &&
+        (!config.expectedSuccess || successText.includes(config.expectedSuccess)) &&
         event?.campaign &&
         event?.items?.[0]?.item_category === "Private China travel consultation";
 
@@ -361,6 +380,7 @@ async function auditPage(browser, config) {
       sheetPostMode: sheetPost?.mode || "",
       emailCopyPostMode: emailCopyPost?.mode || "",
       destination: fieldMap.destination || "",
+      successText,
       eventProvider: event?.intake_provider || "",
       eventCampaign: event?.campaign || "",
       fieldNames: fetchFields.map(([key]) => key)

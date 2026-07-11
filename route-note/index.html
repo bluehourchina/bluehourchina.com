@@ -521,16 +521,10 @@
       .form-card, .quote-card, .step { padding: 20px; }
     }
   </style>
-  <link rel="stylesheet" href="/assets/heading-polish.css?v=20260711-rhythm8">
-</head>
+  <link rel="stylesheet" href="/assets/heading-polish.css?v=20260711-rhythm9">
+<link rel="stylesheet" href="/assets/navigation-continuity.css?v=20260711-nav1"></head>
 <body>
-  <nav class="nav" aria-label="Primary navigation">
-    <a class="brand" href="/">
-      <img src="/assets/ruoqing-avatar.svg" alt="" aria-hidden="true">
-      <span>Bluehour China Journeys</span>
-    </a>
-    <a href="#route-note">Start route note</a>
-  </nav>
+  <nav class="nav" aria-label="Primary navigation"><a class="brand" href="/"><img class="brand-mark" src="/assets/ruoqing-avatar.svg" alt="" aria-hidden="true"><span class="brand-text"><strong>Bluehour China</strong><span>若青中國旅策</span></span></a><div class="nav-links"><a href="/#places">Destinations</a><a href="/#care">Care</a><a href="/stories.html">Stories</a><a href="/before-china/">Before China</a><details class="language-menu"><summary aria-label="Choose language"><span>EN</span></summary><div class="language-options"><a href="/" lang="en" aria-current="page"><span>English</span><small>EN</small></a><a href="/zh.html" lang="zh"><span>繁體中文</span><small>中</small></a><a href="/ja.html" lang="ja"><span>日本語</span><small>日</small></a><a href="/ko.html" lang="ko"><span>한국어</span><small>한</small></a><a href="/th.html" lang="th"><span>ไทย</span><small>ไทย</small></a><a href="/ru.html" lang="ru"><span>Русский</span><small>RU</small></a></div></details><a class="nav-cta" href="#route-note">Plan a private journey</a></div></nav><div class="mobile-lang" aria-label="Open navigation"><details class="site-menu"><summary aria-label="Open navigation"><span class="site-menu-icon" aria-hidden="true"></span></summary><div class="site-options"><a href="/#places">Destinations</a><a href="/#care">Care</a><a href="/stories.html">Stories</a><a href="/before-china/">Before China</a><a class="nav-cta" href="#route-note">Plan a private journey</a></div></details><details class="language-menu"><summary aria-label="Choose language"><span>EN</span></summary><div class="language-options"><a href="/" lang="en" aria-current="page"><span>English</span><small>EN</small></a><a href="/zh.html" lang="zh"><span>繁體中文</span><small>中</small></a><a href="/ja.html" lang="ja"><span>日本語</span><small>日</small></a><a href="/ko.html" lang="ko"><span>한국어</span><small>한</small></a><a href="/th.html" lang="th"><span>ไทย</span><small>ไทย</small></a><a href="/ru.html" lang="ru"><span>Русский</span><small>RU</small></a></div></details></div>
 
   <header class="hero">
     <div class="hero-inner">
@@ -624,7 +618,7 @@
         <h2>Get your route note</h2>
         <p>Short answers are enough. If you have not chosen a destination yet, choose "not sure" and describe the kind of China you want.</p>
 
-        <form class="lead-form" data-sheet-endpoint="https://script.google.com/macros/s/AKfycbxCxsA5x0zzq_5pqI2MNJcki0MC9R236i_e3oRtu_0QPl7osg9CDHnaOzsSW_sZiRrh/exec" data-form-lang="en" data-sending-message="Sending..." data-success-message="Thank you. We received your request and will reply with a route note and a starting quote." data-error-message="The form did not send. Please email us directly." data-lead-value="1200" data-lead-currency="CNY" name="bluehour-china-route-note-en" method="POST" action="https://formsubmit.co/67d31e8a5231a5944bbb8f18952a58df">
+        <form class="lead-form" data-sheet-endpoint="https://script.google.com/macros/s/AKfycbxCxsA5x0zzq_5pqI2MNJcki0MC9R236i_e3oRtu_0QPl7osg9CDHnaOzsSW_sZiRrh/exec" data-form-lang="en" data-sending-message="Sending..." data-success-message="Thank you. We received your request and will reply within 1 business day with a route direction, starting estimate and next step." data-error-message="The form did not send. Please email us directly." data-lead-value="1200" data-lead-currency="CNY" name="bluehour-china-route-note-en" method="POST" action="https://formsubmit.co/67d31e8a5231a5944bbb8f18952a58df">
           <input type="hidden" name="_next" value="https://bluehourchina.com/thanks.html?source=route_note&angle=route_note_24h">
           <input type="hidden" name="_subject" value="Bluehour China route note inquiry">
           <input type="hidden" name="_template" value="table">
@@ -704,8 +698,8 @@
             <option value="Not sure how to describe it">Not sure how to describe it</option>
           </select>
           <textarea name="message" placeholder="Tell us fixed dates, cities, travellers, hotel comfort, payment/app worries, or anything that would make the trip easier."></textarea>
-          <button type="submit">Send my route note request</button>
-          <p class="note">Bluehour China Journeys provides route advisory and local-provider matching. Actual reception and travel services are handled by suitable local providers after the route fits.</p>
+          <button type="submit">Send my route note request</button><p class="form-consent form-ux-assurance">About 2 minutes to complete. No payment is required. A travel planner replies within 1 business day with a route direction, starting estimate and next step. Details are used only for this enquiry. <a class="form-privacy-link" href="/privacy.html" style="white-space:nowrap">Privacy</a></p>
+          <p class="note">Bluehour China Journeys plans the route and confirms the travel brief before departure. Actual reception is provided by local service teams, with included services listed in the formal proposal.</p>
           <p class="form-fallback">If the form does not send, write directly to <a href="mailto:bluehourchina@gmail.com?subject=Bluehour%20China%2024-hour%20route%20note">bluehourchina@gmail.com</a></p>
         </form>
 
@@ -719,5 +713,5 @@
   </section>
 
   <script src="/assets/lead-form-20260706-sheet.js" defer></script>
-</body>
+<script src="/assets/language-menu.js" defer></script></body>
 </html>

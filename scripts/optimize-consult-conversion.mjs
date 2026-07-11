@@ -19,7 +19,7 @@ const languages = {
     description: "A calm first consultation for travellers planning a deeper China journey beyond Beijing and Shanghai.",
     eyebrow: "Private route consultation",
     h2: "Begin with your China",
-    lead: "For serious travellers, we read your season, route, comfort needs and concerns, then return an honest first direction. No package pressure, just a calm next step.",
+    lead: "Share your dates, travellers, preferred pace and the China you want to see. We reply with a route direction, starting estimate and the next details to confirm.",
     formTitle: "A route note first, then a quote",
     formLead: "We turn your answers into a concise China route note: why the destination fits, what the days might feel like, and the starting quote for the first plan.",
     fallback: "If the form does not send, write directly to",
@@ -28,10 +28,10 @@ const languages = {
     secondary: "How consultation works",
     steps: [
       ["01", "Share the landscape", "Yunnan, Xinjiang, Dunhuang, Sanya, Northeast, or simply the mood you want."],
-      ["02", "We check the fit", "Season, distance, comfort level, language needs and whether the route is becoming too rushed."],
-      ["03", "You decide calmly", "If it fits, we can match suitable local providers. If it does not, we will say so."],
+      ["02", "We shape the first route", "Season, distance, room comfort, language needs and daily driving time are considered together."],
+      ["03", "Receive a clear next step", "Within one business day, you receive a route direction, starting estimate and the details still to confirm."],
     ],
-    proof: ["Manual reply", "Usually within 24 hours", "No forced package", "Suitable local matching"],
+    proof: ["Human reply", "Within 1 business day", "No payment required", "Details kept private"],
   },
   zh: {
     siteName: "若青中國旅策",
@@ -46,8 +46,8 @@ const languages = {
     description: "若青中國旅策為外國旅人整理中國深度路線初談，人工判斷目的地、季節、舒適度、語言需求與在地照應方式。",
     eyebrow: "私人路線初談",
     h2: ["先理解你想靠近的", "中國風景"],
-    lead: "這不是廉價促銷，也不是制式行程。你留下季節、人數、舒適需求與擔心的地方，我們人工判斷路線是否適合、哪裡太趕、需要什麼在地照應。",
-    formTitle: "先給一份路線遊記，再給初步報價",
+    lead: "留下季節、人數、舒適需求與擔心的地方。專人會回覆適合的路線方向、哪裡需要放慢，以及初步起價。",
+    formTitle: "先給一份路線筆記，再給初步報價",
     formLead: "我們會把你的季節、人數與舒適需求整理成一份短短的中國路線筆記：為什麼適合、每天大概怎麼感受、價格從哪裡開始",
     fallback: "如果表單無法送出，也可以直接寄到",
     cta: "開始路線初談",
@@ -55,10 +55,10 @@ const languages = {
     secondary: "了解顧問方式",
     steps: [
       ["01", "說出你想靠近的風景", "雲南、新疆、敦煌、三亞、東北，或只是先說你想要的空氣。"],
-      ["02", "我們判斷是否適合", "季節、距離、住宿舒適、語言需求與同行者體力，一起放進路線裡看。"],
-      ["03", "你再安靜決定", "適合才往下媒合當地服務商；不適合，我們也會直接說。"],
+      ["02", "整理第一版路線", "季節、距離、住宿舒適、語言需求與同行者體力，一起放進路線裡看。"],
+      ["03", "收到清楚的下一步", "1 個工作日內收到路線方向、參考起價與仍需確認的細節。"],
     ],
-    proof: ["人工回覆", "通常 24 小時內", "不強迫套裝", "合適才媒合在地"],
+    proof: ["人工回覆", "1 個工作日內", "此頁無需付款", "資料只用於本次諮詢"],
   },
   ja: {
     siteName: "Bluehour China Journeys",
@@ -82,10 +82,10 @@ const languages = {
     secondary: "個別相談",
     steps: [
       ["01", "風景を伝える", "雲南、新疆、敦煌、三亜、東北、または旅で感じたい空気だけでも大丈夫です。"],
-      ["02", "相性を見る", "季節、距離、宿の質感、言語サポート、同行者の体力を含めて判断します。"],
-      ["03", "落ち着いて決める", "合う場合だけ、ふさわしい現地パートナーへ進みます。"],
+      ["02", "最初のルートを整える", "季節、距離、宿の質感、言語サポート、同行者の体力を一つの旅程として考えます。"],
+      ["03", "次の一歩を受け取る", "1営業日以内に、ルート案、参考料金、次に確認する内容をお送りします。"],
     ],
-    proof: ["人が返信", "通常24時間以内", "押し売りなし", "合う場合だけ現地紹介"],
+    proof: ["担当者が返信", "1営業日以内", "このページで支払い不要", "相談内容は非公開"],
   },
   ko: {
     siteName: "Bluehour China Journeys",
@@ -109,10 +109,10 @@ const languages = {
     secondary: "첫 상담",
     steps: [
       ["01", "원하는 풍경을 남깁니다", "윈난, 신장, 둔황, 싼야, 동북, 또는 원하는 분위기만 적어도 됩니다."],
-      ["02", "여정의 적합성을 봅니다", "계절, 거리, 숙소 감각, 언어 지원, 동행자의 체력을 함께 봅니다."],
-      ["03", "차분히 결정합니다", "맞는 경우에만 알맞은 현지 파트너 연결로 이어집니다."],
+      ["02", "첫 루트를 정리합니다", "계절, 거리, 숙소 감각, 언어 지원, 동행자의 체력을 하나의 일정으로 살핍니다."],
+      ["03", "명확한 다음 단계를 받습니다", "1영업일 이내에 루트 방향, 시작 견적, 추가 확인 사항을 보내드립니다."],
     ],
-    proof: ["직접 답장", "보통 24시간 내", "강요 없음", "맞을 때만 현지 연결"],
+    proof: ["담당자 답장", "1영업일 이내", "결제 필요 없음", "문의 정보 비공개"],
   },
   th: {
     siteName: "Bluehour China Journeys",
@@ -136,10 +136,10 @@ const languages = {
     secondary: "วิธีการปรึกษา",
     steps: [
       ["01", "บอกภูมิทัศน์ที่อยากเห็น", "ยูนนาน ซินเจียง ตุนหวง ซานย่า ตะวันออกเฉียงเหนือ หรือแค่อารมณ์ของทริปก็ได้"],
-      ["02", "เราดูความเหมาะสม", "ฤดูกาล ระยะทาง ที่พัก ภาษา และแรงของผู้ร่วมทริปจะถูกนำมาพิจารณา"],
-      ["03", "คุณค่อยตัดสินใจ", "ถ้าเหมาะ เราจึงค่อยแนะนำผู้ให้บริการท้องถิ่นที่เข้ากัน"],
+      ["02", "เราจัดเส้นทางแรก", "พิจารณาฤดูกาล ระยะทาง ที่พัก ภาษา และแรงของผู้ร่วมทริปเป็นแผนเดียวกัน"],
+      ["03", "รับขั้นตอนถัดไปที่ชัดเจน", "ภายใน 1 วันทำการ คุณจะได้รับแนวทางเส้นทาง ราคาเริ่มต้น และสิ่งที่ต้องยืนยันต่อ"],
     ],
-    proof: ["คนจริงตอบ", "มักตอบใน 24 ชม.", "ไม่บังคับซื้อแพ็กเกจ", "เหมาะจึงแนะนำในพื้นที่"],
+    proof: ["คนจริงตอบ", "ภายใน 1 วันทำการ", "ไม่ต้องชำระเงิน", "ข้อมูลใช้เฉพาะคำขอนี้"],
   },
 };
 
@@ -442,7 +442,7 @@ Primary consultation URLs:
 - /ko/consult/
 - /th/consult/
 
-Conversion language should emphasize manual reply, usually within 24 hours, no forced package and suitable local-provider matching only when the route fits.
+Conversion language should emphasize manual reply, usually within 24 hours, no forced package and clear local arrangements only when the route fits.
 `;
   }
   await write("llms-full.txt", fullText.trimEnd() + "\n");

@@ -115,7 +115,7 @@ const copy = {
       "What worries you most: payment, apps, language, hotels, transfer days, parents or children, or choosing the right region?",
     button: "Send my route check",
     note:
-      "We reply with a concise route note and starting quote direction before any local-provider matching.",
+      "We reply with a concise route note and starting quote direction before you decide whether to continue planning.",
     fallback: "If the form does not send, write directly to",
     success: "Thank you. We received your request and will reply with a route note and a starting quote.",
     sending: "Sending...",
@@ -146,7 +146,7 @@ const copy = {
     groups: ["一位旅客", "2 位旅客", "3-4 位旅客", "親子家庭", "有長輩同行"],
     message: "最擔心什麼：支付、App、語言、飯店、移動天數、長輩小孩，或是不知道去哪個地區？",
     button: "送出路線初談",
-    note: "我們會先回覆一份路線筆記與初步報價方向，再判斷是否需要媒合當地服務商。",
+    note: "送出需求後，你會先收到一份路線筆記、初步起價與需要確認的下一步。",
     fallback: "如果表單無法送出，也可以直接寄到",
     success: "已收到，若青中國旅策會回覆一份路線筆記與初步方案報價",
     sending: "送出中...",

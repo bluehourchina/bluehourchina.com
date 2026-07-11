@@ -1,5 +1,5 @@
 (() => {
-  const menus = [...document.querySelectorAll("details.language-menu")];
+  const menus = [...document.querySelectorAll("details.language-menu, details.site-menu")];
 
   document.addEventListener("click", (event) => {
     for (const menu of menus) {

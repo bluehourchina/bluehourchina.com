@@ -60,7 +60,7 @@ const localePages = [
         "Altitude comfort, weather buffer and whether to add a slower rest day",
       ],
       priceFootnote:
-        "Final quote changes with season, hotel level, ticket availability, vehicle needs and the confirmed local provider.",
+        "Final quote changes with season, hotel level, ticket availability, vehicle needs and confirmed room, vehicle and ticket details.",
     },
     days: [
       ["Day 1", "Arrive in Kunming", "Private pickup, hotel check-in and a quiet first evening. The goal is to remove arrival friction before the route begins.", "Stay: Kunming"],
@@ -135,7 +135,7 @@ const localePages = [
         "海拔舒適度、天氣緩衝，以及是否加一天慢下來",
       ],
       priceFootnote:
-        "正式價格會依季節、住宿級別、票務狀況、車輛需求與當地服務商承接情況調整。",
+        "正式價格會依季節、住宿級別、票務與車輛需求確認。",
     },
     days: [
       ["第 1 天", "抵達昆明", "私人接機或接站，入住後保留一個安靜晚上。第一天先把語言、入住與移動摩擦降下來。", "住宿：昆明"],
@@ -261,7 +261,7 @@ const localePages = [
       quoteTitle: "견적 전 확인",
       includes: ["핵심 일정의 전용 차량 조율", "숙소 후보와 객실 수준 논의", "기재된 입장권과 체험", "보험 및 현지 계약 확인"],
       quoteChecks: ["여행 날짜, 도착지, 이동 시간", "숙소 수준, 객실, 식사, 걷는 정도", "고도, 날씨 여유, 휴식일 필요"],
-      priceFootnote: "최종 가격은 계절, 숙소, 티켓, 차량, 현지 파트너 상황에 따라 달라집니다.",
+      priceFootnote: "최종 가격은 계절, 숙소, 티켓, 차량, 객실, 차량, 티켓 가능 여부에 따라 달라집니다.",
     },
     days: [
       ["1일차", "쿤밍 도착", "전용 픽업과 체크인. 첫날은 이동 피로를 낮추는 조용한 밤으로 시작합니다.", "숙박: 쿤밍"],
@@ -324,7 +324,7 @@ const localePages = [
       quoteTitle: "ยืนยันก่อนเสนอราคา",
       includes: ["รถส่วนตัวในวันหลัก", "หารือที่พักและระดับห้อง", "บัตรและประสบการณ์ที่ระบุ", "ประกันและสัญญาท้องถิ่นเมื่อเหมาะสม"],
       quoteChecks: ["วันที่เดินทาง เมืองที่มาถึง เวลาเดินทาง", "ระดับที่พัก ห้อง อาหาร และการเดิน", "ความสบายเรื่องความสูง อากาศ และวันพัก"],
-      priceFootnote: "ราคาจริงขึ้นอยู่กับฤดูกาล ที่พัก บัตร รถ และผู้ให้บริการท้องถิ่น",
+      priceFootnote: "ราคาจริงขึ้นอยู่กับฤดูกาล ที่พัก บัตร รถ และทีมบริการในพื้นที่",
     },
     days: [
       ["Day 1", "Arrive in Kunming", "Private pickup, check-in and a quiet first evening.", "Stay: Kunming"],
@@ -751,7 +751,7 @@ function cleanOldYunnanStory(html, file) {
       '<div class="copy-stack"><article class="copy-block"><b>抵達</b><h3>昆明先把旅人安放好</h3><p>花市、老街與濕地，不是為了填滿第一天，而是讓外國旅人先適應中國的節奏。</p></article><article class="copy-block"><b>湖邊</b><h3>大理要有日出與手作</h3><p>龍龕、洱海 S 灣與喜洲扎染，把風景從照片變成可以帶走的觸感。</p></article><article class="copy-block"><b>遠方</b><h3>雪山日必須留有餘地</h3><p>雲杉坪、藍月谷、白沙與玉湖村都要看天氣與體力，不把山排成硬清單。</p></article></div>',
     );
     html = html.replaceAll(
-      "公開路線先給一個清楚形狀：一週，大理 · 沙溪 · 麗江或白沙，RMB 8,800 起。真正重要的是判斷這個形狀是否適合同行的人。",
+      "公開路線先給一個清楚形狀：一週，大理 · 沙溪 · 麗江或白沙，RMB 4,680 起。真正重要的是判斷這個形狀是否適合同行的人。",
       "公開路線先給一個清楚形狀：8 天 7 晚，昆明 · 大理 · 麗江，6 人 RMB 3,917/人起，2 人 RMB 8,500/人起。真正重要的是判斷這個形狀是否適合同行的人。",
     );
     html = html.replaceAll(

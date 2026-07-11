@@ -26,7 +26,7 @@ const locales = {
     includesTitle: "What the starting route usually covers",
     excludesTitle: "Before a formal quote",
     includes: [
-      "Route design, local-provider matching and itinerary note",
+      "Daily route, accommodation, transport and itinerary note",
       "Private transfers or driver coordination for core route days",
       "Hotel atmosphere and room-level discussion before confirmation",
       "Language support expectations clarified before booking",
@@ -60,7 +60,7 @@ const locales = {
     includesTitle: "基本方案通常包含",
     excludesTitle: "正式報價前會再確認",
     includes: [
-      "路線設計、在地服務商媒合與行程筆記",
+      "路線設計、在地旅程規劃與行程筆記",
       "核心路線日的私人接送或司機協調",
       "住宿氛圍與房型級別確認",
       "語言協助需求在預訂前先說清楚",
@@ -128,7 +128,7 @@ const locales = {
     includesTitle: "기본 일정에 들어가는 요소",
     excludesTitle: "정식 견적 전 확인",
     includes: [
-      "루트 설계, 현지 파트너 확인, 일정 메모",
+      "일자별 루트, 숙소·교통·예약 확인",
       "핵심 일정일의 전용 이동 또는 기사 조율",
       "숙소 분위기와 객실 수준 논의",
       "언어 지원 필요 수준 사전 확인",
@@ -162,7 +162,7 @@ const locales = {
     includesTitle: "โดยทั่วไปเส้นทางตั้งต้นครอบคลุม",
     excludesTitle: "ก่อนเสนอราคาจริงต้องยืนยัน",
     includes: [
-      "ออกแบบเส้นทาง จับคู่ผู้ให้บริการท้องถิ่น และบันทึกทริป",
+      "แผนรายวัน ที่พัก การเดินทาง และบันทึกทริป",
       "รถส่วนตัวหรือการประสานคนขับสำหรับวันหลัก",
       "หารือบรรยากาศที่พักและระดับห้อง",
       "ยืนยันความต้องการด้านภาษาให้ชัดก่อนจอง",
@@ -179,7 +179,7 @@ const destinations = {
   yunnan: {
     path: "yunnan",
     image: "/assets/ai/bluehour-yunnan-luxury-shaxi-courtyard.jpg",
-    prices: { en: "From US$1,250", zh: "RMB 8,800 起", ja: "JPY 205,000 から", ko: "KRW 1,950,000 부터", th: "เริ่มที่ THB 42,000" },
+    prices: { en: "From US$1,250", zh: "RMB 4,680 起", ja: "JPY 205,000 から", ko: "KRW 1,950,000 부터", th: "เริ่มที่ THB 42,000" },
     daysLabel: { en: "7 days", zh: "一週", ja: "7日間", ko: "7일", th: "7 วัน" },
     route: {
       en: "Dali · Shaxi · Lijiang or Baisha",

@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
-const styleVersion = "20260711-rhythm8";
+const styleVersion = "20260711-rhythm9";
 const languages = ["en", "zh", "ja", "ko", "th", "ru"];
 const allDestinations = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast", "xian", "tibet"];
 
@@ -225,7 +225,7 @@ const routeCopy = {
       captions: ["八廓街 · 拉薩日常", "大昭寺 · 古城的精神中心", "江孜白居寺 · 羊湖與日喀則之間", "扎什倫布寺 · 留足寺院停留時間"],
       days: [["抵達拉薩 只做安頓", "私人接站、入住飯店，除附近短距離散步外不安排正式景點。", "拉薩"], ["慢慢看布達拉宮", "預約固定時段，午後留白，步行與階梯都採保守安排。", "拉薩"], ["大昭寺與八廓街", "沿古城慢慢走，留下喝茶、看院落與理解背景的時間。", "拉薩"], ["拉薩經羊湖到江孜", "確認天候與道路後翻越山口，不把抵達江孜拖到太晚。", "江孜"], ["江孜到日喀則", "先看白居寺，再前往日喀則，為扎什倫布寺留一段完整時間。", "日喀則"], ["返回拉薩", "把返程視為移動日，預先安排休息與舒適停靠。", "拉薩"], ["拉薩彈性日", "保留一天處理天候、票務變動，或安排一個較輕的文化停留。", "拉薩"], ["私人送站返程", "前一晚確認班機或車次與出發時間，從容離開高原。", "返程"],
       ],
-      specifics: [["入藏文件", "先核對護照與簽證資料，再由合資格當地服務商依當期規定辦理。"], ["高原節奏", "前 48 小時減量；醫療建議與個人用藥仍由旅客自行向專業人士確認。"], ["當地執行", "私人車輛、合資格當地導遊、住宿與重要預訂一併確認。"]],
+      specifics: [["入藏文件", "先核對護照與簽證資料，再由合資格的在地服務團隊依當期規定辦理。"], ["高原節奏", "前 48 小時減量；醫療建議與個人用藥仍由旅客自行向專業人士確認。"], ["當地執行", "私人車輛、合資格當地導遊、住宿與重要預訂一併確認。"]],
     },
     ja: {
       name: "チベット ラサ・シガツェ8日間", short: "チベット", title: ["チベット八日間", "ラサ・ヤムドク湖・シガツェ"],
@@ -429,6 +429,19 @@ function mapSection(locale, routes) {
   return `<!-- destination-map-start --><section class="section destination-map-band" id="destination-map" data-destination-map><div class="wrap"><div class="section-head"><div><p class="eyebrow">${esc(l.mapEyebrow)}</p><h2>${esc(l.mapTitle)}</h2></div><p>${esc(l.mapIntro)}</p></div><div class="destination-map-layout"><div class="destination-map-stage"><div class="destination-map-canvas" data-map-canvas aria-label="China destination map"></div><button class="destination-map-reset" type="button" data-map-reset>${esc(l.mapReset)}</button></div><aside class="destination-map-panel" aria-live="polite"><div><p class="eyebrow">${esc(l.standard)}</p><h3 data-map-name>${esc(first.name)}</h3><dl class="destination-map-facts"><div><dt>${esc(l.duration)}</dt><dd data-map-duration>${esc(first.duration)}</dd></div><div><dt>${esc(l.mapPrice)}</dt><dd data-map-price>${esc(first.price)}</dd></div><div><dt>${esc(l.mapRoute)}</dt><dd data-map-route>${esc(first.route)}</dd></div></dl></div><a class="btn primary" data-map-link href="${first.href}">${esc(l.view)}</a></aside></div><div class="destination-map-selector" aria-label="Destination choices">${buttons}</div><script type="application/json">${data}</script></div></section><!-- destination-map-end -->`;
 }
 
+function addNewDestinationOptions(html, locale) {
+  const options = ["xian", "tibet"]
+    .map((slug) => `<option value="${slug}">${esc(destinationNames[locale][slug])}</option>`)
+    .join("");
+  return html.replace(
+    /(<select name="destination"[\s\S]*?)(<option value="multi-region">)/,
+    (_match, start, multiRegion) => {
+      const withoutExisting = start.replace(/<option value="(?:xian|tibet)">[\s\S]*?<\/option>/g, "");
+      return `${withoutExisting}${options}${multiRegion}`;
+    },
+  );
+}
+
 for (const target of homeTargets) {
   const mapRoutes = [];
   for (const slug of allDestinations) {
@@ -460,6 +473,7 @@ for (const target of homeTargets) {
   }
   html = html.replace(/(<div class="hero-media"[^>]*>)[\s\S]*?(<\/div><div class="wrap hero-inner">)/, `$1${homeHeroScenes}$2`);
   html = html.replace(/(<section class="hero home-hero">[\s\S]*?<p class="lead">)[\s\S]*?(<\/p>)/, `$1${esc(ui[target.locale].heroLead)}$2`);
+  html = addNewDestinationOptions(html, target.locale);
   await fs.writeFile(absolute, html);
 }
 

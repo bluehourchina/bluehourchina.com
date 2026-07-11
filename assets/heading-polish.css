@@ -208,3 +208,6 @@ dd{
     line-height:1.34;
   }
 }
+/* Keep short trust links intact at narrow phone widths. */
+.form-privacy-link{white-space:nowrap}
+.nowrap-term{display:inline-block;white-space:nowrap}

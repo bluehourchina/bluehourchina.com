@@ -25,6 +25,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Block customer-copy and content regressions
+        run: |
+          node scripts/audit-customer-copy-ux.mjs
+          node scripts/audit-navigation-continuity.mjs
+          node scripts/audit-site-quality.mjs
+          node scripts/audit-multilingual-parity.mjs
+          node scripts/audit-visible-image-reuse.mjs
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 

@@ -26,7 +26,7 @@ for (const check of checks) {
 
 const yunnan = await fs.readFile(path.join(root, "zh/yunnan/index.html"), "utf8");
 if (yunnan.includes("索取路線報價")) issues.push("zh/yunnan/index.html: sales-first navigation label remains");
-if (!yunnan.includes("開始規劃路線")) issues.push("zh/yunnan/index.html: traveller-first navigation label missing");
+if (!yunnan.includes("規劃私人旅程")) issues.push("zh/yunnan/index.html: traveller-first navigation label missing");
 
 console.log(`Traveller-first copy audit checked ${checks.flatMap((check) => check.files).length + 1} pages`);
 console.log(`Issues: ${issues.length}`);

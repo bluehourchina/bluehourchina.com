@@ -2,8 +2,8 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
-const luxuryVersion = "20260711-rhythm8";
-const headingVersion = "20260711-rhythm8";
+const luxuryVersion = "20260711-rhythm9";
+const headingVersion = "20260711-rhythm9";
 
 async function walk(dir) {
   const entries = await fs.readdir(dir, { withFileTypes: true });

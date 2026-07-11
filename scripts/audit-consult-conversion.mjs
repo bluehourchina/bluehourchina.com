@@ -143,7 +143,7 @@ await checkFile("sitemap.xml", [
 ]);
 
 await checkFile("llms-full.txt", [
-  ["missing AI search conversion note", (text) => text.includes("Private China Route Consultation") && text.includes(campaign)],
+  ["missing customer-facing enquiry summary", (text) => text.includes("## How Enquiry Works") && text.includes("No payment") && text.includes("1 business day") && text.includes("/#plan-trip") && text.includes("Privacy")],
 ]);
 
 await checkFile("scripts/create-tally-intake-form.mjs", [

@@ -1,0 +1,116 @@
+:where(.nav){
+  position:fixed;
+  inset:0 0 auto;
+  z-index:30;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:22px;
+  padding:18px clamp(18px,4vw,56px);
+  color:var(--ivory,#fffaf1);
+  background:linear-gradient(180deg,rgba(7,17,15,.86),rgba(7,17,15,0));
+}
+:where(.nav) .nav-links{display:flex;align-items:center;gap:22px;font-size:13px;font-weight:750}
+.nav .brand{
+  display:grid!important;
+  grid-template-columns:42px minmax(0,auto)!important;
+  flex-direction:initial!important;
+  align-items:center!important;
+  gap:10px!important;
+  min-width:0;
+}
+.nav .brand img{
+  width:42px!important;
+  height:42px!important;
+  object-fit:contain!important;
+  flex:none!important;
+}
+.nav .brand-text{display:block!important;width:auto!important;min-width:0}
+.nav .brand-text strong{display:block;white-space:nowrap}
+.nav .brand-text>span{display:block;white-space:nowrap}
+.nav-links > a:not(.nav-cta)[aria-current]{
+  color:var(--ivory,#fffaf1);
+  border-bottom:1px solid rgba(255,250,241,.58);
+  padding-bottom:4px;
+}
+.language-menu,.site-menu{
+  position:relative;
+  color:var(--ivory,#fffaf1);
+  font-family:"Helvetica Neue",Arial,"Noto Sans TC",sans-serif;
+}
+.language-menu summary,.site-menu summary{
+  height:40px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  list-style:none;
+  border:1px solid rgba(255,250,241,.32);
+  background:rgba(7,17,15,.3);
+  color:inherit;
+  cursor:pointer;
+}
+.language-menu summary{width:50px;gap:7px;font-size:12px;font-weight:800;letter-spacing:0}
+.language-menu summary::-webkit-details-marker,.site-menu summary::-webkit-details-marker{display:none}
+.language-menu summary::after{
+  content:"";
+  width:6px;
+  height:6px;
+  border-right:1px solid currentColor;
+  border-bottom:1px solid currentColor;
+  transform:translateY(-2px) rotate(45deg);
+}
+.language-menu[open] summary::after{transform:translateY(2px) rotate(225deg)}
+.language-options,.site-options{
+  position:absolute;
+  top:calc(100% + 7px);
+  right:0;
+  z-index:50;
+  padding:6px;
+  border:1px solid rgba(23,32,28,.14);
+  background:rgba(255,250,241,.98);
+  box-shadow:0 18px 42px rgba(7,17,15,.2);
+  color:var(--ink,#17201c);
+}
+.language-options{width:184px}
+.language-options a,.site-options a{
+  min-height:42px;
+  display:flex;
+  align-items:center;
+  padding:0 11px;
+  border-bottom:1px solid rgba(23,32,28,.08);
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:0;
+}
+.language-options a{justify-content:space-between;gap:16px}
+.language-options a:last-child,.site-options a:last-child{border-bottom:0}
+.language-options a:hover,.language-options a:focus-visible,.site-options a:hover,.site-options a:focus-visible{background:rgba(53,93,80,.09);outline:0}
+.language-options a[aria-current],.site-options a[aria-current]{color:var(--jade,#355d50);font-weight:850}
+.language-options small{color:var(--muted,#657069);font-size:11px}
+.mobile-lang{display:none}
+.site-menu summary{width:44px;background:rgba(7,17,15,.42);backdrop-filter:blur(10px)}
+.site-menu-icon,.site-menu-icon::before,.site-menu-icon::after{display:block;width:17px;height:1px;background:currentColor;content:""}
+.site-menu-icon{position:relative}
+.site-menu-icon::before{position:absolute;top:-5px;left:0}
+.site-menu-icon::after{position:absolute;top:5px;left:0}
+.site-options{width:min(250px,calc(100vw - 36px))}
+.site-options .nav-cta{margin-top:5px;border:0;background:var(--gold,#c99a52);color:#14251f;justify-content:center}
+.interest-body .language-menu,.interest-body .site-menu{color:var(--ink,#17201c)}
+.interest-body .language-menu summary,.interest-body .site-menu summary{border-color:rgba(23,32,28,.24);background:rgba(255,250,241,.86)}
+@media(max-width:760px){
+  .nav-links{display:none!important}
+  .mobile-lang{
+    position:absolute;
+    top:18px;
+    right:18px;
+    z-index:31;
+    display:flex!important;
+    align-items:flex-start;
+    gap:8px;
+    color:rgba(255,250,241,.94);
+  }
+  .nav .brand{grid-template-columns:38px minmax(0,auto)!important;gap:8px!important}
+  .nav .brand img{width:38px!important;height:38px!important}
+  .nav .brand-text strong{font-size:19px!important;letter-spacing:0!important}
+  .nav .brand-text>span{font-size:10px!important;letter-spacing:.08em!important}
+}

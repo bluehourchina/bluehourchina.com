@@ -19,7 +19,7 @@ const routeData = [
     },
     offers: {
       en: { duration: "7 days", price: "From US$1,250", currency: "USD", amount: "1250" },
-      zh: { duration: "一週", price: "RMB 8,800 起", currency: "CNY", amount: "8800" },
+      zh: { duration: "一週", price: "RMB 4,680 起", currency: "CNY", amount: "8800" },
       ja: { duration: "7日間", price: "JPY 205,000 から", currency: "JPY", amount: "205000" },
       ko: { duration: "7일", price: "KRW 1,950,000 부터", currency: "KRW", amount: "1950000" },
       th: { duration: "7 วัน", price: "เริ่มที่ THB 42,000", currency: "THB", amount: "42000" },
