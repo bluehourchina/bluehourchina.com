@@ -50,19 +50,19 @@ for (const file of standardFiles) {
 }
 
 const homeExpectations = {
-  "index.html": ["US$545", "US$850"],
-  "en.html": ["US$545", "US$850"],
-  "en/index.html": ["US$545", "US$850"],
-  "zh.html": ["NT$18,600", "RMB 6,150"],
-  "zh/index.html": ["NT$18,600", "RMB 6,150"],
-  "ja.html": ["JPY 86,000", "JPY 136,000"],
-  "ja/index.html": ["JPY 86,000", "JPY 136,000"],
-  "ko.html": ["KRW 745,000", "KRW 1,180,000"],
-  "ko/index.html": ["KRW 745,000", "KRW 1,180,000"],
-  "th.html": ["THB 17,700", "THB 28,000"],
-  "th/index.html": ["THB 17,700", "THB 28,000"],
-  "ru.html": ["95 000 ₽", "96 000 ₽"],
-  "ru/index.html": ["95 000 ₽", "96 000 ₽"],
+  "index.html": ["RMB 4,680", "RMB 9,500"],
+  "en.html": ["RMB 4,680", "RMB 9,500"],
+  "en/index.html": ["RMB 4,680", "RMB 9,500"],
+  "zh.html": ["RMB 4,680", "RMB 9,500"],
+  "zh/index.html": ["RMB 4,680", "RMB 9,500"],
+  "ja.html": ["RMB 4,680", "RMB 9,500"],
+  "ja/index.html": ["RMB 4,680", "RMB 9,500"],
+  "ko.html": ["RMB 4,680", "RMB 9,500"],
+  "ko/index.html": ["RMB 4,680", "RMB 9,500"],
+  "th.html": ["RMB 4,680", "RMB 9,500"],
+  "th/index.html": ["RMB 4,680", "RMB 9,500"],
+  "ru.html": ["RMB 4,680", "RMB 9,500"],
+  "ru/index.html": ["RMB 4,680", "RMB 9,500"],
 };
 
 for (const [file, expected] of Object.entries(homeExpectations)) {
@@ -75,14 +75,14 @@ for (const [file, expected] of Object.entries(homeExpectations)) {
 const grandEnglish = ["yunnan.html", "en/yunnan/index.html", "yunnan-grand-loop/index.html"];
 for (const file of grandEnglish) {
   const html = await read(file);
-  if (!html.includes("US$1,250")) report(file, "Grand Yunnan public 6-person price is not US$1,250");
-  if (/US\$(?:765|895|1,?290)/.test(html)) report(file, "old Grand Yunnan public tier remains");
+  if (!html.includes("RMB 8,500")) report(file, "Grand Yunnan public 6-person price is not RMB 8,500");
+  if (/US\$|NT\$|\b(?:USD|TWD|JPY|KRW|THB|RUB)\b|₽/.test(html)) report(file, "non-CNY Grand Yunnan price remains");
 }
 
 const grandChinese = ["zh/yunnan/index.html", "zh/yunnan-grand-loop/index.html"];
 for (const file of grandChinese) {
   const html = await read(file);
-  if (!html.includes("NT$40,000")) report(file, "大雲南環線未顯示 6 人約 NT$40,000 起");
+  if (!html.includes("RMB 8,500")) report(file, "大雲南環線未顯示 6 人 RMB 8,500 起");
   if (/NT\$(?:26,100|30,600|44,100)|RMB\s*(?:5,490|6,438|9,275)/.test(html)) report(file, "仍有舊的 2/4/6 人公開價格");
 }
 

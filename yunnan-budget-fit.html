@@ -462,7 +462,7 @@
       .path { min-height: 0; }
     }
   </style>
-  <link rel="stylesheet" href="/assets/heading-polish.css?v=20260711-calm4">
+  <link rel="stylesheet" href="/assets/heading-polish.css?v=20260711-routes5">
 </head>
 <body>
   <nav class="nav" aria-label="主要導覽">
@@ -522,8 +522,8 @@
               </label>
               <label>預算感
                 <select id="fitBudget">
-                  <option value="low">希望控制在 NT$45,000/人內</option>
-                  <option value="main" selected>接近 NT$59,800/人起可以討論</option>
+                  <option value="low">希望控制在 RMB 4,500/人內</option>
+                  <option value="main" selected>接近 RMB 4,680/人起可以討論</option>
                   <option value="upgrade">願意比較旅行社與小團私旅</option>
                   <option value="open">比起低價，更重視舒服</option>
                 </select>
@@ -579,7 +579,7 @@
           <div class="reference-itinerary-head">
             <div>
               <p class="eyebrow">WHAT THIS BUDGET BUYS</p>
-              <h2>NT$59,800 起<br>對應的 7 日路線</h2>
+              <h2>RMB 4,680 起<br>對應的 8 日路線</h2>
             </div>
             <p>預算頁不能只談價格，必須讓客戶看到錢買到的是什麼節奏。這張表是有風雲南的基本路線骨架，正式安排會依出發月份、人數、住宿與航班調整。</p>
           </div>
@@ -633,7 +633,7 @@
             <ul>
               <li>主線：大理、沙溪、麗江一週慢走</li>
               <li>主力：親友私密同行，4-6 人最推薦</li>
-              <li>價格：NT$59,800/人起（機票另計），依住宿與人數調整</li>
+              <li>價格：RMB 4,680/人起（6 人同行、機票另計），依住宿與人數調整</li>
             </ul>
           </aside>
 
@@ -678,13 +678,7 @@
             <option>9 日慢走</option>
               <option>還不確定，想先判斷</option>
             </select>
-            <select name="budget" aria-label="預算感" required>
-              <option value="" disabled selected>預算感</option>
-              <option>希望控制在 NT$45,000/人內</option>
-              <option>接近 NT$59,800/人起可以討論</option>
-              <option>願意比較旅行社與小團私旅</option>
-              <option>更重視住宿與舒適度</option>
-            </select>
+            <select name="budget" aria-label="預算感" required><option value="" disabled selected>預算感</option><option value="RMB 8,000 以下">RMB 8,000 以下</option><option value="RMB 8,000-15,000">RMB 8,000-15,000</option><option value="RMB 15,000-25,000">RMB 15,000-25,000</option><option value="RMB 25,000 以上">RMB 25,000 以上</option><option value="not-sure">還沒決定</option></select>
             <select name="readiness" aria-label="出發意願" required>
               <option value="" disabled selected>出發意願</option>
               <option>如果方案合適，1 個月內可付訂</option>

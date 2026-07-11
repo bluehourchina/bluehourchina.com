@@ -45,7 +45,7 @@ const pages = [
       travel_window: "3-6 個月內",
       group_size: "2 人",
       comfort_level: "精品舒適",
-      budget: "NT$35,000-50,000",
+      budget: "RMB 8,000-15,000",
       message: "測試台灣出發雲南頁的站內詢價表單，不送出到外部服務。"
     }
   },
@@ -58,7 +58,7 @@ const pages = [
       travel_window: "Within 3-6 months",
       group_size: "2 travellers",
       comfort_level: "Boutique comfort",
-      budget: "US$1,500-2,500",
+      budget: "RMB 8,000-15,000",
       message: "Testing the inline Yunnan quote form without external submission."
     }
   },
@@ -72,7 +72,7 @@ const pages = [
       travel_window: "Within 3-6 months",
       group_size: "2 travellers",
       comfort_level: "Boutique comfort",
-      budget: "US$1,500-2,500",
+      budget: "RMB 8,000-15,000",
       message: "My team specializes in conversion rate optimization, SEO services and web development services to boost your customer acquisition."
     }
   },
@@ -166,7 +166,7 @@ const pages = [
       travel_window: "3-6 months",
       route_days: "7-9",
       group_size: "5-6",
-      budget: "RUB 120000-200000",
+      budget: "RMB 8,000-15,000",
       message: "Тест русской формы без внешней отправки."
     }
   },
@@ -211,7 +211,7 @@ const pages = [
       route_days: "About one week",
       group_size: "Travelling with seniors",
       comfort_level: "Senior or child comfort matters most",
-      budget: "US$2,500-4,000",
+      budget: "RMB 15,000-25,000",
       visited_china_before: "Yes, Beijing or Shanghai",
       message: "Testing the 24-hour route note lead event without external submission."
     }

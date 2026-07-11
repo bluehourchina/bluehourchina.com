@@ -51,15 +51,19 @@ function pagePath(file) {
 }
 
 const filter = process.env.AUDIT_PATH_FILTER || "";
+const pattern = filter ? new RegExp(filter) : null;
 const pages = (await collectHtml(root))
   .map(pagePath)
   .filter((item) => !fixedArtworkPaths.has(item))
-  .filter((item) => !filter || item.includes(filter))
+  .filter((item) => !pattern || pattern.test(item))
   .sort();
-const viewports = [
+const allViewports = [
   { name: "phone-320", width: 320, height: 760 },
   { name: "phone-390", width: 390, height: 844 },
 ];
+const viewportFilter = process.env.AUDIT_VIEWPORT || "";
+const viewports = allViewports.filter((viewport) => !viewportFilter || viewport.name === viewportFilter);
+const outputSuffix = (process.env.AUDIT_OUTPUT_SUFFIX || "").replace(/[^a-z0-9_-]/gi, "");
 
 const browser = await chromium.launch({ headless: true, executablePath: chromeExecutable });
 const context = await browser.newContext();
@@ -159,7 +163,8 @@ for (const result of results) {
 }
 
 await fs.mkdir(outputDir, { recursive: true });
-await fs.writeFile(path.join(outputDir, "heading-wrap-audit.json"), JSON.stringify({
+const outputName = `heading-wrap-audit${outputSuffix ? `-${outputSuffix}` : ""}.json`;
+await fs.writeFile(path.join(outputDir, outputName), JSON.stringify({
   checkedAt: new Date().toISOString(),
   origin,
   pageCount: pages.length,

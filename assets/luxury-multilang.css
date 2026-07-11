@@ -348,6 +348,10 @@ h1,h2,h3,
   position:relative;
   min-height:430px;
 }
+.route-image img{
+  position:absolute;
+  inset:0;
+}
 .route-image::after{
   content:"";
   position:absolute;
@@ -629,8 +633,14 @@ h1,h2,h3,
 }
 @media(max-width:760px){
   .route-points{grid-template-columns:1fr}
-  .route-showcase > .route-card{display:none}
-  .route-image{min-height:320px}
+  .route-showcase > .route-card{
+    display:block;
+    margin-top:8px;
+    box-shadow:none;
+  }
+  .route-showcase > .route-card .route-image{min-height:250px}
+  .route-showcase > .route-card .route-image::after{display:none}
+  .route-showcase > .route-card .route-map{display:none}
   .route-map{padding:20px}
   .route-copy h2{font-size:clamp(31px,8vw,42px)}
   .visual-route-overview{

@@ -8,23 +8,12 @@ const destinations = ["yunnan", "xinjiang", "dunhuang", "sanya", "northeast", "i
 const files = [
   ...destinations.map((destination) => ({
     file: `${destination}.html`,
-    expectedCurrency: "USD",
+    expectedCurrency: "CNY",
   })),
   ...["en", "zh", "ja", "ko", "th", "ru"].flatMap((locale) =>
     destinations.map((destination) => ({
       file: `${locale}/${destination}/index.html`,
-      expectedCurrency:
-        locale === "zh"
-          ? "CNY"
-          : locale === "ja"
-            ? "JPY"
-            : locale === "ko"
-              ? "KRW"
-              : locale === "th"
-                ? "THB"
-                : locale === "ru"
-                  ? "RUB"
-                  : "USD",
+      expectedCurrency: "CNY",
     })),
   ),
 ];

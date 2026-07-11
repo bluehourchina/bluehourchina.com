@@ -240,3 +240,5 @@ for (const file of ["llms.txt", "llms-full.txt"]) {
 }
 
 console.log(`Applied the single public starting-price policy to ${updated} files.`);
+// Finish with the profitable public retail table and one RMB currency policy.
+await import("./apply-retail-margin-prices.mjs");

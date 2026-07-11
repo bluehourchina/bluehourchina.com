@@ -220,3 +220,5 @@ thaiYunnan = replaceMarked(thaiYunnan, "route-day-plan", thaiYunnanBlock);
 await fs.writeFile(thaiYunnanFile, thaiYunnan);
 
 console.log("Localized Xinjiang, Inner Mongolia real scenes and Thai Yunnan day plan.");
+await import("./expand-destination-photo-galleries.mjs");
+await import("./apply-retail-margin-prices.mjs");

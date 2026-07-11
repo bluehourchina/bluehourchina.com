@@ -24,25 +24,25 @@
   <meta property="og:image" content="https://bluehourchina.com/assets/ai/bluehour-china-hero-luxury-lake-v2.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "24-Hour China Route Note",
-    "provider": {
-      "@type": "Organization",
-      "name": "Bluehour China Journeys",
-      "url": "https://bluehourchina.com/"
-    },
-    "areaServed": "China",
-    "serviceType": "Private China travel route consultation",
-    "description": "A concise route note and starting quote direction for international travellers planning China beyond Beijing and Shanghai.",
-    "offers": {
-      "@type": "Offer",
-      "priceCurrency": "USD",
-      "price": "0",
-      "description": "Initial route note before paid itinerary arrangement."
-    }
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "24-Hour China Route Note",
+  "provider": {
+    "@type": "Organization",
+    "name": "Bluehour China Journeys",
+    "url": "https://bluehourchina.com/"
+  },
+  "areaServed": "China",
+  "serviceType": "Private China travel route consultation",
+  "description": "A concise route note and starting quote direction for international travellers planning China beyond Beijing and Shanghai.",
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "CNY",
+    "price": "0",
+    "description": "Initial route note before paid itinerary arrangement."
   }
+}
   </script>
   <style>
     :root {
@@ -521,7 +521,7 @@
       .form-card, .quote-card, .step { padding: 20px; }
     }
   </style>
-  <link rel="stylesheet" href="/assets/heading-polish.css?v=20260711-calm4">
+  <link rel="stylesheet" href="/assets/heading-polish.css?v=20260711-routes5">
 </head>
 <body>
   <nav class="nav" aria-label="Primary navigation">
@@ -624,7 +624,7 @@
         <h2>Get your route note</h2>
         <p>Short answers are enough. If you have not chosen a destination yet, choose "not sure" and describe the kind of China you want.</p>
 
-        <form class="lead-form" data-sheet-endpoint="https://script.google.com/macros/s/AKfycbxCxsA5x0zzq_5pqI2MNJcki0MC9R236i_e3oRtu_0QPl7osg9CDHnaOzsSW_sZiRrh/exec" data-form-lang="en" data-sending-message="Sending..." data-success-message="Thank you. We received your request and will reply with a route note and a starting quote." data-error-message="The form did not send. Please email us directly." data-lead-value="1200" data-lead-currency="USD" name="bluehour-china-route-note-en" method="POST" action="https://formsubmit.co/67d31e8a5231a5944bbb8f18952a58df">
+        <form class="lead-form" data-sheet-endpoint="https://script.google.com/macros/s/AKfycbxCxsA5x0zzq_5pqI2MNJcki0MC9R236i_e3oRtu_0QPl7osg9CDHnaOzsSW_sZiRrh/exec" data-form-lang="en" data-sending-message="Sending..." data-success-message="Thank you. We received your request and will reply with a route note and a starting quote." data-error-message="The form did not send. Please email us directly." data-lead-value="1200" data-lead-currency="CNY" name="bluehour-china-route-note-en" method="POST" action="https://formsubmit.co/67d31e8a5231a5944bbb8f18952a58df">
           <input type="hidden" name="_next" value="https://bluehourchina.com/thanks.html?source=route_note&angle=route_note_24h">
           <input type="hidden" name="_subject" value="Bluehour China route note inquiry">
           <input type="hidden" name="_template" value="table">
@@ -646,7 +646,7 @@
           <input type="hidden" name="intent_angle" value="route_note_24h">
           <input type="hidden" name="source_path" value="/route-note/">
           <input type="hidden" name="source_content" value="24-hour-china-route-note">
-          <input type="hidden" name="lead_currency" value="USD">
+          <input type="hidden" name="lead_currency" value="CNY">
           <input type="text" name="name" placeholder="Name" aria-label="Name" required>
           <input type="email" name="email" placeholder="Email" aria-label="Email">
           <input type="text" name="contact" placeholder="WhatsApp / WeChat / LINE" aria-label="Preferred contact" required>
@@ -694,14 +694,7 @@
             <option value="Senior or child comfort matters most">Senior or child comfort matters most</option>
             <option value="Still deciding">Still deciding</option>
           </select>
-          <select name="budget" aria-label="Budget direction">
-            <option value="" disabled selected>Budget per traveller</option>
-            <option value="Under US$1,500">Under US$1,500</option>
-            <option value="US$1,500-2,500">US$1,500-2,500</option>
-            <option value="US$2,500-4,000">US$2,500-4,000</option>
-            <option value="US$4,000+">US$4,000+</option>
-            <option value="Not sure yet">Not sure yet</option>
-          </select>
+          <select name="budget" aria-label="Budget direction"><option value="" disabled selected>Budget per traveller</option><option value="Under RMB 8,000">Under RMB 8,000</option><option value="RMB 8,000-15,000">RMB 8,000-15,000</option><option value="RMB 15,000-25,000">RMB 15,000-25,000</option><option value="RMB 25,000 and above">RMB 25,000 and above</option><option value="not-sure">Not sure yet</option></select>
           <select name="visited_china_before" aria-label="China travel experience">
             <option value="" disabled selected>Visited mainland China before?</option>
             <option value="Yes, Beijing or Shanghai">Yes, Beijing or Shanghai</option>

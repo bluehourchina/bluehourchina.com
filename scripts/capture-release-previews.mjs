@@ -3,34 +3,62 @@ import path from "node:path";
 import { createRequire } from "node:module";
 
 const require = createRequire(import.meta.url);
-const nodeModules = process.env.NODE_MODULE_DIR || path.join(process.env.HOME, ".cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules");
-const { chromium } = require(path.join(nodeModules, "playwright"));
+const moduleDir = process.env.NODE_MODULE_DIR || path.join(process.env.HOME || "", ".cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules");
+const { chromium } = require(path.join(moduleDir, "playwright"));
+
 const origin = process.env.AUDIT_ORIGIN || "http://127.0.0.1:8787";
-const output = path.join(process.cwd(), "outputs", "release-previews-20260711");
+const outputDir = path.join(process.cwd(), "outputs", "release-previews-20260711-routes-final");
 const executablePath = process.env.CHROME_EXECUTABLE || "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
+const allRoutes = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast"];
+const routeFilter = (process.env.PREVIEW_ROUTES || "").split(",").filter(Boolean);
+const routes = routeFilter.length ? allRoutes.filter((route) => routeFilter.includes(route)) : allRoutes;
+const allViewports = [
+  { name: "mobile", width: 390, height: 844 },
+  { name: "desktop", width: 1440, height: 1000 },
+];
+const viewportFilter = process.env.PREVIEW_VIEWPORT || "";
+const viewports = allViewports.filter((viewport) => !viewportFilter || viewport.name === viewportFilter);
+const captureHome = process.env.PREVIEW_HOME !== "0";
 
-await fs.mkdir(output, { recursive: true });
+await fs.mkdir(outputDir, { recursive: true });
 const browser = await chromium.launch({ headless: true, executablePath });
+const context = await browser.newContext();
+const page = await context.newPage();
 
-async function capture({ file, url, viewport, selector, openMenu = false }) {
-  const context = await browser.newContext({ viewport });
-  const page = await context.newPage();
-  await page.route(/player\.bilibili\.com|bilibili\.com/, (route) => route.abort());
-  await page.goto(new URL(url, origin).toString(), { waitUntil: "networkidle" });
-  if (openMenu) await page.locator(".nav .language-menu summary").click();
-  const target = selector ? page.locator(selector).first() : page;
-  await target.screenshot({ path: path.join(output, file), animations: "disabled" });
-  await context.close();
+async function settleVisibleImages(locator) {
+  await locator.scrollIntoViewIfNeeded();
+  await locator.evaluateAll((elements) => Promise.all(
+    elements.flatMap((element) => [...element.querySelectorAll("img")])
+      .filter((image) => image.currentSrc)
+      .map((image) => image.decode().catch(() => undefined))
+  ));
 }
 
-await capture({ file: "zh-home-routes-desktop.png", url: "/zh.html", viewport: { width: 1440, height: 1000 }, selector: ".product-routes-band" });
-await capture({ file: "zh-process-desktop.png", url: "/zh.html", viewport: { width: 1440, height: 1000 }, selector: ".conversion-band" });
-await capture({ file: "zh-process-mobile.png", url: "/zh.html", viewport: { width: 390, height: 844 }, selector: ".conversion-band" });
-await capture({ file: "zh-grand-yunnan-price.png", url: "/zh/yunnan/", viewport: { width: 1440, height: 1000 }, selector: ".route-extension" });
-await capture({ file: "zh-home-mobile.png", url: "/zh.html", viewport: { width: 390, height: 844 }, selector: ".product-routes-band" });
-await capture({ file: "ja-dunhuang-card-mobile.png", url: "/ja.html", viewport: { width: 320, height: 812 }, selector: ".product-route-card:nth-child(3)" });
-await capture({ file: "zh-language-menu.png", url: "/zh.html", viewport: { width: 1280, height: 800 }, openMenu: true });
-await capture({ file: "ru-interest-mobile.png", url: "/ru/interest/", viewport: { width: 390, height: 844 }, selector: ".interest-page" });
+try {
+  for (const viewport of viewports) {
+    await page.setViewportSize(viewport);
+    if (captureHome) {
+      await page.goto(new URL("/zh.html", origin).toString(), { waitUntil: "networkidle", timeout: 30000 });
+      await page.waitForTimeout(350);
+      await page.screenshot({ path: path.join(outputDir, `zh-home-${viewport.name}.png`) });
+    }
 
-await browser.close();
-console.log(`Saved release previews to ${output}`);
+    for (const route of routes) {
+      await page.goto(new URL(`/zh/${route}/`, origin).toString(), { waitUntil: "networkidle", timeout: 30000 });
+      await page.waitForTimeout(350);
+      await page.screenshot({ path: path.join(outputDir, `${route}-hero-${viewport.name}.png`) });
+      for (const [name, selector] of [["route", ".standard-route-band"], ["scenes", ".material-notes-band"]]) {
+        const locator = page.locator(selector).first();
+        if (await locator.count()) {
+          await settleVisibleImages(locator);
+          await page.waitForTimeout(250);
+          await locator.screenshot({ path: path.join(outputDir, `${route}-${name}-${viewport.name}.png`) });
+        }
+      }
+    }
+  }
+} finally {
+  await browser.close();
+}
+
+console.log(`Captured ${viewports.length * (captureHome ? 1 : 0) + routes.length * viewports.length * 3} release previews in ${outputDir}`);

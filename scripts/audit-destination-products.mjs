@@ -6,13 +6,13 @@ const outputDir = path.join(root, "outputs");
 const destinations = {
   yunnan: 8,
   xinjiang: 9,
-  dunhuang: 6,
-  sanya: 5,
+  dunhuang: 9,
+  sanya: 7,
   northeast: 7,
   "inner-mongolia": 6,
 };
 const locales = ["en", "zh", "ja", "ko", "th", "ru"];
-const expectedCurrency = { en: "USD", zh: "CNY", ja: "JPY", ko: "KRW", th: "THB", ru: "RUB" };
+const expectedCurrency = Object.fromEntries(locales.map((locale) => [locale, "CNY"]));
 const files = [];
 
 for (const [destination, dayCount] of Object.entries(destinations)) {

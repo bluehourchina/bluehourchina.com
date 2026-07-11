@@ -219,7 +219,7 @@ function nav(activePath = "/ru.html") {
 }
 
 function head({ title, description, canonical, destination = "", pageKind = "home", image }) {
-  return `<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"><title>${title}</title><meta name="description" content="${description}"><link rel="canonical" href="${canonical}">${languageAlternates(destination, pageKind)}<link rel="icon" type="image/svg+xml" href="/assets/ruoqing-avatar.svg"><meta property="og:title" content="${title}"><meta property="og:description" content="${description}"><meta property="og:type" content="website"><meta property="og:locale" content="ru_RU"><meta property="og:url" content="${canonical}"><meta property="og:image" content="https://bluehourchina.com${image}"><meta name="twitter:card" content="summary_large_image"><link rel="stylesheet" href="/assets/luxury-multilang.css?v=20260711-calm1"><link rel="stylesheet" href="/assets/heading-polish.css?v=20260711-calm1">`;
+  return `<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"><title>${title}</title><meta name="description" content="${description}"><link rel="canonical" href="${canonical}">${languageAlternates(destination, pageKind)}<link rel="icon" type="image/svg+xml" href="/assets/ruoqing-avatar.svg"><meta property="og:title" content="${title}"><meta property="og:description" content="${description}"><meta property="og:type" content="website"><meta property="og:locale" content="ru_RU"><meta property="og:url" content="${canonical}"><meta property="og:image" content="https://bluehourchina.com${image}"><meta name="twitter:card" content="summary_large_image"><link rel="stylesheet" href="/assets/luxury-multilang.css?v=20260711-routes5"><link rel="stylesheet" href="/assets/heading-polish.css?v=20260711-routes5">`;
 }
 
 function footer() {
@@ -281,3 +281,7 @@ for (const [slug, route] of Object.entries(routes)) {
 await fs.mkdir(path.join(root, "ru/interest"), { recursive: true });
 await fs.writeFile(path.join(root, "ru/interest/index.html"), interestPage());
 console.log("Generated Russian home, six destination pages and inquiry form.");
+// Russian copy stays localized, while every public price remains in RMB/CNY.
+await import("./apply-retail-margin-prices.mjs");
+await import("./upgrade-qinggan-grand-loop.mjs");
+await import("./upgrade-hainan-island-route.mjs");

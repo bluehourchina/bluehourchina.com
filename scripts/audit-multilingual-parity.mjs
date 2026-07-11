@@ -9,7 +9,7 @@ const localeConfig = {
     homes: ["index.html", "en/index.html"],
     interest: "interest.html",
     destination: (slug) => [`${slug}.html`, `en/${slug}/index.html`],
-    currency: "USD",
+    currency: "CNY",
   },
   zh: {
     homes: ["zh.html", "zh/index.html"],
@@ -21,25 +21,25 @@ const localeConfig = {
     homes: ["ja.html", "ja/index.html"],
     interest: "ja/interest/index.html",
     destination: (slug) => [`ja/${slug}/index.html`],
-    currency: "JPY",
+    currency: "CNY",
   },
   ko: {
     homes: ["ko.html", "ko/index.html"],
     interest: "ko/interest/index.html",
     destination: (slug) => [`ko/${slug}/index.html`],
-    currency: "KRW",
+    currency: "CNY",
   },
   th: {
     homes: ["th.html", "th/index.html"],
     interest: "th/interest/index.html",
     destination: (slug) => [`th/${slug}/index.html`],
-    currency: "THB",
+    currency: "CNY",
   },
   ru: {
     homes: ["ru.html", "ru/index.html"],
     interest: "ru/interest/index.html",
     destination: (slug) => [`ru/${slug}/index.html`],
-    currency: "RUB",
+    currency: "CNY",
   },
 };
 

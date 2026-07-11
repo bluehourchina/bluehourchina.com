@@ -40,6 +40,9 @@ const multilingualPages = [
   "/",
   "/interest.html",
   ...destinationSlugs.map((slug) => `/${slug}.html`),
+  "/en.html",
+  "/en/interest/",
+  ...destinationSlugs.map((slug) => `/en/${slug}/`),
   "/zh.html",
   "/zh/interest/",
   ...destinationSlugs.map((slug) => `/zh/${slug}/`),
@@ -57,7 +60,7 @@ const multilingualPages = [
   ...destinationSlugs.map((slug) => `/ru/${slug}/`),
 ];
 
-const pages = [...new Set([
+const allPages = [...new Set([
   ...multilingualPages,
   "/before-china/",
   "/before-china/wechat-pay-visa-mastercard/",
@@ -87,10 +90,17 @@ const pages = [...new Set([
   "/zh/yunnan-grand-loop/",
 ])];
 
-const viewports = [
+const pathFilter = process.env.AUDIT_PATH_FILTER || "";
+const pathPattern = pathFilter ? new RegExp(pathFilter) : null;
+const pages = allPages.filter((pagePath) => !pathPattern || pathPattern.test(pagePath));
+const outputSuffix = (process.env.AUDIT_OUTPUT_SUFFIX || "").replace(/[^a-z0-9_-]/gi, "");
+
+const allViewports = [
   { name: "mobile", width: 390, height: 844, isMobile: true },
   { name: "desktop", width: 1440, height: 1100, isMobile: false },
 ];
+const viewportFilter = process.env.AUDIT_VIEWPORT || "";
+const viewports = allViewports.filter((viewport) => !viewportFilter || viewport.name === viewportFilter);
 
 function urlFor(pagePath) {
   return new URL(pagePath, origin).toString();
@@ -211,7 +221,8 @@ const summary = {
   results,
 };
 
-await fs.writeFile(path.join(outputDir, "mobile-layout-audit.json"), JSON.stringify(summary, null, 2));
+const outputName = `mobile-layout-audit${outputSuffix ? `-${outputSuffix}` : ""}.json`;
+await fs.writeFile(path.join(outputDir, outputName), JSON.stringify(summary, null, 2));
 
 console.log(`Mobile layout audit checked ${pages.length} pages across ${viewports.length} viewports`);
 console.log(`Issues: ${issues.length}`);

@@ -16,6 +16,11 @@ dd{
   white-space:nowrap;
 }
 
+html:lang(th) .destination-hero .thai-route-title .thai-nowrap{
+  white-space:nowrap;
+  font-size:.86em;
+}
+
 @media(max-width:420px){
   html:lang(zh) h1,
   html:lang(ja) h1,

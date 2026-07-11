@@ -30,9 +30,9 @@ const checks = [
       "consult/index.html",
       "en/consult/index.html",
     ],
-    requiredOnDestinationPages: /US\$/,
-    requiredOnBudgetPages: /US\$/,
-    forbidden: [/\bNT\$/i, /\bTWD\b/i, /\bJPY\b/i, /\bRMB\b/i, /\bCNY\b/i, /人民幣/],
+    requiredOnDestinationPages: /\bRMB\b/,
+    requiredOnBudgetPages: /\bRMB\b/,
+    forbidden: [/US\$/i, /NT\$/i, /\b(?:USD|TWD|JPY|KRW|THB|RUB)\b/i, /₽/],
   },
   {
     locale: "zh",
@@ -50,20 +50,7 @@ const checks = [
     ],
     requiredOnDestinationPages: /\bRMB\b/,
     requiredOnBudgetPages: /\bRMB\b/,
-    forbidden: [/\bNT\$/i, /\bTWD\b/i, /\bJPY\b/i, /\bUSD\b/i, /US\$/],
-    fileOverrides: {
-      "zh.html": {
-        forbidden: [/\bJPY\b/i, /\bUSD\b/i, /US\$/],
-      },
-      "zh/index.html": {
-        forbidden: [/\bJPY\b/i, /\bUSD\b/i, /US\$/],
-      },
-      "zh/yunnan/index.html": {
-        requiredOnDestinationPages: /NT\$/i,
-        requiredOnBudgetPages: /NT\$/i,
-        forbidden: [/\bJPY\b/i, /\bUSD\b/i, /US\$/],
-      },
-    },
+    forbidden: [/US\$/i, /NT\$/i, /\b(?:USD|TWD|JPY|KRW|THB|RUB)\b/i, /₽/],
   },
   {
     locale: "ja",
@@ -79,9 +66,9 @@ const checks = [
       "ja/interest/index.html",
       "ja/consult/index.html",
     ],
-    requiredOnDestinationPages: /\bJPY\b/,
-    requiredOnBudgetPages: /\bJPY\b/,
-    forbidden: [/\bNT\$/i, /\bTWD\b/i, /\bRMB\b/i, /\bCNY\b/i, /US\$/],
+    requiredOnDestinationPages: /\bRMB\b/,
+    requiredOnBudgetPages: /\bRMB\b/,
+    forbidden: [/US\$/i, /NT\$/i, /\b(?:USD|TWD|JPY|KRW|THB|RUB)\b/i, /₽/],
   },
   {
     locale: "ko",
@@ -97,9 +84,9 @@ const checks = [
       "ko/interest/index.html",
       "ko/consult/index.html",
     ],
-    requiredOnDestinationPages: /\bKRW\b/,
-    requiredOnBudgetPages: /\bKRW\b/,
-    forbidden: [/\bNT\$/i, /\bTWD\b/i, /\bRMB\b/i, /\bCNY\b/i, /\bJPY\b/i, /US\$/],
+    requiredOnDestinationPages: /\bRMB\b/,
+    requiredOnBudgetPages: /\bRMB\b/,
+    forbidden: [/US\$/i, /NT\$/i, /\b(?:USD|TWD|JPY|KRW|THB|RUB)\b/i, /₽/],
   },
   {
     locale: "th",
@@ -115,9 +102,9 @@ const checks = [
       "th/interest/index.html",
       "th/consult/index.html",
     ],
-    requiredOnDestinationPages: /\bTHB\b/,
-    requiredOnBudgetPages: /\bTHB\b/,
-    forbidden: [/\bNT\$/i, /\bTWD\b/i, /\bRMB\b/i, /\bCNY\b/i, /\bJPY\b/i, /US\$/],
+    requiredOnDestinationPages: /\bRMB\b/,
+    requiredOnBudgetPages: /\bRMB\b/,
+    forbidden: [/US\$/i, /NT\$/i, /\b(?:USD|TWD|JPY|KRW|THB|RUB)\b/i, /₽/],
   },
   {
     locale: "ru",
@@ -132,9 +119,9 @@ const checks = [
       "ru/northeast/index.html",
       "ru/interest/index.html",
     ],
-    requiredOnDestinationPages: /(?:\bRUB\b|₽)/,
-    requiredOnBudgetPages: /(?:\bRUB\b|₽)/,
-    forbidden: [/\bNT\$/i, /\bTWD\b/i, /\bRMB\b/i, /\bCNY\b/i, /\bJPY\b/i, /\bKRW\b/i, /\bTHB\b/i, /US\$/],
+    requiredOnDestinationPages: /\bRMB\b/,
+    requiredOnBudgetPages: /\bRMB\b/,
+    forbidden: [/US\$/i, /NT\$/i, /\b(?:USD|TWD|JPY|KRW|THB|RUB)\b/i, /₽/],
   },
 ];
 

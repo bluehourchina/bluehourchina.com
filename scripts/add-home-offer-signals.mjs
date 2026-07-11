@@ -202,12 +202,6 @@ for (const file of cssLinkedHtmlFiles) {
   const full = path.join(root, file);
   let html = await fs.readFile(full, "utf8");
   html = html.replaceAll(`luxury-multilang.css?v=${oldCssVersion}`, `luxury-multilang.css?v=${newCssVersion}`);
-  await fs.writeFile(full, html);
-}
-
-for (const { file, locale } of homeFiles) {
-  const full = path.join(root, file);
-  let html = await fs.readFile(full, "utf8");
   html = normalizeMalformedEnglishPrices(html);
   html = addJsonLdOfferCatalog(html, locale);
   html = addVisibleOfferSignals(html, locale);

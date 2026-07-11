@@ -803,3 +803,6 @@ for (const target of targets) {
 }
 
 console.log(`Completed ${targets.length} destination product pages.`);
+await import("./expand-destination-photo-galleries.mjs");
+await import("./upgrade-qinggan-grand-loop.mjs");
+await import("./upgrade-hainan-island-route.mjs");

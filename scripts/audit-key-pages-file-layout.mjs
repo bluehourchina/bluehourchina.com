@@ -1,6 +1,5 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import { pathToFileURL } from "node:url";
 import { createRequire } from "node:module";
 
 const require = createRequire(import.meta.url);
@@ -23,6 +22,7 @@ if (!chromium) throw lastPlaywrightError;
 
 const root = process.cwd();
 const outputDir = path.join(root, "outputs");
+const origin = process.env.AUDIT_ORIGIN || "http://127.0.0.1:8787";
 const chromeExecutable =
   process.env.CHROME_EXECUTABLE ||
   "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
@@ -43,19 +43,12 @@ const viewports = [
   { name: "desktop", width: 1440, height: 1100 },
 ];
 
-function localizeHtml(html) {
-  const rootUrl = pathToFileURL(root + path.sep).href.replace(/\/$/, "");
-  return html
-    .replaceAll('href="/', `href="${rootUrl}/`)
-    .replaceAll('src="/', `src="${rootUrl}/`)
-    .replaceAll("url('/", `url('${rootUrl}/`)
-    .replaceAll('url("/', `url("${rootUrl}/`);
-}
-
 async function auditRenderedPage(page, file, viewport) {
   await page.setViewportSize({ width: viewport.width, height: viewport.height });
-  const html = localizeHtml(await fs.readFile(path.join(root, file), "utf8"));
-  await page.setContent(html, { waitUntil: "networkidle", timeout: 30000 });
+  const pagePath = file.endsWith("/index.html") ? `/${file.slice(0, -"index.html".length)}` : `/${file}`;
+  const response = await page.goto(new URL(pagePath, origin).toString(), { waitUntil: "networkidle", timeout: 30000 });
+  if (!response || response.status() >= 400) throw new Error(`${file} returned HTTP ${response?.status() || 0}`);
+  await page.evaluate(() => document.fonts?.ready || Promise.resolve());
   const metrics = await page.evaluate(() => {
     const viewportWidth = window.innerWidth;
     const scrollWidth = Math.max(document.body.scrollWidth, document.documentElement.scrollWidth);

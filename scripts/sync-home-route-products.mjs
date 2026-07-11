@@ -6,17 +6,18 @@ const destinations = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya
 const images = {
   yunnan: "/assets/wechat-reference-20260709/wechat-yunnan-dali-lakeside-table-08.jpg",
   xinjiang: "/assets/real-xinjiang/sayram-lake-cc0.jpg",
-  dunhuang: "/assets/real-dunhuang/crescent-lake-cc-by-sa.jpg",
+  dunhuang: "/assets/real-qinggan/qinghai-lake-sunset-cc-by.jpg",
   "inner-mongolia": "/assets/real-inner-mongolia/grassland-sunset-cc-by.jpg",
-  sanya: "/assets/real-sanya/haitang-bay-cc-by-sa.jpg",
+  sanya: "/assets/real-hainan/shimei-bay-wanning-cc-by-sa.jpg",
   northeast: "/assets/real-northeast/china-snow-town-cc-by.jpg",
 };
 const destinationNames = {
-  en: { yunnan: "Yunnan", xinjiang: "Xinjiang", dunhuang: "Dunhuang", "inner-mongolia": "Inner Mongolia", sanya: "Sanya", northeast: "Northeast China" },
-  zh: { yunnan: "雲南", xinjiang: "新疆", dunhuang: "敦煌", "inner-mongolia": "內蒙古", sanya: "三亞", northeast: "中國東北" },
-  ja: { yunnan: "雲南", xinjiang: "新疆", dunhuang: "敦煌", "inner-mongolia": "内モンゴル", sanya: "三亜", northeast: "中国東北" },
-  ko: { yunnan: "윈난", xinjiang: "신장", dunhuang: "둔황", "inner-mongolia": "내몽골", sanya: "싼야", northeast: "중국 동북" },
-  th: { yunnan: "ยูนนาน", xinjiang: "ซินเจียง", dunhuang: "ตุนหวง", "inner-mongolia": "มองโกเลียใน", sanya: "ซานย่า", northeast: "จีนตะวันออกเฉียงเหนือ" },
+  en: { yunnan: "Yunnan", xinjiang: "Xinjiang", dunhuang: "Qinghai & Gansu", "inner-mongolia": "Inner Mongolia", sanya: "Hainan & Sanya", northeast: "Northeast China" },
+  zh: { yunnan: "雲南", xinjiang: "新疆", dunhuang: "青甘", "inner-mongolia": "內蒙古", sanya: "海南與三亞", northeast: "東北" },
+  ja: { yunnan: "雲南", xinjiang: "新疆", dunhuang: "青海・甘粛", "inner-mongolia": "内モンゴル", sanya: "海南島・三亜", northeast: "東北" },
+  ko: { yunnan: "윈난", xinjiang: "신장", dunhuang: "칭하이·간쑤", "inner-mongolia": "내몽골", sanya: "하이난·싼야", northeast: "동북" },
+  th: { yunnan: "ยูนนาน", xinjiang: "ซินเจียง", dunhuang: "ชิงไห่–กานซู่", "inner-mongolia": "มองโกเลียใน", sanya: "ไหหลำ–ซานย่า", northeast: "ภาคตะวันออกเฉียงเหนือ" },
+  ru: { yunnan: "Юньнань", xinjiang: "Синьцзян", dunhuang: "Цинхай и Ганьсу", "inner-mongolia": "Внутренняя Монголия", sanya: "Хайнань и Санья", northeast: "Северо-Восток" },
 };
 const labels = {
   en: { eyebrow: "Standard private journeys", title: ["See the route first", "Then tailor it to your people"], intro: "Every journey shows its length, route, starting price and minimum group before you enquire.", from: "From", group: "Private group", route: "Route", view: "View day-by-day route" },
@@ -24,6 +25,7 @@ const labels = {
   ja: { eyebrow: "標準プライベート旅行", title: ["先にルートを確認", "同行者に合わせて調整"], intro: "日数、ルート、料金目安、最少人数を先に公開し、日程確認後に個別調整します。", from: "料金目安", group: "人数", route: "ルート", view: "日ごとの旅程を見る" },
   ko: { eyebrow: "표준 프라이빗 여정", title: ["경로를 먼저 확인하고", "동행자에 맞게 조정합니다"], intro: "기간, 경로, 시작가, 최소 인원을 먼저 공개하고 날짜 확인 뒤 맞춤 조정합니다.", from: "시작가", group: "인원", route: "경로", view: "일자별 일정 보기" },
   th: { eyebrow: "เส้นทางส่วนตัวมาตรฐาน", title: ["ดูเส้นทางให้ชัดก่อน", "แล้วจึงปรับให้เหมาะกับผู้ร่วมทาง"], intro: "ทุกเส้นทางแสดงจำนวนวัน เส้นทาง ราคาเริ่มต้น และจำนวนขั้นต่ำก่อนส่งคำขอ", from: "ราคาเริ่มต้น", group: "กลุ่มส่วนตัว", route: "เส้นทาง", view: "ดูแผนรายวัน" },
+  ru: { eyebrow: "Стандартные частные маршруты", title: ["Сначала понятный маршрут", "затем настройка под вас"], intro: "До заявки видны длительность, маршрут, стартовая цена и минимальная группа.", from: "Стоимость", group: "Частная группа", route: "Маршрут", view: "Маршрут по дням" },
 };
 
 const targets = [
@@ -34,6 +36,7 @@ const targets = [
   { file: "ja.html", locale: "ja", routeLocale: "ja", sync: "ja/index.html" },
   { file: "ko.html", locale: "ko", routeLocale: "ko", sync: "ko/index.html" },
   { file: "th.html", locale: "th", routeLocale: "th", sync: "th/index.html" },
+  { file: "ru.html", locale: "ru", routeLocale: "ru", sync: "ru/index.html" },
 ];
 
 function routeFile(destination, routeLocale) {
@@ -67,7 +70,7 @@ function property(product, pattern) {
 
 function displayPrice(html, product, locale) {
   const firstTier = cleanText(html.match(/<div class="route-price-tiers"><div>[\s\S]*?<span>([\s\S]*?)<\/span>/)?.[1] || "");
-  const currencyPattern = locale === "en" ? /US\$\s?[\d,]+/ : locale === "zh" ? /RMB\s?[\d,]+/ : locale === "ja" ? /JPY\s?[\d,]+/ : locale === "ko" ? /KRW\s?[\d,]+/ : /THB\s?[\d,]+/;
+  const currencyPattern = /RMB\s?[\d,]+/;
   if (firstTier.match(currencyPattern)) return firstTier.match(currencyPattern)[0];
   const raw = cleanText(html.match(/<div class="route-price">[\s\S]*?<strong>([\s\S]*?)<\/strong>/)?.[1] || "");
   if (raw) {
@@ -81,7 +84,7 @@ function displayPrice(html, product, locale) {
   }
   const offer = product.offers || {};
   const value = Number(offer.price || offer.lowPrice || 0).toLocaleString("en-US");
-  return locale === "en" ? `US$${value}` : locale === "zh" ? `RMB ${value}` : `${offer.priceCurrency} ${value}`;
+  return `RMB ${value}`;
 }
 
 function groupDisplay(locale) {
@@ -89,6 +92,7 @@ function groupDisplay(locale) {
   if (locale === "ja") return "2名様から · おすすめは2–6名様";
   if (locale === "ko") return "2인부터 · 권장 2–6인";
   if (locale === "th") return "เริ่มที่ 2 คน · เหมาะที่สุด 2–6 คน";
+  if (locale === "ru") return "От 2 человек · оптимально 2–6";
   return "From 2 travellers · best for 2–6";
 }
 
@@ -97,6 +101,7 @@ function dayLabel(locale, day) {
   if (locale === "ja") return `${day}日目`;
   if (locale === "ko") return `${day}일 차`;
   if (locale === "th") return `วันที่ ${day}`;
+  if (locale === "ru") return `День ${day}`;
   return `Day ${day}`;
 }
 
@@ -124,7 +129,7 @@ for (const target of targets) {
     const routeHtml = await fs.readFile(path.join(root, routeFile(destination, target.routeLocale)), "utf8");
     const schema = extractProduct(routeHtml);
     const duration = property(schema, /Duration|天數|日数|기간|ระยะเวลา/i);
-    const route = property(schema, /Route|路線|ルート|경로|เส้นทาง/i);
+    const route = property(schema, /Route|路線|ルート|경로|루트|เส้นทาง|Маршрут/i);
     const group = groupDisplay(target.locale);
     const dayTitles = [...routeHtml.matchAll(/class="route-day-copy"[^>]*>\s*<h3>([\s\S]*?)<\/h3>/g)].map((match) => cleanText(match[1]));
     const sampleIndexes = [...new Set([0, Math.floor((dayTitles.length - 1) / 2), dayTitles.length - 1])];
@@ -150,7 +155,7 @@ for (const target of targets) {
   }
 
   const l = labels[target.locale];
-  const titleClass = target.locale === "en" || target.locale === "th" ? "" : ' class="cjk-title"';
+  const titleClass = target.locale === "en" || target.locale === "th" || target.locale === "ru" ? "" : ' class="cjk-title"';
   const section = `<section class="section product-routes-band" id="places"><div class="wrap"><div class="section-head"><div><p class="eyebrow">${l.eyebrow}</p><h2${titleClass}><span class="title-line">${l.title[0]}</span><span class="title-line">${l.title[1]}</span></h2></div><p>${l.intro}</p></div><div class="product-route-grid">${cards.join("")}</div></div></section>`;
   const sectionPattern = /<section class="section product-routes-band" id="places">[\s\S]*?<\/section>/;
   let home = await fs.readFile(path.join(root, target.file), "utf8");

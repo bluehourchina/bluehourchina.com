@@ -16,7 +16,7 @@ const locales = {
     navCta: "Plan my trip",
     heroEyebrow: "Private China journeys beyond the mega cities",
     heroTitle: "See a deeper China, without travelling the hard way",
-    heroLead: "Private routes through Yunnan, Xinjiang, Dunhuang, Inner Mongolia, Sanya and Northeast China, shaped around your dates, pace and comfort.",
+    heroLead: "Private routes through Yunnan, Xinjiang, the Qinghai-Gansu Grand Loop, Inner Mongolia, Hainan and Northeast China, shaped around your dates, pace and comfort.",
     heroPrimary: "Explore sample journeys",
     heroSecondary: "Plan my private trip",
     heroProof: ["Private from 2 travellers", "Clear starting prices", "Reply within 1 business day"],
@@ -71,7 +71,7 @@ const locales = {
     homeFiles: ["zh.html"], homeUrl: "/zh.html", interest: "/zh/interest/", language: "Traditional Chinese", currency: "CNY", navCta: "規劃私人旅程",
     heroEyebrow: "走出一線城市的中國私人旅行",
     heroTitle: ["看見更深的中國", "不必把旅行變得辛苦"],
-    heroLead: "雲南、新疆、敦煌、內蒙古、三亞與中國東北。依出發月份、人數、步調與舒適需求，安排 2 人起的私人路線。",
+    heroLead: "雲南、新疆、青甘大環線、內蒙古、海南與東北。依出發月份、人數、步調與舒適需求，安排 2 人起的私人路線。",
     heroPrimary: "看標準路線", heroSecondary: "開始規劃私人旅程",
     heroProof: ["2 人起私人成行", "先看路線與起價", "1 個工作日內人工回覆"],
     routesEyebrow: "標準私人方案", routesTitle: ["先看標準路線", "再為同行的人調整"],
@@ -90,7 +90,7 @@ const locales = {
   },
   ja: {
     homeFiles: ["ja.html"], homeUrl: "/ja.html", interest: "/ja/interest/", language: "Japanese", currency: "JPY", navCta: "旅を相談する",
-    heroEyebrow: "大都市の先へ行く中国のプライベート旅行", heroTitle: ["もっと深い中国へ", "旅を難しくせずに"], heroLead: "雲南、新疆、敦煌、内モンゴル、三亜、中国東北。季節、人数、ペース、快適さに合わせた2名様からの個別ルートです。", heroPrimary: "モデルルートを見る", heroSecondary: "旅を相談する", heroProof: ["2名様から個別手配", "日程と料金目安を公開", "1営業日以内に返信"],
+    heroEyebrow: "大都市の先へ行く中国のプライベート旅行", heroTitle: ["もっと深い中国へ", "旅を難しくせずに"], heroLead: "雲南、新疆、青海・甘粛大環状線、内モンゴル、海南島、東北。季節、人数、ペース、快適さに合わせた2名様からの個別ルートです。", heroPrimary: "モデルルートを見る", heroSecondary: "旅を相談する", heroProof: ["2名様から個別手配", "日程と料金目安を公開", "1営業日以内に返信"],
     routesEyebrow: "モデルプライベート旅行", routesTitle: ["まず一つの旅を選び", "あなたに合わせて整える"], routesIntro: "日数、ルート、料金目安、最少人数を先に確認できます。季節と同行者に合わせて最終調整します。", fromLabel: "料金目安", groupLabel: "人数", routeLabel: "ルート", groupText: "2名様から · おすすめ2-6名様", viewRoute: "日程を見る",
     processEyebrow: "ご相談の流れ", processTitle: ["三つのステップで", "思いを旅のルートへ"], process: [["01", "モデルルートを選ぶ", "毎日の流れと、ゆっくり過ごしたい場所を確認します。"], ["02", "日程と人数を送る", "旅行月、人数、日数と、大切にしたい快適さを教えてください。"], ["03", "あなたに合うルートを受け取る", "担当者が1営業日以内に、合う進み方と調整点をご連絡します。"]],
     careEyebrow: "参考料金に含まれるもの", careTitle: ["内容を確認してから", "相談できます"], careIntro: "料金は現地手配の目安です。季節、部屋、ルートによって最終確認します。", care: [["専用移動", "空港・駅の送迎とルート内の主な移動。"], ["宿の水準", "質のよい地域の宿またはアップグレード客室。"], ["言葉と予約", "重要な予約とルート詳細を中国語で確認。"], ["一日のペース", "一日一つの軸に、休息と移動の余白を確保。"]],
@@ -99,7 +99,7 @@ const locales = {
   },
   ko: {
     homeFiles: ["ko.html"], homeUrl: "/ko.html", interest: "/ko/interest/", language: "Korean", currency: "KRW", navCta: "개인 여행 상담",
-    heroEyebrow: "대도시 너머 중국 개인 여행", heroTitle: ["더 깊은 중국을", "힘들지 않게 만나는 방법"], heroLead: "윈난, 신장, 둔황, 내몽골, 싼야, 중국 동북. 계절, 인원, 속도와 편안함에 맞춘 2명부터의 개인 루트입니다.", heroPrimary: "표준 루트 보기", heroSecondary: "개인 여행 상담", heroProof: ["2명부터 개인 일정", "일정과 시작가 공개", "1영업일 이내 답변"],
+    heroEyebrow: "대도시 너머 중국 개인 여행", heroTitle: ["더 깊은 중국을", "힘들지 않게 만나는 방법"], heroLead: "윈난, 신장, 칭하이-간쑤 대순환, 내몽골, 하이난, 동북. 계절, 인원, 속도와 편안함에 맞춘 2명부터의 개인 루트입니다.", heroPrimary: "표준 루트 보기", heroSecondary: "개인 여행 상담", heroProof: ["2명부터 개인 일정", "일정과 시작가 공개", "1영업일 이내 답변"],
     routesEyebrow: "표준 개인 여행", routesTitle: ["먼저 하나의 루트를 고르고", "여행자에게 맞게 조정합니다"], routesIntro: "일수, 루트, 시작가, 최소 인원을 먼저 확인하세요. 계절과 동행자에 맞춰 최종 조정합니다.", fromLabel: "시작가", groupLabel: "인원", routeLabel: "루트", groupText: "2명부터 · 추천 2-6명", viewRoute: "일정 보기",
     processEyebrow: "진행 방식", processTitle: ["세 단계로", "생각을 여행 경로로 정리합니다"], process: [["01", "표준 루트 선택", "매일의 흐름과 더 오래 머물고 싶은 장소를 확인합니다."], ["02", "날짜와 인원 전달", "여행 월, 인원, 일수와 중요하게 생각하는 편안함을 알려 주세요."], ["03", "나에게 맞는 경로 받기", "담당자가 1영업일 이내에 어울리는 진행 방식과 조정점을 답변합니다."]],
     careEyebrow: "시작 견적 포함 항목", careTitle: ["포함 내용을 먼저 보고", "문의를 결정하세요"], careIntro: "현지 일정 참고가이며 계절, 객실과 루트에 따라 최종 확인합니다.", care: [["전용 이동", "공항 또는 역 픽업과 루트 내 주요 이동."], ["숙소 수준", "품질 좋은 현지 숙소 또는 업그레이드 객실."], ["언어와 예약", "중요 예약과 루트 세부 사항의 중국어 확인."], ["하루의 속도", "하루 한 가지 중심에 휴식과 이동 여유를 포함."]],
@@ -108,7 +108,7 @@ const locales = {
   },
   th: {
     homeFiles: ["th.html"], homeUrl: "/th.html", interest: "/th/interest/", language: "Thai", currency: "THB", navCta: "วางแผนทริปส่วนตัว",
-    heroEyebrow: "ทริปจีนส่วนตัวนอกเมืองใหญ่", heroTitle: "เห็นจีนที่ลึกขึ้น โดยไม่ทำให้การเดินทางยาก", heroLead: "ยูนนาน ซินเจียง ตุนหวง มองโกเลียใน ซานย่า และภาคตะวันออกเฉียงเหนือ ออกแบบเส้นทางส่วนตัวตั้งแต่ 2 ท่านตามฤดูกาล จังหวะ และความสบาย", heroPrimary: "ดูเส้นทางตัวอย่าง", heroSecondary: "วางแผนทริปส่วนตัว", heroProof: ["เริ่มส่วนตัว 2 ท่าน", "เห็นเส้นทางและราคาเริ่มต้น", "ตอบโดยคนจริงใน 1 วันทำการ"],
+    heroEyebrow: "ทริปจีนส่วนตัวนอกเมืองใหญ่", heroTitle: "เห็นจีนที่ลึกขึ้น โดยไม่ทำให้การเดินทางยาก", heroLead: "ยูนนาน ซินเจียง วงแหวนชิงไห่–กานซู่ มองโกเลียใน ไหหลำ และภาคตะวันออกเฉียงเหนือ ออกแบบเส้นทางส่วนตัวตั้งแต่ 2 ท่านตามฤดูกาล จังหวะ และความสบาย", heroPrimary: "ดูเส้นทางตัวอย่าง", heroSecondary: "วางแผนทริปส่วนตัว", heroProof: ["เริ่มส่วนตัว 2 ท่าน", "เห็นเส้นทางและราคาเริ่มต้น", "ตอบโดยคนจริงใน 1 วันทำการ"],
     routesEyebrow: "ตัวอย่างทริปส่วนตัว", routesTitle: "เลือกเส้นทางตั้งต้นก่อนปรับให้เป็นของคุณ", routesIntro: "ดูจำนวนวัน เส้นทาง ราคาเริ่มต้น และจำนวนขั้นต่ำก่อนติดต่อ แล้วค่อยปรับตามฤดูกาลและผู้เดินทาง", fromLabel: "ราคาเริ่มต้น", groupLabel: "กลุ่มส่วนตัว", routeLabel: "เส้นทาง", groupText: "เริ่ม 2 ท่าน · เหมาะกับ 2-6 ท่าน", viewRoute: "ดูแผนรายวัน",
     processEyebrow: "วิธีเริ่ม", processTitle: "สามขั้นตอน จากความคิดสู่เส้นทางที่เหมาะกับคุณ", process: [["01", "เลือกเส้นทางตัวอย่าง", "ดูจังหวะของแต่ละวันและสถานที่ที่อยากใช้เวลาให้นานขึ้น"], ["02", "ส่งวันและข้อมูลกลุ่ม", "บอกเดือน จำนวนวัน ผู้ร่วมทาง และความสบายที่สำคัญกับคุณ"], ["03", "รับเส้นทางที่เหมาะกับคุณ", "ผู้วางแผนตอบภายใน 1 วันทำการ พร้อมแนวทางและจุดที่ควรปรับให้เข้ากับคุณ"]],
     careEyebrow: "ราคาเริ่มต้นรวมอะไร", careTitle: "ดูสิ่งที่รวมก่อนส่งคำขอ", careIntro: "เป็นราคาอ้างอิงบริการภาคพื้นดิน ยืนยันอีกครั้งตามฤดูกาล ห้องพัก และเส้นทาง", care: [["รถส่วนตัว", "รับส่งสนามบินหรือสถานีและการเดินทางหลักในเส้นทาง"], ["ระดับที่พัก", "ที่พักท้องถิ่นคุณภาพดีหรือห้องอัปเกรด"], ["ภาษาและการจอง", "ประสานภาษาจีนสำหรับการจองและรายละเอียดสำคัญ"], ["จังหวะแต่ละวัน", "หนึ่งจุดสำคัญต่อวัน พร้อมเวลาพักและเวลาเผื่อเดินทาง"]],
@@ -125,6 +125,26 @@ const routes = [
   { slug: "sanya", image: "/assets/ai/bluehour-sanya-luxury-coast-v1.jpg", days: { en: "5 days", zh: "5 天", ja: "5日間", ko: "5일", th: "5 วัน" }, name: { en: "Sanya", zh: "三亞", ja: "三亜", ko: "싼야", th: "ซานย่า" }, title: { en: "Sanya Coastal Ease", zh: "三亞海岸慢休日", ja: "三亜 コースタル・イーズ", ko: "싼야 코스털 이즈", th: "วันพักช้าริมทะเลซานย่า" }, price: { en: "US$1,350 pp", zh: "RMB 9,200/人", ja: "JPY 220,000/名", ko: "KRW 2,100,000/인", th: "THB 45,000/ท่าน" }, route: { en: "Resort stay · coast · one local day", zh: "度假酒店 · 海岸 · 一個在地日", ja: "リゾート · 海岸 · 現地の一日", ko: "리조트 · 해안 · 현지 하루", th: "รีสอร์ต · ชายฝั่ง · หนึ่งวันท้องถิ่น" }, daysShort: { en: ["D1 arrive by the coast", "D2-3 resort and local day", "D4-5 rest and departure"], zh: ["D1 抵達海岸", "D2-3 度假與在地日", "D4-5 休息與離開"], ja: ["D1 海辺に到着", "D2-3 リゾートと現地", "D4-5 休息と出発"], ko: ["D1 해안 도착", "D2-3 리조트와 현지", "D4-5 휴식과 출발"], th: ["D1 ถึงชายฝั่ง", "D2-3 รีสอร์ตและท้องถิ่น", "D4-5 พักและออกเดินทาง"] } },
   { slug: "northeast", image: "/assets/ai/bluehour-northeast-winter-lodge-v1.jpg", days: { en: "6-7 days", zh: "6-7 天", ja: "6-7日間", ko: "6-7일", th: "6-7 วัน" }, name: { en: "Northeast China", zh: "中國東北", ja: "中国東北", ko: "중국 동북", th: "จีนตะวันออกเฉียงเหนือ" }, title: { en: "Northeast Winter Rail", zh: "東北雪線暖房", ja: "東北 ウィンター・レール", ko: "동북 윈터 레일", th: "รถไฟฤดูหนาวภาคตะวันออกเฉียงเหนือ" }, price: { en: "US$1,600 pp", zh: "RMB 10,800/人", ja: "JPY 255,000/名", ko: "KRW 2,400,000/인", th: "THB 52,000/ท่าน" }, route: { en: "Harbin · snow lodge · winter rail", zh: "哈爾濱 · 雪地旅宿 · 冬季鐵路", ja: "ハルビン · 雪の宿 · 冬の鉄道", ko: "하얼빈 · 눈 숙소 · 겨울 철도", th: "ฮาร์บิน · ที่พักหิมะ · รถไฟฤดูหนาว" }, daysShort: { en: ["D1-2 Harbin", "D3-4 snow or forest stay", "D5-7 rail and warm rooms"], zh: ["D1-2 哈爾濱", "D3-4 雪地或森林", "D5-7 鐵路與暖房"], ja: ["D1-2 ハルビン", "D3-4 雪または森", "D5-7 鉄道と暖かい部屋"], ko: ["D1-2 하얼빈", "D3-4 눈 또는 숲", "D5-7 철도와 따뜻한 방"], th: ["D1-2 ฮาร์บิน", "D3-4 หิมะหรือป่า", "D5-7 รถไฟและห้องอุ่น"] } },
 ];
+
+Object.assign(routes.find((route) => route.slug === "dunhuang"), {
+  image: "/assets/real-qinggan/qinghai-lake-sunset-cc-by.jpg",
+  days: { en: "9 days · 8 nights", zh: "9 天 8 晚", ja: "9日間・8泊", ko: "9일 · 8박", th: "9 วัน · 8 คืน" },
+  name: { en: "Qinghai & Gansu", zh: "青甘", ja: "青海・甘粛", ko: "칭하이·간쑤", th: "ชิงไห่–กานซู่" },
+  title: { en: "Qinghai-Gansu Grand Loop", zh: "青甘大環線", ja: "青海・甘粛大環状線", ko: "칭하이-간쑤 대순환", th: "วงแหวนชิงไห่–กานซู่" },
+  price: { en: "RMB 4,980", zh: "RMB 4,980", ja: "RMB 4,980", ko: "RMB 4,980", th: "RMB 4,980" },
+  route: { en: "Xining · Qinghai Lake · Dunhuang · Zhangye", zh: "西寧 · 青海湖 · 敦煌 · 張掖", ja: "西寧 · 青海湖 · 敦煌 · 張掖", ko: "시닝 · 칭하이호 · 둔황 · 장예", th: "ซีหนิง · ชิงไห่ · ตุนหวง · จางเย่" },
+  daysShort: { en: ["D1-3 plateau lakes", "D4-6 desert and Dunhuang", "D7-9 Jiayuguan and Zhangye"], zh: ["D1-3 高原湖泊", "D4-6 戈壁與敦煌", "D7-9 嘉峪關與張掖"], ja: ["D1-3 高原の湖", "D4-6 砂漠と敦煌", "D7-9 嘉峪関と張掖"], ko: ["D1-3 고원 호수", "D4-6 사막과 둔황", "D7-9 자위관과 장예"], th: ["D1-3 ทะเลสาบที่ราบสูง", "D4-6 ทะเลทรายและตุนหวง", "D7-9 เจียยวี่กวนและจางเย่"] },
+});
+routes.find((route) => route.slug === "northeast").name.zh = "東北";
+Object.assign(routes.find((route) => route.slug === "sanya"), {
+  image: "/assets/real-hainan/shimei-bay-wanning-cc-by-sa.jpg",
+  days: { en: "7 days · 6 nights", zh: "7 天 6 晚", ja: "7日間・6泊", ko: "7일 · 6박", th: "7 วัน · 6 คืน" },
+  name: { en: "Hainan & Sanya", zh: "海南與三亞", ja: "海南島・三亜", ko: "하이난·싼야", th: "ไหหลำ–ซานย่า" },
+  title: { en: "Hainan East Coast & Sanya", zh: "海南東海岸與三亞", ja: "海南島東海岸と三亜", ko: "하이난 동해안과 싼야", th: "ชายฝั่งตะวันออกไหหลำและซานย่า" },
+  price: { en: "RMB 14,200", zh: "RMB 14,200", ja: "RMB 14,200", ko: "RMB 14,200", th: "RMB 14,200" },
+  route: { en: "Haikou · Qionghai · Wanning · Sanya", zh: "海口 · 瓊海 · 萬寧 · 三亞", ja: "海口 · 瓊海 · 万寧 · 三亜", ko: "하이커우 · 충하이 · 완닝 · 싼야", th: "ไหโข่ว · ฉงไห่ · ว่านหนิง · ซานย่า" },
+  daysShort: { en: ["D1-2 Haikou and Qionghai", "D3-4 Wanning coast", "D5-7 Sanya"], zh: ["D1-2 海口與瓊海", "D3-4 萬寧海岸", "D5-7 三亞"], ja: ["D1-2 海口と瓊海", "D3-4 万寧の海岸", "D5-7 三亜"], ko: ["D1-2 하이커우와 충하이", "D3-4 완닝 해안", "D5-7 싼야"], th: ["D1-2 ไหโข่วและฉงไห่", "D3-4 ชายฝั่งว่านหนิง", "D5-7 ซานย่า"] },
+});
 
 const innerDays = {
   en: [["Day 1", "Arrive in Hohhot", "Private pickup, check-in and a light first evening. Begin with a good room and a warm meal.", "Stay: Hohhot"], ["Day 2", "Hohhot history and local table", "Inner Mongolia Museum, Dazhao area and a paced introduction to the region before the long landscapes begin.", "Stay: Hohhot"], ["Day 3", "Huitengxile grassland", "Private transfer to the grassland, a refined lodge or upgraded yurt and time outside after the day crowds thin.", "Stay: grassland lodge"], ["Day 4", "Grassland morning, culture without theatre", "A calm morning, optional gentle riding and a respectful local cultural layer rather than a packed performance checklist.", "Stay: Hohhot or route lodge"], ["Day 5", "Kubuqi Desert", "Move from grassland to desert. Keep the dune experience around light, temperature and comfort, with optional activities discussed in advance.", "Stay: desert or Ordos"], ["Day 6", "Ordos and departure", "A slower morning, private airport transfer and enough buffer for the route to end without stress.", "Departure day"]],
@@ -243,7 +263,7 @@ function innerPage(lang, locale) {
   const metaCurrency = locale.currency;
   const low = tiers[lang][tiers[lang].length - 1][1].replace(/[^0-9,]/g, "").replaceAll(",", "");
   const high = tiers[lang][0][1].replace(/[^0-9,]/g, "").replaceAll(",", "");
-  return `<!doctype html><html lang="${lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"><title>${esc(route.title[lang])}｜Bluehour China</title><meta name="description" content="${esc(descriptions[lang])}"><link rel="canonical" href="${canonical}"><link rel="alternate" hreflang="en" href="https://bluehourchina.com/inner-mongolia.html"><link rel="alternate" hreflang="zh-Hant" href="https://bluehourchina.com/zh/inner-mongolia/"><link rel="alternate" hreflang="ja" href="https://bluehourchina.com/ja/inner-mongolia/"><link rel="alternate" hreflang="ko" href="https://bluehourchina.com/ko/inner-mongolia/"><link rel="alternate" hreflang="th" href="https://bluehourchina.com/th/inner-mongolia/"><link rel="alternate" hreflang="x-default" href="https://bluehourchina.com/inner-mongolia.html"><link rel="icon" type="image/svg+xml" href="/assets/ruoqing-avatar.svg"><meta property="og:title" content="${esc(route.title[lang])}｜Bluehour China"><meta property="og:description" content="${esc(leads[lang])}"><meta property="og:type" content="website"><meta property="og:url" content="${canonical}"><meta property="og:image" content="https://bluehourchina.com${route.image}"><meta name="twitter:card" content="summary_large_image"><script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@type": "Product", name: route.title[lang], brand: { "@type": "Brand", name: "Bluehour China Journeys" }, description: descriptions[lang], image: `https://bluehourchina.com${route.image}`, offers: { "@type": "AggregateOffer", priceCurrency: metaCurrency, lowPrice: low, highPrice: high, offerCount: "3", url: canonical }, additionalProperty: [{ "@type": "PropertyValue", name: locale.routeLabel, value: route.route[lang] }, { "@type": "PropertyValue", name: "Duration", value: route.days[lang] }, { "@type": "PropertyValue", name: locale.groupLabel, value: locale.groupText }, { "@type": "PropertyValue", name: "Price tiers", value: tiers[lang].map(([group, price]) => `${group}: ${price}`).join(" · ") }] })}</script><link rel="stylesheet" href="/assets/luxury-multilang.css?v=20260705-offers1"><link rel="stylesheet" href="/assets/heading-polish.css?v=20260710-1"></head>
+  return `<!doctype html><html lang="${lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"><title>${esc(route.title[lang])}｜Bluehour China</title><meta name="description" content="${esc(descriptions[lang])}"><link rel="canonical" href="${canonical}"><link rel="alternate" hreflang="en" href="https://bluehourchina.com/inner-mongolia.html"><link rel="alternate" hreflang="zh-Hant" href="https://bluehourchina.com/zh/inner-mongolia/"><link rel="alternate" hreflang="ja" href="https://bluehourchina.com/ja/inner-mongolia/"><link rel="alternate" hreflang="ko" href="https://bluehourchina.com/ko/inner-mongolia/"><link rel="alternate" hreflang="th" href="https://bluehourchina.com/th/inner-mongolia/"><link rel="alternate" hreflang="x-default" href="https://bluehourchina.com/inner-mongolia.html"><link rel="icon" type="image/svg+xml" href="/assets/ruoqing-avatar.svg"><meta property="og:title" content="${esc(route.title[lang])}｜Bluehour China"><meta property="og:description" content="${esc(leads[lang])}"><meta property="og:type" content="website"><meta property="og:url" content="${canonical}"><meta property="og:image" content="https://bluehourchina.com${route.image}"><meta name="twitter:card" content="summary_large_image"><script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@type": "Product", name: route.title[lang], brand: { "@type": "Brand", name: "Bluehour China Journeys" }, description: descriptions[lang], image: `https://bluehourchina.com${route.image}`, offers: { "@type": "AggregateOffer", priceCurrency: metaCurrency, lowPrice: low, highPrice: high, offerCount: "3", url: canonical }, additionalProperty: [{ "@type": "PropertyValue", name: locale.routeLabel, value: route.route[lang] }, { "@type": "PropertyValue", name: "Duration", value: route.days[lang] }, { "@type": "PropertyValue", name: locale.groupLabel, value: locale.groupText }, { "@type": "PropertyValue", name: "Price tiers", value: tiers[lang].map(([group, price]) => `${group}: ${price}`).join(" · ") }] })}</script><link rel="stylesheet" href="/assets/luxury-multilang.css?v=20260711-routes5"><link rel="stylesheet" href="/assets/heading-polish.css?v=20260711-routes5"></head>
   <body style="--hero-image:url('${route.image}');--cta-image:url('${route.image}')"><nav class="nav" aria-label="Primary navigation"><a class="brand" href="${locale.homeUrl}"><img src="/assets/ruoqing-avatar.svg" alt="" aria-hidden="true"><span><strong>Bluehour China</strong><span>若青中國旅策</span></span></a><div class="nav-links"><a href="${locale.homeUrl}#places">${esc(labels.routes)}</a><a href="/before-china/">${esc(labels.before)}</a><a class="nav-cta" href="${cta}">${esc(locale.navCta)}</a></div></nav>
   <main><section class="hero destination-hero"><div class="wrap hero-inner"><p class="eyebrow">${esc(route.days[lang])} · ${esc(route.name[lang])}</p><h1>${esc(route.title[lang])}</h1><p class="lead">${esc(leads[lang])}</p><div class="hero-actions"><a class="btn primary" href="${cta}">${esc(locale.heroSecondary)}</a><a class="btn" href="${locale.homeUrl}#places">${esc(locale.heroPrimary)}</a></div><div class="facts"><div class="fact"><b>${esc(locale.fromLabel)}</b><span>${esc(route.price[lang])}</span></div><div class="fact"><b>${esc(locale.groupLabel)}</b><span>${esc(locale.groupText)}</span></div><div class="fact"><b>${esc(locale.routeLabel)}</b><span>${esc(route.route[lang])}</span></div></div></div></section>
     <section class="section standard-route-band"><div class="wrap route-showcase"><div class="route-copy"><p class="eyebrow">${esc(locale.routesEyebrow)}</p><h2>${esc(route.title[lang])}</h2><p>${esc(descriptions[lang])}</p><div class="route-price"><span>${esc(route.days[lang])}</span><strong>${esc(route.price[lang])}</strong><small>${esc(locale.groupText)}</small><div class="route-price-tiers">${tierHtml}</div></div><div class="route-points"><div><b>${esc(locale.routeLabel)}</b><span>${esc(route.route[lang])}</span></div><div><b>${esc(labels.pace)}</b><span>${esc(labels.paceValue)}</span></div><div><b>${esc(locale.groupLabel)}</b><span>${esc(locale.groupText)}</span></div><div><b>${esc(labels.check)}</b><span>${esc(labels.checkValue)}</span></div></div><p class="route-note">${esc(labels.note)}</p></div><div class="route-card"><div class="route-image"><img src="${route.image}" alt="${esc(route.title[lang])}"></div><div class="route-map"><h3>${esc(locale.routeLabel)}</h3><div class="map-line">${route.daysShort[lang].map((item) => `<span>${esc(item)}</span>`).join("")}</div></div></div></div></section>
@@ -258,7 +278,14 @@ for (const [lang, locale] of Object.entries(locales)) {
   for (const file of pageFiles) {
     const url = new URL(file, root);
     fs.mkdirSync(path.dirname(fileURLToPath(url)), { recursive: true });
-    fs.writeFileSync(url, innerPage(lang, locale));
+    let html = innerPage(lang, locale);
+    if (lang === "zh") {
+      html = html.replace(
+        "<strong>Bluehour China</strong><span>若青中國旅策</span>",
+        "<strong>若青中國</strong><span>BLUEHOUR CHINA</span>",
+      );
+    }
+    fs.writeFileSync(url, html);
   }
   const routeFiles = routes
     .filter((route) => route.slug !== "inner-mongolia")
@@ -296,3 +323,8 @@ for (const file of ["llms.txt", "llms-full.txt"]) {
 }
 
 console.log("private-journey-funnel-refined");
+await import("./sync-home-route-products.mjs");
+await import("./expand-destination-photo-galleries.mjs");
+await import("./normalize-home-destination-copy.mjs");
+// Always finish generated pages with the site's single-currency retail policy.
+await import("./apply-retail-margin-prices.mjs");
