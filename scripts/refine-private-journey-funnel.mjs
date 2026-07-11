@@ -349,6 +349,8 @@ await import("./personalize-destination-cta-copy.mjs");
 await import("./rewrite-global-faq.mjs");
 await import("./rewrite-llms-customer-summary.mjs");
 await import("./normalize-form-customer-ux.mjs");
+await import("./normalize-form-accessibility.mjs");
 await import("./normalize-navigation-continuity.mjs");
 await import("./audit-customer-copy-ux.mjs");
+await import("./audit-form-accessibility.mjs");
 await import("./audit-navigation-continuity.mjs");

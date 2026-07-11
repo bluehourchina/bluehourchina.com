@@ -28,6 +28,13 @@ jobs:
       - name: Block customer-copy and content regressions
         run: |
           node scripts/audit-customer-copy-ux.mjs
+          node scripts/audit-form-accessibility.mjs
+          if node scripts/audit-form-accessibility.mjs --negative-test; then
+            echo "Form accessibility negative fixture was not blocked" >&2
+            exit 1
+          else
+            echo "Form accessibility negative fixture was blocked as expected"
+          fi
           node scripts/audit-navigation-continuity.mjs
           node scripts/audit-site-quality.mjs
           node scripts/audit-multilingual-parity.mjs
