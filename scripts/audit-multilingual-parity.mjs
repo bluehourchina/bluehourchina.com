@@ -3,7 +3,7 @@ import path from "node:path";
 
 const root = process.cwd();
 const outputDir = path.join(root, "outputs");
-const destinations = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast"];
+const destinations = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast", "xian", "tibet"];
 const localeConfig = {
   en: {
     homes: ["index.html", "en/index.html"],
@@ -72,10 +72,10 @@ for (const [locale, config] of Object.entries(localeConfig)) {
     check(count(html, /<a href="[^"]+" lang="(?:en|zh|ja|ko|th|ru)"/g) >= 12, file, "language menus do not expose six languages twice");
     check(!html.includes('class="language-switch"'), file, "legacy horizontal language switch remains");
     check(html.includes("/assets/language-menu.js"), file, "language menu behavior script missing");
-    check(count(html, /class="product-route-card"/g) === 6, file, "expected six route products");
+    check(count(html, /class="product-route-card"/g) === 8, file, "expected eight route products");
     check(count(html, /player\.bilibili\.com/g) === 0, file, "embedded Bilibili players should not appear on the luxury home page");
     check(!html.includes("official-films-band"), file, "removed destination-film section returned");
-    check(count(html, /hero-scene scene-/g) === 6, file, "expected six real-photo hero scenes");
+    check(count(html, /hero-scene scene-/g) === 8, file, "expected eight real-photo hero scenes");
     check(html.includes('class="lead-form home-lead-form"'), file, "home inquiry form missing");
     check(html.includes('hreflang="ru"'), file, "Russian hreflang missing");
   }

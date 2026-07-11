@@ -35,7 +35,7 @@ const chromeExecutable =
   process.env.CHROME_EXECUTABLE ||
   "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 
-const destinationSlugs = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast"];
+const destinationSlugs = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast", "xian", "tibet"];
 const multilingualPages = [
   "/",
   "/interest.html",
@@ -74,6 +74,12 @@ const allPages = [...new Set([
   "/china-travel/guangzhou-luxury-hotel-family/",
   "/yunnan-grand-loop/",
   "/stories.html",
+  "/en/stories/",
+  "/zh/stories/",
+  "/ja/stories/",
+  "/ko/stories/",
+  "/th/stories/",
+  "/ru/stories/",
   "/route-note/",
   "/payment-rescue/",
   "/refer/",
@@ -147,7 +153,7 @@ async function auditPage(page, pagePath, viewport) {
       .filter(visible)
       .some((element) =>
         element.tagName === "BUTTON" ||
-        /consult|start|plan|route|tell us|諮詢|開始|規劃|相談|문의|상담|ปรึกษา|วางแผน|ส่ง|маршрут|план|расчёт|предлож/i.test(element.textContent || "")
+        /consult|start|plan|route|tell us|諮詢|詢問|評估|開始|規劃|相談|問い合わせ|문의|상담|ปรึกษา|วางแผน|ประเมิน|คำแนะนำ|ส่ง|маршрут|план|расчёт|предлож|запрос/i.test(element.textContent || "")
       );
 
     return {

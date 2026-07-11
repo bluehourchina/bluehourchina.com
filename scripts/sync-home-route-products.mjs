@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
-const destinations = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast"];
+const destinations = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast", "xian", "tibet"];
 const images = {
   yunnan: "/assets/wechat-reference-20260709/wechat-yunnan-dali-lakeside-table-08.jpg",
   xinjiang: "/assets/real-xinjiang/sayram-lake-cc0.jpg",
@@ -10,14 +10,16 @@ const images = {
   "inner-mongolia": "/assets/real-inner-mongolia/grassland-sunset-cc-by.jpg",
   sanya: "/assets/real-hainan/shimei-bay-wanning-cc-by-sa.jpg",
   northeast: "/assets/real-northeast/china-snow-town-cc-by.jpg",
+  xian: "/assets/real-xian/xian-city-wall-night.jpg",
+  tibet: "/assets/real-tibet/tibet-yamdrok-lake.jpg",
 };
 const destinationNames = {
-  en: { yunnan: "Yunnan", xinjiang: "Xinjiang", dunhuang: "Qinghai & Gansu", "inner-mongolia": "Inner Mongolia", sanya: "Hainan & Sanya", northeast: "Northeast China" },
-  zh: { yunnan: "雲南", xinjiang: "新疆", dunhuang: "青甘", "inner-mongolia": "內蒙古", sanya: "海南與三亞", northeast: "東北" },
-  ja: { yunnan: "雲南", xinjiang: "新疆", dunhuang: "青海・甘粛", "inner-mongolia": "内モンゴル", sanya: "海南島・三亜", northeast: "東北" },
-  ko: { yunnan: "윈난", xinjiang: "신장", dunhuang: "칭하이·간쑤", "inner-mongolia": "내몽골", sanya: "하이난·싼야", northeast: "동북" },
-  th: { yunnan: "ยูนนาน", xinjiang: "ซินเจียง", dunhuang: "ชิงไห่–กานซู่", "inner-mongolia": "มองโกเลียใน", sanya: "ไหหลำ–ซานย่า", northeast: "ภาคตะวันออกเฉียงเหนือ" },
-  ru: { yunnan: "Юньнань", xinjiang: "Синьцзян", dunhuang: "Цинхай и Ганьсу", "inner-mongolia": "Внутренняя Монголия", sanya: "Хайнань и Санья", northeast: "Северо-Восток" },
+  en: { yunnan: "Yunnan", xinjiang: "Xinjiang", dunhuang: "Qinghai & Gansu", "inner-mongolia": "Inner Mongolia", sanya: "Hainan & Sanya", northeast: "Northeast China", xian: "Xi'an", tibet: "Tibet" },
+  zh: { yunnan: "雲南", xinjiang: "新疆", dunhuang: "青甘", "inner-mongolia": "內蒙古", sanya: "海南與三亞", northeast: "東北", xian: "西安", tibet: "西藏" },
+  ja: { yunnan: "雲南", xinjiang: "新疆", dunhuang: "青海・甘粛", "inner-mongolia": "内モンゴル", sanya: "海南島・三亜", northeast: "東北", xian: "西安", tibet: "チベット" },
+  ko: { yunnan: "윈난", xinjiang: "신장", dunhuang: "칭하이·간쑤", "inner-mongolia": "내몽골", sanya: "하이난·싼야", northeast: "동북", xian: "시안", tibet: "티베트" },
+  th: { yunnan: "ยูนนาน", xinjiang: "ซินเจียง", dunhuang: "ชิงไห่–กานซู่", "inner-mongolia": "มองโกเลียใน", sanya: "ไหหลำ–ซานย่า", northeast: "ภาคตะวันออกเฉียงเหนือ", xian: "ซีอาน", tibet: "ทิเบต" },
+  ru: { yunnan: "Юньнань", xinjiang: "Синьцзян", dunhuang: "Цинхай и Ганьсу", "inner-mongolia": "Внутренняя Монголия", sanya: "Хайнань и Санья", northeast: "Северо-Восток", xian: "Сиань", tibet: "Тибет" },
 };
 const labels = {
   en: { eyebrow: "Standard private journeys", title: ["See the route first", "Then tailor it to your people"], intro: "Every journey shows its length, route, starting price and minimum group before you enquire.", from: "From", group: "Private group", route: "Route", view: "View day-by-day route" },
@@ -111,7 +113,7 @@ function replaceTravelAgencySchema(html, offers, locale) {
     let schema;
     try { schema = JSON.parse(block[1]); } catch { continue; }
     if (schema?.["@type"] !== "TravelAgency") continue;
-    schema.areaServed = [...new Set([...(schema.areaServed || []), "Inner Mongolia"] )];
+    schema.areaServed = [...new Set([...(schema.areaServed || []), "Inner Mongolia", "Xi'an", "Tibet"] )];
     schema.hasOfferCatalog = {
       "@type": "OfferCatalog",
       name: locale === "zh" ? "中國私人路線起價" : "Private China route starting offers",

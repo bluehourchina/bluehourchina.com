@@ -9,7 +9,7 @@ const { chromium } = require(path.join(moduleDir, "playwright"));
 const origin = process.env.AUDIT_ORIGIN || "http://127.0.0.1:8787";
 const outputDir = path.join(process.cwd(), "outputs", "release-previews-20260711-routes-final");
 const executablePath = process.env.CHROME_EXECUTABLE || "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
-const allRoutes = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast"];
+const allRoutes = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast", "xian", "tibet"];
 const routeFilter = (process.env.PREVIEW_ROUTES || "").split(",").filter(Boolean);
 const routes = routeFilter.length ? allRoutes.filter((route) => routeFilter.includes(route)) : allRoutes;
 const allViewports = [
@@ -19,6 +19,7 @@ const allViewports = [
 const viewportFilter = process.env.PREVIEW_VIEWPORT || "";
 const viewports = allViewports.filter((viewport) => !viewportFilter || viewport.name === viewportFilter);
 const captureHome = process.env.PREVIEW_HOME !== "0";
+let captureCount = 0;
 
 await fs.mkdir(outputDir, { recursive: true });
 const browser = await chromium.launch({ headless: true, executablePath });
@@ -41,24 +42,49 @@ try {
       await page.goto(new URL("/zh.html", origin).toString(), { waitUntil: "networkidle", timeout: 30000 });
       await page.waitForTimeout(350);
       await page.screenshot({ path: path.join(outputDir, `zh-home-${viewport.name}.png`) });
+      captureCount += 1;
       const care = page.locator("#care.service-band").first();
       if (await care.count()) {
         await settleVisibleImages(care);
         await page.waitForTimeout(250);
         await care.screenshot({ path: path.join(outputDir, `zh-home-care-${viewport.name}.png`) });
+        captureCount += 1;
       }
+      const guides = page.locator(".compact-guides").first();
+      if (await guides.count()) {
+        await settleVisibleImages(guides);
+        await page.waitForTimeout(250);
+        await guides.screenshot({ path: path.join(outputDir, `zh-home-guides-${viewport.name}.png`) });
+        captureCount += 1;
+      }
+      const destinationMap = page.locator(".destination-map-band").first();
+      if (await destinationMap.count()) {
+        await destinationMap.scrollIntoViewIfNeeded();
+        await page.waitForTimeout(900);
+        await destinationMap.screenshot({ path: path.join(outputDir, `zh-home-map-${viewport.name}.png`) });
+        captureCount += 1;
+      }
+
+      await page.goto(new URL("/zh/stories/", origin).toString(), { waitUntil: "networkidle", timeout: 30000 });
+      const journals = page.locator("#journey-journals").first();
+      await settleVisibleImages(journals);
+      await page.waitForTimeout(250);
+      await journals.screenshot({ path: path.join(outputDir, `zh-stories-journals-${viewport.name}.png`) });
+      captureCount += 1;
     }
 
     for (const route of routes) {
       await page.goto(new URL(`/zh/${route}/`, origin).toString(), { waitUntil: "networkidle", timeout: 30000 });
       await page.waitForTimeout(350);
       await page.screenshot({ path: path.join(outputDir, `${route}-hero-${viewport.name}.png`) });
-      for (const [name, selector] of [["route", ".standard-route-band"], ["scenes", ".material-notes-band"]]) {
+      captureCount += 1;
+      for (const [name, selector] of [["route", ".standard-route-band"], ["days", ".route-day-plan-band"], ["scenes", ".material-notes-band"]]) {
         const locator = page.locator(selector).first();
         if (await locator.count()) {
           await settleVisibleImages(locator);
           await page.waitForTimeout(250);
           await locator.screenshot({ path: path.join(outputDir, `${route}-${name}-${viewport.name}.png`) });
+          captureCount += 1;
         }
       }
     }
@@ -67,4 +93,4 @@ try {
   await browser.close();
 }
 
-console.log(`Captured ${viewports.length * (captureHome ? 2 : 0) + routes.length * viewports.length * 3} release previews in ${outputDir}`);
+console.log(`Captured ${captureCount} release previews in ${outputDir}`);

@@ -70,7 +70,8 @@ for (const [slug, files] of Object.entries(pageFiles)) {
     } else if (/<section class="section material-notes-band"[\s\S]*?<\/section>/.test(html)) {
       html = html.replace(/<section class="section material-notes-band"[\s\S]*?<\/section>/, block);
     } else {
-      const anchor = html.search(/<section class="section (?:content-95-band|content-note-band|care-band|service-band)"/);
+      let anchor = html.search(/<section class="section (?:content-95-band|content-note-band|care-band|service-band)"/);
+      if (anchor < 0) anchor = html.search(/<section class="(?:cta|next)"/);
       if (anchor < 0) throw new Error(`No gallery insertion point in ${file}`);
       html = `${html.slice(0, anchor)}${block}\n    ${html.slice(anchor)}`;
     }

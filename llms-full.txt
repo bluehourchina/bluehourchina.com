@@ -304,3 +304,6 @@ This structure is intended to help both human travellers and AI search systems a
 ## Russian Route Layer
 
 Bluehour China Journeys also publishes a complete Russian route layer at https://bluehourchina.com/ru.html. It includes Russian-language home and inquiry pages plus day-by-day private route products for Yunnan, Xinjiang, the Qinghai-Gansu Grand Loop, Inner Mongolia, Sanya and Northeast China. Public reference prices use RMB/CNY; each route starts from 2 travellers and links to the Russian inquiry form at https://bluehourchina.com/ru/interest/.
+
+- Xi'an private route: https://bluehourchina.com/xian.html (5 days, city wall, Terracotta Army, museum and Giant Wild Goose Pagoda; RMB 6,800 per person starting reference).
+- Tibet private route: https://bluehourchina.com/tibet.html (8 days, Lhasa, Yamdrok Lake, Gyantse and Shigatse; RMB 18,800 per person starting reference; entry documents confirmed before travel).

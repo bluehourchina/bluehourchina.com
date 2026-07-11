@@ -3,7 +3,7 @@ import path from "node:path";
 
 const root = process.cwd();
 const campaign = "private_route_consultation";
-const destinations = ["yunnan", "xinjiang", "dunhuang", "sanya", "northeast"];
+const destinations = ["yunnan", "xinjiang", "dunhuang", "sanya", "northeast", "inner-mongolia", "xian", "tibet"];
 
 const languages = {
   en: {
@@ -122,7 +122,7 @@ for (const config of Object.values(languages)) {
       await checkFile(file, [
         ...routedPageChecks,
         ["missing destination tracking", (html) => html.includes(`destination=${destination}`)],
-        ["missing destination conversion path", (html) => html.includes("conversion-band") || html.includes("home-intake-band")],
+        ["missing destination conversion path", (html) => html.includes("home-intake-band") || html.includes('<section class="next">') || html.includes('<section class="cta">')],
         ["missing destination sticky review", (html) => html.includes("sticky-review")],
       ]);
     }

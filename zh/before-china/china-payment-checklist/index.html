@@ -38,7 +38,7 @@
       "description": "外國旅客出發中國前的支付準備清單：微信支付、支付寶、Visa / Mastercard、備用卡、少量現金與區域旅行支付風險。",
       "inLanguage": "zh-Hant",
       "datePublished": "2026-07-05",
-      "dateModified": "2026-07-06",
+      "dateModified": "2026-07-11",
       "author": {
         "@id": "https://bluehourchina.com/#organization"
       },
@@ -47,6 +47,7 @@
       },
       "mainEntityOfPage": "https://bluehourchina.com/zh/before-china/china-payment-checklist/",
       "citation": [
+        "https://english.beijing.gov.cn/specials/paymentservices/howtopaybeijing/202404/t20240429_3647378.html",
         "https://english.beijing.gov.cn/livinginbeijing/finance/mobilepaymentlist/202005/t20200516_1899230.html",
         "https://gb.china-embassy.gov.cn/eng/lqfw/202403/t20240317_11261639.htm",
         "https://en.nia.gov.cn/n147418/n147463/c183390/content.html"
@@ -87,7 +88,7 @@
           "name": "支付寶或微信支付哪個比較適合外國人？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "會受到 App 版本、發卡行、手機號碼與商戶場景影響。若可行，兩者都先準備，抵達後再測試。"
+            "text": "可用性會受 App 版本、發卡行、手機號碼與商戶影響；可以的話兩者都準備，抵達後先測小額付款。"
           }
         },
         {
@@ -135,7 +136,7 @@
   ]
 }
   </script>
-  <link rel="stylesheet" href="/assets/luxury-multilang.css?v=20260711-care6">
+  <link rel="stylesheet" href="/assets/luxury-multilang.css?v=20260711-rhythm8">
   <style>
     .prep-hero {
       min-height: 70vh;
@@ -161,11 +162,14 @@
       gap: clamp(30px, 6vw, 76px);
       align-items: start;
     }
-    .prep-copy { display: grid; gap: 46px; min-width: 0; }
+    .prep-copy { display: grid; gap: clamp(64px, 8vw, 104px); min-width: 0; }
+    .prep-copy > section { min-width: 0; scroll-margin-top: 112px; }
+    .prep-copy > section > .eyebrow { margin-bottom: 18px; }
     .prep-copy h2 {
-      max-width: 790px;
-      font-size: clamp(32px, 4.3vw, 58px);
-      line-height: 1.1;
+      max-width: 760px;
+      margin-bottom: 24px;
+      font-size: clamp(32px, 3.8vw, 54px);
+      line-height: 1.14;
     }
     .prep-copy p,
     .prep-copy li {
@@ -174,6 +178,88 @@
       line-height: 1.86;
     }
     .prep-copy p + p { margin-top: 14px; }
+    .prep-answer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(22px, 3vw, 40px);
+      margin-top: 34px;
+    }
+    .prep-answer-grid > div {
+      padding-top: 18px;
+      border-top: 1px solid rgba(23,32,28,.34);
+    }
+    .prep-answer-grid span {
+      display: block;
+      margin-bottom: 10px;
+      color: #a86f20;
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .prep-answer-grid strong {
+      display: block;
+      font-size: 17px;
+      line-height: 1.58;
+    }
+    .prep-visual-list {
+      display: grid;
+      gap: clamp(34px, 5vw, 58px);
+      margin-top: 34px;
+    }
+    .prep-visual-step {
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(250px, .72fr);
+      gap: clamp(28px, 5vw, 60px);
+      align-items: center;
+      margin: 0;
+      padding-top: 28px;
+      border-top: 1px solid rgba(23,32,28,.22);
+    }
+    .prep-visual-step:nth-child(even) .prep-visual-media { order: 2; }
+    .prep-visual-media {
+      display: grid;
+      place-items: center;
+      min-height: 320px;
+      padding: clamp(12px, 2vw, 22px);
+      background: #fff;
+      overflow: hidden;
+    }
+    .prep-visual-media img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: none;
+      object-fit: contain;
+    }
+    .prep-visual-step figcaption > span {
+      color: #b77720;
+      font-size: 13px;
+      font-weight: 900;
+    }
+    .prep-visual-step h3 {
+      margin-top: 13px;
+      font-size: clamp(25px, 2.7vw, 36px);
+      line-height: 1.24;
+    }
+    .prep-visual-step figcaption p {
+      margin-top: 15px;
+      font-size: 16px;
+      line-height: 1.72;
+    }
+    .prep-visual-source {
+      margin-top: 22px;
+      font-size: 14px !important;
+    }
+    .prep-visual-source a {
+      color: var(--ink);
+      border-bottom: 1px solid rgba(23,32,28,.28);
+    }
+    .prep-visual-page .prep-grid {
+      grid-template-columns: minmax(0, 1fr);
+      max-width: 1180px;
+    }
+    .prep-visual-page .prep-copy { max-width: 1040px; }
     .prep-copy ol {
       display: grid;
       gap: 10px;
@@ -229,6 +315,9 @@
       .prep-grid,
       .prep-faq { grid-template-columns: 1fr; }
       .prep-panel { position: static; }
+      .prep-answer-grid { grid-template-columns: 1fr; gap: 22px; }
+      .prep-visual-step { grid-template-columns: 1fr; }
+      .prep-visual-step:nth-child(even) .prep-visual-media { order: 0; }
     }
     @media (max-width: 760px) {
       .prep-hero h1 {
@@ -236,11 +325,13 @@
         line-height: 1.12;
       }
       .prep-copy h2 { font-size: clamp(30px, 8.4vw, 42px); }
+      .prep-copy { gap: 72px; }
+      .prep-visual-media { min-height: 0; padding: 10px; }
+      .prep-visual-media img { max-height: none; }
       .prep-card,
       .prep-panel { padding: 22px; }
     }
   </style>
-  <link rel="stylesheet" href="/assets/heading-polish.css?v=20260711-care6">
 </head>
 <body>
   <nav class="nav" aria-label="主導覽">
@@ -253,7 +344,7 @@
       <a href="/zh/before-china/" aria-current="page">出發準備</a>
       <a href="/zh/stories/">故事</a>
       <details class="language-menu"><summary aria-label="Choose language"><span>中</span></summary><div class="language-options"><a href="/before-china/china-payment-checklist/index.html" lang="en"><span>English</span><small>EN</small></a><a href="/zh/before-china/china-payment-checklist/index.html" lang="zh" aria-current="page"><span>繁體中文</span><small>中</small></a><a href="/ja.html" lang="ja"><span>日本語</span><small>日</small></a><a href="/ko.html" lang="ko"><span>한국어</span><small>한</small></a><a href="/th.html" lang="th"><span>ไทย</span><small>ไทย</small></a><a href="/ru.html" lang="ru"><span>Русский</span><small>RU</small></a></div></details>
-      <a class="nav-cta" href="/zh/interest/?utm_source=before_china_article_nav&utm_medium=site&utm_campaign=before_china_search_cluster&angle=payment_readiness&source_path=%2Fzh%2Fbefore-china%2Fchina-payment-checklist%2F">開始諮詢</a>
+      <a class="nav-cta" href="/zh/interest/?utm_source=before_china_article_nav&utm_medium=site&utm_campaign=before_china_search_cluster">開始諮詢</a>
     </div>
   </nav>
   <div class="mobile-lang" aria-label="Mobile language switcher"><details class="language-menu"><summary aria-label="Choose language"><span>中</span></summary><div class="language-options"><a href="/before-china/china-payment-checklist/index.html" lang="en"><span>English</span><small>EN</small></a><a href="/zh/before-china/china-payment-checklist/index.html" lang="zh" aria-current="page"><span>繁體中文</span><small>中</small></a><a href="/ja.html" lang="ja"><span>日本語</span><small>日</small></a><a href="/ko.html" lang="ko"><span>한국어</span><small>한</small></a><a href="/th.html" lang="th"><span>ไทย</span><small>ไทย</small></a><a href="/ru.html" lang="ru"><span>Русский</span><small>RU</small></a></div></details></div>
@@ -263,10 +354,10 @@
       <div class="wrap hero-inner">
         <p class="eyebrow">出發中國前 · 支付</p>
         <h1 class="cjk-title">不要押注一種完美支付方式</h1>
-        <p class="lead">舒服的中國旅行，不是只靠一個 App，而是把行動支付、卡片、現金、手機驗證與路線節奏都先放好。</p>
+        <p class="lead">行動支付、備用卡、少量現金與手機驗證，都要在出發前準備好。</p>
         <div class="hero-actions">
           <a class="btn primary" href="#answer">先看結論</a>
-          <a class="btn" href="/zh/interest/?utm_source=payment_checklist&utm_medium=site&utm_campaign=before_china_search_cluster&angle=payment_readiness&source_path=%2Fzh%2Fbefore-china%2Fchina-payment-checklist%2F">開始路線諮詢</a>
+          <a class="btn" href="/zh/interest/?utm_source=payment_checklist&utm_medium=site&utm_campaign=before_china_search_cluster">開始路線諮詢</a>
         </div>
       </div>
     </section>
@@ -297,7 +388,7 @@
           <section id="where">
             <p class="eyebrow">區域旅行</p>
             <h2 class="cjk-title">支付摩擦在每個地方不一樣</h2>
-            <p>北京與上海會吸收很多錯誤；到了雲南、新疆、敦煌或東北冬季路線，小小的付款問題可能牽動車程、票務、入住或長途移動後的晚餐。</p>
+            <p>北京與上海能吸收不少意外；到了雲南、新疆、青甘或東北，付款問題可能連動車程、票務、入住與晚餐。</p>
             <p>所以我們不把支付準備當成孤立提醒，而是放進整體路線判斷。</p>
           </section>
 
@@ -305,7 +396,7 @@
             <p class="eyebrow">私人初談</p>
             <h2 class="cjk-title">讓路線決定需要多少照應</h2>
             <p>三亞的度假型停留，跟新疆長路線、雲南古鎮慢路線，需要的準備不一樣。把季節、人數、地點與舒適需求交給我們，我們會先指出哪些地方容易卡住。</p>
-            <div class="hero-actions"><a class="btn primary dark-gold" href="/zh/interest/?utm_source=payment_checklist&utm_medium=site&utm_campaign=before_china_search_cluster&angle=payment_readiness&source_path=%2Fzh%2Fbefore-china%2Fchina-payment-checklist%2F">開始路線諮詢</a><a class="btn dark" href="/zh/before-china/">回到出發準備總覽</a></div>
+            <div class="hero-actions"><a class="btn primary dark-gold" href="/zh/interest/?utm_source=payment_checklist&utm_medium=site&utm_campaign=before_china_search_cluster">開始路線諮詢</a><a class="btn dark" href="/zh/before-china/">回到出發準備總覽</a></div>
           </section>
 
           <section id="faq">
@@ -318,7 +409,7 @@
               </article>
               <article class="prep-card">
                 <h3>支付寶或微信支付哪個比較適合外國人？</h3>
-                <p>會受到 App 版本、發卡行、手機號碼與商戶場景影響。若可行，兩者都先準備，抵達後再測試。</p>
+                <p>可用性會受 App 版本、發卡行、手機號碼與商戶影響；可以的話兩者都準備，抵達後先測小額付款。</p>
               </article>
               <article class="prep-card">
                 <h3>只帶 Visa 或 Mastercard 可以嗎？</h3>
@@ -334,15 +425,16 @@
             <div class="inline-lead-head">
               <div>
                 <p class="eyebrow">私人路線初談</p>
-                <h2 class="cjk-title"><span class="title-line">先看路線</span><span class="title-line">再談細節</span></h2>
-                <p>留下月份、人數、目的地與舒適需求。我們回覆路線方向與參考起價。</p>
+                <h2>把支付風險放回路線裡一起看</h2>
+                <p>不是只看能不能綁卡，而是看旅客到小城、長途移動、飯店入住與司機銜接時，整體是否舒服。</p>
               </div>
               <div class="inline-lead-proof" aria-label="私人路線初談">
-                <span>1 個工作日內人工回覆</span>
-                <span>路線方向與參考起價</span>
+                <span>24 小時內回覆路線筆記</span>
+                <span>先給初步報價方向</span>
+                <span>一起看支付、手機、語言與移動風險</span>
               </div>
             </div>
-            <form class="lead-form inline-lead-form" data-sheet-endpoint="https://script.google.com/macros/s/AKfycbxCxsA5x0zzq_5pqI2MNJcki0MC9R236i_e3oRtu_0QPl7osg9CDHnaOzsSW_sZiRrh/exec" data-form-lang="zh" data-sending-message="送出中..." data-success-message="已收到，若青中國旅策會回覆一份路線遊記式建議與初步方案報價" data-error-message="表單暫時沒有送出，請直接寄信給我們。" data-lead-value="8500" data-lead-currency="CNY" name="bluehour-before-china-zh-payment_readiness" method="POST" action="https://formsubmit.co/67d31e8a5231a5944bbb8f18952a58df">
+            <form class="lead-form inline-lead-form" data-form-lang="zh" data-lead-value="8500" data-lead-currency="CNY" data-sending-message="送出中..." data-success-message="已收到，若青中國旅策會回覆一份路線筆記與初步方案報價" data-error-message="表單暫時沒有送出，請直接寄信給我們。" name="bluehour-before-china-zh-payment_readiness" method="POST" action="https://formsubmit.co/67d31e8a5231a5944bbb8f18952a58df">
               <input type="hidden" name="_next" value="https://bluehourchina.com/thanks.html?source=before_china&angle=payment_readiness">
               <input type="hidden" name="_subject" value="Bluehour China 路線初談">
               <input type="hidden" name="_template" value="table">
@@ -354,7 +446,7 @@
               <input type="hidden" name="priority" value="High">
               <input type="hidden" name="campaign" value="private_route_consultation">
               <input type="hidden" name="next_step" value="Prepare route note, starting quote direction and practical setup risks">
-              <input type="hidden" name="intake_provider" value="google_sheet_webapp">
+              <input type="hidden" name="intake_provider" value="formsubmit_email">
               <input type="hidden" name="language" value="Traditional Chinese">
               <input type="hidden" name="page_url" value="">
               <input type="hidden" name="referrer" value="">
@@ -369,7 +461,7 @@
               <input type="email" name="email" placeholder="Email" aria-label="Email">
               <input type="text" name="contact" placeholder="WhatsApp / LINE / 微信" aria-label="WhatsApp / LINE / 微信" required>
               <input type="text" name="country" placeholder="旅客來自哪裡" aria-label="旅客來自哪裡" required>
-              <select name="destination" aria-label="正在考慮的目的地" required><option value="" disabled selected>正在考慮的目的地</option><option value="yunnan">雲南</option><option value="yunnan-grand-loop">雲南全境慢線（13 天）</option><option value="zhangjiajie">張家界</option><option value="xinjiang">新疆</option><option value="dunhuang">敦煌</option><option value="sanya">三亞</option><option value="northeast">東北冬季</option><option value="multi-region">多個地區</option><option value="not-sure">還不確定</option></select>
+              <select name="destination" aria-label="正在考慮的目的地" required><option value="" disabled selected>正在考慮的目的地</option><option value="yunnan">雲南</option><option value="zhangjiajie">張家界</option><option value="xinjiang">新疆</option><option value="dunhuang">敦煌</option><option value="sanya">三亞</option><option value="northeast">東北冬季</option><option value="multi-region">多個地區</option><option value="not-sure">還不確定</option></select>
               <select name="travel_window" aria-label="大概出發時間" required><option value="" disabled selected>大概出發時間</option><option value="1-3 個月內">1-3 個月內</option><option value="3-6 個月內">3-6 個月內</option><option value="明年春夏">明年春夏</option><option value="明年秋冬">明年秋冬</option><option value="仍在研究">仍在研究</option></select>
               <select name="group_size" aria-label="旅客人數" required><option value="" disabled selected>旅客人數</option><option value="一位旅客">一位旅客</option><option value="2 位旅客">2 位旅客</option><option value="3-4 位旅客">3-4 位旅客</option><option value="親子家庭">親子家庭</option><option value="有長輩同行">有長輩同行</option></select>
               <textarea name="message" placeholder="最擔心什麼：支付、App、語言、飯店、移動天數、長輩小孩，或是不知道去哪個地區？" aria-label="最擔心什麼：支付、App、語言、飯店、移動天數、長輩小孩，或是不知道去哪個地區？"></textarea>
@@ -380,15 +472,17 @@
           </section>
 
           <section id="sources">
-            <p class="eyebrow">資料確認 · 2026-07-05</p>
+            <p class="eyebrow">資料確認 · 2026-07-11</p>
             <h2 class="cjk-title">本頁參考來源</h2>
             <div class="source-list">
+              <p><a href="https://english.beijing.gov.cn/specials/paymentservices/howtopaybeijing/202404/t20240429_3647378.html">北京市政府英文服務頁：國際卡綁定 Weixin Pay 官方圖解</a></p>
               <p><a href="https://english.beijing.gov.cn/livinginbeijing/finance/mobilepaymentlist/202005/t20200516_1899230.html">北京市英文官方服務頁：外國人如何使用微信支付</a></p>
-              <p><a href="https://gb.china-embassy.gov.cn/eng/lqfw/202403/t20240317_11261639.htm">中國駐英國大使館：中國支付服務指南</a></p>
+              <p><a href="https://gb.china-embassy.gov.cn/eng/lqfw/202403/t20240317_11261639.htm">中國駐英國大使館：支付服務指南</a></p>
               <p><a href="https://en.nia.gov.cn/n147418/n147463/c183390/content.html">中國國家移民管理局：單方面免簽國家名單</a></p>
             </div>
           </section>
         </article>
+
 
         <aside class="prep-panel" aria-label="本頁重點">
           <p class="eyebrow">本頁重點</p>

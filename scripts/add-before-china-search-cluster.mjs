@@ -7,41 +7,45 @@ const pages = [
     file: "before-china/wechat-pay-visa-mastercard/index.html",
     canonical: "https://bluehourchina.com/before-china/wechat-pay-visa-mastercard/",
     alternate: "https://bluehourchina.com/zh/before-china/wechat-pay-visa-mastercard/",
-    title: "WeChat Pay Visa Mastercard in China｜Foreigner Setup Guide｜Bluehour China",
-    description: "Can foreigners use WeChat Pay with Visa or Mastercard in China? A practical pre-trip setup guide with limits, backup payment advice and route support.",
-    keywords: "WeChat Pay Visa Mastercard China, WeChat Pay foreign card, how to use WeChat Pay in China foreigner, China travel payment, China mobile payment for tourists",
-    ogTitle: "WeChat Pay with Visa or Mastercard in China",
-    headline: "WeChat Pay with Visa or Mastercard in China",
+    title: "How to Use WeChat Pay in China as a Foreigner｜Visa & Mastercard Guide｜Bluehour China",
+    description: "How to use WeChat Pay in China as a foreigner: Visa, Mastercard and JCB setup, what still may not work, backup payment layers and route-risk help.",
+    keywords: "how to use WeChat Pay in China as a foreigner, WeChat Pay Visa Mastercard China, WeChat Pay foreign card, China travel payment, China mobile payment for tourists",
+    ogTitle: "How to use WeChat Pay in China as a foreigner",
+    headline: "How to use WeChat Pay in China as a foreigner",
     eyebrow: "Before China · Payment",
-    h1: "Set up WeChat Pay before the beautiful part begins",
-    lead: "For many foreign travellers, China becomes easy only after the quiet payment layer works. Prepare the app before landing, then keep a backup plan.",
+    h1: "How to use WeChat Pay in China as a foreigner",
+    lead: "Visa and Mastercard can help, but the calm trip comes from layers: mobile payment, SMS access, backup card, small cash and a route that does not collapse when one app hesitates.",
     navCurrent: "Before China",
     navBack: "Before China",
     navBackHref: "/before-china/",
     ctaText: "Ask us to check your route",
     ctaHref: "/interest.html?utm_source=wechat_pay_guide&utm_medium=site&utm_campaign=before_china_search_cluster",
+    visualGuide: true,
     sections: [
       {
         id: "answer",
         eyebrow: "Short answer",
-        title: "Yes, but treat it as travel payment, not a full local wallet",
+        title: "Link the card, keep one backup",
         paragraphs: [
-          "Beijing's official English service page says WeChat Pay supports several overseas credit cards, including JCB, Visa and Mastercard. It also says travellers without mainland bank cards may bind Visa, Mastercard or JCB for supported consumption scenarios.",
-          "The same page notes an important limit: this setup is for consumption and may not support general transfers or red packets. For travel, that means WeChat Pay can be useful, but it should not be your only payment method."
+          "Visa, Mastercard and JCB can be linked for supported everyday purchases. Set it up before departure, then test one small payment after arrival."
+        ],
+        summary: [
+          ["Use it for", "Dining, transport, hotels and supported merchants"],
+          ["Keep ready", "SMS access, passport, a backup card and a little RMB"],
+          ["Do not assume", "Transfers, red packets or every checkout will work"]
         ]
       },
       {
-        id: "steps",
-        eyebrow: "Setup sequence",
-        title: "What to prepare before departure",
-        list: [
-          "Install or update WeChat while you still have stable access to your usual phone number.",
-          "Prepare your passport name, card details and billing information.",
-          "Keep the phone number tied to the card reachable for SMS verification.",
-          "Follow the in-app payment wallet path. Official guidance describes Me, Wallet, Bank Card, then Add a New Bank Card, though labels may vary by region and app version.",
-          "Create the payment password when prompted.",
-          "After arrival, test a small payment before relying on it for a full travel day."
-        ]
+        id: "visual-guide",
+        eyebrow: "Official visual guide",
+        title: "Three steps before the first payment",
+        visualSteps: [
+          ["/assets/guides/wechat-pay-official/weixin-pay-guide-01.jpg", "01", "Install or update WeChat", "Sign in while your usual phone number can still receive verification messages.", "Official Weixin Pay guide showing how to download or update WeChat"],
+          ["/assets/guides/wechat-pay-official/weixin-pay-guide-03.jpg", "02", "Verify identity and add the card", "Keep passport details, card information and SMS access ready.", "Official Weixin Pay guide showing identity verification and adding an international card"],
+          ["/assets/guides/wechat-pay-official/weixin-pay-guide-usage.jpg", "03", "Test a supported everyday purchase", "Dining, transport and hotels are common use cases; follow the payment-page prompt at checkout.", "Official Weixin Pay guide showing supported everyday payment scenarios"]
+        ],
+        sourceHref: "https://english.beijing.gov.cn/specials/paymentservices/howtopaybeijing/202404/t20240429_3647378.html",
+        sourceLabel: "Images: official guide published by the Beijing Municipal Government English service"
       },
       {
         id: "backup",
@@ -209,41 +213,45 @@ const pages = [
     file: "zh/before-china/wechat-pay-visa-mastercard/index.html",
     canonical: "https://bluehourchina.com/zh/before-china/wechat-pay-visa-mastercard/",
     alternate: "https://bluehourchina.com/before-china/wechat-pay-visa-mastercard/",
-    title: "外國人微信支付綁 Visa / Mastercard｜出發中國前準備｜若青中國旅策",
-    description: "外國旅客來中國前，如何理解微信支付綁 Visa / Mastercard 的可用場景、限制、備用付款與深度中國路線準備。",
-    keywords: "外國人 微信支付 Visa Mastercard, 微信支付 綁海外卡, 外國人來中國支付, 中國旅遊支付準備, 微信支付 外國信用卡",
-    ogTitle: "外國人微信支付綁 Visa / Mastercard",
-    headline: "外國人微信支付綁 Visa / Mastercard",
+    title: "外國人來中國怎麼用微信支付｜Visa / Mastercard 準備｜若青中國旅策",
+    description: "外國人來中國怎麼用微信支付：Visa、Mastercard 與 JCB 的可用場景、限制、備用付款與深度中國路線準備。",
+    keywords: "外國人 來中國 怎麼用微信支付, 外國人 微信支付 Visa Mastercard, 微信支付 綁海外卡, 外國人來中國支付, 中國旅遊支付準備",
+    ogTitle: "外國人來中國怎麼用微信支付",
+    headline: "外國人來中國怎麼用微信支付",
     eyebrow: "出發中國前 · 支付",
-    h1: "先讓支付安靜，再讓旅程開始",
-    lead: "很多外國旅客來中國，真正先卡住的不是風景，而是支付、簡訊驗證、網路與第一段接送。",
+    h1: "外國人來中國怎麼用微信支付",
+    lead: "Visa 與 Mastercard 可以是一層準備，但真正舒適的旅程，需要支付、簡訊驗證、備用卡、少量現金與不要過度緊繃的第一段路。",
     navCurrent: "出發準備",
     navBack: "出發準備",
     navBackHref: "/zh/before-china/",
     ctaText: "開始路線諮詢",
     ctaHref: "/zh/interest/?utm_source=wechat_pay_guide&utm_medium=site&utm_campaign=before_china_search_cluster",
+    visualGuide: true,
     sections: [
       {
         id: "answer",
         eyebrow: "先說結論",
-        title: "可以準備，但不要把它當成完整本地錢包",
+        title: "海外卡可以綁定，仍要留一份備援",
         paragraphs: [
-          "北京市英文官方服務頁說明，微信支付支援部分海外信用卡，包括 JCB、Visa 與 Mastercard。官方頁也提到，沒有中國大陸銀行卡的旅客，可以透過一般綁卡方式綁定 Visa、Mastercard 或 JCB，在支援場景中消費。",
-          "同一頁也提醒，海外卡綁定主要用於消費，不一定支援一般轉帳或紅包。對旅客來說，它是重要工具，但不應該是唯一工具。"
+          "Visa、Mastercard 與 JCB 可用於支援海外卡的日常消費。出發前完成設定，抵達後先做一筆小額測試。"
+        ],
+        summary: [
+          ["可使用", "餐飲、交通、飯店與支援海外卡的商戶"],
+          ["一起準備", "可收簡訊的手機、護照、備用卡與少量現金"],
+          ["不要假設", "轉帳、紅包或每個付款場景都能使用"]
         ]
       },
       {
-        id: "steps",
-        eyebrow: "設定順序",
-        title: "出發前先準備這幾件事",
-        list: [
-          "在仍能穩定使用原手機號碼時，先安裝或更新微信。",
-          "準備護照姓名、卡片資料與帳單資訊。",
-          "確認綁卡手機號碼能收到簡訊驗證。",
-          "依 App 裡的支付錢包路徑進入綁卡區。官方說明為 Me、Wallet、Bank Card、Add a New Bank Card；實際文字可能因版本或地區不同。",
-          "依提示建立支付密碼。",
-          "抵達後先測小額付款，再把它放進完整行程。"
-        ]
+        id: "visual-guide",
+        eyebrow: "官方三步圖解",
+        title: "先綁卡，再做一次小額測試",
+        visualSteps: [
+          ["/assets/guides/wechat-pay-official/weixin-pay-guide-01.jpg", "01", "安裝或更新 WeChat", "先用可接收驗證簡訊的手機號碼登入。", "官方 Weixin Pay 圖解：下載或更新 WeChat"],
+          ["/assets/guides/wechat-pay-official/weixin-pay-guide-03.jpg", "02", "完成身分驗證與綁卡", "準備護照資料、卡片資訊與可接收簡訊的手機。", "官方 Weixin Pay 圖解：身分驗證與綁定國際卡"],
+          ["/assets/guides/wechat-pay-official/weixin-pay-guide-usage.jpg", "03", "抵達後先測小額消費", "餐飲、交通與飯店是常見場景，仍以付款頁當下提示為準。", "官方 Weixin Pay 圖解：海外卡可使用的日常付款場景"]
+        ],
+        sourceHref: "https://english.beijing.gov.cn/specials/paymentservices/howtopaybeijing/202404/t20240429_3647378.html",
+        sourceLabel: "圖片來源：北京市政府英文服務頁發布的官方操作指南"
       },
       {
         id: "backup",
@@ -267,7 +275,7 @@ const pages = [
     ],
     faq: [
       ["外國人可以用 Visa 或 Mastercard 綁微信支付嗎？", "北京市英文官方頁說明，微信支付支援部分海外信用卡，包括 JCB、Visa 與 Mastercard，並可用於支援的消費場景。"],
-      ["可以用來轉帳或發紅包嗎？", "官方頁提醒，海外卡綁定主要支援消費，不一定支援一般轉帳或紅包。"],
+      ["可以用來轉帳或發紅包嗎？", "海外卡主要支援消費，轉帳與紅包等功能不一定可用。"],
       ["還需要現金嗎？", "需要少量備案。當 App、網路、發卡行或商戶端出問題時，現金可以降低風險。"],
       ["為什麼這跟旅遊路線有關？", "北京上海之外，支付與手機可用性會影響票務、接送、住宿溝通與每天的舒適度。"]
     ]
@@ -284,7 +292,7 @@ const pages = [
     headline: "外國人來中國支付準備清單",
     eyebrow: "出發中國前 · 支付",
     h1: "不要押注一種完美支付方式",
-    lead: "舒服的中國旅行，不是只靠一個 App，而是把行動支付、卡片、現金、手機驗證與路線節奏都先放好。",
+    lead: "行動支付、備用卡、少量現金與手機驗證，都要在出發前準備好。",
     navCurrent: "出發準備",
     navBack: "出發準備",
     navBackHref: "/zh/before-china/",
@@ -318,7 +326,7 @@ const pages = [
         eyebrow: "區域旅行",
         title: "支付摩擦在每個地方不一樣",
         paragraphs: [
-          "北京與上海會吸收很多錯誤；到了雲南、新疆、敦煌或東北冬季路線，小小的付款問題可能牽動車程、票務、入住或長途移動後的晚餐。",
+          "北京與上海能吸收不少意外；到了雲南、新疆、青甘或東北，付款問題可能連動車程、票務、入住與晚餐。",
           "所以我們不把支付準備當成孤立提醒，而是放進整體路線判斷。"
         ]
       },
@@ -334,7 +342,7 @@ const pages = [
     ],
     faq: [
       ["外國人來中國應該準備哪些支付方式？", "先準備行動支付，再保留備用卡、少量現金與可用手機驗證。"],
-      ["支付寶或微信支付哪個比較適合外國人？", "會受到 App 版本、發卡行、手機號碼與商戶場景影響。若可行，兩者都先準備，抵達後再測試。"],
+      ["支付寶或微信支付哪個比較適合外國人？", "可用性會受 App 版本、發卡行、手機號碼與商戶影響；可以的話兩者都準備，抵達後先測小額付款。"],
       ["只帶 Visa 或 Mastercard 可以嗎？", "不建議只靠實體卡。中國日常支付高度依賴行動支付，接受度會因城市與場景不同。"],
       ["離開機場前要確認什麼？", "先確認網路可用、付款能測小額交易，並把住宿中文地址保存好。"]
     ]
@@ -400,7 +408,7 @@ const pages = [
       }
     ],
     faq: [
-      ["外國人來中國前需要準備哪些 App？", "至少先準備行動支付、網路與簡訊、地圖、翻譯，以及離線訂房資料。"],
+      ["外國人來中國前需要準備哪些 App？", "至少先準備行動支付、網路、簡訊、地圖、翻譯與離線訂房資訊。"],
       ["中國旅行一定需要簡訊驗證嗎？", "很多支付、訂單與帳號檢查可能需要手機驗證，建議出發前確認。"],
       ["住宿中文地址需要保存嗎？", "需要。每次轉場前都應保存中文地址與電話，尤其夜間抵達時。"],
       ["若青中國可以幫忙設定 App 嗎？", "我們不代操作個人帳號；我們協助的是把支付、手機、語言與路線風險放進行程判斷。"]
@@ -410,6 +418,11 @@ const pages = [
 
 const sources = [
   {
+    href: "https://english.beijing.gov.cn/specials/paymentservices/howtopaybeijing/202404/t20240429_3647378.html",
+    en: "Beijing Municipal Government English service: official visual guide to international cards with Weixin Pay",
+    zh: "北京市政府英文服務頁：國際卡綁定 Weixin Pay 官方圖解"
+  },
+  {
     href: "https://english.beijing.gov.cn/livinginbeijing/finance/mobilepaymentlist/202005/t20200516_1899230.html",
     en: "Beijing Municipal Government English service page on WeChat Pay for foreigners",
     zh: "北京市英文官方服務頁：外國人如何使用微信支付"
@@ -417,7 +430,7 @@ const sources = [
   {
     href: "https://gb.china-embassy.gov.cn/eng/lqfw/202403/t20240317_11261639.htm",
     en: "Chinese Embassy in the UK guide to payment services in China",
-    zh: "中國駐英國大使館：中國支付服務指南"
+    zh: "中國駐英國大使館：支付服務指南"
   },
   {
     href: "https://en.nia.gov.cn/n147418/n147463/c183390/content.html",
@@ -445,7 +458,7 @@ function jsonLd(page) {
         description: page.description,
         inLanguage: page.lang === "zh" ? "zh-Hant" : "en",
         datePublished: "2026-07-05",
-        dateModified: "2026-07-05",
+        dateModified: "2026-07-11",
         author: { "@id": "https://bluehourchina.com/#organization" },
         publisher: { "@id": "https://bluehourchina.com/#organization" },
         mainEntityOfPage: page.canonical,
@@ -512,6 +525,26 @@ function sectionHtml(section, lang, ctaText, ctaHref) {
     for (const item of section.list) body.push(`              <li>${esc(item)}</li>`);
     body.push("            </ol>");
   }
+  if (section.summary) {
+    body.push('            <div class="prep-answer-grid">');
+    for (const [label, value] of section.summary) {
+      body.push(`              <div><span>${esc(label)}</span><strong>${esc(value)}</strong></div>`);
+    }
+    body.push("            </div>");
+  }
+  if (section.visualSteps) {
+    body.push('            <div class="prep-visual-list">');
+    for (const [src, number, title, caption, alt] of section.visualSteps) {
+      body.push(`              <figure class="prep-visual-step">
+                <a class="prep-visual-media" href="${src}" target="_blank" rel="noopener"><img loading="eager" src="${src}" alt="${esc(alt)}"></a>
+                <figcaption><span>${esc(number)}</span><h3>${esc(title)}</h3><p>${esc(caption)}</p></figcaption>
+              </figure>`);
+    }
+    body.push("            </div>");
+    if (section.sourceHref && section.sourceLabel) {
+      body.push(`            <p class="prep-visual-source"><a href="${section.sourceHref}" target="_blank" rel="noopener">${esc(section.sourceLabel)}</a></p>`);
+    }
+  }
   if (section.cta) {
     body.push(`            <div class="hero-actions"><a class="btn primary dark-gold" href="${ctaHref}">${esc(ctaText)}</a><a class="btn dark" href="${lang === "zh" ? "/zh/before-china/" : "/before-china/"}">${lang === "zh" ? "回到出發準備總覽" : "Back to Before China"}</a></div>`);
   }
@@ -532,7 +565,7 @@ function pageHtml(page) {
   const homeHref = isZh ? "/zh.html" : "/";
   const interestHref = isZh ? "/zh/interest/?utm_source=before_china_article_nav&utm_medium=site&utm_campaign=before_china_search_cluster" : "/interest.html?utm_source=before_china_article_nav&utm_medium=site&utm_campaign=before_china_search_cluster";
   const sourcesTitle = isZh ? "本頁參考來源" : "Sources used for this guide";
-  const sourcesEyebrow = isZh ? "資料確認 · 2026-07-05" : "Last checked · 2026-07-05";
+  const sourcesEyebrow = isZh ? "資料確認 · 2026-07-11" : "Last checked · 2026-07-11";
   const faqTitle = isZh ? "常見問題" : "Questions travellers search";
   const faqEyebrow = isZh ? "FAQ" : "FAQ";
   const sideTitle = isZh ? "本頁重點" : "In this guide";
@@ -544,6 +577,13 @@ function pageHtml(page) {
   const sourceItems = sources.map((source) => `              <p><a href="${source.href}">${esc(isZh ? source.zh : source.en)}</a></p>`).join("\n");
   const asideLinks = page.sections.map((section) => `          <a href="#${section.id}">${esc(section.title)}</a>`).join("\n");
   const h1 = isZh ? `<h1 class="cjk-title">${esc(page.h1)}</h1>` : `<h1>${esc(page.h1)}</h1>`;
+  const aside = page.visualGuide ? "" : `
+        <aside class="prep-panel" aria-label="${sideTitle}">
+          <p class="eyebrow">${sideTitle}</p>
+${asideLinks}
+          <a href="#faq">FAQ</a>
+          <a href="#sources">${isZh ? "官方來源" : "Official sources"}</a>
+        </aside>`;
 
   return `<!doctype html>
 <html lang="${htmlLang}">
@@ -576,7 +616,7 @@ function pageHtml(page) {
   <script type="application/ld+json">
   ${jsonLd(page)}
   </script>
-  <link rel="stylesheet" href="/assets/luxury-multilang.css?v=20260711-care6">
+  <link rel="stylesheet" href="/assets/luxury-multilang.css?v=20260711-rhythm8">
   <style>
     .prep-hero {
       min-height: 70vh;
@@ -602,11 +642,14 @@ function pageHtml(page) {
       gap: clamp(30px, 6vw, 76px);
       align-items: start;
     }
-    .prep-copy { display: grid; gap: 46px; min-width: 0; }
+    .prep-copy { display: grid; gap: clamp(64px, 8vw, 104px); min-width: 0; }
+    .prep-copy > section { min-width: 0; scroll-margin-top: 112px; }
+    .prep-copy > section > .eyebrow { margin-bottom: 18px; }
     .prep-copy h2 {
-      max-width: 790px;
-      font-size: clamp(32px, 4.3vw, 58px);
-      line-height: 1.1;
+      max-width: 760px;
+      margin-bottom: 24px;
+      font-size: clamp(32px, 3.8vw, 54px);
+      line-height: 1.14;
     }
     .prep-copy p,
     .prep-copy li {
@@ -615,6 +658,88 @@ function pageHtml(page) {
       line-height: 1.86;
     }
     .prep-copy p + p { margin-top: 14px; }
+    .prep-answer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(22px, 3vw, 40px);
+      margin-top: 34px;
+    }
+    .prep-answer-grid > div {
+      padding-top: 18px;
+      border-top: 1px solid rgba(23,32,28,.34);
+    }
+    .prep-answer-grid span {
+      display: block;
+      margin-bottom: 10px;
+      color: #a86f20;
+      font-size: 12px;
+      font-weight: 850;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .prep-answer-grid strong {
+      display: block;
+      font-size: 17px;
+      line-height: 1.58;
+    }
+    .prep-visual-list {
+      display: grid;
+      gap: clamp(34px, 5vw, 58px);
+      margin-top: 34px;
+    }
+    .prep-visual-step {
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(250px, .72fr);
+      gap: clamp(28px, 5vw, 60px);
+      align-items: center;
+      margin: 0;
+      padding-top: 28px;
+      border-top: 1px solid rgba(23,32,28,.22);
+    }
+    .prep-visual-step:nth-child(even) .prep-visual-media { order: 2; }
+    .prep-visual-media {
+      display: grid;
+      place-items: center;
+      min-height: 320px;
+      padding: clamp(12px, 2vw, 22px);
+      background: #fff;
+      overflow: hidden;
+    }
+    .prep-visual-media img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: none;
+      object-fit: contain;
+    }
+    .prep-visual-step figcaption > span {
+      color: #b77720;
+      font-size: 13px;
+      font-weight: 900;
+    }
+    .prep-visual-step h3 {
+      margin-top: 13px;
+      font-size: clamp(25px, 2.7vw, 36px);
+      line-height: 1.24;
+    }
+    .prep-visual-step figcaption p {
+      margin-top: 15px;
+      font-size: 16px;
+      line-height: 1.72;
+    }
+    .prep-visual-source {
+      margin-top: 22px;
+      font-size: 14px !important;
+    }
+    .prep-visual-source a {
+      color: var(--ink);
+      border-bottom: 1px solid rgba(23,32,28,.28);
+    }
+    .prep-visual-page .prep-grid {
+      grid-template-columns: minmax(0, 1fr);
+      max-width: 1180px;
+    }
+    .prep-visual-page .prep-copy { max-width: 1040px; }
     .prep-copy ol {
       display: grid;
       gap: 10px;
@@ -670,6 +795,9 @@ function pageHtml(page) {
       .prep-grid,
       .prep-faq { grid-template-columns: 1fr; }
       .prep-panel { position: static; }
+      .prep-answer-grid { grid-template-columns: 1fr; gap: 22px; }
+      .prep-visual-step { grid-template-columns: 1fr; }
+      .prep-visual-step:nth-child(even) .prep-visual-media { order: 0; }
     }
     @media (max-width: 760px) {
       .prep-hero h1 {
@@ -677,12 +805,15 @@ function pageHtml(page) {
         line-height: 1.12;
       }
       .prep-copy h2 { font-size: clamp(30px, 8.4vw, 42px); }
+      .prep-copy { gap: 72px; }
+      .prep-visual-media { min-height: 0; padding: 10px; }
+      .prep-visual-media img { max-height: none; }
       .prep-card,
       .prep-panel { padding: 22px; }
     }
   </style>
 </head>
-<body>
+<body${page.visualGuide ? ' class="prep-visual-page"' : ""}>
   <nav class="nav" aria-label="${isZh ? "主導覽" : "Primary navigation"}">
     <a class="brand" href="${homeHref}">
       <img src="/assets/ruoqing-avatar.svg" alt="" aria-hidden="true">
@@ -733,12 +864,7 @@ ${sourceItems}
           </section>
         </article>
 
-        <aside class="prep-panel" aria-label="${sideTitle}">
-          <p class="eyebrow">${sideTitle}</p>
-${asideLinks}
-          <a href="#faq">FAQ</a>
-          <a href="#sources">${isZh ? "官方來源" : "Official sources"}</a>
-        </aside>
+${aside}
       </div>
     </section>
   </main>

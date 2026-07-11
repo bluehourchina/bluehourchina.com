@@ -10,6 +10,8 @@ const destinations = {
   sanya: 7,
   northeast: 7,
   "inner-mongolia": 6,
+  xian: 5,
+  tibet: 8,
 };
 const locales = ["en", "zh", "ja", "ko", "th", "ru"];
 const expectedCurrency = Object.fromEntries(locales.map((locale) => [locale, "CNY"]));

@@ -856,6 +856,11 @@ h1,h2,h3,
   display:grid;
   border-top:1px solid var(--line);
 }
+.route-day-list-wide{
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  column-gap:40px;
+}
+.route-day-list-wide .route-day-item:nth-child(2){border-top:1px solid var(--line)}
 .route-day-item{
   display:grid;
   grid-template-columns:96px minmax(0,1fr);
@@ -1171,6 +1176,8 @@ h1,h2,h3,
   .route-extension-copy{
     grid-template-columns:1fr;
   }
+  .route-day-list-wide{grid-template-columns:1fr}
+  .route-day-list-wide .route-day-item:nth-child(2){border-top:0}
   .route-extension-copy > p{
     grid-column:auto;
   }
@@ -2107,13 +2114,15 @@ svg{
 /* calm-inline-intake-end */
 
 /* official-destination-films-start */
-.home-hero .hero-scene{animation-name:destinationScene;animation-duration:36s}
+.home-hero .hero-scene{animation-name:destinationScene;animation-duration:48s}
 .hero-scene.scene-yunnan{background-image:url("/assets/wechat-reference-20260709/wechat-yunnan-dali-lakeside-table-08.jpg");animation-delay:0s}
 .hero-scene.scene-xinjiang{background-image:url("/assets/real-xinjiang/sayram-lake-cc0.jpg");animation-delay:6s}
 .hero-scene.scene-dunhuang{background-image:url("/assets/real-dunhuang/crescent-lake-cc-by-sa.jpg");animation-delay:12s}
 .hero-scene.scene-mongolia{background-image:url("/assets/real-inner-mongolia/grassland-sunset-cc-by.jpg");animation-delay:18s}
 .hero-scene.scene-sanya{background-image:url("/assets/real-sanya/haitang-bay-cc-by-sa.jpg");animation-delay:24s}
 .hero-scene.scene-northeast{background-image:url("/assets/real-northeast/china-snow-town-cc-by.jpg");animation-delay:30s}
+.hero-scene.scene-xian{background-image:url("/assets/real-xian/xian-yongning-gate-night.jpg");animation-delay:36s}
+.hero-scene.scene-tibet{background-image:url("/assets/real-tibet/tibet-potala-palace.jpg");animation-delay:42s}
 @keyframes destinationScene{0%{opacity:1;transform:scale(1.03)}13%{opacity:1;transform:scale(1.08) translate3d(-.8%,-.5%,0)}18%{opacity:0;transform:scale(1.1) translate3d(-1.2%,-.7%,0)}100%{opacity:0;transform:scale(1.1) translate3d(-1.2%,-.7%,0)}}
 .official-films-band{background:#e9eee9}
 .official-films-head{display:grid;grid-template-columns:minmax(0,.78fr) minmax(280px,.54fr);gap:clamp(32px,7vw,96px);align-items:end;margin-bottom:clamp(36px,5vw,60px)}
@@ -2244,51 +2253,302 @@ svg{
 }
 /* multilingual-inquiry-polish-end */
 
-/* service-photo-cards-start */
+/* editorial-card-rhythm-start */
 #care.service-band .promise{
   display:block;
   min-height:0;
   overflow:hidden;
   padding:0 0 28px;
 }
-#care.service-band .promise::before{
-  content:"";
-  display:block;
+.service-card-media,
+.guide-card-media{
   width:100%;
   aspect-ratio:16/10;
-  margin-bottom:24px;
-  background-position:center;
-  background-size:cover;
+  overflow:hidden;
+  margin:0;
+  background:var(--mist);
 }
-#care.service-band .promise:nth-child(1)::before{
-  background-image:url("/assets/real-xinjiang/guozigou-bridge-cc-by.jpg");
+.service-card-media img,
+.guide-card-media img{
+  transition:transform .65s ease;
 }
-#care.service-band .promise:nth-child(2)::before{
-  background-image:url("/assets/real-sanya/sanya-edition-01-cc-by.jpg");
-}
-#care.service-band .promise:nth-child(3)::before{
-  background-image:url("/assets/real-hainan/haikou-old-town-cc-by-sa.jpg");
-}
-#care.service-band .promise:nth-child(4)::before{
-  background-image:url("/assets/wechat-reference-20260709/wechat-yunnan-dali-lakeside-table-08.jpg");
+.promise:hover .service-card-media img,
+.search-intent-card:hover .guide-card-media img{
+  transform:scale(1.035);
 }
 #care.service-band .promise h3,
 #care.service-band .promise p{
   margin-left:24px;
   margin-right:24px;
 }
+#care.service-band .promise h3{margin-top:24px}
+.compact-guides .search-intent-card{
+  display:block;
+  overflow:hidden;
+  padding:0 0 26px;
+}
+.compact-guides .search-intent-card b,
+.compact-guides .search-intent-card h3,
+.compact-guides .search-intent-card > a{
+  margin-left:24px;
+  margin-right:24px;
+}
+.compact-guides .search-intent-card b{margin-top:24px}
+.compact-guides .search-intent-card > a{margin-top:24px}
+.compact-guides .search-intent-card:nth-child(1) .guide-card-media img{
+  object-position:center 88%;
+}
+.destination-route-page .cta::before,
+.destination-route-page .next::before{
+  background:linear-gradient(120deg,rgba(7,17,15,.98),rgba(24,54,45,.92));
+}
+.term-line{
+  display:block;
+  width:fit-content;
+  max-width:100%;
+  text-wrap:balance;
+}
+.term-line + .term-line{margin-top:5px}
+.fact .term-line{margin-top:0}
+.fact .term-line + .term-line{margin-top:5px}
+.fact > span:has(.term-line),
+.route-terms span:has(.term-line),
+.route-price small:has(.term-line){
+  text-wrap:wrap;
+}
 @media(max-width:760px){
-  #care.service-band .promise{
-    padding:0 0 26px;
-  }
-  #care.service-band .promise::before{
-    aspect-ratio:16/9;
-    margin-bottom:22px;
-  }
+  #care.service-band .promise{padding:0 0 26px}
+  .service-card-media,
+  .guide-card-media{aspect-ratio:16/9}
   #care.service-band .promise h3,
-  #care.service-band .promise p{
+  #care.service-band .promise p,
+  .compact-guides .search-intent-card b,
+  .compact-guides .search-intent-card h3,
+  .compact-guides .search-intent-card > a{
     margin-left:22px;
     margin-right:22px;
   }
+  .route-terms span,
+  .fact span{font-size:17px;line-height:1.52}
 }
-/* service-photo-cards-end */
+/* editorial-card-rhythm-end */
+
+/* journey-journals-start */
+.journey-journals-band{background:#e8eeea}
+.journey-journals-band .section-head{align-items:start}
+.journey-journal-grid{display:grid;gap:22px}
+.journey-journal-card{
+  display:grid;
+  grid-template-columns:minmax(320px,.92fr) minmax(0,1.08fr);
+  min-height:420px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:rgba(255,250,241,.72);
+}
+.journey-journal-card:nth-child(even){grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr)}
+.journey-journal-card:nth-child(even) figure{order:2}
+.journey-journal-card figure{min-height:420px;margin:0;overflow:hidden}
+.journey-journal-card img{transition:transform .75s ease}
+.journey-journal-card:hover img{transform:scale(1.025)}
+.journey-journal-copy{align-self:center;padding:clamp(32px,5vw,68px)}
+.journey-journal-copy h3{max-width:16ch;font-size:clamp(34px,4vw,54px);line-height:1.12;text-wrap:balance}
+.journey-journal-copy > p:not(.eyebrow){max-width:58ch;margin-top:22px;color:var(--muted);font-size:17px;line-height:1.86}
+.journey-journal-copy a{display:inline-block;margin-top:28px;padding-bottom:5px;border-bottom:1px solid rgba(23,32,28,.32);font-weight:800}
+@media(max-width:760px){
+  .journey-journal-card,
+  .journey-journal-card:nth-child(even){grid-template-columns:1fr;min-height:0}
+  .journey-journal-card:nth-child(even) figure{order:0}
+  .journey-journal-card figure{min-height:0;aspect-ratio:4/3}
+  .journey-journal-copy{padding:28px 24px 32px}
+  .journey-journal-copy h3{font-size:34px;line-height:1.18}
+  .journey-journal-copy > p:not(.eyebrow){font-size:16px;line-height:1.8}
+}
+/* journey-journals-end */
+
+/* interactive-destination-map-start */
+.destination-map-band{
+  background:#0b1b18;
+  color:var(--ivory);
+  padding-top:clamp(138px,12vw,176px);
+}
+.destination-map-band .section-head p{color:rgba(255,250,241,.7)}
+.destination-map-layout{
+  display:grid;
+  grid-template-columns:minmax(0,1.7fr) minmax(300px,.72fr);
+  min-height:610px;
+  border:1px solid rgba(255,250,241,.22);
+}
+.destination-map-stage{
+  position:relative;
+  min-width:0;
+  background:#dce3dc;
+}
+.destination-map-canvas{
+  width:100%;
+  min-height:610px;
+}
+.destination-map-reset{
+  position:absolute;
+  z-index:600;
+  top:18px;
+  right:18px;
+  min-height:42px;
+  padding:0 16px;
+  border:1px solid rgba(7,17,15,.28);
+  background:rgba(255,250,241,.94);
+  color:#10231f;
+  font:700 14px/1 var(--sans);
+  cursor:pointer;
+}
+.destination-map-panel{
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  padding:42px 38px;
+  background:#10231f;
+}
+.destination-map-panel h3{
+  margin:14px 0 24px;
+  font-size:clamp(40px,4vw,66px);
+  line-height:1.05;
+}
+.destination-map-facts{
+  display:grid;
+  gap:0;
+  margin:0 0 30px;
+}
+.destination-map-facts div{
+  display:grid;
+  gap:7px;
+  padding:18px 0;
+  border-top:1px solid rgba(255,250,241,.18);
+}
+.destination-map-facts dt{
+  color:var(--gold);
+  font:700 12px/1.2 var(--sans);
+  text-transform:uppercase;
+}
+.destination-map-facts dd{
+  margin:0;
+  color:rgba(255,250,241,.9);
+  font-size:17px;
+  line-height:1.62;
+}
+.destination-map-selector{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  border:1px solid rgba(255,250,241,.22);
+  border-top:0;
+}
+.destination-map-selector button{
+  min-height:58px;
+  border:0;
+  border-right:1px solid rgba(255,250,241,.18);
+  border-top:1px solid rgba(255,250,241,.18);
+  background:transparent;
+  color:rgba(255,250,241,.76);
+  font:700 15px/1.25 var(--sans);
+  cursor:pointer;
+}
+.destination-map-selector button:nth-child(4n){border-right:0}
+.destination-map-selector button:hover,
+.destination-map-selector button:focus-visible,
+.destination-map-selector button.is-active{
+  background:var(--gold);
+  color:#10231f;
+  outline:0;
+}
+.destination-map-band .leaflet-container{font-family:var(--sans)}
+.destination-map-band .leaflet-control-attribution{font-size:10px}
+.destination-map-band .leaflet-tooltip{
+  border:0;
+  border-radius:0;
+  background:#fffaf1;
+  color:#10231f;
+  box-shadow:none;
+  font-weight:700;
+}
+.map-library-failed .destination-map-canvas{
+  display:grid;
+  place-items:center;
+  padding:40px;
+  color:#10231f;
+  text-align:center;
+}
+.route-photo-story{background:#e8eeea}
+.route-photo-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+  margin-top:38px;
+}
+.route-photo-grid figure{
+  position:relative;
+  margin:0;
+  min-height:340px;
+  overflow:hidden;
+  background:#10231f;
+}
+.route-photo-grid figure:last-child:nth-child(odd){
+  grid-column:1/-1;
+  min-height:430px;
+}
+.route-photo-grid img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.route-photo-grid figcaption{
+  position:absolute;
+  inset:auto 0 0;
+  padding:44px 24px 20px;
+  color:#fffaf1;
+  background:linear-gradient(transparent,rgba(7,17,15,.9));
+  font:700 16px/1.45 var(--sans);
+}
+.route-specifics{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:36px;
+  margin-top:40px;
+}
+.route-specifics article{
+  padding-top:20px;
+  border-top:1px solid var(--line);
+}
+.route-specifics h3{margin:0 0 10px;font-size:27px}
+.route-specifics p{margin:0;color:var(--muted);font-size:16px;line-height:1.75}
+@media(max-width:900px){
+  .destination-map-layout{grid-template-columns:1fr;min-height:0}
+  .destination-map-canvas{min-height:430px}
+  .destination-map-panel{padding:34px 28px}
+  .destination-map-panel h3{font-size:46px}
+  .destination-map-selector{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .destination-map-selector button:nth-child(4n){border-right:1px solid rgba(255,250,241,.18)}
+  .destination-map-selector button:nth-child(2n){border-right:0}
+  .route-specifics{grid-template-columns:1fr;gap:22px}
+}
+@media(max-width:620px){
+  .destination-map-band .section-head{margin-bottom:32px}
+  .destination-map-canvas{min-height:360px}
+  .destination-map-reset{top:12px;right:12px}
+  .destination-map-panel{padding:30px 22px}
+  .destination-map-panel h3{font-size:40px}
+  .destination-map-selector button{min-height:54px;font-size:14px}
+  .route-photo-grid{grid-template-columns:1fr;gap:14px}
+  .route-photo-grid figure{min-height:300px}
+  .route-photo-grid figure:last-child:nth-child(odd){grid-column:auto;min-height:300px}
+  .destination-route-page .facts{grid-template-columns:1fr}
+  .destination-route-page .fact{
+    min-height:0;
+    display:grid;
+    grid-template-columns:96px minmax(0,1fr);
+    gap:18px;
+    align-items:start;
+    padding:18px;
+  }
+  .destination-route-page .fact span{margin-top:0;font-size:16px;line-height:1.5;text-wrap:balance}
+}
+/* interactive-destination-map-end */

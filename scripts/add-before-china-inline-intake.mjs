@@ -84,7 +84,7 @@ const pages = [
     sourceContent: "zh-china-travel-apps-before-trip-guide",
     title: "App 裝好以後，還要確認這條路走起來是否舒服",
     intro:
-      "留下旅客的季節、人數、想去地區與舒適需求，我們會先回覆路線節奏、風險點與初步報價方向。",
+      "留下季節、人數、地區與舒適需求，我們會先回覆路線節奏、風險與起價方向。",
   },
 ];
 
@@ -181,7 +181,7 @@ function formSnippet(page) {
                 ${c.proof.map((item) => `<span>${item}</span>`).join("\n                ")}
               </div>
             </div>
-            <form class="lead-form inline-lead-form" data-form-lang="${page.lang}" data-lead-value="1200" data-lead-currency="USD" data-sending-message="${c.sending}" data-success-message="${c.success}" data-error-message="${c.error}" name="bluehour-before-china-${page.lang}-${page.angle}" method="POST" action="https://formsubmit.co/67d31e8a5231a5944bbb8f18952a58df">
+            <form class="lead-form inline-lead-form" data-form-lang="${page.lang}" data-lead-value="8500" data-lead-currency="CNY" data-sending-message="${c.sending}" data-success-message="${c.success}" data-error-message="${c.error}" name="bluehour-before-china-${page.lang}-${page.angle}" method="POST" action="https://formsubmit.co/67d31e8a5231a5944bbb8f18952a58df">
               <input type="hidden" name="_next" value="https://bluehourchina.com/thanks.html?source=before_china&angle=${page.angle}">
               <input type="hidden" name="_subject" value="${subject}">
               <input type="hidden" name="_template" value="table">
@@ -203,7 +203,7 @@ function formSnippet(page) {
               <input type="hidden" name="intent_angle" value="${page.angle}">
               <input type="hidden" name="source_path" value="${sourcePath}">
               <input type="hidden" name="source_content" value="${page.sourceContent}">
-              <input type="hidden" name="lead_currency" value="USD">
+              <input type="hidden" name="lead_currency" value="CNY">
               <input type="text" name="name" placeholder="${c.name}" aria-label="${c.name}" required>
               <input type="email" name="email" placeholder="${c.email}" aria-label="${c.email}">
               <input type="text" name="contact" placeholder="${c.contact}" aria-label="${c.contact}" required>
@@ -250,6 +250,10 @@ for (const page of pages) {
     /<input type="hidden" name="campaign" value="[^"]*">/,
     '<input type="hidden" name="campaign" value="private_route_consultation">'
   );
+  next = next
+    .replace(/data-lead-value="[^"]*"/, 'data-lead-value="8500"')
+    .replace(/data-lead-currency="[^"]*"/, 'data-lead-currency="CNY"')
+    .replace(/<input type="hidden" name="lead_currency" value="[^"]*">/, '<input type="hidden" name="lead_currency" value="CNY">');
   next = ensureScript(next);
   if (next !== html) {
     await fs.writeFile(fullPath, next.replace(/[ \t]+$/gm, ""));

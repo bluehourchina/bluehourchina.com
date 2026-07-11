@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
-const destinations = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast"];
+const destinations = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast", "xian", "tibet"];
 const localeNames = {
   en: { short: "EN", full: "English" },
   zh: { short: "中", full: "繁體中文" },
@@ -63,7 +63,7 @@ function hrefsFor(type) {
     return { en: "/interest.html", zh: "/zh/interest/", ja: "/ja/interest/", ko: "/ko/interest/", th: "/th/interest/", ru: "/ru/interest/" };
   }
   if (type.kind === "stories") {
-    return { en: "/en/stories/", zh: "/zh/stories/", ja: "/ja/stories/", ko: "/ko/stories/", th: "/th/stories/", ru: "/ru.html" };
+    return { en: "/en/stories/", zh: "/zh/stories/", ja: "/ja/stories/", ko: "/ko/stories/", th: "/th/stories/", ru: "/ru/stories/" };
   }
   if (type.kind === "grand-loop") {
     return { en: "/yunnan-grand-loop/", zh: "/zh/yunnan-grand-loop/", ja: "/ja/yunnan/", ko: "/ko/yunnan/", th: "/th/yunnan/", ru: "/ru/yunnan/" };
