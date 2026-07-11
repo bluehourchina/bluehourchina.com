@@ -576,7 +576,7 @@ function pageHtml(page) {
   <script type="application/ld+json">
   ${jsonLd(page)}
   </script>
-  <link rel="stylesheet" href="/assets/luxury-multilang.css?v=20260711-routes5">
+  <link rel="stylesheet" href="/assets/luxury-multilang.css?v=20260711-care6">
   <style>
     .prep-hero {
       min-height: 70vh;

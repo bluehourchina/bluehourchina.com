@@ -2243,3 +2243,52 @@ svg{
   .interest-proof span{padding-left:14px;border-left:1px solid rgba(255,250,241,.3)}
 }
 /* multilingual-inquiry-polish-end */
+
+/* service-photo-cards-start */
+#care.service-band .promise{
+  display:block;
+  min-height:0;
+  overflow:hidden;
+  padding:0 0 28px;
+}
+#care.service-band .promise::before{
+  content:"";
+  display:block;
+  width:100%;
+  aspect-ratio:16/10;
+  margin-bottom:24px;
+  background-position:center;
+  background-size:cover;
+}
+#care.service-band .promise:nth-child(1)::before{
+  background-image:url("/assets/real-xinjiang/guozigou-bridge-cc-by.jpg");
+}
+#care.service-band .promise:nth-child(2)::before{
+  background-image:url("/assets/real-sanya/sanya-edition-01-cc-by.jpg");
+}
+#care.service-band .promise:nth-child(3)::before{
+  background-image:url("/assets/real-hainan/haikou-old-town-cc-by-sa.jpg");
+}
+#care.service-band .promise:nth-child(4)::before{
+  background-image:url("/assets/wechat-reference-20260709/wechat-yunnan-dali-lakeside-table-08.jpg");
+}
+#care.service-band .promise h3,
+#care.service-band .promise p{
+  margin-left:24px;
+  margin-right:24px;
+}
+@media(max-width:760px){
+  #care.service-band .promise{
+    padding:0 0 26px;
+  }
+  #care.service-band .promise::before{
+    aspect-ratio:16/9;
+    margin-bottom:22px;
+  }
+  #care.service-band .promise h3,
+  #care.service-band .promise p{
+    margin-left:22px;
+    margin-right:22px;
+  }
+}
+/* service-photo-cards-end */

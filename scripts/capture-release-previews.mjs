@@ -41,6 +41,12 @@ try {
       await page.goto(new URL("/zh.html", origin).toString(), { waitUntil: "networkidle", timeout: 30000 });
       await page.waitForTimeout(350);
       await page.screenshot({ path: path.join(outputDir, `zh-home-${viewport.name}.png`) });
+      const care = page.locator("#care.service-band").first();
+      if (await care.count()) {
+        await settleVisibleImages(care);
+        await page.waitForTimeout(250);
+        await care.screenshot({ path: path.join(outputDir, `zh-home-care-${viewport.name}.png`) });
+      }
     }
 
     for (const route of routes) {
@@ -61,4 +67,4 @@ try {
   await browser.close();
 }
 
-console.log(`Captured ${viewports.length * (captureHome ? 1 : 0) + routes.length * viewports.length * 3} release previews in ${outputDir}`);
+console.log(`Captured ${viewports.length * (captureHome ? 2 : 0) + routes.length * viewports.length * 3} release previews in ${outputDir}`);
