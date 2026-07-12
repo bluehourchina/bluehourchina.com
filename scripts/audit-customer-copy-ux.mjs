@@ -143,6 +143,12 @@ for (const file of ["before-china/china-first-day-arrival-checklist/index.html",
   if (!html.includes(".prep-copy #answer .answer-box { margin-top: clamp(36px, 4vw, 54px); }")) {
     findings.push(`${file} answer box lacks the approved title spacing`);
   }
+  if (file.startsWith("zh/")) {
+    if (/協助外國朋友|我們不操作個人支付帳號/.test(html)) findings.push(`${file} addresses a helper instead of the traveller`);
+    for (const required of ["<span class=\"faq-title-line\">抵達中國後</span><wbr><span class=\"faq-title-line\">最常遇到的問題</span>", "旅程規劃會照顧哪些細節？"]) {
+      if (!html.includes(required)) findings.push(`${file} missing traveller-first arrival FAQ copy`);
+    }
+  }
 }
 
 const repeated = new Map();
