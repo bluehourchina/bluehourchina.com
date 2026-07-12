@@ -193,6 +193,11 @@ for (const file of ["before-china/china-first-day-arrival-checklist/index.html",
   }
 }
 
+for (const file of ["before-china/index.html", "zh/before-china/index.html"]) {
+  const html = await fs.readFile(path.join(root, file), "utf8");
+  if (/高意圖|接近下訂|High-intent|close to booking/i.test(html)) findings.push(`${file} exposes internal acquisition language to travellers`);
+}
+
 const repeated = new Map();
 for (const slug of destinationSlugs) {
   for (const locale of routeLocales) {
