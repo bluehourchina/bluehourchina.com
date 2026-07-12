@@ -101,6 +101,10 @@ const headingPolish = await fs.readFile(path.join(root, "assets/heading-polish.c
 for (const required of [".price-with-suffix", "white-space:nowrap!important", "font-size:.36em!important"]) {
   if (!headingPolish.includes(required)) findings.push(`assets/heading-polish.css missing the approved starting-price suffix treatment`);
 }
+const luxuryMultilang = await fs.readFile(path.join(root, "assets/luxury-multilang.css"), "utf8");
+for (const required of [".route-extension-actions .btn:not(.primary)", "border-color:var(--ink)", "background:var(--ink)", ".journey-journal-details"]) {
+  if (!luxuryMultilang.includes(required)) findings.push(`assets/luxury-multilang.css missing the approved light-section secondary CTA treatment`);
+}
 let formCount = 0;
 for (const file of htmlFiles) {
   const html = await fs.readFile(file, "utf8");
@@ -113,11 +117,23 @@ for (const file of htmlFiles) {
   if (html.includes("price-with-suffix") && !html.includes("/assets/heading-polish.css?v=20260712-price1")) {
     findings.push(`${relative(file)} can load a stale starting-price suffix style`);
   }
+  if (html.includes("route-extension-actions") && !html.includes("/assets/luxury-multilang.css?v=20260712-story2")) {
+    findings.push(`${relative(file)} can load a stale light-section secondary CTA style`);
+  }
+  for (const input of html.matchAll(/<input\b[^>]*\bname=["']contact["'][^>]*>/gi)) {
+    if (/placeholder=/i.test(input[0]) && !/WhatsApp/i.test(input[0])) findings.push(`${relative(file)} visible contact field does not offer WhatsApp`);
+  }
   for (const match of html.matchAll(/<form\b[^>]*class="[^"]*\blead-form\b[^"]*"[^>]*>[\s\S]*?<\/form>/g)) {
     formCount += 1;
     const failures = formFailures(match[0]);
     if (failures.length) findings.push(`${relative(file)} lead form missing: ${failures.join(", ")}`);
   }
+}
+
+for (const slug of destinationSlugs) {
+  const file = routeFile(slug, "zh");
+  const html = await fs.readFile(path.join(root, file), "utf8");
+  if (/台灣|台幣|台胞證|NT\$|\bTWD\b|taiwan/i.test(html)) findings.push(`${file} assumes a Taiwan-only audience on a general destination page`);
 }
 
 for (const file of homeFiles) {
@@ -138,16 +154,29 @@ for (const topic of ["payment", "cancellation", "visa", "language", "hotels", "t
 }
 
 const storyChecks = [
-  ["stories.html", "not presented as customer testimonials"],
-  ["zh/stories/index.html", "\u5167\u5bb9\u4e0d\u662f\u5ba2\u6236\u8a55\u50f9"],
+  ["stories.html", "not customer testimonials"],
+  ["en/stories/index.html", "not customer testimonials"],
+  ["zh/stories/index.html", "\u4e0d\u662f\u771f\u5be6\u5ba2\u6236\u8a55\u50f9"],
   ["ja/stories/index.html", "\u5b9f\u5728\u306e\u304a\u5ba2\u69d8\u306e\u58f0"],
   ["ko/stories/index.html", "\uc2e4\uc81c \uace0\uac1d \ud6c4\uae30"],
   ["th/stories/index.html", "\u0e23\u0e35\u0e27\u0e34\u0e27\u0e08\u0e32\u0e01\u0e25\u0e39\u0e01\u0e04\u0e49\u0e32\u0e08\u0e23\u0e34\u0e07"],
-  ["ru/stories/index.html", "\u043d\u0435 \u0432\u044b\u043c\u044b\u0448\u043b\u0435\u043d\u043d\u044b\u0435 \u043e\u0442\u0437\u044b\u0432\u044b"],
+  ["ru/stories/index.html", "\u043d\u0435 \u0432\u044b\u0434\u0430\u044e\u0442\u0441\u044f \u0437\u0430 \u043e\u0442\u0437\u044b\u0432\u044b \u0440\u0435\u0430\u043b\u044c\u043d\u044b\u0445 \u043a\u043b\u0438\u0435\u043d\u0442\u043e\u0432"],
 ];
 for (const [file, marker] of storyChecks) {
   const html = await fs.readFile(path.join(root, file), "utf8");
   if (!html.includes(marker)) findings.push(`${file} missing editorial-story disclosure`);
+  const featureSection = html.match(/<section class="section" id="stories">[\s\S]*?<\/section>/)?.[0] || "";
+  const featureCardCount = [...featureSection.matchAll(/class="story-card"/g)].length;
+  const featureImages = [...featureSection.matchAll(/<img\b[^>]*src="([^"]+)"/g)].map((match) => match[1]);
+  const cardCount = [...html.matchAll(/class="journey-journal-card"/g)].length;
+  const detailCount = [...html.matchAll(/class="journey-journal-details"/g)].length;
+  const personaCount = [...html.matchAll(/class="journal-traveller"/g)].length;
+  const images = [...html.matchAll(/<article class="journey-journal-card">[\s\S]*?<img\b[^>]*src="([^"]+)"/g)].map((match) => match[1]);
+  if (featureCardCount !== 4) findings.push(`${file} must contain four featured destination stories`);
+  if (new Set(featureImages).size !== featureImages.length) findings.push(`${file} repeats an image inside the featured destination stories`);
+  if (cardCount !== 4 || detailCount !== 4 || personaCount !== 4) findings.push(`${file} must contain four expandable editorial journey perspectives`);
+  if (new Set(images).size !== images.length) findings.push(`${file} repeats an image inside the visible journey journals`);
+  if (!html.includes("/assets/luxury-multilang.css?v=20260712-story2")) findings.push(`${file} can load a stale expandable-story style`);
 }
 
 for (const file of ["before-china/china-first-day-arrival-checklist/index.html", "zh/before-china/china-first-day-arrival-checklist/index.html"]) {

@@ -54,15 +54,15 @@ const pages = [
   },
   {
     path: "/zh/yunnan/",
-    formName: "bluehour-yunnan-product-tw",
+    formName: "bluehour-yunnan-product-zh",
     values: {
-      name: "Codex 台灣雲南表單測試",
-      contact: "LINE codex-taiwan-test",
+      name: "Codex 雲南表單測試",
+      contact: "+81 90 0000 0000 WhatsApp",
       travel_window: "3-6 個月內",
       group_size: "2 人",
       comfort_level: "精品舒適",
       budget: "RMB 8,000-15,000",
-      message: "測試台灣出發雲南頁的站內詢價表單，不送出到外部服務。"
+      message: "測試繁中雲南頁的站內詢價表單，不送出到外部服務。"
     }
   },
   {

@@ -367,7 +367,7 @@ const localeLabels = {
     beforeIntro: (data) =>
       `公開路線先給一個清楚形狀：${data.days}，${data.shortRoute}，${data.price}。真正重要的是判斷這個形狀是否適合同行的人。`,
     faqEyebrow: "旅人常問",
-    faqTitle: (name) => [`關於${name}`, "旅人最常問的問題"],
+    faqTitle: (name) => name === "雲南" ? ["去雲南以前", "想先知道的事"] : [`關於${name}`, "旅人最常問的問題"],
     faqIntro: "答案要清楚，旅人才知道該留下需求，或先換一種更適合自己的中國風景。",
   },
   ja: {
