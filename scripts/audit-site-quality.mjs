@@ -3,7 +3,7 @@ import path from "node:path";
 
 const root = process.cwd();
 const siteOrigin = "https://bluehourchina.com";
-const currentLuxuryCssVersion = "v=20260711-rhythm9";
+const currentLuxuryCssVersions = ["v=20260711-rhythm9", "v=20260712-cute-map1"];
 const htmlFiles = [];
 const issues = [];
 const warnings = [];
@@ -149,7 +149,7 @@ async function auditFile(file) {
   for (const link of tags(html, "link")) {
     const href = readAttr(link, "href");
     if (!href) continue;
-    if (href.includes("luxury-multilang.css") && !href.includes(currentLuxuryCssVersion)) {
+    if (href.includes("luxury-multilang.css") && !currentLuxuryCssVersions.some((version) => href.includes(version))) {
       report("issue", file, "luxury CSS link is missing current cache-busting version");
     }
     if (!(await resolvesToFile(href, file))) report("issue", file, `broken local link asset: ${href}`);

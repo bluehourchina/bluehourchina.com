@@ -351,6 +351,7 @@ await import("./rewrite-llms-customer-summary.mjs");
 await import("./normalize-form-customer-ux.mjs");
 await import("./normalize-form-accessibility.mjs");
 await import("./normalize-navigation-continuity.mjs");
+await import("./audit-illustrated-destination-map.mjs");
 await import("./audit-customer-copy-ux.mjs");
 await import("./audit-form-accessibility.mjs");
 await import("./audit-navigation-continuity.mjs");

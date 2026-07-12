@@ -40,6 +40,7 @@ jobs:
           fi
           echo "Negative gate self-test passed: simulated audit status 2 was rejected with gate status 1"
           node scripts/audit-navigation-continuity.mjs
+          node scripts/audit-illustrated-destination-map.mjs
           node scripts/audit-site-quality.mjs
           node scripts/audit-multilingual-parity.mjs
           node scripts/audit-visible-image-reuse.mjs

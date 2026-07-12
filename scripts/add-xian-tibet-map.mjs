@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
-const styleVersion = "20260711-rhythm9";
+const styleVersion = "20260712-cute-map1";
 const languages = ["en", "zh", "ja", "ko", "th", "ru"];
 const allDestinations = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast", "xian", "tibet"];
 
@@ -14,7 +14,8 @@ const ui = {
     route: "Route", pace: "Pace", fit: "Best for", season: "Best season", standard: "Standard private route",
     days: "Day by day", daysIntro: "One clear plan first; dates, rooms and daily pace are adjusted after enquiry.", stay: "Night",
     scenes: "Along the route", specifics: "What is arranged first", view: "View this route", mapReset: "View all China",
-    mapEyebrow: "Choose on the map", mapTitle: "Where would you like to go next?", mapIntro: "Choose a marker to see the length, route and RMB starting price before opening the full plan.",
+    mapEyebrow: "Choose on the map", mapTitle: "Where would you like to go next?", mapIntro: "Choose a destination to see its journey drawn on the map, with the length and RMB starting price.",
+    mapAria: "Illustrated map of private journeys across China", mapChoices: "Choose a destination", mapSketch: "Journey sketch",
     duration: "Length", mapPrice: "From", mapRoute: "Route", fallback: "Choose a destination below to see its route.",
     finalEyebrow: "Start with the route", finalTitle: "Share your dates and preferred pace", finalBody: "We reply with availability, the suitable room level and a first quotation direction.",
     heroLead: "From Yunnan and Xinjiang to Xi'an and Tibet, private routes begin with your dates, pace and comfort needs.",
@@ -26,7 +27,8 @@ const ui = {
     route: "路線", pace: "節奏", fit: "適合", season: "合適季節", standard: "標準私人方案",
     days: "每日安排", daysIntro: "先看完整路線；日期、房型與每天節奏在諮詢後再調整。", stay: "住宿",
     scenes: "沿途會看見", specifics: "先安排好的重要細節", view: "查看這條路線", mapReset: "看全中國",
-    mapEyebrow: "從地圖選目的地", mapTitle: "從中國地圖開始選路線", mapIntro: "點一個目的地，即時查看天數、路線與人民幣起價。",
+    mapEyebrow: "從地圖選目的地", mapTitle: "從中國地圖開始選路線", mapIntro: "選一個目的地，地圖會畫出大致行程，並顯示天數與人民幣起價。",
+    mapAria: "中國私人旅程插畫地圖", mapChoices: "選擇目的地", mapSketch: "大致行程",
     duration: "天數", mapPrice: "起價", mapRoute: "路線", fallback: "請從下方選擇目的地查看方案。",
     finalEyebrow: "從路線開始", finalTitle: "留下日期與想要的步調", finalBody: "我們會回覆檔期、合適房型與第一版報價方向。",
     heroLead: "從雲南、新疆到西安與西藏，依日期、步調與舒適需求安排 2 人起私人路線。",
@@ -38,7 +40,8 @@ const ui = {
     route: "ルート", pace: "旅のペース", fit: "おすすめ", season: "おすすめ時期", standard: "モデルプライベート旅程",
     days: "日ごとの旅程", daysIntro: "まず全体像を確認し、日程・客室・毎日のペースは相談後に調整します。", stay: "宿泊",
     scenes: "旅の風景", specifics: "先に整えること", view: "この旅程を見る", mapReset: "中国全体を見る",
-    mapEyebrow: "地図から選ぶ", mapTitle: "次の中国を地図から選ぶ", mapIntro: "目的地を選ぶと、日数・ルート・人民元の参考料金がすぐに表示されます。",
+    mapEyebrow: "地図から選ぶ", mapTitle: "次の中国を地図から選ぶ", mapIntro: "目的地を選ぶと、おおよその旅程、日数、人民元の参考料金を地図で確認できます。",
+    mapAria: "中国プライベート旅行のイラスト地図", mapChoices: "目的地を選ぶ", mapSketch: "旅程イメージ",
     duration: "日数", mapPrice: "参考料金", mapRoute: "ルート", fallback: "下の目的地から旅程を選んでください。",
     finalEyebrow: "旅程から始める", finalTitle: "日程と希望のペースを教えてください", finalBody: "空き状況、客室の目安、最初のお見積り方針を返信します。",
     heroLead: "雲南・新疆から西安・チベットまで、日程と心地よさに合わせた個人旅行を2名様から整えます。",
@@ -50,7 +53,8 @@ const ui = {
     route: "경로", pace: "여행 속도", fit: "추천 대상", season: "추천 시기", standard: "표준 프라이빗 일정",
     days: "일자별 일정", daysIntro: "먼저 전체 경로를 보고 날짜, 객실, 매일의 속도는 상담 후 조정합니다.", stay: "숙박",
     scenes: "여정의 풍경", specifics: "먼저 준비하는 것", view: "이 일정 보기", mapReset: "중국 전체 보기",
-    mapEyebrow: "지도에서 선택", mapTitle: "다음 중국 여행을 지도에서 고르세요", mapIntro: "목적지를 선택하면 기간, 경로, 위안화 시작가가 바로 표시됩니다.",
+    mapEyebrow: "지도에서 선택", mapTitle: "다음 중국 여행을 지도에서 고르세요", mapIntro: "목적지를 선택하면 대략적인 이동 경로, 기간, 위안화 시작가를 지도에서 볼 수 있습니다.",
+    mapAria: "중국 프라이빗 여행 일러스트 지도", mapChoices: "목적지 선택", mapSketch: "여정 개요",
     duration: "기간", mapPrice: "시작가", mapRoute: "경로", fallback: "아래 목적지를 선택해 일정을 확인하세요.",
     finalEyebrow: "일정에서 시작", finalTitle: "날짜와 원하는 속도를 알려 주세요", finalBody: "가능 일정, 객실 수준, 첫 견적 방향을 답변드립니다.",
     heroLead: "윈난과 신장에서 시안과 티베트까지, 날짜와 편안함에 맞춘 2인 이상 프라이빗 일정을 준비합니다.",
@@ -62,7 +66,8 @@ const ui = {
     route: "เส้นทาง", pace: "จังหวะ", fit: "เหมาะสำหรับ", season: "ช่วงที่เหมาะ", standard: "เส้นทางส่วนตัวมาตรฐาน",
     days: "แผนรายวัน", daysIntro: "ดูเส้นทางทั้งหมดก่อน แล้วค่อยปรับวันที่ ห้องพัก และจังหวะรายวันหลังสอบถาม", stay: "พักที่",
     scenes: "ภาพระหว่างทาง", specifics: "สิ่งที่จัดเตรียมก่อน", view: "ดูเส้นทางนี้", mapReset: "ดูแผนที่จีนทั้งหมด",
-    mapEyebrow: "เลือกจากแผนที่", mapTitle: "เลือกทริปจีนครั้งถัดไปจากแผนที่", mapIntro: "เลือกจุดหมายเพื่อดูจำนวนวัน เส้นทาง และราคาเริ่มต้นเป็นหยวนทันที",
+    mapEyebrow: "เลือกจากแผนที่", mapTitle: "เลือกทริปจีนครั้งถัดไปจากแผนที่", mapIntro: "เลือกจุดหมายเพื่อดูแนวเส้นทาง จำนวนวัน และราคาเริ่มต้นเป็นหยวนบนแผนที่",
+    mapAria: "แผนที่ภาพประกอบเส้นทางส่วนตัวในจีน", mapChoices: "เลือกจุดหมาย", mapSketch: "ภาพรวมเส้นทาง",
     duration: "ระยะเวลา", mapPrice: "ราคาเริ่มต้น", mapRoute: "เส้นทาง", fallback: "เลือกจุดหมายด้านล่างเพื่อดูเส้นทาง",
     finalEyebrow: "เริ่มจากเส้นทาง", finalTitle: "บอกวันที่และจังหวะที่ต้องการ", finalBody: "เราจะตอบเรื่องวันว่าง ระดับห้องพัก และแนวทางราคาเบื้องต้น",
     heroLead: "ตั้งแต่ยูนนานและซินเจียงถึงซีอานและทิเบต เราจัดเส้นทางส่วนตัวเริ่มที่ 2 คนตามวันและความสบายที่ต้องการ",
@@ -74,7 +79,8 @@ const ui = {
     route: "Маршрут", pace: "Темп", fit: "Кому подходит", season: "Лучшее время", standard: "Стандартный частный маршрут",
     days: "Маршрут по дням", daysIntro: "Сначала ясный план; даты, номер и темп каждого дня уточняются после запроса.", stay: "Ночь",
     scenes: "По дороге", specifics: "Что согласуем заранее", view: "Открыть маршрут", mapReset: "Вся карта Китая",
-    mapEyebrow: "Выберите на карте", mapTitle: "Куда отправиться по Китаю дальше", mapIntro: "Выберите точку, чтобы увидеть длительность, маршрут и стартовую цену в юанях.",
+    mapEyebrow: "Выберите на карте", mapTitle: "Куда отправиться по Китаю дальше", mapIntro: "Выберите направление, чтобы увидеть примерный путь, длительность и стартовую цену в юанях.",
+    mapAria: "Иллюстрированная карта частных маршрутов по Китаю", mapChoices: "Выбрать направление", mapSketch: "Схема путешествия",
     duration: "Длительность", mapPrice: "Цена", mapRoute: "Маршрут", fallback: "Выберите направление ниже, чтобы увидеть маршрут.",
     finalEyebrow: "Начните с маршрута", finalTitle: "Назовите даты и желаемый темп", finalBody: "Мы ответим по наличию, уровню номера и направлению первой сметы.",
     heroLead: "От Юньнани и Синьцзяна до Сианя и Тибета: частные маршруты от 2 человек с учётом дат и комфорта.",
@@ -284,6 +290,91 @@ const coords = {
   xian: [34.34, 108.94], tibet: [29.65, 91.17],
 };
 
+const mapPrices = {
+  yunnan: 4680,
+  xinjiang: 13800,
+  dunhuang: 4980,
+  "inner-mongolia": 9500,
+  sanya: 14200,
+  northeast: 16700,
+  xian: 6800,
+  tibet: 18800,
+};
+
+const journeyCoordinates = {
+  yunnan: [[25.04, 102.72], [25.61, 100.27], [26.32, 99.85], [26.87, 100.23], [25.04, 102.72]],
+  xinjiang: [[43.82, 87.62], [44.43, 84.9], [44.6, 81.13], [43.91, 81.32], [43.22, 81.84], [43.26, 84.03]],
+  dunhuang: [[36.62, 101.78], [36.9, 100.2], [36.79, 99.08], [37.85, 95.36], [40.14, 94.66], [39.77, 98.29], [38.93, 100.45]],
+  "inner-mongolia": [[40.84, 111.75], [41.17, 112.5], [40.3, 109.6], [39.61, 109.78]],
+  sanya: [[20.04, 110.2], [19.25, 110.47], [18.8, 110.39], [18.5, 110.03], [18.25, 109.51]],
+  northeast: [[45.8, 126.53], [44.91, 128.6], [44.38, 128.1], [45.8, 126.53]],
+  xian: [[34.34, 108.94], [34.37, 109.21], [34.34, 108.94]],
+  tibet: [[29.65, 91.17], [28.94, 90.68], [28.91, 89.6], [29.27, 88.88], [29.65, 91.17]],
+};
+
+const journeyStopNames = {
+  en: {
+    yunnan: ["Kunming", "Dali", "Shaxi", "Lijiang", "Kunming"],
+    xinjiang: ["Urumqi", "Kuitun", "Sayram Lake", "Yining", "Tekes", "Nalati"],
+    dunhuang: ["Xining", "Qinghai Lake", "Chaka", "Dachaidan", "Dunhuang", "Jiayuguan", "Zhangye"],
+    "inner-mongolia": ["Hohhot", "Huitengxile", "Kubuqi Desert", "Ordos"],
+    sanya: ["Haikou", "Qionghai", "Wanning", "Lingshui", "Sanya"],
+    northeast: ["Harbin", "Yabuli", "Snow Town", "Harbin"],
+    xian: ["Xi'an", "Lintong", "Xi'an"],
+    tibet: ["Lhasa", "Yamdrok Lake", "Gyantse", "Shigatse", "Lhasa"],
+  },
+  zh: {
+    yunnan: ["昆明", "大理", "沙溪", "麗江", "昆明"],
+    xinjiang: ["烏魯木齊", "奎屯", "賽里木湖", "伊寧", "特克斯", "那拉提"],
+    dunhuang: ["西寧", "青海湖", "茶卡", "大柴旦", "敦煌", "嘉峪關", "張掖"],
+    "inner-mongolia": ["呼和浩特", "輝騰錫勒", "庫布齊沙漠", "鄂爾多斯"],
+    sanya: ["海口", "瓊海", "萬寧", "陵水", "三亞"],
+    northeast: ["哈爾濱", "亞布力", "雪鄉", "哈爾濱"],
+    xian: ["西安", "臨潼", "西安"],
+    tibet: ["拉薩", "羊卓雍錯", "江孜", "日喀則", "拉薩"],
+  },
+  ja: {
+    yunnan: ["昆明", "大理", "沙渓", "麗江", "昆明"],
+    xinjiang: ["ウルムチ", "クイトゥン", "サイラム湖", "イーニン", "テケス", "ナラティ"],
+    dunhuang: ["西寧", "青海湖", "茶卡", "大柴旦", "敦煌", "嘉峪関", "張掖"],
+    "inner-mongolia": ["フフホト", "フイトンシレ", "クブチ砂漠", "オルドス"],
+    sanya: ["海口", "瓊海", "万寧", "陵水", "三亜"],
+    northeast: ["ハルビン", "ヤブリ", "雪郷", "ハルビン"],
+    xian: ["西安", "臨潼", "西安"],
+    tibet: ["ラサ", "ヤムドク湖", "ギャンツェ", "シガツェ", "ラサ"],
+  },
+  ko: {
+    yunnan: ["쿤밍", "다리", "샤시", "리장", "쿤밍"],
+    xinjiang: ["우루무치", "쿠이툰", "싸이리무호", "이닝", "터커스", "날라티"],
+    dunhuang: ["시닝", "칭하이호", "차카", "다차이단", "둔황", "자위관", "장예"],
+    "inner-mongolia": ["후허하오터", "후이텅시러", "쿠부치 사막", "오르도스"],
+    sanya: ["하이커우", "충하이", "완닝", "링수이", "싼야"],
+    northeast: ["하얼빈", "야부리", "설향", "하얼빈"],
+    xian: ["시안", "린퉁", "시안"],
+    tibet: ["라싸", "얌드록초", "장쯔", "시가체", "라싸"],
+  },
+  th: {
+    yunnan: ["คุนหมิง", "ต้าหลี่", "ซาซี", "ลี่เจียง", "คุนหมิง"],
+    xinjiang: ["อุรุมชี", "คุยถุน", "ทะเลสาบไซหลี่มู่", "อีหนิง", "เท่อเค่อซือ", "น่าลาถี"],
+    dunhuang: ["ซีหนิง", "ทะเลสาบชิงไห่", "ฉาข่า", "ต้าไฉตั้น", "ตุนหวง", "เจียยวี่กวน", "จางเย่"],
+    "inner-mongolia": ["ฮูฮอต", "ฮุยเถิงซีเล่อ", "ทะเลทรายคูปู้ฉี", "ออร์ดอส"],
+    sanya: ["ไหโข่ว", "ฉงไห่", "ว่านหนิง", "หลิงสุ่ย", "ซานย่า"],
+    northeast: ["ฮาร์บิน", "ย่าปู้ลี่", "หมู่บ้านหิมะ", "ฮาร์บิน"],
+    xian: ["ซีอาน", "หลินถง", "ซีอาน"],
+    tibet: ["ลาซา", "ทะเลสาบยัมดรก", "เกียงเซ", "ชิกัตเซ", "ลาซา"],
+  },
+  ru: {
+    yunnan: ["Куньмин", "Дали", "Шаси", "Лицзян", "Куньмин"],
+    xinjiang: ["Урумчи", "Куйтун", "озеро Сайрам", "Инин", "Текес", "Налати"],
+    dunhuang: ["Синин", "озеро Цинхай", "Чака", "Дачайдан", "Дуньхуан", "Цзяюйгуань", "Чжанъе"],
+    "inner-mongolia": ["Хух-Хото", "Хуэйтэнсилэ", "пустыня Кубуци", "Ордос"],
+    sanya: ["Хайкоу", "Цюнхай", "Ваньнин", "Линшуй", "Санья"],
+    northeast: ["Харбин", "Ябули", "Снежная деревня", "Харбин"],
+    xian: ["Сиань", "Линьтун", "Сиань"],
+    tibet: ["Лхаса", "озеро Ямдрок", "Гьянце", "Шигадзе", "Лхаса"],
+  },
+};
+
 const destinationNames = {
   en: { yunnan: "Yunnan", xinjiang: "Xinjiang", dunhuang: "Qinghai & Gansu", "inner-mongolia": "Inner Mongolia", sanya: "Hainan", northeast: "Northeast", xian: "Xi'an", tibet: "Tibet" },
   zh: { yunnan: "雲南", xinjiang: "新疆", dunhuang: "青甘", "inner-mongolia": "內蒙古", sanya: "海南", northeast: "東北", xian: "西安", tibet: "西藏" },
@@ -425,8 +516,8 @@ function mapSection(locale, routes) {
   const l = ui[locale];
   const first = routes[0];
   const buttons = routes.map((route) => `<button type="button" data-map-destination="${route.slug}" aria-pressed="false">${esc(destinationNames[locale][route.slug])}</button>`).join("");
-  const data = JSON.stringify({ default: first.slug, fallback: l.fallback, routes }).replaceAll("</", "<\\/");
-  return `<!-- destination-map-start --><section class="section destination-map-band" id="destination-map" data-destination-map><div class="wrap"><div class="section-head"><div><p class="eyebrow">${esc(l.mapEyebrow)}</p><h2>${esc(l.mapTitle)}</h2></div><p>${esc(l.mapIntro)}</p></div><div class="destination-map-layout"><div class="destination-map-stage"><div class="destination-map-canvas" data-map-canvas aria-label="China destination map"></div><button class="destination-map-reset" type="button" data-map-reset>${esc(l.mapReset)}</button></div><aside class="destination-map-panel" aria-live="polite"><div><p class="eyebrow">${esc(l.standard)}</p><h3 data-map-name>${esc(first.name)}</h3><dl class="destination-map-facts"><div><dt>${esc(l.duration)}</dt><dd data-map-duration>${esc(first.duration)}</dd></div><div><dt>${esc(l.mapPrice)}</dt><dd data-map-price>${esc(first.price)}</dd></div><div><dt>${esc(l.mapRoute)}</dt><dd data-map-route>${esc(first.route)}</dd></div></dl></div><a class="btn primary" data-map-link href="${first.href}">${esc(l.view)}</a></aside></div><div class="destination-map-selector" aria-label="Destination choices">${buttons}</div><script type="application/json">${data}</script></div></section><!-- destination-map-end -->`;
+  const data = JSON.stringify({ default: first.slug, fallback: l.fallback, mapAria: l.mapAria, routes }).replaceAll("</", "<\\/");
+  return `<!-- destination-map-start --><section class="section destination-map-band" id="destination-map" data-destination-map><div class="wrap"><div class="section-head"><div><p class="eyebrow">${esc(l.mapEyebrow)}</p><h2>${esc(l.mapTitle)}</h2></div><p>${esc(l.mapIntro)}</p></div><div class="destination-map-layout"><div class="destination-map-stage"><div class="destination-map-canvas" data-map-canvas aria-label="${esc(l.mapAria)}"></div><div class="destination-map-legend"><span>${esc(l.mapSketch)}</span><ol data-map-stops></ol></div><button class="destination-map-reset" type="button" data-map-reset>${esc(l.mapReset)}</button></div><aside class="destination-map-panel" aria-live="polite"><div><p class="eyebrow">${esc(l.standard)}</p><h3 data-map-name>${esc(first.name)}</h3><dl class="destination-map-facts"><div><dt>${esc(l.duration)}</dt><dd data-map-duration>${esc(first.duration)}</dd></div><div><dt>${esc(l.mapPrice)}</dt><dd data-map-price>${esc(first.price)}</dd></div><div><dt>${esc(l.mapRoute)}</dt><dd data-map-route>${esc(first.route)}</dd></div></dl></div><a class="btn primary" data-map-link href="${first.href}">${esc(l.view)}</a></aside></div><div class="destination-map-selector" aria-label="${esc(l.mapChoices)}">${buttons}</div><script type="application/json">${data}</script></div></section><!-- destination-map-end -->`;
 }
 
 function addNewDestinationOptions(html, locale) {
@@ -448,12 +539,16 @@ for (const target of homeTargets) {
     const html = await fs.readFile(path.join(root, routeFile(slug, target.routeLocale)), "utf8");
     const schema = extractProduct(html);
     const duration = property(schema, /Duration|天數|日数|기간|ระยะเวลา|Продолжительность/i);
-    const route = property(schema, /Route|路線|ルート|경로|เส้นทาง|Маршрут/i);
-    const priceValue = schema.offers?.price || schema.offers?.lowPrice;
+    const stopNames = journeyStopNames[target.locale][slug];
+    if (stopNames.length !== journeyCoordinates[slug].length) {
+      throw new Error(`Map stop mismatch for ${target.locale}/${slug}`);
+    }
+    const stops = journeyCoordinates[slug].map(([lat, lng], index) => ({ label: stopNames[index], lat, lng }));
     mapRoutes.push({
       slug, name: destinationNames[target.locale][slug], duration,
-      price: `RMB ${Number(priceValue).toLocaleString("en-US")}`,
-      route, href: routeHref(slug, target.routeLocale), lat: coords[slug][0], lng: coords[slug][1],
+      price: `RMB ${mapPrices[slug].toLocaleString("en-US")}`,
+      route: stopNames.join(" → "), stops,
+      href: routeHref(slug, target.routeLocale), lat: coords[slug][0], lng: coords[slug][1],
     });
   }
 
@@ -465,11 +560,14 @@ for (const target of homeTargets) {
   } else {
     html = html.replace(/(<section class="section product-routes-band" id="places">)/, `${section}$1`);
   }
-  if (!html.includes("/assets/vendor/leaflet/leaflet.css")) {
-    html = html.replace(/<link rel="stylesheet" href="\/assets\/luxury-multilang\.css[^>]*>/, `<link rel="stylesheet" href="/assets/vendor/leaflet/leaflet.css"><link rel="stylesheet" href="/assets/luxury-multilang.css?v=${styleVersion}">`);
-  }
-  if (!html.includes("/assets/destination-map.js")) {
-    html = html.replace(/<\/body>/, `<script src="/assets/vendor/leaflet/leaflet.js" defer></script><script src="/assets/destination-map.js" defer></script></body>`);
+  html = html
+    .replace(/<link rel="stylesheet" href="\/assets\/vendor\/leaflet\/leaflet\.css">/g, "")
+    .replace(/<script src="\/assets\/vendor\/leaflet\/leaflet\.js" defer><\/script>/g, "")
+    .replace(/<link rel="stylesheet" href="\/assets\/luxury-multilang\.css[^>]*>/, `<link rel="stylesheet" href="/assets/luxury-multilang.css?v=${styleVersion}">`);
+  if (html.includes("/assets/destination-map.js")) {
+    html = html.replace(/<script src="\/assets\/destination-map\.js(?:\?[^\"]*)?" defer><\/script>/, `<script src="/assets/destination-map.js?v=${styleVersion}" defer></script>`);
+  } else {
+    html = html.replace(/<\/body>/, `<script src="/assets/destination-map.js?v=${styleVersion}" defer></script></body>`);
   }
   html = html.replace(/(<div class="hero-media"[^>]*>)[\s\S]*?(<\/div><div class="wrap hero-inner">)/, `$1${homeHeroScenes}$2`);
   html = html.replace(/(<section class="hero home-hero">[\s\S]*?<p class="lead">)[\s\S]*?(<\/p>)/, `$1${esc(ui[target.locale].heroLead)}$2`);
