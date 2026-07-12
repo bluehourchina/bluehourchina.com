@@ -211,3 +211,30 @@ dd{
 /* Keep short trust links intact at narrow phone widths. */
 .form-privacy-link{white-space:nowrap}
 .nowrap-term{display:inline-block;white-space:nowrap}
+
+/* Keep the Chinese starting-price suffix subordinate and attached to its amount. */
+.price-with-suffix{
+  display:inline-flex!important;
+  align-items:baseline;
+  gap:.22em;
+  max-width:100%;
+  white-space:nowrap!important;
+}
+.price-with-suffix .price-suffix{
+  display:inline!important;
+  width:auto!important;
+  margin:0!important;
+  color:currentColor!important;
+  font-family:"Helvetica Neue",Arial,"Noto Sans TC",sans-serif!important;
+  font-size:.36em!important;
+  font-weight:750!important;
+  line-height:1!important;
+  letter-spacing:0!important;
+  text-transform:none!important;
+  white-space:nowrap;
+}
+@media(max-width:760px){
+  .proof .price-with-suffix{
+    font-size:clamp(24px,8.2vw,31px)!important;
+  }
+}

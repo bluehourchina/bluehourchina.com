@@ -97,9 +97,22 @@ for (const file of files) {
 }
 
 const htmlFiles = files.filter((file) => file.endsWith(".html"));
+const headingPolish = await fs.readFile(path.join(root, "assets/heading-polish.css"), "utf8");
+for (const required of [".price-with-suffix", "white-space:nowrap!important", "font-size:.36em!important"]) {
+  if (!headingPolish.includes(required)) findings.push(`assets/heading-polish.css missing the approved starting-price suffix treatment`);
+}
 let formCount = 0;
 for (const file of htmlFiles) {
   const html = await fs.readFile(file, "utf8");
+  if (/<(strong|b|span)\b[^>]*>[^<>]*(?:RMB|CNY)[^<>]*?起<\/\1>/.test(html)) {
+    findings.push(`${relative(file)} displays a starting-price suffix at the full price size`);
+  }
+  const priceWrapperCount = [...html.matchAll(/class="[^"]*\bprice-with-suffix\b[^"]*"/g)].length;
+  const priceSuffixCount = [...html.matchAll(/<span class="price-suffix">起<\/span>/g)].length;
+  if (priceWrapperCount !== priceSuffixCount) findings.push(`${relative(file)} has an incomplete price suffix component`);
+  if (html.includes("price-with-suffix") && !html.includes("/assets/heading-polish.css?v=20260712-price1")) {
+    findings.push(`${relative(file)} can load a stale starting-price suffix style`);
+  }
   for (const match of html.matchAll(/<form\b[^>]*class="[^"]*\blead-form\b[^"]*"[^>]*>[\s\S]*?<\/form>/g)) {
     formCount += 1;
     const failures = formFailures(match[0]);
