@@ -12,7 +12,7 @@ const outputDir = path.resolve(
   process.env.PREVIEW_OUTPUT_DIR || "output/playwright/release-copy-ux-final"
 );
 const executablePath = process.env.CHROME_EXECUTABLE || "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
-const allRoutes = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast", "xian", "tibet"];
+const allRoutes = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast", "xian", "tibet", "zhangjiajie"];
 const routeFilter = (process.env.PREVIEW_ROUTES || "").split(",").filter(Boolean);
 const routes = routeFilter.length ? allRoutes.filter((route) => routeFilter.includes(route)) : allRoutes;
 const allViewports = [

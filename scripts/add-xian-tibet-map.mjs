@@ -2,9 +2,10 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
-const styleVersion = "20260712-cute-map1";
+const styleVersion = "20260712-zhangjiajie1";
 const languages = ["en", "zh", "ja", "ko", "th", "ru"];
-const allDestinations = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast", "xian", "tibet"];
+const allDestinations = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast", "xian", "tibet", "zhangjiajie"];
+const generatedDestinations = ["xian", "tibet", "zhangjiajie"];
 
 const ui = {
   en: {
@@ -18,7 +19,7 @@ const ui = {
     mapAria: "Illustrated map of private journeys across China", mapChoices: "Choose a destination", mapSketch: "Journey sketch",
     duration: "Length", mapPrice: "From", mapRoute: "Route", fallback: "Choose a destination below to see its route.",
     finalEyebrow: "Start with the route", finalTitle: "Share your dates and preferred pace", finalBody: "We reply with availability, the suitable room level and a first quotation direction.",
-    heroLead: "From Yunnan and Xinjiang to Xi'an and Tibet, private routes begin with your dates, pace and comfort needs.",
+    heroLead: "From Yunnan and Xinjiang to Zhangjiajie and Tibet, private routes begin with your dates, pace and comfort needs.",
   },
   zh: {
     lang: "zh-Hant", home: "/zh.html", interest: "/zh/interest/", stories: "/zh/stories/", before: "/zh/before-china/",
@@ -31,7 +32,7 @@ const ui = {
     mapAria: "中國私人旅程插畫地圖", mapChoices: "選擇目的地", mapSketch: "大致行程",
     duration: "天數", mapPrice: "起價", mapRoute: "路線", fallback: "請從下方選擇目的地查看方案。",
     finalEyebrow: "從路線開始", finalTitle: "留下日期與想要的步調", finalBody: "我們會回覆檔期、合適房型與第一版報價方向。",
-    heroLead: "從雲南、新疆到西安與西藏，依日期、步調與舒適需求安排 2 人起私人路線。",
+    heroLead: "從雲南、新疆到張家界與西藏，依日期、步調與舒適需求安排 2 人起私人路線。",
   },
   ja: {
     lang: "ja", home: "/ja.html", interest: "/ja/interest/", stories: "/ja/stories/", before: "/before-china/",
@@ -44,7 +45,7 @@ const ui = {
     mapAria: "中国プライベート旅行のイラスト地図", mapChoices: "目的地を選ぶ", mapSketch: "旅程イメージ",
     duration: "日数", mapPrice: "参考料金", mapRoute: "ルート", fallback: "下の目的地から旅程を選んでください。",
     finalEyebrow: "旅程から始める", finalTitle: "日程と希望のペースを教えてください", finalBody: "空き状況、客室の目安、最初のお見積り方針を返信します。",
-    heroLead: "雲南・新疆から西安・チベットまで、日程と心地よさに合わせた個人旅行を2名様から整えます。",
+    heroLead: "雲南・新疆から張家界・チベットまで、日程と心地よさに合わせた個人旅行を2名様から整えます。",
   },
   ko: {
     lang: "ko", home: "/ko.html", interest: "/ko/interest/", stories: "/ko/stories/", before: "/before-china/",
@@ -57,7 +58,7 @@ const ui = {
     mapAria: "중국 프라이빗 여행 일러스트 지도", mapChoices: "목적지 선택", mapSketch: "여정 개요",
     duration: "기간", mapPrice: "시작가", mapRoute: "경로", fallback: "아래 목적지를 선택해 일정을 확인하세요.",
     finalEyebrow: "일정에서 시작", finalTitle: "날짜와 원하는 속도를 알려 주세요", finalBody: "가능 일정, 객실 수준, 첫 견적 방향을 답변드립니다.",
-    heroLead: "윈난과 신장에서 시안과 티베트까지, 날짜와 편안함에 맞춘 2인 이상 프라이빗 일정을 준비합니다.",
+    heroLead: "윈난과 신장에서 장자제와 티베트까지, 날짜와 편안함에 맞춘 2인 이상 프라이빗 일정을 준비합니다.",
   },
   th: {
     lang: "th", home: "/th.html", interest: "/th/interest/", stories: "/th/stories/", before: "/before-china/",
@@ -70,7 +71,7 @@ const ui = {
     mapAria: "แผนที่ภาพประกอบเส้นทางส่วนตัวในจีน", mapChoices: "เลือกจุดหมาย", mapSketch: "ภาพรวมเส้นทาง",
     duration: "ระยะเวลา", mapPrice: "ราคาเริ่มต้น", mapRoute: "เส้นทาง", fallback: "เลือกจุดหมายด้านล่างเพื่อดูเส้นทาง",
     finalEyebrow: "เริ่มจากเส้นทาง", finalTitle: "บอกวันที่และจังหวะที่ต้องการ", finalBody: "เราจะตอบเรื่องวันว่าง ระดับห้องพัก และแนวทางราคาเบื้องต้น",
-    heroLead: "ตั้งแต่ยูนนานและซินเจียงถึงซีอานและทิเบต เราจัดเส้นทางส่วนตัวเริ่มที่ 2 คนตามวันและความสบายที่ต้องการ",
+    heroLead: "ตั้งแต่ยูนนานและซินเจียงถึงจางเจียเจี้ยและทิเบต เราจัดเส้นทางส่วนตัวเริ่มที่ 2 คนตามวันและความสบายที่ต้องการ",
   },
   ru: {
     lang: "ru", home: "/ru.html", interest: "/ru/interest/", stories: "/ru/stories/", before: "/before-china/",
@@ -83,7 +84,7 @@ const ui = {
     mapAria: "Иллюстрированная карта частных маршрутов по Китаю", mapChoices: "Выбрать направление", mapSketch: "Схема путешествия",
     duration: "Длительность", mapPrice: "Цена", mapRoute: "Маршрут", fallback: "Выберите направление ниже, чтобы увидеть маршрут.",
     finalEyebrow: "Начните с маршрута", finalTitle: "Назовите даты и желаемый темп", finalBody: "Мы ответим по наличию, уровню номера и направлению первой сметы.",
-    heroLead: "От Юньнани и Синьцзяна до Сианя и Тибета: частные маршруты от 2 человек с учётом дат и комфорта.",
+    heroLead: "От Юньнани и Синьцзяна до Чжанцзяцзе и Тибета: частные маршруты от 2 человек с учётом дат и комфорта.",
   },
 };
 
@@ -112,6 +113,18 @@ const routeAssets = {
       "/assets/real-tibet/tibet-sera-monastery.jpg",
     ],
   },
+  zhangjiajie: {
+    price: 7980,
+    hero: "/assets/real-zhangjiajie/tianzi-mountain-panorama.jpg",
+    standard: "/assets/real-zhangjiajie/forest-park-cableway.jpg",
+    gallery: [
+      "/assets/real-zhangjiajie/tianmen-mountain-view.jpg",
+      "/assets/real-zhangjiajie/bailong-elevator-peaks.jpg",
+      "/assets/real-zhangjiajie/grand-canyon-glass-bridge.jpg",
+      "/assets/real-zhangjiajie/furong-town-panorama.jpg",
+      "/assets/real-zhangjiajie/fenghuang-ancient-town.jpg",
+    ],
+  },
 };
 
 const extraGalleryCaptions = {
@@ -120,6 +133,9 @@ const extraGalleryCaptions = {
   },
   tibet: {
     en: "Sera Monastery · a lighter reserve-day visit", zh: "色拉寺 · 適合彈性日的較輕停留", ja: "セラ寺 · 予備日に組みやすい訪問", ko: "세라 사원 · 예비일의 가벼운 일정", th: "อารามเซรา · เหมาะกับวันสำรอง", ru: "Монастырь Сера · лёгкий вариант для резервного дня",
+  },
+  zhangjiajie: {
+    en: "Fenghuang Ancient Town · finish beside the Tuo River", zh: "鳳凰古城 · 在沱江邊慢慢收尾", ja: "鳳凰古城 · 沱江のほとりで旅を締めくくる", ko: "펑황 고성 · 퉈장 강변에서 여정을 마무리", th: "เมืองโบราณเฟิ่งหวง · ปิดท้ายริมแม่น้ำถัวเจียง", ru: "Старый город Фэнхуан · завершение у реки Тоцзян",
   },
 };
 
@@ -282,12 +298,94 @@ const routeCopy = {
       specifics: [["Въездные документы", "Данные паспорта и визы проверяются до оформления текущих документов подходящим местным оператором."], ["Высотный ритм", "Первые 48 часов остаются лёгкими; медицинские рекомендации и личные лекарства обсуждаются со специалистом."], ["Местная работа", "Частная машина, лицензированный гид, отель и основные брони подтверждаются вместе."]],
     },
   },
+  zhangjiajie: {
+    en: {
+      name: "Zhangjiajie & Western Hunan · 6 Days", short: "Zhangjiajie", title: ["Zhangjiajie in six days", "Peaks, waterfalls and old towns"],
+      lead: "Sandstone peaks come first, then waterfalls and old towns carry the journey gently into western Hunan.",
+      description: "Spend three nights beside Wulingyuan, give the forest park and Tianmen Mountain separate days, then continue through Furong Town to Fenghuang Ancient Town.",
+      duration: "6 days 5 nights", route: "Zhangjiajie → Wulingyuan → Tianmen Mountain → Furong Town → Fenghuang", pace: "One mountain area each day", fit: "Landscapes, light walks and old towns", season: "April–June · September–November",
+      note: "Land-arrangement reference price based on 6 travellers. Flights, long-distance rail and optional performances are confirmed separately.",
+      galleryTitle: "From high peaks to riverside lights", galleryIntro: "Mountain days stay separate from transfer days, so the views never become a checklist.",
+      captions: ["Tianmen Mountain · a full day above the city", "Wulingyuan peaks · lifts reduce unnecessary climbing", "Grand Canyon · choose the glass bridge only if it feels comfortable", "Furong Town · one night beside the waterfall"],
+      days: [
+        ["Arrive in Zhangjiajie and move to Wulingyuan", "Private pickup, a direct transfer and an easy first evening beside the national park.", "Wulingyuan"],
+        ["Yuanjiajie and Tianzi Mountain", "Use the park shuttles and lifts to reach the sandstone viewpoints without turning the day into a race.", "Wulingyuan"],
+        ["Golden Whip Stream and one gentler landscape", "Walk a comfortable section of the valley, then choose Baofeng Lake or the Grand Canyon according to weather and mobility.", "Wulingyuan"],
+        ["Tianmen Mountain and Furong Town", "Take the mountain route in its confirmed ticket window, then continue by private vehicle to Furong before evening.", "Furong Town"],
+        ["Furong Town to Fenghuang", "Keep the morning for the waterfall town and arrive in Fenghuang with time for the Tuo River after dark.", "Fenghuang"],
+        ["A slow riverside morning before departure", "Transfer to Fenghuang station or return to Zhangjiajie according to the confirmed onward ticket.", "Departure"],
+      ],
+      specifics: [["Private movement", "Arrival pickup and the main transfers from Wulingyuan through Furong to Fenghuang."], ["Timed tickets", "Forest Park, Tianmen Mountain and selected lifts are confirmed before arrival."], ["Stay rhythm", "Three nights in Wulingyuan, then one night each in Furong and Fenghuang."]],
+    },
+    zh: {
+      name: "張家界與湘西 6 天 5 晚", short: "張家界", title: ["張家界與湘西六日", "把峰林 瀑布與古城排得從容"],
+      lead: "先走進砂岩峰林，再沿著瀑布與古城，把湘西慢慢看完整。",
+      description: "武陵源連住三晚，把森林公園與天門山分開安排，再經芙蓉鎮前往鳳凰古城，山景與轉場不擠在同一天。",
+      duration: "6 天 5 晚", route: "張家界 → 武陵源 → 天門山 → 芙蓉鎮 → 鳳凰古城", pace: "每天一個山區重點", fit: "自然風景 輕健行與古城", season: "4–6 月 · 9–11 月",
+      note: "此為 6 人同行的地接安排參考起價；往返機票、長途高鐵與自選演出另行確認。",
+      galleryTitle: "從峰林走到沱江燈影", galleryIntro: "山區與移動日分開，沿途每一段都有足夠停留時間。",
+      captions: ["天門山 · 留一整天看城市上方的山勢", "武陵源峰林 · 用纜車減少不必要的爬升", "張家界大峽谷 · 是否走玻璃橋依舒適度決定", "芙蓉鎮 · 在瀑布旁住一晚"],
+      days: [
+        ["抵達張家界 前往武陵源", "私人接站後直接入住景區附近，第一晚只留給休息與一頓安穩晚餐。", "武陵源"],
+        ["袁家界與天子山", "配合景區接駁與電梯前往峰林觀景點，不把山路走成趕場。", "武陵源"],
+        ["金鞭溪與一處輕鬆山水", "走一段舒服的溪谷，再依天氣與體力選寶峰湖或張家界大峽谷。", "武陵源"],
+        ["天門山與芙蓉鎮", "依確認時段上山，午後專車前往芙蓉鎮，在瀑布亮燈前抵達。", "芙蓉鎮"],
+        ["芙蓉鎮前往鳳凰古城", "早晨留給瀑布與老街，午後抵達鳳凰，晚上沿沱江慢慢散步。", "鳳凰古城"],
+        ["沿江吃完早餐再離開", "依後續車票送往鳳凰高鐵站，或返回張家界接續行程。", "返程"],
+      ],
+      specifics: [["私人移動", "抵達接站，以及武陵源、芙蓉鎮與鳳凰之間的主要專車移動。"], ["分時預訂", "森林公園、天門山與重要纜車在抵達前確認時段。"], ["住宿節奏", "武陵源連住三晚，芙蓉鎮與鳳凰各住一晚。"]],
+    },
+    ja: {
+      name: "張家界・湘西 6日間", short: "張家界", title: ["張家界と湘西を六日で", "峰林と古都をゆっくり"],
+      lead: "石英砂岩の峰林から滝の町、川沿いの古都へ、湘西の景色を無理なくつなぎます。",
+      description: "武陵源に3連泊し、森林公園と天門山を別日に訪問。その後は芙蓉鎮を経て鳳凰古城へ向かいます。",
+      duration: "6日5泊", route: "張家界 → 武陵源 → 天門山 → 芙蓉鎮 → 鳳凰古城", pace: "一日一つの山岳エリア", fit: "自然景観・軽い散策・古都", season: "4–6月 · 9–11月",
+      note: "6名利用時の現地手配参考料金です。往復航空券、長距離鉄道、希望公演は別途確認します。",
+      galleryTitle: "峰林から川辺の灯りへ", galleryIntro: "山の日と移動日を分け、景色をチェックリストにしません。",
+      captions: ["天門山 · 街を見下ろす一日", "武陵源の峰林 · リフトで不要な登りを減らす", "張家界大峡谷 · ガラス橋は安心感に合わせて選択", "芙蓉鎮 · 滝のそばで一泊"],
+      days: [["張家界到着 武陵源へ", "専用車で迎え、国立公園近くへ直行。初日は静かな夕食だけにします。", "武陵源"], ["袁家界と天子山", "園内シャトルとリフトを使い、峰林の展望を急がず巡ります。", "武陵源"], ["金鞭渓と穏やかな景色", "歩きやすい渓谷区間を散策し、天候と体力に合わせて宝峰湖または大峡谷を選びます。", "武陵源"], ["天門山から芙蓉鎮へ", "予約時間に山へ上がり、午後は専用車で芙蓉鎮へ移動します。", "芙蓉鎮"], ["芙蓉鎮から鳳凰古城へ", "午前は滝と旧市街、午後は鳳凰へ。夜は沱江沿いを歩きます。", "鳳凰古城"], ["川辺の朝を過ごして出発", "次の切符に合わせて鳳凰駅へ、または張家界へ戻ります。", "帰路"]],
+      specifics: [["専用車", "到着送迎と武陵源から芙蓉鎮、鳳凰までの主要移動。"], ["時間指定予約", "森林公園、天門山、主要リフトを到着前に確認します。"], ["連泊", "武陵源3連泊、芙蓉鎮と鳳凰に各1泊します。"]],
+    },
+    ko: {
+      name: "장자제·서부 후난 6일", short: "장자제", title: ["장자제와 서부 후난 6일", "봉우리와 고성을 여유롭게"],
+      lead: "사암 봉우리에서 폭포 마을과 강변 고성까지, 서부 후난의 풍경을 차분히 잇습니다.",
+      description: "우링위안에서 3박하며 삼림공원과 톈먼산을 다른 날에 보고, 푸룽전에서 펑황 고성으로 이어갑니다.",
+      duration: "6일 5박", route: "장자제 → 우링위안 → 톈먼산 → 푸룽전 → 펑황 고성", pace: "하루 한 곳의 산악 지역", fit: "자연 풍경·가벼운 걷기·고성", season: "4–6월 · 9–11월",
+      note: "6인 기준 현지 일정 참고 시작가입니다. 왕복 항공, 장거리 철도, 선택 공연은 별도 확인합니다.",
+      galleryTitle: "봉우리에서 강변의 불빛까지", galleryIntro: "산을 보는 날과 이동하는 날을 나눠 풍경을 서둘러 소비하지 않습니다.",
+      captions: ["톈먼산 · 도시 위 산세를 보는 하루", "우링위안 봉우리 · 리프트로 불필요한 오르막 줄이기", "장자제 대협곡 · 유리다리는 편안함에 따라 선택", "푸룽전 · 폭포 곁에서 하룻밤"],
+      days: [["장자제 도착 후 우링위안 이동", "전용 픽업으로 공원 가까이 이동하고 첫날 저녁은 쉬는 데 집중합니다.", "우링위안"], ["위안자제와 톈쯔산", "공원 셔틀과 리프트를 활용해 사암 봉우리를 서두르지 않고 봅니다.", "우링위안"], ["진볜시와 편안한 산수", "걷기 좋은 계곡 구간을 보고 날씨와 체력에 따라 바오펑호 또는 대협곡을 고릅니다.", "우링위안"], ["톈먼산에서 푸룽전으로", "예약 시간에 산을 본 뒤 오후 전용 차량으로 푸룽전에 도착합니다.", "푸룽전"], ["푸룽전에서 펑황 고성으로", "아침에는 폭포와 옛길을 보고 오후에 펑황으로 이동해 퉈장 강변을 걷습니다.", "펑황 고성"], ["강변의 느린 아침 뒤 출발", "다음 교통편에 맞춰 펑황역으로 이동하거나 장자제로 돌아갑니다.", "귀가"]],
+      specifics: [["전용 이동", "도착 픽업과 우링위안, 푸룽전, 펑황 사이 주요 이동."], ["시간 지정 입장", "삼림공원, 톈먼산, 주요 리프트 시간을 출발 전에 확인합니다."], ["숙박 리듬", "우링위안 3박, 푸룽전과 펑황 각각 1박입니다."]],
+    },
+    th: {
+      name: "จางเจียเจี้ยและหูหนานตะวันตก 6 วัน", short: "จางเจียเจี้ย", title: ["จางเจียเจี้ยในหกวัน", "ยอดเขา น้ำตก และเมืองเก่า"],
+      lead: "เริ่มจากยอดเสาหินทราย แล้วค่อยเดินทางผ่านเมืองน้ำตกสู่เมืองเก่าริมแม่น้ำของหูหนานตะวันตก",
+      description: "พักอู่หลิงหยวนสามคืน แยกวันอุทยานกับเขาเทียนเหมิน แล้วเดินทางต่อผ่านเมืองฝูหรงไปเมืองโบราณเฟิ่งหวง",
+      duration: "6 วัน 5 คืน", route: "จางเจียเจี้ย → อู่หลิงหยวน → เขาเทียนเหมิน → เมืองฝูหรง → เมืองโบราณเฟิ่งหวง", pace: "หนึ่งพื้นที่ภูเขาต่อวัน", fit: "ธรรมชาติ เดินเบา ๆ และเมืองเก่า", season: "เมษายน–มิถุนายน · กันยายน–พฤศจิกายน",
+      note: "ราคาอ้างอิงภาคพื้นดินสำหรับ 6 ท่าน ไม่รวมเที่ยวบิน รถไฟทางไกล และการแสดงที่เลือกเพิ่ม",
+      galleryTitle: "จากยอดเขาสู่แสงไฟริมแม่น้ำ", galleryIntro: "แยกวันชมภูเขาออกจากวันเดินทาง เพื่อให้ทุกวิวมีเวลาของตัวเอง",
+      captions: ["เขาเทียนเหมิน · หนึ่งวันเหนือเมือง", "ยอดเขาอู่หลิงหยวน · ใช้ลิฟต์ลดการปีนที่ไม่จำเป็น", "แกรนด์แคนยอนจางเจียเจี้ย · เลือกสะพานกระจกตามความสบาย", "เมืองฝูหรง · หนึ่งคืนข้างน้ำตก"],
+      days: [["ถึงจางเจียเจี้ยและไปอู่หลิงหยวน", "รถส่วนตัวรับและเดินทางตรงสู่ที่พักใกล้อุทยาน เย็นแรกเน้นพักผ่อน", "อู่หลิงหยวน"], ["หยวนเจียเจี้ยและภูเขาเทียนจื่อ", "ใช้รถรับส่งและลิฟต์ของอุทยานเพื่อชมยอดเสาหินโดยไม่เร่งรีบ", "อู่หลิงหยวน"], ["ลำธารจินเปียนและธรรมชาติแบบเบา", "เดินช่วงที่สบาย แล้วเลือกทะเลสาบเป่าเฟิงหรือแกรนด์แคนยอนตามอากาศและกำลัง", "อู่หลิงหยวน"], ["เขาเทียนเหมินและเมืองฝูหรง", "ขึ้นเขาตามรอบบัตรที่ยืนยัน แล้วเดินทางด้วยรถส่วนตัวไปฝูหรงช่วงบ่าย", "เมืองฝูหรง"], ["จากฝูหรงสู่เฟิ่งหวง", "เช้าอยู่กับน้ำตกและเมืองเก่า บ่ายเดินทางถึงเฟิ่งหวงเพื่อเดินริมแม่น้ำยามค่ำ", "เมืองโบราณเฟิ่งหวง"], ["เช้าริมแม่น้ำก่อนออกเดินทาง", "ไปสถานีเฟิ่งหวงหรือกลับจางเจียเจี้ยตามตั๋วเดินทางที่ยืนยัน", "เดินทางกลับ"]],
+      specifics: [["รถส่วนตัว", "รับเมื่อเดินทางถึงและรถหลักจากอู่หลิงหยวนผ่านฝูหรงถึงเฟิ่งหวง"], ["ตั๋วระบุเวลา", "ยืนยันอุทยาน เขาเทียนเหมิน และลิฟต์สำคัญก่อนเดินทาง"], ["จังหวะที่พัก", "อู่หลิงหยวนสามคืน ฝูหรงหนึ่งคืน และเฟิ่งหวงหนึ่งคืน"]],
+    },
+    ru: {
+      name: "Чжанцзяцзе и западная Хунань · 6 дней", short: "Чжанцзяцзе", title: ["Чжанцзяцзе за шесть дней", "Пики, водопады и старые города"],
+      lead: "Сначала песчаниковые пики, затем город у водопада и старый Фэнхуан на реке Тоцзян.",
+      description: "Три ночи у Улинъюаня, отдельные дни для лесного парка и горы Тяньмэнь, затем Фужун и старый город Фэнхуан.",
+      duration: "6 дней / 5 ночей", route: "Чжанцзяцзе → Улинъюань → Тяньмэнь → Фужун → Фэнхуан", pace: "Один горный район в день", fit: "Природа, лёгкие прогулки и старые города", season: "Апрель–июнь · сентябрь–ноябрь",
+      note: "Ориентировочная наземная цена для 6 человек. Авиабилеты, дальние поезда и дополнительные шоу подтверждаются отдельно.",
+      galleryTitle: "От высоких пиков к огням у реки", galleryIntro: "Горные дни отделены от переездов, поэтому виды не превращаются в список.",
+      captions: ["Тяньмэнь · целый день над городом", "Пики Улинъюаня · подъёмники сокращают лишние подъёмы", "Большой каньон · стеклянный мост только по желанию", "Фужун · ночь рядом с водопадом"],
+      days: [["Прибытие в Чжанцзяцзе и переезд в Улинъюань", "Частная встреча, прямой трансфер и спокойный вечер рядом с национальным парком.", "Улинъюань"], ["Юаньцзяцзе и гора Тяньцзы", "Шаттлы и подъёмники помогают увидеть каменные пики без гонки по маршруту.", "Улинъюань"], ["Ручей Золотой Кнут и спокойный пейзаж", "Комфортный участок долины, затем озеро Баофэн или Большой каньон по погоде и силам.", "Улинъюань"], ["Гора Тяньмэнь и Фужун", "Подъём в подтверждённое время, затем частный переезд в Фужун до вечера.", "Фужун"], ["Фужун и старый Фэнхуан", "Утро у водопада, после обеда переезд в Фэнхуан и вечерняя прогулка вдоль Тоцзяна.", "Фэнхуан"], ["Неторопливое утро у реки и отъезд", "Трансфер к станции Фэнхуан или возвращение в Чжанцзяцзе по подтверждённому билету.", "Отъезд"]],
+      specifics: [["Частные переезды", "Встреча по прибытии и основные переезды через Улинъюань, Фужун и Фэнхуан."], ["Билеты по времени", "Лесной парк, Тяньмэнь и основные подъёмники подтверждаются заранее."], ["Ритм проживания", "Три ночи в Улинъюане, по одной ночи в Фужуне и Фэнхуане."]],
+    },
+  },
 };
 
 const coords = {
   yunnan: [25.04, 102.72], xinjiang: [43.82, 87.62], dunhuang: [36.62, 101.78],
   "inner-mongolia": [40.84, 111.75], sanya: [20.04, 110.2], northeast: [45.8, 126.53],
-  xian: [34.34, 108.94], tibet: [29.65, 91.17],
+  xian: [34.34, 108.94], tibet: [29.65, 91.17], zhangjiajie: [29.12, 110.48],
 };
 
 const mapPrices = {
@@ -299,6 +397,7 @@ const mapPrices = {
   northeast: 16700,
   xian: 6800,
   tibet: 18800,
+  zhangjiajie: 7980,
 };
 
 const journeyCoordinates = {
@@ -310,6 +409,7 @@ const journeyCoordinates = {
   northeast: [[45.8, 126.53], [44.91, 128.6], [44.38, 128.1], [45.8, 126.53]],
   xian: [[34.34, 108.94], [34.37, 109.21], [34.34, 108.94]],
   tibet: [[29.65, 91.17], [28.94, 90.68], [28.91, 89.6], [29.27, 88.88], [29.65, 91.17]],
+  zhangjiajie: [[29.12, 110.48], [29.35, 110.55], [29.05, 110.48], [28.99, 109.94], [27.95, 109.6]],
 };
 
 const journeyStopNames = {
@@ -322,6 +422,7 @@ const journeyStopNames = {
     northeast: ["Harbin", "Yabuli", "Snow Town", "Harbin"],
     xian: ["Xi'an", "Lintong", "Xi'an"],
     tibet: ["Lhasa", "Yamdrok Lake", "Gyantse", "Shigatse", "Lhasa"],
+    zhangjiajie: ["Zhangjiajie", "Wulingyuan", "Tianmen Mountain", "Furong Town", "Fenghuang"],
   },
   zh: {
     yunnan: ["昆明", "大理", "沙溪", "麗江", "昆明"],
@@ -332,6 +433,7 @@ const journeyStopNames = {
     northeast: ["哈爾濱", "亞布力", "雪鄉", "哈爾濱"],
     xian: ["西安", "臨潼", "西安"],
     tibet: ["拉薩", "羊卓雍錯", "江孜", "日喀則", "拉薩"],
+    zhangjiajie: ["張家界", "武陵源", "天門山", "芙蓉鎮", "鳳凰古城"],
   },
   ja: {
     yunnan: ["昆明", "大理", "沙渓", "麗江", "昆明"],
@@ -342,6 +444,7 @@ const journeyStopNames = {
     northeast: ["ハルビン", "ヤブリ", "雪郷", "ハルビン"],
     xian: ["西安", "臨潼", "西安"],
     tibet: ["ラサ", "ヤムドク湖", "ギャンツェ", "シガツェ", "ラサ"],
+    zhangjiajie: ["張家界", "武陵源", "天門山", "芙蓉鎮", "鳳凰古城"],
   },
   ko: {
     yunnan: ["쿤밍", "다리", "샤시", "리장", "쿤밍"],
@@ -352,6 +455,7 @@ const journeyStopNames = {
     northeast: ["하얼빈", "야부리", "설향", "하얼빈"],
     xian: ["시안", "린퉁", "시안"],
     tibet: ["라싸", "얌드록초", "장쯔", "시가체", "라싸"],
+    zhangjiajie: ["장자제", "우링위안", "톈먼산", "푸룽전", "펑황 고성"],
   },
   th: {
     yunnan: ["คุนหมิง", "ต้าหลี่", "ซาซี", "ลี่เจียง", "คุนหมิง"],
@@ -362,6 +466,7 @@ const journeyStopNames = {
     northeast: ["ฮาร์บิน", "ย่าปู้ลี่", "หมู่บ้านหิมะ", "ฮาร์บิน"],
     xian: ["ซีอาน", "หลินถง", "ซีอาน"],
     tibet: ["ลาซา", "ทะเลสาบยัมดรก", "เกียงเซ", "ชิกัตเซ", "ลาซา"],
+    zhangjiajie: ["จางเจียเจี้ย", "อู่หลิงหยวน", "เขาเทียนเหมิน", "เมืองฝูหรง", "เมืองโบราณเฟิ่งหวง"],
   },
   ru: {
     yunnan: ["Куньмин", "Дали", "Шаси", "Лицзян", "Куньмин"],
@@ -372,16 +477,17 @@ const journeyStopNames = {
     northeast: ["Харбин", "Ябули", "Снежная деревня", "Харбин"],
     xian: ["Сиань", "Линьтун", "Сиань"],
     tibet: ["Лхаса", "озеро Ямдрок", "Гьянце", "Шигадзе", "Лхаса"],
+    zhangjiajie: ["Чжанцзяцзе", "Улинъюань", "Тяньмэнь", "Фужун", "Фэнхуан"],
   },
 };
 
 const destinationNames = {
-  en: { yunnan: "Yunnan", xinjiang: "Xinjiang", dunhuang: "Qinghai & Gansu", "inner-mongolia": "Inner Mongolia", sanya: "Hainan", northeast: "Northeast", xian: "Xi'an", tibet: "Tibet" },
-  zh: { yunnan: "雲南", xinjiang: "新疆", dunhuang: "青甘", "inner-mongolia": "內蒙古", sanya: "海南", northeast: "東北", xian: "西安", tibet: "西藏" },
-  ja: { yunnan: "雲南", xinjiang: "新疆", dunhuang: "青海・甘粛", "inner-mongolia": "内モンゴル", sanya: "海南島", northeast: "東北", xian: "西安", tibet: "チベット" },
-  ko: { yunnan: "윈난", xinjiang: "신장", dunhuang: "칭하이·간쑤", "inner-mongolia": "내몽골", sanya: "하이난", northeast: "동북", xian: "시안", tibet: "티베트" },
-  th: { yunnan: "ยูนนาน", xinjiang: "ซินเจียง", dunhuang: "ชิงไห่–กานซู่", "inner-mongolia": "มองโกเลียใน", sanya: "ไหหลำ", northeast: "ตะวันออกเฉียงเหนือ", xian: "ซีอาน", tibet: "ทิเบต" },
-  ru: { yunnan: "Юньнань", xinjiang: "Синьцзян", dunhuang: "Цинхай и Ганьсу", "inner-mongolia": "Внутренняя Монголия", sanya: "Хайнань", northeast: "Северо-Восток", xian: "Сиань", tibet: "Тибет" },
+  en: { yunnan: "Yunnan", xinjiang: "Xinjiang", dunhuang: "Qinghai & Gansu", "inner-mongolia": "Inner Mongolia", sanya: "Hainan", northeast: "Northeast", xian: "Xi'an", tibet: "Tibet", zhangjiajie: "Zhangjiajie" },
+  zh: { yunnan: "雲南", xinjiang: "新疆", dunhuang: "青甘", "inner-mongolia": "內蒙古", sanya: "海南", northeast: "東北", xian: "西安", tibet: "西藏", zhangjiajie: "張家界" },
+  ja: { yunnan: "雲南", xinjiang: "新疆", dunhuang: "青海・甘粛", "inner-mongolia": "内モンゴル", sanya: "海南島", northeast: "東北", xian: "西安", tibet: "チベット", zhangjiajie: "張家界" },
+  ko: { yunnan: "윈난", xinjiang: "신장", dunhuang: "칭하이·간쑤", "inner-mongolia": "내몽골", sanya: "하이난", northeast: "동북", xian: "시안", tibet: "티베트", zhangjiajie: "장자제" },
+  th: { yunnan: "ยูนนาน", xinjiang: "ซินเจียง", dunhuang: "ชิงไห่–กานซู่", "inner-mongolia": "มองโกเลียใน", sanya: "ไหหลำ", northeast: "ตะวันออกเฉียงเหนือ", xian: "ซีอาน", tibet: "ทิเบต", zhangjiajie: "จางเจียเจี้ย" },
+  ru: { yunnan: "Юньнань", xinjiang: "Синьцзян", dunhuang: "Цинхай и Ганьсу", "inner-mongolia": "Внутренняя Монголия", sanya: "Хайнань", northeast: "Северо-Восток", xian: "Сиань", tibet: "Тибет", zhangjiajie: "Чжанцзяцзе" },
 };
 
 const homeTargets = [
@@ -409,6 +515,7 @@ const homeHeroScenes = [
   "scene-northeast",
   "scene-xian",
   "scene-tibet",
+  "scene-zhangjiajie",
 ].map((scene) => `<div class="hero-scene ${scene}"></div>`).join("");
 
 function esc(value = "") {
@@ -486,7 +593,7 @@ function routePage(slug, locale, canonicalOverride) {
   return `<!doctype html><html lang="${l.lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1"><title>${esc(data.name)} | Bluehour China</title><meta name="description" content="${esc(data.description)}"><link rel="canonical" href="${canonical}">${hreflang(slug)}<link rel="icon" type="image/svg+xml" href="/assets/ruoqing-avatar.svg"><meta property="og:title" content="${esc(data.name)} | Bluehour China"><meta property="og:description" content="${esc(data.lead)}"><meta property="og:type" content="website"><meta property="og:url" content="${canonical}"><meta property="og:image" content="https://bluehourchina.com${assets.hero}"><meta name="twitter:card" content="summary_large_image"><script type="application/ld+json">${JSON.stringify(productSchema(slug, locale, data, canonical))}</script><link rel="stylesheet" href="/assets/luxury-multilang.css?v=${styleVersion}"><link rel="stylesheet" href="/assets/heading-polish.css?v=${styleVersion}"></head><body class="destination-route-page" style="--hero-image:url('${assets.hero}')"><nav class="nav" aria-label="Primary navigation"><a class="brand" href="${l.home}"><img src="/assets/ruoqing-avatar.svg" alt="" aria-hidden="true"><span>${brand}</span></a><div class="nav-links"><a href="${l.home}#places">${esc(l.nav[0])}</a><a href="${l.stories}">${esc(l.nav[1])}</a><a href="${l.before}">${esc(l.nav[2])}</a>${menu}<a class="nav-cta" href="${cta}">${esc(l.cta)}</a></div></nav><div class="mobile-lang" aria-label="Mobile language switcher">${menu}</div><main><section class="hero destination-hero"><div class="wrap hero-inner"><p class="eyebrow">${esc(data.duration)} · ${esc(data.short)}</p><h1 class="cjk-title"><span class="title-line">${esc(data.title[0])}</span><span class="title-line">${esc(data.title[1])}</span></h1><p class="lead">${esc(data.lead)}</p><div class="hero-actions"><a class="btn primary" href="#standard-route">${esc(l.standard)}</a><a class="btn" href="${cta}">${esc(l.cta)}</a></div><div class="facts"><div class="fact"><b>${esc(l.from)}</b><span>RMB ${assets.price.toLocaleString("en-US")}</span></div><div class="fact"><b>${esc(l.groupLabel)}</b><span>${group}</span></div><div class="fact"><b>${esc(l.route)}</b><span>${esc(data.route)}</span></div></div></div></section><section class="section standard-route-band" id="standard-route"><div class="wrap route-showcase"><div class="route-copy"><p class="eyebrow">${esc(l.standard)}</p><h2 class="cjk-title">${esc(data.name)}</h2><p>${esc(data.description)}</p><div class="route-price"><span>${esc(data.duration)}</span><strong>RMB ${assets.price.toLocaleString("en-US")}</strong><small>${group}</small></div><div class="route-points"><div><b>${esc(l.route)}</b><span>${esc(data.route)}</span></div><div><b>${esc(l.pace)}</b><span>${esc(data.pace)}</span></div><div><b>${esc(l.fit)}</b><span>${esc(data.fit)}</span></div><div><b>${esc(l.season)}</b><span>${esc(data.season)}</span></div></div><p class="route-note">${esc(data.note)}</p></div><div class="route-card"><div class="route-image"><img src="${assets.standard}" alt="${esc(data.name)}"></div><div class="route-map"><h3>${esc(l.route)}</h3><div class="map-line">${routeStops}</div></div></div></div></section><!-- route-day-plan-start --><section class="section route-day-plan-band" id="day-plan"><div class="wrap route-day-plan-wrap"><div class="route-day-head"><div><p class="eyebrow">${esc(l.days)}</p><h2>${esc(data.name)}</h2><p>${esc(l.daysIntro)}</p></div><div class="route-terms"><div><b>${esc(l.from)}</b><span>RMB ${assets.price.toLocaleString("en-US")}</span></div><div><b>${esc(l.groupLabel)}</b><span>${group}</span></div></div></div><div class="route-day-list route-day-list-wide">${dayItems}</div></div></section><!-- route-day-plan-end --><section class="section material-notes-band route-photo-story"><div class="wrap"><div class="section-head"><div><p class="eyebrow">${esc(l.scenes)}</p><h2>${esc(data.galleryTitle)}</h2></div><p>${esc(data.galleryIntro)}</p></div><div class="route-photo-grid">${gallery}</div></div></section><section class="section route-specifics-band"><div class="wrap"><div class="section-head"><div><p class="eyebrow">${esc(l.specifics)}</p><h2>${esc(data.name)}</h2></div><p>${esc(data.note)}</p></div><div class="route-specifics">${specifics}</div></div></section><section class="next"><div class="wrap"><p class="eyebrow">${esc(l.finalEyebrow)}</p><h2>${esc(l.finalTitle)}</h2><p>${esc(l.finalBody)}</p><div class="hero-actions"><a class="btn primary" href="${cta}">${esc(l.cta)}</a><a class="btn" href="${l.home}#places">${esc(l.back)}</a></div></div></section></main><footer class="footer"><div class="wrap"><span>Bluehour China Journeys | 若青中國旅策</span><span><a href="/credits.html">Image credits</a> · <a href="/privacy.html">Privacy</a> · <a href="/llms.txt">AI-readable summary</a></span></div></footer><a class="sticky-review" href="${cta}">${esc(l.cta)}</a><script src="/assets/language-menu.js" defer></script></body></html>`;
 }
 
-for (const slug of ["xian", "tibet"]) {
+for (const slug of generatedDestinations) {
   await fs.writeFile(path.join(root, `${slug}.html`), routePage(slug, "en", `https://bluehourchina.com/${slug}.html`));
   for (const locale of languages) {
     const directory = path.join(root, locale, slug);
@@ -521,13 +628,13 @@ function mapSection(locale, routes) {
 }
 
 function addNewDestinationOptions(html, locale) {
-  const options = ["xian", "tibet"]
+  const options = generatedDestinations
     .map((slug) => `<option value="${slug}">${esc(destinationNames[locale][slug])}</option>`)
     .join("");
   return html.replace(
     /(<select name="destination"[\s\S]*?)(<option value="multi-region">)/,
     (_match, start, multiRegion) => {
-      const withoutExisting = start.replace(/<option value="(?:xian|tibet)">[\s\S]*?<\/option>/g, "");
+      const withoutExisting = start.replace(/<option value="(?:xian|tibet|zhangjiajie)">[\s\S]*?<\/option>/g, "");
       return `${withoutExisting}${options}${multiRegion}`;
     },
   );
@@ -583,7 +690,7 @@ for (const file of interestFiles) {
     const locale = file.startsWith("zh/") ? "zh" : file.startsWith("ja/") ? "ja" : file.startsWith("ko/") ? "ko" : file.startsWith("th/") ? "th" : file.startsWith("ru/") ? "ru" : "en";
     html = html.replace(/(<select[^>]*name="destination"[^>]*>[\s\S]*?)(<\/select>)/, (match, start, end) => {
       let options = start;
-      for (const slug of ["xian", "tibet"]) {
+      for (const slug of generatedDestinations) {
         if (!options.includes(`value="${slug}"`)) options += `<option value="${slug}">${esc(destinationNames[locale][slug])}</option>`;
       }
       return options + end;
@@ -594,9 +701,36 @@ for (const file of interestFiles) {
   }
 }
 
+async function collectHtmlFiles(directory) {
+  const files = [];
+  for (const entry of await fs.readdir(directory, { withFileTypes: true })) {
+    if ([".git", "node_modules", "output", "outputs"].includes(entry.name)) continue;
+    const absolute = path.join(directory, entry.name);
+    if (entry.isDirectory()) files.push(...await collectHtmlFiles(absolute));
+    else if (entry.name.endsWith(".html")) files.push(absolute);
+  }
+  return files;
+}
+
+for (const absolute of await collectHtmlFiles(root)) {
+  let html = await fs.readFile(absolute, "utf8");
+  if (!/<select\b[^>]*name=["']destination["']/i.test(html)) continue;
+  const lang = html.match(/<html\b[^>]*lang=["']([^"']+)/i)?.[1]?.slice(0, 2).toLowerCase();
+  const locale = languages.includes(lang) ? lang : "en";
+  html = html.replace(/(<select\b[^>]*name=["']destination["'][^>]*>)([\s\S]*?)(<\/select>)/gi, (_block, open, options, close) => {
+    if (options.includes('value="zhangjiajie"')) return `${open}${options}${close}`;
+    const option = `<option value="zhangjiajie">${esc(destinationNames[locale].zhangjiajie)}</option>`;
+    if (/<option\b[^>]*value=["'](?:multi-region|not-sure)["']/i.test(options)) {
+      return `${open}${options.replace(/(<option\b[^>]*value=["'](?:multi-region|not-sure)["'])/i, `${option}$1`)}${close}`;
+    }
+    return `${open}${options}${option}${close}`;
+  });
+  await fs.writeFile(absolute, html);
+}
+
 const sitemapPath = path.join(root, "sitemap.xml");
 let sitemap = await fs.readFile(sitemapPath, "utf8");
-for (const slug of ["xian", "tibet"]) {
+for (const slug of generatedDestinations) {
   const urls = [`https://bluehourchina.com/${slug}.html`, ...languages.map((locale) => `https://bluehourchina.com/${locale}/${slug}/`)];
   for (const url of urls) {
     if (!sitemap.includes(`<loc>${url}</loc>`)) sitemap = sitemap.replace("</urlset>", `  <url><loc>${url}</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>\n</urlset>`);
@@ -609,6 +743,7 @@ for (const file of ["llms.txt", "llms-full.txt"]) {
   let text = await fs.readFile(absolute, "utf8");
   if (!text.includes("/xian.html")) text += "\n- Xi'an private route: https://bluehourchina.com/xian.html (5 days, city wall, Terracotta Army, museum and Giant Wild Goose Pagoda; RMB 6,800 per person starting reference).\n";
   if (!text.includes("/tibet.html")) text += "- Tibet private route: https://bluehourchina.com/tibet.html (8 days, Lhasa, Yamdrok Lake, Gyantse and Shigatse; RMB 18,800 per person starting reference; entry documents confirmed before travel).\n";
+  if (!text.includes("/zhangjiajie.html")) text += "- Zhangjiajie and Western Hunan private route: https://bluehourchina.com/zhangjiajie.html (6 days, Wulingyuan, Tianmen Mountain, Furong Town and Fenghuang; RMB 7,980 per person starting reference).\n";
   await fs.writeFile(absolute, text);
 }
 
@@ -627,6 +762,13 @@ const creditCards = `<!-- xian-tibet-photo-credits-start -->
           <article class="credit-card"><img loading="lazy" src="/assets/real-tibet/tibet-gyantse-kumbum.jpg" alt="江孜白居寺"><div class="credit-copy"><h3>Gyantse Kumbum</h3><p>作者／來源：Hiroki Ogawa · Wikimedia Commons</p><p>授權：CC BY 3.0</p><p><a href="https://commons.wikimedia.org/wiki/File:Kumbum_Chorten_Pelkor_Chode_Monastery_Gyantse_Tibet_China_%E8%A5%BF%E8%97%8F_%E6%B1%9F%E5%AD%9C_%E7%99%BD%E5%B1%85%E5%AF%BA_%E4%BD%9B%E5%A1%94_-_panoramio.jpg">查看原始來源</a></p></div></article>
           <article class="credit-card"><img loading="lazy" src="/assets/real-tibet/tibet-tashilhunpo.jpg" alt="日喀則扎什倫布寺"><div class="credit-copy"><h3>Tashilhunpo Monastery</h3><p>作者／來源：Prof. Mortel · Wikimedia Commons</p><p>授權：CC BY 2.0</p><p><a href="https://commons.wikimedia.org/wiki/File:Tashilhunpo_Monastery,_SHigatse,_Tibet_(30).jpg">查看原始來源</a></p></div></article>
           <article class="credit-card"><img loading="lazy" src="/assets/real-tibet/tibet-sera-monastery.jpg" alt="拉薩色拉寺"><div class="credit-copy"><h3>Sera Monastery</h3><p>作者／來源：Hiroki Ogawa · Wikimedia Commons</p><p>授權：CC BY 3.0</p><p><a href="https://commons.wikimedia.org/wiki/File:Sera_Monastery_Lhasa_Tibet_China_%E8%A5%BF%E8%97%8F_%E6%8B%89%E8%90%A8_%E8%89%B2%E6%8B%89%E5%AF%BA_-_panoramio.jpg">查看原始來源</a></p></div></article>
+          <article class="credit-card"><img loading="lazy" src="/assets/real-zhangjiajie/tianzi-mountain-panorama.jpg" alt="張家界天子山峰林全景"><div class="credit-copy"><h3>Tianzi Mountain Panorama</h3><p>作者／來源：Chensiyuan · Wikimedia Commons</p><p>授權：CC BY-SA 4.0</p><p><a href="https://commons.wikimedia.org/wiki/File:1_tianzishan_wulingyuan_zhangjiajie_2012.jpg">查看原始來源</a></p></div></article>
+          <article class="credit-card"><img loading="lazy" src="/assets/real-zhangjiajie/forest-park-cableway.jpg" alt="張家界國家森林公園纜車"><div class="credit-copy"><h3>Zhangjiajie National Forest Park</h3><p>作者／來源：xiquinhosilva · Wikimedia Commons</p><p>授權：CC BY 2.0</p><p><a href="https://commons.wikimedia.org/wiki/File:Zhangjiajie_National_Forest_Park_37754-Zhangjiajie_(48757570501).jpg">查看原始來源</a></p></div></article>
+          <article class="credit-card"><img loading="lazy" src="/assets/real-zhangjiajie/tianmen-mountain-view.jpg" alt="張家界天門山景觀"><div class="credit-copy"><h3>Tianmen Mountain View</h3><p>作者／來源：Codas · Wikimedia Commons</p><p>授權：CC BY-SA 4.0</p><p><a href="https://commons.wikimedia.org/wiki/File:Zhangjiajie_from_Tianmen_Mountain_03.jpg">查看原始來源</a></p></div></article>
+          <article class="credit-card"><img loading="lazy" src="/assets/real-zhangjiajie/bailong-elevator-peaks.jpg" alt="百龍天梯附近峰林"><div class="credit-copy"><h3>Bailong Elevator Peaks</h3><p>作者／來源：Codas · Wikimedia Commons</p><p>授權：CC BY-SA 4.0</p><p><a href="https://commons.wikimedia.org/wiki/File:Bailong_Elevator_area_02.jpg">查看原始來源</a></p></div></article>
+          <article class="credit-card"><img loading="lazy" src="/assets/real-zhangjiajie/grand-canyon-glass-bridge.jpg" alt="張家界大峽谷玻璃橋"><div class="credit-copy"><h3>Zhangjiajie Glass Bridge</h3><p>作者／來源：Codas · Wikimedia Commons</p><p>授權：CC BY-SA 4.0</p><p><a href="https://commons.wikimedia.org/wiki/File:Zhangjiajie_Glass_Bridge_08.jpg">查看原始來源</a></p></div></article>
+          <article class="credit-card"><img loading="lazy" src="/assets/real-zhangjiajie/furong-town-panorama.jpg" alt="湘西芙蓉鎮全景"><div class="credit-copy"><h3>Furong Town Panorama</h3><p>作者／來源：Chensiyuan · Wikimedia Commons</p><p>授權：CC BY-SA 4.0</p><p><a href="https://commons.wikimedia.org/wiki/File:1_furong_aerial_panorama_2017.jpg">查看原始來源</a></p></div></article>
+          <article class="credit-card"><img loading="lazy" src="/assets/real-zhangjiajie/fenghuang-ancient-town.jpg" alt="湘西鳳凰古城"><div class="credit-copy"><h3>Fenghuang Ancient Town</h3><p>作者／來源：Chensiyuan · Wikimedia Commons</p><p>授權：CC BY-SA 4.0</p><p><a href="https://commons.wikimedia.org/wiki/File:1_fenghuang_ancient_town_hunan_china_2.jpg">查看原始來源</a></p></div></article>
         <!-- xian-tibet-photo-credits-end -->`;
 
 for (const file of ["credits.html", "credits/index.html"]) {
@@ -637,8 +779,8 @@ for (const file of ["credits.html", "credits/index.html"]) {
   } else {
     html = html.replace("<!-- expanded-real-photo-credits-end -->", `${creditCards}\n        <!-- expanded-real-photo-credits-end -->`);
   }
-  html = html.replace("雲南、新疆、青甘、內蒙古、海南與三亞、東北實景", "雲南、新疆、青甘、內蒙古、海南、東北、西安與西藏實景");
+  html = html.replace(/雲南、新疆、青甘、內蒙古、海南(?:與三亞)?、東北(?:、西安與西藏)?實景/, "雲南、新疆、青甘、內蒙古、海南、東北、西安、西藏與張家界實景");
   await fs.writeFile(absolute, html);
 }
 
-console.log("Added Xi'an, Tibet and the multilingual interactive destination map.");
+console.log("Added Xi'an, Tibet, Zhangjiajie and the multilingual interactive destination map.");

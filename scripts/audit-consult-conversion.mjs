@@ -3,7 +3,7 @@ import path from "node:path";
 
 const root = process.cwd();
 const campaign = "private_route_consultation";
-const destinations = ["yunnan", "xinjiang", "dunhuang", "sanya", "northeast", "inner-mongolia", "xian", "tibet"];
+const destinations = ["yunnan", "xinjiang", "dunhuang", "sanya", "northeast", "inner-mongolia", "xian", "tibet", "zhangjiajie"];
 
 const languages = {
   en: {

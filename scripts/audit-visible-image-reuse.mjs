@@ -31,7 +31,7 @@ function visibleReferences(html) {
 function isCorePage(file) {
   if (/^(?:index|en|zh|ja|ko|th|ru)\.html$/.test(file)) return true;
   if (/^(?:en|zh|ja|ko|th|ru)\/index\.html$/.test(file)) return true;
-  if (/(?:^|\/)(?:yunnan|xinjiang|dunhuang|sanya|northeast|inner-mongolia|xian|tibet)(?:\.html|\/index\.html)$/.test(file)) return true;
+  if (/(?:^|\/)(?:yunnan|xinjiang|dunhuang|sanya|northeast|inner-mongolia|xian|tibet|zhangjiajie)(?:\.html|\/index\.html)$/.test(file)) return true;
   return /(?:^|\/)stories(?:\.html|\/index\.html)$/.test(file);
 }
 

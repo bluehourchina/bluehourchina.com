@@ -127,14 +127,14 @@ const checks = [
 
 for (const check of checks) {
   if (check.locale === "en") {
-    check.files.push("xian.html", "tibet.html", "en/xian/index.html", "en/tibet/index.html");
+    check.files.push("xian.html", "tibet.html", "zhangjiajie.html", "en/xian/index.html", "en/tibet/index.html", "en/zhangjiajie/index.html");
   } else {
-    check.files.push(`${check.locale}/xian/index.html`, `${check.locale}/tibet/index.html`);
+    check.files.push(`${check.locale}/xian/index.html`, `${check.locale}/tibet/index.html`, `${check.locale}/zhangjiajie/index.html`);
   }
 }
 
 function isDestination(file) {
-  return /(?:^|\/)(yunnan|xinjiang|dunhuang|inner-mongolia|sanya|northeast|xian|tibet)(?:\.html|\/index\.html)$/.test(file);
+  return /(?:^|\/)(yunnan|xinjiang|dunhuang|inner-mongolia|sanya|northeast|xian|tibet|zhangjiajie)(?:\.html|\/index\.html)$/.test(file);
 }
 
 function hasBudgetSelect(html) {

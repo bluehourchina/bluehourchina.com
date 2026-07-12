@@ -29,8 +29,8 @@ const viewports = [
   { name: "mobile", width: 390, height: 844 },
   { name: "desktop", width: 1440, height: 1000 },
 ];
-const expectedStops = { yunnan: 5, xinjiang: 6, dunhuang: 7, "inner-mongolia": 4, sanya: 5, northeast: 4, xian: 3, tibet: 5 };
-const expectedVisibleNodes = { yunnan: 4, xinjiang: 6, dunhuang: 7, "inner-mongolia": 4, sanya: 5, northeast: 3, xian: 2, tibet: 4 };
+const expectedStops = { yunnan: 5, xinjiang: 6, dunhuang: 7, "inner-mongolia": 4, sanya: 5, northeast: 4, xian: 3, tibet: 5, zhangjiajie: 5 };
+const expectedVisibleNodes = { yunnan: 4, xinjiang: 6, dunhuang: 7, "inner-mongolia": 4, sanya: 5, northeast: 3, xian: 2, tibet: 4, zhangjiajie: 5 };
 const findings = [];
 let interactionCount = 0;
 
@@ -101,8 +101,10 @@ try {
 
       if (["/zh.html", "/ja.html"].includes(pathname)) {
         const slug = pathname === "/zh.html" ? "zh" : "ja";
-        await rootLocator.locator('[data-map-destination="yunnan"]').click();
-        await rootLocator.screenshot({ path: path.join(outputDir, `${slug}-yunnan-${viewport.name}.png`) });
+        for (const destination of ["yunnan", "zhangjiajie"]) {
+          await rootLocator.locator(`[data-map-destination="${destination}"]`).click();
+          await rootLocator.screenshot({ path: path.join(outputDir, `${slug}-${destination}-${viewport.name}.png`) });
+        }
         await rootLocator.locator("[data-map-reset]").click();
         await rootLocator.screenshot({ path: path.join(outputDir, `${slug}-all-china-${viewport.name}.png`) });
       }

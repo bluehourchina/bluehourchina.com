@@ -1,6 +1,6 @@
 import fs from "node:fs/promises";
 
-const slugs = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast", "xian", "tibet"];
+const slugs = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast", "xian", "tibet", "zhangjiajie"];
 const locales = ["en", "zh", "ja", "ko", "th", "ru"];
 const files = slugs.flatMap((slug) => [
   [slug === "dunhuang" ? "dunhuang.html" : `${slug}.html`, slug],

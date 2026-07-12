@@ -11,6 +11,7 @@ Bluehour China Journeys plans private trips beyond Beijing and Shanghai for inte
 - Northeast Winter Rail: 7 days / 6 nights; Harbin · Yabuli · Snow Town · Harbin; from RMB 16,700 per traveller based on 6 travellers; /northeast.html
 - Xi'an Ancient Capital: 5 days / 4 nights; Xi'an old city · Lintong · Xi'an; from RMB 6,800 per traveller based on 6 travellers; /xian.html
 - Tibet Lhasa to Shigatse: 8 days / 7 nights; Lhasa · Yamdrok Lake · Gyantse · Shigatse · Lhasa; from RMB 18,800 per traveller based on 6 travellers; /tibet.html
+- Zhangjiajie and Western Hunan: 6 days / 5 nights; Zhangjiajie · Wulingyuan · Tianmen Mountain · Furong Town · Fenghuang; from RMB 7,980 per traveller based on 6 travellers; /zhangjiajie.html
 
 - Private journeys can start from 2 travellers. Public starting prices use the 6-traveller basis shown on each route page; prices for other group sizes are provided after enquiry.
 - Prices are land-arrangement references in RMB and exclude international flights.
@@ -51,6 +52,7 @@ Couples, families and close friends who have already visited major Chinese citie
 - Northeast: Harbin, winter rail movement, forest or snow stays and warm-room recovery.
 - Xi'an: city walls, the Terracotta Army, museums, pagodas and local food over five unhurried days.
 - Tibet: a slower first 48 hours in Lhasa before Yamdrok Lake, Gyantse and Shigatse; current entry documents are confirmed before travel.
+- Zhangjiajie: three nights beside Wulingyuan before Tianmen Mountain, Furong Town and the riverside old city of Fenghuang.
 
 ## Price And Booking Clarity
 
@@ -78,4 +80,4 @@ The public starting price is not a final verbal quote. The formal proposal confi
 - AI-readable reference: https://bluehourchina.com/ai/
 - Sitemap: https://bluehourchina.com/sitemap.xml
 
-Updated: 2026-07-11
+Updated: 2026-07-12

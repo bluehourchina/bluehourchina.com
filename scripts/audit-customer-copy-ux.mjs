@@ -24,7 +24,7 @@ const homeFiles = [
   "index.html", "en.html", "en/index.html", "zh.html", "zh/index.html", "ja.html", "ja/index.html",
   "ko.html", "ko/index.html", "th.html", "th/index.html", "ru.html", "ru/index.html",
 ];
-const destinationSlugs = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast", "xian", "tibet"];
+const destinationSlugs = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast", "xian", "tibet", "zhangjiajie"];
 const routeLocales = [null, "en", "zh", "ja", "ko", "th", "ru"];
 
 async function walk(directory) {
@@ -109,8 +109,8 @@ for (const file of htmlFiles) {
 
 for (const file of homeFiles) {
   const html = await fs.readFile(path.join(root, file), "utf8");
-  if (!html.includes('<option value="xian">') || !html.includes('<option value="tibet">')) {
-    findings.push(`${file} destination form is missing Xi'an or Tibet`);
+  if (!html.includes('<option value="xian">') || !html.includes('<option value="tibet">') || !html.includes('<option value="zhangjiajie">')) {
+    findings.push(`${file} destination form is missing Xi'an, Tibet or Zhangjiajie`);
   }
 }
 

@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
-const destinations = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast", "xian", "tibet"];
+const destinations = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast", "xian", "tibet", "zhangjiajie"];
 const locales = ["en", "zh", "ja", "ko", "th", "ru"];
 const issues = [];
 
@@ -50,19 +50,19 @@ for (const file of standardFiles) {
 }
 
 const homeExpectations = {
-  "index.html": ["RMB 4,680", "RMB 9,500"],
-  "en.html": ["RMB 4,680", "RMB 9,500"],
-  "en/index.html": ["RMB 4,680", "RMB 9,500"],
-  "zh.html": ["RMB 4,680", "RMB 9,500"],
-  "zh/index.html": ["RMB 4,680", "RMB 9,500"],
-  "ja.html": ["RMB 4,680", "RMB 9,500"],
-  "ja/index.html": ["RMB 4,680", "RMB 9,500"],
-  "ko.html": ["RMB 4,680", "RMB 9,500"],
-  "ko/index.html": ["RMB 4,680", "RMB 9,500"],
-  "th.html": ["RMB 4,680", "RMB 9,500"],
-  "th/index.html": ["RMB 4,680", "RMB 9,500"],
-  "ru.html": ["RMB 4,680", "RMB 9,500"],
-  "ru/index.html": ["RMB 4,680", "RMB 9,500"],
+  "index.html": ["RMB 4,680", "RMB 9,500", "RMB 7,980"],
+  "en.html": ["RMB 4,680", "RMB 9,500", "RMB 7,980"],
+  "en/index.html": ["RMB 4,680", "RMB 9,500", "RMB 7,980"],
+  "zh.html": ["RMB 4,680", "RMB 9,500", "RMB 7,980"],
+  "zh/index.html": ["RMB 4,680", "RMB 9,500", "RMB 7,980"],
+  "ja.html": ["RMB 4,680", "RMB 9,500", "RMB 7,980"],
+  "ja/index.html": ["RMB 4,680", "RMB 9,500", "RMB 7,980"],
+  "ko.html": ["RMB 4,680", "RMB 9,500", "RMB 7,980"],
+  "ko/index.html": ["RMB 4,680", "RMB 9,500", "RMB 7,980"],
+  "th.html": ["RMB 4,680", "RMB 9,500", "RMB 7,980"],
+  "th/index.html": ["RMB 4,680", "RMB 9,500", "RMB 7,980"],
+  "ru.html": ["RMB 4,680", "RMB 9,500", "RMB 7,980"],
+  "ru/index.html": ["RMB 4,680", "RMB 9,500", "RMB 7,980"],
 };
 
 for (const [file, expected] of Object.entries(homeExpectations)) {

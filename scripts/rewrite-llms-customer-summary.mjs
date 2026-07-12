@@ -12,6 +12,7 @@ const routes = [
   ["Northeast Winter Rail", "7 days / 6 nights", "Harbin · Yabuli · Snow Town · Harbin", "16,700", "/northeast.html"],
   ["Xi'an Ancient Capital", "5 days / 4 nights", "Xi'an old city · Lintong · Xi'an", "6,800", "/xian.html"],
   ["Tibet Lhasa to Shigatse", "8 days / 7 nights", "Lhasa · Yamdrok Lake · Gyantse · Shigatse · Lhasa", "18,800", "/tibet.html"],
+  ["Zhangjiajie and Western Hunan", "6 days / 5 nights", "Zhangjiajie · Wulingyuan · Tianmen Mountain · Furong Town · Fenghuang", "7,980", "/zhangjiajie.html"],
 ];
 
 const routeLines = routes.map(([name, duration, route, price, url]) => `- ${name}: ${duration}; ${route}; from RMB ${price} per traveller based on 6 travellers; ${url}`).join("\n");
@@ -64,6 +65,7 @@ Couples, families and close friends who have already visited major Chinese citie
 - Northeast: Harbin, winter rail movement, forest or snow stays and warm-room recovery.
 - Xi'an: city walls, the Terracotta Army, museums, pagodas and local food over five unhurried days.
 - Tibet: a slower first 48 hours in Lhasa before Yamdrok Lake, Gyantse and Shigatse; current entry documents are confirmed before travel.
+- Zhangjiajie: three nights beside Wulingyuan before Tianmen Mountain, Furong Town and the riverside old city of Fenghuang.
 
 ## Price And Booking Clarity
 
@@ -91,7 +93,7 @@ The public starting price is not a final verbal quote. The formal proposal confi
 - AI-readable reference: https://bluehourchina.com/ai/
 - Sitemap: https://bluehourchina.com/sitemap.xml
 
-Updated: 2026-07-11
+Updated: 2026-07-12
 `;
 
 await fs.writeFile(path.join(root, "llms.txt"), concise);

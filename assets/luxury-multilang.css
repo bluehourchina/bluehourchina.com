@@ -2138,7 +2138,7 @@ svg{
 /* calm-inline-intake-end */
 
 /* official-destination-films-start */
-.home-hero .hero-scene{animation-name:destinationScene;animation-duration:48s}
+.home-hero .hero-scene{animation-name:destinationScene;animation-duration:54s}
 .hero-scene.scene-yunnan{background-image:url("/assets/wechat-reference-20260709/wechat-yunnan-dali-lakeside-table-08.jpg");animation-delay:0s}
 .hero-scene.scene-xinjiang{background-image:url("/assets/real-xinjiang/sayram-lake-cc0.jpg");animation-delay:6s}
 .hero-scene.scene-dunhuang{background-image:url("/assets/real-dunhuang/crescent-lake-cc-by-sa.jpg");animation-delay:12s}
@@ -2147,7 +2147,8 @@ svg{
 .hero-scene.scene-northeast{background-image:url("/assets/real-northeast/china-snow-town-cc-by.jpg");animation-delay:30s}
 .hero-scene.scene-xian{background-image:url("/assets/real-xian/xian-yongning-gate-night.jpg");animation-delay:36s}
 .hero-scene.scene-tibet{background-image:url("/assets/real-tibet/tibet-potala-palace.jpg");animation-delay:42s}
-@keyframes destinationScene{0%{opacity:1;transform:scale(1.03)}13%{opacity:1;transform:scale(1.08) translate3d(-.8%,-.5%,0)}18%{opacity:0;transform:scale(1.1) translate3d(-1.2%,-.7%,0)}100%{opacity:0;transform:scale(1.1) translate3d(-1.2%,-.7%,0)}}
+.hero-scene.scene-zhangjiajie{background-image:url("/assets/real-zhangjiajie/tianzi-mountain-panorama.jpg");animation-delay:48s}
+@keyframes destinationScene{0%{opacity:1;transform:scale(1.03)}11%{opacity:1;transform:scale(1.08) translate3d(-.8%,-.5%,0)}16%{opacity:0;transform:scale(1.1) translate3d(-1.2%,-.7%,0)}100%{opacity:0;transform:scale(1.1) translate3d(-1.2%,-.7%,0)}}
 .official-films-band{background:#e9eee9}
 .official-films-head{display:grid;grid-template-columns:minmax(0,.78fr) minmax(280px,.54fr);gap:clamp(32px,7vw,96px);align-items:end;margin-bottom:clamp(36px,5vw,60px)}
 .official-films-head h2{max-width:650px;font-size:clamp(36px,4.6vw,62px);line-height:1.08}
@@ -2621,7 +2622,7 @@ svg{
 }
 .destination-map-selector{
   display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
+  grid-template-columns:repeat(3,minmax(0,1fr));
   border:1px solid rgba(255,250,241,.22);
   border-top:0;
 }
@@ -2635,7 +2636,7 @@ svg{
   font:700 15px/1.25 var(--sans);
   cursor:pointer;
 }
-.destination-map-selector button:nth-child(4n){border-right:0}
+.destination-map-selector button:nth-child(3n){border-right:0}
 .destination-map-selector button:hover,
 .destination-map-selector button:focus-visible,
 .destination-map-selector button.is-active{
@@ -2702,8 +2703,9 @@ svg{
   .destination-map-panel{padding:34px 28px}
   .destination-map-panel h3{font-size:46px}
   .destination-map-selector{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .destination-map-selector button:nth-child(4n){border-right:1px solid rgba(255,250,241,.18)}
+  .destination-map-selector button:nth-child(3n){border-right:1px solid rgba(255,250,241,.18)}
   .destination-map-selector button:nth-child(2n){border-right:0}
+  .destination-map-selector button:last-child:nth-child(odd){grid-column:1/-1;border-right:0}
   .route-specifics{grid-template-columns:1fr;gap:22px}
 }
 @media(max-width:620px){

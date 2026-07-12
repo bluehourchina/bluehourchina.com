@@ -3,7 +3,7 @@ import path from "node:path";
 
 const root = process.cwd();
 const outputDir = path.join(root, "outputs");
-const destinations = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast", "xian", "tibet"];
+const destinations = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast", "xian", "tibet", "zhangjiajie"];
 const locales = ["en", "zh", "ja", "ko", "th", "ru"];
 const prices = {
   yunnan: "4680",
@@ -14,6 +14,7 @@ const prices = {
   northeast: "16700",
   xian: "6800",
   tibet: "18800",
+  zhangjiajie: "7980",
 };
 const displayPrices = Object.fromEntries(
   Object.entries(prices).map(([slug, value]) => [slug, `RMB ${Number(value).toLocaleString("en-US")}`]),

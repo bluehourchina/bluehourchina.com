@@ -4,7 +4,7 @@ import path from "node:path";
 const root = process.cwd();
 const outputDir = path.join(root, "outputs");
 
-const destinations = ["yunnan", "xinjiang", "dunhuang", "sanya", "northeast", "inner-mongolia", "xian", "tibet"];
+const destinations = ["yunnan", "xinjiang", "dunhuang", "sanya", "northeast", "inner-mongolia", "xian", "tibet", "zhangjiajie"];
 const files = [
   ...destinations.map((destination) => ({
     file: `${destination}.html`,

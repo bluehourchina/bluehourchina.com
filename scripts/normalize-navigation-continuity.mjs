@@ -3,7 +3,7 @@ import path from "node:path";
 
 const root = process.cwd();
 const excluded = new Set([".git", "node_modules", "output", "outputs", "public"]);
-const destinations = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast", "xian", "tibet"];
+const destinations = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast", "xian", "tibet", "zhangjiajie"];
 const languages = ["en", "zh", "ja", "ko", "th", "ru"];
 
 const ui = {

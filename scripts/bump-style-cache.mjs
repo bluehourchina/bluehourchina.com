@@ -3,7 +3,7 @@ import path from "node:path";
 
 const root = process.cwd();
 const luxuryVersion = "20260711-rhythm9";
-const illustratedMapVersion = "20260712-cute-map1";
+const illustratedMapVersion = "20260712-zhangjiajie1";
 const headingVersion = "20260711-rhythm9";
 const illustratedMapHomes = new Set([
   "index.html", "en.html", "en/index.html", "zh.html", "zh/index.html", "ja.html", "ja/index.html",

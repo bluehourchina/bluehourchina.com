@@ -32,6 +32,7 @@
   const markerOffsets = {
     yunnan: [20, 31], xinjiang: [22, -20], dunhuang: [22, -20], "inner-mongolia": [24, -20],
     sanya: [22, 30], northeast: [-22, -20], xian: [22, 28], tibet: [-22, 30],
+    zhangjiajie: [22, -20],
   };
 
   const iconPaths = {
@@ -43,6 +44,7 @@
     northeast: '<path d="M0-9V9M-8-5L8 5M8-5L-8 5"/>',
     xian: '<path d="M-9-2h18M-7-2v9M7-2v9M-10 7h20M-6-6h12l3 4H-9z"/>',
     tibet: '<path d="M-10 7L-3-5l4 7 3-4 7 9z"/><circle cx="7" cy="-6" r="2"/>',
+    zhangjiajie: '<path d="M-10 7L-6-4l4 7 3-8 3 6 2-4 5 10z"/>',
   };
 
   const escapeMarkup = (value) => String(value ?? "")

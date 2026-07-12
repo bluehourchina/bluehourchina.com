@@ -6,9 +6,9 @@ const homeFiles = [
   "index.html", "en.html", "en/index.html", "zh.html", "zh/index.html", "ja.html", "ja/index.html",
   "ko.html", "ko/index.html", "th.html", "th/index.html", "ru.html", "ru/index.html",
 ];
-const expectedSlugs = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast", "xian", "tibet"];
-const expectedStopCounts = { yunnan: 5, xinjiang: 6, dunhuang: 7, "inner-mongolia": 4, sanya: 5, northeast: 4, xian: 3, tibet: 5 };
-const expectedPrices = { yunnan: "RMB 4,680", xinjiang: "RMB 13,800", dunhuang: "RMB 4,980", "inner-mongolia": "RMB 9,500", sanya: "RMB 14,200", northeast: "RMB 16,700", xian: "RMB 6,800", tibet: "RMB 18,800" };
+const expectedSlugs = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast", "xian", "tibet", "zhangjiajie"];
+const expectedStopCounts = { yunnan: 5, xinjiang: 6, dunhuang: 7, "inner-mongolia": 4, sanya: 5, northeast: 4, xian: 3, tibet: 5, zhangjiajie: 5 };
+const expectedPrices = { yunnan: "RMB 4,680", xinjiang: "RMB 13,800", dunhuang: "RMB 4,980", "inner-mongolia": "RMB 9,500", sanya: "RMB 14,200", northeast: "RMB 16,700", xian: "RMB 6,800", tibet: "RMB 18,800", zhangjiajie: "RMB 7,980" };
 
 const findings = [];
 let routeCount = 0;
@@ -21,7 +21,7 @@ for (const file of homeFiles) {
     continue;
   }
   if (/leaflet|openstreetmap|tileLayer|window\.L/i.test(html)) findings.push(`${file}: legacy map library or labelled tile source remains`);
-  if (!html.includes("luxury-multilang.css?v=20260712-cute-map1")) findings.push(`${file}: illustrated map CSS cache version missing`);
+  if (!html.includes("luxury-multilang.css?v=20260712-zhangjiajie1")) findings.push(`${file}: illustrated map CSS cache version missing`);
   if (!section.includes("destination-map-legend") || !section.includes("data-map-stops")) findings.push(`${file}: route legend missing`);
   if (!section.includes("data-map-reset")) findings.push(`${file}: all-China reset control missing`);
   if (/aria-label="(?:China destination map|Destination choices)"/.test(section)) findings.push(`${file}: hard-coded English map label remains`);
@@ -83,4 +83,4 @@ if (findings.length) {
   process.exit(1);
 }
 
-console.log(`Illustrated destination map audit passed: ${homeFiles.length} home pages, ${routeCount} localized route records, 8 destinations, 0 labelled map tiles, 0 route-data gaps.`);
+console.log(`Illustrated destination map audit passed: ${homeFiles.length} home pages, ${routeCount} localized route records, ${expectedSlugs.length} destinations, 0 labelled map tiles, 0 route-data gaps.`);
