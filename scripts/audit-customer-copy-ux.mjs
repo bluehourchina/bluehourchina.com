@@ -137,6 +137,14 @@ for (const [file, marker] of storyChecks) {
   if (!html.includes(marker)) findings.push(`${file} missing editorial-story disclosure`);
 }
 
+for (const file of ["before-china/china-first-day-arrival-checklist/index.html", "zh/before-china/china-first-day-arrival-checklist/index.html"]) {
+  const html = await fs.readFile(path.join(root, file), "utf8");
+  if (/<p class="eyebrow">(?:Short answer|一句話)<\/p>/.test(html)) findings.push(`${file} exposes an internal short-answer label`);
+  if (!html.includes(".prep-copy #answer .answer-box { margin-top: clamp(36px, 4vw, 54px); }")) {
+    findings.push(`${file} answer box lacks the approved title spacing`);
+  }
+}
+
 const repeated = new Map();
 for (const slug of destinationSlugs) {
   for (const locale of routeLocales) {
