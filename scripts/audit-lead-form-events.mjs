@@ -41,6 +41,8 @@ const pages = [
     formName: "bluehour-china-home-zh",
     expectedDestination: "xian",
     expectedSuccess: "1 個工作日內回覆",
+    expectNotificationFallback: true,
+    responseReason: "qualified_departure_within_3_months;notification_fallback_required",
     query: {
       is_test: "true",
       utm_source: "audit_source",
@@ -460,6 +462,13 @@ async function auditPage(browser, config) {
         fieldMap.is_test === (config.query?.is_test === "true" ? "true" : "false") &&
         hasCompleteUtm &&
         received?.page_location === expectedAnalyticsLocation.origin + expectedAnalyticsLocation.pathname &&
+        (config.expectNotificationFallback
+          ? nativeSubmits.length === 1 &&
+            /formsubmit\.co/i.test(nativeSubmit?.action || "") &&
+            nativeFields.submission_id === fieldMap.submission_id &&
+            nativeFields.intake_provider === "formsubmit_email_fallback" &&
+            received?.notification_provider === "formsubmit_email_fallback"
+          : nativeSubmits.length === 0) &&
         (!config.expectedDestination || fieldMap.destination === config.expectedDestination) &&
         (!config.expectedSuccess || successText.includes(config.expectedSuccess)) &&
         received?.lead_id === "LEAD-AUDIT-001" &&
