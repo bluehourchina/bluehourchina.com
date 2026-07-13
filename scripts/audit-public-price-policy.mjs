@@ -50,19 +50,19 @@ for (const file of standardFiles) {
 }
 
 const homeExpectations = {
-  "index.html": ["RMB 4,680", "RMB 9,500", "RMB 7,980"],
-  "en.html": ["RMB 4,680", "RMB 9,500", "RMB 7,980"],
-  "en/index.html": ["RMB 4,680", "RMB 9,500", "RMB 7,980"],
-  "zh.html": ["RMB 4,680", "RMB 9,500", "RMB 7,980"],
-  "zh/index.html": ["RMB 4,680", "RMB 9,500", "RMB 7,980"],
-  "ja.html": ["RMB 4,680", "RMB 9,500", "RMB 7,980"],
-  "ja/index.html": ["RMB 4,680", "RMB 9,500", "RMB 7,980"],
-  "ko.html": ["RMB 4,680", "RMB 9,500", "RMB 7,980"],
-  "ko/index.html": ["RMB 4,680", "RMB 9,500", "RMB 7,980"],
-  "th.html": ["RMB 4,680", "RMB 9,500", "RMB 7,980"],
-  "th/index.html": ["RMB 4,680", "RMB 9,500", "RMB 7,980"],
-  "ru.html": ["RMB 4,680", "RMB 9,500", "RMB 7,980"],
-  "ru/index.html": ["RMB 4,680", "RMB 9,500", "RMB 7,980"],
+  "index.html": ["RMB 5,680", "RMB 9,500", "RMB 7,980"],
+  "en.html": ["RMB 5,680", "RMB 9,500", "RMB 7,980"],
+  "en/index.html": ["RMB 5,680", "RMB 9,500", "RMB 7,980"],
+  "zh.html": ["RMB 5,680", "RMB 9,500", "RMB 7,980"],
+  "zh/index.html": ["RMB 5,680", "RMB 9,500", "RMB 7,980"],
+  "ja.html": ["RMB 5,680", "RMB 9,500", "RMB 7,980"],
+  "ja/index.html": ["RMB 5,680", "RMB 9,500", "RMB 7,980"],
+  "ko.html": ["RMB 5,680", "RMB 9,500", "RMB 7,980"],
+  "ko/index.html": ["RMB 5,680", "RMB 9,500", "RMB 7,980"],
+  "th.html": ["RMB 5,680", "RMB 9,500", "RMB 7,980"],
+  "th/index.html": ["RMB 5,680", "RMB 9,500", "RMB 7,980"],
+  "ru.html": ["RMB 5,680", "RMB 9,500", "RMB 7,980"],
+  "ru/index.html": ["RMB 5,680", "RMB 9,500", "RMB 7,980"],
 };
 
 for (const [file, expected] of Object.entries(homeExpectations)) {

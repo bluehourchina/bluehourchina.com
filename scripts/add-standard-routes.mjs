@@ -30,7 +30,7 @@ const destinations = {
       title: "雲南慢路線",
       intro: "給第一次走進深度雲南的客人一個清楚基本盤：大理的湖風、沙溪的一個夜晚，再把麗江或白沙的雪山放在遠處。",
       days: "一週",
-      price: "RMB 4,680 起",
+      price: "RMB 5,680 起",
       priceNote: "每人，地接安排起價",
       points: [
         ["路線", "大理 · 沙溪 · 麗江或白沙"],

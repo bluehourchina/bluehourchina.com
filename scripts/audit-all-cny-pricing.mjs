@@ -6,9 +6,9 @@ const outputDir = path.join(root, "outputs");
 const destinations = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast", "xian", "tibet", "zhangjiajie"];
 const locales = ["en", "zh", "ja", "ko", "th", "ru"];
 const prices = {
-  yunnan: "4680",
-  xinjiang: "13800",
-  dunhuang: "4980",
+  yunnan: "5680",
+  xinjiang: "14800",
+  dunhuang: "5980",
   "inner-mongolia": "9500",
   sanya: "14200",
   northeast: "16700",
@@ -20,6 +20,7 @@ const displayPrices = Object.fromEntries(
   Object.entries(prices).map(([slug, value]) => [slug, `RMB ${Number(value).toLocaleString("en-US")}`]),
 );
 const foreignCurrency = /US\$|NT\$|\b(?:USD|TWD|JPY|KRW|THB|RUB)\b|₽|¥\s*[\d,]/i;
+const retiredPublicPrices = ["RMB 4,980", "RMB 13,800"];
 const issues = [];
 
 async function walk(dir) {
@@ -55,9 +56,24 @@ function productSchema(html) {
 const htmlFiles = await walk(root);
 for (const absolute of htmlFiles) {
   const file = path.relative(root, absolute);
-  const visible = visibleHtml(await fs.readFile(absolute, "utf8"));
+  const html = await fs.readFile(absolute, "utf8");
+  const visible = visibleHtml(html);
   const match = visible.match(foreignCurrency);
   if (match) issues.push(`${file}: visible non-RMB currency remains (${match[0]})`);
+  for (const retired of retiredPublicPrices) {
+    if (html.includes(retired)) issues.push(`${file}: retired public price remains (${retired})`);
+  }
+  if (file !== "yunnan-agency-compare.html" && html.includes("RMB 4,680")) {
+    issues.push(`${file}: retired Yunnan public price remains (RMB 4,680)`);
+  }
+  if (/data-lead-value=["']4680["']|"price"\s*:\s*"(?:4680|4980|13800)"/.test(html)) {
+    issues.push(`${file}: retired numeric price remains in form or structured data`);
+  }
+}
+
+const comparisonHtml = await fs.readFile(path.join(root, "yunnan-agency-compare.html"), "utf8");
+if (!comparisonHtml.includes("若青中國旅策的 RMB 5,680 起")) {
+  issues.push("yunnan-agency-compare.html: current Bluehour Yunnan price is not distinguished from the market comparison");
 }
 
 const standardPages = [];

@@ -117,7 +117,7 @@ for (const file of htmlFiles) {
   if (html.includes("price-with-suffix") && !html.includes("/assets/heading-polish.css?v=20260712-price1")) {
     findings.push(`${relative(file)} can load a stale starting-price suffix style`);
   }
-  if (html.includes("route-extension-actions") && !html.includes("/assets/luxury-multilang.css?v=20260712-story2")) {
+  if (html.includes("route-extension-actions") && !html.includes("/assets/luxury-multilang.css?v=20260712-story3")) {
     findings.push(`${relative(file)} can load a stale light-section secondary CTA style`);
   }
   for (const input of html.matchAll(/<input\b[^>]*\bname=["']contact["'][^>]*>/gi)) {
@@ -174,9 +174,12 @@ for (const [file, marker] of storyChecks) {
   const images = [...html.matchAll(/<article class="journey-journal-card">[\s\S]*?<img\b[^>]*src="([^"]+)"/g)].map((match) => match[1]);
   if (featureCardCount !== 4) findings.push(`${file} must contain four featured destination stories`);
   if (new Set(featureImages).size !== featureImages.length) findings.push(`${file} repeats an image inside the featured destination stories`);
-  if (cardCount !== 4 || detailCount !== 4 || personaCount !== 4) findings.push(`${file} must contain four expandable editorial journey perspectives`);
+  if (cardCount !== 9 || detailCount !== 9 || personaCount !== 9) findings.push(`${file} must contain nine expandable editorial journey perspectives`);
+  for (const destination of ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast", "xian", "tibet", "zhangjiajie"]) {
+    if (!html.includes(`id="journal-${destination}"`)) findings.push(`${file} missing editorial journey for ${destination}`);
+  }
   if (new Set(images).size !== images.length) findings.push(`${file} repeats an image inside the visible journey journals`);
-  if (!html.includes("/assets/luxury-multilang.css?v=20260712-story2")) findings.push(`${file} can load a stale expandable-story style`);
+  if (!html.includes("/assets/luxury-multilang.css?v=20260712-story3")) findings.push(`${file} can load a stale expandable-story style`);
 }
 
 for (const file of ["before-china/china-first-day-arrival-checklist/index.html", "zh/before-china/china-first-day-arrival-checklist/index.html"]) {

@@ -8,7 +8,18 @@ const homeFiles = [
 ];
 const expectedSlugs = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast", "xian", "tibet", "zhangjiajie"];
 const expectedStopCounts = { yunnan: 5, xinjiang: 6, dunhuang: 7, "inner-mongolia": 4, sanya: 5, northeast: 4, xian: 3, tibet: 5, zhangjiajie: 5 };
-const expectedPrices = { yunnan: "RMB 4,680", xinjiang: "RMB 13,800", dunhuang: "RMB 4,980", "inner-mongolia": "RMB 9,500", sanya: "RMB 14,200", northeast: "RMB 16,700", xian: "RMB 6,800", tibet: "RMB 18,800", zhangjiajie: "RMB 7,980" };
+const expectedPrices = { yunnan: "RMB 5,680", xinjiang: "RMB 14,800", dunhuang: "RMB 5,980", "inner-mongolia": "RMB 9,500", sanya: "RMB 14,200", northeast: "RMB 16,700", xian: "RMB 6,800", tibet: "RMB 18,800", zhangjiajie: "RMB 7,980" };
+const expectedRoutePhotos = {
+  yunnan: "/assets/real-yunnan/erhai-cangshan-editorial-web.jpg",
+  xinjiang: "/assets/real-xinjiang/sayram-lake-scenery-cc-by-sa.jpg",
+  dunhuang: "/assets/real-dunhuang/crescent-lake-cc-by-sa.jpg",
+  "inner-mongolia": "/assets/real-inner-mongolia/grassland-sunset-cc-by.jpg",
+  sanya: "/assets/real-sanya/haitang-bay-cc-by-sa.jpg",
+  northeast: "/assets/real-northeast/china-snow-town-cc-by.jpg",
+  xian: "/assets/real-xian/xian-city-wall-night.jpg",
+  tibet: "/assets/real-tibet/tibet-yamdrok-lake.jpg",
+  zhangjiajie: "/assets/real-zhangjiajie/tianzi-mountain-panorama.jpg",
+};
 
 const findings = [];
 let routeCount = 0;
@@ -21,7 +32,7 @@ for (const file of homeFiles) {
     continue;
   }
   if (/leaflet|openstreetmap|tileLayer|window\.L/i.test(html)) findings.push(`${file}: legacy map library or labelled tile source remains`);
-  if (!html.includes("luxury-multilang.css?v=20260712-zhangjiajie1")) findings.push(`${file}: illustrated map CSS cache version missing`);
+  if (!html.includes("luxury-multilang.css?v=20260713-atlas3")) findings.push(`${file}: illustrated map CSS cache version missing`);
   if (!section.includes("destination-map-legend") || !section.includes("data-map-stops")) findings.push(`${file}: route legend missing`);
   if (!section.includes("data-map-reset")) findings.push(`${file}: all-China reset control missing`);
   if (/aria-label="(?:China destination map|Destination choices)"/.test(section)) findings.push(`${file}: hard-coded English map label remains`);
@@ -73,8 +84,16 @@ for (const file of homeFiles) {
 
 const script = await fs.readFile(path.join(root, "assets/destination-map.js"), "utf8");
 if (/window\.L|tileLayer|openstreetmap|leaflet/i.test(script)) findings.push("assets/destination-map.js: legacy map implementation remains");
-for (const marker of ["illustrated-map-land", "data-map-route-layer", "data-map-destination-layer", "is-route-focused"]) {
+for (const marker of ["illustrated-map-land", "data-map-route-layer", "data-map-destination-layer", "route-atlas-photo", "is-route-focused"]) {
   if (!script.includes(marker)) findings.push(`assets/destination-map.js: missing ${marker}`);
+}
+for (const [slug, photo] of Object.entries(expectedRoutePhotos)) {
+  if (!script.includes(photo)) findings.push(`assets/destination-map.js: ${slug} route photo mapping missing`);
+  try {
+    await fs.access(path.join(root, photo.slice(1)));
+  } catch {
+    findings.push(`${photo}: route photo asset missing`);
+  }
 }
 
 if (findings.length) {

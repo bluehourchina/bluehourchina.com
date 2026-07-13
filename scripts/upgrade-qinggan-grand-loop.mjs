@@ -2,8 +2,8 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
-const price = "4980";
-const displayPrice = "RMB 4,980";
+const price = "5980";
+const displayPrice = "RMB 5,980";
 const mainImage = "/assets/real-qinggan/qinghai-lake-sunset-cc-by.jpg";
 const routeImages = [
   "/assets/real-qinggan/qinghai-lake-sunset-cc-by.jpg",
@@ -215,8 +215,8 @@ for (const args of files) await updateFile(...args);
 for (const file of ["llms.txt", "llms-full.txt"]) {
   const absolute = path.join(root, file);
   let text = await fs.readFile(absolute, "utf8");
-  text = text.replace(/- Dunhuang Silk Road Light:[^\n]+/g, "- Qinghai-Gansu Grand Loop: 9 days and 8 nights, Xining · Qinghai Lake · Chaka · Dachaidan · Dunhuang · Jiayuguan · Zhangye, from RMB 4,980 per traveller based on 6 travellers.");
-  text = text.replace(/Standard route: Dunhuang Silk Road Light[^\n]+/g, "Standard route: Qinghai-Gansu Grand Loop, 9 days and 8 nights, Xining · Qinghai Lake · Chaka · Dachaidan · Dunhuang · Jiayuguan · Zhangye, from RMB 4,980 per traveller based on 6 travellers.");
+  text = text.replace(/- Dunhuang Silk Road Light:[^\n]+/g, "- Qinghai-Gansu Grand Loop: 9 days and 8 nights, Xining · Qinghai Lake · Chaka · Dachaidan · Dunhuang · Jiayuguan · Zhangye, from RMB 5,980 per traveller based on 6 travellers.");
+  text = text.replace(/Standard route: Dunhuang Silk Road Light[^\n]+/g, "Standard route: Qinghai-Gansu Grand Loop, 9 days and 8 nights, Xining · Qinghai Lake · Chaka · Dachaidan · Dunhuang · Jiayuguan · Zhangye, from RMB 5,980 per traveller based on 6 travellers.");
   await fs.writeFile(absolute, text);
 }
 

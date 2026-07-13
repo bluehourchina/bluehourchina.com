@@ -9,9 +9,9 @@ const pricing = {
     homes: ["index.html", "en.html", "en/index.html"],
     routes: (slug) => [`${slug}.html`, `en/${slug}/index.html`],
     values: {
-      yunnan: { price: "4680", replace: [["US$545", "RMB 4,680"], ["RMB 6,100", "RMB 4,680"]] },
-      xinjiang: { price: "13800", replace: [["US$1,850", "RMB 13,800"], ["RMB 19,800", "RMB 13,800"]] },
-      dunhuang: { price: "4980", replace: [["US$1,450", "RMB 4,980"], ["RMB 15,100", "RMB 4,980"], ["RMB 19,800", "RMB 4,980"]] },
+      yunnan: { price: "5680", replace: [["RMB 4,680", "RMB 5,680"], ["US$545", "RMB 5,680"], ["RMB 6,100", "RMB 5,680"]] },
+      xinjiang: { price: "14800", replace: [["RMB 13,800", "RMB 14,800"], ["US$1,850", "RMB 14,800"], ["RMB 19,800", "RMB 14,800"]] },
+      dunhuang: { price: "5980", replace: [["RMB 4,980", "RMB 5,980"], ["US$1,450", "RMB 5,980"], ["RMB 15,100", "RMB 5,980"], ["RMB 19,800", "RMB 5,980"]] },
       "inner-mongolia": { price: "9500", replace: [["US$850", "RMB 9,500"]] },
       sanya: { price: "14200", replace: [["US$1,350", "RMB 14,200"]] },
       northeast: { price: "16700", replace: [["US$1,600", "RMB 16,700"]] },
@@ -22,9 +22,9 @@ const pricing = {
     homes: ["zh.html", "zh/index.html"],
     routes: (slug) => [`zh/${slug}/index.html`],
     values: {
-      yunnan: { price: "4680", replace: [["NT$18,600", "RMB 4,680"], ["RMB 3,917", "RMB 4,680"], ["RMB 6,100", "RMB 4,680"]] },
-      xinjiang: { price: "13800", replace: [["RMB 12,800", "RMB 13,800"], ["RMB 19,800", "RMB 13,800"]] },
-      dunhuang: { price: "4980", replace: [["RMB 9,800", "RMB 4,980"], ["RMB 15,100", "RMB 4,980"], ["RMB 19,800", "RMB 4,980"]] },
+      yunnan: { price: "5680", replace: [["RMB 4,680", "RMB 5,680"], ["NT$18,600", "RMB 5,680"], ["RMB 3,917", "RMB 5,680"], ["RMB 6,100", "RMB 5,680"]] },
+      xinjiang: { price: "14800", replace: [["RMB 13,800", "RMB 14,800"], ["RMB 12,800", "RMB 14,800"], ["RMB 19,800", "RMB 14,800"]] },
+      dunhuang: { price: "5980", replace: [["RMB 4,980", "RMB 5,980"], ["RMB 9,800", "RMB 5,980"], ["RMB 15,100", "RMB 5,980"], ["RMB 19,800", "RMB 5,980"]] },
       "inner-mongolia": { price: "9500", replace: [["RMB 6,150", "RMB 9,500"]] },
       sanya: { price: "14200", replace: [["RMB 9,200", "RMB 14,200"]] },
       northeast: { price: "16700", replace: [["RMB 10,800", "RMB 16,700"]] },
@@ -35,9 +35,9 @@ const pricing = {
     homes: ["ja.html", "ja/index.html"],
     routes: (slug) => [`ja/${slug}/index.html`],
     values: {
-      yunnan: { price: "4680", replace: [["JPY 86,000", "RMB 4,680"], ["RMB 6,100", "RMB 4,680"]] },
-      xinjiang: { price: "13800", replace: [["JPY 300,000", "RMB 13,800"], ["RMB 19,800", "RMB 13,800"]] },
-      dunhuang: { price: "4980", replace: [["JPY 235,000", "RMB 4,980"], ["RMB 15,100", "RMB 4,980"], ["RMB 19,800", "RMB 4,980"]] },
+      yunnan: { price: "5680", replace: [["RMB 4,680", "RMB 5,680"], ["JPY 86,000", "RMB 5,680"], ["RMB 6,100", "RMB 5,680"]] },
+      xinjiang: { price: "14800", replace: [["RMB 13,800", "RMB 14,800"], ["JPY 300,000", "RMB 14,800"], ["RMB 19,800", "RMB 14,800"]] },
+      dunhuang: { price: "5980", replace: [["RMB 4,980", "RMB 5,980"], ["JPY 235,000", "RMB 5,980"], ["RMB 15,100", "RMB 5,980"], ["RMB 19,800", "RMB 5,980"]] },
       "inner-mongolia": { price: "9500", replace: [["JPY 136,000", "RMB 9,500"]] },
       sanya: { price: "14200", replace: [["JPY 220,000", "RMB 14,200"]] },
       northeast: { price: "16700", replace: [["JPY 255,000", "RMB 16,700"]] },
@@ -48,9 +48,9 @@ const pricing = {
     homes: ["ko.html", "ko/index.html"],
     routes: (slug) => [`ko/${slug}/index.html`],
     values: {
-      yunnan: { price: "4680", replace: [["KRW 745,000", "RMB 4,680"], ["RMB 6,100", "RMB 4,680"]] },
-      xinjiang: { price: "13800", replace: [["KRW 2,850,000", "RMB 13,800"], ["RMB 19,800", "RMB 13,800"]] },
-      dunhuang: { price: "4980", replace: [["KRW 2,200,000", "RMB 4,980"], ["RMB 15,100", "RMB 4,980"], ["RMB 19,800", "RMB 4,980"]] },
+      yunnan: { price: "5680", replace: [["RMB 4,680", "RMB 5,680"], ["KRW 745,000", "RMB 5,680"], ["RMB 6,100", "RMB 5,680"]] },
+      xinjiang: { price: "14800", replace: [["RMB 13,800", "RMB 14,800"], ["KRW 2,850,000", "RMB 14,800"], ["RMB 19,800", "RMB 14,800"]] },
+      dunhuang: { price: "5980", replace: [["RMB 4,980", "RMB 5,980"], ["KRW 2,200,000", "RMB 5,980"], ["RMB 15,100", "RMB 5,980"], ["RMB 19,800", "RMB 5,980"]] },
       "inner-mongolia": { price: "9500", replace: [["KRW 1,180,000", "RMB 9,500"]] },
       sanya: { price: "14200", replace: [["KRW 2,100,000", "RMB 14,200"]] },
       northeast: { price: "16700", replace: [["KRW 2,400,000", "RMB 16,700"]] },
@@ -61,9 +61,9 @@ const pricing = {
     homes: ["th.html", "th/index.html"],
     routes: (slug) => [`th/${slug}/index.html`],
     values: {
-      yunnan: { price: "4680", replace: [["THB 17,700", "RMB 4,680"], ["RMB 6,100", "RMB 4,680"]] },
-      xinjiang: { price: "13800", replace: [["THB 62,000", "RMB 13,800"], ["RMB 19,800", "RMB 13,800"]] },
-      dunhuang: { price: "4980", replace: [["THB 48,000", "RMB 4,980"], ["RMB 15,100", "RMB 4,980"], ["RMB 19,800", "RMB 4,980"]] },
+      yunnan: { price: "5680", replace: [["RMB 4,680", "RMB 5,680"], ["THB 17,700", "RMB 5,680"], ["RMB 6,100", "RMB 5,680"]] },
+      xinjiang: { price: "14800", replace: [["RMB 13,800", "RMB 14,800"], ["THB 62,000", "RMB 14,800"], ["RMB 19,800", "RMB 14,800"]] },
+      dunhuang: { price: "5980", replace: [["RMB 4,980", "RMB 5,980"], ["THB 48,000", "RMB 5,980"], ["RMB 15,100", "RMB 5,980"], ["RMB 19,800", "RMB 5,980"]] },
       "inner-mongolia": { price: "9500", replace: [["THB 28,000", "RMB 9,500"]] },
       sanya: { price: "14200", replace: [["THB 45,000", "RMB 14,200"]] },
       northeast: { price: "16700", replace: [["THB 52,000", "RMB 16,700"]] },
@@ -74,9 +74,9 @@ const pricing = {
     homes: ["ru.html", "ru/index.html"],
     routes: (slug) => [`ru/${slug}/index.html`],
     values: {
-      yunnan: { price: "4680", replace: [["95 000 ₽", "RMB 4,680"], ["RMB 6,100", "RMB 4,680"]] },
-      xinjiang: { price: "13800", replace: [["143 000 ₽", "RMB 13,800"], ["RMB 19,800", "RMB 13,800"]] },
-      dunhuang: { price: "4980", replace: [["110 000 ₽", "RMB 4,980"], ["RMB 15,100", "RMB 4,980"], ["RMB 19,800", "RMB 4,980"]] },
+      yunnan: { price: "5680", replace: [["RMB 4,680", "RMB 5,680"], ["95 000 ₽", "RMB 5,680"], ["RMB 6,100", "RMB 5,680"]] },
+      xinjiang: { price: "14800", replace: [["RMB 13,800", "RMB 14,800"], ["143 000 ₽", "RMB 14,800"], ["RMB 19,800", "RMB 14,800"]] },
+      dunhuang: { price: "5980", replace: [["RMB 4,980", "RMB 5,980"], ["110 000 ₽", "RMB 5,980"], ["RMB 15,100", "RMB 5,980"], ["RMB 19,800", "RMB 5,980"]] },
       "inner-mongolia": { price: "9500", replace: [["96 000 ₽", "RMB 9,500"]] },
       sanya: { price: "14200", replace: [["103 000 ₽", "RMB 14,200"]] },
       northeast: { price: "16700", replace: [["121 000 ₽", "RMB 16,700"]] },
@@ -144,6 +144,28 @@ function normalizeCurrencySchemas(html) {
     if (!changed) return block;
     return `<script type="application/ld+json">\n${JSON.stringify(schema, null, 2)}\n  </script>`;
   });
+}
+
+function syncSelectivePublicPrices(html, file) {
+  let output = html
+    .replaceAll("RMB 4,980", "RMB 5,980")
+    .replaceAll("RMB 13,800", "RMB 14,800");
+
+  if (file !== "yunnan-agency-compare.html") {
+    output = output.replaceAll("RMB 4,680", "RMB 5,680");
+  } else {
+    output = output
+      .replace("協助判斷 RMB 4,680/人起（機票另計）是否適合", "協助判斷 RMB 5,680/人起（機票另計）是否適合")
+      .replace("<span>若青中國旅策私密慢旅</span><strong class=\"price-with-suffix\">RMB 4,680", "<span>若青中國旅策私密慢旅</span><strong class=\"price-with-suffix\">RMB 5,680")
+      .replace("若青中國旅策的 RMB 4,680 起", "若青中國旅策的 RMB 5,680 起")
+      .replace("價格：RMB 4,680/人起", "價格：RMB 5,680/人起")
+      .replace("接近 RMB 4,680/人可以討論", "接近 RMB 5,680/人可以討論");
+  }
+
+  return output
+    .replaceAll('data-lead-value="4680"', 'data-lead-value="5680"')
+    .replaceAll('"price": "4680"', '"price": "5680"')
+    .replaceAll('"price":"4680"', '"price":"5680"');
 }
 
 function updateSchemas(html, config, routeSlug = null) {
@@ -270,7 +292,7 @@ async function htmlFiles(dir) {
 }
 
 for (const file of await htmlFiles(root)) {
-  updated += await update(file, (html) => normalizeCurrencySchemas(normalizeBudgetSelects(html))
+  updated += await update(file, (html) => syncSelectivePublicPrices(normalizeCurrencySchemas(normalizeBudgetSelects(html)), file)
     .replaceAll(
       "台幣依 1 CNY 約兌 NT$4.75 概算。正式報價依季節、房型、車輛與匯率確認；不含往返中國機票、未列明正餐與個人消費。",
       "所有公開價格均以人民幣計。正式報價依季節、房型、車輛與實際資源確認；不含往返中國機票、未列明正餐與個人消費。",

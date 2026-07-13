@@ -131,7 +131,7 @@ Object.assign(routes.find((route) => route.slug === "dunhuang"), {
   days: { en: "9 days · 8 nights", zh: "9 天 8 晚", ja: "9日間・8泊", ko: "9일 · 8박", th: "9 วัน · 8 คืน" },
   name: { en: "Qinghai & Gansu", zh: "青甘", ja: "青海・甘粛", ko: "칭하이·간쑤", th: "ชิงไห่–กานซู่" },
   title: { en: "Qinghai-Gansu Grand Loop", zh: "青甘大環線", ja: "青海・甘粛大環状線", ko: "칭하이-간쑤 대순환", th: "วงแหวนชิงไห่–กานซู่" },
-  price: { en: "RMB 4,980", zh: "RMB 4,980", ja: "RMB 4,980", ko: "RMB 4,980", th: "RMB 4,980" },
+  price: { en: "RMB 5,980", zh: "RMB 5,980", ja: "RMB 5,980", ko: "RMB 5,980", th: "RMB 5,980" },
   route: { en: "Xining · Qinghai Lake · Dunhuang · Zhangye", zh: "西寧 · 青海湖 · 敦煌 · 張掖", ja: "西寧 · 青海湖 · 敦煌 · 張掖", ko: "시닝 · 칭하이호 · 둔황 · 장예", th: "ซีหนิง · ชิงไห่ · ตุนหวง · จางเย่" },
   daysShort: { en: ["D1-3 plateau lakes", "D4-6 desert and Dunhuang", "D7-9 Jiayuguan and Zhangye"], zh: ["D1-3 高原湖泊", "D4-6 戈壁與敦煌", "D7-9 嘉峪關與張掖"], ja: ["D1-3 高原の湖", "D4-6 砂漠と敦煌", "D7-9 嘉峪関と張掖"], ko: ["D1-3 고원 호수", "D4-6 사막과 둔황", "D7-9 자위관과 장예"], th: ["D1-3 ทะเลสาบที่ราบสูง", "D4-6 ทะเลทรายและตุนหวง", "D7-9 เจียยวี่กวนและจางเย่"] },
 });

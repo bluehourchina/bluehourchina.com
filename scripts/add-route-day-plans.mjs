@@ -179,7 +179,7 @@ const destinations = {
   yunnan: {
     path: "yunnan",
     image: "/assets/ai/bluehour-yunnan-luxury-shaxi-courtyard.jpg",
-    prices: { en: "From US$1,250", zh: "RMB 4,680 起", ja: "JPY 205,000 から", ko: "KRW 1,950,000 부터", th: "เริ่มที่ THB 42,000" },
+    prices: { en: "From RMB 5,680", zh: "RMB 5,680 起", ja: "RMB 5,680 から", ko: "RMB 5,680부터", th: "เริ่มที่ RMB 5,680" },
     daysLabel: { en: "7 days", zh: "一週", ja: "7日間", ko: "7일", th: "7 วัน" },
     route: {
       en: "Dali · Shaxi · Lijiang or Baisha",

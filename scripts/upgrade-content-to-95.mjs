@@ -420,7 +420,7 @@ const localizedDestinationDetails = {
       name: "雲南",
       route: "雲南慢路線",
       days: "一週",
-      price: "RMB 4,680 起",
+      price: "RMB 5,680 起",
       shortRoute: "大理 · 沙溪 · 麗江或白沙",
       title: ["雲南適合你的", "下一次中國嗎"],
       intro: "雲南要用適合度來判斷，而不只是看照片好不好看。我們會先看季節、車程、語言需求、住宿感與同行者能接受的步調。",

@@ -30,7 +30,7 @@ const viewports = [
   { name: "desktop", width: 1440, height: 1000 },
 ];
 const expectedStops = { yunnan: 5, xinjiang: 6, dunhuang: 7, "inner-mongolia": 4, sanya: 5, northeast: 4, xian: 3, tibet: 5, zhangjiajie: 5 };
-const expectedVisibleNodes = { yunnan: 4, xinjiang: 6, dunhuang: 7, "inner-mongolia": 4, sanya: 5, northeast: 3, xian: 2, tibet: 4, zhangjiajie: 5 };
+const expectedVisibleNodes = { ...expectedStops };
 const findings = [];
 let interactionCount = 0;
 
@@ -51,6 +51,7 @@ try {
       const rootLocator = page.locator("[data-destination-map]");
       const stage = rootLocator.locator(".destination-map-stage");
       await stage.scrollIntoViewIfNeeded();
+      await page.waitForTimeout(550);
       const initial = await rootLocator.evaluate((element) => {
         const svg = element.querySelector(".destination-map-svg");
         const reset = element.querySelector("[data-map-reset]");
@@ -78,9 +79,11 @@ try {
         const button = buttons.nth(index);
         const slug = await button.getAttribute("data-map-destination");
         await button.click();
+        await page.waitForTimeout(500);
         const state = await rootLocator.evaluate((element) => ({
           active: element.querySelector('[data-map-destination][aria-pressed="true"]')?.getAttribute("data-map-destination") || "",
           routeNodes: element.querySelectorAll(".map-route-stop").length,
+          routeLabels: element.querySelectorAll(".map-route-label").length,
           legendItems: element.querySelectorAll("[data-map-stops] li").length,
           routeText: element.querySelector("[data-map-route]")?.textContent?.trim() || "",
           href: element.querySelector("[data-map-link]")?.getAttribute("href") || "",
@@ -88,21 +91,25 @@ try {
         }));
         interactionCount += 1;
         if (state.active !== slug || !state.focused) findings.push(`${viewport.name} ${pathname}: ${slug} did not become active`);
-        if (state.routeNodes !== expectedVisibleNodes[slug] || state.legendItems !== expectedStops[slug]) findings.push(`${viewport.name} ${pathname}: ${slug} route nodes or legend mismatch`);
+        if (state.routeNodes !== expectedVisibleNodes[slug] || state.routeLabels !== expectedStops[slug] || state.legendItems !== expectedStops[slug]) findings.push(`${viewport.name} ${pathname}: ${slug} route nodes, labels or legend mismatch`);
         if (!state.routeText || !state.href) findings.push(`${viewport.name} ${pathname}: ${slug} route details missing`);
       }
 
       await rootLocator.locator("[data-map-reset]").click();
+      await page.waitForTimeout(500);
       const resetState = await rootLocator.evaluate((element) => ({
         focused: element.classList.contains("is-route-focused"),
         viewBox: element.querySelector(".destination-map-svg")?.getAttribute("viewBox") || "",
+        overviewOpacity: Number.parseFloat(getComputedStyle(element.querySelector("[data-map-overview-layer]")).opacity),
+        focusOpacity: Number.parseFloat(getComputedStyle(element.querySelector("[data-map-focus-layer]")).opacity),
       }));
-      if (resetState.focused || resetState.viewBox !== "35.0 35.0 930.0 545.0") findings.push(`${viewport.name} ${pathname}: all-China reset did not restore the overview`);
+      if (resetState.focused || resetState.viewBox !== "35.0 35.0 930.0 545.0" || resetState.overviewOpacity < .99 || resetState.focusOpacity > .01) findings.push(`${viewport.name} ${pathname}: all-China reset did not restore the overview`);
 
       if (["/zh.html", "/ja.html"].includes(pathname)) {
         const slug = pathname === "/zh.html" ? "zh" : "ja";
         for (const destination of ["yunnan", "zhangjiajie"]) {
           await rootLocator.locator(`[data-map-destination="${destination}"]`).click();
+          await page.waitForTimeout(550);
           await rootLocator.screenshot({ path: path.join(outputDir, `${slug}-${destination}-${viewport.name}.png`) });
         }
         await rootLocator.locator("[data-map-reset]").click();

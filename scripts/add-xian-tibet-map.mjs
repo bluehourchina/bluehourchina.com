@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
-const styleVersion = "20260712-zhangjiajie1";
+const styleVersion = "20260713-atlas3";
 const languages = ["en", "zh", "ja", "ko", "th", "ru"];
 const allDestinations = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast", "xian", "tibet", "zhangjiajie"];
 const generatedDestinations = ["xian", "tibet", "zhangjiajie"];
@@ -15,8 +15,8 @@ const ui = {
     route: "Route", pace: "Pace", fit: "Best for", season: "Best season", standard: "Standard private route",
     days: "Day by day", daysIntro: "One clear plan first; dates, rooms and daily pace are adjusted after enquiry.", stay: "Night",
     scenes: "Along the route", specifics: "What is arranged first", view: "View this route", mapReset: "View all China",
-    mapEyebrow: "Choose on the map", mapTitle: "Where would you like to go next?", mapIntro: "Choose a destination to see its journey drawn on the map, with the length and RMB starting price.",
-    mapAria: "Illustrated map of private journeys across China", mapChoices: "Choose a destination", mapSketch: "Journey sketch",
+    mapEyebrow: "Choose on the map", mapTitle: "Where would you like to go next?", mapIntro: "Choose a destination to see the order of its stops, journey length and RMB starting price.",
+    mapAria: "Illustrated map of private journeys across China", mapChoices: "Choose a destination", mapSketch: "Route stops",
     duration: "Length", mapPrice: "From", mapRoute: "Route", fallback: "Choose a destination below to see its route.",
     finalEyebrow: "Start with the route", finalTitle: "Share your dates and preferred pace", finalBody: "We reply with availability, the suitable room level and a first quotation direction.",
     heroLead: "From Yunnan and Xinjiang to Zhangjiajie and Tibet, private routes begin with your dates, pace and comfort needs.",
@@ -28,8 +28,8 @@ const ui = {
     route: "路線", pace: "節奏", fit: "適合", season: "合適季節", standard: "標準私人方案",
     days: "每日安排", daysIntro: "先看完整路線；日期、房型與每天節奏在諮詢後再調整。", stay: "住宿",
     scenes: "沿途會看見", specifics: "先安排好的重要細節", view: "查看這條路線", mapReset: "看全中國",
-    mapEyebrow: "從地圖選目的地", mapTitle: "從中國地圖開始選路線", mapIntro: "選一個目的地，地圖會畫出大致行程，並顯示天數與人民幣起價。",
-    mapAria: "中國私人旅程插畫地圖", mapChoices: "選擇目的地", mapSketch: "大致行程",
+    mapEyebrow: "從地圖選目的地", mapTitle: "從中國地圖開始選路線", mapIntro: "選一個目的地，先看沿途停留順序、天數與人民幣起價。",
+    mapAria: "中國私人旅程插畫地圖", mapChoices: "選擇目的地", mapSketch: "沿途停留",
     duration: "天數", mapPrice: "起價", mapRoute: "路線", fallback: "請從下方選擇目的地查看方案。",
     finalEyebrow: "從路線開始", finalTitle: "留下日期與想要的步調", finalBody: "我們會回覆檔期、合適房型與第一版報價方向。",
     heroLead: "從雲南、新疆到張家界與西藏，依日期、步調與舒適需求安排 2 人起私人路線。",
@@ -41,8 +41,8 @@ const ui = {
     route: "ルート", pace: "旅のペース", fit: "おすすめ", season: "おすすめ時期", standard: "モデルプライベート旅程",
     days: "日ごとの旅程", daysIntro: "まず全体像を確認し、日程・客室・毎日のペースは相談後に調整します。", stay: "宿泊",
     scenes: "旅の風景", specifics: "先に整えること", view: "この旅程を見る", mapReset: "中国全体を見る",
-    mapEyebrow: "地図から選ぶ", mapTitle: "次の中国を地図から選ぶ", mapIntro: "目的地を選ぶと、おおよその旅程、日数、人民元の参考料金を地図で確認できます。",
-    mapAria: "中国プライベート旅行のイラスト地図", mapChoices: "目的地を選ぶ", mapSketch: "旅程イメージ",
+    mapEyebrow: "地図から選ぶ", mapTitle: "次の中国を地図から選ぶ", mapIntro: "目的地を選ぶと、立ち寄る順番、日数、人民元の参考料金を確認できます。",
+    mapAria: "中国プライベート旅行のイラスト地図", mapChoices: "目的地を選ぶ", mapSketch: "立ち寄る場所",
     duration: "日数", mapPrice: "参考料金", mapRoute: "ルート", fallback: "下の目的地から旅程を選んでください。",
     finalEyebrow: "旅程から始める", finalTitle: "日程と希望のペースを教えてください", finalBody: "空き状況、客室の目安、最初のお見積り方針を返信します。",
     heroLead: "雲南・新疆から張家界・チベットまで、日程と心地よさに合わせた個人旅行を2名様から整えます。",
@@ -54,8 +54,8 @@ const ui = {
     route: "경로", pace: "여행 속도", fit: "추천 대상", season: "추천 시기", standard: "표준 프라이빗 일정",
     days: "일자별 일정", daysIntro: "먼저 전체 경로를 보고 날짜, 객실, 매일의 속도는 상담 후 조정합니다.", stay: "숙박",
     scenes: "여정의 풍경", specifics: "먼저 준비하는 것", view: "이 일정 보기", mapReset: "중국 전체 보기",
-    mapEyebrow: "지도에서 선택", mapTitle: "다음 중국 여행을 지도에서 고르세요", mapIntro: "목적지를 선택하면 대략적인 이동 경로, 기간, 위안화 시작가를 지도에서 볼 수 있습니다.",
-    mapAria: "중국 프라이빗 여행 일러스트 지도", mapChoices: "목적지 선택", mapSketch: "여정 개요",
+    mapEyebrow: "지도에서 선택", mapTitle: "다음 중국 여행을 지도에서 고르세요", mapIntro: "목적지를 선택하면 주요 경유 순서, 기간, 위안화 시작가를 확인할 수 있습니다.",
+    mapAria: "중국 프라이빗 여행 일러스트 지도", mapChoices: "목적지 선택", mapSketch: "주요 경유지",
     duration: "기간", mapPrice: "시작가", mapRoute: "경로", fallback: "아래 목적지를 선택해 일정을 확인하세요.",
     finalEyebrow: "일정에서 시작", finalTitle: "날짜와 원하는 속도를 알려 주세요", finalBody: "가능 일정, 객실 수준, 첫 견적 방향을 답변드립니다.",
     heroLead: "윈난과 신장에서 장자제와 티베트까지, 날짜와 편안함에 맞춘 2인 이상 프라이빗 일정을 준비합니다.",
@@ -67,8 +67,8 @@ const ui = {
     route: "เส้นทาง", pace: "จังหวะ", fit: "เหมาะสำหรับ", season: "ช่วงที่เหมาะ", standard: "เส้นทางส่วนตัวมาตรฐาน",
     days: "แผนรายวัน", daysIntro: "ดูเส้นทางทั้งหมดก่อน แล้วค่อยปรับวันที่ ห้องพัก และจังหวะรายวันหลังสอบถาม", stay: "พักที่",
     scenes: "ภาพระหว่างทาง", specifics: "สิ่งที่จัดเตรียมก่อน", view: "ดูเส้นทางนี้", mapReset: "ดูแผนที่จีนทั้งหมด",
-    mapEyebrow: "เลือกจากแผนที่", mapTitle: "เลือกทริปจีนครั้งถัดไปจากแผนที่", mapIntro: "เลือกจุดหมายเพื่อดูแนวเส้นทาง จำนวนวัน และราคาเริ่มต้นเป็นหยวนบนแผนที่",
-    mapAria: "แผนที่ภาพประกอบเส้นทางส่วนตัวในจีน", mapChoices: "เลือกจุดหมาย", mapSketch: "ภาพรวมเส้นทาง",
+    mapEyebrow: "เลือกจากแผนที่", mapTitle: "เลือกทริปจีนครั้งถัดไปจากแผนที่", mapIntro: "เลือกจุดหมายเพื่อดูลำดับจุดแวะ จำนวนวัน และราคาเริ่มต้นเป็นหยวน",
+    mapAria: "แผนที่ภาพประกอบเส้นทางส่วนตัวในจีน", mapChoices: "เลือกจุดหมาย", mapSketch: "จุดแวะระหว่างทาง",
     duration: "ระยะเวลา", mapPrice: "ราคาเริ่มต้น", mapRoute: "เส้นทาง", fallback: "เลือกจุดหมายด้านล่างเพื่อดูเส้นทาง",
     finalEyebrow: "เริ่มจากเส้นทาง", finalTitle: "บอกวันที่และจังหวะที่ต้องการ", finalBody: "เราจะตอบเรื่องวันว่าง ระดับห้องพัก และแนวทางราคาเบื้องต้น",
     heroLead: "ตั้งแต่ยูนนานและซินเจียงถึงจางเจียเจี้ยและทิเบต เราจัดเส้นทางส่วนตัวเริ่มที่ 2 คนตามวันและความสบายที่ต้องการ",
@@ -80,8 +80,8 @@ const ui = {
     route: "Маршрут", pace: "Темп", fit: "Кому подходит", season: "Лучшее время", standard: "Стандартный частный маршрут",
     days: "Маршрут по дням", daysIntro: "Сначала ясный план; даты, номер и темп каждого дня уточняются после запроса.", stay: "Ночь",
     scenes: "По дороге", specifics: "Что согласуем заранее", view: "Открыть маршрут", mapReset: "Вся карта Китая",
-    mapEyebrow: "Выберите на карте", mapTitle: "Куда отправиться по Китаю дальше", mapIntro: "Выберите направление, чтобы увидеть примерный путь, длительность и стартовую цену в юанях.",
-    mapAria: "Иллюстрированная карта частных маршрутов по Китаю", mapChoices: "Выбрать направление", mapSketch: "Схема путешествия",
+    mapEyebrow: "Выберите на карте", mapTitle: "Куда отправиться по Китаю дальше", mapIntro: "Выберите направление, чтобы увидеть порядок остановок, длительность и стартовую цену в юанях.",
+    mapAria: "Иллюстрированная карта частных маршрутов по Китаю", mapChoices: "Выбрать направление", mapSketch: "Остановки маршрута",
     duration: "Длительность", mapPrice: "Цена", mapRoute: "Маршрут", fallback: "Выберите направление ниже, чтобы увидеть маршрут.",
     finalEyebrow: "Начните с маршрута", finalTitle: "Назовите даты и желаемый темп", finalBody: "Мы ответим по наличию, уровню номера и направлению первой сметы.",
     heroLead: "От Юньнани и Синьцзяна до Чжанцзяцзе и Тибета: частные маршруты от 2 человек с учётом дат и комфорта.",
@@ -389,9 +389,9 @@ const coords = {
 };
 
 const mapPrices = {
-  yunnan: 4680,
-  xinjiang: 13800,
-  dunhuang: 4980,
+  yunnan: 5680,
+  xinjiang: 14800,
+  dunhuang: 5980,
   "inner-mongolia": 9500,
   sanya: 14200,
   northeast: 16700,
@@ -782,5 +782,7 @@ for (const file of ["credits.html", "credits/index.html"]) {
   html = html.replace(/雲南、新疆、青甘、內蒙古、海南(?:與三亞)?、東北(?:、西安與西藏)?實景/, "雲南、新疆、青甘、內蒙古、海南、東北、西安、西藏與張家界實景");
   await fs.writeFile(absolute, html);
 }
+
+await import("./normalize-navigation-continuity.mjs");
 
 console.log("Added Xi'an, Tibet, Zhangjiajie and the multilingual interactive destination map.");

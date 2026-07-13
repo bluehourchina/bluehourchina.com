@@ -4,9 +4,9 @@ import path from "node:path";
 const root = process.cwd();
 
 const routes = [
-  ["Yunnan Soft Landing", "8 days / 7 nights", "Kunming · Dali · Lijiang", "4,680", "/yunnan.html"],
-  ["Xinjiang Ili Route", "9 days / 8 nights", "Urumqi · Kuitun · Sayram Lake · Yining · Tekes · Nalati", "13,800", "/xinjiang.html"],
-  ["Qinghai-Gansu Grand Loop", "9 days / 8 nights", "Xining · Qinghai Lake · Chaka · Dachaidan · Dunhuang · Jiayuguan · Zhangye", "4,980", "/dunhuang.html"],
+  ["Yunnan Soft Landing", "8 days / 7 nights", "Kunming · Dali · Lijiang", "5,680", "/yunnan.html"],
+  ["Xinjiang Ili Route", "9 days / 8 nights", "Urumqi · Kuitun · Sayram Lake · Yining · Tekes · Nalati", "14,800", "/xinjiang.html"],
+  ["Qinghai-Gansu Grand Loop", "9 days / 8 nights", "Xining · Qinghai Lake · Chaka · Dachaidan · Dunhuang · Jiayuguan · Zhangye", "5,980", "/dunhuang.html"],
   ["Inner Mongolia Grassland and Desert", "6 days / 5 nights", "Hohhot · Huitengxile · Kubuqi · Ordos", "9,500", "/inner-mongolia.html"],
   ["Hainan East Coast and Sanya", "7 days / 6 nights", "Haikou · Qionghai · Wanning · Lingshui · Sanya", "14,200", "/sanya.html"],
   ["Northeast Winter Rail", "7 days / 6 nights", "Harbin · Yabuli · Snow Town · Harbin", "16,700", "/northeast.html"],

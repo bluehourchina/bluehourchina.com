@@ -751,7 +751,7 @@ function cleanOldYunnanStory(html, file) {
       '<div class="copy-stack"><article class="copy-block"><b>抵達</b><h3>昆明先把旅人安放好</h3><p>花市、老街與濕地，不是為了填滿第一天，而是讓外國旅人先適應中國的節奏。</p></article><article class="copy-block"><b>湖邊</b><h3>大理要有日出與手作</h3><p>龍龕、洱海 S 灣與喜洲扎染，把風景從照片變成可以帶走的觸感。</p></article><article class="copy-block"><b>遠方</b><h3>雪山日必須留有餘地</h3><p>雲杉坪、藍月谷、白沙與玉湖村都要看天氣與體力，不把山排成硬清單。</p></article></div>',
     );
     html = html.replaceAll(
-      "公開路線先給一個清楚形狀：一週，大理 · 沙溪 · 麗江或白沙，RMB 4,680 起。真正重要的是判斷這個形狀是否適合同行的人。",
+      "公開路線先給一個清楚形狀：一週，大理 · 沙溪 · 麗江或白沙，RMB 5,680 起。真正重要的是判斷這個形狀是否適合同行的人。",
       "公開路線先給一個清楚形狀：8 天 7 晚，昆明 · 大理 · 麗江，6 人 RMB 3,917/人起，2 人 RMB 8,500/人起。真正重要的是判斷這個形狀是否適合同行的人。",
     );
     html = html.replaceAll(

@@ -116,7 +116,10 @@ function urlFor(pagePath) {
 
 async function auditPage(page, pagePath, viewport) {
   const url = urlFor(pagePath);
-  const response = await page.goto(url, { waitUntil: "networkidle", timeout: 30000 });
+  const response = await page.goto(url, { waitUntil: "domcontentloaded", timeout: 30000 });
+  await page.waitForLoadState("load", { timeout: 10000 }).catch(() => {});
+  await page.evaluate(() => document.fonts?.ready || Promise.resolve());
+  await page.waitForTimeout(250);
   const status = response?.status() || 0;
   const mobileMenus = { site: false, language: false, siteWithinViewport: false, languageWithinViewport: false };
   if (viewport.isMobile) {
