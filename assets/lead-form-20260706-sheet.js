@@ -444,6 +444,39 @@
     return result;
   };
 
+  const sendNativeEmailBackup = (form) => {
+    if (!/formsubmit\.co/i.test(form.action || "")) return false;
+
+    const frameName = "bluehour-email-backup-" + createSubmissionId();
+    const frame = document.createElement("iframe");
+    frame.name = frameName;
+    frame.hidden = true;
+    frame.setAttribute("aria-hidden", "true");
+
+    const backup = document.createElement("form");
+    backup.method = "POST";
+    backup.action = form.action;
+    backup.target = frameName;
+    backup.hidden = true;
+
+    for (const [name, value] of new FormData(form).entries()) {
+      if (typeof value !== "string") continue;
+      const field = document.createElement("input");
+      field.type = "hidden";
+      field.name = name;
+      field.value = name === "intake_provider" ? "formsubmit_email_fallback" : value;
+      backup.appendChild(field);
+    }
+
+    document.body.append(frame, backup);
+    HTMLFormElement.prototype.submit.call(backup);
+    window.setTimeout(() => {
+      backup.remove();
+      frame.remove();
+    }, 30000);
+    return true;
+  };
+
   const trackOnce = (form, eventName) => {
     const key = "tracked" + eventName
       .split("_")
@@ -526,6 +559,11 @@
           qualification_reason: result.qualification_reason || "",
           schema: result.schema || ""
         };
+        if (/notification_fallback_required/i.test(responsePayload.qualification_reason)) {
+          responsePayload.notification_provider = sendNativeEmailBackup(form)
+            ? "formsubmit_email_fallback"
+            : "unavailable";
+        }
         dispatchLeadEvent(form, "lead_received", responsePayload);
         pushLeadEvent(form, {
           intakeProvider: "google_sheet_webapp",
