@@ -29,6 +29,8 @@ jobs:
         run: |
           node scripts/audit-customer-copy-ux.mjs
           node scripts/audit-form-accessibility.mjs
+          node scripts/audit-lead-intake-contract.mjs
+          node scripts/audit-consult-conversion.mjs
           node scripts/run-form-accessibility-negative-gate.mjs
           set +e
           node scripts/run-form-accessibility-negative-gate.mjs --simulate-audit-status=2
