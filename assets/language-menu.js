@@ -1,4 +1,11 @@
 (() => {
+  const analyticsAsset = "/assets/lead-form-20260706-sheet.js";
+  if (!document.querySelector('script[src*="lead-form-20260706-sheet.js"]')) {
+    const analyticsScript = document.createElement("script");
+    analyticsScript.src = analyticsAsset;
+    document.head.appendChild(analyticsScript);
+  }
+
   const menus = [...document.querySelectorAll("details.language-menu, details.site-menu")];
 
   document.addEventListener("click", (event) => {
