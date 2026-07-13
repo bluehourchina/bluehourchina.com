@@ -80,6 +80,37 @@ const pages = [
     }
   },
   {
+    path: "/yunnan-itinerary-check.html",
+    formName: "yunnan-private-tour-zh",
+    responseGrade: "B",
+    expectedDestination: "yunnan",
+    expectedTravelWindow: "Within 3-6 months",
+    expectedRouteDays: "About one week",
+    expectedGroupSize: "2 travellers",
+    expectedBudget: "RMB 8,000-15,000",
+    expectedCanonical: "https://bluehourchina.com/yunnan-itinerary-check.html",
+    expectedConsent: "yes",
+    expectRequiredUncheckedConsent: true,
+    query: {
+      utm_source: "youtube",
+      utm_medium: "social",
+      utm_campaign: "shaxi_video",
+      utm_content: "shaxi_itinerary_check"
+    },
+    values: {
+      name: "Codex 沙溪影片表單測試",
+      contact: "+886 912 345 678 LINE",
+      group_size: "2 travellers",
+      travel_window: "Within 3-6 months",
+      route_days: "About one week",
+      budget: "RMB 8,000-15,000",
+      readiness: "正在比較旅行社與私旅",
+      style: "住宿位置與舒適度",
+      consent_to_contact: true,
+      itinerary_text: "測試從 YouTube 沙溪影片進入後的雲南行程比較，不送出到外部服務。"
+    }
+  },
+  {
     path: "/yunnan.html",
     formName: "bluehour-yunnan-product-en",
     responseGrade: "B",
@@ -430,6 +461,16 @@ async function auditPage(browser, config) {
     if (!formCount) {
       return { path: config.path, ok: false, reason: "form not found", events, fetches };
     }
+    const canonicalHref = config.expectedCanonical
+      ? await page.locator('link[rel="canonical"]').first().getAttribute("href").catch(() => "")
+      : "";
+    const initialConsent = config.expectRequiredUncheckedConsent
+      ? await form.locator('[name="consent_to_contact"]').first().evaluate((element) => ({
+          checked: element.checked,
+          required: element.required,
+          type: element.type
+        })).catch(() => null)
+      : null;
     await form.scrollIntoViewIfNeeded();
     await page.waitForTimeout(150);
     await fillForm(form, config.values);
@@ -502,7 +543,14 @@ async function auditPage(browser, config) {
             received?.notification_provider === "formsubmit_email_fallback"
           : nativeSubmits.length === 0) &&
         (!config.expectedDestination || fieldMap.destination === config.expectedDestination) &&
+        (!config.expectedTravelWindow || fieldMap.travel_window === config.expectedTravelWindow) &&
         (!config.expectedRouteDays || fieldMap.route_days === config.expectedRouteDays) &&
+        (!config.expectedGroupSize || fieldMap.group_size === config.expectedGroupSize) &&
+        (!config.expectedBudget || fieldMap.budget === config.expectedBudget) &&
+        (!config.expectedCanonical || canonicalHref === config.expectedCanonical) &&
+        (!config.expectedConsent || fieldMap.consent_to_contact === config.expectedConsent) &&
+        (!config.expectRequiredUncheckedConsent ||
+          (initialConsent?.type === "checkbox" && initialConsent.required && !initialConsent.checked)) &&
         (!config.expectedSuccess || successText.includes(config.expectedSuccess)) &&
         received?.lead_id === "LEAD-AUDIT-001" &&
         received?.grade === grade &&
@@ -529,6 +577,12 @@ async function auditPage(browser, config) {
       submissionId: fieldMap.submission_id || "",
       isTest: fieldMap.is_test || "",
       destination: fieldMap.destination || "",
+      travelWindow: fieldMap.travel_window || "",
+      groupSize: fieldMap.group_size || "",
+      budget: fieldMap.budget || "",
+      consentToContact: fieldMap.consent_to_contact || "",
+      canonicalHref,
+      initialConsent,
       successText,
       responseGrade: received?.grade || "",
       generatedGrade: generated?.grade || "",

@@ -7,6 +7,7 @@
   <meta name="robots" content="noindex,follow">
   <title>雲南行程比較檢查器｜若青中國旅策</title>
   <meta name="description" content="正在比較台灣出發雲南旅行社行程？若青中國旅策整理大理、沙溪、麗江一週慢走私旅檢查表，協助判斷住宿、車程、天數與價格是否值得。">
+  <link rel="canonical" href="https://bluehourchina.com/yunnan-itinerary-check.html">
   <meta property="og:title" content="雲南行程比較檢查器｜若青中國旅策">
   <meta property="og:description" content="不只比價格，也看沙溪是否只是路過、住宿位置、車程節奏與服務邊界。">
   <meta property="og:type" content="website">
@@ -377,6 +378,25 @@
       line-height: 1.7;
     }
     .lead-form .wide { grid-column: 1 / -1; }
+    .consent-check {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+      font-weight: 650;
+    }
+    .lead-form .consent-check input[type="checkbox"] {
+      width: 18px;
+      min-height: 18px;
+      height: 18px;
+      margin: 2px 0 0;
+      padding: 0;
+      flex: 0 0 auto;
+      accent-color: var(--forest);
+    }
     .qualify {
       grid-column: 1 / -1;
       display: grid;
@@ -574,21 +594,23 @@
             <input type="hidden" name="utm_content" value="">
             <input type="hidden" name="campaign" value="private_route_consultation">
             <input type="text" name="name" placeholder="姓名" aria-label="姓名" required>
-            <input type="text" name="contact" placeholder="WhatsApp / Email / LINE / 微信 / 手機" aria-label="WhatsApp、Email、LINE、微信或手機" required>
-            <select name="group_size" aria-label="同行人數" required><option value="" disabled selected>同行人數</option><option>2 人</option><option>3-4 人</option><option>5-6 人</option><option>還不確定</option></select>
-            <select name="month" aria-label="預計出發月份" required><option value="" disabled selected>預計出發月份</option><option>1-3 個月內</option><option>3-6 個月內</option><option>明年春夏</option><option>還在觀望</option></select>
-            <select name="route_days" aria-label="偏好天數" required><option value="" disabled selected>偏好天數</option><option>一週</option>
-            <option>一週多一點</option>
-            <option>9 日慢走</option><option>還不確定，想先判斷</option></select>
+            <input type="text" name="contact" placeholder="WhatsApp / Email / LINE / 微信 / 手機" aria-label="WhatsApp、Email、LINE、微信或手機" minlength="3" required>
+            <select name="destination" aria-label="目的地" required><option value="yunnan" selected>雲南｜大理・沙溪・麗江</option></select>
+            <select name="group_size" aria-label="同行人數" required><option value="" disabled selected>同行人數</option><option value="2 travellers">2 人</option><option value="3-4 travellers">3-4 人</option><option value="5-6 travellers">5-6 人</option><option value="not-sure">還不確定</option></select>
+            <select name="travel_window" aria-label="預計出發月份或時段" required><option value="" disabled selected>預計出發月份或時段</option><option value="Within 1-3 months">1-3 個月內</option><option value="Within 3-6 months">3-6 個月內</option><option value="Next spring or summer">明年春夏</option><option value="still exploring">還在觀望</option></select>
+            <select name="route_days" aria-label="偏好天數" required><option value="" disabled selected>偏好天數</option><option value="About one week">一週</option>
+            <option value="8-9 days">一週多一點</option>
+            <option value="9 days">9 日慢走</option><option value="not-sure">還不確定，想先判斷</option></select>
             <select name="budget" aria-label="預算感" required><option value="" disabled selected>預算感</option><option value="RMB 8,000 以下">RMB 8,000 以下</option><option value="RMB 8,000-15,000">RMB 8,000-15,000</option><option value="RMB 15,000-25,000">RMB 15,000-25,000</option><option value="RMB 25,000 以上">RMB 25,000 以上</option><option value="not-sure">還沒決定</option></select>
             <select name="readiness" aria-label="出發意願" required><option value="" disabled selected>出發意願</option><option>如果方案合適，1 個月內可付訂</option><option>正在比較旅行社與私旅</option><option>想先替家人/朋友看方案</option><option>目前只是初步了解</option></select>
             <select name="style" aria-label="最在意的事" required><option value="" disabled selected>最在意的事</option><option>住宿位置與舒適度</option><option>不要拉車太累</option><option>拍照與古鎮氛圍</option><option>整體價格與品質平衡</option></select>
             <textarea class="wide" name="itinerary_text" placeholder="貼上你正在看的旅行社行程、網址、價格或你最猶豫的地方" aria-label="正在比較的行程或路線草稿"></textarea>
             <textarea name="message" placeholder="補充：同行者狀態、最擔心的問題、是否已有可出發月份" aria-label="旅程偏好與需要留意的細節"></textarea>
+            <label class="consent-check"><input type="checkbox" name="consent_to_contact" value="yes" aria-label="同意若青使用資料回覆本次旅遊諮詢" required><span>我同意若青中國旅策只使用這些資料回覆本次旅遊諮詢；送出不代表付款、預訂或保證成行。</span></label>
             <div class="qualify" aria-label="有效需求條件">
               <div><b>四題優先</b><span>月份、人數、天數、預算。</span></div>
               <div><b>比較重點</b><span>住宿、車程、沙溪停留。</span></div>
-              <div><b>主力價格</b><span>RMB 5,680/人起（6 人同行、機票另計）。</span></div>
+              <div><b>6 人同行參考起價</b><span>RMB 5,680/人起（機票另計；正式價格依月份、房型與用車確認）。</span></div>
               <div><b>服務方式</b><span>先判斷，再推進方案。</span></div>
             </div>
             <p class="form-note-text">送出後會進入感謝頁。若資料不足，若青中國旅策會先請你補齊四題；條件適合才進一步整理方案方向。</p>
