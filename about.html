@@ -595,8 +595,22 @@
             <input type="hidden" name="utm_medium" value="">
             <input type="hidden" name="utm_campaign" value="">
             <input type="hidden" name="campaign" value="private_route_consultation">
-            <input type="text" name="name" placeholder="姓名" aria-label="姓名" required>
+            <input type="text" name="name" placeholder="姓名（選填）" aria-label="姓名（選填）" autocomplete="name">
             <input type="tel" name="contact" placeholder="WhatsApp / LINE / 微信 / Email" aria-label="聯絡方式" required>
+            <select name="destination" aria-label="想去的地方" required>
+              <option value="" disabled selected>想去的地方</option>
+              <option value="yunnan">雲南</option>
+              <option value="xinjiang">新疆</option>
+              <option value="dunhuang">敦煌</option>
+              <option value="inner-mongolia">內蒙古</option>
+              <option value="sanya">三亞</option>
+              <option value="northeast">東北</option>
+              <option value="xian">西安</option>
+              <option value="tibet">西藏</option>
+              <option value="zhangjiajie">張家界</option>
+              <option value="multi-region">跨地區路線</option>
+              <option value="not-sure">還不確定</option>
+            </select>
             <select name="group_size" aria-label="同行人數" required>
               <option value="" disabled selected>同行人數</option>
               <option>2 人</option>
@@ -604,26 +618,29 @@
               <option>5-6 人</option>
               <option>還不確定</option>
             </select>
-            <select name="month" aria-label="預計出發月份" required>
-              <option value="" disabled selected>預計出發月份</option>
+            <select name="travel_window" aria-label="出發時間" required>
+              <option value="" disabled selected>出發時間</option>
               <option>1-3 個月內</option>
               <option>3-6 個月內</option>
               <option>明年春夏</option>
-              <option>還在觀望</option>
+              <option>明年秋冬</option>
+              <option>還在比較</option>
             </select>
             <select name="route_days" aria-label="偏好天數" required>
               <option value="" disabled selected>偏好天數</option>
-              <option>一週</option>
-            <option>一週多一點</option>
-            <option>9 日慢走</option>
-              <option>還不確定，想先判斷</option>
+              <option>5-6 天</option>
+              <option>約一週</option>
+              <option>8-12 天</option>
+              <option>13 天以上</option>
+              <option>還沒決定</option>
             </select>
-            <select name="budget" aria-label="預算感" required>
-              <option value="" disabled selected>預算感</option>
-              <option>接近 RMB 5,680/人可以討論</option>
-              <option>可接受 RMB 10,200-11,800/人</option>
-              <option>想先比較大團與私旅</option>
-              <option>預算未定，想先判斷</option>
+            <select name="budget" aria-label="每人預算" required>
+              <option value="" disabled selected>每人預算</option>
+              <option>RMB 10,000 以下</option>
+              <option>RMB 10,000-18,000</option>
+              <option>RMB 18,000-30,000</option>
+              <option>RMB 30,000 以上</option>
+              <option>還沒決定</option>
             </select>
             <select name="readiness" aria-label="出發意願" required>
               <option value="" disabled selected>出發意願</option>
