@@ -114,6 +114,20 @@ const pages = [
     path: "/yunnan.html",
     formName: "bluehour-yunnan-product-en",
     responseGrade: "B",
+    expectedDestination: "yunnan",
+    expectedTravelWindow: "Within 3-6 months",
+    expectedRouteDays: "8 days / 7 nights",
+    expectedGroupSize: "2 travellers",
+    expectedBudget: "RMB 8,000-15,000",
+    expectedCanonical: "https://bluehourchina.com/yunnan.html",
+    expectedConsent: "yes",
+    expectRequiredUncheckedConsent: true,
+    query: {
+      utm_source: "facebook",
+      utm_medium: "travel_group_post",
+      utm_campaign: "first_qualified_inquiry",
+      utm_content: "yunnan_8_day_price"
+    },
     values: {
       name: "Codex Yunnan Product Test",
       contact: "+1 555 0118 WhatsApp",
@@ -121,6 +135,7 @@ const pages = [
       group_size: "2 travellers",
       comfort_level: "Boutique comfort",
       budget: "RMB 8,000-15,000",
+      consent_to_contact: true,
       message: "Testing the inline Yunnan quote form without external submission."
     }
   },
@@ -135,6 +150,7 @@ const pages = [
       group_size: "2 travellers",
       comfort_level: "Boutique comfort",
       budget: "RMB 8,000-15,000",
+      consent_to_contact: true,
       message: "My team specializes in conversion rate optimization, SEO services and web development services to boost your customer acquisition."
     }
   },
