@@ -66,6 +66,8 @@ for (const required of [
   "lead_submit_attempt",
   "lead_submit_error",
   "lead_received",
+  "notification_fallback_required",
+  "sendNativeEmailBackup",
   "generate_lead"
 ]) {
   if (!asset.includes(required)) issues.push(`assets/lead-form-20260706-sheet.js: missing ${required}`);
