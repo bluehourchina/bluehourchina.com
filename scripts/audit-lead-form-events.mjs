@@ -41,6 +41,18 @@ const pages = [
     formName: "bluehour-china-home-zh",
     expectedDestination: "xian",
     expectedSuccess: "1 個工作日內回覆",
+    query: {
+      is_test: "true",
+      utm_source: "audit_source",
+      utm_medium: "audit_medium",
+      utm_campaign: "audit_campaign",
+      utm_content: "audit_content",
+      utm_term: "audit_term",
+      utm_id: "audit_id",
+      utm_source_platform: "audit_platform",
+      utm_creative_format: "audit_format",
+      utm_marketing_tactic: "audit_tactic"
+    },
     values: {
       name: "Codex 中文首頁表單測試",
       contact: "LINE codex-home-test",
@@ -68,6 +80,7 @@ const pages = [
   {
     path: "/yunnan.html",
     formName: "bluehour-yunnan-product-en",
+    responseGrade: "B",
     values: {
       name: "Codex Yunnan Product Test",
       contact: "+1 555 0118 WhatsApp",
@@ -95,6 +108,7 @@ const pages = [
   {
     path: "/interest.html",
     formName: "bluehour-china-journey-review-en",
+    responseGrade: "C",
     values: {
       name: "Codex Journey Review Test",
       email: "codex-test@example.com",
@@ -127,6 +141,7 @@ const pages = [
   {
     path: "/ja/interest/",
     formName: "bluehour-china-journey-review-ja",
+    responseReason: "qualified_complete_request;duplicate_30d",
     values: {
       name: "Codex 日本語フォームテスト",
       email: "codex-test@example.com",
@@ -264,6 +279,7 @@ const pages = [
   {
     path: "/quick/china/",
     formName: "bluehour-china-quick-route-check-en",
+    expectFallback: true,
     values: {
       name: "Codex Quick China Test",
       contact: "+1 555 0144 WhatsApp",
@@ -276,8 +292,10 @@ const pages = [
   }
 ];
 
-function urlFor(pagePath) {
-  return new URL(pagePath, origin).toString();
+function urlFor(pagePath, query = {}) {
+  const url = new URL(pagePath, origin);
+  for (const [name, value] of Object.entries(query)) url.searchParams.set(name, value);
+  return url.toString();
 }
 
 async function fillForm(form, values) {
@@ -308,21 +326,47 @@ async function fillForm(form, values) {
 async function auditPage(browser, config) {
   const events = [];
   const fetches = [];
+  const nativeSubmits = [];
   const context = await browser.newContext();
-  await context.exposeFunction("recordBluehourLeadEvent", (detail) => {
-    events.push(detail);
+  await context.route("https://www.googletagmanager.com/**", (route) => {
+    route.fulfill({ status: 200, contentType: "application/javascript", body: "" });
+  });
+  await context.exposeFunction("recordBluehourLeadEvent", (event) => {
+    events.push(event);
   });
   await context.exposeFunction("recordBluehourFetch", (detail) => {
     fetches.push(detail);
   });
-  await context.addInitScript(() => {
+  await context.exposeFunction("recordBluehourNativeSubmit", (detail) => {
+    nativeSubmits.push(detail);
+  });
+  const mockResult = config.expectFallback
+    ? { ok: false, error: "mock_intake_failure" }
+    : {
+        ok: true,
+        lead_id: "LEAD-AUDIT-001",
+        grade: config.responseGrade || "A",
+        qualification_reason: config.responseReason || "audit fixture",
+        schema: "lead-intake-v1"
+      };
+  await context.addInitScript((responseBody) => {
+    window.localStorage.setItem("bluehour_ga4_consent", "granted");
     const summarizeBody = (body) => {
       if (!body || typeof body.entries !== "function") return [];
       return Array.from(body.entries()).map(([key, value]) => [key, String(value)]);
     };
-    window.addEventListener("bluehour:generate_lead", (event) => {
-      window.recordBluehourLeadEvent(event.detail);
-    });
+    for (const eventName of [
+      "lead_form_view",
+      "lead_form_start",
+      "lead_submit_attempt",
+      "lead_submit_error",
+      "lead_received",
+      "generate_lead"
+    ]) {
+      window.addEventListener("bluehour:" + eventName, (event) => {
+        window.recordBluehourLeadEvent({ name: eventName, detail: event.detail });
+      });
+    }
     window.fetch = async (input, init = {}) => {
       window.recordBluehourFetch({
         url: String(input),
@@ -330,12 +374,21 @@ async function auditPage(browser, config) {
         mode: init.mode || "cors",
         fields: summarizeBody(init.body)
       });
-      return new Response("", { status: 200 });
+      return new Response(JSON.stringify(responseBody), {
+        status: 200,
+        headers: { "content-type": "application/json" }
+      });
     };
-  });
+    HTMLFormElement.prototype.submit = function () {
+      window.recordBluehourNativeSubmit({
+        action: this.action,
+        fields: summarizeBody(new FormData(this))
+      });
+    };
+  }, mockResult);
 
   const page = await context.newPage();
-  const url = urlFor(config.path);
+  const url = urlFor(config.path, config.query);
   try {
     await page.goto(url, { waitUntil: "networkidle", timeout: 30000 });
     const form = page.locator(`form[name="${config.formName}"]`).first();
@@ -344,46 +397,184 @@ async function auditPage(browser, config) {
       return { path: config.path, ok: false, reason: "form not found", events, fetches };
     }
     await form.scrollIntoViewIfNeeded();
+    await page.waitForTimeout(150);
     await fillForm(form, config.values);
     await form.locator('button[type="submit"]').click();
     await page.waitForTimeout(500);
 
-    const fetchFields = fetches[0]?.fields || [];
+    const sheetPost = fetches.find((fetch) => /script\.google\.com\/macros\/s\//i.test(fetch.url));
+    const fetchFields = sheetPost?.fields || [];
     const fieldMap = Object.fromEntries(fetchFields);
     const successText = await form.locator(".form-status.success").textContent().catch(() => "");
-    const event = events[0] || null;
-    const sheetPost = fetches.find((fetch) => /script\.google\.com\/macros\/s\//i.test(fetch.url));
-    const emailCopyPost = fetches.find((fetch) => /formsubmit\.co/i.test(fetch.url));
-    const ok = config.expectSpam
-      ? events.length === 0 && fetches.length === 0
-      : events.length === 1 &&
-        fetches.length >= 2 &&
-        sheetPost?.mode === "no-cors" &&
-        emailCopyPost?.mode === "no-cors" &&
+    const eventNames = events.map((event) => event.name);
+    const received = events.find((event) => event.name === "lead_received")?.detail;
+    const generated = events.find((event) => event.name === "generate_lead")?.detail;
+    const nativeSubmit = nativeSubmits[0];
+    const nativeFields = Object.fromEntries(nativeSubmit?.fields || []);
+    const analytics = await page.evaluate(() => ({
+      configured: window.BluehourAnalytics?.configured,
+      measurementId: window.BluehourAnalytics?.measurementId,
+      consent: window.BluehourAnalytics?.consent,
+      hasGtag: typeof window.gtag === "function"
+    }));
+    const hasLifecycleStart = eventNames.includes("lead_form_view") && eventNames.includes("lead_form_start");
+    const hasCompleteUtm = !config.query || Object.entries(config.query)
+      .filter(([name]) => name.startsWith("utm_"))
+      .every(([name, value]) => fieldMap[name] === value);
+    const expectedAnalyticsLocation = new URL(config.path, origin);
+    let ok;
+    if (config.expectSpam) {
+      ok = hasLifecycleStart &&
+        fetches.length === 0 &&
+        !eventNames.includes("lead_submit_attempt") &&
+        !eventNames.includes("lead_received") &&
+        !eventNames.includes("generate_lead");
+    } else if (config.expectFallback) {
+      ok = hasLifecycleStart &&
+        eventNames.includes("lead_submit_attempt") &&
+        eventNames.includes("lead_submit_error") &&
+        !eventNames.includes("lead_received") &&
+        !eventNames.includes("generate_lead") &&
+        sheetPost?.mode === "cors" &&
+        nativeSubmits.length === 1 &&
+        /formsubmit\.co/i.test(nativeSubmit?.action || "") &&
+        nativeFields.submission_id === fieldMap.submission_id &&
+        nativeFields.intake_provider === "formsubmit_email_fallback";
+    } else {
+      const grade = config.responseGrade || "A";
+      const shouldGenerate =
+        (grade === "A" || grade === "B") &&
+        config.query?.is_test !== "true" &&
+        !/duplicate/i.test(config.responseReason || "");
+      ok = hasLifecycleStart &&
+        eventNames.includes("lead_submit_attempt") &&
+        eventNames.includes("lead_received") &&
+        eventNames.includes("generate_lead") === shouldGenerate &&
+        !eventNames.includes("lead_submit_error") &&
+        fetches.length === 1 &&
+        sheetPost?.mode === "cors" &&
         fieldMap.campaign === "private_route_consultation" &&
         fieldMap.name === config.values.name &&
         fieldMap.contact === config.values.contact &&
+        Boolean(fieldMap.submission_id) &&
+        fieldMap.is_test === (config.query?.is_test === "true" ? "true" : "false") &&
+        hasCompleteUtm &&
+        received?.page_location === expectedAnalyticsLocation.origin + expectedAnalyticsLocation.pathname &&
         (!config.expectedDestination || fieldMap.destination === config.expectedDestination) &&
         (!config.expectedSuccess || successText.includes(config.expectedSuccess)) &&
-        event?.campaign &&
-        event?.items?.[0]?.item_category === "Private China travel consultation";
+        received?.lead_id === "LEAD-AUDIT-001" &&
+        received?.grade === grade &&
+        (!shouldGenerate || generated?.grade === grade);
+    }
+    ok = ok &&
+      analytics.configured === true &&
+      analytics.measurementId === "G-G1EB0T35KR" &&
+      analytics.consent === "granted" &&
+      analytics.hasGtag;
 
     return {
       path: config.path,
       formName: config.formName,
       ok,
       expectedSpam: Boolean(config.expectSpam),
-      eventCount: events.length,
+      expectedFallback: Boolean(config.expectFallback),
+      eventNames,
       fetchCount: fetches.length,
+      nativeSubmitCount: nativeSubmits.length,
       campaign: fieldMap.campaign || "",
       intakeProvider: fieldMap.intake_provider || "",
       sheetPostMode: sheetPost?.mode || "",
-      emailCopyPostMode: emailCopyPost?.mode || "",
+      submissionId: fieldMap.submission_id || "",
+      isTest: fieldMap.is_test || "",
       destination: fieldMap.destination || "",
       successText,
-      eventProvider: event?.intake_provider || "",
-      eventCampaign: event?.campaign || "",
+      responseGrade: received?.grade || "",
+      generatedGrade: generated?.grade || "",
+      analytics,
       fieldNames: fetchFields.map(([key]) => key)
+    };
+  } finally {
+    await context.close();
+  }
+}
+
+async function auditDisabledGa4(browser) {
+  const page = await browser.newPage();
+  try {
+    await page.goto(urlFor("/privacy.html"), { waitUntil: "domcontentloaded", timeout: 30000 });
+    await page.evaluate((assetUrl) => new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = assetUrl;
+      script.setAttribute("data-ga4-measurement-id", "");
+      script.onload = resolve;
+      script.onerror = reject;
+      document.head.appendChild(script);
+    }), urlFor("/assets/lead-form-20260706-sheet.js"));
+    const state = await page.evaluate(() => ({
+      configured: window.BluehourAnalytics?.configured,
+      measurementId: window.BluehourAnalytics?.measurementId,
+      hasGtag: typeof window.gtag === "function",
+      hasDataLayer: Array.isArray(window.dataLayer)
+    }));
+    return {
+      ok: state.configured === false && state.measurementId === "" && !state.hasGtag && !state.hasDataLayer,
+      ...state
+    };
+  } finally {
+    await page.close();
+  }
+}
+
+async function auditConsentBanner(browser) {
+  const context = await browser.newContext();
+  await context.route("https://www.googletagmanager.com/**", (route) => {
+    route.fulfill({ status: 200, contentType: "application/javascript", body: "" });
+  });
+  const page = await context.newPage();
+  try {
+    await page.goto(urlFor("/privacy.html"), { waitUntil: "domcontentloaded", timeout: 30000 });
+    await page.evaluate(() => window.localStorage.removeItem("bluehour_ga4_consent"));
+    await page.evaluate((assetUrl) => new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = assetUrl;
+      script.onload = resolve;
+      script.onerror = reject;
+      document.head.appendChild(script);
+    }), urlFor("/assets/lead-form-20260706-sheet.js"));
+    const banner = page.locator("#bluehour-analytics-consent");
+    await banner.waitFor({ state: "visible" });
+    const initial = await page.evaluate(() => ({
+      consent: window.BluehourAnalytics?.consent,
+      tagLoaded: Boolean(document.querySelector('script[src*="googletagmanager.com/gtag/js"]')),
+      commands: (window.dataLayer || []).map((item) => Array.from(item))
+    }));
+    await banner.locator('[data-consent="granted"]').click();
+    const accepted = await page.evaluate(() => ({
+      consent: window.BluehourAnalytics?.consent,
+      stored: window.localStorage.getItem("bluehour_ga4_consent"),
+      bannerExists: Boolean(document.getElementById("bluehour-analytics-consent")),
+      tagLoaded: Boolean(document.querySelector('script[src*="googletagmanager.com/gtag/js"]')),
+      commands: (window.dataLayer || []).map((item) => Array.from(item))
+    }));
+    const defaultDenied = initial.commands.some((command) =>
+      command[0] === "consent" &&
+      command[1] === "default" &&
+      command[2]?.analytics_storage === "denied" &&
+      command[2]?.ad_storage === "denied"
+    );
+    const updatedGranted = accepted.commands.some((command) =>
+      command[0] === "consent" &&
+      command[1] === "update" &&
+      command[2]?.analytics_storage === "granted" &&
+      command[2]?.ad_storage === "denied"
+    );
+    return {
+      ok: initial.consent === "" && !initial.tagLoaded && defaultDenied && updatedGranted &&
+        accepted.consent === "granted" && accepted.stored === "granted" &&
+        accepted.tagLoaded && !accepted.bannerExists,
+      defaultDenied,
+      updatedGranted,
+      accepted
     };
   } finally {
     await context.close();
@@ -394,10 +585,14 @@ await fs.mkdir(outputDir, { recursive: true });
 
 const browser = await chromium.launch({ headless: true, executablePath: chromeExecutable });
 const results = [];
+let disabledGa4;
+let consentBanner;
 try {
   for (const config of pages) {
     results.push(await auditPage(browser, config));
   }
+  disabledGa4 = await auditDisabledGa4(browser);
+  consentBanner = await auditConsentBanner(browser);
 } finally {
   await browser.close();
 }
@@ -405,12 +600,16 @@ try {
 const issues = results
   .filter((result) => !result.ok)
   .map((result) => `${result.path}: ${result.reason || "lead event audit failed"}`);
+if (!disabledGa4?.ok) issues.push("GA4 loader creates analytics globals when explicitly unconfigured");
+if (!consentBanner?.ok) issues.push("GA4 consent banner does not default to denied and persist explicit consent");
 
 const summary = {
   checkedAt: new Date().toISOString(),
   origin,
   issueCount: issues.length,
   issues,
+  disabledGa4,
+  consentBanner,
   results
 };
 
