@@ -354,6 +354,40 @@ const pages = [
     }
   },
   {
+    path: "/before-china/chongqing-to-wulong-train-vs-private-driver/",
+    formName: "bluehour-before-china-en-chongqing_wulong_transport_compare",
+    responseGrade: "B",
+    expectedDestination: "chongqing-wulong",
+    expectedTravelWindow: "Within 3-6 months",
+    expectedRouteDays: "2d1n",
+    expectedGroupSize: "2 travellers",
+    expectedBudget: "RMB 3,000-8,000",
+    expectedCanonical: "https://bluehourchina.com/before-china/chongqing-to-wulong-train-vs-private-driver/",
+    expectedConsent: "yes",
+    expectRequiredUncheckedConsent: true,
+    query: {
+      utm_source: "audit_source",
+      utm_medium: "audit_medium",
+      utm_campaign: "audit_campaign",
+      utm_content: "audit_content"
+    },
+    values: {
+      name: "Codex Chongqing Wulong Transport Test",
+      email: "codex-test@example.com",
+      contact: "+1 555 0155 WhatsApp",
+      country: "United States",
+      destination: "chongqing-wulong",
+      travel_window: "Within 3-6 months",
+      group_size: "2 travellers",
+      route_days: "2d1n",
+      transport_preference: "private driver",
+      comfort_level: "Boutique and comfortable",
+      budget: "RMB 3,000-8,000",
+      consent_to_contact: true,
+      message: "Testing the Chongqing to Wulong transport comparison without external submission."
+    }
+  },
+  {
     path: "/quick/china/",
     formName: "bluehour-china-quick-route-check-en",
     expectFallback: true,

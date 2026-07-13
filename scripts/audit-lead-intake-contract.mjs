@@ -73,7 +73,7 @@ for (const required of [
   if (!asset.includes(required)) issues.push(`assets/lead-form-20260706-sheet.js: missing ${required}`);
 }
 
-if (formCount !== 87) issues.push(`expected 87 lead forms, found ${formCount}`);
+if (formCount !== 88) issues.push(`expected 88 lead forms, found ${formCount}`);
 if (analyticsPageCount < 170) {
   issues.push(`expected analytics coverage on at least 170 HTML pages, found ${analyticsPageCount}`);
 }
