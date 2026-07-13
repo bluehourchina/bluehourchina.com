@@ -31,20 +31,8 @@
 
   const markerOffsets = {
     yunnan: [20, 31], xinjiang: [22, -20], dunhuang: [22, -20], "inner-mongolia": [24, -20],
-    sanya: [22, 30], northeast: [-22, -20], xian: [22, 28], tibet: [-22, 30],
-    zhangjiajie: [22, -20],
-  };
-
-  const iconPaths = {
-    yunnan: '<circle cx="-5" cy="0" r="3"/><circle cx="5" cy="0" r="3"/><circle cx="0" cy="-5" r="3"/><circle cx="0" cy="5" r="3"/>',
-    xinjiang: '<path d="M-8 6L-2-5l4 7 3-5 6 9z"/>',
-    dunhuang: '<path d="M-9 5c5-8 10-8 18 0M-7 8c4-5 8-5 14 0"/>',
-    "inner-mongolia": '<path d="M-7 7V0M0 7V-5M7 7V1M-10 7h20"/>',
-    sanya: '<path d="M-10 1c4-4 7-4 11 0s7 4 11 0M-10 7c4-4 7-4 11 0s7 4 11 0"/>',
-    northeast: '<path d="M0-9V9M-8-5L8 5M8-5L-8 5"/>',
-    xian: '<path d="M-9-2h18M-7-2v9M7-2v9M-10 7h20M-6-6h12l3 4H-9z"/>',
-    tibet: '<path d="M-10 7L-3-5l4 7 3-4 7 9z"/><circle cx="7" cy="-6" r="2"/>',
-    zhangjiajie: '<path d="M-10 7L-6-4l4 7 3-8 3 6 2-4 5 10z"/>',
+    sanya: [22, 30], northeast: [-22, -20], xian: [-24, -24], tibet: [-22, 30],
+    zhangjiajie: [24, 34],
   };
 
   const escapeMarkup = (value) => String(value ?? "")
@@ -63,6 +51,18 @@
     };
   }
 
+  const photoBySlug = {
+    yunnan: "/assets/real-yunnan/erhai-cangshan-editorial-web.jpg",
+    xinjiang: "/assets/real-xinjiang/sayram-lake-scenery-cc-by-sa.jpg",
+    dunhuang: "/assets/real-dunhuang/crescent-lake-cc-by-sa.jpg",
+    "inner-mongolia": "/assets/real-inner-mongolia/grassland-sunset-cc-by.jpg",
+    sanya: "/assets/real-sanya/haitang-bay-cc-by-sa.jpg",
+    northeast: "/assets/real-northeast/china-snow-town-cc-by.jpg",
+    xian: "/assets/real-xian/xian-city-wall-night.jpg",
+    tibet: "/assets/real-tibet/tibet-yamdrok-lake.jpg",
+    zhangjiajie: "/assets/real-zhangjiajie/tianzi-mountain-panorama.jpg",
+  };
+
   mapNode.innerHTML = `<svg class="destination-map-svg" viewBox="${fullViewBox.x} ${fullViewBox.y} ${fullViewBox.width} ${fullViewBox.height}" role="group" aria-label="${escapeMarkup(data.mapAria || "Illustrated China journey map")}">
     <defs>
       <filter id="atlas-paper-shadow" x="-10%" y="-10%" width="120%" height="130%">
@@ -73,12 +73,12 @@
         <circle cx="14" cy="12" r=".6" fill="#c48f3e" opacity=".09"/>
       </pattern>
       <clipPath id="route-atlas-clip">
-        <rect x="48" y="42" width="904" height="516" rx="28"/>
+        <rect x="760" y="42" width="192" height="516"/>
       </clipPath>
-      <linearGradient id="route-atlas-shade" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stop-color="#061713" stop-opacity=".68"/>
-        <stop offset=".48" stop-color="#0b211c" stop-opacity=".42"/>
-        <stop offset="1" stop-color="#071611" stop-opacity=".78"/>
+      <linearGradient id="route-atlas-shade" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#071611" stop-opacity=".08"/>
+        <stop offset=".58" stop-color="#071611" stop-opacity=".14"/>
+        <stop offset="1" stop-color="#071611" stop-opacity=".56"/>
       </linearGradient>
     </defs>
     <rect class="illustrated-map-paper" x="0" y="0" width="1000" height="620"/>
@@ -86,21 +86,28 @@
       <path class="illustrated-map-sea-line" d="M744 510c42-18 73-13 112 8s72 25 112 5M758 538c33-13 63-8 96 9s62 18 96 5"/>
       <path class="illustrated-map-land" d="${outlinePath}"/>
       <path class="illustrated-map-texture" d="${outlinePath}"/>
-      <g class="illustrated-map-landmarks" aria-hidden="true">
-        <path class="map-mountain" d="M116 335l33-54 27 43 22-31 33 50M175 405l25-39 20 31 16-23 27 38"/>
-        <path class="map-dune" d="M222 239c30-25 64-25 101 0M249 257c24-18 49-18 76 0"/>
-        <path class="map-grass" d="M574 211v-19m0 19l-11-12m11 12l12-13m22 24v-17m0 17l-9-10m9 10l10-11"/>
-        <path class="map-snow" d="M820 132v30m-13-23l26 16m0-16l-26 16"/>
-        <path class="map-river" d="M531 279c29 28 48 65 41 101s13 72 54 102"/>
-        <path class="map-wave" d="M543 578c8-7 16-7 24 0s16 7 24 0"/>
-      </g>
       <g data-map-destination-layer></g>
     </g>
     <g class="route-atlas-layer" data-map-focus-layer aria-hidden="true">
-      <rect class="route-atlas-card" x="48" y="42" width="904" height="516" rx="28" filter="url(#atlas-paper-shadow)"/>
+      <rect class="route-atlas-card" x="48" y="42" width="904" height="516" filter="url(#atlas-paper-shadow)"/>
+      <rect class="route-map-paper" x="48" y="42" width="712" height="516"/>
+      <g class="route-map-grid" aria-hidden="true">
+        <path d="M118 42v516M208 42v516M298 42v516M388 42v516M478 42v516M568 42v516M658 42v516"/>
+        <path d="M48 126h712M48 210h712M48 294h712M48 378h712M48 462h712"/>
+      </g>
+      <g class="route-map-contours" aria-hidden="true">
+        <path d="M42 171c92-61 151-51 215 7s142 62 224 9 161-46 294 24"/>
+        <path d="M35 201c98-62 164-51 229 6s137 64 220 12 170-44 299 27"/>
+        <path d="M42 431c96-51 179-44 246 8s144 52 218 5 147-48 272 13"/>
+        <path d="M31 462c105-50 190-42 256 7s137 52 211 8 155-43 283 13"/>
+      </g>
       <g data-map-scenery-layer aria-hidden="true"></g>
-      <rect class="route-atlas-photo-shade" x="48" y="42" width="904" height="516" rx="28"/>
-      <rect class="route-atlas-frame" x="48" y="42" width="904" height="516" rx="28"/>
+      <rect class="route-atlas-photo-shade" x="760" y="42" width="192" height="516"/>
+      <line class="route-photo-divider" x1="760" y1="42" x2="760" y2="558"/>
+      <g class="route-map-north" transform="translate(706 92)" aria-hidden="true">
+        <text text-anchor="middle">N</text><path d="M0 11V39M0 11l-6 10M0 11l6 10"/>
+      </g>
+      <rect class="route-atlas-frame" x="48" y="42" width="904" height="516"/>
       <g data-map-route-layer></g>
     </g>
   </svg>`;
@@ -115,10 +122,13 @@
   for (const route of routes) {
     const point = project(route.lat, route.lng);
     const [labelX, labelY] = markerOffsets[route.slug] || [20, -18];
+    const photo = photoBySlug[route.slug] || photoBySlug.yunnan;
+    const clipId = `destination-photo-${route.slug.replace(/[^a-z0-9-]/g, "-")}`;
     destinationLayer.insertAdjacentHTML("beforeend", `<g class="map-destination" data-map-marker="${escapeMarkup(route.slug)}" role="button" tabindex="0" aria-label="${escapeMarkup(route.name)}" transform="translate(${point.x.toFixed(1)} ${point.y.toFixed(1)})">
-      <circle class="map-destination-halo" r="19"/>
-      <circle class="map-destination-pin" r="15"/>
-      <g class="map-destination-icon">${iconPaths[route.slug] || ""}</g>
+      <defs><clipPath id="${clipId}"><circle r="17"/></clipPath></defs>
+      <circle class="map-destination-halo" r="22"/>
+      <image class="map-destination-photo" href="${escapeMarkup(photo)}" x="-17" y="-17" width="34" height="34" preserveAspectRatio="xMidYMid slice" clip-path="url(#${clipId})"/>
+      <circle class="map-destination-pin" r="17"/>
       <text class="map-destination-label" x="${labelX}" y="${labelY}" text-anchor="${labelX < 0 ? "end" : "start"}">${escapeMarkup(route.name)}</text>
     </g>`);
   }
@@ -129,62 +139,50 @@
     svg.setAttribute("viewBox", `${box.x.toFixed(1)} ${box.y.toFixed(1)} ${box.width.toFixed(1)} ${box.height.toFixed(1)}`);
   }
 
-  function routePoints(count) {
-    const total = Math.max(1, count);
-    const startX = 132;
-    const endX = 868;
-    const yPattern = [352, 238, 338, 206, 322, 224, 354, 246];
-    return Array.from({ length: total }, (_, index) => ({
-      x: total === 1 ? 500 : startX + (endX - startX) * index / (total - 1),
-      y: yPattern[index % yPattern.length],
+  function focusedViewBox() {
+    return window.matchMedia("(max-width: 620px)").matches
+      ? { x: 35, y: 35, width: 800, height: 545 }
+      : fullViewBox;
+  }
+
+  function geographicRoutePoints(stops) {
+    const usable = stops.filter((stop) => Number.isFinite(stop.lat) && Number.isFinite(stop.lng));
+    if (!usable.length) return [];
+    const centreLatitude = usable.reduce((sum, stop) => sum + stop.lat, 0) / usable.length;
+    const longitudeScale = Math.max(.45, Math.cos(centreLatitude * Math.PI / 180));
+    const projected = usable.map((stop) => ({ x: stop.lng * longitudeScale, y: stop.lat }));
+    const minX = Math.min(...projected.map((point) => point.x));
+    const maxX = Math.max(...projected.map((point) => point.x));
+    const minY = Math.min(...projected.map((point) => point.y));
+    const maxY = Math.max(...projected.map((point) => point.y));
+    const spanX = Math.max(maxX - minX, .32);
+    const spanY = Math.max(maxY - minY, .32);
+    const frame = { x: 118, y: 150, width: 552, height: 314 };
+    const scale = Math.min(frame.width / spanX, frame.height / spanY);
+    const centreX = (minX + maxX) / 2;
+    const centreY = (minY + maxY) / 2;
+    return projected.map((point) => ({
+      x: frame.x + frame.width / 2 + (point.x - centreX) * scale,
+      y: frame.y + frame.height / 2 - (point.y - centreY) * scale,
     }));
   }
 
-  function smoothRoutePath(points) {
+  const routeLabelOffsets = {
+    yunnan: [[-150, 22], [22, 22], [22, -62], [-150, -62]],
+    xinjiang: [[18, 20], [-155, 22], [18, -65], [18, -62], [18, 20], [-150, 22]],
+    dunhuang: [[18, 18], [18, -62], [-154, -62], [-154, 22], [-154, -62], [18, 20], [18, -58]],
+    "inner-mongolia": [[18, -62], [18, 20], [-154, 20], [-154, -62]],
+    sanya: [[18, -58], [-154, -58], [18, -58], [-154, 18], [18, 18]],
+    northeast: [[-154, -58], [18, -58], [18, 20]],
+    xian: [[-154, -58], [18, 18]],
+    tibet: [[18, -58], [18, 18], [-154, 18], [-154, -58]],
+    zhangjiajie: [[-170, -80], [26, -78], [24, 18], [-170, -52], [24, 18]],
+  };
+
+  function straightRoutePath(points) {
     if (!points.length) return "";
-    if (points.length === 1) return `M${points[0].x},${points[0].y}`;
-    let path = `M${points[0].x.toFixed(1)},${points[0].y.toFixed(1)}`;
-    for (let index = 0; index < points.length - 1; index += 1) {
-      const previous = points[index - 1] || points[index];
-      const current = points[index];
-      const next = points[index + 1];
-      const after = points[index + 2] || next;
-      const firstControl = {
-        x: current.x + (next.x - previous.x) / 6,
-        y: current.y + (next.y - previous.y) / 6,
-      };
-      const secondControl = {
-        x: next.x - (after.x - current.x) / 6,
-        y: next.y - (after.y - current.y) / 6,
-      };
-      path += `C${firstControl.x.toFixed(1)},${firstControl.y.toFixed(1)} ${secondControl.x.toFixed(1)},${secondControl.y.toFixed(1)} ${next.x.toFixed(1)},${next.y.toFixed(1)}`;
-    }
-    return path;
+    return points.map((point, index) => `${index ? "L" : "M"}${point.x.toFixed(1)},${point.y.toFixed(1)}`).join("");
   }
-
-  const sceneryBySlug = {
-    yunnan: `<circle class="atlas-sun" cx="825" cy="132" r="44"/><path class="atlas-mountain-fill" d="M52 390L190 176l78 112 59-79 116 181z"/><path class="atlas-mountain-line" d="M52 390L190 176l78 112 59-79 116 181"/><path class="atlas-water" d="M566 448c70-42 173-40 280 2s77 79-23 73H595c-91-2-102-38-29-75z"/><path class="atlas-roof" d="M676 420h132m-111 0v55m90-55v55m-107-55l61-46 78 46m-120 18h87"/><g class="atlas-blossom"><circle cx="119" cy="458" r="11"/><circle cx="143" cy="474" r="8"/><circle cx="164" cy="449" r="7"/></g>`,
-    xinjiang: `<circle class="atlas-sun" cx="822" cy="128" r="48"/><path class="atlas-mountain-fill" d="M50 398L169 202l67 88 83-125 78 121 61-72 93 184z"/><path class="atlas-mountain-line" d="M50 398L169 202l67 88 83-125 78 121 61-72 93 184"/><path class="atlas-water" d="M491 438c86-39 218-35 333 12s75 73-35 72H545c-106-2-139-44-54-84z"/><path class="atlas-meadow" d="M83 477c91-36 181-34 269 6M109 502c83-25 161-22 234 8"/>`,
-    dunhuang: `<circle class="atlas-moon" cx="807" cy="132" r="48"/><path class="atlas-dune-fill" d="M48 458c117-107 244-97 367 0 118-92 255-101 407 0 47 28 92 45 134 51H48z"/><path class="atlas-dune-line" d="M48 458c117-107 244-97 367 0 118-92 255-101 407 0"/><path class="atlas-gate" d="M132 395V258h112v137m-132 0h153m-116-137l39-47 41 47m-62 73h42"/>`,
-    "inner-mongolia": `<circle class="atlas-sun" cx="810" cy="128" r="48"/><path class="atlas-grass-fill" d="M48 420c139-66 269-43 388 4 139 55 281 65 516-3v137H48z"/><path class="atlas-meadow" d="M48 423c139-66 269-43 388 4 139 55 281 65 516-3M67 482c133-39 264-29 391 12"/><path class="atlas-yurt" d="M699 432c4-71 126-71 132 0m-148 0h164m-132 0v60m98-60v60m-113-79h131"/>`,
-    sanya: `<circle class="atlas-sun" cx="807" cy="130" r="54"/><path class="atlas-island" d="M69 410c95-53 180-44 247 17 84 77 190 65 302 3 107-60 216-59 337 11v117H48V430z"/><path class="atlas-water-line" d="M48 454c77-39 151-39 223 0s148 39 226 0 154-39 229 0 151 39 229 0M48 494c77-39 151-39 223 0s148 39 226 0 154-39 229 0 151 39 229 0"/><path class="atlas-palm" d="M198 417c17-80 23-135 17-210m0 2c-47-22-74-20-95 0m95 0c37-38 75-45 114-22m-114 22c-7-46-27-76-60-91m60 91c26-42 54-62 88-58"/>`,
-    northeast: `<circle class="atlas-winter-sun" cx="810" cy="128" r="45"/><path class="atlas-snow-fill" d="M48 423l126-215 73 103 75-138 94 155 59-91 118 186z"/><path class="atlas-mountain-line" d="M48 423l126-215 73 103 75-138 94 155 59-91 118 186"/><path class="atlas-pine" d="M720 458l42-102h-26l37-79 39 79h-27l43 102m-55-1v53"/><path class="atlas-snow-line" d="M73 489c91-27 177-22 259 14m253-19c114-31 221-25 321 18"/>`,
-    xian: `<circle class="atlas-sun" cx="821" cy="126" r="44"/><path class="atlas-hill-fill" d="M48 434c164-111 316-102 456 0 135 98 277 98 448-7v131H48z"/><path class="atlas-city-wall" d="M128 449V298h238v151m-270 0h302m-244-151l93-75 94 75m-149 52h110m-55-127v-46"/>`,
-    tibet: `<circle class="atlas-sun" cx="816" cy="126" r="48"/><path class="atlas-mountain-fill" d="M48 428L183 178l73 118 74-151 103 172 77-111 138 222z"/><path class="atlas-mountain-line" d="M48 428L183 178l73 118 74-151 103 172 77-111 138 222"/><path class="atlas-water" d="M570 455c74-35 169-31 266 9s58 65-35 64H621c-84-1-119-40-51-73z"/><path class="atlas-flags" d="M662 228l210 54m-184-47v58m45-46v58m44-47v58m45-47v58"/>`,
-    zhangjiajie: `<circle class="atlas-sun" cx="816" cy="128" r="43"/><path class="atlas-pillar-fill" d="M62 470l55-233 52 22 45-127 48 132 53-91 48 166 58-212 51 174 54-92 52 261z"/><path class="atlas-pillar-line" d="M62 470l55-233 52 22 45-127 48 132 53-91 48 166 58-212 51 174 54-92 52 261"/><path class="atlas-cloud" d="M86 384c44-37 83-29 116 8 38-25 78-18 117 20M486 390c52-41 105-35 158 18 43-31 86-26 128 14"/>`,
-  };
-
-  const photoBySlug = {
-    yunnan: "/assets/real-yunnan/erhai-cangshan-editorial-web.jpg",
-    xinjiang: "/assets/real-xinjiang/sayram-lake-scenery-cc-by-sa.jpg",
-    dunhuang: "/assets/real-dunhuang/crescent-lake-cc-by-sa.jpg",
-    "inner-mongolia": "/assets/real-inner-mongolia/grassland-sunset-cc-by.jpg",
-    sanya: "/assets/real-sanya/haitang-bay-cc-by-sa.jpg",
-    northeast: "/assets/real-northeast/china-snow-town-cc-by.jpg",
-    xian: "/assets/real-xian/xian-city-wall-night.jpg",
-    tibet: "/assets/real-tibet/tibet-yamdrok-lake.jpg",
-    zhangjiajie: "/assets/real-zhangjiajie/tianzi-mountain-panorama.jpg",
-  };
 
   function drawRoute(route) {
     const stops = Array.isArray(route.stops) ? route.stops : [];
@@ -194,16 +192,25 @@
       if (stopList) stopList.innerHTML = "";
       return;
     }
-    const points = routePoints(stops.length);
-    const routePath = smoothRoutePath(points);
-    const nodes = points.map((point, index) => {
-      const labelAbove = index % 2 === 1;
-      const labelY = labelAbove ? point.y - 78 : point.y + 28;
-      return `<g class="map-route-stop" transform="translate(${point.x.toFixed(1)} ${point.y.toFixed(1)})"><circle r="17"/><text y="5.5" text-anchor="middle">${index + 1}</text></g><foreignObject class="map-route-label-object" x="${(point.x - 70).toFixed(1)}" y="${labelY.toFixed(1)}" width="140" height="54"><div xmlns="http://www.w3.org/1999/xhtml" class="map-route-label">${escapeMarkup(stops[index].label)}</div></foreignObject>`;
+    const points = geographicRoutePoints(stops);
+    const routePath = straightRoutePath(points);
+    const uniqueStops = [];
+    stops.forEach((stop, index) => {
+      const key = `${stop.lat.toFixed(4)}|${stop.lng.toFixed(4)}`;
+      const existing = uniqueStops.find((entry) => entry.key === key);
+      if (existing) existing.indices.push(index + 1);
+      else uniqueStops.push({ key, stop, point: points[index], indices: [index + 1] });
+    });
+    const offsets = routeLabelOffsets[route.slug] || [];
+    const nodes = uniqueStops.map((entry, index) => {
+      const [dx, dy] = offsets[index] || [entry.point.x > 410 ? -154 : 18, entry.point.y > 306 ? -58 : 18];
+      const number = entry.indices.join("·");
+      const sideClass = dx < 0 ? " is-left" : "";
+      return `<g class="map-route-stop" transform="translate(${entry.point.x.toFixed(1)} ${entry.point.y.toFixed(1)})"><circle r="17"/><text y="5.5" text-anchor="middle">${number}</text></g><foreignObject class="map-route-label-object" x="${(entry.point.x + dx).toFixed(1)}" y="${(entry.point.y + dy).toFixed(1)}" width="136" height="58"><div xmlns="http://www.w3.org/1999/xhtml" class="map-route-label${sideClass}">${escapeMarkup(entry.stop.label)}</div></foreignObject>`;
     }).join("");
     if (sceneryLayer) {
       const photo = photoBySlug[route.slug] || photoBySlug.yunnan;
-      sceneryLayer.innerHTML = `<image class="route-atlas-photo" href="${escapeMarkup(photo)}" x="48" y="42" width="904" height="516" preserveAspectRatio="xMidYMid slice" clip-path="url(#route-atlas-clip)"/>`;
+      sceneryLayer.innerHTML = `<image class="route-atlas-photo" href="${escapeMarkup(photo)}" x="760" y="42" width="192" height="516" preserveAspectRatio="xMidYMid slice" clip-path="url(#route-atlas-clip)"/>`;
     }
     routeLayer.innerHTML = `<path class="map-route-shadow" d="${routePath}"/><path class="map-route-line" d="${routePath}"/>${nodes}`;
     if (stopList) {
@@ -234,7 +241,7 @@
       root.classList.add("is-route-focused");
       overviewLayer?.setAttribute("aria-hidden", "true");
       focusLayer?.setAttribute("aria-hidden", "false");
-      setViewBox(fullViewBox);
+      setViewBox(focusedViewBox());
     }
   }
 
@@ -257,6 +264,10 @@
     focusLayer?.setAttribute("aria-hidden", "true");
     setViewBox(fullViewBox);
   });
+
+  window.addEventListener("resize", () => {
+    setViewBox(root.classList.contains("is-route-focused") ? focusedViewBox() : fullViewBox);
+  }, { passive: true });
 
   activate(data.default || routes[0]?.slug, true);
 })();

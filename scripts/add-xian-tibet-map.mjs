@@ -2,7 +2,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const root = process.cwd();
-const styleVersion = "20260713-atlas3";
+const styleVersion = "20260713-folio2";
 const languages = ["en", "zh", "ja", "ko", "th", "ru"];
 const allDestinations = ["yunnan", "xinjiang", "dunhuang", "inner-mongolia", "sanya", "northeast", "xian", "tibet", "zhangjiajie"];
 const generatedDestinations = ["xian", "tibet", "zhangjiajie"];

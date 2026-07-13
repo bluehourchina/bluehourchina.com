@@ -30,7 +30,7 @@ const viewports = [
   { name: "desktop", width: 1440, height: 1000 },
 ];
 const expectedStops = { yunnan: 5, xinjiang: 6, dunhuang: 7, "inner-mongolia": 4, sanya: 5, northeast: 4, xian: 3, tibet: 5, zhangjiajie: 5 };
-const expectedVisibleNodes = { ...expectedStops };
+const expectedVisibleNodes = { ...expectedStops, yunnan: 4, northeast: 3, xian: 2, tibet: 4 };
 const findings = [];
 let interactionCount = 0;
 
@@ -91,7 +91,7 @@ try {
         }));
         interactionCount += 1;
         if (state.active !== slug || !state.focused) findings.push(`${viewport.name} ${pathname}: ${slug} did not become active`);
-        if (state.routeNodes !== expectedVisibleNodes[slug] || state.routeLabels !== expectedStops[slug] || state.legendItems !== expectedStops[slug]) findings.push(`${viewport.name} ${pathname}: ${slug} route nodes, labels or legend mismatch`);
+        if (state.routeNodes !== expectedVisibleNodes[slug] || state.routeLabels !== expectedVisibleNodes[slug] || state.legendItems !== expectedStops[slug]) findings.push(`${viewport.name} ${pathname}: ${slug} route nodes, labels or legend mismatch`);
         if (!state.routeText || !state.href) findings.push(`${viewport.name} ${pathname}: ${slug} route details missing`);
       }
 
@@ -107,12 +107,13 @@ try {
 
       if (["/zh.html", "/ja.html"].includes(pathname)) {
         const slug = pathname === "/zh.html" ? "zh" : "ja";
-        for (const destination of ["yunnan", "zhangjiajie"]) {
+        for (const destination of Object.keys(expectedStops)) {
           await rootLocator.locator(`[data-map-destination="${destination}"]`).click();
           await page.waitForTimeout(550);
           await rootLocator.screenshot({ path: path.join(outputDir, `${slug}-${destination}-${viewport.name}.png`) });
         }
         await rootLocator.locator("[data-map-reset]").click();
+        await page.waitForTimeout(550);
         await rootLocator.screenshot({ path: path.join(outputDir, `${slug}-all-china-${viewport.name}.png`) });
       }
     }

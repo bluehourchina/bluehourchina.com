@@ -32,7 +32,7 @@ for (const file of homeFiles) {
     continue;
   }
   if (/leaflet|openstreetmap|tileLayer|window\.L/i.test(html)) findings.push(`${file}: legacy map library or labelled tile source remains`);
-  if (!html.includes("luxury-multilang.css?v=20260713-atlas3")) findings.push(`${file}: illustrated map CSS cache version missing`);
+  if (!html.includes("luxury-multilang.css?v=20260713-folio2")) findings.push(`${file}: illustrated map CSS cache version missing`);
   if (!section.includes("destination-map-legend") || !section.includes("data-map-stops")) findings.push(`${file}: route legend missing`);
   if (!section.includes("data-map-reset")) findings.push(`${file}: all-China reset control missing`);
   if (/aria-label="(?:China destination map|Destination choices)"/.test(section)) findings.push(`${file}: hard-coded English map label remains`);

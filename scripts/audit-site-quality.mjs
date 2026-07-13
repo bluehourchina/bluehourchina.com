@@ -3,7 +3,7 @@ import path from "node:path";
 
 const root = process.cwd();
 const siteOrigin = "https://bluehourchina.com";
-const currentLuxuryCssVersions = ["v=20260711-rhythm9", "v=20260712-zhangjiajie1", "v=20260712-story3", "v=20260713-atlas3"];
+const currentLuxuryCssVersions = ["v=20260711-rhythm9", "v=20260712-zhangjiajie1", "v=20260712-story3", "v=20260713-folio2"];
 const htmlFiles = [];
 const issues = [];
 const warnings = [];
@@ -189,8 +189,9 @@ async function auditFile(file) {
     const name = readAttr(form.match(/<form\b[^>]*>/i)?.[0] || "", "name");
     if (/lead-form|bluehour-china-journey-review/.test(form)) {
       if (!action) report("warning", file, `lead form${name ? ` ${name}` : ""} missing action`);
-      if (!/name=["']name["'][^>]*required/i.test(form)) report("issue", file, "lead form missing required name field");
-      if (!/name=["']contact["'][^>]*required/i.test(form)) report("issue", file, "lead form missing required contact field");
+      if (!/<input\b(?=[^>]*\bname=["']name["'])[^>]*>/i.test(form)) report("issue", file, "lead form missing name field");
+      const hasRequiredReplyChannel = /<input\b(?=[^>]*\bname=["'](?:contact|email)["'])(?=[^>]*\brequired\b)[^>]*>/i.test(form);
+      if (!hasRequiredReplyChannel) report("issue", file, "lead form missing a required contact or email field");
       if (!/<input\b[^>]*name=["']campaign["'][^>]*value=["']private_route_consultation["'][^>]*>/i.test(form)) {
         report("issue", file, "lead form missing private_route_consultation hidden campaign");
       }

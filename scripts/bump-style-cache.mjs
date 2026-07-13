@@ -3,7 +3,7 @@ import path from "node:path";
 
 const root = process.cwd();
 const luxuryVersion = "20260711-rhythm9";
-const illustratedMapVersion = "20260713-atlas3";
+const illustratedMapVersion = "20260713-folio2";
 const richContentVersion = "20260712-story3";
 const headingVersion = "20260711-rhythm9";
 const priceHeadingVersion = "20260712-price1";
