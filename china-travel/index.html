@@ -555,5 +555,20 @@
   <footer class="footer">
     <div class="wrap"><span>Bluehour China Journeys｜若青中國旅策</span><span><a href="/privacy.html">Privacy</a> · <a href="/llms.txt">AI-readable summary</a></span></div>
   </footer>
+<script>
+(() => {
+  const incoming = new URLSearchParams(window.location.search);
+  const preserved = ["utm_source", "utm_medium", "utm_campaign", "utm_content"]
+    .map((name) => [name, incoming.get(name)])
+    .filter(([, value]) => value);
+  if (!preserved.length) return;
+
+  document.querySelectorAll('a[href^="/route-note/"]').forEach((link) => {
+    const target = new URL(link.getAttribute("href"), window.location.origin);
+    preserved.forEach(([name, value]) => target.searchParams.set(name, value));
+    link.setAttribute("href", target.pathname + target.search + target.hash);
+  });
+})();
+</script>
 <script src="/assets/language-menu.js" defer></script></body>
 </html>
