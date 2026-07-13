@@ -1,4 +1,120 @@
 (() => {
+  const measurementId = (() => {
+    const currentScript = document.currentScript;
+    const scriptValue = currentScript?.hasAttribute("data-ga4-measurement-id")
+      ? currentScript.dataset.ga4MeasurementId
+      : undefined;
+    const configured = scriptValue !== undefined
+      ? scriptValue
+      : document.querySelector('meta[name="bluehour-ga4-measurement-id"]')?.content ||
+        window.BLUEHOUR_GA4_MEASUREMENT_ID ||
+        "G-G1EB0T35KR";
+    return /^G-[A-Z0-9]+$/i.test(configured.trim()) ? configured.trim().toUpperCase() : "";
+  })();
+
+  function ensureGa4Script() {
+    if (!measurementId) return;
+    const selector = 'script[src*="googletagmanager.com/gtag/js?id=' + measurementId + '"]';
+    if (document.querySelector(selector)) return;
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(measurementId);
+    document.head.appendChild(script);
+  }
+
+  let ga4Started = false;
+  function startGa4() {
+    if (ga4Started || !measurementId || typeof window.gtag !== "function") return;
+    ga4Started = true;
+    window.gtag("js", new Date());
+    window.gtag("config", measurementId, {
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false
+    });
+    ensureGa4Script();
+  }
+
+  const consentStorageKey = "bluehour_ga4_consent";
+  const readConsent = () => {
+    try {
+      const value = window.localStorage.getItem(consentStorageKey);
+      return value === "granted" || value === "denied" ? value : "";
+    } catch (error) {
+      return "";
+    }
+  };
+  let consentState = readConsent();
+
+  const setConsent = (value) => {
+    consentState = value === "granted" ? "granted" : "denied";
+    try {
+      window.localStorage.setItem(consentStorageKey, consentState);
+    } catch (error) {
+      // Consent still applies for this page when storage is unavailable.
+    }
+    if (typeof window.gtag === "function") {
+      window.gtag("consent", "update", {
+        analytics_storage: consentState,
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied"
+      });
+    }
+    if (consentState === "granted") startGa4();
+    if (window.BluehourAnalytics) window.BluehourAnalytics.consent = consentState;
+    document.getElementById("bluehour-analytics-consent")?.remove();
+  };
+
+  const showConsentBanner = () => {
+    if (!document.body || consentState || document.getElementById("bluehour-analytics-consent")) return;
+    const lang = (document.documentElement.lang || "en").slice(0, 2);
+    const copy = {
+      en: ["Help us improve this site with privacy-focused analytics?", "Allow analytics", "No thanks"],
+      zh: ["允許我們使用隱私優先的網站分析來改善體驗嗎？", "允許分析", "不允許"],
+      ja: ["プライバシーに配慮した分析でサイトを改善してもよいですか？", "許可する", "許可しない"],
+      ko: ["개인정보 보호 중심 분석으로 사이트를 개선해도 될까요?", "분석 허용", "허용 안 함"],
+      th: ["อนุญาตให้เราใช้การวิเคราะห์ที่คำนึงถึงความเป็นส่วนตัวเพื่อปรับปรุงเว็บไซต์ได้ไหม", "อนุญาต", "ไม่อนุญาต"],
+      ru: ["Разрешить конфиденциальную аналитику для улучшения сайта?", "Разрешить", "Нет, спасибо"]
+    }[lang] || ["Help us improve this site with privacy-focused analytics?", "Allow analytics", "No thanks"];
+    const banner = document.createElement("aside");
+    banner.id = "bluehour-analytics-consent";
+    banner.setAttribute("role", "dialog");
+    banner.setAttribute("aria-label", "Analytics preferences");
+    banner.style.cssText = "position:fixed;z-index:9999;left:16px;right:16px;bottom:16px;max-width:720px;margin:auto;padding:14px 16px;border:1px solid #d8d2c5;border-radius:12px;background:#fff;color:#25211c;box-shadow:0 8px 30px rgba(0,0,0,.16);font:14px/1.45 system-ui,sans-serif";
+    banner.innerHTML = '<p style="margin:0 0 10px">' + copy[0] + ' <a href="/privacy.html" style="color:inherit">Privacy</a></p><div style="display:flex;gap:8px;flex-wrap:wrap"><button type="button" data-consent="granted" style="padding:8px 12px;border:0;border-radius:999px;background:#315b52;color:#fff;cursor:pointer">' + copy[1] + '</button><button type="button" data-consent="denied" style="padding:8px 12px;border:1px solid #9a9388;border-radius:999px;background:#fff;color:inherit;cursor:pointer">' + copy[2] + "</button></div>";
+    banner.addEventListener("click", (event) => {
+      const button = event.target.closest("button[data-consent]");
+      if (button) setConsent(button.dataset.consent);
+    });
+    document.body.appendChild(banner);
+  };
+
+  const configureGa4 = () => {
+    if (!measurementId) return false;
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () {
+      window.dataLayer.push(arguments);
+    };
+    window.gtag("consent", "default", {
+      analytics_storage: "denied",
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+      wait_for_update: 500
+    });
+    if (consentState === "granted") setConsent("granted");
+    if (!consentState) window.setTimeout(showConsentBanner, 0);
+    return true;
+  };
+
+  window.BluehourAnalytics = Object.assign({}, window.BluehourAnalytics, {
+    configured: configureGa4(),
+    measurementId,
+    consent: consentState,
+    setConsent
+  });
+
   const leadFieldValue = (form, name) => {
     const field = form.querySelector('[name="' + name + '"]');
     return field && field.value ? field.value.trim() : "";
@@ -81,7 +197,7 @@
         overrides.intakeProvider ||
         leadFieldValue(form, "intake_provider") ||
         (form.dataset.sheetEndpoint ? "google_sheet_webapp" : "formsubmit_email"),
-      page_location: window.location.href,
+      page_location: window.location.origin + window.location.pathname,
       items: [
         {
           item_id: destination,
@@ -99,24 +215,38 @@
     return Object.assign(payload, overrides.payload || {});
   };
 
+  const dispatchLeadEvent = (form, eventName, payload = {}) => {
+    const eventPayload = Object.assign(leadTrackingPayload(form), payload);
+    if (consentState === "granted" && typeof window.gtag === "function") {
+      window.gtag("event", eventName, eventPayload);
+    }
+    window.dispatchEvent(new CustomEvent("bluehour:" + eventName, { detail: eventPayload }));
+    return eventPayload;
+  };
+
   const pushLeadEvent = (form, overrides = {}) => {
+    const grade = String(overrides.grade || "").trim().toUpperCase();
+    const qualificationReason =
+      overrides.qualificationReason || overrides.payload?.qualification_reason || "";
+    const isTest = overrides.isTest ?? /^(?:1|true|yes)$/i.test(leadFieldValue(form, "is_test"));
+    if ((grade !== "A" && grade !== "B") || isTest || /duplicate/i.test(qualificationReason)) {
+      return null;
+    }
+
     const now = Date.now();
     const lastTrackedAt = Number(form.dataset.generateLeadTrackedAt || 0);
     if (now - lastTrackedAt < 4000) return null;
     form.dataset.generateLeadTrackedAt = String(now);
 
-    const payload = leadTrackingPayload(form, overrides);
-    if (typeof window.gtag === "function") {
-      window.gtag("event", "generate_lead", payload);
-    } else {
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push(Object.assign({ event: "generate_lead" }, payload));
-    }
-    window.dispatchEvent(new CustomEvent("bluehour:generate_lead", { detail: payload }));
-    return payload;
+    return dispatchLeadEvent(form, "generate_lead", Object.assign({}, overrides.payload, {
+      intake_provider: overrides.intakeProvider || "google_sheet_webapp",
+      lead_id: overrides.leadId || "",
+      grade
+    }));
   };
 
   window.BluehourLeadTracking = Object.assign({}, window.BluehourLeadTracking, {
+    event: dispatchLeadEvent,
     generateLead: pushLeadEvent,
     payload: leadTrackingPayload
   });
@@ -167,12 +297,30 @@
 
   const message = (form) => copy[langKey(form)] || copy.en;
 
+  const createSubmissionId = () => {
+    if (window.crypto && typeof window.crypto.randomUUID === "function") {
+      return window.crypto.randomUUID();
+    }
+    return "lead-" + Date.now().toString(36) + "-" + Math.random().toString(36).slice(2, 12);
+  };
+
   const fieldValues = (form) => {
     const params = new URLSearchParams(window.location.search);
-    return {
+    const values = {
+      submission_id: leadFieldValue(form, "submission_id") || createSubmissionId(),
+      is_test:
+        /^(?:1|true|yes)$/i.test(params.get("is_test") || "") ||
+        /^(?:1|true|yes)$/i.test(leadFieldValue(form, "is_test"))
+          ? "true"
+          : "false",
       submitted_at: new Date().toISOString(),
       page_url: window.location.href,
       referrer: document.referrer || "",
+      language:
+        leadFieldValue(form, "language") ||
+        form.dataset.formLang ||
+        document.documentElement.lang ||
+        "",
       intent_angle:
         params.get("angle") ||
         params.get("intent_angle") ||
@@ -187,8 +335,23 @@
       utm_source: params.get("utm_source") || leadFieldValue(form, "utm_source") || "site",
       utm_medium: params.get("utm_medium") || leadFieldValue(form, "utm_medium") || "multilingual",
       utm_campaign: params.get("utm_campaign") || leadFieldValue(form, "utm_campaign") || "private_route_consultation",
-      utm_content: params.get("utm_content") || params.get("content") || leadFieldValue(form, "utm_content") || ""
+      utm_content: params.get("utm_content") || params.get("content") || leadFieldValue(form, "utm_content") || "",
+      utm_term: params.get("utm_term") || leadFieldValue(form, "utm_term") || "",
+      utm_id: params.get("utm_id") || leadFieldValue(form, "utm_id") || "",
+      utm_source_platform: params.get("utm_source_platform") || leadFieldValue(form, "utm_source_platform") || "",
+      utm_creative_format: params.get("utm_creative_format") || leadFieldValue(form, "utm_creative_format") || "",
+      utm_marketing_tactic: params.get("utm_marketing_tactic") || leadFieldValue(form, "utm_marketing_tactic") || ""
     };
+
+    params.forEach((value, name) => {
+      if (/^utm_[a-z0-9_]+$/i.test(name) && !(name in values)) values[name] = value;
+    });
+    return values;
+  };
+
+  const renewSubmissionId = (form) => {
+    const field = form.querySelector('[name="submission_id"]');
+    if (field) field.value = createSubmissionId();
   };
 
   const setHiddenFields = (form) => {
@@ -262,22 +425,52 @@
     return body;
   };
 
-  const postNoCors = (url, body) =>
-    fetch(url, {
+  const postToSheet = async (url, body) => {
+    const response = await fetch(url, {
       method: "POST",
       body,
-      mode: "no-cors",
       redirect: "follow",
       keepalive: true
     });
-
-  const sendEmailCopy = async (form) => {
-    if (!/formsubmit\.co/i.test(form.action || "")) return;
+    let result;
     try {
-      await postNoCors(form.action, formBody(form, "google_sheet_webapp_email_copy"));
+      result = await response.json();
     } catch (error) {
-      // The Google Sheet is the primary intake. Email is a quiet backup only.
+      throw new Error("invalid_json_response");
     }
+    if (!response.ok || result?.ok !== true) {
+      throw new Error(result?.error || "intake_not_confirmed");
+    }
+    return result;
+  };
+
+  const trackOnce = (form, eventName) => {
+    const key = "tracked" + eventName
+      .split("_")
+      .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+      .join("");
+    if (form.dataset[key]) return;
+    form.dataset[key] = "true";
+    dispatchLeadEvent(form, eventName);
+  };
+
+  const registerFormAnalytics = (form) => {
+    const markViewed = () => trackOnce(form, "lead_form_view");
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        if (!entries.some((entry) => entry.isIntersecting)) return;
+        markViewed();
+        observer.disconnect();
+      }, { threshold: 0.1 });
+      observer.observe(form);
+    } else {
+      markViewed();
+    }
+
+    form.addEventListener("focusin", (event) => {
+      if (!event.target.matches("input:not([type=hidden]), select, textarea")) return;
+      trackOnce(form, "lead_form_start");
+    });
   };
 
   const enableButton = (button, originalLabel) => {
@@ -305,29 +498,57 @@
         button.textContent = form.dataset.sendingMessage || copyText.sending;
       }
 
+      dispatchLeadEvent(form, "lead_submit_attempt", {
+        submission_id: leadFieldValue(form, "submission_id")
+      });
+
       if (!endpoint.startsWith("https://")) {
+        dispatchLeadEvent(form, "lead_submit_error", { error_code: "invalid_sheet_endpoint" });
+        if (/formsubmit\.co/i.test(form.action || "")) {
+          setIntakeProvider(form, "formsubmit_email_fallback");
+          fallbackSubmit(form);
+          return;
+        }
         status.className = "form-status error";
-        status.innerHTML =
-          fallbackMessage +
-          ' <a href="mailto:bluehourchina@gmail.com?subject=Bluehour%20China%20journey%20review">bluehourchina@gmail.com</a>';
+        status.innerHTML = fallbackMessage;
         enableButton(button, originalLabel);
         return;
       }
 
       try {
-        await postNoCors(endpoint, formBody(form, "google_sheet_webapp"));
-        await sendEmailCopy(form);
-        pushLeadEvent(form, { intakeProvider: "google_sheet_webapp" });
+        const result = await postToSheet(endpoint, formBody(form, "google_sheet_webapp"));
+        const responsePayload = {
+          intake_provider: "google_sheet_webapp",
+          submission_id: leadFieldValue(form, "submission_id"),
+          is_test: leadFieldValue(form, "is_test"),
+          lead_id: result.lead_id || "",
+          grade: String(result.grade || "").toUpperCase(),
+          qualification_reason: result.qualification_reason || "",
+          schema: result.schema || ""
+        };
+        dispatchLeadEvent(form, "lead_received", responsePayload);
+        pushLeadEvent(form, {
+          intakeProvider: "google_sheet_webapp",
+          leadId: responsePayload.lead_id,
+          grade: responsePayload.grade,
+          qualificationReason: responsePayload.qualification_reason,
+          isTest: responsePayload.is_test === "true",
+          payload: responsePayload
+        });
         status.className = "form-status success";
         status.textContent = form.dataset.successMessage || copyText.success;
         form.reset();
+        renewSubmissionId(form);
         setHiddenFields(form);
         setIntakeProvider(form, "google_sheet_webapp");
         enableButton(button, originalLabel);
       } catch (error) {
+        dispatchLeadEvent(form, "lead_submit_error", {
+          submission_id: leadFieldValue(form, "submission_id"),
+          error_code: error?.message || "intake_request_failed"
+        });
         if (/formsubmit\.co/i.test(form.action || "")) {
           setIntakeProvider(form, "formsubmit_email_fallback");
-          pushLeadEvent(form, { intakeProvider: "formsubmit_email_fallback" });
           fallbackSubmit(form);
           return;
         }
@@ -344,6 +565,7 @@
     setUrlSelectDefaults(form);
     setHiddenFields(form);
     ensurePrivacyNotice(form);
+    registerFormAnalytics(form);
 
     if (form.dataset.sheetEndpoint) {
       setIntakeProvider(form, "google_sheet_webapp");
@@ -352,45 +574,13 @@
     }
     if (!/formsubmit\.co/i.test(form.action || "")) return;
 
-    form.addEventListener("submit", async (event) => {
+    form.addEventListener("submit", (event) => {
       if (quietlyRejectSpam(form, event)) return;
-      event.preventDefault();
-
       setHiddenFields(form);
-      const status = getStatus(form);
-      const button = form.querySelector('button[type="submit"]');
-      const originalLabel = button ? button.textContent : "";
-      const nextUrl = leadFieldValue(form, "_next") || "/thanks.html";
-      const fallbackMessage = form.dataset.errorMessage || message(form).fallback;
-
-      status.className = "form-status";
-      status.textContent = "";
-      if (button) {
-        button.disabled = true;
-        button.textContent = form.dataset.sendingMessage || message(form).sending;
-      }
-
-      try {
-        await fetch(form.action, {
-          method: "POST",
-          body: new FormData(form),
-          mode: "no-cors",
-          keepalive: true
-        });
-        pushLeadEvent(form, { intakeProvider: "formsubmit_email" });
-        window.location.href = nextUrl;
-      } catch (error) {
-        status.className = "form-status error";
-        status.innerHTML =
-          fallbackMessage +
-          ' <a href="mailto:bluehourchina@gmail.com?subject=Bluehour%20China%20journey%20review">bluehourchina@gmail.com</a>';
-        if (button) {
-          button.disabled = false;
-          button.textContent = originalLabel;
-        }
-        pushLeadEvent(form, { intakeProvider: "formsubmit_email_fallback" });
-        fallbackSubmit(form);
-      }
+      setIntakeProvider(form, "formsubmit_email_fallback");
+      dispatchLeadEvent(form, "lead_submit_attempt", {
+        submission_id: leadFieldValue(form, "submission_id")
+      });
     });
   });
 })();
