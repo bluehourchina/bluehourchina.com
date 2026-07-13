@@ -281,6 +281,32 @@ const pages = [
     }
   },
   {
+    path: "/before-china/xinjiang-private-driver-quote-checklist/",
+    formName: "bluehour-before-china-en-xinjiang_private_driver_quote",
+    responseGrade: "B",
+    expectedDestination: "xinjiang-altay-kanas-yining",
+    expectedRouteDays: "8-12 days",
+    query: {
+      utm_source: "audit_source",
+      utm_medium: "audit_medium",
+      utm_campaign: "audit_campaign",
+      utm_content: "audit_content"
+    },
+    values: {
+      name: "Codex Xinjiang Transport Fit Test",
+      email: "codex-test@example.com",
+      contact: "+1 555 0166 WhatsApp",
+      country: "United States",
+      destination: "xinjiang-altay-kanas-yining",
+      travel_window: "Within 3-6 months",
+      group_size: "2 travellers",
+      route_days: "8-12 days",
+      comfort_level: "Boutique and comfortable",
+      consent_to_contact: true,
+      message: "Testing the Xinjiang private-driver quote checklist without external submission."
+    }
+  },
+  {
     path: "/quick/china/",
     formName: "bluehour-china-quick-route-check-en",
     expectFallback: true,
@@ -307,7 +333,11 @@ async function fillForm(form, values) {
     const field = form.locator(`[name="${name}"]`).first();
     if ((await field.count()) === 0) continue;
     const tagName = await field.evaluate((element) => element.tagName.toLowerCase());
-    if (tagName === "select") {
+    const type = (await field.getAttribute("type") || "").toLowerCase();
+    if (tagName === "input" && type === "checkbox") {
+      if (value) await field.check();
+      else await field.uncheck();
+    } else if (tagName === "select") {
       const matched = await field.evaluate((element, wanted) => {
         const option = [...element.options].find(
           (item) => item.value === wanted || item.textContent.trim() === wanted
