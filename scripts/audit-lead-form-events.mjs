@@ -110,7 +110,8 @@ const pages = [
   {
     path: "/interest.html",
     formName: "bluehour-china-journey-review-en",
-    responseGrade: "C",
+    responseGrade: "B",
+    expectedRouteDays: "About one week",
     values: {
       name: "Codex Journey Review Test",
       email: "codex-test@example.com",
@@ -118,6 +119,7 @@ const pages = [
       country: "United States",
       destination: "yunnan-grand-loop",
       travel_window: "Within 3-6 months",
+      route_days: "About one week",
       group_size: "2 travellers",
       language_needs: "English support preferred",
       comfort_level: "Boutique and comfortable",
@@ -470,6 +472,7 @@ async function auditPage(browser, config) {
             received?.notification_provider === "formsubmit_email_fallback"
           : nativeSubmits.length === 0) &&
         (!config.expectedDestination || fieldMap.destination === config.expectedDestination) &&
+        (!config.expectedRouteDays || fieldMap.route_days === config.expectedRouteDays) &&
         (!config.expectedSuccess || successText.includes(config.expectedSuccess)) &&
         received?.lead_id === "LEAD-AUDIT-001" &&
         received?.grade === grade &&
