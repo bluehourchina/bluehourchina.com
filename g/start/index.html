@@ -323,6 +323,7 @@
     </div>
   </main>
 
+  <script src="/assets/lead-form-20260706-sheet.js" defer></script>
   <script>
     const params = new URLSearchParams(window.location.search);
     const campaign = params.get("utm_campaign") || "gowind_video_start";
@@ -556,6 +557,22 @@
       url.searchParams.set("utm_content", link.dataset.track);
       if (video) url.searchParams.set("video", video);
       link.href = url.toString();
+
+      link.addEventListener("click", () => {
+        if (window.BluehourAnalytics?.consent !== "granted" || typeof window.gtag !== "function") {
+          return;
+        }
+        const variant = link.dataset.track;
+        window.gtag("event", "social_follow_click", {
+          social_platform: variant.replace(/-mini$/, ""),
+          link_variant: variant,
+          gowind_source: source,
+          gowind_medium: medium,
+          gowind_campaign: campaign,
+          gowind_video: video || "unspecified",
+          transport_type: "beacon"
+        });
+      });
     });
 
     const route = document.querySelector("[data-route]");
