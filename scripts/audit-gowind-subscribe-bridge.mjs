@@ -30,6 +30,12 @@ for (const href of links) {
 if (!html.includes('window.gtag("event", "social_follow_click"')) {
   throw new Error("The social follow analytics event is missing.");
 }
+if (!html.includes('window.gtag("event", "route_check_click"')) {
+  throw new Error("The route check analytics event is missing.");
+}
+if (!html.includes('document.querySelectorAll("[data-route], [data-route-mini]")')) {
+  throw new Error("Both route check CTA variants must be instrumented.");
+}
 if (html.includes('youtube.com/@gowithwindtw"')) {
   throw new Error("A non-confirming Go With Wind YouTube link remains.");
 }
@@ -40,6 +46,6 @@ console.log(
     youtube_links: links.length,
     channel_id: "UC6pYmEYrPBodC6BNTEq08Cg",
     sub_confirmation: "1",
-    ga4_event: "social_follow_click",
+    ga4_events: ["social_follow_click", "route_check_click"],
   }),
 );

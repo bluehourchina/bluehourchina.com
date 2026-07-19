@@ -588,6 +588,23 @@
       link.href = route.href;
     });
 
+    document.querySelectorAll("[data-route], [data-route-mini]").forEach((link) => {
+      link.addEventListener("click", () => {
+        if (window.BluehourAnalytics?.consent !== "granted" || typeof window.gtag !== "function") {
+          return;
+        }
+        window.gtag("event", "route_check_click", {
+          link_variant: link.hasAttribute("data-route-mini") ? "route_check_mini" : "route_check_main",
+          gowind_source: source,
+          gowind_medium: medium,
+          gowind_campaign: campaign,
+          gowind_video: video || "unspecified",
+          destination_path: routeUrl.pathname,
+          transport_type: "beacon"
+        });
+      });
+    });
+
     if (video && copyMap[video]) {
       Object.entries(copyMap[video]).forEach(([key, value]) => {
         const target = document.querySelector(`[data-copy="${key}"]`);
